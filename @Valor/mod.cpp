@@ -1,6 +1,6 @@
 name = "Valor";
 picture = "logo.paa";
-author = "Barney";
+author = "Valor Team";
 description = "Valor Mod";
 logo = "logo.paa";
 logoOver = "logo.paa";
