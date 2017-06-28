@@ -1,0 +1,144 @@
+/*%FSM<COMPILE "C:\Users\Robert\Desktop\Sources\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, fn_survival">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item1[] = {"alive_player",4,218,-210.157471,-857.060181,-120.157471,-807.060181,0.000000,"alive player"};
+item2[] = {"set_waittime",2,250,-210.934509,-766.923584,-120.934509,-716.923584,0.000000,"set waittime"};
+item3[] = {"time_for_thirst",4,218,-323.544403,-762.738892,-233.544403,-712.738892,0.000000,"time for" \n "thirst"};
+item4[] = {"time_for_hunger",4,218,-70.644775,-763.693237,19.355225,-713.693237,1.000000,"time for" \n "hunger"};
+item5[] = {"handle_hunger",2,250,-72.553467,-854.355347,17.446548,-804.355347,0.000000,"handle hunger"};
+item6[] = {"handle_thirst",2,250,-325.453064,-848.629272,-235.453064,-798.629272,0.000000,"handle thirst"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {3,6};
+link5[] = {4,5};
+link6[] = {5,1};
+link7[] = {6,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,206,6316128,1,-694.576050,296.817810,-381.362366,-1096.201050,1226,884,1};
+window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1244};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_survival";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_hunger_multiplier = param[0,1,[1]];" \n
+                         "_thirst_multiplier = param[1,1,[1]];" \n
+                         "" \n
+                         "diag_log format[""Valor :: Starting Hunger Thirst System - Hunger Multiplier: %1 - Thirst Multiplier %2"",_hunger_multiplier,_thirst_multiplier];" \n
+                         "_waitTime_thirst = 55 * _thirst_multiplier;" \n
+                         "_waitTime_hunger = 93 * _hunger_multiplier;" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive_player">*/
+                                class alive_player
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_waittime">*/
+                class set_waittime
+                {
+                        name = "set_waittime";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_ticktime_thirst = diag_ticktime + _waitTime_thirst + floor(random(11));" \n
+                         "_ticktime_hunger = diag_ticktime + _waitTime_hunger + floor(random(11));"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "time_for_hunger">*/
+                                class time_for_hunger
+                                {
+                                        itemno = 4;
+                                        priority = 1.000000;
+                                        to="handle_hunger";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _ticktime_hunger"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_for_thirst">*/
+                                class time_for_thirst
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="handle_thirst";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _ticktime_thirst"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "handle_hunger">*/
+                class handle_hunger
+                {
+                        name = "handle_hunger";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"Valor_hunger = Valor_hunger - 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive_player">*/
+                                class alive_player
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "handle_thirst">*/
+                class handle_thirst
+                {
+                        name = "handle_thirst";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"Valor_thirst = Valor_thirst - 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive_player">*/
+                                class alive_player
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/
