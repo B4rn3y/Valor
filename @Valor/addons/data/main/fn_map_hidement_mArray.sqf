@@ -5,6 +5,7 @@
 
 
 
+private ["_valor_db_map","_normal_array","_arr","_str_to_array","_foreachindex"];
 
 _valor_db_map = param[0,"",[""]];
 

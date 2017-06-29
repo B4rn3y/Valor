@@ -1,5 +1,6 @@
 
 private ["_type","_color","_markerBrush","_size","_first_pos_unten_links","_last_pos_oben_rechts","_first_x_pos","_first_y_pos","_last_x_pos","_last_y_pos","_rowcounter","_counter","_done","_1st_Marker","_pos_y","_pos_x","_pos_y_plus","_mk"];
+private ["_type","_color","_markerBrush","_size","_first_pos_unten_links","_last_pos_oben_rechts","_first_x_pos","_first_y_pos","_last_x_pos","_last_y_pos","_rowcounter","_counter","_done","_1st_Marker","_pos_y","_pos_x","_pos_y_plus","_mk"];
 _type = gettext(configfile >> "Valor_settings" >> "settings" >> "map_hidement_MARKER_TYPE");
 _color = gettext(configfile >> "Valor_settings" >> "settings" >> "map_hidement_MARKER_COLOR");
 _markerBrush = gettext(configfile >> "Valor_settings" >> "settings" >> "map_hidement_MARKER_BRUSH");
