@@ -1,7 +1,7 @@
 class DefaultEventhandlers;
 class CfgPatches
 {
-	class data
+	class functions_base
 	{
 		units[] = {};
 		weapons[] = {};

@@ -5,7 +5,7 @@ class SpawnMenu {
 	enableSimulation = true;
 
 	class controlsBackground {
-		class main_background: : valor_RscText {
+		class main_background: valor_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 
 			idc = -1;

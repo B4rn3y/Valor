@@ -59,14 +59,6 @@ class CfgFunctions
 
 
 
-class CfgVehicles
-{
-	class Man;
-	class CAManBase : Man
-	{
-		extCameraPosition[] = {0.4, -0.1, -1.2};
-	};
-};
 
 
 
