@@ -1,3 +1,5 @@
+
+
 class LoadingScreen {
 	idd = 1337;
 	name= "LoadingScreen";
@@ -20,3 +22,4 @@ class LoadingScreen {
 
 	class controls {};
 };
+
