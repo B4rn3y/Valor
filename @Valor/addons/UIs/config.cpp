@@ -24,13 +24,22 @@ class CfgFunctions
 
 
 		};
+
+		class LoadingScreen
+		{
+			file = "\UIs\UI_functions\LoadingScreen";
+			class closeLoadingScreen {};
+			class openLoadingScreen {};
+
+
+		};
 	};
 };
 
 
 #include "Valor_Templates.hpp"
-
-
+#include "Dialogs.hpp"
+#include "Displays.hpp"
 
 
 

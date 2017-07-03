@@ -14,10 +14,10 @@ dlcColor[] =
 };
 
 actionName = "Website";
-action = "";
+action = "forum.lhzp.de";
 tooltip = "Valor";
 tooltipOwned = "Valor Owned";
-overview = "Valor is a survíval/life modification.";
+overview = "Valor is a survíval/RPG modification.";
 overviewPicture = "logo.paa";
 overviewText = "Valor overviewText";
 overviewFootnote = "This content is under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.";
