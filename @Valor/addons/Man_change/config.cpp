@@ -12,7 +12,10 @@ class CfgPatches
 
 class CfgVehicles
 {
-	class Man;
+	class Man 
+	{
+		extCameraPosition[] = {0, 0, 0};
+	};
 	class C_man_w_worker_F : Man // civs
 	{
 		extCameraPosition[] = {0.4, -0.1, -1.2};
