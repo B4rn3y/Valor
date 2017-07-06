@@ -1,0 +1,222 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=14;
+	};
+	class MarkerIDProvider
+	{
+		nextID=2;
+	};
+	class Camera
+	{
+		pos[]={14058.759,51.551338,18721.504};
+		dir[]={0.043221395,-0.51348543,0.85701001};
+		up[]={0.025863672,0.85809791,0.51283437};
+		aside[]={0.99873155,1.1277734e-009,-0.050368786};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=1901519;
+class ScenarioData
+{
+	author="[G4] Barney";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=9;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={8450.7715,-7.3994141,25166.166};
+			name="respawn_west";
+			type="Empty";
+			id=0;
+			atlOffset=-106.769;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={8478.2939,-7.4638672,25164.375};
+			name="respawn_east";
+			type="Empty";
+			id=1;
+			atlOffset=-110.72005;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={8453.2246,-2.7216797,25155.168};
+			name="respawn_guerrila";
+			type="Empty";
+			id=2;
+			atlOffset=-104.60014;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={8485.2832,5.9707031,25153.768};
+			name="respawn_civilian";
+			type="Empty";
+			id=3;
+			atlOffset=-100.60371;
+		};
+		class Item4
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8464.9756,92.652275,25200.01};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=5;
+					type="B_Survivor_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=4;
+		};
+		class Item5
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8491.2588,97.033867,25199.672};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=9;
+					type="I_Survivor_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=8;
+		};
+		class Item6
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8501.4336,97.687439,25198.484};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=11;
+					type="C_man_w_worker_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=10;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={14049.074,0,18761.443};
+			name="spawn_athira";
+			type="Empty";
+			angle=120.39399;
+			id=12;
+			atlOffset=-25.125902;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={25701.201,0,21363.957};
+			name="spawn_sofia";
+			type="Empty";
+			angle=131.177;
+			id=13;
+			atlOffset=-20.499205;
+		};
+	};
+};

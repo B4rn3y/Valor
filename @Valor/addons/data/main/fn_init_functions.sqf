@@ -10,7 +10,7 @@
 [] spawn valor_fnc_player_monitor;
 
 // Starting player hunger/thirst system
-[getNumber(configFile >> "Valor_settings" >> "settings" >> "Hunger_multiplier"),getNumber(configFile >> "Valor_settings" >> "settings" >> "Thirst_multiplier")] spawn valor_fnc_survival;
+[getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Hunger_multiplier"),getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Thirst_multiplier")] spawn valor_fnc_survival;
 
 
 // if player is in the Survival Zone start the zombie management and the Loot spawning system

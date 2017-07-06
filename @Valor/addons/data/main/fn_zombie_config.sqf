@@ -44,7 +44,7 @@ _arr_anders = _arr_anders call BIS_fnc_arrayShuffle;
 
 _returned_array = [];
 {
-	_classnames = getarray(configfile >> "cfgZombie_classes" >> (_x select 0) >> _zombieArt);
+	_classnames = getarray(missionConfigFile >> "cfgZombie_classes" >> (_x select 0) >> _zombieArt);
 	for "_D" from 1 to (_x select 1) do {
 		_returned_array pushback (selectrandom _classnames);
 

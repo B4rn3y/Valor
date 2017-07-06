@@ -1,0 +1,12 @@
+disableChannels[] = {{0,true,true},{1,true,true},{2,true,true}};
+overviewText = "Valor";
+
+
+class Header
+{
+    gameType = RPG; // Game type, see 'class' columns in the table below
+    minPlayers = 1; //min # of players the mission supports
+    maxPlayers = 3; //max # of players the mission supports
+};
+
+#include "Valor_Config.hpp"

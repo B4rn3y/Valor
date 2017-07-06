@@ -4,26 +4,26 @@ switch (playerside) do
 {
 	case civilian:
 	{
-		_uniform = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "civilian_uniforms");
-		_goggles = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "civilian_goggles");
-		_headgear = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "civilian_headgear");
-		_backpack = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "civilian_backpack");
+		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_uniforms");
+		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_goggles");
+		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_headgear");
+		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_backpack");
 	};
 
 	case west:
 	{
-		_uniform = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "west_uniforms");
-		_goggles = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "west_goggles");
-		_headgear = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "west_headgear");
-		_backpack = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "west_backpack");
+		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_uniforms");
+		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_goggles");
+		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_headgear");
+		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_backpack");
 	};
 
 	case independent:
 	{
-		_uniform = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "independent_uniforms");
-		_goggles = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "independent_goggles");
-		_headgear = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "independent_headgear");
-		_backpack = selectRandom getarray(configfile >> "Valor_settings" >> "Bambi_gear" >> "independent_backpack");
+		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_uniforms");
+		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_goggles");
+		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_headgear");
+		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_backpack");
 	};
 
 	default
@@ -46,7 +46,7 @@ if(_rnd >= 50) then {
 	player addHeadgear _headgear;
 };
 
-if(getNumber(configFile >> "Valor_settings" >> "settings" >> "Spawn_with_map") isEqualTo 1) then {
+if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Spawn_with_map") isEqualTo 1) then {
 	player additem "ItemMap";
 	player assignItem "ItemMap";
 };

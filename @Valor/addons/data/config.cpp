@@ -54,7 +54,7 @@ class CfgFunctions
 	};
 };
 
-#include "Valor_Config.hpp"
+
 
 
 
