@@ -28,5 +28,4 @@ _side = switch (playerside) do
 {
 	_id = _listbox lbadd (_x select 0);
 	_listbox lbSetPicture[_id,(_x select 1)];
-	_listbox lbsetdata[_id,(_x select 2)];
 } foreach (getarray(configFile >> "Valor_Settings" >> "Spawn_Points" >> _side));

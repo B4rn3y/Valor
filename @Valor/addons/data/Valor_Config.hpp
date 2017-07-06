@@ -91,9 +91,9 @@ class Valor_settings {
 	};
 
 	class Spawn_Points {
-		civilian_spawnPoints[] = {}; // saved like:   [Name,Picture for LB,POS as Array or Marker]
-		west_spawnPoints[] = {};
-		independent_spawnPoints[] = {};
+		civilian_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}}; // saved like:   [Name,Picture for LB,POS as Marker]
+		west_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
+		independent_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
 
 	};
 };

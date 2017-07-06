@@ -1,4 +1,9 @@
-#include "Displays\LoadingScreen\LoadingScreen.hpp"
+
+class RscTitles {
+    #include "Displays\LoadingScreen\LoadingScreen.hpp"
+};
+
+
 
 
 
