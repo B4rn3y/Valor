@@ -10,3 +10,6 @@ class Header
 };
 
 #include "Valor_Config.hpp"
+
+disabledAI = 1;
+enableDebugConsole = 2;

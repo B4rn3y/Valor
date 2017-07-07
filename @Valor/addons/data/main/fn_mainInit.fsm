@@ -46,14 +46,14 @@ item41[] = {"No_Position_know",4,218,-982.491882,-1001.812378,-892.491882,-951.8
 item42[] = {"END_2",1,250,-984.297302,-1086.807129,-894.297241,-1036.806885,0.000000,"END"};
 item43[] = {"set_player__to_p",2,250,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
 item44[] = {"true",4,218,-1371.616211,-928.150269,-1281.616211,-878.150269,0.000000,"true"};
-item45[] = {"END_3",1,4346,-1502.245850,-927.504456,-1412.245850,-877.504211,0.000000,"END"};
+item45[] = {"END_3",1,250,-1502.245850,-927.504456,-1412.245850,-877.504211,0.000000,"END"};
 item46[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item47[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
 item48[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
 item49[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
 item50[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
 item51[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item52[] = {"END_4",1,250,-218.314941,-1906.899780,-128.314880,-1856.899536,0.000000,"END"};
+item52[] = {"END_4",1,4346,-218.314941,-1906.899780,-128.314880,-1856.899536,0.000000,"END"};
 item53[] = {"true",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"true"};
 item54[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item55[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -125,8 +125,8 @@ link60[] = {56,57};
 link61[] = {57,58};
 link62[] = {58,59};
 link63[] = {59,51};
-globals[] = {0.000000,0,0,0,0,640,480,1,166,6316128,1,-2132.959961,231.499207,74.757324,-1574.950806,1267,884,1};
-window[] = {2,-1,-1,-1,-1,785,26,1466,26,3,1285};
+globals[] = {0.000000,0,0,0,0,640,480,1,166,6316128,1,-2681.632568,780.171387,457.573364,-1957.765869,1267,884,1};
+window[] = {2,-1,-1,-1,-1,941,182,1622,182,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -139,7 +139,7 @@ class FSM
                         name = "init";
                         itemno = 0;
                         init = /*%FSM<STATEINIT""">*/"_data_loaded = param[0,1,[0]];" \n
-                         "0 call valor_fnc_openLoadingScreen" \n
+                         "0 call valor_fnc_openLoadingScreen;" \n
                          "switch(_data_loaded) do {" \n
                          "	case 0: {diag_log ""Valor :: Response of Server OK ::"";};" \n
                          "	case 1: {diag_log ""Valor :: Main Init started ::"";};" \n
@@ -688,7 +688,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player gear loaded and @ Position"";" \n
                          "Valor_Init_done = true;" \n
                          "" \n
-                         "0 call valor_fnc_closeLoadingScreen"/*%FSM</STATEINIT""">*/;
+                         "0 call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -780,7 +780,9 @@ class FSM
                         name = "END_4";
                         itemno = 52;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: New player inserted Intro should be here but isnt cause WIP"";" \n
-                         "Valor_Init_done = true;"/*%FSM</STATEINIT""">*/;
+                         "Valor_Init_done = true;" \n
+                         "" \n
+                         "0 call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

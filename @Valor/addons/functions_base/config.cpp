@@ -13,7 +13,7 @@ class CfgPatches
 
 class CfgFunctions
 {
-	class MAIN
+	class MAIN_2
 	{
 		tag = "valor";
 
