@@ -1,4 +1,4 @@
-class DefaultEventhandlers;
+
 class CfgPatches
 {
 	class Man_change
@@ -12,7 +12,7 @@ class CfgPatches
 
 class CfgVehicles
 {
-	class Man 
+	class Man
 	{
 		extCameraPosition[] = {0, 0, 0};
 	};

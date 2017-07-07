@@ -1,4 +1,4 @@
-class DefaultEventhandlers;
+
 class CfgPatches
 {
 	class functions_base
