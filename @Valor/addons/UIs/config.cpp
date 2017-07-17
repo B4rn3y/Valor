@@ -21,6 +21,9 @@ class CfgFunctions
 		{
 			file = "\UIs\UI_functions\SpawnMenu";
 			class openSpawnMenu {};
+			class setMapPosition {};
+			class spawn {};
+			class spawnMenuEVH {};
 
 
 		};

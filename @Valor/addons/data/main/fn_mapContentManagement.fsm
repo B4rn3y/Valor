@@ -1,9 +1,9 @@
-/*%FSM<COMPILE "C:\Users\Robert\Desktop\Sources\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, fn_disease">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_disease">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
 item1[] = {"alles_aufgedeckt",4,218,-373.049683,-930.364563,-283.049683,-880.364563,1.000000,"alles" \n "aufgedeckt"};
-item2[] = {"Nicht_alles_aufg",4,218,-209.897919,-1001.511230,-119.897919,-951.511169,0.000000,"Nicht" \n "alles" \n "aufgedeckt"};
+item2[] = {"Nicht_alles_aufg",4,4314,-209.897919,-1001.511230,-119.897919,-951.511169,0.000000,"Nicht" \n "alles" \n "aufgedeckt"};
 item3[] = {"END",1,250,-549.154419,-930.076294,-459.154327,-880.076294,0.000000,"END"};
 item4[] = {"Pr_fe",2,250,-207.171509,-724.885559,-117.171509,-674.885559,0.000000,"Prüfe"};
 item5[] = {"w8",4,218,-208.336304,-635.566650,-118.336304,-585.566650,1.000000,"w8"};
@@ -24,8 +24,8 @@ link8[] = {7,4};
 link9[] = {8,3};
 link10[] = {9,10};
 link11[] = {10,4};
-globals[] = {0.000000,0,0,0,0,640,480,1,202,6316128,1,-569.070251,246.294312,-575.170227,-1106.378906,901,587,1};
-window[] = {0,-1,-1,-1,-1,889,130,1570,130,1,919};
+globals[] = {0.000000,0,0,0,0,640,480,1,202,6316128,1,-617.937622,197.426819,-582.409973,-1113.616943,901,587,1};
+window[] = {0,-1,-1,-1,-1,915,156,1596,156,1,919};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -62,7 +62,7 @@ class FSM
                                         priority = 0.000000;
                                         to="clear_map_again";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(!(Valor_map isequalto [])) && (diag_ticktime - _time) > 15"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!(Valor_map isequalto [])) && (diag_ticktime - _time) > 15 && !(isnil ""Valor_Init_done"")"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

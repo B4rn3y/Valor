@@ -48,7 +48,7 @@ class SpawnMenu {
 		{
 			idc = 2400;
 			text = "SPAWN!"; //--- ToDo: Localize;
-			onButtonClick = "";
+			onButtonClick = "0 spawn valor_fnc_spawn;";
 			x = 0.0252523;
 			y = 0.799664;
 			w = 0.299495;
@@ -67,7 +67,7 @@ class SpawnMenu {
 		class spawnpoints: valor_RscListbox
 		{
 			idc = 1500;
-			onlbselchanged = "";
+			onlbselchanged = "0 call valor_fnc_SpawnMenuEVH;";
 			sizeEx = 0.04;
 			x = 0.0262623;
 			y = 0.159798;

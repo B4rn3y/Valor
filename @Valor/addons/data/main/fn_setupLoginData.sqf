@@ -149,7 +149,8 @@ switch(playerside) do {
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
 	};
 };
-
+diag_log format["Valor Alive: %1 - Typename %2",Valor_alive,typename Valor_alive];
+diag_log format["Valor Position: %1 - Typename %2",Valor_position,typename Valor_position];
 if(Valor_alive isEqualTo 0) then {
 	Valor_gear = [];
 	Valor_position = [];
@@ -160,3 +161,6 @@ if(Valor_alive isEqualTo 0) then {
 	player setdamage (Valor_stats select 2);
 	Valor_blood = Valor_stats select 3;
 };
+
+diag_log format["Valor Alive: %1 - Typename %2",Valor_alive,typename Valor_alive];
+diag_log format["Valor Position: %1 - Typename %2",Valor_position,typename Valor_position];
