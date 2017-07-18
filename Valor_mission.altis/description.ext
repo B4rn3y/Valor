@@ -29,12 +29,6 @@ Briefing = 0;
 allowFunctionsRecompile = 0;
 
 
-class Header
-{
-	gameType = RPG;
-	minPlayers = 1;
-	maxPlayers = 3;
-};
 
 wreckLimit = 5;
 wreckRemovalMinTime = 60;
@@ -54,3 +48,7 @@ showHUD[] = {
 	0,	// Group Bar
 	1	// HUD Weapon Cursors
 };
+
+
+#include "CfgCustomFunctions.hpp"
+

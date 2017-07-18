@@ -1,7 +1,7 @@
-/*%FSM<COMPILE "C:\Users\Robert\Desktop\Sources\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, fn_disease">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_zombieMainMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"true",4,218,-210.330872,-837.472046,-120.330872,-787.472046,0.000000,"true"};
 item2[] = {"checke_h_user",2,250,-210.331482,-717.262756,-120.331482,-667.262756,0.000000,"checke häuser"};
 item3[] = {"keine_Zeds",4,218,-204.674500,-580.080994,-114.674500,-530.081055,0.000000,"keine" \n "Zeds"};
@@ -39,12 +39,12 @@ link16[] = {14,16};
 link17[] = {15,10};
 link18[] = {16,2};
 link19[] = {17,9};
-globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-881.915833,595.862854,-84.890686,-1149.565430,1227,884,1};
-window[] = {2,-1,-1,-32000,-32000,811,52,1492,52,3,1245};
+globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-769.111084,483.057617,-166.161560,-1068.294434,1227,884,1};
+window[] = {2,-1,-1,-32000,-32000,993,234,1674,234,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
-        fsmName = "fn_disease";
+        fsmName = "fn_zombieMainMonitoring";
         class States
         {
                 /*%FSM<STATE "init">*/
@@ -179,9 +179,11 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_valor_zombies = [_zombienmbr] call valor_fnc_zombie_config;" \n
                          "" \n
                          "{" \n
-                         "	[_x,_houses,_foreachindex] spawn valor_fnc_zombieMonitoring;" \n
+                         "	[_x,_houses,floor(random(_houses_count))] spawn valor_fnc_zombieMonitoring;" \n
                          "} foreach _valor_zombies;" \n
-                         "systemchat format[""Spawning %1 Zeds"",_zombienmbr];" \n
+                         "if(!isnil ""Valor_debug"") then {" \n
+                         "	systemchat format[""Spawning %1 Zeds"",_zombienmbr];" \n
+                         "};" \n
                          "_last_zombie_spawn_pos = getpos player;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links

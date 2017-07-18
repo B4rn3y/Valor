@@ -49,7 +49,7 @@ class CfgFunctions
 			class map_hidement_smaller_array {};
 			class inventory_closed {};
 			class syncPlayerToDB {};
-
+			class admin_inform {};
 		};
 	};
 };

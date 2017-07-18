@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "C:\Users\Robert\Desktop\Sources\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, fn_ZombieMonitoring">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_ZombieMonitoring">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
@@ -33,7 +33,7 @@ link13[] = {13,5};
 link14[] = {13,14};
 link15[] = {14,11};
 globals[] = {0.000000,0,0,0,0,640,480,1,192,6316128,1,-714.940918,511.482239,-110.279968,-993.864319,1227,884,1};
-window[] = {2,-1,-1,-32000,-32000,785,26,1466,26,3,1245};
+window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -101,16 +101,34 @@ class FSM
                          "};" \n
                          "_grp = creategroup east;" \n
                          "_spawn_house = _houses select 0;" \n
+                         "_pos = [0,0,0];" \n
+                         "_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
                          "" \n
-                         "_pos = [_spawn_house, 0, 20, 1, 0, 0.85, 0] call BIS_fnc_findSafePos;" \n
-                         "_pos pushback 0;" \n
+                         "if(_poses isequalto []) then {" \n
+                         "	_spawn_house = selectrandom _houses;" \n
+                         "	_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
+                         "};" \n
+                         "" \n
+                         "if(_poses isequalto []) then {" \n
+                         "	_spawn_house = selectrandom _houses;" \n
+                         "	_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
+                         "};" \n
+                         "" \n
+                         "if(count _poses isequalto 0) then {" \n
+                         "	_pos = [_spawn_house, 0, 20, 1, 0, 0.85, 0] call BIS_fnc_findSafePos;" \n
+                         "	_pos pushback 0;" \n
+                         "} else {" \n
+                         "	_pos = selectrandom _poses;" \n
+                         "};" \n
+                         "" \n
                          "" \n
                          "_zombie = _grp createUnit [_ZClassname,[0,0,0],[],0,""NONE""];" \n
                          "_zombie setpos _pos;" \n
                          "[_zombie] join grpnull;" \n
                          "deletegroup _grp;" \n
-                         "" \n
-                         "systemchat format[""Spawning %1 @ %2 distance %3"",_ZClassname,_spawn_house,(player distance _zombie)];"/*%FSM</STATEINIT""">*/;
+                         "if(!isnil ""Valor_debug"") then {" \n
+                         "	systemchat format[""Spawning %1 @ %2 distance %3"",_ZClassname,_spawn_house,(player distance _zombie)];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
