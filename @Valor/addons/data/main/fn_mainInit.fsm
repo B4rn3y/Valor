@@ -16,7 +16,7 @@ item11[] = {"Exit_Type_1",2,250,44.605347,-504.741638,134.605362,-454.741638,0.0
 item12[] = {"",7,210,190.671265,-485.212280,198.671265,-477.212280,0.000000,""};
 item13[] = {"__1",2,250,-202.238220,-54.889526,-112.238220,-4.889526,0.000000,""};
 item14[] = {"w8_for_player",4,218,-204.931702,5.501579,-114.931702,55.501587,0.000000,"w8 for player"};
-item15[] = {"Send_query__request",2,4346,-206.428955,79.802979,-116.428963,129.802979,0.000000,"Send query " \n "request to" \n "Server"};
+item15[] = {"Send_query__request",2,250,-206.428955,79.802979,-116.428963,129.802979,0.000000,"Send query " \n "request to" \n "Server"};
 item16[] = {"Data_loaded_reqe",4,218,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
 item17[] = {"true",4,218,153.717896,135.770294,243.717896,185.770294,0.000000,"true"};
 item18[] = {"__2",2,250,-210.227783,-792.922302,-120.227783,-742.922302,0.000000,""};
@@ -53,7 +53,7 @@ item48[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-97
 item49[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
 item50[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
 item51[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item52[] = {"END_4",1,250,-218.314941,-1906.899780,-128.314880,-1856.899536,0.000000,"END"};
+item52[] = {"END_4",1,4346,-218.314941,-1906.899780,-128.314880,-1856.899536,0.000000,"END"};
 item53[] = {"true",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"true"};
 item54[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item55[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -125,8 +125,8 @@ link60[] = {56,57};
 link61[] = {57,58};
 link62[] = {58,59};
 link63[] = {59,51};
-globals[] = {0.000000,0,0,0,0,640,480,1,166,6316128,1,-1184.150391,358.614624,466.370667,-610.033630,1267,884,1};
-window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1285};
+globals[] = {0.000000,0,0,0,0,640,480,1,166,6316128,1,-1601.508423,883.129395,-554.214844,-2287.774170,1267,884,1};
+window[] = {2,-1,-1,-1,-1,785,26,1466,26,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -688,9 +688,9 @@ class FSM
                         name = "END_3";
                         itemno = 45;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player gear loaded and @ Position"";" \n
-                         "Valor_Init_done = true;" \n
                          "" \n
-                         "0 call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
+                         "" \n
+                         "[true] call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -758,7 +758,7 @@ class FSM
                 {
                         name = "setpos";
                         itemno = 51;
-                        init = /*%FSM<STATEINIT""">*/"player setposatl [23719.3,18282.8,0.00143886];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"player setposatl [14070.4,18791.5,0.00156975];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -782,9 +782,9 @@ class FSM
                         name = "END_4";
                         itemno = 52;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: New player inserted Intro should be here but isnt cause WIP"";" \n
-                         "Valor_Init_done = true;" \n
                          "" \n
-                         "0 call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
+                         "" \n
+                         "[true] call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

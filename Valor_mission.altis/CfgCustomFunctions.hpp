@@ -5,7 +5,7 @@ class CfgFunctions
 		tag = "valor";
 		class C_functions
 		{
-			file = "\Custom_functions";
+			file = "Custom_functions";
 			class teleesp {};
 		};
 	};

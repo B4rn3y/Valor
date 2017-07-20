@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_disease">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_map_content_management">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
@@ -25,11 +25,11 @@ link9[] = {8,3};
 link10[] = {9,10};
 link11[] = {10,4};
 globals[] = {0.000000,0,0,0,0,640,480,1,202,6316128,1,-617.937622,197.426819,-582.409973,-1113.616943,901,587,1};
-window[] = {0,-1,-1,-1,-1,915,156,1596,156,1,919};
+window[] = {0,-1,-1,-1,-1,785,26,1466,26,1,919};
 *//*%FSM</HEAD>*/
 class FSM
 {
-        fsmName = "fn_disease";
+        fsmName = "fn_map_content_management";
         class States
         {
                 /*%FSM<STATE "init">*/
