@@ -29,6 +29,11 @@ class CfgFunctions
 			class mapContentManagement {ext = ".fsm";};
 			class survival {ext = ".fsm";};
 			class player_monitor {ext = ".fsm";};
+			class loot_spawn_system {ext = ".fsm";};
+			class check_config {};
+			class find_loot_in_Table {};
+			class find_loottable {};
+			class spawn_loot {};
 			class mresArray {};
 			class mresString {};
 			class mToArray {};

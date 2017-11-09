@@ -1,0 +1,201 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_loot_spawn_system">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
+item1[] = {"alive",4,218,-382.430359,-942.234741,-292.430359,-892.234741,0.000000,"alive"};
+item2[] = {"reset_waittime",2,250,-385.649933,-840.279907,-295.649902,-790.279846,0.000000,"reset waittime"};
+item3[] = {"time_to_spawn",4,218,-384.576721,-736.179077,-294.576721,-686.179077,0.000000,"time to spawn"};
+item4[] = {"delete_abandon_P",2,250,-384.576721,-644.956543,-294.576721,-594.956543,0.000000,"delete abandon" \n "Piles"};
+item5[] = {"not_in_vehicle",4,218,-384.618591,-566.684753,-294.618591,-516.684814,0.000000,"not in vehicle"};
+item6[] = {"set_a_little_wai",2,250,-386.991821,-484.168182,-296.991821,-434.168152,0.000000,"set a little" \n "waittime"};
+item7[] = {"time_",4,218,-204.084106,-484.324341,-114.084137,-434.324341,0.000000,"time?"};
+item8[] = {"spawn_Loot",2,250,-197.564194,-646.951111,-107.564178,-596.951111,0.000000,"spawn" \n "Loot"};
+item9[] = {"alive",4,4314,-196.650208,-842.882996,-106.650208,-792.882996,0.000000,"alive"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {7,8};
+link8[] = {8,9};
+link9[] = {9,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-776.824829,33.495239,73.988037,-1144.248169,588,884,1};
+window[] = {2,-1,-1,-1,-1,928,443,1883,169,3,606};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_loot_spawn_system";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "diag_log ""Valor Client:: Starting Loot Spawn System"";" \n
+                         "_waitTime = random (getArray(missionConfigFile >> ""Valor_settings"" >> ""loot_settings"" >> ""Loot_Cyklus_time""));" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "_range_for_spawn = getnumber(missionConfigFile >> ""Valor_settings"" >> ""loot_settings"" >> ""LootPile_Spawn_Range"");" \n
+                         "_range_delete = getnumber(missionConfigFile >> ""Valor_settings"" >> ""loot_settings"" >> ""Lootpile_Delete_Range"");" \n
+                         "_delete_Counter = 0;" \n
+                         "_how_much_piles = 0;" \n
+                         "_piles_Nmbr = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive">*/
+                                class alive
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="reset_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "reset_waittime">*/
+                class reset_waittime
+                {
+                        name = "reset_waittime";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_waitTime = random (getArray(missionConfigFile >> ""Valor_settings"" >> ""loot_settings"" >> ""Loot_Cyklus_time""));" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "time_to_spawn">*/
+                                class time_to_spawn
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="delete_abandon_P";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + _waitTime)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "delete_abandon_P">*/
+                class delete_abandon_P
+                {
+                        name = "delete_abandon_P";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_delete_Counter = 0;" \n
+                         "_piles = allmissionobjects ""groundweaponholder"";" \n
+                         "_all_people = playableunits;" \n
+                         "if!(isMultiplayer) then {_all_people = allunits;};" \n
+                         "{" \n
+                         "	_thePile = _x;" \n
+                         "	_delete = true;" \n
+                         "	{" \n
+                         "		if!(_delete)exitWith {};" \n
+                         "		if((_thePile distance _x) < _range_delete) then {_delete = false;};" \n
+                         "" \n
+                         "	} foreach _all_people;" \n
+                         "	if(_delete) then {deleteVehicle _thePile;_delete_Counter = _delete_Counter + 1;};" \n
+                         "} foreach _piles;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "not_in_vehicle">*/
+                                class not_in_vehicle
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="set_a_little_wai";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"vehicle player isequalto player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_a_little_wai">*/
+                class set_a_little_wai
+                {
+                        name = "set_a_little_wai";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_waitTime = random 3;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "time_">*/
+                                class time_
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="spawn_Loot";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + _waitTime)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "spawn_Loot">*/
+                class spawn_Loot
+                {
+                        name = "spawn_Loot";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"_piles_Nmbr = 0;" \n
+                         "{" \n
+                         "		_buildingpos = _x buildingPos -1;" \n
+                         "		if!(_buildingpos isEqualTo []) then {" \n
+                         "			_how_much_piles = random (count (_buildingpos) + 1);" \n
+                         "			if!(_how_much_piles isEqualTo 0) then {_how_much_piles = round(_how_much_piles / 2);};" \n
+                         "" \n
+                         "			if(_how_much_piles > 4) then {_how_much_piles = 4};" \n
+                         "			" \n
+                         "			for ""_D"" from 1 to _how_much_piles do {" \n
+                         "				_sel = selectRandom _buildingpos;" \n
+                         "				_buildingpos = _buildingpos - [_sel];" \n
+                         "				_piles_Nmbr = _piles_Nmbr + ([_sel,(typeof _x)] call spawn_loot);" \n
+                         "			};" \n
+                         "" \n
+                         "		};" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "	} foreach ( (getpos player) nearObjects [""House"",_range_for_spawn]);" \n
+                         "" \n
+                         "" \n
+                         "if!(isnil ""valor_debug"") then {" \n
+                         "	systemchat format[""Piles: %1 - Houses: %2 - deleted: %3"",_piles_Nmbr,count( (getpos player) nearObjects [""House"",_range_for_spawn]),_delete_Counter];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive">*/
+                                class alive
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="reset_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

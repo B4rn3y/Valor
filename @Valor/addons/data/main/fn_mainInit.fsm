@@ -46,14 +46,14 @@ item41[] = {"No_Position_know",4,218,-982.491882,-1001.812378,-892.491882,-951.8
 item42[] = {"END_2",1,250,-984.297302,-1086.807129,-894.297241,-1036.806885,0.000000,"END"};
 item43[] = {"set_player__to_p",2,250,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
 item44[] = {"true",4,218,-1371.616211,-928.150269,-1281.616211,-878.150269,0.000000,"true"};
-item45[] = {"END_3",1,250,-1502.245850,-927.504456,-1412.245850,-877.504211,0.000000,"END"};
+item45[] = {"END_3",1,250,-1719.296631,-927.504456,-1629.296631,-877.504211,0.000000,"END"};
 item46[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item47[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
 item48[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
 item49[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
 item50[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
 item51[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item52[] = {"END_4",1,4346,-218.314941,-1906.899780,-128.314880,-1856.899536,0.000000,"END"};
+item52[] = {"END_4",1,250,-229.715698,-2058.529785,-139.715637,-2008.529053,0.000000,"END"};
 item53[] = {"true",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"true"};
 item54[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item55[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -61,6 +61,10 @@ item56[] = {"Gear_loading",2,250,-206.125732,-1399.858643,-116.125732,-1349.8586
 item57[] = {"Gear_loaded",4,218,-212.113037,-1488.397217,-122.113037,-1438.397217,0.000000,"Gear loaded"};
 item58[] = {"init_functions",2,250,-210.935913,-1580.169067,-120.935913,-1530.168945,0.000000,"init functions"};
 item59[] = {"true",4,218,-216.816040,-1662.528076,-126.816040,-1612.528076,0.000000,"true"};
+item60[] = {"Starting_Loot_spawn",2,250,-1489.596069,-928.155151,-1399.595947,-878.155090,0.000000,"Starting Loot" \n "spawn " \n "system"};
+item61[] = {"true",4,218,-1606.545776,-925.181885,-1516.545776,-875.181885,0.000000,"true"};
+item62[] = {"Starting_Loot_spawn_1",2,4346,-221.137756,-1908.604370,-131.137756,-1858.604248,0.000000,"Starting Loot" \n "spawn " \n "system"};
+item63[] = {"true",4,218,-223.417969,-1990.689697,-133.417969,-1940.689697,0.000000,"true"};
 link0[] = {0,16};
 link1[] = {0,19};
 link2[] = {0,34};
@@ -110,14 +114,14 @@ link45[] = {39,54};
 link46[] = {40,43};
 link47[] = {41,42};
 link48[] = {43,44};
-link49[] = {44,45};
+link49[] = {44,60};
 link50[] = {46,50};
 link51[] = {47,12};
 link52[] = {48,49};
 link53[] = {49,37};
 link54[] = {50,56};
 link55[] = {51,53};
-link56[] = {53,52};
+link56[] = {53,62};
 link57[] = {54,55};
 link58[] = {55,40};
 link59[] = {55,41};
@@ -125,8 +129,12 @@ link60[] = {56,57};
 link61[] = {57,58};
 link62[] = {58,59};
 link63[] = {59,51};
-globals[] = {0.000000,0,0,0,0,640,480,1,166,6316128,1,-1601.508423,883.129395,-554.214844,-2287.774170,1267,884,1};
-window[] = {2,-1,-1,-1,-1,785,26,1466,26,3,1285};
+link64[] = {60,61};
+link65[] = {61,45};
+link66[] = {62,63};
+link67[] = {63,52};
+globals[] = {0.000000,0,0,0,0,640,480,1,170,6316128,1,-2071.521484,254.813721,-468.677368,-2091.788086,1267,884,1};
+window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -664,7 +672,9 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_pos = Valor_position select 0;" \n
                          "_dir = Valor_position select 1;" \n
                          "player setposatl _pos;" \n
-                         "player setdir _dir;"/*%FSM</STATEINIT""">*/;
+                         "player setdir _dir;" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -673,7 +683,7 @@ class FSM
                                 {
                                         itemno = 44;
                                         priority = 0.000000;
-                                        to="END_3";
+                                        to="Starting_Loot_spawn";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -767,7 +777,7 @@ class FSM
                                 {
                                         itemno = 53;
                                         priority = 0.000000;
-                                        to="END_4";
+                                        to="Starting_Loot_spawn_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -870,6 +880,54 @@ class FSM
                                         itemno = 59;
                                         priority = 0.000000;
                                         to="setpos";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Starting_Loot_spawn">*/
+                class Starting_Loot_spawn
+                {
+                        name = "Starting_Loot_spawn";
+                        itemno = 60;
+                        init = /*%FSM<STATEINIT""">*/"0 call valor_fnc_check_config;" \n
+                         "0 spawn valor_fnc_loot_spawn_system;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 61;
+                                        priority = 0.000000;
+                                        to="END_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Starting_Loot_spawn_1">*/
+                class Starting_Loot_spawn_1
+                {
+                        name = "Starting_Loot_spawn_1";
+                        itemno = 62;
+                        init = /*%FSM<STATEINIT""">*/"0 call valor_fnc_check_config;" \n
+                         "0 spawn valor_fnc_loot_spawn_system;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 63;
+                                        priority = 0.000000;
+                                        to="END_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;

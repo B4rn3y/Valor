@@ -90,6 +90,14 @@ class Valor_settings {
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
 	};
 
+	class loot_settings {
+		LootPile_Spawn_Range = 85; // Range to spawn Lootpiles in Building around Player
+		Lootpile_Delete_Range = 100; // If a every player is more than 100m from a lootpile away it will get deleted
+
+		Loot_Cyklus_time = {160,180,200}; // Time between every Lootspawn Cyklus - min 160s - max 200s
+
+	};
+
 	class Spawn_Points {
 		civilian_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}}; // saved like:   [Name,Picture for LB,POS as Marker]
 		west_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
