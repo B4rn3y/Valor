@@ -27,7 +27,7 @@ switch (_mode) do
 	};
 	case 4:
 	{
-		_set pushback ([[Valor_thirst,Valor_hunger,damage player,Valor_blood,[]]] call valor_fnc_mresarray);
+		_set pushback ([[Valor_thirst,Valor_hunger,damage player,Valor_blood]] call valor_fnc_mresarray);
 	};
 	case 5:
 	{

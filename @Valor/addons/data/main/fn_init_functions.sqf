@@ -1,10 +1,10 @@
 // Setup the Map Hidement
-0 spawn valor_fnc_setup_map_hidement; //sqf
+//0 spawn valor_fnc_setup_map_hidement; //sqf
 
 
 
 // start FSM for discovering map
-[] spawn valor_fnc_mapContentManagement; // fsm
+//[] spawn valor_fnc_mapContentManagement; // fsm
 
 // Starting player monitoring for syncing player information to server/database
 [] spawn valor_fnc_player_monitor;
@@ -14,15 +14,15 @@
 
 
 // if player is in the Survival Zone start the zombie management and the Loot spawning system
-if(!isnil "Valor_survival_zone") then {
-	[] spawn valor_fnc_zombieMainMonitoring; // fsm
+
+[] spawn valor_fnc_zombieMainMonitoring; // fsm
 
 	// WIP
-};
+
 
 
 // Now look what part of the map the player discovered and remove hidement for it;
-0 spawn valor_fnc_clear_map_hidement; // sqf
+//0 spawn valor_fnc_clear_map_hidement; // sqf
 
 
 
