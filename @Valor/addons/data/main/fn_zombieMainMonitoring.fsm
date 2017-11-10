@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_zombieMainMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"true",4,218,-210.330872,-837.472046,-120.330872,-787.472046,0.000000,"true"};
 item2[] = {"checke_h_user",2,250,-210.331482,-717.262756,-120.331482,-667.262756,0.000000,"checke häuser"};
 item3[] = {"keine_Zeds",4,218,-204.674500,-580.080994,-114.674500,-530.081055,0.000000,"keine" \n "Zeds"};
@@ -39,8 +39,8 @@ link16[] = {14,16};
 link17[] = {15,10};
 link18[] = {16,2};
 link19[] = {17,9};
-globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-769.111084,483.057617,-166.161560,-1068.294434,1227,884,1};
-window[] = {2,-1,-1,-32000,-32000,993,234,1674,234,3,1245};
+globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-933.413513,318.755188,-169.223267,-1071.357422,1227,884,1};
+window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -54,7 +54,7 @@ class FSM
                         itemno = 0;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Main Zombie Monitoring is starting ::"";" \n
                          "_last_zombie_spawn_pos = [0,0,0];" \n
-                         "_distance_zeds_spawn_again = 300;" \n
+                         "_distance_zeds_spawn_again = 120;" \n
                          "_houses = [];" \n
                          "_houses_count = 0;" \n
                          "" \n

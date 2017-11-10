@@ -94,7 +94,7 @@ class Valor_settings {
 		LootPile_Spawn_Range = 85; // Range to spawn Lootpiles in Building around Player
 		Lootpile_Delete_Range = 100; // If a every player is more than 100m from a lootpile away it will get deleted
 
-		Loot_Cyklus_time = {160,180,200}; // Time between every Lootspawn Cyklus - min 160s - max 200s
+		Loot_Cyklus_time[] = {160,180,200}; // Time between every Lootspawn Cyklus - min 160s - max 200s
 
 	};
 
