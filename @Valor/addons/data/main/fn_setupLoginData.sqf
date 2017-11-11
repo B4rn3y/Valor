@@ -7,7 +7,7 @@ private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_s
 } foreach _this;
 
 
-if(!isnil "Valor_adminlevel" || !isnil "Valor_armylevel" || !isnil "Valor_donatorlevel" || !isnil "Valor_mediclevel") exitWith {
+if(!isnil "Valor_adminlevel" || !isnil "Valor_donatorlevel") exitWith {
 	Valor_VARS_SET = true;
 	[profilename,getplayeruid player,profileNameSteam,format["Vars set before Login @ Player %1",player]] remoteexec["valor_fnc_logToDB",2];
 	[player,format["Der Spieler %1(%2) Steamname %3 hatte eine compilefinal Variable vor dem Einloggen gesetzt",profilename,player,profileNameSteam]] remoteexec["valor_fnc_admin_inform",-2];
@@ -37,7 +37,8 @@ switch(playerside) do {
 		Valor_UID = _valor_uid;
 		Valor_cash = _cash;
 		Valor_bankacc = _bankacc;
-		Valor_stats = call compile ([_stats] call valor_fnC_mtoArray);
+		Valor_stats = ([_stats] call valor_fnC_mtoArray);
+		if(typeName Valor_stats isEqualTo "STRING") then {Valor_stats = call compile format["%1", Valor_stats];};
 		Valor_gear = [_gear] call valor_fnc_mToArray;
 		if(typeName Valor_gear isEqualTo "STRING") then {Valor_gear = call compile format["%1", Valor_gear];};
 

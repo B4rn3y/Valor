@@ -1,46 +1,25 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_zombieMainMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"true",4,218,-210.330872,-837.472046,-120.330872,-787.472046,0.000000,"true"};
 item2[] = {"checke_h_user",2,250,-210.331482,-717.262756,-120.331482,-667.262756,0.000000,"checke häuser"};
 item3[] = {"keine_Zeds",4,218,-204.674500,-580.080994,-114.674500,-530.081055,0.000000,"keine" \n "Zeds"};
 item4[] = {"_",2,250,-365.852417,-578.940430,-275.852417,-528.940430,0.000000,""};
-item5[] = {"warten",4,218,-541.501343,-574.325073,-451.501404,-524.325134,0.000000,"warten"};
+item5[] = {"warten",4,4314,-355.768188,-713.114746,-265.768127,-663.114807,0.000000,"warten"};
 item6[] = {"Zeds_spawnen",4,218,-33.750671,-711.197327,56.249329,-661.197327,1.000000,"Zeds" \n "spawnen"};
-item7[] = {"spawning_Zeds",2,250,107.432800,-708.532043,197.432816,-658.532043,0.000000,"spawning" \n "Zeds"};
-item8[] = {"END",1,250,-204.619263,-382.002197,-114.619209,-332.002197,0.000000,"END"};
-item9[] = {"",7,210,-166.512115,-458.724731,-158.512115,-450.724670,0.000000,""};
-item10[] = {"",7,210,-660.392395,-469.383057,-652.392395,-461.383057,0.000000,""};
-item11[] = {"in_Life_Zone",4,218,258.567871,-708.205872,348.567871,-658.205933,0.000000,"in Life Zone"};
-item12[] = {"in_Survival_Zone",4,218,103.449333,-570.195984,193.449341,-520.196045,0.000000,"in Survival" \n "Zone"};
-item13[] = {"__1",2,250,-50.528690,-572.477112,39.471329,-522.477112,0.000000,""};
-item14[] = {"__2",2,250,-537.556213,-648.895813,-447.556244,-598.895813,0.000000,""};
-item15[] = {"in_Life_Zone",4,218,-701.900818,-652.538696,-611.900818,-602.538818,1.000000,"in Life Zone"};
-item16[] = {"in_Survival_Zone",4,218,-538.695862,-717.608765,-448.695862,-667.608765,0.000000,"in Survival" \n "Zone"};
-item17[] = {"",7,210,307.119568,-450.015869,315.119568,-442.015869,0.000000,""};
+item7[] = {"spawning_Zeds",2,250,-27.274841,-571.783386,62.725174,-521.783386,0.000000,"spawning" \n "Zeds"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,6};
 link4[] = {3,4};
 link5[] = {4,5};
-link6[] = {5,14};
+link6[] = {5,2};
 link7[] = {6,7};
-link8[] = {7,11};
-link9[] = {7,12};
-link10[] = {9,8};
-link11[] = {10,9};
-link12[] = {11,17};
-link13[] = {12,13};
-link14[] = {13,3};
-link15[] = {14,15};
-link16[] = {14,16};
-link17[] = {15,10};
-link18[] = {16,2};
-link19[] = {17,9};
+link8[] = {7,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-933.413513,318.755188,-169.223267,-1071.357422,1227,884,1};
-window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1245};
+window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -162,7 +141,7 @@ class FSM
                                 {
                                         itemno = 5;
                                         priority = 0.000000;
-                                        to="__2";
+                                        to="checke_h_user";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((diag_ticktime - _last_check) > 30) && vehicle player isequalto player"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -188,52 +167,6 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "in_Survival_Zone">*/
-                                class in_Survival_Zone
-                                {
-                                        itemno = 12;
-                                        priority = 0.000000;
-                                        to="__1";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_survival_zone"""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "in_Life_Zone">*/
-                                class in_Life_Zone
-                                {
-                                        itemno = 11;
-                                        priority = 0.000000;
-                                        to="END";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"isnil ""Valor_survival_zone"""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "END">*/
-                class END
-                {
-                        name = "END";
-                        itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Main Zombie Monitoring ended, Player in Life Area"";"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "__1">*/
-                class __1
-                {
-                        name = "__1";
-                        itemno = 13;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
                                 /*%FSM<LINK "keine_Zeds">*/
                                 class keine_Zeds
                                 {
@@ -248,45 +181,10 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
-                /*%FSM<STATE "__2">*/
-                class __2
-                {
-                        name = "__2";
-                        itemno = 14;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "in_Life_Zone">*/
-                                class in_Life_Zone
-                                {
-                                        itemno = 15;
-                                        priority = 1.000000;
-                                        to="END";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"isnil ""Valor_survival_zone"""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "in_Survival_Zone">*/
-                                class in_Survival_Zone
-                                {
-                                        itemno = 16;
-                                        priority = 0.000000;
-                                        to="checke_h_user";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_survival_zone"""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
         };
         initState="init";
         finalStates[] =
         {
-                "END",
         };
 };
 /*%FSM</COMPILE>*/
