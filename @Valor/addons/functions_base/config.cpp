@@ -1,15 +1,12 @@
-
-class CfgPatches
-{
-	class functions_base
-	{
-		units[] = {};
-		weapons[] = {};
-		requiredAddons[] = {};
-		fileName = "functions_base.pbo";
-		author[]= {"Bloodwyn"};
+class CfgPatches {
+	class functions_base {
+	        units[] = {};
+	        weapons[] = {};
+	        requiredVersion = 0.1;
+	        requiredAddons[] = { "A3_Weapons_F" };
 	};
 };
+
 
 class CfgFunctions
 {

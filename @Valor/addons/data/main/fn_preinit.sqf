@@ -1,8 +1,8 @@
 if (isServer) exitWith {};
 if(!isMultiplayer) exitWith {};
-setViewDistance 15;
-setObjectViewDistance 15;
-setShadowDistance 15;
+//setViewDistance 15;
+//setObjectViewDistance 15;
+//setShadowDistance 15;
 disableRemoteSensors true;
 
 {

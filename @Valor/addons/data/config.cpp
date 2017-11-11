@@ -1,13 +1,9 @@
-class DefaultEventhandlers;
-class CfgPatches
-{
-	class data
-	{
-		units[] = {};
-		weapons[] = {};
-		requiredAddons[] = {};
-		fileName = "data.pbo";
-		author[]= {"Barney"};
+class CfgPatches {
+	class data {
+	        units[] = {};
+	        weapons[] = {};
+	        requiredVersion = 0.1;
+	        requiredAddons[] = { "A3_Weapons_F" };
 	};
 };
 

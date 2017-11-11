@@ -1,13 +1,9 @@
-class DefaultEventhandlers;
-class CfgPatches
-{
-	class UIs
-	{
-		units[] = {};
-		weapons[] = {};
-		requiredAddons[] = {};
-		fileName = "UIs.pbo";
-		author[]= {"Barney"};
+class CfgPatches {
+	class Uis {
+	        units[] = {};
+	        weapons[] = {};
+	        requiredVersion = 0.1;
+	        requiredAddons[] = { "A3_Weapons_F" };
 	};
 };
 
