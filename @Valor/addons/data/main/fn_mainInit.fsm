@@ -45,26 +45,22 @@ item40[] = {"position_known",4,218,-1106.756836,-931.789917,-1016.756775,-881.78
 item41[] = {"No_Position_know",4,218,-982.491882,-1001.812378,-892.491882,-951.812439,1.000000,"No Position" \n "known"};
 item42[] = {"END_2",1,250,-984.297302,-1086.807129,-894.297241,-1036.806885,0.000000,"END"};
 item43[] = {"set_player__to_p",2,250,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
-item44[] = {"true",4,218,-1371.616211,-928.150269,-1281.616211,-878.150269,0.000000,"true"};
-item45[] = {"END_3",1,250,-1719.296631,-927.504456,-1629.296631,-877.504211,0.000000,"END"};
-item46[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
-item47[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
-item48[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
-item49[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
-item50[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
-item51[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item52[] = {"END_4",1,4346,-229.715698,-2058.529785,-139.715637,-2008.529053,0.000000,"END"};
-item53[] = {"true",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"true"};
-item54[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
-item55[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
-item56[] = {"Gear_loading",2,250,-206.125732,-1399.858643,-116.125732,-1349.858643,0.000000,"Gear loading"};
-item57[] = {"Gear_loaded",4,218,-212.113037,-1488.397217,-122.113037,-1438.397217,0.000000,"Gear loaded"};
-item58[] = {"init_functions",2,250,-210.935913,-1580.169067,-120.935913,-1530.168945,0.000000,"init functions"};
-item59[] = {"true",4,218,-216.816040,-1662.528076,-126.816040,-1612.528076,0.000000,"true"};
-item60[] = {"Starting_Loot_spawn",2,250,-1489.596069,-928.155151,-1399.595947,-878.155090,0.000000,"Starting Loot" \n "spawn " \n "system"};
-item61[] = {"true",4,218,-1606.545776,-925.181885,-1516.545776,-875.181885,0.000000,"true"};
-item62[] = {"Starting_Loot_spawn_1",2,250,-221.137756,-1908.604370,-131.137756,-1858.604248,0.000000,"Starting Loot" \n "spawn " \n "system"};
-item63[] = {"true",4,218,-223.417969,-1990.689697,-133.417969,-1940.689697,0.000000,"true"};
+item44[] = {"END_3",1,250,-1523.593384,-930.937866,-1433.593384,-880.937622,0.000000,"END"};
+item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
+item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
+item47[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
+item48[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
+item49[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
+item50[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
+item51[] = {"END_4",1,4346,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
+item52[] = {"W8_a_bit",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"W8 a bit"};
+item53[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
+item54[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
+item55[] = {"Gear_loading",2,250,-206.125732,-1399.858643,-116.125732,-1349.858643,0.000000,"Gear loading"};
+item56[] = {"Gear_loaded",4,218,-212.113037,-1488.397217,-122.113037,-1438.397217,0.000000,"Gear loaded"};
+item57[] = {"init_functions",2,250,-210.935913,-1580.169067,-120.935913,-1530.168945,0.000000,"init functions"};
+item58[] = {"true",4,218,-216.816040,-1662.528076,-126.816040,-1612.528076,0.000000,"true"};
+item59[] = {"w8_a_bit",4,218,-1385.664429,-928.615295,-1295.664429,-878.615295,0.000000,"w8 a bit"};
 link0[] = {0,16};
 link1[] = {0,19};
 link2[] = {0,34};
@@ -91,7 +87,7 @@ link22[] = {18,28};
 link23[] = {18,30};
 link24[] = {19,20};
 link25[] = {20,38};
-link26[] = {20,48};
+link26[] = {20,47};
 link27[] = {22,21};
 link28[] = {23,24};
 link29[] = {23,25};
@@ -105,35 +101,31 @@ link36[] = {30,31};
 link37[] = {31,32};
 link38[] = {32,33};
 link39[] = {33,1};
-link40[] = {34,46};
+link40[] = {34,45};
 link41[] = {35,36};
-link42[] = {36,47};
-link43[] = {37,47};
+link42[] = {36,46};
+link43[] = {37,46};
 link44[] = {38,39};
-link45[] = {39,54};
+link45[] = {39,53};
 link46[] = {40,43};
 link47[] = {41,42};
-link48[] = {43,44};
-link49[] = {44,60};
-link50[] = {46,50};
-link51[] = {47,12};
-link52[] = {48,49};
-link53[] = {49,37};
-link54[] = {50,56};
-link55[] = {51,53};
-link56[] = {53,62};
-link57[] = {54,55};
-link58[] = {55,40};
-link59[] = {55,41};
+link48[] = {43,59};
+link49[] = {45,49};
+link50[] = {46,12};
+link51[] = {47,48};
+link52[] = {48,37};
+link53[] = {49,55};
+link54[] = {50,52};
+link55[] = {52,51};
+link56[] = {53,54};
+link57[] = {54,40};
+link58[] = {54,41};
+link59[] = {55,56};
 link60[] = {56,57};
 link61[] = {57,58};
-link62[] = {58,59};
-link63[] = {59,51};
-link64[] = {60,61};
-link65[] = {61,45};
-link66[] = {62,63};
-link67[] = {63,52};
-globals[] = {0.000000,0,0,0,0,640,480,1,170,6316128,1,-1491.723389,797.873901,-766.653076,-2364.130615,1267,884,1};
+link62[] = {58,50};
+link63[] = {59,44};
+globals[] = {0.000000,0,0,0,0,640,480,1,170,6316128,1,-2302.459473,177.156494,-261.783447,-1991.839111,1267,884,1};
 window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
@@ -448,7 +440,7 @@ class FSM
                                 /*%FSM<LINK "Blacklisted_or_Vars">*/
                                 class Blacklisted_or_Vars
                                 {
-                                        itemno = 48;
+                                        itemno = 47;
                                         priority = 0.000000;
                                         to="Exit_Type_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -639,7 +631,7 @@ class FSM
                                 /*%FSM<LINK "gear_loaded">*/
                                 class gear_loaded
                                 {
-                                        itemno = 54;
+                                        itemno = 53;
                                         priority = 0.000000;
                                         to="Load_some_Shit";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -678,18 +670,18 @@ class FSM
                          "player setposatl _pos;" \n
                          "player setdir _dir;" \n
                          "" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "_waittime = diag_ticktime + 5;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "true">*/
-                                class true
+                                /*%FSM<LINK "w8_a_bit">*/
+                                class w8_a_bit
                                 {
-                                        itemno = 44;
+                                        itemno = 59;
                                         priority = 0.000000;
-                                        to="Starting_Loot_spawn";
+                                        to="END_3";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _waittime"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -700,7 +692,7 @@ class FSM
                 class END_3
                 {
                         name = "END_3";
-                        itemno = 45;
+                        itemno = 44;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player gear loaded and @ Position"";" \n
                          "" \n
                          "" \n
@@ -715,7 +707,7 @@ class FSM
                 class Setup_Login_Data_1
                 {
                         name = "Setup_Login_Data_1";
-                        itemno = 46;
+                        itemno = 45;
                         init = /*%FSM<STATEINIT""">*/"_that = _this select 1;" \n
                          "diag_log ""Valor :: Yes the Data did come, lets load that shit!"";" \n
                          "" \n
@@ -726,7 +718,7 @@ class FSM
                                 /*%FSM<LINK "true">*/
                                 class true
                                 {
-                                        itemno = 50;
+                                        itemno = 49;
                                         priority = 0.000000;
                                         to="Gear_loading";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -741,7 +733,7 @@ class FSM
                 class Exit_Type_4
                 {
                         name = "Exit_Type_4";
-                        itemno = 49;
+                        itemno = 48;
                         init = /*%FSM<STATEINIT""">*/"_endtype = ""Blacklisted"";" \n
                          "if(!isnil ""Valor_VARS_SET"") then {" \n
                          "	_endtype = ""Vars_set"";" \n
@@ -771,19 +763,19 @@ class FSM
                 class setpos
                 {
                         name = "setpos";
-                        itemno = 51;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        itemno = 50;
+                        init = /*%FSM<STATEINIT""">*/"_waittime = diag_ticktime + 5;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "true">*/
-                                class true
+                                /*%FSM<LINK "W8_a_bit">*/
+                                class W8_a_bit
                                 {
-                                        itemno = 53;
+                                        itemno = 52;
                                         priority = 0.000000;
-                                        to="Starting_Loot_spawn_1";
+                                        to="END_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _waittime"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -794,7 +786,7 @@ class FSM
                 class END_4
                 {
                         name = "END_4";
-                        itemno = 52;
+                        itemno = 51;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: New player inserted Intro should be here but isnt cause WIP"";" \n
                          "" \n
                          "_pos = [getArray(configFile >> ""CfgWorlds"" >> worldName >> ""centerPosition""), 0, 9000, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
@@ -814,7 +806,7 @@ class FSM
                 class Load_some_Shit
                 {
                         name = "Load_some_Shit";
-                        itemno = 55;
+                        itemno = 54;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Gear loaded"";" \n
                          "0 call valor_fnc_init_functions;" \n
                          ""/*%FSM</STATEINIT""">*/;
@@ -850,7 +842,7 @@ class FSM
                 class Gear_loading
                 {
                         name = "Gear_loading";
-                        itemno = 56;
+                        itemno = 55;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player is not blacklisted"";" \n
                          "diag_log ""Valor :: Loading Gear"";" \n
                          "" \n
@@ -861,7 +853,7 @@ class FSM
                                 /*%FSM<LINK "Gear_loaded">*/
                                 class Gear_loaded
                                 {
-                                        itemno = 57;
+                                        itemno = 56;
                                         priority = 0.000000;
                                         to="init_functions";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -876,7 +868,7 @@ class FSM
                 class init_functions
                 {
                         name = "init_functions";
-                        itemno = 58;
+                        itemno = 57;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Gear loaded"";" \n
                          "0 call valor_fnc_init_functions;" \n
                          ""/*%FSM</STATEINIT""">*/;
@@ -886,57 +878,9 @@ class FSM
                                 /*%FSM<LINK "true">*/
                                 class true
                                 {
-                                        itemno = 59;
+                                        itemno = 58;
                                         priority = 0.000000;
                                         to="setpos";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "Starting_Loot_spawn">*/
-                class Starting_Loot_spawn
-                {
-                        name = "Starting_Loot_spawn";
-                        itemno = 60;
-                        init = /*%FSM<STATEINIT""">*/"0 call valor_fnc_check_config;" \n
-                         "0 spawn valor_fnc_loot_spawn_system;"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "true">*/
-                                class true
-                                {
-                                        itemno = 61;
-                                        priority = 0.000000;
-                                        to="END_3";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "Starting_Loot_spawn_1">*/
-                class Starting_Loot_spawn_1
-                {
-                        name = "Starting_Loot_spawn_1";
-                        itemno = 62;
-                        init = /*%FSM<STATEINIT""">*/"0 call valor_fnc_check_config;" \n
-                         "0 spawn valor_fnc_loot_spawn_system;"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "true">*/
-                                class true
-                                {
-                                        itemno = 63;
-                                        priority = 0.000000;
-                                        to="END_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
