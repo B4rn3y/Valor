@@ -51,6 +51,7 @@ class CfgFunctions
 			class inventory_closed {};
 			class syncPlayerToDB {};
 			class admin_inform {};
+			class intro {};
 		};
 	};
 };

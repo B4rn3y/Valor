@@ -59,27 +59,18 @@ class cfgZombie_classes // arrays of different types of zeds sorted by their out
 class Valor_settings {
 
 	class Bambi_gear {
-		civilian_uniforms[] = {"U_C_WorkerCoveralls"};   // just arrays with stuff to add
-		civilian_goggles[] = {"G_Bandanna_blk"};
-		civilian_headgear[] = {"H_Bandanna_gry"};
-		civilian_backpack[] = {"B_Carryall_khk"};
-
-
-		west_uniforms[] = {"U_BG_Guerilla2_1"};
-		west_goggles[] = {"G_Bandanna_blk"};
-		west_headgear[] = {"H_Bandanna_gry"};
-		west_backpack[] = {"B_Carryall_khk"};
-
-		independent_uniforms[] = {"U_BG_Guerilla2_1"};
-		independent_goggles[] = {"G_Bandanna_blk"};
-		independent_headgear[] = {"H_Bandanna_gry"};
-		independent_backpack[] = {"B_Carryall_khk"};
+		uniforms[] = {"U_BG_Guerilla2_1"};// just arrays with stuff to add
+		goggles[] = {"G_Bandanna_blk"};
+		headgear[] = {"H_Bandanna_gry"};
+		backpack[] = {"B_Carryall_khk"};
 	};
 
 	class settings {
 		Spawn_with_map = 1; // 1 = with map  0 = without Map
 		Hunger_multiplier = 1; // Description: Do i need one?
 		Thirst_multiplier = 1;
+
+		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
 		map_hidement_bottom_left[] = {1500,4500};   // start pos in map position in the bottim left
 		map_hidement_top_right[] = {28500,25500};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos

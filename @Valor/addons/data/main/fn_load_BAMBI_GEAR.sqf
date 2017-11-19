@@ -1,38 +1,11 @@
 private ["_fail","_uniform","_goggles","_headgear","_backpack","_rnd"];
-_fail = false;
-switch (playerside) do
-{
-	case civilian:
-	{
-		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_uniforms");
-		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_goggles");
-		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_headgear");
-		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "civilian_backpack");
-	};
 
-	case west:
-	{
-		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_uniforms");
-		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_goggles");
-		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_headgear");
-		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "west_backpack");
-	};
 
-	case independent:
-	{
-		_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_uniforms");
-		_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_goggles");
-		_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_headgear");
-		_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "independent_backpack");
-	};
+_uniform = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "uniforms");
+_goggles = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "goggles");
+_headgear = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "headgear");
+_backpack = selectRandom getarray(missionConfigFile >> "Valor_settings" >> "Bambi_gear" >> "backpack");
 
-	default
-	{
-		_fail = true;
-	};
-};
-
-if(_fail) exitWith {};
 
 player forceAddUniform _uniform;
 player addBackpack _backpack;
@@ -49,4 +22,10 @@ if(_rnd >= 50) then {
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Spawn_with_map") isEqualTo 1) then {
 	player additem "ItemMap";
 	player assignItem "ItemMap";
+};
+
+0 spawn {
+	Valor_gear_loaded = true;
+	sleep 3;
+	Valor_gear_loaded = nil;
 };

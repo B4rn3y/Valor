@@ -2,39 +2,39 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
-item1[] = {"Server_ready_",4,218,-212.978210,-573.002686,-122.978210,-523.002686,0.000000,"Server ready?"};
-item2[] = {"load_Variables",2,250,-204.592529,-199.952881,-114.592529,-149.952881,0.000000,"load" \n "Variables"};
-item3[] = {"Version_OK",4,218,-203.319031,-129.062622,-113.319031,-79.062622,1.000000,"Version OK"};
-item4[] = {"Version_Bad",4,218,-80.712646,-204.869812,9.287354,-154.869812,0.000000,"Version Bad"};
-item5[] = {"END",1,250,151.742676,247.467178,241.742737,297.467224,0.000000,"END"};
-item6[] = {"Exit_Type",2,250,49.398499,-196.031403,139.398514,-146.031403,0.000000,"Exit Type"};
-item7[] = {"",7,210,191.982056,-344.799072,199.982056,-336.799072,0.000000,""};
-item8[] = {"_",2,250,-213.756165,-505.937744,-123.756157,-455.937744,0.000000,""};
-item9[] = {"Server_OK",4,218,-208.369263,-440.310425,-118.369263,-390.310425,1.000000,"Server OK"};
-item10[] = {"Server_not_OK",4,218,-85.771606,-505.937744,4.228394,-455.937714,0.000000,"Server not OK"};
-item11[] = {"Exit_Type_1",2,250,44.605347,-504.741638,134.605362,-454.741638,0.000000,"Exit Type"};
-item12[] = {"",7,210,190.671265,-485.212280,198.671265,-477.212280,0.000000,""};
-item13[] = {"__1",2,250,-202.238220,-54.889526,-112.238220,-4.889526,0.000000,""};
-item14[] = {"w8_for_player",4,218,-204.931702,5.501579,-114.931702,55.501587,0.000000,"w8 for player"};
-item15[] = {"Send_query__request",2,250,-206.428955,79.802979,-116.428963,129.802979,0.000000,"Send query " \n "request to" \n "Server"};
+item1[] = {"Server_ready_",4,218,-220.594177,-228.586060,-130.594177,-178.586060,0.000000,"Server ready?"};
+item2[] = {"load_Variables",2,250,-212.208496,144.463745,-122.208504,194.463745,0.000000,"load" \n "Variables"};
+item3[] = {"Version_OK",4,218,-210.934998,215.354004,-120.934998,265.354004,1.000000,"Version OK"};
+item4[] = {"Version_Bad",4,218,-88.328613,139.546814,1.671387,189.546814,0.000000,"Version Bad"};
+item5[] = {"END",1,250,144.126709,591.883789,234.126770,641.883850,0.000000,"END"};
+item6[] = {"Exit_Type",2,250,41.782532,148.385223,131.782547,198.385223,0.000000,"Exit Type"};
+item7[] = {"",7,210,184.366089,-0.382446,192.366089,7.617554,0.000000,""};
+item8[] = {"_",2,250,-221.372131,-161.521118,-131.372131,-111.521118,0.000000,""};
+item9[] = {"Server_OK",4,218,-215.985229,-95.893799,-125.985229,-45.893799,1.000000,"Server OK"};
+item10[] = {"Server_not_OK",4,218,-93.387573,-161.521118,-3.387573,-111.521088,0.000000,"Server not OK"};
+item11[] = {"Exit_Type_1",2,250,36.989380,-160.325012,126.989403,-110.325012,0.000000,"Exit Type"};
+item12[] = {"",7,210,183.055298,-140.795654,191.055298,-132.795654,0.000000,""};
+item13[] = {"__1",2,250,-209.854187,289.527100,-119.854187,339.527100,0.000000,""};
+item14[] = {"w8_for_player",4,218,-212.547668,349.918213,-122.547668,399.918213,0.000000,"w8 for player"};
+item15[] = {"Send_query__request",2,250,-214.044922,424.219604,-124.044922,474.219604,0.000000,"Send query " \n "request to" \n "Server"};
 item16[] = {"Data_loaded_reqe",4,218,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
-item17[] = {"true",4,218,153.717896,135.770294,243.717896,185.770294,0.000000,"true"};
-item18[] = {"__2",2,250,-210.227783,-792.922302,-120.227783,-742.922302,0.000000,""};
+item17[] = {"true",4,218,146.101929,480.186890,236.101929,530.186890,0.000000,"true"};
+item18[] = {"__2",2,250,-217.843750,-448.505676,-127.843750,-398.505676,0.000000,""};
 item19[] = {"Data_loaded_data",4,218,-377.000977,-931.267822,-287.000977,-881.267822,2.000000,"Data loaded" \n "data"};
 item20[] = {"Setup_Login_Data",2,250,-500.170776,-929.232483,-410.170776,-879.232483,0.000000,"Setup" \n "Login" \n "Data"};
-item21[] = {"END_1",1,250,-210.468750,243.389496,-120.468689,293.389526,0.000000,"END"};
-item22[] = {"true",4,218,-209.108826,150.752258,-119.108833,200.752258,0.000000,"true"};
-item23[] = {"__3",2,250,-211.282043,-365.799072,-121.282043,-315.799072,0.000000,""};
-item24[] = {"Server_broadcasted",4,218,-207.241882,-289.036804,-117.241882,-239.036804,0.000000,"Server" \n "broadcasted" \n "right"};
-item25[] = {"Broadcast_bad",4,218,-86.038330,-359.065552,3.961670,-309.065552,1.000000,"Broadcast" \n "bad"};
-item26[] = {"",7,210,190.635376,-181.847534,198.635376,-173.847534,0.000000,""};
-item27[] = {"Exit_Type_2",2,250,51.325806,-361.758942,141.325821,-311.758942,0.000000,"Exit Type"};
-item28[] = {"Loading_again__N",4,218,-208.927734,-723.296509,-118.927727,-673.296570,0.000000,"Loading again?" \n "NO"};
-item29[] = {"__4",2,250,-210.133484,-653.362610,-120.133476,-603.362610,0.000000,""};
-item30[] = {"Loading_again__Y",4,218,-78.705933,-796.847778,11.294067,-746.847778,1.000000,"Loading" \n "again?" \n "Yes"};
-item31[] = {"__5",2,250,-74.215515,-739.072754,15.784500,-689.072754,0.000000,""};
-item32[] = {"w8_a_bit",4,218,-77.826607,-678.316589,12.173401,-628.316650,0.000000,"w8 a bit"};
-item33[] = {"__6",2,250,-75.510132,-620.404297,14.489883,-570.404297,0.000000,""};
+item21[] = {"END_1",1,250,-218.084717,587.806152,-128.084656,637.806152,0.000000,"END"};
+item22[] = {"true",4,218,-216.724792,495.168884,-126.724792,545.168884,0.000000,"true"};
+item23[] = {"__3",2,250,-218.898010,-21.382446,-128.898010,28.617554,0.000000,""};
+item24[] = {"Server_broadcasted",4,218,-214.857849,55.379822,-124.857849,105.379822,0.000000,"Server" \n "broadcasted" \n "right"};
+item25[] = {"Broadcast_bad",4,218,-93.654297,-14.648926,-3.654297,35.351074,1.000000,"Broadcast" \n "bad"};
+item26[] = {"",7,210,183.019409,162.569092,191.019409,170.569092,0.000000,""};
+item27[] = {"Exit_Type_2",2,250,43.709839,-17.342316,133.709854,32.657684,0.000000,"Exit Type"};
+item28[] = {"Loading_again__N",4,218,-216.543701,-378.879883,-126.543701,-328.879944,0.000000,"Loading again?" \n "NO"};
+item29[] = {"__4",2,250,-217.749451,-308.945984,-127.749451,-258.945984,0.000000,""};
+item30[] = {"Loading_again__Y",4,218,-86.321899,-452.431152,3.678101,-402.431152,1.000000,"Loading" \n "again?" \n "Yes"};
+item31[] = {"__5",2,250,-81.831482,-394.656128,8.168533,-344.656128,0.000000,""};
+item32[] = {"w8_a_bit",4,218,-85.442574,-333.899963,4.557434,-283.900024,0.000000,"w8 a bit"};
+item33[] = {"__6",2,250,-83.126099,-275.987671,6.873917,-225.987671,0.000000,""};
 item34[] = {"Data_loaded_new",4,218,-208.703918,-1128.401489,-118.703918,-1078.401489,3.000000,"Data loaded" \n "new first spawn"};
 item35[] = {"Data_loaded_new_1",4,218,-81.212769,-932.781372,8.787231,-882.781372,0.000000,"Data loaded" \n "new blocked"};
 item36[] = {"Exit_Type_3",2,250,43.925537,-932.781372,133.925552,-882.781433,0.000000,"Exit Type"};
@@ -44,7 +44,7 @@ item39[] = {"loading_Gear",2,250,-748.903625,-927.437622,-658.903625,-877.437561
 item40[] = {"position_known",4,218,-1106.756836,-931.789917,-1016.756775,-881.789917,0.000000,"position known"};
 item41[] = {"No_Position_know",4,218,-982.491882,-1001.812378,-892.491882,-951.812439,1.000000,"No Position" \n "known"};
 item42[] = {"END_2",1,250,-984.297302,-1086.807129,-894.297241,-1036.806885,0.000000,"END"};
-item43[] = {"set_player__to_p",2,4346,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
+item43[] = {"set_player__to_p",2,250,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
 item44[] = {"END_3",1,250,-1523.593384,-930.937866,-1433.593384,-880.937622,0.000000,"END"};
 item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
@@ -52,7 +52,7 @@ item47[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-97
 item48[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
 item49[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
 item50[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item51[] = {"END_4",1,250,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
+item51[] = {"END_4",1,4346,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
 item52[] = {"W8_a_bit",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"W8 a bit"};
 item53[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item54[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -61,6 +61,10 @@ item56[] = {"Gear_loaded",4,218,-212.113037,-1488.397217,-122.113037,-1438.39721
 item57[] = {"init_functions",2,250,-210.935913,-1580.169067,-120.935913,-1530.168945,0.000000,"init functions"};
 item58[] = {"true",4,218,-216.816040,-1662.528076,-126.816040,-1612.528076,0.000000,"true"};
 item59[] = {"w8_a_bit",4,218,-1385.664429,-928.615295,-1295.664429,-878.615295,0.000000,"w8 a bit"};
+item60[] = {"__7",2,250,-210.351135,-784.732422,-120.351143,-734.732422,0.000000,""};
+item61[] = {"player_",4,218,-215.183472,-706.207092,-125.183472,-656.207153,0.000000,"player?"};
+item62[] = {"__8",2,250,-216.512451,-618.898438,-126.512451,-568.898438,0.000000,""};
+item63[] = {"Display",4,218,-214.010254,-536.324341,-124.010246,-486.324310,0.000000,"Display"};
 link0[] = {0,16};
 link1[] = {0,19};
 link2[] = {0,34};
@@ -81,7 +85,7 @@ link16[] = {12,7};
 link17[] = {13,14};
 link18[] = {14,15};
 link19[] = {15,22};
-link20[] = {16,18};
+link20[] = {16,60};
 link21[] = {17,5};
 link22[] = {18,28};
 link23[] = {18,30};
@@ -125,8 +129,12 @@ link60[] = {56,57};
 link61[] = {57,58};
 link62[] = {58,50};
 link63[] = {59,44};
-globals[] = {0.000000,0,0,0,0,640,480,1,170,6316128,1,-2226.232910,-277.397827,-360.217041,-1719.937744,1267,884,1};
-window[] = {2,-1,-1,-1,-1,941,182,1622,182,3,1285};
+link64[] = {60,61};
+link65[] = {61,62};
+link66[] = {62,63};
+link67[] = {63,18};
+globals[] = {0.000000,0,0,0,0,640,480,1,174,6316128,1,-1865.486572,672.505371,-591.327515,-2362.110352,1267,884,1};
+window[] = {2,-1,-1,-32000,-32000,785,26,1466,26,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -139,7 +147,7 @@ class FSM
                         name = "init";
                         itemno = 0;
                         init = /*%FSM<STATEINIT""">*/"_data_loaded = param[0,1,[0]];" \n
-                         "0 call valor_fnc_openLoadingScreen;" \n
+                         "" \n
                          "switch(_data_loaded) do {" \n
                          "	case 0: {diag_log ""Valor :: Response of Server OK ::"";};" \n
                          "	case 1: {diag_log ""Valor :: Main Init started ::"";};" \n
@@ -178,7 +186,7 @@ class FSM
                                 {
                                         itemno = 16;
                                         priority = 1.000000;
-                                        to="__2";
+                                        to="__7";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_data_loaded isequalto 1"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -384,8 +392,10 @@ class FSM
                 {
                         name = "__2";
                         itemno = 18;
-                        init = /*%FSM<STATEINIT""">*/"_loading_again = param[1,false,[false]];" \n
-                         "diag_log ""Valor :: Data not loaded yet"";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Display found"";" \n
+                         "_loading_again = param[1,false,[false]];" \n
+                         "diag_log ""Valor :: Data not loaded yet"";" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -527,7 +537,8 @@ class FSM
                 {
                         name = "__4";
                         itemno = 29;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Waiting for Server..."";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Waiting for Server..."";" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -538,7 +549,7 @@ class FSM
                                         priority = 0.000000;
                                         to="_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_Server_loaded"""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isnil ""Valor_Server_loaded"")"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -585,7 +596,7 @@ class FSM
                                         priority = 0.000000;
                                         to="_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_Server_loaded"""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isnil ""Valor_Server_loaded"")"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -624,7 +635,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player is not blacklisted"";" \n
                          "diag_log ""Valor :: Loading Gear"";" \n
                          "" \n
-                         "_handle = [Valor_gear] spawn valor_fnc_VAR_to_gear;"/*%FSM</STATEINIT""">*/;
+                         "[Valor_gear] spawn valor_fnc_VAR_to_gear;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -635,7 +646,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Load_some_Shit";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"scriptDone _handle"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_gear_loaded"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -653,7 +664,9 @@ class FSM
                          "" \n
                          "_pos = [getArray(configFile >> ""CfgWorlds"" >> worldName >> ""centerPosition""), 0, worldsize, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
                          "" \n
-                         "player setposatl _pos;"/*%FSM</STATEINIT""">*/;
+                         "player setposatl _pos;" \n
+                         "" \n
+                         "[true] call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -670,7 +683,7 @@ class FSM
                          "player setposatl _pos;" \n
                          "player setdir _dir;" \n
                          "" \n
-                         "_waittime = diag_ticktime + 5;"/*%FSM</STATEINIT""">*/;
+                         "_waittime = diag_ticktime + 3;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -681,7 +694,7 @@ class FSM
                                         priority = 0.000000;
                                         to="END_3";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _waittime"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _waittime)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -764,7 +777,7 @@ class FSM
                 {
                         name = "setpos";
                         itemno = 50;
-                        init = /*%FSM<STATEINIT""">*/"_waittime = diag_ticktime + 5;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_waittime = diag_ticktime + 4;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -775,7 +788,7 @@ class FSM
                                         priority = 0.000000;
                                         to="END_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _waittime"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _waittime)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -789,11 +802,10 @@ class FSM
                         itemno = 51;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: New player inserted Intro should be here but isnt cause WIP"";" \n
                          "" \n
-                         "_pos = [getArray(configFile >> ""CfgWorlds"" >> worldName >> ""centerPosition""), 0, 9000, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
-                         "if((count _pos) isequalto 2) then {_pos pushback 0;};" \n
-                         "player setposatl _pos;" \n
                          "" \n
                          "[true] call valor_fnc_closeLoadingScreen;" \n
+                         "" \n
+                         "[] spawn valor_fnC_intro;" \n
                          "" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -883,6 +895,54 @@ class FSM
                                         to="setpos";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__7">*/
+                class __7
+                {
+                        name = "__7";
+                        itemno = 60;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Waiting for player"";" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "player_">*/
+                                class player_
+                                {
+                                        itemno = 61;
+                                        priority = 0.000000;
+                                        to="__8";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isnull player)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__8">*/
+                class __8
+                {
+                        name = "__8";
+                        itemno = 62;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player found"";" \n
+                         "diag_log ""Valor :: Waiting for Display"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Display">*/
+                                class Display
+                                {
+                                        itemno = 63;
+                                        priority = 0.000000;
+                                        to="__2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnull(finddisplay 46)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

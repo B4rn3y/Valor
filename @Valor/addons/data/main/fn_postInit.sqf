@@ -16,4 +16,10 @@ enableRadio false;
 showChat false;
 showHud false;
 
-[1] call valor_fnc_mainInit;
+[1] spawn valor_fnc_mainInit;
+
+0 spawn {
+	waitUntil {sleep 1;!isnull (findDisplay 46)};
+
+	0 call valor_fnc_openLoadingScreen;
+};
