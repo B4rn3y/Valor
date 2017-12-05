@@ -1,0 +1,22 @@
+- Trader-Zone
+- Quest System with Quests startable in the trader-zone
+	- Quest Ideas:
+		- Persistent Quests:
+			- Play XX hours on server
+			- Kill XX zombies
+			- Kill XX bandits
+			- Kill XX heroes
+			- Kill XX neutrals
+		- Startable Quests:
+			- Kill XX raptors
+			- Bring 1x rare weapon
+			- Bring 1x rare item
+			- Bring 1x repaired landvehicle
+			- Bring 1x repaired helicopter
+
+- Make a area where raptors can appear with rare Loot 
+- Basebuilding with predefinded Houses and Strongholds
+- Skilltree:
+	- Skillables:
+		- Run faster
+		- Smaller Recoil

@@ -26,8 +26,7 @@ if(isnil "lootspawn_config") then {
 				[1,6,"CUP_V_OI_TKI_Jacket1_04","item" , []],
 				[1,10,"B_AssaultPack_blk","backpack" , []],
 				[1,7,"CUP_B_Bergen_BAF","backpack" , []],
-				[1,2,"B_Carryall_khk","backpack" , []],
-				[1,5,"rhs_sidor","backpack" , []]
+				[1,2,"B_Carryall_khk","backpack" , []]
 			]
 		]
 	];
