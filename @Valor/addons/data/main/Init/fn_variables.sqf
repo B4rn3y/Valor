@@ -1,4 +1,4 @@
-
+ryanzombiesdisablescript = true;
 Valor_version_info = 1.0;
 Valor_Gear = [];
 Valor_arrested = false;

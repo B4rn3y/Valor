@@ -16,7 +16,7 @@ class CfgSounds
 	class intro_sound
 	{
 		name = "intro";
-		sound[] = {"\sounds\Intro_sound\intro.ogg", 13, 1,500};
+		sound[] = {"\sounds\Intro_sound\intro.ogg", 35, 1,500};
 		titles[] = {};
 	};
 };

@@ -66,6 +66,7 @@ class CfgFunctions
 			class step_update {};
 			class syncPlayerToDB {ext = ".fsm";};
 			class VAR_to_gear {};
+			class survival {ext = ".fsm";};
 		};
 
 		class others
@@ -79,8 +80,21 @@ class CfgFunctions
 		{
 			file = "\data\main\zombie";
 			class zombie_config {};
+			class zombie_attack {};
+			class zombie_canattack {};
+			class zombie_checkforTarget {};
+			class zombie_checkVisibility {};
+			class zombie_moveToTarget {};
+			class zombie_roam {};
 			class zombieMainMonitoring {ext = ".fsm";};
 			class zombieMonitoring {ext = ".fsm";};
+			//Raptors
+			class raptor_attack {};
+			class raptor_canattack {};
+			class raptor_checkforTarget {};
+			class raptorMonitoring {ext = ".fsm";};
+			class raptor_roam {};
+			class jumpattack {};
 		};
 	};
 };

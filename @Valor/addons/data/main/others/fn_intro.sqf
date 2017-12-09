@@ -1,7 +1,7 @@
 
 
 
-_wood = "Land_WoodenLog_F" createVehiclelocal [6718.3,2554.01,0.024004];
+
 
 
 valor_intro_cam = "camera" camCreate [0, 0, 0];
@@ -9,6 +9,58 @@ valor_intro_cam cameraEffect ["Internal", "BACK"];
 valor_intro_cam camSetFocus [-1, -1];
 showCinemaBorder false;
 valor_intro_cam camCommit 0;
+valor_intro_cam camSetTarget [6774.69,2543.35,5.89238];
+valor_intro_cam camSetPos [8441.4,2616.64,4.37143];
+valor_intro_cam camCommit 0;
+playsound "intro_sound";
+
+//valor_intro_cam camSetTarget [6774.69,2543.35,5.89238];
+//valor_intro_cam camSetPos [7165.92,2246.04,20.0015];
+//valor_intro_cam camCommit 10;
+//playsound "intro_sound";
+//sleep 2;
+
+valor_intro_cam camSetPos [6907.27,2391.1,8.64135];
+sleep 2;
+valor_intro_cam camCommit 12;
+sleep 12;
+
+valor_intro_cam camSetPos [6833.74,2488.51,2.00143909];
+valor_intro_cam camCommit 12;
+sleep 12;
+
+valor_intro_cam camSetPos [6776.06,2541.08,2.00143909];
+valor_intro_cam camCommit 12;
+sleep 2;
+cutText ["", "BLACK OUT", 10];
+sleep 10;
+
+_pos = [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"), 0, 9000, 1, 0, 20, 1] call BIS_fnc_findSafePos;
+if((count _pos) isequalto 2) then {_pos pushback 0;};
+player setposatl _pos;
+
+cutText ["", "BLACK IN", 10];
+
+
+valor_intro_cam camSetFov 1;
+valor_intro_cam camSetPos (player modelToWorld [0,0,200]);
+valor_intro_cam camSetTarget ( player);
+valor_intro_cam camCommit 0;
+cutText ["", "BLACK IN", 10];
+valor_intro_cam camSetTarget ( player);
+valor_intro_cam camSetPos (player modelToWorld [0,0,2]);
+valor_intro_cam camCommit 7;
+sleep 7;
+
+
+valor_intro_cam cameraEffect ["TERMINATE","BACK"];
+camDestroy valor_intro_cam;
+
+
+
+/*
+
+valor_intro_cam cameraEffect ["TERMINATE","BACK"];
 
 
 
@@ -16,7 +68,31 @@ valor_intro_cam camCommit 0;
 
 
 
-valor_intro_cam camSetTarget _wood;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+valor_intro_cam camSetTarget [6718.3,2554.01,0.024004];
 valor_intro_cam camSetPos [7165.92,2246.04,20.0015];
 valor_intro_cam camCommit 0;
 playsound "intro_sound";
@@ -94,7 +170,7 @@ player setposatl _pos;
 {deleteGroup _x;} foreach _grps_delete;
 valor_intro_cam camSetFov 1;
 valor_intro_cam camSetPos (player modelToWorld [0,0,200]);
-valor_intro_cam camSetTarget (getpos player);
+valor_intro_cam camSetTarget (getposatl player);
 valor_intro_cam camCommit 0;
 valor_intro_cam camSetTarget (getpos player);
 valor_intro_cam camSetPos (player modelToWorld [0,0,2]);
@@ -105,7 +181,7 @@ sleep 7;
 valor_intro_cam cameraEffect ["TERMINATE","BACK"];
 camDestroy valor_intro_cam;
 
-
+*/
 
 
 

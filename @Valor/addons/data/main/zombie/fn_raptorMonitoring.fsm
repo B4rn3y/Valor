@@ -1,68 +1,64 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_ZombieMonitoring">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_RaptorMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
-item1[] = {"h_user_leer_",4,218,-373.049683,-930.364563,-283.049683,-880.364563,1.000000,"häuser leer?"};
-item2[] = {"h_user_array_nicht",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"häuser array" \n "nicht leer"};
-item3[] = {"spawning_ZED",2,4346,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "ZED"};
-item4[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
-item5[] = {"Zombie_zu_weit_w",4,218,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
-item6[] = {"END",1,250,-522.305359,-928.716492,-432.305206,-878.716492,0.000000,"END"};
-item7[] = {"_",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,""};
-item8[] = {"END_1",1,250,277.658508,-373.462280,367.658630,-323.462280,0.000000,"END"};
-item9[] = {"warten_f_r_despa",4,218,273.773132,-477.955750,363.773132,-427.955780,0.000000,"warten für" \n "despawn"};
-item10[] = {"true",4,218,-210.198425,-662.033264,-120.198433,-612.033325,0.000000,"true"};
-item11[] = {"target_",2,250,-210.263184,-559.703003,-120.263184,-509.703003,0.000000,"target?"};
-item12[] = {"target",4,218,-377.662476,-560.943115,-287.662476,-510.943085,0.000000,"target"};
-item13[] = {"no_Target",4,218,32.775940,-572.102966,122.775940,-522.103088,0.000000,"no" \n "Target"};
-item14[] = {"Move_to_Him",2,250,-523.981934,-557.223083,-433.981934,-507.223083,0.000000,"Move to Him"};
-item15[] = {"can_Attack__him",4,218,-521.501953,-651.462769,-431.502014,-601.462769,0.000000,"can Attack " \n "him"};
-item16[] = {"can_not__attack",4,218,-455.782288,-467.943359,-365.782196,-417.943329,0.000000,"can not " \n "attack him"};
-item17[] = {"__1",2,250,-527.701904,-367.503784,-437.701904,-317.503784,0.000000,""};
-item18[] = {"not_visisble",4,218,-362.460205,-372.463745,-272.460144,-322.463745,0.000000,"not visisble"};
-item19[] = {"visisble",4,218,-592.181519,-462.983276,-502.181519,-412.983276,0.000000,"visisble"};
-item20[] = {"Attack",2,250,-649.221558,-655.182678,-559.221497,-605.182678,0.000000,"Attack"};
-item21[] = {"w8",4,218,-652.941406,-554.743042,-562.941406,-504.743042,0.000000,"w8"};
-item22[] = {"Roam",2,250,31.535156,-658.902588,121.535172,-608.902588,0.000000,"Roam"};
-item23[] = {"w8_and_search_for",4,218,-81.304024,-658.902161,8.695984,-608.902161,0.000000,"w8 and" \n "search for targets"};
-item24[] = {"__2",2,250,-217.493988,-375.325500,-127.493958,-325.325500,0.000000,""};
-item25[] = {"true",4,218,-214.480911,-464.716736,-124.480904,-414.716705,0.000000,"true"};
+item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item1[] = {"w8",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"w8"};
+item2[] = {"spawning_Raptor",2,250,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
+item3[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
+item4[] = {"Zombie_zu_weit_w",4,218,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
+item5[] = {"_",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,""};
+item6[] = {"END",1,250,277.658508,-373.462280,367.658630,-323.462280,0.000000,"END"};
+item7[] = {"warten_f_r_despa",4,218,273.773132,-477.955750,363.773132,-427.955780,0.000000,"warten für" \n "despawn"};
+item8[] = {"true",4,218,-210.198425,-662.033264,-120.198433,-612.033325,0.000000,"true"};
+item9[] = {"target_",2,250,-210.263184,-559.703003,-120.263184,-509.703003,0.000000,"target?"};
+item10[] = {"target",4,218,-377.662476,-560.943115,-287.662476,-510.943085,0.000000,"target"};
+item11[] = {"no_Target",4,218,32.775940,-572.102966,122.775940,-522.103088,0.000000,"no" \n "Target"};
+item12[] = {"Move_to_Him",2,250,-523.981934,-557.223083,-433.981934,-507.223083,0.000000,"Move to Him"};
+item13[] = {"can_Attack__him",4,218,-521.501953,-651.462769,-431.502014,-601.462769,0.000000,"can Attack " \n "him"};
+item14[] = {"can_not__attack",4,218,-455.782288,-467.943359,-365.782196,-417.943329,0.000000,"can not " \n "attack him"};
+item15[] = {"__1",2,250,-527.701904,-367.503784,-437.701904,-317.503784,0.000000,""};
+item16[] = {"not_visisble",4,218,-362.460205,-372.463745,-272.460144,-322.463745,0.000000,"not visisble"};
+item17[] = {"visisble",4,218,-592.181519,-462.983276,-502.181519,-412.983276,0.000000,"visisble"};
+item18[] = {"Attack",2,250,-649.221558,-655.182678,-559.221497,-605.182678,0.000000,"Attack"};
+item19[] = {"w8",4,218,-652.941406,-554.743042,-562.941406,-504.743042,0.000000,"w8"};
+item20[] = {"Roam",2,250,31.535156,-658.902588,121.535172,-608.902588,0.000000,"Roam"};
+item21[] = {"w8_and_search_for",4,218,-81.304024,-658.902161,8.695984,-608.902161,0.000000,"w8 and" \n "search for targets"};
+item22[] = {"__2",2,250,-217.493988,-375.325500,-127.493958,-325.325500,0.000000,""};
+item23[] = {"true",4,218,-214.480911,-464.716736,-124.480904,-414.716705,0.000000,"true"};
 link0[] = {0,1};
-link1[] = {0,2};
-link2[] = {1,6};
-link3[] = {2,3};
-link4[] = {3,10};
-link5[] = {4,7};
-link6[] = {5,8};
-link7[] = {7,9};
-link8[] = {9,8};
-link9[] = {10,11};
-link10[] = {11,4};
-link11[] = {11,5};
-link12[] = {11,12};
-link13[] = {11,13};
-link14[] = {12,14};
-link15[] = {13,22};
-link16[] = {14,15};
-link17[] = {14,16};
-link18[] = {15,20};
-link19[] = {16,17};
-link20[] = {17,18};
-link21[] = {17,19};
-link22[] = {18,24};
-link23[] = {19,14};
+link1[] = {1,2};
+link2[] = {2,8};
+link3[] = {3,5};
+link4[] = {4,6};
+link5[] = {5,7};
+link6[] = {7,6};
+link7[] = {8,9};
+link8[] = {9,3};
+link9[] = {9,4};
+link10[] = {9,10};
+link11[] = {9,11};
+link12[] = {10,12};
+link13[] = {11,20};
+link14[] = {12,13};
+link15[] = {12,14};
+link16[] = {13,18};
+link17[] = {14,15};
+link18[] = {15,16};
+link19[] = {15,17};
+link20[] = {16,22};
+link21[] = {17,12};
+link22[] = {18,19};
+link23[] = {19,12};
 link24[] = {20,21};
-link25[] = {21,14};
+link25[] = {21,9};
 link26[] = {22,23};
-link27[] = {23,11};
-link28[] = {24,25};
-link29[] = {25,11};
-globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-910.727966,321.665955,-150.451599,-1038.336426,1227,884,1};
-window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1245};
+link27[] = {23,9};
+globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-700.808594,531.585327,-161.499939,-1049.384766,1227,884,1};
+window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
-        fsmName = "fn_ZombieMonitoring";
+        fsmName = "fn_RaptorMonitoring";
         class States
         {
                 /*%FSM<STATE "init">*/
@@ -70,123 +66,96 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_ZClassname = param[0,""B_officer_F"",[""""]];" \n
-                         "_houses = param[1,[],[[]]];" \n
-                         "_index = param[2,0,[1337]];" \n
-                         "diag_log format[""Valor :: Zombie Monitoring started for Zombie %1"",_ZClassname];" \n
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "" \n
                          "" \n
                          "" \n
                          "_ticktime = diag_ticktime;" \n
                          "_wait_time_roam = 20;" \n
-                         "_spawn_house = nearestobject[player,""house""];" \n
+                         "" \n
                          "_wait_time = _wait_time_roam;" \n
                          "" \n
-                         "_w8 = random 5;"/*%FSM</STATEINIT""">*/;
+                         "_w8 = _ticktime + random[5,7,10];" \n
+                         "diag_log format[""Valor :: Starting Monitoring for Raptor - wait %1/%2"",diag_ticktime,_w8];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "h_user_leer_">*/
-                                class h_user_leer_
+                                /*%FSM<LINK "w8">*/
+                                class w8
                                 {
                                         itemno = 1;
-                                        priority = 1.000000;
-                                        to="END";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_houses isequalto []"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "h_user_array_nicht">*/
-                                class h_user_array_nicht
-                                {
-                                        itemno = 2;
                                         priority = 0.000000;
-                                        to="spawning_ZED";
+                                        to="spawning_Raptor";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(_houses isequalto []) && (diaG_ticktime - _ticktime) > (_index + _w8)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _w8)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                         };
                 };
                 /*%FSM</STATE>*/
-                /*%FSM<STATE "spawning_ZED">*/
-                class spawning_ZED
+                /*%FSM<STATE "spawning_Raptor">*/
+                class spawning_Raptor
                 {
-                        name = "spawning_ZED";
-                        itemno = 3;
-                        init = /*%FSM<STATEINIT""">*/"_ZClassname = param[0,""B_officer_F"",[""""]];" \n
-                         "_houses = param[1,[],[[]]];" \n
-                         "_index = param[2,0,[1337]];" \n
+                        name = "spawning_Raptor";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_ZClassname = param[0,""babe_raptorb_east_3_F"",[""""]];" \n
+                         "diag_log format[""Valor :: Raptor Monitoring started for Raptor %1"",_ZClassname];" \n
                          "" \n
-                         "_houses_count = count(_houses);" \n
+                         "" \n
                          "_pos = [0,0,0];" \n
-                         "switch (true) do" \n
-                         "{" \n
                          "" \n
-                         "	case (_houses_count > 100):" \n
-                         "	{" \n
-                         "		_houses = _houses select [0,50];" \n
-                         "	};" \n
-                         "" \n
-                         "	case (_houses_count > 70):" \n
-                         "	{" \n
-                         "		_houses = _houses select [0,35];" \n
-                         "	};" \n
-                         "" \n
-                         "	case (_houses_count > 50):" \n
-                         "	{" \n
-                         "		_houses = _houses select [0,25];" \n
-                         "	};" \n
-                         "" \n
-                         "	case (_houses_count > 30):" \n
-                         "	{" \n
-                         "		_houses = _houses select [0,20];" \n
-                         "	};" \n
-                         "" \n
-                         "	case (_houses_count > 10):" \n
-                         "	{" \n
-                         "		_houses = _houses select [0,10];" \n
-                         "	};" \n
-                         "" \n
-                         "};" \n
-                         "" \n
-                         "_the_house = selectRandom _houses;" \n
-                         "" \n
-                         "_pos = _the_house buildingPos -1;" \n
-                         "if(_pos isEqualTo []) then {" \n
-                         "	_pos = [(getposatl _the_house), 0, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;" \n
-                         "	if(count _pos isequalto 2) then {_pos pushback 0;};" \n
-                         "" \n
-                         "} else {" \n
-                         "	_pos = selectRandom _pos;" \n
-                         "};" \n
+                         "_pos = [[2885.88,4499.34,0.17691], 0, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;" \n
+                         "if(count _pos isequalto 2) then {_pos pushback 0;};" \n
                          "" \n
                          "" \n
                          "_zombie = createAgent [_ZClassname, [0,0,0], [], 0, ""FORM""];" \n
                          "_zombie setposatl _pos;" \n
                          "_zombie setdir random 360;" \n
-                         "_zombie allowSprint false;" \n
-                         "removeAllWeapons _zombie;" \n
-                         "removeBackpack _zombie;" \n
-                         "removeAllAssignedItems _zombie;" \n
-                         "_zombie setCombatMode ""BLUE"";" \n
-                         "_zombie setBehaviour ""CARELESS"";" \n
+                         "" \n
+                         "" \n
                          "" \n
                          "" \n
                          "{_zombie disableAI _x} foreach [""FSM"",""AIMINGERROR"",""SUPPRESSION"",""AUTOTARGET"",""TARGET"",""COVER"",""SUPPRESSION"",""AUTOCOMBAT"",""CHECKVISIBLE""];" \n
-                         "systemchat ""Spawning ZED"";"/*%FSM</STATEINIT""">*/;
+                         "" \n
+                         "_zombie setCombatMode ""BLUE"";" \n
+                         "_zombie setBehaviour ""CARELESS"";" \n
+                         "systemchat ""Spawning Raptor"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
                                 /*%FSM<LINK "true">*/
                                 class true
                                 {
-                                        itemno = 10;
+                                        itemno = 8;
                                         priority = 0.000000;
                                         to="target_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "_">*/
+                class _
+                {
+                        name = "_";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
+                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "warten_f_r_despa">*/
+                                class warten_f_r_despa
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _ticktime) > 300"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -198,42 +167,6 @@ class FSM
                 {
                         name = "END";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: houses var empty"";"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "_">*/
-                class _
-                {
-                        name = "_";
-                        itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
-                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "warten_f_r_despa">*/
-                                class warten_f_r_despa
-                                {
-                                        itemno = 9;
-                                        priority = 0.000000;
-                                        to="END_1";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _ticktime) > 300"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "END_1">*/
-                class END_1
-                {
-                        name = "END_1";
-                        itemno = 8;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
                          "deletevehicle _zombie;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -246,8 +179,8 @@ class FSM
                 class target_
                 {
                         name = "target_";
-                        itemno = 11;
-                        init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_zombie_checkforTarget;" \n
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_raptor_checkforTarget;" \n
                          "systemchat ""Checking for Targets""; "/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -255,7 +188,7 @@ class FSM
                                 /*%FSM<LINK "Zombie_Tod">*/
                                 class Zombie_Tod
                                 {
-                                        itemno = 4;
+                                        itemno = 3;
                                         priority = 2.000000;
                                         to="_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -266,9 +199,9 @@ class FSM
                                 /*%FSM<LINK "Zombie_zu_weit_w">*/
                                 class Zombie_zu_weit_w
                                 {
-                                        itemno = 5;
+                                        itemno = 4;
                                         priority = 1.000000;
-                                        to="END_1";
+                                        to="END";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(player distance _zombie) > 200"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -277,7 +210,7 @@ class FSM
                                 /*%FSM<LINK "no_Target">*/
                                 class no_Target
                                 {
-                                        itemno = 13;
+                                        itemno = 11;
                                         priority = 0.000000;
                                         to="Roam";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -288,7 +221,7 @@ class FSM
                                 /*%FSM<LINK "target">*/
                                 class target
                                 {
-                                        itemno = 12;
+                                        itemno = 10;
                                         priority = 0.000000;
                                         to="Move_to_Him";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -303,7 +236,7 @@ class FSM
                 class Move_to_Him
                 {
                         name = "Move_to_Him";
-                        itemno = 14;
+                        itemno = 12;
                         init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_zombie_moveToTarget;" \n
                          "systemchat ""Move to Target"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -312,22 +245,22 @@ class FSM
                                 /*%FSM<LINK "can_not__attack">*/
                                 class can_not__attack
                                 {
-                                        itemno = 16;
+                                        itemno = 14;
                                         priority = 0.000000;
                                         to="__1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_zombie_canattack)) || !alive _zombie"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_raptor_canattack)) || !alive _zombie"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                                 /*%FSM<LINK "can_Attack__him">*/
                                 class can_Attack__him
                                 {
-                                        itemno = 15;
+                                        itemno = 13;
                                         priority = 0.000000;
                                         to="Attack";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_zombie_canattack)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_raptor_canattack)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -338,7 +271,7 @@ class FSM
                 class __1
                 {
                         name = "__1";
-                        itemno = 17;
+                        itemno = 15;
                         init = /*%FSM<STATEINIT""">*/"systemchat ""Can not Attack Target - Check Visibility"";" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[2,2.5,3];" \n
@@ -349,7 +282,7 @@ class FSM
                                 /*%FSM<LINK "visisble">*/
                                 class visisble
                                 {
-                                        itemno = 19;
+                                        itemno = 17;
                                         priority = 0.000000;
                                         to="Move_to_Him";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -360,7 +293,7 @@ class FSM
                                 /*%FSM<LINK "not_visisble">*/
                                 class not_visisble
                                 {
-                                        itemno = 18;
+                                        itemno = 16;
                                         priority = 0.000000;
                                         to="__2";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -375,8 +308,8 @@ class FSM
                 class Attack
                 {
                         name = "Attack";
-                        itemno = 20;
-                        init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] spawn valor_fnc_zombie_attack;" \n
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] spawn valor_fnc_raptor_attack;" \n
                          "systemchat ""Attacking"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -384,7 +317,7 @@ class FSM
                                 /*%FSM<LINK "w8">*/
                                 class w8
                                 {
-                                        itemno = 21;
+                                        itemno = 19;
                                         priority = 0.000000;
                                         to="Move_to_Him";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
@@ -399,8 +332,8 @@ class FSM
                 class Roam
                 {
                         name = "Roam";
-                        itemno = 22;
-                        init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_zombie_roam;" \n
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_raptor_roam;" \n
                          "" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[20,25,30];" \n
@@ -411,11 +344,11 @@ class FSM
                                 /*%FSM<LINK "w8_and_search_for">*/
                                 class w8_and_search_for
                                 {
-                                        itemno = 23;
+                                        itemno = 21;
                                         priority = 0.000000;
                                         to="target_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(!([_zombie] call valor_fnc_zombie_checkforTarget isequalto [])) || (diag_ticktime > _wait_time)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!([_zombie] call valor_fnc_raptor_checkforTarget isequalto [])) || (diag_ticktime > _wait_time)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -426,7 +359,7 @@ class FSM
                 class __2
                 {
                         name = "__2";
-                        itemno = 24;
+                        itemno = 22;
                         init = /*%FSM<STATEINIT""">*/"_zombie setvariable[""VALOR_Target"",Objnull];" \n
                          "systemchat ""Resetting target"";" \n
                          "" \n
@@ -441,11 +374,11 @@ class FSM
                                 /*%FSM<LINK "true">*/
                                 class true
                                 {
-                                        itemno = 25;
+                                        itemno = 23;
                                         priority = 0.000000;
                                         to="target_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _wait_time) || (!([_zombie] call valor_fnc_zombie_checkforTarget isequalto []))"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _wait_time) || (!([_zombie] call valor_fnc_raptor_checkforTarget isequalto []))"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -457,7 +390,6 @@ class FSM
         finalStates[] =
         {
                 "END",
-                "END_1",
         };
 };
 /*%FSM</COMPILE>*/

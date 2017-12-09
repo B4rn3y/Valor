@@ -19,7 +19,7 @@ link6[] = {5,2};
 link7[] = {6,7};
 link8[] = {7,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-933.413513,318.755188,-169.223267,-1071.357422,1227,884,1};
-window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1245};
+window[] = {2,-1,-1,-1,-1,785,26,1466,26,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -66,24 +66,24 @@ class FSM
                          "	_houses_count = count _houses;" \n
                          "	switch (true) do" \n
                          "	{" \n
-                         "		case (_houses_count > 30):" \n
+                         "		case (_houses_count > 70):" \n
                          "		{" \n
-                         "			_zombienmbr = 12;" \n
+                         "			_zombienmbr = 7;" \n
                          "		};	" \n
                          "" \n
-                         "		case (_houses_count > 20):" \n
+                         "		case (_houses_count > 50):" \n
                          "		{" \n
-                         "			_zombienmbr = 9;" \n
+                         "			_zombienmbr = 5;" \n
                          "		};" \n
                          "" \n
                          "		case (_houses_count > 10):" \n
                          "		{" \n
-                         "			_zombienmbr = 6;" \n
+                         "			_zombienmbr = 3;" \n
                          "		};" \n
                          "" \n
                          "		case (_houses_count > 5):" \n
                          "		{" \n
-                         "			_zombienmbr = 4;" \n
+                         "			_zombienmbr = 2;" \n
                          "		};" \n
                          "" \n
                          "		case (_houses_count > 0):" \n
@@ -143,7 +143,7 @@ class FSM
                                         priority = 0.000000;
                                         to="checke_h_user";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((diag_ticktime - _last_check) > 30) && vehicle player isequalto player"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(((diag_ticktime - _last_check) > 30) && vehicle player isequalto player) || (((diag_ticktime - _last_check) > 30) && vehicle player isequalto player && speed vehicle player < 10)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
