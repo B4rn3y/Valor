@@ -39,6 +39,13 @@ _pos = [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"), 0,
 if((count _pos) isequalto 2) then {_pos pushback 0;};
 player setposatl _pos;
 
+
+0 spawn valor_fnc_init_functions;
+waitUntil {!isnil "Valor_functions_started"};
+
+
+
+
 cutText ["", "BLACK IN", 10];
 [6] call valor_fnc_step_update;
 [0] call valor_fnc_step_update;
