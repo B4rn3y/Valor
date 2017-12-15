@@ -2,8 +2,8 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
-item1[] = {"w8",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"w8"};
-item2[] = {"spawning_Raptor",2,4346,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
+item1[] = {"w8",4,4314,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"w8"};
+item2[] = {"spawning_Raptor",2,250,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
 item3[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
 item4[] = {"Zombie_zu_weit_w",4,218,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
 item5[] = {"_",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,""};
@@ -87,7 +87,7 @@ class FSM
                                         priority = 0.000000;
                                         to="spawning_Raptor";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _w8)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
