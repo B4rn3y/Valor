@@ -41,18 +41,18 @@ item36[] = {"Exit_Type_3",2,250,43.925537,-932.781372,133.925552,-882.781433,0.0
 item37[] = {"",7,210,192.687592,-1000.073730,200.687592,-992.073669,0.000000,""};
 item38[] = {"NOT_Blacklisted",4,218,-619.369873,-931.114136,-529.369873,-881.114197,1.000000,"NOT" \n "Blacklisted"};
 item39[] = {"loading_Gear",2,250,-748.903625,-927.437622,-658.903625,-877.437561,0.000000,"loading Gear"};
-item40[] = {"position_known",4,218,-1106.756836,-931.789917,-1016.756775,-881.789917,0.000000,"position known"};
-item41[] = {"No_Position_know",4,218,-982.491882,-1001.812378,-892.491882,-951.812439,1.000000,"No Position" \n "known"};
-item42[] = {"END_2",1,250,-984.297302,-1086.807129,-894.297241,-1036.806885,0.000000,"END"};
-item43[] = {"set_player__to_p",2,250,-1236.927490,-928.609009,-1146.927246,-878.608948,0.000000,"set player" \n " to position"};
-item44[] = {"END_3",1,250,-1523.593384,-930.937866,-1433.593384,-880.937622,0.000000,"END"};
+item40[] = {"position_known",4,218,-1326.025391,-940.332825,-1236.025269,-890.332825,0.000000,"position known"};
+item41[] = {"No_Position_know",4,218,-1218.846436,-1006.083801,-1128.846436,-956.083862,1.000000,"No Position" \n "known"};
+item42[] = {"END_2",1,250,-1220.651855,-1091.078613,-1130.651855,-1041.078369,0.000000,"END"};
+item43[] = {"set_player__to_p",2,250,-1456.196045,-937.151917,-1366.195801,-887.151855,0.000000,"set player" \n " to position"};
+item44[] = {"END_3",1,250,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
 item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
 item47[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
 item48[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
 item49[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
 item50[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item51[] = {"END_4",1,4346,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
+item51[] = {"END_4",1,250,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
 item52[] = {"W8_a_bit",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"W8 a bit"};
 item53[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item54[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -60,11 +60,13 @@ item55[] = {"Gear_loading",2,250,-206.125732,-1399.858643,-116.125732,-1349.8586
 item56[] = {"Gear_loaded",4,218,-212.113037,-1488.397217,-122.113037,-1438.397217,0.000000,"Gear loaded"};
 item57[] = {"init_functions",2,250,-210.935913,-1580.169067,-120.935913,-1530.168945,0.000000,"init functions"};
 item58[] = {"true",4,218,-216.816040,-1662.528076,-126.816040,-1612.528076,0.000000,"true"};
-item59[] = {"w8_a_bit",4,218,-1385.664429,-928.615295,-1295.664429,-878.615295,0.000000,"w8 a bit"};
+item59[] = {"w8_a_bit",4,218,-1604.932983,-937.158203,-1514.932983,-887.158203,0.000000,"w8 a bit"};
 item60[] = {"__7",2,250,-210.351135,-784.732422,-120.351143,-734.732422,0.000000,""};
 item61[] = {"player_",4,218,-215.183472,-706.207092,-125.183472,-656.207153,0.000000,"player?"};
 item62[] = {"__8",2,250,-216.512451,-618.898438,-126.512451,-568.898438,0.000000,""};
 item63[] = {"Display",4,218,-214.010254,-536.324341,-124.010246,-486.324310,0.000000,"Display"};
+item64[] = {"functions_ready",4,218,-1118.659424,-934.166382,-1028.659424,-884.166382,0.000000,"functions" \n "ready"};
+item65[] = {"dummy",2,250,-1217.596313,-937.245056,-1127.596191,-887.245056,0.000000,"dummy"};
 link0[] = {0,16};
 link1[] = {0,19};
 link2[] = {0,34};
@@ -122,18 +124,20 @@ link53[] = {49,55};
 link54[] = {50,52};
 link55[] = {52,51};
 link56[] = {53,54};
-link57[] = {54,40};
-link58[] = {54,41};
-link59[] = {55,56};
-link60[] = {56,57};
-link61[] = {57,58};
-link62[] = {58,50};
-link63[] = {59,44};
-link64[] = {60,61};
-link65[] = {61,62};
-link66[] = {62,63};
-link67[] = {63,18};
-globals[] = {0.000000,0,0,0,0,640,480,1,174,6316128,1,-1865.486572,672.505371,-591.327515,-2362.110352,1267,884,1};
+link57[] = {54,64};
+link58[] = {55,56};
+link59[] = {56,57};
+link60[] = {57,58};
+link61[] = {58,50};
+link62[] = {59,44};
+link63[] = {60,61};
+link64[] = {61,62};
+link65[] = {62,63};
+link66[] = {63,18};
+link67[] = {64,65};
+link68[] = {65,40};
+link69[] = {65,41};
+globals[] = {0.000000,0,0,0,0,640,480,1,176,6316128,1,-1631.355713,-932.455688,-721.983582,-1209.613892,1267,884,1};
 window[] = {2,-1,-1,-32000,-32000,785,26,1466,26,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
@@ -820,30 +824,19 @@ class FSM
                         name = "Load_some_Shit";
                         itemno = 54;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Gear loaded"";" \n
-                         "0 call valor_fnc_init_functions;" \n
+                         "0 spawn valor_fnc_init_functions;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "No_Position_know">*/
-                                class No_Position_know
+                                /*%FSM<LINK "functions_ready">*/
+                                class functions_ready
                                 {
-                                        itemno = 41;
-                                        priority = 1.000000;
-                                        to="END_2";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"Valor_position isequalto [] || Valor_alive isequalto 0"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "position_known">*/
-                                class position_known
-                                {
-                                        itemno = 40;
+                                        itemno = 64;
                                         priority = 0.000000;
-                                        to="set_player__to_p";
+                                        to="dummy";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(Valor_position isequalto []) && Valor_alive isequalto 1"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_functions_started"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -943,6 +936,40 @@ class FSM
                                         to="__2";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"!isnull(finddisplay 46)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "dummy">*/
+                class dummy
+                {
+                        name = "dummy";
+                        itemno = 65;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "No_Position_know">*/
+                                class No_Position_know
+                                {
+                                        itemno = 41;
+                                        priority = 1.000000;
+                                        to="END_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"Valor_position isequalto [] || Valor_alive isequalto 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "position_known">*/
+                                class position_known
+                                {
+                                        itemno = 40;
+                                        priority = 0.000000;
+                                        to="set_player__to_p";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(Valor_position isequalto []) && Valor_alive isequalto 1"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

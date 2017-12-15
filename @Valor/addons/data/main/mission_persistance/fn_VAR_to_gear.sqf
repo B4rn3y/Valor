@@ -47,12 +47,7 @@ _handgun = "";
 		{
 			{
 				if!(_x isEqualTo "") then {
-					player addMagazine _x;
-					sleep 0.2;
-					player selectWeapon _primWeapon;
-					sleep 4;
-					reload player;
-					sleep 5;
+					player addPrimaryWeaponItem _x;
 				};
 			} foreach _x;
 		};
@@ -78,12 +73,8 @@ _handgun = "";
 		{
 			{
 				if!(_x isEqualTo "") then {
-					player addMagazine _x;
-					sleep 0.2;
-					player selectWeapon _secWeapon;
-					sleep 4;
-					reload player;
-					sleep 5;
+					player addsecondaryWeaponItem _x;
+
 				};
 			} foreach _x;
 		};
@@ -109,12 +100,8 @@ _handgun = "";
 		{
 			{
 				if!(_x isEqualTo "") then {
-					player addMagazine _x;
-					sleep 0.2;
-					player selectWeapon _handgun;
-					sleep 4;
-					reload player;
-					sleep 5;
+					player addhandgunItem _x;
+
 				};
 			} foreach _x;
 		};

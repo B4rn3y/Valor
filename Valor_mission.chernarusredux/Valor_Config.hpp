@@ -72,8 +72,8 @@ class Valor_settings {
 
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
-		map_hidement_bottom_left[] = {1500,4500};   // start pos in map position in the bottim left
-		map_hidement_top_right[] = {28500,25500};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
+		map_hidement_bottom_left[] = {500,-140};   // start pos in map position in the bottim left
+		map_hidement_top_right[] = {15500,14860};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
 
 		map_hidement_MARKER_TYPE = "RECTANGLE";  // Marker type for hidement markers
 		map_hidement_MARKER_COLOR = "ColorBlack";   // marker color for hidement markers

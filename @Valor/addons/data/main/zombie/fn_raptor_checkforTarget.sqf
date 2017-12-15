@@ -11,7 +11,7 @@ _see_range = 40;
 
 _targets = nearestObjects[_zombie,["MAN"],_see_range];
 
-_targets = _targets select {(isplayer _x && ((_zombie distance _x) <= _see_range)) && !(_x getvariable["valor_zmbienoaggro",false]) && alive _x};
+_targets = _targets select {(isplayer _x && ((_zombie distance _x) <= _see_range)) && !(_x getvariable["valor_zmbienoaggro",false]) && alive _x && ([_zombie,_x] call valor_fnc_zombie_checkVisibility)};
 
 
 

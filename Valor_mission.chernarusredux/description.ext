@@ -1,4 +1,23 @@
 
+
+
+
+
+
+author = "Valor People";
+
+
+// ----RESPAWN SETTINGS----
+respawn = "Base";
+
+
+disabledAI = 1;
+joinUnassigned = 0;
+enableDebugConsole = 2;
+
+
+
+
 #include "Valor_Config.hpp"
 
 

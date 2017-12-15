@@ -4,7 +4,9 @@
 
 
 // start FSM for discovering map
-//[] spawn valor_fnc_mapContentManagement; // fsm
+
+0 spawn valor_fnc_setup_map_hidement;
+waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 // Starting player monitoring for syncing player information to server/database
 [] spawn valor_fnc_player_monitor;
@@ -26,6 +28,8 @@
 
 // Now look what part of the map the player discovered and remove hidement for it;
 //0 spawn valor_fnc_clear_map_hidement; // sqf
+
+0 spawn valor_fnc_mapContentManagement; // fsm
 
 
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
@@ -51,6 +55,12 @@ addMissionEventHandler ["Ended",{  }];
 (findDisplay 46) displayRemoveAllEventHandlers "KeyUp";
 (findDisplay 46) displayRemoveAllEventHandlers "MouseButtonDown";
 (findDisplay 46) displayRemoveAllEventHandlers "MouseButtonUp";
+
+0 spawn {
+	Valor_functions_started = true;
+	sleep 10;
+	Valor_functions_started = nil;
+};
 
 /* what i need to do
 - loot spawn system

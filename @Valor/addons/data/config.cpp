@@ -47,12 +47,12 @@ class CfgFunctions
 		class map_hidement
 		{
 			file = "\data\main\map_hidement";
-			class clear_map_hidement {};
 			class discoverMapPoint {};
 			class map_hidement_mArray {};
 			class mapContentManagement {ext = ".fsm";};
 			class map_hidement_smaller_array {};
 			class setup_map_hidement {};
+			class get_hidement_array {};
 		};
 
 		class mission_persistance
@@ -79,6 +79,8 @@ class CfgFunctions
 		class zombie
 		{
 			file = "\data\main\zombie";
+			class mark_Object {ext = ".fsm";};
+
 			class zombie_config {};
 			class zombie_attack {};
 			class zombie_canattack {};

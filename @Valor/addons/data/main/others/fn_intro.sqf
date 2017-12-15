@@ -40,7 +40,8 @@ if((count _pos) isequalto 2) then {_pos pushback 0;};
 player setposatl _pos;
 
 cutText ["", "BLACK IN", 10];
-
+[6] call valor_fnc_step_update;
+[0] call valor_fnc_step_update;
 
 valor_intro_cam camSetFov 1;
 valor_intro_cam camSetPos (player modelToWorld [0,0,200]);

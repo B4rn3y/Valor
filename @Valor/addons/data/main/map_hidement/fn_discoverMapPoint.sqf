@@ -1,11 +1,12 @@
 private ["_markerPOS","_markername"];
 
-_markerPOS = param[0,"",[""]];
-if(_markerPOS isEqualTo "") exitWith {};
-
-
-_markername = profileNamespace getvariable[_markerPOS,""];
+_markerPOS = param[0,[],[[],""]];
+_markername = param[1,"",[""]];
+if(_markerPOS isEqualTo []) exitWith {};
 if(_markername isEqualTo "") exitWith {};
+
+
+
 _markername setMarkerAlphaLocal 0;
 if!(isnil "Valor_debug") then {
 	Systemchat format["Neuen Bereich erforscht - Marker: %1",_markername];

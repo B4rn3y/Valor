@@ -1,9 +1,9 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_RaptorMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"w8",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"w8"};
-item2[] = {"spawning_Raptor",2,250,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
+item2[] = {"spawning_Raptor",2,4346,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
 item3[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
 item4[] = {"Zombie_zu_weit_w",4,218,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
 item5[] = {"_",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,""};
@@ -54,7 +54,7 @@ link25[] = {21,9};
 link26[] = {22,23};
 link27[] = {23,9};
 globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-700.808594,531.585327,-161.499939,-1049.384766,1227,884,1};
-window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1245};
+window[] = {2,-1,-1,-1,-1,993,234,1674,234,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -120,7 +120,8 @@ class FSM
                          "" \n
                          "_zombie setCombatMode ""BLUE"";" \n
                          "_zombie setBehaviour ""CARELESS"";" \n
-                         "systemchat ""Spawning Raptor"";"/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Spawning Raptor"";" \n
+                         "[_zombie] spawn valor_fnc_mark_Object;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

@@ -57,8 +57,8 @@ link26[] = {22,23};
 link27[] = {23,11};
 link28[] = {24,25};
 link29[] = {25,11};
-globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-910.727966,321.665955,-150.451599,-1038.336426,1227,884,1};
-window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1245};
+globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-910.727966,321.665955,-150.451599,-1038.336426,901,587,1};
+window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,919};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -155,7 +155,7 @@ class FSM
                          "" \n
                          "_pos = _the_house buildingPos -1;" \n
                          "if(_pos isEqualTo []) then {" \n
-                         "	_pos = [(getposatl _the_house), 0, 50, 1, 0, 20, 0] call BIS_fnc_findSafePos;" \n
+                         "	_pos = [(getposatl _the_house), 0, 10, 1, 0, 20, 0] call BIS_fnc_findSafePos;" \n
                          "	if(count _pos isequalto 2) then {_pos pushback 0;};" \n
                          "" \n
                          "} else {" \n
@@ -175,7 +175,9 @@ class FSM
                          "" \n
                          "" \n
                          "{_zombie disableAI _x} foreach [""FSM"",""AIMINGERROR"",""SUPPRESSION"",""AUTOTARGET"",""TARGET"",""COVER"",""SUPPRESSION"",""AUTOCOMBAT"",""CHECKVISIBLE""];" \n
-                         "systemchat ""Spawning ZED"";"/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Spawning ZED"";" \n
+                         "" \n
+                         "[_zombie] spawn valor_fnc_mark_Object;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
