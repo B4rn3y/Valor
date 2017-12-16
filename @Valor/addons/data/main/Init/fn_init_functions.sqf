@@ -11,6 +11,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 // Starting player monitoring for syncing player information to server/database
 [] spawn valor_fnc_player_monitor;
 
+0 call valor_fnc_init_traders;
+
 // Starting player hunger/thirst system
 [getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Hunger_multiplier"),getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Thirst_multiplier")] spawn valor_fnc_survival;
 

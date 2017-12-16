@@ -32,6 +32,7 @@ class CfgFunctions
 			class preinit {preinit = 1;};
 			class setupLoginData {};
 			class variables {};
+			class init_traders {};
 		};
 
 		class loot_system
