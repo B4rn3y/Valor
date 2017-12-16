@@ -1,0 +1,139 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_animalMonitoring">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,4346,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item1[] = {"__isnull",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"!isnull"};
+item2[] = {"dummy_things",2,250,-208.456604,-746.951660,-118.456596,-696.951660,0.000000,"dummy things"};
+item3[] = {"END",1,250,9.484802,-935.924011,99.484924,-885.924011,0.000000,"END"};
+item4[] = {"isnull",4,218,-93.955505,-933.769409,-3.955505,-883.769409,0.000000,"isnull"};
+item5[] = {"true",4,218,-206.447876,-669.613159,-116.447884,-619.613159,0.000000,"true"};
+item6[] = {"agent_do_move",2,250,-209.461060,-584.239502,-119.461060,-534.239502,0.000000,"agent do move"};
+item7[] = {"w8",4,218,-205.475952,-493.333923,-115.475952,-443.333893,0.000000,"w8"};
+link0[] = {0,1};
+link1[] = {0,4};
+link2[] = {1,2};
+link3[] = {2,5};
+link4[] = {4,3};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {7,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,222,6316128,1,-741.797974,311.929443,-238.610718,-997.775330,1227,884,1};
+window[] = {2,-1,-1,-1,-1,804,231,1671,53,3,1245};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_animalMonitoring";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_agent = param[0,Objnull,[Objnull]];" \n
+                         "_guy_following = param[1,Objnull,[Objnull]];" \n
+                         "_pos_where = param[2,[],[[]]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isnull">*/
+                                class isnull
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnull _agent || isnull _guy_following"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__isnull">*/
+                                class __isnull
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="dummy_things";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnull _agent && !isnull _guy_following"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "dummy_things">*/
+                class dummy_things
+                {
+                        name = "dummy_things";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_agent forcespeed 2;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="agent_do_move";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
+                         "_zombie setdamage 1;" \n
+                         "deletevehicle _zombie;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "agent_do_move">*/
+                class agent_do_move
+                {
+                        name = "agent_do_move";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_pos = _guy_following modeltoworld _pos_where;" \n
+                         "_agent setDestination [getposATL _agent, ""LEADER Direct"", true];" \n
+                         "_agent setDestination [_pos, ""LEADER PLANNED"", true];" \n
+                         "" \n
+                         "" \n
+                         "_time = diag_ticktime;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="agent_do_move";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_agent distance _pos < 3 && (isnull (_agent getvariable[""Speaking_to"",Objnull]))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "END",
+        };
+};
+/*%FSM</COMPILE>*/

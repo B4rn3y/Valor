@@ -81,6 +81,9 @@ class CfgFunctions
 			file = "\data\main\zombie";
 			class mark_Object {ext = ".fsm";};
 
+			class agentMonitoring {ext = ".fsm";};
+			class animalMonitoring {ext = ".fsm";};
+
 			class zombie_config {};
 			class zombie_attack {};
 			class zombie_canattack {};

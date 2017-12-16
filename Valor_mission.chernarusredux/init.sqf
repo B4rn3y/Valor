@@ -7,5 +7,3 @@ waitUntil {!isnil "valor_adminlevel"};
 
 
 Ryanzombiesdamage = 0.05;
-ryanzombiesdisableaggressive = 1;
-ryanzombiesdisablemoaning = 1;

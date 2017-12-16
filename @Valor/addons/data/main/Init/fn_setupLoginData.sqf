@@ -18,7 +18,7 @@ Valor_arrested = false;
 switch(playerside) do {
 
 
-	case independent: {
+	case civilian: {
 		_valor_uid = param[0,-1,[1337,""]];
 		_cash = param[1,-1,[1337,""]];
 		_bankacc = param[2,-1,[1337]];
