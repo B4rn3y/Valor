@@ -94,6 +94,7 @@ class CfgFunctions
 			class zombie_roam {};
 			class zombieMainMonitoring {ext = ".fsm";};
 			class zombieMonitoring {ext = ".fsm";};
+			class can_SPAWN_ZED {};
 			//Raptors
 			class raptor_attack {};
 			class raptor_canattack {};

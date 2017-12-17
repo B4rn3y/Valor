@@ -8,18 +8,18 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=587;
+		nextID=588;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class Camera
 	{
-		pos[]={7337.041,393.33847,9217.1299};
-		dir[]={-0.44407177,-0.46136591,0.76823306};
-		up[]={-0.23097289,0.8870517,0.39959574};
-		aside[]={0.86583847,-8.312054e-007,0.5004946};
+		pos[]={7351.8721,448.74295,9187.9238};
+		dir[]={-0.28781661,-0.76536697,0.57585996};
+		up[]={-0.34219101,0.64344066,0.68467242};
+		aside[]={0.89457375,-1.6682316e-006,0.44711253};
 	};
 };
 binarizationWanted=0;
@@ -45,13 +45,14 @@ addons[]=
 	"cba_xeh",
 	"A3_Props_F_Exp_Commercial_Market",
 	"A3_Structures_F_Civ_Market",
-	"A3_Structures_F_Civ_Constructions"
+	"A3_Structures_F_Civ_Constructions",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=15;
+		items=16;
 		class Item0
 		{
 			className="CUP_Editor_Plants_Config";
@@ -140,6 +141,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item15
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=13256572;
@@ -173,7 +181,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=226;
+		items=227;
 		class Item0
 		{
 			dataType="Object";
@@ -6678,6 +6686,16 @@ class Mission
 			};
 			id=586;
 			type="MetalBarrel_burning_F";
+		};
+		class Item226
+		{
+			dataType="Marker";
+			position[]={7304.9839,379.715,9250.6494};
+			name="Trader_Zone_1";
+			text="Survivor Camp";
+			type="mil_triangle";
+			id=587;
+			atlOffset=-0.00024414063;
 		};
 	};
 };

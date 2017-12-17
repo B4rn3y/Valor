@@ -3,11 +3,11 @@
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"true",4,218,-210.330872,-837.472046,-120.330872,-787.472046,0.000000,"true"};
-item2[] = {"checke_h_user",2,4346,-210.331482,-717.262756,-120.331482,-667.262756,0.000000,"checke häuser"};
+item2[] = {"checke_h_user",2,250,-210.331482,-717.262756,-120.331482,-667.262756,0.000000,"checke häuser"};
 item3[] = {"keine_Zeds",4,218,-204.674500,-580.080994,-114.674500,-530.081055,0.000000,"keine" \n "Zeds"};
 item4[] = {"_",2,250,-365.852417,-578.940430,-275.852417,-528.940430,0.000000,""};
 item5[] = {"warten",4,218,-355.768188,-713.114746,-265.768127,-663.114807,0.000000,"warten"};
-item6[] = {"Zeds_spawnen",4,218,-33.750671,-711.197327,56.249329,-661.197327,1.000000,"Zeds" \n "spawnen"};
+item6[] = {"Zeds_spawnen",4,4314,-33.750671,-711.197327,56.249329,-661.197327,1.000000,"Zeds" \n "spawnen"};
 item7[] = {"spawning_Zeds",2,250,-27.274841,-571.783386,62.725174,-521.783386,0.000000,"spawning" \n "Zeds"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -18,8 +18,8 @@ link5[] = {4,5};
 link6[] = {5,2};
 link7[] = {6,7};
 link8[] = {7,3};
-globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-933.413513,318.755188,-169.223267,-1071.357422,1227,884,1};
-window[] = {2,-1,-1,-32000,-32000,837,78,1518,78,3,1245};
+globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-757.421936,256.834717,-242.527710,-973.255005,1227,884,1};
+window[] = {2,-1,-1,-1,-1,785,26,1466,26,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -115,7 +115,7 @@ class FSM
                                         priority = 1.000000;
                                         to="spawning_Zeds";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_zombienmbr > 0 && (getpos player distance _last_zombie_spawn_pos) >= _distance_zeds_spawn_again"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_zombienmbr > 0 && (getpos player distance _last_zombie_spawn_pos) >= _distance_zeds_spawn_again && (0 call valor_fnc_can_SPAWN_ZED)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
