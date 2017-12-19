@@ -23,6 +23,22 @@ class CfgFunctions
 			class binmake {};
 		};
 
+		class atmosphere
+		{
+			file = "\data\main\atmosphere";
+			class fog {ext = ".fsm";};
+			class gas {ext = ".fsm";};
+			class gas_damage {ext = ".fsm";};
+		};
+
+		class traderzones
+		{
+			file = "\data\main\traderzones";
+			class addEVH_trader {};
+			class handledamage_traderzone {};
+			class punish_killer {};
+		};
+
 		class init
 		{
 			file = "\data\main\Init";

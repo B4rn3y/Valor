@@ -49,6 +49,10 @@ switch (_mode) do
 	{
 		_set pushback ([Valor_map] call valor_fnc_map_hidement_smaller_array);
 	};
+	case 10:
+	{
+		_set pushback (if(alive player) then {1} else {0});
+	};
 
 	default
 	{

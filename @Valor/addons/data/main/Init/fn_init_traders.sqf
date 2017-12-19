@@ -115,3 +115,146 @@ _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1
 
 
 
+
+
+
+_position = [7331.15,9271.5,0.00152588];
+_dir = 256.635;
+_trader = "C_man_w_worker_F" createVehiclelocal [0,0,0];
+_trader setposatl _position;
+waitUntil {_trader distance _position < 1};
+_trader setdir _dir;
+
+
+removeUniform _trader;
+removeVest _trader;
+removeBackpack _trader;
+removeGoggles _trader;
+removeHeadGear _trader;
+RemoveAllWeapons _trader;
+
+
+// AidlPercMstpSrasWrflDnon_G01 AidlPercMstpSrasWrflDnon_G02 AidlPercMstpSrasWrflDnon_G03 AidlPercMstpSrasWrflDnon_G04
+
+// acts_millerIdle Acts_JetsOfficerSpilling Acts_JetsCrewaidRCrouch_loop_m Acts_JetsCrewaidR_idle
+_trader addweapon "rhs_weap_ak74m_2mag_camo";
+{_trader addPrimaryWeaponItem _x} foreach ["rhs_acc_dtk","rhs_acc_ekp8_02","rhs_30Rnd_545x39_AK"];
+_trader addUniform "CUP_U_O_RUS_Gorka_Green";
+_trader addVest "CUP_V_PMC_CIRAS_Black_Empty";
+_trader addBackpack "B_Kitbag_rgr";
+_trader addHeadgear "CUP_H_PMC_Cap_Back_EP_Tan";
+_trader addGoggles "G_MM_bandana_worn_co";
+
+_trader setVariable ["BIS_fnc_animalBehaviour_disable", true];
+_trader setVariable ["BIS_enableRandomization", false];
+{_trader disableAI _x} foreach ["FSM","AIMINGERROR","SUPPRESSION","AUTOTARGET","TARGET","COVER","SUPPRESSION","AUTOCOMBAT","CHECKVISIBLE","ANIM"];
+
+_attachToObject = "Logic" createVehicleLocal [0, 0, 0];
+_attachToObject setPosATL _position;
+_attachToObject setdir _dir;
+_trader reveal _attachToObject;
+_attachToObject disableCollisionWith _trader;
+_trader disableCollisionWith _attachToObject;
+_trader attachto[_attachToObject,[0,0,0]];
+_trader switchMove "AidlPercMstpSrasWrflDnon_G02";
+_trader allowdamage false;
+_trader removeAllEventHandlers "HandleDamage";
+_trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
+
+
+
+
+_position = [7331.78,9266.56,0.00115967];
+_dir = 269.552;
+_trader = "C_man_w_worker_F" createVehiclelocal [0,0,0];
+_trader setposatl _position;
+waitUntil {_trader distance _position < 1};
+_trader setdir _dir;
+
+
+removeUniform _trader;
+removeVest _trader;
+removeBackpack _trader;
+removeGoggles _trader;
+removeHeadGear _trader;
+RemoveAllWeapons _trader;
+
+
+
+_trader addweapon "rhs_weap_ak74m_2mag_camo";
+{_trader addPrimaryWeaponItem _x} foreach ["rhs_acc_dtk","rhs_acc_ekp8_02","rhs_30Rnd_545x39_AK"];
+_trader addUniform "CUP_U_O_RUS_Gorka_Green";
+_trader addVest "CUP_V_PMC_CIRAS_Black_Empty";
+_trader addBackpack "B_Kitbag_rgr";
+_trader addHeadgear "CUP_H_PMC_Cap_Back_EP_Tan";
+_trader addGoggles "G_MM_bandana_worn_co";
+
+_trader setVariable ["BIS_fnc_animalBehaviour_disable", true];
+_trader setVariable ["BIS_enableRandomization", false];
+{_trader disableAI _x} foreach ["FSM","AIMINGERROR","SUPPRESSION","AUTOTARGET","TARGET","COVER","SUPPRESSION","AUTOCOMBAT","CHECKVISIBLE","ANIM"];
+
+_attachToObject = "Logic" createVehicleLocal [0, 0, 0];
+_attachToObject setPosATL _position;
+_attachToObject setdir _dir;
+_trader reveal _attachToObject;
+_attachToObject disableCollisionWith _trader;
+_trader disableCollisionWith _attachToObject;
+_trader attachto[_attachToObject,[0,0,0]];
+_trader switchMove "AidlPercMstpSrasWrflDnon_G01";
+_trader allowdamage false;
+_trader removeAllEventHandlers "HandleDamage";
+_trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
+
+
+
+
+
+
+
+
+
+
+_position = [7351.82,9263.9,6.17133];
+_dir = 140.615;
+_trader = "C_man_w_worker_F" createVehiclelocal [0,0,0];
+_trader setposatl _position;
+waitUntil {_trader distance _position < 1};
+_trader setdir _dir;
+
+
+removeUniform _trader;
+removeVest _trader;
+removeBackpack _trader;
+removeGoggles _trader;
+removeHeadGear _trader;
+RemoveAllWeapons _trader;
+
+
+// AidlPercMstpSrasWrflDnon_G01 AidlPercMstpSrasWrflDnon_G02 AidlPercMstpSrasWrflDnon_G03 AidlPercMstpSrasWrflDnon_G04
+
+// acts_millerIdle Acts_JetsOfficerSpilling Acts_JetsCrewaidRCrouch_loop_m Acts_JetsCrewaidR_idle
+_trader addweapon "rhs_weap_ak74m_2mag_camo";
+{_trader addPrimaryWeaponItem _x} foreach ["rhs_acc_dtk","rhs_acc_ekp8_02","rhs_30Rnd_545x39_AK"];
+_trader addUniform "CUP_U_O_RUS_Gorka_Green";
+_trader addVest "CUP_V_PMC_CIRAS_Black_Empty";
+_trader addBackpack "B_Kitbag_rgr";
+_trader addHeadgear "CUP_H_PMC_Cap_Back_EP_Tan";
+_trader addGoggles "G_MM_bandana_worn_co";
+
+_trader setVariable ["BIS_fnc_animalBehaviour_disable", true];
+_trader setVariable ["BIS_enableRandomization", false];
+{_trader disableAI _x} foreach ["FSM","AIMINGERROR","SUPPRESSION","AUTOTARGET","TARGET","COVER","SUPPRESSION","AUTOCOMBAT","CHECKVISIBLE","ANIM"];
+
+_attachToObject = "Logic" createVehicleLocal [0, 0, 0];
+_attachToObject setPosATL _position;
+_attachToObject setdir _dir;
+_trader reveal _attachToObject;
+_attachToObject disableCollisionWith _trader;
+_trader disableCollisionWith _attachToObject;
+_trader attachto[_attachToObject,[0,0,0]];
+_trader switchMove "acts_millerIdle";
+_trader allowdamage false;
+_trader removeAllEventHandlers "HandleDamage";
+_trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
+
+

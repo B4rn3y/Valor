@@ -19,6 +19,20 @@ class CfgSounds
 		sound[] = {"\sounds\Intro_sound\intro.ogg", 35, 1,500};
 		titles[] = {};
 	};
+
+	class adventurer
+	{
+		name = "adventurer";
+		sound[] = {"\sounds\others\adventurer.ogg", 2, 1,50};
+		titles[] = {};
+	};
+
+	class Punish_melody
+	{
+		name = "Punish_melody";
+		sound[] = {"\sounds\others\Punish_melody.ogg", 2, 1,50};
+		titles[] = {};
+	};
 };
 
 
