@@ -37,6 +37,7 @@ class CfgFunctions
 			class addEVH_trader {};
 			class handledamage_traderzone {};
 			class punish_killer {};
+			class GetInEVH {};
 		};
 
 		class init

@@ -8,5 +8,28 @@ if(isnil "Valor_Damage_EVH") then {
 };
 
 
+if(isnil "Valor_GETIN_EVH") then {
+	Valor_GETIN_EVH = player addEventHandler["GetInMan",{_this spawn valor_fnc_GetInEVH;}];
+} else {
+	player removeEventHandler ["GetInMan", Valor_GETIN_EVH];
+	Valor_GETIN_EVH = nil;
+};
+
+
+
+if(vehicle player isEqualTo player ) exitWith {};
+if!(driver vehicle player isEqualTo player) exitWith {};
+_var = (vehicle player) getvariable "allowed_players";
+if(isnil "_var" && isnil "Valor_GETIN_EVH") then {
+	_arr = [];
+	{
+		_arr pushBackUnique (getplayeruid _x);
+	} foreach (crew vehicle player);
+
+	(vehicle player) setvariable["allowed_players",_arr,true];
+
+} else {
+	(vehicle player) setvariable["allowed_players",nil,true];
+};
 
 

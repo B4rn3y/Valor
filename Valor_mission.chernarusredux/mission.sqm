@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=623;
+		nextID=625;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7306.6689,467.69363,9255.1035};
-		dir[]={0.58238381,-0.78995126,-0.19235316};
-		up[]={0.75013638,0.61307979,-0.24775894};
-		aside[]={-0.31364807,-8.8219531e-007,-0.94962871};
+		pos[]={7348.5332,402.77551,9263.8867};
+		dir[]={0.25234163,-0.96772397,-0.0059633139};
+		up[]={0.96739411,0.2521483,-0.022860872};
+		aside[]={-0.023627127,-1.065926e-006,-0.99980915};
 	};
 };
 binarizationWanted=0;
@@ -6778,9 +6778,9 @@ class Mission
 			position[]={7289.5459,378.3559,9263.3428};
 			class Attributes
 			{
-				condition="call{player in thislist}";
-				onActivation="call{Valor_fog = true; 0 spawn valor_fnc_fog; 0 call valor_fnc_addEVH_trader;}";
-				onDeactivation="call{Valor_fog = nil;0 call valor_fnc_addEVH_trader;}";
+				condition="call{player in thislist || vehicle player in thislist}";
+				onActivation="call{if!(isnil ""Valor_fog"") exitWith {};Valor_fog = true; 0 spawn valor_fnc_fog; 0 call valor_fnc_addEVH_trader;}";
+				onDeactivation="call{0 spawn {sleep 2; if(player distance [7289.55,9263.39,0.00115967] >110) then {Valor_fog = nil;0 call valor_fnc_addEVH_trader;};};}";
 				sizeA=110;
 				sizeB=110;
 				repeatable=1;
@@ -6813,7 +6813,7 @@ class Mission
 			position[]={7352.2881,388.866,9264.376};
 			class Attributes
 			{
-				condition="call{player in thislist && ((random 100)<3)}";
+				condition="call{player in thislist && ((random 100)<0.5)}";
 				onActivation="call{_man = nearestObjects[player,[""Man""],10]; _man = _man select {isplayer _x}; [""adventurer""] remoteExecCall [""playSound"",_man];}";
 				sizeA=2;
 				sizeB=2;
