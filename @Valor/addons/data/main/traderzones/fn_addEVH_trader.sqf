@@ -20,7 +20,7 @@ if(isnil "Valor_GETIN_EVH") then {
 if(vehicle player isEqualTo player ) exitWith {};
 if!(driver vehicle player isEqualTo player) exitWith {};
 _var = (vehicle player) getvariable "allowed_players";
-if(isnil "_var" && isnil "Valor_GETIN_EVH") then {
+if(!isnil "Valor_GETIN_EVH") then {
 	_arr = [];
 	{
 		_arr pushBackUnique (getplayeruid _x);
