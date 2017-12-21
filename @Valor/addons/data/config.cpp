@@ -38,6 +38,8 @@ class CfgFunctions
 			class handledamage_traderzone {};
 			class punish_killer {};
 			class GetInEVH {};
+			class takeEVH_trader {};
+			class inventory_opened_trader {};
 		};
 
 		class init
@@ -85,6 +87,7 @@ class CfgFunctions
 			class syncPlayerToDB {ext = ".fsm";};
 			class VAR_to_gear {};
 			class survival {ext = ".fsm";};
+			class GetOutMan {};
 		};
 
 		class others

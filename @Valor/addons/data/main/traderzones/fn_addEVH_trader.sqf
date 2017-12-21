@@ -16,6 +16,14 @@ if(isnil "Valor_GETIN_EVH") then {
 };
 
 
+if(isnil "Valor_OpenInventory_EVH") then {
+	Valor_OpenInventory_EVH = player addEventHandler["InventoryOpened",{_this spawn valor_fnc_inventory_opened_trader;}];
+} else {
+	player removeEventHandler ["take", Valor_OpenInventory_EVH];
+	Valor_OpenInventory_EVH = nil;
+};
+
+
 
 if(vehicle player isEqualTo player ) exitWith {};
 if!(driver vehicle player isEqualTo player) exitWith {};
