@@ -37,7 +37,7 @@ class CfgMarkerClasses
 
 class CfgMarkers
 {
-	class plp_mark_as_airport
+	class CloudHider
 	{
 		name="CloudHider";
 		icon="\map\icons\clouds.paa";
