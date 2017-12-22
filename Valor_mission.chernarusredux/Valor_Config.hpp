@@ -75,7 +75,7 @@ class Valor_settings {
 		map_hidement_bottom_left[] = {500,-140};   // start pos in map position in the bottim left
 		map_hidement_top_right[] = {15500,14860};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
 
-		map_hidement_MARKER_TYPE = "RECTANGLE";  // Marker type for hidement markers
+		map_hidement_MARKER_TYPE = "CloudHider";  // Marker type for hidement markers
 		map_hidement_MARKER_COLOR = "ColorBlack";   // marker color for hidement markers
 		map_hidement_MARKER_BRUSH = "SolidFull";   // marker brush for hidement markers
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
