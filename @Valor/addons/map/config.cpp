@@ -27,3 +27,25 @@ class CfgWorlds
 	};
 };
 
+class CfgMarkerClasses
+{
+	class valor_markers_hide
+	{
+		displayName="Valor Markers (HIDER)";
+	};
+};
+
+class CfgMarkers
+{
+	class plp_mark_as_airport
+	{
+		name="CloudHider";
+		icon="\map\icons\clouds.paa";
+		color[]={1,1,1,1};
+		size=32;
+		scope=2;
+		scopeCurator=2;
+		shadow=1;
+		markerClass="valor_markers_hide";
+	};
+};
