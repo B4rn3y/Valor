@@ -52,7 +52,6 @@ removeAllMissionEventHandlers "Ended";
 
 onEachFrame {};
 
-valor_OnEachFrameScripts = [];
 addMissionEventHandler ["EachFrame",valor_fnc_onEachFrameHandler];
 
 addMissionEventHandler ["Ended",{}];
