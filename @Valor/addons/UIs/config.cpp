@@ -29,6 +29,12 @@ class CfgFunctions
 			file = "\UIs\UI_functions\LoadingScreen";
 			class closeLoadingScreen {};
 			class openLoadingScreen {};
+		};
+
+		class quest
+		{
+			file = "\UIs\UI_functions\quest";
+			class openQuestMenu {};
 
 
 		};
