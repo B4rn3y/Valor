@@ -4,7 +4,7 @@ Valor_Gear = [];
 Valor_arrested = false;
 Ryanzombieslimit = 30;
 ryanzombiescivilianattacks = true;
-
+valor_OnEachFrameScripts = [];
 Valor_hunger = 100;
 Valor_thirst = 100;
 Valor_blood = 12000;
