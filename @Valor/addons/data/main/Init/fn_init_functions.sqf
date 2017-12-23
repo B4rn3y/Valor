@@ -52,12 +52,17 @@ removeAllMissionEventHandlers "Ended";
 
 onEachFrame {};
 
-addMissionEventHandler ["Ended",{  }];
+addMissionEventHandler ["EachFrame",valor_fnc_onEachFrameHandler];
+
+addMissionEventHandler ["Ended",{}];
 
 (findDisplay 46) displayRemoveAllEventHandlers "KeyDown";
 (findDisplay 46) displayRemoveAllEventHandlers "KeyUp";
 (findDisplay 46) displayRemoveAllEventHandlers "MouseButtonDown";
 (findDisplay 46) displayRemoveAllEventHandlers "MouseButtonUp";
+
+(findDisplay 46) displayAddEventHandler ["onKeyDown",valor_fnc_keyhandler];
+(findDisplay 46) displayAddEventHandler ["onKeyUp",valor_fnc_keyUp];
 
 0 spawn {
 	Valor_functions_started = true;

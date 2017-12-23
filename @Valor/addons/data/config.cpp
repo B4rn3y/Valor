@@ -88,6 +88,10 @@ class CfgFunctions
 			class VAR_to_gear {};
 			class survival {ext = ".fsm";};
 			class GetOutMan {};
+			class keyhandler {};
+			class keyUp {};
+			class onEachFrameHandler {};
+			class stackOnEachFrame {};
 		};
 
 		class others
@@ -95,6 +99,7 @@ class CfgFunctions
 			file = "\data\main\others";
 			class admin_inform {};
 			class intro {};
+			class 3dCompass {};
 		};
 
 		class zombie
