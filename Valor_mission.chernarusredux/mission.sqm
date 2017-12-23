@@ -6761,7 +6761,7 @@ class Mission
 			class Attributes
 			{
 				condition="call{player in thislist}";
-				onActivation="call{Valor_gas = true; 0 spawn valor_fnc_gas;}";
+				onActivation="call{Valor_gas = true; 0 spawn valor_fnc_gas;0 spawn valor_fnc_gas_damage;}";
 				onDeactivation="call{Valor_gas = nil; }";
 				sizeA=110;
 				sizeB=110;
