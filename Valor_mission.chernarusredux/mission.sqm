@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=625;
+		nextID=626;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7348.5332,402.77551,9263.8867};
-		dir[]={0.25234163,-0.96772397,-0.0059633139};
-		up[]={0.96739411,0.2521483,-0.022860872};
-		aside[]={-0.023627127,-1.065926e-006,-0.99980915};
+		pos[]={6957.2935,685.7077,9310.5459};
+		dir[]={-0.73306376,-0.43776706,0.52075791};
+		up[]={-0.35701624,0.89898205,0.25361845};
+		aside[]={0.57918382,-4.1497697e-007,0.81531};
 	};
 };
 binarizationWanted=0;
@@ -33,6 +33,7 @@ addons[]=
 	"CUP_Misc_e_Config",
 	"A3_Characters_F",
 	"CUP_Misc3_Config",
+	"chernarusredux_buildings_a2",
 	"A3_Structures_F_EPA_Civ_Camping",
 	"A3_Structures_F_Civ_Accessories",
 	"chernarusredux_trees",
@@ -53,7 +54,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			className="CUP_Editor_Plants_Config";
@@ -100,56 +101,61 @@ class AddonsMetaData
 		};
 		class Item8
 		{
+			className="chernarusredux_buildings_a2";
+			name="chernarusredux_buildings_a2";
+		};
+		class Item9
+		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="chernarusredux_trees";
 			name="chernarusredux_trees";
 			author="CHR Team";
 		};
-		class Item10
+		class Item11
 		{
 			className="A3_Structures_F_Wrecks";
 			name="Arma 3 - Vehicle Wrecks";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item12
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="CUP_CAStructuresLand_Nav_Boathouse";
 			name="CUP_CAStructuresLand_Nav_Boathouse";
 		};
-		class Item13
+		class Item14
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Structures_F_Exp_Civilian";
 			name="Arma 3 Apex - Civilian Buildings";
@@ -189,7 +195,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=234;
+		items=235;
 		class Item0
 		{
 			dataType="Object";
@@ -5222,7 +5228,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7278.3359,377.81027,9265.9121};
+				position[]={7278.3359,377.8103,9265.9121};
 				angles[]={6.2565165,0,0.069219761};
 			};
 			side="Empty";
@@ -5233,7 +5239,7 @@ class Mission
 			};
 			id=373;
 			type="Land_WoodenLog_F";
-			atlOffset=0.024017334;
+			atlOffset=0.024047852;
 		};
 		class Item140
 		{
@@ -5375,6 +5381,7 @@ class Mission
 			};
 			id=415;
 			type="Land_t_betula2w";
+			atlOffset=0.0024414063;
 		};
 		class Item148
 		{
@@ -5470,7 +5477,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7264.5938,385.28806,9293.0215};
+				position[]={7264.5938,385.28809,9293.0215};
 				angles[]={6.2538638,0,0.055937801};
 			};
 			side="Empty";
@@ -5481,7 +5488,7 @@ class Mission
 			};
 			id=426;
 			type="Land_t_picea2s";
-			atlOffset=0.020996094;
+			atlOffset=0.021026611;
 		};
 		class Item154
 		{
@@ -5595,7 +5602,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7259.8711,383.77713,9249.2725};
+				position[]={7259.8711,383.7771,9249.2725};
 				angles[]={6.2618575,0,0.063913956};
 			};
 			side="Empty";
@@ -5606,7 +5613,7 @@ class Mission
 			};
 			id=433;
 			type="Land_t_picea2s";
-			atlOffset=0.020996094;
+			atlOffset=0.020965576;
 		};
 		class Item161
 		{
@@ -5631,7 +5638,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7262.5771,384.39706,9267.6855};
+				position[]={7262.5771,384.39703,9267.6855};
 				angles[]={6.2538462,0,0.061261058};
 			};
 			side="Empty";
@@ -5642,6 +5649,7 @@ class Mission
 			};
 			id=435;
 			type="Land_t_picea2s";
+			atlOffset=-3.0517578e-005;
 		};
 		class Item163
 		{
@@ -5699,7 +5707,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7244.0537,383.96036,9290.1982};
+				position[]={7244.0537,383.96039,9290.1982};
 				angles[]={6.2485232,0,0.061261058};
 			};
 			side="Empty";
@@ -5710,7 +5718,6 @@ class Mission
 			};
 			id=439;
 			type="Land_t_picea2s";
-			atlOffset=-3.0517578e-005;
 		};
 		class Item167
 		{
@@ -5930,7 +5937,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7308.7231,388.40402,9281.3574};
+				position[]={7308.7231,388.40399,9281.3574};
 				angles[]={0.0026529003,0,0.085119702};
 			};
 			side="Empty";
@@ -5941,6 +5948,7 @@ class Mission
 			};
 			id=468;
 			type="Land_t_picea2s";
+			atlOffset=-3.0517578e-005;
 		};
 		class Item180
 		{
@@ -6071,7 +6079,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7293.8955,385.65836,9227.6299};
+				position[]={7293.8955,385.65839,9227.6299};
 				angles[]={6.2565165,0,0.079831354};
 			};
 			side="Empty";
@@ -6082,6 +6090,7 @@ class Mission
 			};
 			id=476;
 			type="Land_t_picea2s";
+			atlOffset=3.0517578e-005;
 		};
 		class Item188
 		{
@@ -6349,7 +6358,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7324.4136,381.94223,9237.5059};
+				position[]={7324.4136,381.9422,9237.5059};
 				angles[]={6.232553,2.0706935,0.085137159};
 			};
 			side="Empty";
@@ -6360,6 +6369,7 @@ class Mission
 			};
 			id=544;
 			type="Land_ToolTrolley_02_F";
+			atlOffset=-3.0517578e-005;
 		};
 		class Item204
 		{
@@ -6413,6 +6423,7 @@ class Mission
 			};
 			id=551;
 			type="Land_t_betula2w";
+			atlOffset=0.0090942383;
 		};
 		class Item207
 		{
@@ -6430,7 +6441,7 @@ class Mission
 			};
 			id=552;
 			type="Land_t_betula2w";
-			atlOffset=-0.0029907227;
+			atlOffset=0.0047302246;
 		};
 		class Item208
 		{
@@ -6448,7 +6459,7 @@ class Mission
 			};
 			id=553;
 			type="Land_t_betula2w";
-			atlOffset=-0.0010070801;
+			atlOffset=0.0030517578;
 		};
 		class Item209
 		{
@@ -6466,6 +6477,7 @@ class Mission
 			};
 			id=554;
 			type="Land_t_betula2w";
+			atlOffset=0.002746582;
 		};
 		class Item210
 		{
@@ -6489,7 +6501,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7342.5952,384.36856,9254.627};
+				position[]={7342.5952,384.36859,9254.627};
 				angles[]={0.21017255,5.0782099,0.021327924};
 			};
 			side="Empty";
@@ -6500,7 +6512,7 @@ class Mission
 			};
 			id=556;
 			type="Land_t_betula2w";
-			atlOffset=-0.082000732;
+			atlOffset=-0.039794922;
 		};
 		class Item212
 		{
@@ -6534,7 +6546,7 @@ class Mission
 			};
 			id=558;
 			type="MetalBarrel_burning_F";
-			atlOffset=1.7460022;
+			atlOffset=1.4228821;
 		};
 		class Item214
 		{
@@ -6551,7 +6563,7 @@ class Mission
 			};
 			id=559;
 			type="MetalBarrel_burning_F";
-			atlOffset=6.2250061;
+			atlOffset=5.9253845;
 		};
 		class Item215
 		{
@@ -6586,7 +6598,7 @@ class Mission
 			};
 			id=561;
 			type="MetalBarrel_burning_F";
-			atlOffset=6.2990112;
+			atlOffset=5.9993896;
 		};
 		class Item217
 		{
@@ -6639,7 +6651,7 @@ class Mission
 			};
 			id=564;
 			type="Land_WoodenCrate_01_stack_x5_F";
-			atlOffset=6.3280029;
+			atlOffset=5.9810791;
 		};
 		class Item220
 		{
@@ -6656,7 +6668,7 @@ class Mission
 			};
 			id=565;
 			type="Land_WoodenCrate_01_stack_x3_F";
-			atlOffset=6.3049927;
+			atlOffset=5.9991455;
 		};
 		class Item221
 		{
@@ -6673,7 +6685,7 @@ class Mission
 			};
 			id=566;
 			type="Land_WoodenCrate_01_F";
-			atlOffset=6.3210144;
+			atlOffset=5.9764099;
 		};
 		class Item222
 		{
@@ -6690,7 +6702,7 @@ class Mission
 			};
 			id=567;
 			type="Land_CratesShabby_F";
-			atlOffset=6.3120117;
+			atlOffset=6.0123901;
 		};
 		class Item223
 		{
@@ -6707,7 +6719,7 @@ class Mission
 			};
 			id=568;
 			type="Land_CratesWooden_F";
-			atlOffset=6.3160095;
+			atlOffset=6.0163879;
 		};
 		class Item224
 		{
@@ -6760,7 +6772,7 @@ class Mission
 			position[]={9629.2266,86.993126,13535.147};
 			class Attributes
 			{
-				condition="call{player in thislist}";
+				condition="call{(vehicle player) in thislist || player in thislist}";
 				onActivation="call{Valor_gas = true; 0 spawn valor_fnc_gas;0 spawn valor_fnc_gas_damage;}";
 				onDeactivation="call{Valor_gas = nil; }";
 				sizeA=110;
@@ -6792,20 +6804,19 @@ class Mission
 		class Item229
 		{
 			dataType="Trigger";
-			position[]={10230.646,6.210001,2415.5129};
+			position[]={10281.654,18.513611,2343.4619};
 			class Attributes
 			{
-				condition="call{player in thislist}";
+				condition="call{(vehicle player) in thislist || player in thislist}";
 				onActivation="call{Valor_fog = true; 0 spawn valor_fnc_fog;}";
 				onDeactivation="call{Valor_fog = nil;}";
-				sizeA=700;
-				sizeB=700;
+				sizeA=1000;
+				sizeB=1000;
 				repeatable=1;
 				activationBy="ANYPLAYER";
 			};
 			id=595;
 			type="EmptyDetector";
-			atlOffset=5.75;
 		};
 		class Item230
 		{
@@ -6838,7 +6849,7 @@ class Mission
 			};
 			id=614;
 			type="Land_Plank_01_4m_F";
-			atlOffset=21.990356;
+			atlOffset=21.690735;
 		};
 		class Item232
 		{
@@ -6855,7 +6866,7 @@ class Mission
 			};
 			id=615;
 			type="Land_Plank_01_4m_F";
-			atlOffset=22.046661;
+			atlOffset=21.74704;
 		};
 		class Item233
 		{
@@ -6873,6 +6884,23 @@ class Mission
 			id=622;
 			type="MetalBarrel_burning_F";
 			atlOffset=3.4846191;
+		};
+		class Item234
+		{
+			dataType="Trigger";
+			position[]={2885.0969,276.86783,4482.3359};
+			class Attributes
+			{
+				condition="call{(vehicle player) in thislist || player in thislist}";
+				onActivation="call{{[(selectrandom [""babe_raptorb_east_3_F"",""babe_raptorb_east_5_F"",""babe_raptorb_east_6_F"",""babe_raptorb_east_4_F"",""babe_raptorb_east_2_F"",""babe_raptor_east_6_F"",""babe_raptorb_east_F"",""babe_raptor_east_2_F"",""babe_raptor_east_3_F"",""babe_raptor_east_4_F"",""babe_raptor_east_5_F"",""babe_raptor_east_F""])] spawn valor_fnc_raptorMonitoring;} foreach [1,2];}";
+				sizeA=300;
+				sizeB=300;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+			};
+			id=625;
+			type="EmptyDetector";
+			atlOffset=-0.0050048828;
 		};
 	};
 };
