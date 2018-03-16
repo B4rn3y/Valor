@@ -31,6 +31,7 @@ switch(playerside) do {
 		_position = param[9,[],[[],""]];
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
+		_quests = param[12,[],[[],""]];
 
 
 
@@ -49,6 +50,7 @@ switch(playerside) do {
 		Valor_position = [_position] call valor_fnc_mToArray;
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
+		Valor_completed_quests = _quests;
 
 
 

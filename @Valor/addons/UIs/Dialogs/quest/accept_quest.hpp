@@ -32,7 +32,7 @@ class accept_quest {
 			w = 0.425758;
 			h = 0.322222;
 		};
-		class check: valor_RscPicture
+		/*class check: valor_RscPicture
 		{
 			idc = 1203;
 			text = "\UIs\textures\quest\check0.paa";
@@ -40,7 +40,7 @@ class accept_quest {
 			y = 0.892256;
 			w = 0.0772727;
 			h = 0.0882157;
-		};
+		};*/
 
 		class accept_btn: valor_RscPicture
 		{

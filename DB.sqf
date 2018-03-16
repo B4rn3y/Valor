@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `bankacc` int(100) NOT NULL DEFAULT '5000',
   `humanity` int(100) NOT NULL DEFAULT '3500',
   `gear` text NOT NULL,
+  `quests` text,
   `stats` varchar(32) NOT NULL DEFAULT '"[100,100,0,12000,[]]"',
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',

@@ -31,7 +31,7 @@ switch (_mode) do
 	};
 	case 5:
 	{
-		_set pushback Valor_alive;
+		_set pushback (if(alive player) then {1} else {0});
 	};
 	case 6:
 	{
@@ -51,7 +51,7 @@ switch (_mode) do
 	};
 	case 10:
 	{
-		_set pushback (if(alive player) then {1} else {0});
+		_set pushback Valor_completed_quests;
 	};
 
 	default

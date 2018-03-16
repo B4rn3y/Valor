@@ -7,6 +7,8 @@ class CfgPatches {
 	};
 };
 
+#include "\data\main\config\Quest_config.hpp" // include the Quest Config
+
 class CfgFunctions
 {
 	class MAIN
