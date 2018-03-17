@@ -56,6 +56,15 @@ class CfgWeapons
         };
     };
 
+    class valor_Land_Hammer_F: valor_item_base
+    {
+        displayName = "Raptor Egg";
+        model = "valor_items\models\egg.p3d";
+        class ItemInfo
+        {
+            mass=3;
+        };
+    };
     //automaticly generated
 
     class valor_Land_Hammer_F: valor_item_base
