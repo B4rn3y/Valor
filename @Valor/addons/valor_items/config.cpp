@@ -56,7 +56,7 @@ class CfgWeapons
         };
     };
 
-    class valor_Land_Hammer_F: valor_item_base
+    class valor_Raptor_Egg: valor_item_base
     {
         displayName = "Raptor Egg";
         model = "valor_items\models\egg.p3d";
