@@ -96,9 +96,15 @@ _aufgabe_an_sich ctrlSetStructuredText parsetext format["<t color='#000000'>%1</
 _pic_1 ctrlsettext (_current_quest select 7);
 _pic_2 ctrlsettext (_current_quest select 8);
 
+if(_quest_not_done isEqualTo -1) then {
+	_accept_BTN2 buttonSetAction format["[%1,%2] call valor_fnc_acceptQuest",(_current_quest select 0),(_current_quest select 1)];
+} else {
+	_accept_BTN2 buttonSetAction "systemchat ""You already accepted this quest!""";
+};
 
-_accept_BTN2 buttonSetAction format["[%1,%2] call valor_fnc_acceptQuest",(_current_quest select 0),(_current_quest select 1)];
-
+_hint_BTN2 ctrlenable false;
+_hint_BTN2 ctrlshow false;
+_hint_BTN ctrlshow false;
 
 
 

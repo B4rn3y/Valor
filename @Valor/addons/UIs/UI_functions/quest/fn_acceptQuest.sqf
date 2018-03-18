@@ -13,6 +13,9 @@ if(_quest_id isEqualTo -1) exitWith {systemchat "Valor ERROR :: Quest ID nil"};
 Valor_completed_quests pushback [_Quest_path,_quest_id,false];
 [10] call valor_fnc_step_update;
 
+systemchat "You accepted the Quest";
+closeDialog 0;
+
 
 
 
