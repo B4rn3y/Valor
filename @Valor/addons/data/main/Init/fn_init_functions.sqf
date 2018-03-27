@@ -33,6 +33,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 0 spawn valor_fnc_mapContentManagement; // fsm
 
+0 spawn valor_fnc_initVehicles; // setup the Vehicle Repair actions
+
 
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 
