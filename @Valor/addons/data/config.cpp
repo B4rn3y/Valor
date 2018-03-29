@@ -9,8 +9,35 @@ class CfgPatches {
 
 #include "\data\main\config\Quest_config.hpp" // include the Quest Config
 
+#include "\data\main\config\Vehicle_repair_config.hpp" // include the Vehicle Repair Config -- What item for what u know?
+
 class CfgFunctions
 {
+	class KRON_Strings
+	{
+		tag = "KRON";
+		class Functions
+		{
+			file = "\data\main\functions\kron";
+			class StrToArray{};
+			class ArrayToStr{};
+			class StrLeft{};
+			class StrLen{};
+			class StrRight{};
+			class StrMid{};
+			class StrIndex{};
+			class StrInStr{};
+			class Replace{};
+			class StrUpper{};
+			class StrLower{};
+			class ArrayToUpper{};
+			class Compare{};
+			class findFlag{};
+			class getArg{};
+			class getArgRev{};
+		};
+	};
+
 	class MAIN
 	{
 		tag = "valor";
@@ -23,6 +50,7 @@ class CfgFunctions
 			class mToArray {};
 			class numbersafe {};
 			class binmake {};
+			class itemInInventory {};
 		};
 
 		class atmosphere
@@ -54,6 +82,7 @@ class CfgFunctions
 			class setupLoginData {};
 			class variables {};
 			class init_traders {};
+			class initVehicles {};
 		};
 
 		class loot_system
@@ -102,6 +131,15 @@ class CfgFunctions
 			class admin_inform {};
 			class intro {};
 			class 3dCompass {};
+		};
+
+
+		class vehicles
+		{
+			file = "\data\main\vehicles";
+			class hideVehicleStatus {};
+			class repairVehicle {};
+			class showVehicleDamage {};
 		};
 
 		class zombie

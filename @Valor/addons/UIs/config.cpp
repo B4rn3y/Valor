@@ -35,6 +35,7 @@ class CfgFunctions
 		{
 			file = "\UIs\UI_functions\quest";
 			class openQuestMenu {};
+			class acceptQuest {};
 
 
 		};
