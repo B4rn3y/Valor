@@ -32,4 +32,4 @@ cs = {
 	];
 };
 
-[getposasl player vectoradd [0,0,-0.6],vectordir player]call cs;
+[getposasl player vectoradd [0,0,0.5],vectordir player]call cs;
