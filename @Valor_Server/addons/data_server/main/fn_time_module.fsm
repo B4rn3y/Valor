@@ -9,8 +9,8 @@ item4[] = {"faster_time_for",2,250,-382.534851,-663.943237,-292.534851,-613.9432
 item5[] = {"end_flood_period",4,218,-382.492065,-566.769287,-292.492065,-516.769287,0.000000,"end flood" \n "period"};
 item6[] = {"slower_till_suns",2,250,-262.503906,-563.644531,-172.503830,-513.644592,0.000000,"slower till" \n "sunset"};
 item7[] = {"sunset_",4,218,-144.733185,-565.318726,-54.733185,-515.318726,0.000000,"sunset?"};
-item8[] = {"night_ca_2h",2,4346,-143.509171,-711.252014,-53.509186,-661.252014,0.000000,"night ca 2h"};
-item9[] = {"sunrise_",4,218,-146.650208,-848.851440,-56.650208,-798.851440,0.000000,"sunrise?"};
+item8[] = {"night_ca_2h",2,250,-143.509171,-711.252014,-53.509186,-661.252014,0.000000,"night ca 2h"};
+item9[] = {"sunrise_",4,4314,-146.650208,-848.851440,-56.650208,-798.851440,0.000000,"sunrise?"};
 link0[] = {0,3};
 link1[] = {1,4};
 link2[] = {2,1};
@@ -21,8 +21,8 @@ link6[] = {6,7};
 link7[] = {7,8};
 link8[] = {8,9};
 link9[] = {9,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,215,6316128,1,-666.810852,261.417175,-465.468445,-1256.280029,689,587,1};
-window[] = {0,-1,-1,-1,-1,1014,143,1583,255,1,707};
+globals[] = {0.000000,0,0,0,0,640,480,1,215,6316128,1,-522.228516,86.781799,-449.415283,-968.267334,689,587,1};
+window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,707};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -34,7 +34,7 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"setdate[2018,6,1,4,20];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"setdate[2018,6,1,6,30];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -137,7 +137,7 @@ class FSM
                                         priority = 0.000000;
                                         to="set_time_mult_for";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(date select 3) isequalto 4 && (date select 4) >= 20"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(date select 3) isequalto 6 && (date select 4) >= 30"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

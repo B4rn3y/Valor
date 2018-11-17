@@ -17,6 +17,7 @@ _vehicle = objNull;
 	//{diag_log format["%1/%2",typename _x,_x];} foreach _x;
 	_pos = (call compile (_x select 1)) select 0;
 	_dir =  (call compile (_x select 1)) select 1;
+	_vector = (call compile (_x select 1)) select 2;
 	_classname = _x select 2;
 	_type = _x select 3;
 	_alive = _x select 4;
@@ -42,18 +43,20 @@ _vehicle = objNull;
 	_vehicle allowDamage false;
 	if(_alive isequalto 0) then {
 		_vehicle setfuel 0;
-		_vehicle setdir _the_spawn_Dir;
-		_vehicle setposatl _the_spawnPos;
+		_vehicle setdir (_spawnpos select 1);
+		_vehicle setposatl (_spawnpos select 0);
+		_vehicle setVectorUp (_spawnpos select 2);
 		[_vehicle] call valor_fnc_clear_vehicle;
-		[_vehicle,_spawndamage_give] spawn valor_fnc_setvehicleDamage;
+		[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 		[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
 	} else {
-		_vehicle setfuel _fuelToGive;
-		_vehicle setdir _dirtoSet;
-		_vehicle setposatl _postoSet;
+		_vehicle setfuel _fuel;
+		_vehicle setdir _dir;
+		_vehicle setposatl _pos;
+		_vehicle setVectorUp _vector;
 
-		[_vehicle,_inventoryGIVE] call valor_fnc_loadVehicleCargo;
-		[_vehicle,_damageGive] spawn valor_fnc_setvehicleDamage;
+		[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;
+		[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
 	};
 	_vehicle setvariable ["DBID",_id,true];
 	Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];

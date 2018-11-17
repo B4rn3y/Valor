@@ -53,14 +53,15 @@ if (_extDBNotLoaded isEqualType []) exitWith {
         } forEach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
     };
 } forEach allUnits;
+
+diag_log "Valor :: setting Variables";
+[] call valor_fnc_vars;
+diag_log "Valor :: Variables set";
 diag_log "Valor :: Starting Time Module";
 [] spawn valor_fnc_time_module;
 diag_log "Valor :: Init Vehicles";
 [] spawn valor_fnc_init_vehicles;
 diag_log "Valor :: Vehicles loaded";
-diag_log "Valor :: setting Variables";
-[] call valor_fnc_vars;
-diag_log "Valor :: Variables set";
 [] call valor_fnc_init_map;
 ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
 /* Event handler for disconnecting players */

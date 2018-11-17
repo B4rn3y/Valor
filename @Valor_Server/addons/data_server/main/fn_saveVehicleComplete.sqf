@@ -7,7 +7,7 @@ _DB_ID = _vehicle getvariable["DBID",-1];
 if (_DB_ID isequalto -1) exitWith {diag_log "Valor :: Var DB ID of one Vehicle is nil"};
 
 
-_query = format["Update persistent_vehicles set pos = '%1', inventory = '%2', fuel = '%3', damage = '%4' where id = '%5'",([getposatl _vehicle,getdir _vehicle]),([_vehicle] call valor_fnc_getVehicleCargo),fuel _vehicle,([_vehicle] call valor_fnc_getVehicleDamage),_DB_ID];
+_query = format["Update persistent_vehicles set pos = '%1', inventory = '%2', fuel = '%3', damage = '%4' where id = '%5'",([getposatl _vehicle,getdir _vehicle,vectorUp _vehicle]),([_vehicle] call valor_fnc_getVehicleCargo),fuel _vehicle,([_vehicle] call valor_fnc_getVehicleDamage),_DB_ID];
 
 [_query,1] call valor_fnc_db_sync;
 

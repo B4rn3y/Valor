@@ -14,5 +14,5 @@ if(_damage isEqualTo []) exitWith {};
 
 _parts = getAllHitPointsDamage _vehicle;
 for "_i" from 0 to ((count _damage) - 1) do {
-    _vehicle setHitPointDamage [format ["%1",((_parts select 0) select _i)],_damage select _i];
+    _vehicle setHitPointDamage [format ["%1",((_parts select 0) select _i)],(_damage select _i)];
 };
