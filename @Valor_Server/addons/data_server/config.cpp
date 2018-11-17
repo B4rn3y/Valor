@@ -46,6 +46,7 @@ class CfgFunctions
 			class loadVehicleCargo {};
 			class setVehicleDamage {};
 			class persistent_vehicle_monitoring {ext = ".fsm";};
+			class zombie_destroyer {ext = ".fsm";};
 			class saveVehicleComplete {};
 			class vehicleDelete {};
 			// persistent Vehicles end
