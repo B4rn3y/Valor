@@ -1,8 +1,8 @@
 
 
-private ["_query","_res","_vehicle","_pos","_dir","_classname","_type","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_varTo_waitFor"];
+private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_type","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop"];
 
-_query = "Select id, pos, classname, type, alive, spawnpos, spawndamage, inventory, fuel, damage from persistent_vehicles";
+_query = "Select id, pos, classname, type, alive, spawnpos, spawndamage, inventory, fuel, damage, shop from persistent_vehicles";
 
 _res = [_query,2,true] call valor_fnc_db_sync;
 
@@ -26,59 +26,61 @@ _vehicle = objNull;
 	_inventory = _x select 7;
 	_fuel = _x select 8;
 	_damage = _x select 9;
+	_shop = _x select 10;
 	_classname = call compile _classname;
+	if(_shop isEqualTo 0) then {
 
 
-	//[_classname,_pos,_dir,_fuel,_damage,_inventory,_alive,_id,(_spawnpos select 0),(_spawnpos select 1),_spawndamage] spawn valor_fnc_persistent_vehicle_monitoring;
+		//[_classname,_pos,_dir,_fuel,_damage,_inventory,_alive,_id,(_spawnpos select 0),(_spawnpos select 1),_spawndamage] spawn valor_fnc_persistent_vehicle_monitoring;
 
-	/*
-	if(_alive isEqualTo 0) then {
-		waitUntil {!((nearestobjects[(_spawnpos select 0),[_classname],100]) isEqualTo [])};
-		_query = format["UPDATE persistent_vehicles SET alive='1', fuel = '0' WHERE id = '%1'",_id];
-	} else {
-		waitUntil {!((nearestobjects[_pos,[_classname],100]) isEqualTo [])};
-	};*/
-	_vehicle = createVehicle[_classname,[0,0,0],[],0,"CAN_COLLIDE"];
-	waitUntil {!isnull _vehicle};
-	_vehicle allowDamage false;
-	if(_alive isequalto 0) then {
-		_vehicle setfuel 0;
-		_vehicle setdir (_spawnpos select 1);
-		_vehicle setposatl (_spawnpos select 0);
-		_vehicle setVectorUp (_spawnpos select 2);
-		[_vehicle] call valor_fnc_clear_vehicle;
-		[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
-		[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
-	} else {
-		_vehicle setfuel _fuel;
-		_vehicle setdir _dir;
-		_vehicle setposatl _pos;
-		_vehicle setVectorUp _vector;
+		/*
+		if(_alive isEqualTo 0) then {
+			waitUntil {!((nearestobjects[(_spawnpos select 0),[_classname],100]) isEqualTo [])};
+			_query = format["UPDATE persistent_vehicles SET alive='1', fuel = '0' WHERE id = '%1'",_id];
+		} else {
+			waitUntil {!((nearestobjects[_pos,[_classname],100]) isEqualTo [])};
+		};*/
+		_vehicle = createVehicle[_classname,[0,0,0],[],0,"CAN_COLLIDE"];
+		waitUntil {!isnull _vehicle};
+		_vehicle allowDamage false;
+		if(_alive isequalto 0) then {
+			_vehicle setfuel 0;
+			_vehicle setdir (_spawnpos select 1);
+			_vehicle setposatl (_spawnpos select 0);
+			_vehicle setVectorUp (_spawnpos select 2);
+			[_vehicle] call valor_fnc_clear_vehicle;
+			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
+			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
+		} else {
+			_vehicle setfuel _fuel;
+			_vehicle setdir _dir;
+			_vehicle setposatl _pos;
+			_vehicle setVectorUp _vector;
 
-		[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;
-		[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
+			[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;
+			[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
+		};
+		_vehicle setvariable ["DBID",_id,true];
+		Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];
+
+		[_vehicle,random [12,18,25]] spawn {sleep (_this select 1);(_this select 0) allowDamage true;};
+
+
+
+
+
+
+
+
+
+
+
+		diag_log str [_classname,_pos,_dir,_fuel,_damage,_inventory,_alive,_id,(_spawnpos select 0),(_spawnpos select 1),_spawndamage];
+
+		_query = format["UPDATE persistent_vehicles SET alive='1' WHERE id = '%1'",_id];
+
+		[_query,1] call valor_fnc_db_sync;
 	};
-	_vehicle setvariable ["DBID",_id,true];
-	Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];
-
-	[_vehicle,random [12,18,25]] spawn {sleep (_this select 1);(_this select 0) allowDamage true;};
-
-
-
-
-
-
-
-
-
-
-
-	diag_log str [_classname,_pos,_dir,_fuel,_damage,_inventory,_alive,_id,(_spawnpos select 0),(_spawnpos select 1),_spawndamage];
-
-	_query = format["UPDATE persistent_vehicles SET alive='1' WHERE id = '%1'",_id];
-
-	[_query,1] call valor_fnc_db_sync;
-
 } foreach _res;
 
 

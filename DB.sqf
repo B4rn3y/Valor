@@ -96,11 +96,34 @@ CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   `classname` varchar(64) NOT NULL,
   `type` text NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
+  `shop` tinyint(1) NOT NULL DEFAULT '0',
   `spawnpos` text NOT NULL,
   `Spawndamage` text NOT NULL,
   `inventory` text NOT NULL,
   `fuel` double NOT NULL DEFAULT '0',
   `damage` text NOT NULL,
+  `sold` int(6) NOT NULL DEFAULT '0',
+  `bought` int(6) NOT NULL DEFAULT '0',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+
+
+
+--
+-- Table structure for table `houses`
+-- Needed for extDB latest update on git
+--
+DROP TABLE IF EXISTS `vehicle_prices`;
+CREATE TABLE IF NOT EXISTS `vehicle_prices` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(64) NOT NULL,
+  `price` int(10) NOT NULL default '100',
+  `type` text NOT NULL,
+  `seller` varchar(128) NOT NULL default 'survivor_camp',
+  `sold` int(6) NOT NULL DEFAULT '0',
+  `bought` int(6) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
