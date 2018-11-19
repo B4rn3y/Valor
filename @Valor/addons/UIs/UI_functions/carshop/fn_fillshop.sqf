@@ -58,6 +58,7 @@ lbclear _listbox;
 	_listbox lbSetValue[_id,_x select 0];
 								// classname, price, pos, dir
 	_listbox lbSetData[_id,str([_x select 1,_x select 2,_seller select 1,_seller select 2])];
+	diag_log str([_x select 1,_x select 2,_seller select 1,_seller select 2]);
 } foreach _final_arr;
 
 

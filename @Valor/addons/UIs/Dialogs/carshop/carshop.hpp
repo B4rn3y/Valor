@@ -43,7 +43,7 @@ class carshop {
 		{
 			idc = 2400;
 			text = "Buy"; //--- ToDo: Localize;
-			onLBselChanged = "[] spawn valor_fnc_buyvehicle;";
+			onbuttonClick = "[] spawn valor_fnc_buyvehicle;";
 			x = 0.00312586 * safezoneW + safezoneX;
 			y = 0.482407 * safezoneH + safezoneY;
 			w = 0.174584 * safezoneW;
