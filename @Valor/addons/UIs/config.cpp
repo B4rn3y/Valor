@@ -36,8 +36,16 @@ class CfgFunctions
 			file = "\UIs\UI_functions\quest";
 			class openQuestMenu {};
 			class acceptQuest {};
+		};
 
-
+		class carshop
+		{
+			file = "\UIs\UI_functions\carshop";
+			class fillshop {};
+			class onLBChange {};
+			class opencarshop {};
+			class buyvehiclefinish {};
+			class buyvehicle {};
 		};
 	};
 };

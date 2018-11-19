@@ -50,6 +50,16 @@ class CfgFunctions
 			class saveVehicleComplete {};
 			class vehicleDelete {};
 			// persistent Vehicles end
+			class insert_vehicleprice {};
+		};
+
+		class carshop
+		{
+			file = "\data_server\main\carshop";
+			class shop_request {};
+			class createvehicleshop {};
+			class setvehicleinshop {};
+			class shopvehiclereset {};
 		};
 	};
 };

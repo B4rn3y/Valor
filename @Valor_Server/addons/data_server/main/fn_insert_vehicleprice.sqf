@@ -10,22 +10,22 @@ iF(isnull _vehicle_send || isnull _requester) exitWith {};
 
 _type = switch (true) do
 {
-	case (_vehicle isKindOf "land"):
+	case (_vehicle_send isKindOf "land"):
 	{
 		"land"
 	};
 
-	case (_vehicle isKindOf "helicopter"):
+	case (_vehicle_send isKindOf "helicopter"):
 	{
 		"helicopter"
 	};
 
-	case (_vehicle isKindOf "plane"):
+	case (_vehicle_send isKindOf "plane"):
 	{
 		"plane"
 	};
 
-	case (_vehicle isKindOf "ship"):
+	case (_vehicle_send isKindOf "ship"):
 	{
 		"ship"
 	};

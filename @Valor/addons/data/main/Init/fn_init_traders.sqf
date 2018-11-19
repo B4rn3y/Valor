@@ -26,13 +26,14 @@ _trader switchMove "Acts_carFixingWheel";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
+_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_camp",[7352.81,9237.79,0.0426025],156.036]];
 
 
 
 
 
-_position = [7285.06,9271.79,0.00164795];
-_dir = 228.001;
+_position = [7286.37,9272.15,0.00177002];
+_dir = 237.66;
 _trader = "CUP_C_C_Woodlander_01" createVehiclelocal [0,0,0];
 _trader setposatl _position;
 waitUntil {_trader distance _position < 1};

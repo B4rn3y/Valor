@@ -1,7 +1,7 @@
 private ["_seller","_display","_header","_listbox"];
 closedialog 0;
-_seller = param[3,"",["",[],objNull]]; // default in DB "survivor_camp"
-if(_seller isEqualTo "") exitWith {systemChat "Valor Error :: No Seller specified!"};
+_seller = param[3,[],["",[],objNull]]; // default in DB "survivor_camp"
+if(_seller isEqualTo []) exitWith {systemChat "Valor Error :: No Seller Config specified!"};
 
 valor_intro_cam = "camera" camCreate [0, 0, 0];
 valor_intro_cam cameraEffect ["Internal", "BACK"];
@@ -13,6 +13,7 @@ valor_intro_cam camSetPos [4193.72,7264.33,2.00146484];
 valor_intro_cam camCommit 0;
 
 disableSerialization;
+if(!createDialog "carshop") exitWith {systemChat "Valor Error :: Could not create the dialog!";valor_intro_cam cameraEffect ["TERMINATE","BACK"];camDestroy valor_intro_cam;};
 _display = findDisplay 3003;
 _header = _display displayCtrl 1001;
 _listbox = _display displayCtrl 1500;

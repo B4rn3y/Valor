@@ -3,6 +3,7 @@ private ["_classnames_and_prices","_id_classnames","_display","_header","_listbo
 if(isnull(finddisplay 3003)) exitWith {};
 _classnames_and_prices = param[0,[],[[]]];
 _id_classnames = param[1,[],[[]]];
+_seller = param[2,[],[[]]];
 
 disableSerialization;
 _display = findDisplay 3003;
@@ -55,9 +56,10 @@ lbclear _listbox;
 {
 	_id = _listbox lbadd format["%1 - %2",_x select 2,getText(configFile >> "CfgVehicles" >> (_x select 1) >> "displayName")];
 	_listbox lbSetValue[_id,_x select 0];
-	_listbox lbSetData[_id,_x select 1];
+								// classname, price, pos, dir
+	_listbox lbSetData[_id,str([_x select 1,_x select 2,_seller select 1,_seller select 2])];
 } foreach _final_arr;
 
 
-_listbox ctrlAddEventHandler["LBSelChanged",valor_fnc_onLBChange];
+//_listbox ctrlAddEventHandler["LBSelChanged",valor_fnc_onLBChange];
 _listbox lbsetcursel 0;
