@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_prices` (
   `classname` varchar(64) NOT NULL,
   `price` int(10) NOT NULL default '100',
   `type` text NOT NULL,
-  `seller` varchar(128) NOT NULL default 'survivor_camp',
+  `seller` varchar(128) NOT NULL default '["survivor_camp"]',
   `sold` int(6) NOT NULL DEFAULT '0',
   `bought` int(6) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

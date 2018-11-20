@@ -61,7 +61,10 @@ _vehicle = objNull;
 			[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
 		};
 		_vehicle setvariable ["DBID",_id,true];
+		_vehicle disableTIEquipment true;
+		_vehicle disableNVGEquipment true;
 		Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];
+
 
 		[_vehicle,random [12,18,25]] spawn {sleep (_this select 1);(_this select 0) allowDamage true;};
 

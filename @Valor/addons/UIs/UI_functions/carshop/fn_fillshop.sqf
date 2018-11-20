@@ -52,6 +52,10 @@ _listbox lbSetColor[6,[1,0.502,0,1]];
 
 lbclear _listbox;
 
+if(_final_arr isEqualTo []) exitWith {
+	lbclear _listbox;
+	_listbox lbAdd "There are no vehicles in stock...";
+};
 
 {
 	_id = _listbox lbadd format["%1 - %2",_x select 2,getText(configFile >> "CfgVehicles" >> (_x select 1) >> "displayName")];

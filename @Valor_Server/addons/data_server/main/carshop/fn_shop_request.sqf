@@ -3,7 +3,7 @@ private ["_seller","_requester","_query","_classnames_and_prices","_id_classname
 _seller = param[0,[],[[]]];
 _requester = param[1,objNull,[objNull]];
 if(_seller isEqualTo [] || isnull _requester) exitWith {};
-_query = format["Select classname, price from vehicle_prices where seller = '%1';",(_seller select 0)];
+_query = format["Select classname, price from vehicle_prices where seller like '%2%1%2';",(_seller select 0),"%"];
 
 _classnames_and_prices = [_query,2,true] call valor_fnc_db_sync;
 

@@ -45,6 +45,10 @@ if([_vehicle_ID,0] call valor_fnc_setvehicleinshop) then {
 		]
 	] remoteExec ["addaction", -2];
 
+	_query = format["Update persistent_vehicles set bought = bought + 1 where id= '%1'; Update vehicle_prices set bought = bought + 1 where classname = '%2'",_vehicle_ID,str _classname];
+	[_query,1] call valor_fnc_db_sync;
+
+
 	[_vehicle_ID,_price,_vehicle,_classname] remoteExec["valor_fnc_buyvehiclefinish",_requester];
 } else {
 	"Valor Error :: The Server could not flag the vehicle as bought." remoteExec["systemchat",_requester];
