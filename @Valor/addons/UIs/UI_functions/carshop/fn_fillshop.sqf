@@ -65,6 +65,7 @@ if(_final_arr isEqualTo []) exitWith {
 	diag_log str([_x select 1,_x select 2,_seller select 1,_seller select 2]);
 } foreach _final_arr;
 
+lbSort _listbox;
 
 //_listbox ctrlAddEventHandler["LBSelChanged",valor_fnc_onLBChange];
 _listbox lbsetcursel 0;

@@ -49,3 +49,7 @@ if!(isnil "Valor_preview_vehicle") then {
 	deleteVehicle Valor_preview_vehicle;
 	Valor_preview_vehicle = nil;
 };
+
+if!(isnil "Valor_preview_classname") then {
+	Valor_preview_classname = nil;
+};
