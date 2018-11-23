@@ -25,8 +25,9 @@ if([_vehicle_ID,0] call valor_fnc_setvehicleinshop) then {
 	};
 
 	_vehicle = _classname createVehicle [0,0,100];
+	[_vehicle] call valor_fnc_clear_vehicle;
 	_vehicle setdir _dir;
-	_vehicle setposatl _pos;
+	_vehicle setposatl [_pos select 0, _pos select 1,(_pos select 2)+1];
 	_vehicle setvariable ["DBID",_vehicle_ID,true];
 	_vehicle setvariable["last_pos",(getposatl _vehicle)];
 	Valor_vehicles_monitoring pushBackUnique [_vehicle,_vehicle_ID];
@@ -40,12 +41,14 @@ if([_vehicle_ID,0] call valor_fnc_setvehicleinshop) then {
 		false,
 		false,
 		"",
-		"((_target distance player) <= 9)",
+		"((_target distance player) <= 9) && vehicle player isEqualTo player",
 		20
 		]
 	] remoteExec ["addaction", -2];
 
-	_query = format["Update persistent_vehicles set bought = bought + 1 where id= '%1'; Update vehicle_prices set bought = bought + 1 where classname = '%2'",_vehicle_ID,str _classname];
+	_query = format["Update persistent_vehicles set bought = bought + 1,alive = '1' where id= '%1'; Update vehicle_prices set bought = bought + 1 where classname = '%2'",_vehicle_ID,str _classname];
+	[_query,1] call valor_fnc_db_sync;
+	_query = format["Update vehicle_prices set bought = bought + 1 where classname = '%1'",str _classname];
 	[_query,1] call valor_fnc_db_sync;
 
 
