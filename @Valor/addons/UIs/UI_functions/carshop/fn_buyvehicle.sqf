@@ -6,9 +6,9 @@ disableSerialization;
 _display = findDisplay 3003;
 _header = _display displayCtrl 1001;
 _listbox = _display displayCtrl 1500;
-
-_config = _listbox lbdata (lbCurSel _listbox);
 _id = _listbox lbValue (lbCurSel _listbox);
+if(_id isEqualTo -1) exitWith {};
+_config = _listbox lbdata (lbCurSel _listbox);
 diag_log str _config;
 _config = call compile _config;
 diag_log str _config;

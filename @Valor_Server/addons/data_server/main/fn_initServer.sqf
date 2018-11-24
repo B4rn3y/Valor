@@ -60,7 +60,7 @@ diag_log "Valor :: Variables set";
 diag_log "Valor :: Starting Time Module";
 [] spawn valor_fnc_time_module;
 diag_log "Valor :: Init Vehicles";
-//[] spawn valor_fnc_init_vehicles;
+[] spawn valor_fnc_init_vehicles;
 diag_log "Valor :: Vehicles loaded";
 [] call valor_fnc_init_map;
 diag_log "Valor :: Starting Zombie Destroyer";

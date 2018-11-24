@@ -8,7 +8,7 @@ _target = param[1,objNull,[objNull]];
 if(isnull _zombie) exitWith {false};
 if(isnull _target) exitWith {false};
 _zombie setvariable["ATTACKING",true];
-_agentdamage = 0.04;
+_agentdamage = 0.5;
 _dir = _zombie getDir _target;
 _zombie setdir _dir;
 _soundprobhunting = 0.6;

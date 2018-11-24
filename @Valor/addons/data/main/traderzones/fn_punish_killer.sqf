@@ -206,6 +206,7 @@ player playAction "CIVIL";
 cutText ["", "BLACK IN", 3];
 sleep 5;
 player setVelocity [6,-2.75,1];
+disableUserInput false;
 [] spawn {sleep 1; [player,false] remoteexec["hideobject",(playableUnits - [player])];};
 if!(isDamageAllowed player) then {player allowDamage true;};
 _w8 = diag_ticktime + 20;
