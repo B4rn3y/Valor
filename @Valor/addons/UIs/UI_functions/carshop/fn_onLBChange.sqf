@@ -12,6 +12,7 @@ Valor_preview_classname = _classname;
 if(_classname isEqualTo "") exitWith {};
 if(isnil "Valor_preview_vehicle") then {
 	Valor_preview_vehicle = _classname createVehicleLocal [0,0,0];
+	Valor_preview_vehicle allowDamage false;
 	Valor_preview_vehicle setdir 171.278;
 	Valor_preview_vehicle setposatl [4197.73,7278.64,0.13736];
 } else {
@@ -20,6 +21,7 @@ if(isnil "Valor_preview_vehicle") then {
 	waitUntil {if!(Valor_preview_classname isEqualTo _classname) exitwith{true}; isnull Valor_preview_vehicle};
 	if!(Valor_preview_classname isEqualTo _classname) exitwith{true};
 	Valor_preview_vehicle = _classname createVehicleLocal [0,0,0];
+	Valor_preview_vehicle allowDamage false;
 	Valor_preview_vehicle setdir 171.278;
 	Valor_preview_vehicle setposatl [4197.73,7278.64,0.13736];
 };

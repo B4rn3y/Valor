@@ -2,7 +2,7 @@
 
 private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_type","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop"];
 
-_query = "Select id, pos, classname, type, alive, spawnpos, spawndamage, inventory, fuel, damage, shop from persistent_vehicles";
+_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop from persistent_vehicles";
 
 _res = [_query,2,true] call valor_fnc_db_sync;
 
@@ -19,14 +19,13 @@ _vehicle = objNull;
 	_dir =  (call compile (_x select 1)) select 1;
 	_vector = (call compile (_x select 1)) select 2;
 	_classname = _x select 2;
-	_type = _x select 3;
-	_alive = _x select 4;
-	_spawnpos = _x select 5;
-	_spawndamage = _x select 6;
-	_inventory = _x select 7;
-	_fuel = _x select 8;
-	_damage = _x select 9;
-	_shop = _x select 10;
+	_alive = _x select 3;
+	_spawnpos = _x select 4;
+	_spawndamage = _x select 5;
+	_inventory = _x select 6;
+	_fuel = _x select 7;
+	_damage = _x select 8;
+	_shop = _x select 9;
 	_classname = call compile _classname;
 	if(_shop isEqualTo 0) then {
 
