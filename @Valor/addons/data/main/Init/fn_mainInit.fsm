@@ -17,11 +17,11 @@ item12[] = {"",7,210,183.055298,-140.795654,191.055298,-132.795654,0.000000,""};
 item13[] = {"__1",2,250,-209.854187,289.527100,-119.854187,339.527100,0.000000,""};
 item14[] = {"w8_for_player",4,218,-212.547668,349.918213,-122.547668,399.918213,0.000000,"w8 for player"};
 item15[] = {"Send_query__request",2,250,-214.044922,424.219604,-124.044922,474.219604,0.000000,"Send query " \n "request to" \n "Server"};
-item16[] = {"Data_loaded_reqe",4,218,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
+item16[] = {"Data_loaded_reqe",4,4314,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
 item17[] = {"true",4,218,146.101929,480.186890,236.101929,530.186890,0.000000,"true"};
 item18[] = {"__2",2,250,-217.843750,-448.505676,-127.843750,-398.505676,0.000000,""};
 item19[] = {"Data_loaded_data",4,218,-377.000977,-931.267822,-287.000977,-881.267822,2.000000,"Data loaded" \n "data"};
-item20[] = {"Setup_Login_Data",2,4346,-500.170776,-929.232483,-410.170776,-879.232483,0.000000,"Setup" \n "Login" \n "Data"};
+item20[] = {"Setup_Login_Data",2,250,-500.170776,-929.232483,-410.170776,-879.232483,0.000000,"Setup" \n "Login" \n "Data"};
 item21[] = {"END_1",1,250,-218.084717,587.806152,-128.084656,637.806152,0.000000,"END"};
 item22[] = {"true",4,218,-216.724792,495.168884,-126.724792,545.168884,0.000000,"true"};
 item23[] = {"__3",2,250,-218.898010,-21.382446,-128.898010,28.617554,0.000000,""};
@@ -137,7 +137,7 @@ link66[] = {63,18};
 link67[] = {64,65};
 link68[] = {65,40};
 link69[] = {65,41};
-globals[] = {0.000000,0,0,0,0,640,480,1,176,6316128,1,-1800.922363,348.146790,-534.398682,-2033.833252,1267,884,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,176,6316128,1,-1755.115356,393.952759,57.584839,-1441.855225,1267,884,1};
 window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
@@ -159,7 +159,7 @@ class FSM
                          "	case 3: {diag_log ""Valor :: First Spawn ::>>:: Player is not known to the system - Soft Whitelist is active - kick player"";};" \n
                          "" \n
                          "};" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -192,7 +192,7 @@ class FSM
                                         priority = 1.000000;
                                         to="__7";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_data_loaded isequalto 1"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_data_loaded isequalto 1 && (diag_ticktime > (_time + 3))"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -266,7 +266,8 @@ class FSM
                         name = "Exit_Type";
                         itemno = 6;
                         init = /*%FSM<STATEINIT""">*/"_endtype = ""Bad_Version"";" \n
-                         "diag_log ""VALOR ERROR :: Server and Client Version are not compatible"";"/*%FSM</STATEINIT""">*/;
+                         "diag_log ""VALOR ERROR :: Server and Client Version are not compatible"";" \n
+                         "[format[""<t size='1.4' align='center'>ERROR: Wrong version</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -289,7 +290,8 @@ class FSM
                 {
                         name = "_";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Server is ready >>:>> Checking Status"";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Server is ready >>:>> Checking Status"";" \n
+                         "[format[""<t size='1.4' align='center'>Server is ready</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -324,7 +326,8 @@ class FSM
                         name = "Exit_Type_1";
                         itemno = 11;
                         init = /*%FSM<STATEINIT""">*/"_endtype = ""Server_Error"";" \n
-                         "diag_log ""VALOR ERROR :: Server had issues starting, please try again later"";"/*%FSM</STATEINIT""">*/;
+                         "diag_log ""VALOR ERROR :: Server had issues starting, please try again later"";" \n
+                         "[format[""<t size='1.4' align='center'>ERROR: Server is not ready</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -347,7 +350,8 @@ class FSM
                 {
                         name = "__1";
                         itemno = 13;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Valor Version is OK"";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Valor Version is OK"";" \n
+                         "[format[""<t size='1.4' align='center'>Valor Version compatible</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -373,7 +377,10 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"[playerside, profilename, getplayeruid player,player,getResolution,profileNameSteam,productVersion] remoteexec[""valor_fnc_player_data_request"",2];" \n
                          "diag_log ""Valor :: Player found >> Sending Query Request to Server"";" \n
                          "" \n
-                         "player setvariable[""PID"",getplayeruid player,true];"/*%FSM</STATEINIT""">*/;
+                         "player setvariable[""PID"",getplayeruid player,true];" \n
+                         "" \n
+                         "" \n
+                         "[format[""<t size='1.4' align='center'>Sending Request to Server</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -399,7 +406,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Display found"";" \n
                          "_loading_again = param[1,false,[false]];" \n
                          "diag_log ""Valor :: Data not loaded yet"";" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "[format[""<t size='1.4' align='center'>Display found</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -434,7 +441,7 @@ class FSM
                         name = "Setup_Login_Data";
                         itemno = 20;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Yes the Data did come, lets load that shit!"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Processing Data from Server</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "(_this select 1) call valor_fnc_setupLoginData; "/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -517,7 +524,8 @@ class FSM
                         name = "Exit_Type_2";
                         itemno = 27;
                         init = /*%FSM<STATEINIT""">*/"_endtype = ""Server_Error"";" \n
-                         "diag_log ""VALOR ERROR :: Server had issues starting, please try again lateer"";"/*%FSM</STATEINIT""">*/;
+                         "diag_log ""VALOR ERROR :: Server had issues starting, please try again lateer"";" \n
+                         "[format[""<t size='1.4' align='center'>ERROR: Server had problems</t> ""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -611,7 +619,8 @@ class FSM
                 {
                         name = "Exit_Type_3";
                         itemno = 36;
-                        init = /*%FSM<STATEINIT""">*/"_endtype = ""Soft_whitelist"";" \n
+                        init = /*%FSM<STATEINIT""">*/"[format[""<t size='1.4' align='center'>ERROR: Whitelist activated</t>""]] call valor_fnc_updateLoadingScreen;" \n
+                         "_endtype = ""Soft_whitelist"";" \n
                          "diag_log ""VALOR ERROR :: You are a new player and the soft whitelist is active, please try again later"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -637,7 +646,7 @@ class FSM
                         itemno = 39;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player is not blacklisted"";" \n
                          "diag_log ""Valor :: Loading Gear"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Loading Gear</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "[Valor_gear] spawn valor_fnc_VAR_to_gear;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -662,7 +671,7 @@ class FSM
                         name = "END_2";
                         itemno = 42;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: No position Known for player, openeing spawn menu"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Login done</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "//[] spawn valor_fnc_openSpawnMenu;" \n
                          "" \n
                          "_pos = [getArray(configFile >> ""CfgWorlds"" >> worldName >> ""centerPosition""), 0, worldsize, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
@@ -710,7 +719,7 @@ class FSM
                         name = "END_3";
                         itemno = 44;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player gear loaded and @ Position"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Login done</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "" \n
                          "[true] call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -726,7 +735,7 @@ class FSM
                         itemno = 45;
                         init = /*%FSM<STATEINIT""">*/"_that = _this select 1;" \n
                          "diag_log ""Valor :: Yes the Data did come, lets load that shit!"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>You are new to the system</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "_that call valor_fnc_setupLoginData; "/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -804,7 +813,7 @@ class FSM
                         name = "END_4";
                         itemno = 51;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: New player inserted Intro should be here but isnt cause WIP"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Login done</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "" \n
                          "[true] call valor_fnc_closeLoadingScreen;" \n
                          "" \n
@@ -824,7 +833,7 @@ class FSM
                         itemno = 54;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Gear loaded"";" \n
                          "0 spawn valor_fnc_init_functions;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "[format[""<t size='1.4' align='center'>Initialising Functions</t>""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -849,7 +858,7 @@ class FSM
                         itemno = 55;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Player is not blacklisted"";" \n
                          "diag_log ""Valor :: Loading Gear"";" \n
-                         "" \n
+                         "[format[""<t size='1.4' align='center'>Loading gear</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "_handle = [Valor_gear] spawn valor_fnc_VAR_to_gear;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -874,8 +883,8 @@ class FSM
                         name = "init_functions";
                         itemno = 57;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Gear loaded"";" \n
-                         "" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "[format[""<t size='1.4' align='center'>Starting functions</t>""]] call valor_fnc_updateLoadingScreen;" \n
+                         "0 spawn valor_fnc_init_functions;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -886,7 +895,7 @@ class FSM
                                         priority = 0.000000;
                                         to="setpos";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_functions_started"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -899,6 +908,7 @@ class FSM
                         name = "__7";
                         itemno = 60;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Waiting for player"";" \n
+                         "[format[""<t size='1.4' align='center'>Starting Main Init</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -946,7 +956,7 @@ class FSM
                 {
                         name = "dummy";
                         itemno = 65;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"[format[""<t size='1.4' align='center'>Functions started</t>""]] call valor_fnc_updateLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

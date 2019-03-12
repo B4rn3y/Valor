@@ -29,6 +29,7 @@ class CfgFunctions
 			file = "\UIs\UI_functions\LoadingScreen";
 			class closeLoadingScreen {};
 			class openLoadingScreen {};
+			class updateLoadingScreen {};
 		};
 
 		class quest

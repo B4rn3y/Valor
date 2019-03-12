@@ -1,4 +1,4 @@
 closedialog 0;
 disableSerialization;
 
-5 cutrsc["LoadingScreen","PLAIN"];
+5 cutrsc["valor_screen","PLAIN"];
