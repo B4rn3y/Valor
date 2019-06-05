@@ -152,14 +152,41 @@ CREATE TABLE IF NOT EXISTS `loot_table` (
 -- Table structure for table `house_table`
 -- Needed for extDB latest update on git
 --
-DROP TABLE IF EXISTS `house_table`;
-CREATE TABLE IF NOT EXISTS `house_table` (
+DROP TABLE IF EXISTS `base_objects`;
+CREATE TABLE IF NOT EXISTS `base_objects` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
-  `loot_table` text NOT NULL,
+  `base_id` int(10) NOT NULL,
   `classname` text NOT NULL,
+  `pos` text NOT NULL,
+  `dir` varchar(64) NOT NULL,
+  `vector` text NOT NULL,
+  `inventory` text NOT NULL,
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `base_id` (`base_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `house_table`
+-- Needed for extDB latest update on git
+--
+DROP TABLE IF EXISTS `bases`;
+CREATE TABLE IF NOT EXISTS `bases` (
+  `base_id` int(6) NOT NULL AUTO_INCREMENT,
+  `gang_id` int(10) NOT NULL,
+  `config_id` int(10) NOT NULL,
+  `build` int(10) NOT NULL DEFAULT '0',
+  `classname` text NOT NULL,
+  `pos` text NOT NULL,
+  `dir` varchar(64) NOT NULL,
+  `vector` text NOT NULL,
+  `inventory` text NOT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`base_id`),
+  KEY `gang_id` (`gang_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------

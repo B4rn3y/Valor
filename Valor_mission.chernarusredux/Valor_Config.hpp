@@ -82,6 +82,8 @@ class Valor_settings {
 
 		no_ZED_spawn_Zones[] = {{"Trader_Zone_1",200}};
 
+		not_liftable[] = {"B_CargoNet_01_ammo_F"};
+
 	};
 
 	class loot_settings {

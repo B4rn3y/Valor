@@ -112,6 +112,7 @@ class CfgFunctions
 			class clearPlayerInventory {};
 			class gear_to_VAR {};
 			class inventory_closed {};
+			class inventory_opened {};
 			class player_monitor {ext = ".fsm";};
 			class load_BAMBI_GEAR {};
 			class step_update {};
@@ -131,6 +132,7 @@ class CfgFunctions
 			class admin_inform {};
 			class intro {};
 			class 3dCompass {};
+			class rope_attached {};
 		};
 
 
