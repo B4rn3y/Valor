@@ -30,7 +30,6 @@ valor_objectarray_placed = [];
 	_object setposatl _spawnpos;
 	_object setvectorup (player vectorModelToWorld _vector_dependent);
 	valor_objectarray_placed pushBackUnique [_object,_pos_dependent,_dir_dependent,_vector_dependent];
-	_object setvariable["valor_made_preview",true];
 } foreach _blueprint;
 
 _ammobox = (_blueprint_itembox select 0) createVehicleLocal [0,0,10];

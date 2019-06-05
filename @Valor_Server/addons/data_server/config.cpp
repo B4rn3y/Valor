@@ -21,6 +21,7 @@ class CfgFunctions
 		{
 			file = "\data_server\main";
 			class initServer {postinit = 1;};
+			class init_bases {};
 			class db_sync {};
 			class insert_player {};
 			class logToDB {};

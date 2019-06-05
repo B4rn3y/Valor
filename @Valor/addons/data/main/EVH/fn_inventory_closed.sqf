@@ -13,5 +13,9 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 
 _var = _container getvariable "valor_base_ids";
 if!(isnil "_var") then {
-	 [_container] remoteexec["valor_fnc_savecrate",2];
+	if(count _var > 3) then {
+		[_container,true] remoteexec["valor_fnc_savecrate",2];
+	} else {
+	 	[_container] remoteexec["valor_fnc_savecrate",2];
+	 };
 };

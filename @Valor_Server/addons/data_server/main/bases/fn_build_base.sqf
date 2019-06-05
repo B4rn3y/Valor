@@ -1,6 +1,7 @@
 
-private ["_container","_base_id","_config_id","_gang_id","_requester","_query","_near_players","_man_close","_man","_veh_close","_time"];
 
+
+private ["_container","_base_id","_config_id","_gang_id","_requester","_query","_pos_container","_near_players","_man_close","_man","_veh_close","_time"];
 
 _container = param[0,objNull,[objNull]];
 _container enableSimulation false;
@@ -19,12 +20,13 @@ if(_container isEqualTo objNull) exitWith {diag_log "Valor Error :: _container u
 
 _query = format["Update bases set build = '1' where base_id = '%1'",_base_id];
 [_query,1] call valor_fnc_db_sync;
+_pos_container = getposatl _container;
 
 _near_players = {
-	_man_close = nearestobjects[getposatl _container,["Man"],200];
+	_man_close = nearestobjects[_pos_container,["Man"],200];
 	_man = [];
 	{if(isplayer _x) then {_man pushback _x};} foreach _man_close;
-	_man;
+	_man
 };
 
 
@@ -36,9 +38,15 @@ _veh_close = nearestobjects[getposatl _container,["Landvehicle","Air","Ship"],10
 _time = 0;
 waitUntil{sleep 1; _time = _time + 1; if(_time >= 180) exitWith {}; _veh_close = nearestobjects[getposatl _container,["Landvehicle","Air","Ship"],100]; _veh_close isEqualTo []};
 
+
+
+{
+	deleteVehicle _x;
+} foreach (nearestObjects[getposatl _container,["Land_CncBarrierMedium_F"],10]);
 deleteVehicle _container;
+
 "Valor Server :: The Server is now starting building the base." remoteexec["systemchat",(call _near_players)];
-//[_base_id,_config_id,_gang_id] spawn valor_fnc_build_base_objects;
+[_base_id,_config_id,_gang_id] spawn valor_fnc_build_base_objects;
 
 
 

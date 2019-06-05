@@ -10,6 +10,10 @@ if(isnil "_var") exitWith {};
 _base_id = _var select 0;
 _gang_id = _var select 1;
 _config_id = _var select 2;
+_object_id = -1;
+if(count _var > 3) then {
+	_object_id = _var select 3;
+};
 
 if (_base_id isequalto -1) exitWith {diag_log "Valor :: Var _base_id of a crate is nil"};
 
