@@ -1,17 +1,21 @@
 
+diag_log "Valor Server :: Request received";
 private ["_blueprint","_gang_id","_requester","_config_id","_blueprint_itembox","_classname","_pos","_dir","_vector","_ammobox","_inventory","_query","_queryResult","_base_id","_object"];
 
 _blueprint = param[0,[],[[]]];
 _gang_id = param[1,-1,[0]];
 _requester = param[2,objNull,[objNull]];
-_config_id = param[3,-1,[0]]
-_blueprint_itembox = param[0,[],[[]]];
+_config_id = param[3,-1,[0]];
+_blueprint_itembox = param[4,[],[[]]];
 
-if(_blueprint isEqualTo []) exitWith {systemchat "Valor Error :: _blueprint unknown"};
-if(_gang_id isEqualTo -1) exitWith {systemchat "Valor Error :: _gang_id unknown"};
-if(_requester isEqualTo objNull) exitWith {systemchat "Valor Error :: _requester unknown"};
-if(_config_id isEqualTo -1) exitWith {systemchat "Valor Error :: _config_id unknown"};
-if(_blueprint_itembox isEqualTo []) exitWith {systemchat "Valor Error :: _blueprint_itembox unknown"};
+diag_log "Valor Server :: Request received";
+
+
+if(_blueprint isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint unknown"};
+if(_gang_id isEqualTo -1) exitWith {diag_log "Valor Error :: _gang_id unknown"};
+if(_requester isEqualTo objNull) exitWith {diag_log "Valor Error :: _requester unknown"};
+if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknown"};
+if(_blueprint_itembox isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint_itembox unknown"};
 
 
 
@@ -20,9 +24,12 @@ _pos = _blueprint_itembox select 1;
 _dir = _blueprint_itembox select 2;
 _vector =  _blueprint_itembox select 3;
 
+diag_log "Valor Server :: Create Ammobox";
+
 _ammobox = _classname createVehicle [0,0,10];
 waitUntil {!isnil "_ammobox"};
 waitUntil {!isnull _ammobox};
+_ammobox allowDamage false;
 [_ammobox] call valor_fnc_clear_vehicle;
 _ammobox setdir _dir;
 _ammobox setposatl _pos;
@@ -44,24 +51,9 @@ if(typeName _queryResult isEqualTo "ARRAY") then {
 
 _base_id = _queryResult;
 
-_ammobox setvariable["valor_base_ids"[_base_id,_gang_id,_config_id],true];
+_ammobox setvariable["valor_base_ids",[_base_id,_gang_id,_config_id],true];
 
-/*
-{
-	_classname = _x select 0;
-	_pos = _x select 1;
-	_dir = _x select 2;
-	_vector = _x select 3;
-	_object = _classname createVehicle [0,0,10];
-	_object setdir _dir;
-	_object setVectorUp _vector;
-	_object setposatl _pos;
-	_object allowDamage false;
-	_object setdir _dir;
-	_object setVectorUp _vector;
-} foreach _blueprint;
 
-*/
 {
 	_classname = _x select 0;
 	_pos = _x select 1;
@@ -73,28 +65,4 @@ _ammobox setvariable["valor_base_ids"[_base_id,_gang_id,_config_id],true];
 } foreach _blueprint;
 
 (format["The Base got inserted into the database, now put the required items into the crate and build the base"]) remoteExec["systemchat",_requester];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -92,8 +92,8 @@ CREATE TABLE IF NOT EXISTS `log` (
 DROP TABLE IF EXISTS `persistent_vehicles`;
 CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
-  `pos` varchar(64) DEFAULT NULL,
-  `classname` varchar(64) NOT NULL,
+  `pos` varchar(256) DEFAULT NULL,
+  `classname` varchar(256) NOT NULL,
   `type` text NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
   `shop` tinyint(1) NOT NULL DEFAULT '0',

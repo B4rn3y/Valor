@@ -44,6 +44,7 @@ if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_ena
 
 player addEventHandler["InventoryClosed", {_this call valor_fnc_inventory_closed}];
 player addEventHandler["InventoryOpened", {_this call valor_fnc_inventory_opened}];
+player addEventHandler["Put", {_this call valor_fnc_on_put}];
 player addEventHandler["GetOutMan",{_this call valor_fnc_GetOutMan}];
 player removeAllMPEventHandlers "MPHit";
 player removeAllMPEventHandlers "MPKilled";

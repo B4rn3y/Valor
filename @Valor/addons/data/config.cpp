@@ -111,8 +111,6 @@ class CfgFunctions
 			file = "\data\main\mission_persistance";
 			class clearPlayerInventory {};
 			class gear_to_VAR {};
-			class inventory_closed {};
-			class inventory_opened {};
 			class player_monitor {ext = ".fsm";};
 			class load_BAMBI_GEAR {};
 			class step_update {};
@@ -120,8 +118,6 @@ class CfgFunctions
 			class VAR_to_gear {};
 			class survival {ext = ".fsm";};
 			class GetOutMan {};
-			class keyhandler {};
-			class keyUp {};
 			class onEachFrameHandler {};
 			class stackOnEachFrame {};
 		};
@@ -132,7 +128,13 @@ class CfgFunctions
 			class admin_inform {};
 			class intro {};
 			class 3dCompass {};
-			class rope_attached {};
+		};
+
+		class bases
+		{
+			file = "\data\main\bases";
+			class base_config {};
+			class place_base {};
 		};
 
 
@@ -142,6 +144,17 @@ class CfgFunctions
 			class hideVehicleStatus {};
 			class repairVehicle {};
 			class showVehicleDamage {};
+		};
+
+		class EVH
+		{
+			file = "\data\main\EVH";
+			class inventory_closed {};
+			class inventory_opened {};
+			class keyhandler {};
+			class keyUp {};
+			class on_put {};
+			class rope_attached {};
 		};
 
 		class zombie

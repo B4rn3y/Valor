@@ -61,5 +61,14 @@ class CfgFunctions
 			class setvehicleinshop {};
 			class shopvehiclereset {};
 		};
+
+		class bases
+		{
+			file = "\data_server\main\bases";
+			class insert_base {};
+			class savecrate {};
+			class build_base {};
+			class build_base_objects {};
+		};
 	};
 };
