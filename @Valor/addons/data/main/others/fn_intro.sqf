@@ -35,9 +35,26 @@ sleep 2;
 cutText ["", "BLACK OUT", 10];
 sleep 10;
 
-_pos = [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"), 0, 9000, 1, 0, 20, 1] call BIS_fnc_findSafePos;
-if((count _pos) isequalto 2) then {_pos pushback 0;};
-player setposatl _pos;
+switch (playerside) do
+{
+	case opfor:
+	{
+		_marker = getarray(missionConfigFile >> "Valor_settings" >> "Spawn_Points" >> "opfor_spawnPoints");
+		_marker = selectRandom _marker;
+		player setposatl (getmarkerpos _marker);
+	};
+
+	case civilian:
+	{
+		_marker = getarray(missionConfigFile >> "Valor_settings" >> "Spawn_Points" >> "civilian_spawnPoints");
+		_marker = selectRandom _marker;
+		_pos = getmarkerpos (_marker select 0);
+		_radius = _marker select 1;
+		_pos_spawn = [_pos, 0, _radius, 1, 0, 20, 1] call BIS_fnc_findSafePos;
+		_pos_spawn pushback 0;
+		player setposatl _pos_spawn;
+	};
+};
 
 
 0 spawn valor_fnc_init_functions;

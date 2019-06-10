@@ -71,6 +71,8 @@ diag_log "Valor :: Vehicles loaded";
 diag_log "Valor :: Starting Zombie Destroyer";
 [] spawn valor_fnc_zombie_destroyer;
 ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
+
+
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call valor_fnc_clientDisconnect; false;}];
 publicVariable "Valor_Server_loaded";

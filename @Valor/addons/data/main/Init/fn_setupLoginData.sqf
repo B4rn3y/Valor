@@ -31,7 +31,8 @@ switch(playerside) do {
 		_position = param[9,[],[[],""]];
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
-		_quests = param[12,[],[[],""]];
+		_group = param[12,[],[[],""]];
+		_quest = param[13,[],[[],""]];
 
 
 
@@ -45,6 +46,7 @@ switch(playerside) do {
 
 		Valor_adminlevel = compileFinal str _adminlvel;
 		Valor_donatorlevel = compileFinal str _donorlevel;
+		Valor_coplevel = compileFinal str 0;
 
 		Valor_alive = _alive;
 		Valor_position = [_position] call valor_fnc_mToArray;
@@ -53,9 +55,58 @@ switch(playerside) do {
 		Valor_completed_quests = _quests;
 
 
-
+		Valor_group = _group;
+		player setVariable["Valor_group_id",(Valor_group select 0),true];
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
 	};
+
+	case opfor: {
+		_valor_uid = param[0,-1,[1337,""]];
+		_cash = param[1,-1,[1337,""]];
+		_bankacc = param[2,-1,[1337]];
+		_humanity = param[3,-1,[1337,""]];
+		_gear = param[4,"",["",[]]];
+		_stats = param[5,[],["",[]]];
+		_adminlvel = param[6,0,[1337]];
+		_donorlevel = param[7,0,[1337]];
+		_alive = param[8,0,[1337]];
+		_position = param[9,[],[[],""]];
+		_map_revealed = param[10,"",[[],""]];
+		_playtime = param[11,0,[1337,""]];
+		_coplevel = param[12,0,[1337,""]];
+		_quests = param[13,[],[[],""]];
+
+
+		if!(_coplevel > 0) then {
+			NOT_WHITELISTED = true;
+		};
+
+
+		Valor_UID = _valor_uid;
+		Valor_cash = _cash;
+		Valor_bankacc = _bankacc;
+		Valor_stats = ([_stats] call valor_fnC_mtoArray);
+		if(typeName Valor_stats isEqualTo "STRING") then {Valor_stats = call compile format["%1", Valor_stats];};
+		Valor_gear = [_gear] call valor_fnc_mToArray;
+		if(typeName Valor_gear isEqualTo "STRING") then {Valor_gear = call compile format["%1", Valor_gear];};
+
+		Valor_adminlevel = compileFinal str _adminlvel;
+		Valor_donatorlevel = compileFinal str _donorlevel;
+		Valor_coplevel = compilefinal str _coplevel;
+
+		Valor_alive = _alive;
+		Valor_position = [_position] call valor_fnc_mToArray;
+		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
+		Valor_playtime = call compile _playtime;
+		Valor_completed_quests = _quests;
+
+
+		Valor_group = [];
+		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
+	};
+
+
+
 };
 diag_log format["Valor Alive: %1 - Typename %2",Valor_alive,typename Valor_alive];
 diag_log format["Valor Position: %1 - Typename %2",Valor_position,typename Valor_position];

@@ -11,11 +11,17 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 	};
 };
 
+_var = _container getvariable "cop";
+if!(isnil "_var") exitWith {
+	[_container,2] remoteexec["valor_fnc_savecrate",2];
+};
+
+
 _var = _container getvariable "valor_base_ids";
 if!(isnil "_var") then {
 	if(count _var > 3) then {
-		[_container,true] remoteexec["valor_fnc_savecrate",2];
+		[_container,1] remoteexec["valor_fnc_savecrate",2];
 	} else {
-	 	[_container] remoteexec["valor_fnc_savecrate",2];
+	 	[_container,0] remoteexec["valor_fnc_savecrate",2];
 	 };
 };

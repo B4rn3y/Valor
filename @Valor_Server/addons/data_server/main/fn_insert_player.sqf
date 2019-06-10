@@ -13,7 +13,7 @@ _bank_beginning = 0;
 if((_getplayeruid isEqualTo "") OR (_name isEqualTo "")) exitWith {diag_log "Valor ERROR :: Name or Uid is nil @ Insert";}; //Let the client be 'lost' in 'transaction'
 if(isNull _requester) exitWith {diag_log "VALOR ERROR :: Requester is null!";}; //No one to send this to!
 
-_query = format["SELECT pid, name FROM players WHERE pid='%1'",_getplayeruid];
+_query = format["SELECT pid, playtime FROM players WHERE pid='%1'",_getplayeruid];
 
 
 _tickTime = diag_tickTime;
@@ -44,7 +44,7 @@ _steamName = [_steamName] call valor_fnc_mresString;
 _map_content = [(0 call valor_fnc_get_hidement_array)] call valor_fnc_map_hidement_smaller_array;
 
 //Prepare the query statement..
-_query = format["INSERT INTO players (pid, name, gear , Map, alive,cash, bankacc,stats,adminlevel,donatorlevel,position,playtime,online) VALUES('%1', '%2','""[]""','%3','1','%4','%5','[100,100,0,12000]','0','0','[]','0','0')",
+_query = format["INSERT INTO players (pid, name, gear , Map, alive,cash, bankacc,stats,adminlevel,donatorlevel,position,playtime,online,gear_cop, stats_cop, position_cop) VALUES('%1', '%2','""[]""','%3','1','%4','%5','[100,100,0,12000]','0','0','[]','0','0','""[]""', '[100,100,0,12000]', '[]')",
 	_getplayeruid,
 	_name,
 	_map_content,

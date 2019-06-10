@@ -31,7 +31,8 @@ switch (_mode) do
 	};
 	case 5:
 	{
-		_set pushback (if(alive player) then {1} else {0});
+		//_set pushback (if(alive player) then {1} else {0});
+		_set pushBack Valor_alive;
 	};
 	case 6:
 	{

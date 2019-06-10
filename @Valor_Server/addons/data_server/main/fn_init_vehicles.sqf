@@ -61,7 +61,7 @@ _vehicle = objNull;
 		};
 		_vehicle setvariable ["DBID",_id,true];
 		_vehicle disableTIEquipment true;
-		_vehicle disableNVGEquipment true;
+		//_vehicle disableNVGEquipment true;
 		Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];
 
 

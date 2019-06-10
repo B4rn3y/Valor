@@ -13,7 +13,19 @@ switch (_mode) do
 	case 0:
 	{
 		_gear = param[3,"",["",[]]];
-		_query = format["Update players set gear = '%1' where pid = '%2'",_gear,_uid];
+		switch (_side) do
+		{
+			case opfor:
+			{
+				_query = format["Update players set gear_cop = '%1' where pid = '%2'",_gear,_uid];
+			};
+
+			case civilian:
+			{
+				_query = format["Update players set gear = '%1' where pid = '%2'",_gear,_uid];
+			};
+		};
+
 
 	};
 
@@ -41,7 +53,19 @@ switch (_mode) do
 	case 4:
 	{
 		_stats = param[3,"""[100,100,12000]""",["",[]]];
-		_query = format["Update players set stats = '%1' where pid = '%2'",_stats,_uid];
+
+		switch (_side) do
+		{
+			case opfor:
+			{
+				_query = format["Update players set stats_cop = '%1' where pid = '%2'",_stats,_uid];
+			};
+
+			case civilian:
+			{
+				_query = format["Update players set stats = '%1' where pid = '%2'",_stats,_uid];
+			};
+		};
 
 
 	};
@@ -49,15 +73,38 @@ switch (_mode) do
 	case 5:
 	{
 		_alive = param[3,1,[1]];
-		_query = format["Update players set alive = '%1' where pid = '%2'",_alive,_uid];
 
+		switch (_side) do
+		{
+			case opfor:
+			{
+				_query = format["Update players set alive_cop = '%1' where pid = '%2'",_alive,_uid];
+			};
+
+			case civilian:
+			{
+				_query = format["Update players set alive = '%1' where pid = '%2'",_alive,_uid];
+			};
+		};
 
 	};
 
 	case 6:
 	{
 		_pos = param[3,"""[]""",[1,"",[]]];
-		_query = format["Update players set position = '%1' where pid = '%2'",_pos,_uid];
+
+		switch (_side) do
+		{
+			case opfor:
+			{
+				_query = format["Update players set position_cop = '%1' where pid = '%2'",_pos,_uid];
+			};
+
+			case civilian:
+			{
+				_query = format["Update players set position = '%1' where pid = '%2'",_pos,_uid];
+			};
+		};
 
 
 	};

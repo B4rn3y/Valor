@@ -93,6 +93,7 @@ class CfgFunctions
 			class find_loottable {};
 			class loot_spawn_system {ext = ".fsm";};
 			class spawn_loot {};
+			class can_SPAWN_LOOT {};
 		};
 
 		class map_hidement

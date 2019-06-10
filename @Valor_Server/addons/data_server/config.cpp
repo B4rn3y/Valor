@@ -52,6 +52,7 @@ class CfgFunctions
 			class vehicleDelete {};
 			// persistent Vehicles end
 			class insert_vehicleprice {};
+			class insert_cop_crate {};
 		};
 
 		class carshop

@@ -23,7 +23,10 @@ if(_playerside isEqualTo sideUnknown || _name isEqualTo "" || _getplayeruid isEq
 
 switch (_playerside) do
 {
-
+	case opfor:
+	{
+        _query = format["Select uid, cash, bankacc,humanity , gear_cop , stats_cop, adminlevel, donatorlevel,alive_cop,  position_cop, Map, playtime, coplevel from players where pid = '%1'",_getplayeruid];
+    };
 
      case civilian:
     {

@@ -63,6 +63,12 @@ class Valor_settings {
 		goggles[] = {"G_Bandanna_blk"};
 		headgear[] = {"H_Bandanna_gry"};
 		backpack[] = {"B_Carryall_khk"};
+
+		uniforms_cop[] = {"rhs_uniform_m88_patchless"};// just arrays with stuff to add
+		goggles_cop[] = {"G_Bandanna_khk"};
+		headgear_cop[] = {"CUP_H_BAF_PARA_BERET"};
+		backpack_cop[] = {"CUP_B_USPack_Coyote"};
+		vest_cop[] = {"CUP_V_B_BAF_MTP_Osprey_Mk4_Scout"};
 	};
 
 	class settings {
@@ -80,7 +86,8 @@ class Valor_settings {
 		map_hidement_MARKER_BRUSH = "SolidFull";   // marker brush for hidement markers
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
 
-		no_ZED_spawn_Zones[] = {{"Trader_Zone_1",200}};
+		no_ZED_spawn_Zones[] = {{"Trader_Zone_1",200},{"Trader_Zone_2",600}};
+		no_loot_spawn_Zones[] = {{"Trader_Zone_1",200},{"Trader_Zone_2",600}};
 
 		not_liftable[] = {"B_CargoNet_01_ammo_F"};
 
@@ -95,9 +102,11 @@ class Valor_settings {
 	};
 
 	class Spawn_Points {
-		civilian_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}}; // saved like:   [Name,Picture for LB,POS as Marker]
-		west_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
-		independent_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
+		civilian_spawnPoints[] = {{"random_spawn_1",500},{"random_spawn_2",500},{"random_spawn_3",500},{"random_spawn_4",500},{"random_spawn_5",500},{"random_spawn_6",500},{"random_spawn_7",500},{"random_spawn_8",500},{"random_spawn_9",500}};
+		opfor_spawnPoints[] = {"cop_respawn"};
+		//civilian_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}}; // saved like:   [Name,Picture for LB,POS as Marker]
+		//west_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
+		//independent_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
 
 	};
 };
@@ -189,6 +198,16 @@ class CfgDebriefing
 		title = "Fehler!";
 		subTitle = "Es gab einen internen Fehler";
 		description = "Es gab einen Fehler. Bitte connecte erneut zum Server und versuche es erneut.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class Not_whitelisted
+	{
+		title = "Not whitelisted!";
+		subTitle = "You are not whitelisted";
+		description = "You are not whitelisted to use this slot.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};

@@ -2,7 +2,8 @@ private ["_container","_var","_base_id","_gang_id","_config_id","_base_config","
 _container = _this select 1;
 
 
-
+_var = _container getvariable "cop";
+if(!(isnil "_var") && playerside != opfor) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
 
 _var = _container getvariable "valor_base_ids";
 if(isnil "_var") exitWith {};

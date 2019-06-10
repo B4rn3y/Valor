@@ -17,7 +17,7 @@ item12[] = {"",7,210,183.055298,-140.795654,191.055298,-132.795654,0.000000,""};
 item13[] = {"__1",2,250,-209.854187,289.527100,-119.854187,339.527100,0.000000,""};
 item14[] = {"w8_for_player",4,218,-212.547668,349.918213,-122.547668,399.918213,0.000000,"w8 for player"};
 item15[] = {"Send_query__request",2,250,-214.044922,424.219604,-124.044922,474.219604,0.000000,"Send query " \n "request to" \n "Server"};
-item16[] = {"Data_loaded_reqe",4,4314,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
+item16[] = {"Data_loaded_reqe",4,218,-210.738159,-863.812805,-120.738159,-813.812805,1.000000,"Data loaded" \n "reqeust"};
 item17[] = {"true",4,218,146.101929,480.186890,236.101929,530.186890,0.000000,"true"};
 item18[] = {"__2",2,250,-217.843750,-448.505676,-127.843750,-398.505676,0.000000,""};
 item19[] = {"Data_loaded_data",4,218,-377.000977,-931.267822,-287.000977,-881.267822,2.000000,"Data loaded" \n "data"};
@@ -39,18 +39,18 @@ item34[] = {"Data_loaded_new",4,218,-208.703918,-1128.401489,-118.703918,-1078.4
 item35[] = {"Data_loaded_new_1",4,218,-81.212769,-932.781372,8.787231,-882.781372,0.000000,"Data loaded" \n "new blocked"};
 item36[] = {"Exit_Type_3",2,250,43.925537,-932.781372,133.925552,-882.781433,0.000000,"Exit Type"};
 item37[] = {"",7,210,192.687592,-1000.073730,200.687592,-992.073669,0.000000,""};
-item38[] = {"NOT_Blacklisted",4,218,-619.369873,-931.114136,-529.369873,-881.114197,1.000000,"NOT" \n "Blacklisted"};
+item38[] = {"Vars_ok",4,218,-619.369873,-931.114136,-529.369873,-881.114197,1.000000,"Vars ok"};
 item39[] = {"loading_Gear",2,250,-748.903625,-927.437622,-658.903625,-877.437561,0.000000,"loading Gear"};
 item40[] = {"position_known",4,218,-1326.025391,-940.332825,-1236.025269,-890.332825,0.000000,"position known"};
 item41[] = {"No_Position_know",4,218,-1218.846436,-1006.083801,-1128.846436,-956.083862,1.000000,"No Position" \n "known"};
-item42[] = {"END_2",1,250,-1220.651855,-1091.078613,-1130.651855,-1041.078369,0.000000,"END"};
+item42[] = {"END_2",1,4346,-1220.651855,-1091.078613,-1130.651855,-1041.078369,0.000000,"END"};
 item43[] = {"set_player__to_p",2,250,-1456.196045,-937.151917,-1366.195801,-887.151855,0.000000,"set player" \n " to position"};
 item44[] = {"END_3",1,250,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
 item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
-item47[] = {"Blacklisted_or_Vars",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Blacklisted or" \n "Vars set"};
-item48[] = {"Exit_Type_4",2,250,-377.905518,-1026.191162,-287.905518,-976.191528,0.000000,"Exit Type"};
-item49[] = {"true",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"true"};
+item47[] = {"Vars_set",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Vars set"};
+item48[] = {"Exit_Type_4",2,250,43.231445,-1020.873779,133.231445,-970.874146,0.000000,"Exit Type"};
+item49[] = {"Vars_ok",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"Vars ok"};
 item50[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
 item51[] = {"END_4",1,250,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
 item52[] = {"W8_a_bit",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"W8 a bit"};
@@ -67,6 +67,7 @@ item62[] = {"__8",2,250,-216.512451,-618.898438,-126.512451,-568.898438,0.000000
 item63[] = {"Display",4,218,-214.010254,-536.324341,-124.010246,-486.324310,0.000000,"Display"};
 item64[] = {"functions_ready",4,218,-1118.659424,-934.166382,-1028.659424,-884.166382,0.000000,"functions" \n "ready"};
 item65[] = {"dummy",2,250,-1217.596313,-937.245056,-1127.596191,-887.245056,0.000000,"dummy"};
+item66[] = {"Vars_set",4,218,45.028015,-1202.885254,135.028015,-1152.885620,0.000000,"Vars set"};
 link0[] = {0,16};
 link1[] = {0,19};
 link2[] = {0,34};
@@ -117,28 +118,30 @@ link46[] = {40,43};
 link47[] = {41,42};
 link48[] = {43,59};
 link49[] = {45,49};
-link50[] = {46,12};
-link51[] = {47,48};
-link52[] = {48,37};
-link53[] = {49,55};
-link54[] = {50,52};
-link55[] = {52,51};
-link56[] = {53,54};
-link57[] = {54,64};
-link58[] = {55,56};
-link59[] = {56,57};
-link60[] = {57,58};
-link61[] = {58,50};
-link62[] = {59,44};
-link63[] = {60,61};
-link64[] = {61,62};
-link65[] = {62,63};
-link66[] = {63,18};
-link67[] = {64,65};
-link68[] = {65,40};
-link69[] = {65,41};
-globals[] = {0.000000,0,0,0,0,640,480,1,176,6316128,1,-1755.115356,393.952759,57.584839,-1441.855225,1267,884,1};
-window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,1285};
+link50[] = {45,66};
+link51[] = {46,12};
+link52[] = {47,48};
+link53[] = {48,37};
+link54[] = {49,55};
+link55[] = {50,52};
+link56[] = {52,51};
+link57[] = {53,54};
+link58[] = {54,64};
+link59[] = {55,56};
+link60[] = {56,57};
+link61[] = {57,58};
+link62[] = {58,50};
+link63[] = {59,44};
+link64[] = {60,61};
+link65[] = {61,62};
+link66[] = {62,63};
+link67[] = {63,18};
+link68[] = {64,65};
+link69[] = {65,40};
+link70[] = {65,41};
+link71[] = {66,48};
+globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-2139.208984,-596.760986,-393.970459,-1470.154785,1267,884,1};
+window[] = {2,-1,-1,-1,-1,967,208,1648,208,3,1285};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -446,25 +449,25 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "NOT_Blacklisted">*/
-                                class NOT_Blacklisted
+                                /*%FSM<LINK "Vars_ok">*/
+                                class Vars_ok
                                 {
                                         itemno = 38;
                                         priority = 1.000000;
                                         to="loading_Gear";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"isnil ""Valor_blacklist"""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnil ""Valor_VARS_SET"" && isnil ""NOT_WHITELISTED"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
-                                /*%FSM<LINK "Blacklisted_or_Vars">*/
-                                class Blacklisted_or_Vars
+                                /*%FSM<LINK "Vars_set">*/
+                                class Vars_set
                                 {
                                         itemno = 47;
                                         priority = 0.000000;
                                         to="Exit_Type_4";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_blacklist"" || !isnil ""Valor_VARS_SET"""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_blacklist"" || !isnil ""Valor_VARS_SET"" || !isnil ""NOT_WHITELISTED"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -674,9 +677,29 @@ class FSM
                          "[format[""<t size='1.4' align='center'>Login done</t>""]] call valor_fnc_updateLoadingScreen;" \n
                          "//[] spawn valor_fnc_openSpawnMenu;" \n
                          "" \n
-                         "_pos = [getArray(configFile >> ""CfgWorlds"" >> worldName >> ""centerPosition""), 0, worldsize, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
-                         "_pos pushback 0;" \n
-                         "player setposatl _pos;" \n
+                         "" \n
+                         "" \n
+                         "switch (playerside) do" \n
+                         "{" \n
+                         "	case opfor:" \n
+                         "	{" \n
+                         "		_marker = getarray(missionConfigFile >> ""Valor_settings"" >> ""Spawn_Points"" >> ""opfor_spawnPoints"");" \n
+                         "		_marker = selectRandom _marker;" \n
+                         "		player setposatl (getmarkerpos _marker);" \n
+                         "" \n
+                         "	};" \n
+                         "" \n
+                         "	case civilian:" \n
+                         "	{" \n
+                         "		_marker = getarray(missionConfigFile >> ""Valor_settings"" >> ""Spawn_Points"" >> ""civilian_spawnPoints"");" \n
+                         "		_marker = selectRandom _marker;" \n
+                         "		_pos = getmarkerpos (_marker select 0);" \n
+                         "		_radius = _marker select 1;" \n
+                         "		_pos_spawn = [_pos, 0, _radius, 1, 0, 20, 1] call BIS_fnc_findSafePos;" \n
+                         "		_pos_spawn pushback 0;" \n
+                         "		player setposatl _pos_spawn;" \n
+                         "	};" \n
+                         "};" \n
                          "" \n
                          "[true] call valor_fnc_closeLoadingScreen;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -740,14 +763,25 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "true">*/
-                                class true
+                                /*%FSM<LINK "Vars_set">*/
+                                class Vars_set
+                                {
+                                        itemno = 66;
+                                        priority = 0.000000;
+                                        to="Exit_Type_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnil ""Valor_blacklist"" || !isnil ""Valor_VARS_SET"" || !isnil ""NOT_WHITELISTED"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Vars_ok">*/
+                                class Vars_ok
                                 {
                                         itemno = 49;
                                         priority = 0.000000;
                                         to="Gear_loading";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnil ""Valor_VARS_SET"" && isnil ""NOT_WHITELISTED"""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -759,14 +793,29 @@ class FSM
                 {
                         name = "Exit_Type_4";
                         itemno = 48;
-                        init = /*%FSM<STATEINIT""">*/"_endtype = ""Blacklisted"";" \n
-                         "if(!isnil ""Valor_VARS_SET"") then {" \n
-                         "	_endtype = ""Vars_set"";" \n
-                         "	diag_log ""VALOR ERROR :: Some Vars were already set, exiting INIT"";" \n
-                         "} else {" \n
-                         "	_endtype = ""Blacklisted"";" \n
-                         "	diag_log ""VALOR ERROR :: You are blacklisted, kicking player"";" \n
-                         "};"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_endtype = ""Not_whitelisted"";" \n
+                         "switch (true) do" \n
+                         "{" \n
+                         "	case !(isnil ""Valor_VARS_SET""):" \n
+                         "	{" \n
+                         "		_endtype = ""Vars_set"";" \n
+                         "		diag_log ""VALOR ERROR :: Some Vars were already set, exiting INIT"";" \n
+                         "	};" \n
+                         "" \n
+                         "	case !(isnil ""VALOR_Blacklisted""):" \n
+                         "	{" \n
+                         "		_endtype = ""Blacklisted"";" \n
+                         "		diag_log ""VALOR ERROR :: You are blacklisted, exiting INIT"";" \n
+                         "	};" \n
+                         "" \n
+                         "	case !(isnil ""NOT_WHITELISTED""):" \n
+                         "	{" \n
+                         "		_endtype = ""Not_whitelisted"";" \n
+                         "		diag_log ""VALOR ERROR :: You are not whitelisted for this slot, exiting INIT"";" \n
+                         "	};" \n
+                         "};" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

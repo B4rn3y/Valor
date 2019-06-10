@@ -26,16 +26,21 @@ CREATE TABLE IF NOT EXISTS `players` (
   `uid` int(6) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `pid` varchar(17) NOT NULL,
+  `coplevel`  enum('0','1','2','3','4','5','6','7','8','9','10') CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT '0' ,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '5000',
   `humanity` int(100) NOT NULL DEFAULT '3500',
   `gear` text NOT NULL,
+  `gear_cop` text NOT NULL,
   `quests` text,
-  `stats` varchar(32) NOT NULL DEFAULT '"[100,100,0,12000,[]]"',
+  `stats` varchar(32) NOT NULL DEFAULT '"[100,100,0,12000]"',
+  `stats_cop` varchar(32) NOT NULL DEFAULT '"[100,100,0,12000]"',
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `alive` tinyint(1) NOT NULL DEFAULT '1',
+  `alive_cop` tinyint(1) NOT NULL DEFAULT '1',
   `position` varchar(64) NOT NULL DEFAULT '"[]"',
+  `position_cop` varchar(64) NOT NULL DEFAULT '"[]"',
   `Map` text NOT NULL,
   `playtime` varchar(32) NOT NULL DEFAULT '0',
   `online` tinyint(1) NOT NULL DEFAULT '0',
@@ -104,12 +109,42 @@ CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   `damage` text NOT NULL,
   `sold` int(6) NOT NULL DEFAULT '0',
   `bought` int(6) NOT NULL DEFAULT '0',
+  `gang_id` int(6) NOT NULL DEFAULT '-1',
+  `cop` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
+--
+-- Table structure for table `houses`
+-- Needed for extDB latest update on git
+--
+DROP TABLE IF EXISTS `group_members`;
+CREATE TABLE IF NOT EXISTS `group_members` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `group_id` int(25) NOT NULL DEFAULT '1',
+  `name` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
+  `rank` int(6) NOT NULL DEFAULT '1',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
+--
+-- Table structure for table `houses`
+-- Needed for extDB latest update on git
+--
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `founder` varchar(17) NOT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 --
 -- Table structure for table `houses`
@@ -177,6 +212,7 @@ CREATE TABLE IF NOT EXISTS `bases` (
   `base_id` int(6) NOT NULL AUTO_INCREMENT,
   `gang_id` int(10) NOT NULL,
   `config_id` int(10) NOT NULL,
+  `cop` tinyint(1) NOT NULL DEFAULT '0',
   `build` int(10) NOT NULL DEFAULT '0',
   `classname` text NOT NULL,
   `pos` text NOT NULL,
