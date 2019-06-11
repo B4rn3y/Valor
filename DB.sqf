@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   `damage` text NOT NULL,
   `sold` int(6) NOT NULL DEFAULT '0',
   `bought` int(6) NOT NULL DEFAULT '0',
-  `gang_id` int(6) NOT NULL DEFAULT '-1',
+  `group_id` int(6) NOT NULL DEFAULT '-1',
   `cop` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `base_objects` (
 DROP TABLE IF EXISTS `bases`;
 CREATE TABLE IF NOT EXISTS `bases` (
   `base_id` int(6) NOT NULL AUTO_INCREMENT,
-  `gang_id` int(10) NOT NULL,
+  `group_id` int(10) NOT NULL,
   `config_id` int(10) NOT NULL,
   `cop` tinyint(1) NOT NULL DEFAULT '0',
   `build` int(10) NOT NULL DEFAULT '0',
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `bases` (
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`base_id`),
-  KEY `gang_id` (`gang_id`)
+  KEY `group_id` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------

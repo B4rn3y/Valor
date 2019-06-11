@@ -17,7 +17,7 @@ if(count _var > 3) then {
 };
 
 if (_base_id isequalto -1) exitWith {diag_log "Valor :: Var _base_id of a crate is nil"};
-
+if!(_object_id isEqualTo -1) exitWith {};
 
 _base_config = [_config_id] call valor_fnc_base_config;
 

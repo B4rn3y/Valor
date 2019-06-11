@@ -38,7 +38,7 @@ _ammobox setdir _dir;
 _ammobox setVectorUp _vector;
 _inventory = [_ammobox] call valor_fnc_getvehiclecargo;
 
-_query = format["INSERT INTO bases (gang_id, config_id, classname, pos, dir, vector, inventory) VALUES('%1', '%2','%3','%4','%5','%6','%7')",_gang_id,_config_id,(str _classname),_pos,_dir,_vector,_inventory];
+_query = format["INSERT INTO bases (group_id, config_id, classname, pos, dir, vector, inventory) VALUES('%1', '%2','%3','%4','%5','%6','%7')",_gang_id,_config_id,(str _classname),_pos,_dir,_vector,_inventory];
 [_query,1] call valor_fnc_db_sync;
 
 
@@ -66,7 +66,7 @@ _query = format["INSERT INTO bases (gang_id, config_id, classname, pos, dir, vec
 
 
  sleep 5;
-_query = format["SELECT base_id FROM bases WHERE gang_id='%1'",_gang_id];
+_query = format["SELECT base_id FROM bases WHERE group_id='%1' && pos like %2%3%2",_gang_id,"%",_pos];
 _queryResult = [_query,2] call valor_fnc_db_sync;
 
 if(typeName _queryResult isEqualTo "ARRAY") then {

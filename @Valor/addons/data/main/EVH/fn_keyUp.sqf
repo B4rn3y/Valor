@@ -10,6 +10,18 @@ switch (_code) do
 	case 1: //ESC
 	{
 	};
+
+	case 41: //^
+	{
+		[] call valor_fnc_opengroupmenu;
+	};
+
+	case 219: // WINDOWS LEFT
+	{
+		[cursorObject] call valor_fnc_objecthandler;
+	};
+
+
 };
 switch (true) do
 {
@@ -18,5 +30,7 @@ switch (true) do
 		["compass",{}] call valor_fnc_stackOnEachFrame;
 		_handle = true;
 	};
+
+
 };
 _handle;

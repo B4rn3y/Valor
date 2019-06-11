@@ -37,6 +37,10 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 	_object setvariable["valor_base_ids",[_base_id,_gang_id,_config_id,_id],true];
 	if(_classname in ["B_CargoNet_01_ammo_F"]) then {
 		_ret = [_object,_inv] call valor_fnc_loadVehicleCargo;
+	} else {
+		if([_object] call valor_fnc_lockdoor) then {
+			diag_log format["Valor Server :: The object %1 has been locked",_classname];
+		};
 	};
 
 } foreach _res;

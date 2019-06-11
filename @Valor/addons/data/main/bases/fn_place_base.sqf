@@ -1,9 +1,12 @@
 private ["_base_config","_blueprint","_blueprint_itembox","_classname","_pos_dependent","_dir_dependent","_vector_dependent","_object","_player_pos","_spawnpos","_ammobox","_pos","_id_place","_id_cancel","_id_evh","_restart","_message_server","_id_confirm"];
 _id = param[0,-1,[0]];
-if(_id isEqualTo -1) exitWith {hint "Wrong or unknown base id"};
-if!(isnil "Valor_placed") exitWith {hint "You cant do that yet"};
-if!(isnil "Valor_confirm_place") exitWith {hint "You cant do that yet"};
-if!(isnil "Placing_base") exitWith {hint "You cant do that yet"};
+if(_id isEqualTo -1) exitWith {systemchat "Valor :: Wrong or unknown base id"};
+if!(isnil "Valor_placed") exitWith {systemchat "Valor :: You cant do that yet"};
+if!(isnil "Valor_confirm_place") exitWith {systemchat "Valor :: You cant do that yet"};
+if!(isnil "Placing_base") exitWith {systemchat "Valor :: You cant do that yet"};
+if(isnil "valor_group") exitWith {diag_log "Valor_group is nil O.o"};
+if(valor_group isEqualTo []) exitWith {systemchat "Valor :: You have to be in a group to build a base"};
+
 Placing_base = true;
 
 _base_config = [_id] call valor_fnc_base_config;
@@ -106,7 +109,8 @@ if(Valor_placed) then {
 		valor_objectarray_placed = nil;
 
 					 // Here goes the Gang ID
-		[_message_server,0,player,Valor_config_id,[typeof _ammobox,getposatl _ammobox,getdir _ammobox,vectorUp _ammobox]] remoteExec["valor_fnc_insert_base",2];
+		if(valor_group isEqualTo []) exitWith {systemchat "Valor :: You are not in a group anymore"};
+		[_message_server,(Valor_group select 0),player,Valor_config_id,[typeof _ammobox,getposatl _ammobox,getdir _ammobox,vectorUp _ammobox]] remoteExec["valor_fnc_insert_base",2];
 		deleteVehicle _ammobox;
 		systemchat "The request has been send to the server, please stand by.";
 	} else {

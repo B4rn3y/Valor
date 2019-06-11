@@ -136,6 +136,8 @@ class CfgFunctions
 			file = "\data\main\bases";
 			class base_config {};
 			class place_base {};
+			class lockdoor {};
+			class objecthandler {};
 		};
 
 
@@ -156,6 +158,7 @@ class CfgFunctions
 			class keyUp {};
 			class on_put {};
 			class rope_attached {};
+			class onPlayerKilled {};
 		};
 
 		class zombie

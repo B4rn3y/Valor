@@ -8,12 +8,14 @@ author = "Valor People";
 
 
 // ----RESPAWN SETTINGS----
-respawn = "Base";
+respawn = BASE;
+respawndelay = 5;
 
 
 disabledAI = 1;
-joinUnassigned = 0;
+joinUnassigned = 1;
 enableDebugConsole = 2;
+
 
 
 

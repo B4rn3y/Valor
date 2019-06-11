@@ -13,7 +13,7 @@ private ["_query","_res","_ammobox_ring","_base_id","_gang_id","_config_id","_bu
 
 
 
-_query = "Select base_id, gang_id, config_id, build, classname, pos, dir, vector, inventory, cop from bases";
+_query = "Select base_id, group_id, config_id, build, classname, pos, dir, vector, inventory, cop from bases";
 _res = [_query,2,true] call valor_fnc_db_sync;
 
 
