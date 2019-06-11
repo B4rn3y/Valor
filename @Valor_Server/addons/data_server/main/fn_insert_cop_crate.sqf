@@ -14,7 +14,7 @@ _pos = getposatl _Crate_send;
 _dir = getdir _Crate_send;
 _vector = vectorUp _Crate_send;
 
-_query = format["INSERT INTO bases (gang_id, config_id, classname, pos, dir, vector, inventory,cop) VALUES('%1', '%2','%3','%4','%5','%6','%7','%8')",-1,-1,(str _classname),_pos,_dir,_vector,_inventory,1];
+_query = format["INSERT INTO bases (group_id, config_id, classname, pos, dir, vector, inventory,cop) VALUES('%1', '%2','%3','%4','%5','%6','%7','%8')",-1,-1,(str _classname),_pos,_dir,_vector,_inventory,1];
 [_query,1] call valor_fnc_db_sync;
 
 sleep 3;

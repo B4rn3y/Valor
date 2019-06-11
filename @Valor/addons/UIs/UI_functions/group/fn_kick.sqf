@@ -1,5 +1,6 @@
 
-private ["_promote","_display","_listbox_member","_sel","_rank","_pid","_members","_entry","_pid_loop","_his_rank"];
+
+private ["_promote","_display","_listbox_member","_sel","_rank","_pid","_members","_entry","_pid_loop","_his_rank","_he"];
 _promote = [0,false,[false]];
 _display = findDisplay 3004;
 if(isnull _display) exitWith {};
@@ -29,6 +30,11 @@ if(_his_rank >= _rank) exitWith {systemchat "Valor :: You cant kick this person"
 
 _members = _members - [_entry];
 //valor_group set[1,_members];
+_he = [_pid] call valor_fnc_findPlayerToUID;
+if!(isnull _he) then {
+	[1,valor_group select 0] remoteexec["valor_fnc_syncGroup",_he];
+	_he setvariable["Valor_group_id",nil,true];
+};
 
 [1,player,valor_group select 0,_pid,0] remoteexec["valor_fnc_syncGroupDB",2];
 [0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];

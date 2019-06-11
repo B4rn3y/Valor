@@ -39,7 +39,7 @@ switch (_index) do
 		if(_group_id isEqualTo -1) exitWith {};
 		_pid = param[3,"",[""]];
 		if(_pid isEqualTo "") exitWith {};
-		_rank = param[2,-1,[0]];
+		_rank = param[4,-1,[0]];
 		if(_rank isEqualTo -1) exitWith {};
 
 		if(_rank isEqualTo 0) then {
@@ -53,18 +53,25 @@ switch (_index) do
 
 	case 2: // set new leader
 	{
+		diag_log str _this;
 		_requester = param[1,objNull,[objNull]];
 		if(isnull _requester) exitWith {};
+		diag_log str _this;
 		_group_id = param[2,-1,[0]];
 		if(_group_id isEqualTo -1) exitWith {};
+		diag_log str _this;
 		_pid_new_leader = param[3,"",[""]];
 		if(_pid_new_leader isEqualTo "") exitWith {};
+		diag_log str _this;
 		_pid_old_leader = param[4,"",[""]];
 		if(_pid_old_leader isEqualTo "") exitWith {};
+		diag_log str _this;
 
 
 		_query = format["Update group_members set rank = '%2' where pid= '%1'",_pid_old_leader,2];
 		[_query,1] call valor_fnc_db_sync;
+
+		sleep 2;
 
 		_query = format["Update group_members set rank = '%2' where pid= '%1'",_pid_new_leader,3];
 		[_query,1] call valor_fnc_db_sync;

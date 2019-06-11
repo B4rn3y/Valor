@@ -29,6 +29,7 @@ valor_objectarray_placed = [];
 	_object = _classname createvehiclelocal[0,0,10];
 	_player_pos = getposatl player;
 	_spawnpos = player modelToWorld _pos_dependent;
+	_object setvariable["valor_base_ids",[0,0,0,0]];
 	_object setdir (_dir_dependent + getdir player);
 	_object setposatl _spawnpos;
 	_object setvectorup (player vectorModelToWorld _vector_dependent);

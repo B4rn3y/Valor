@@ -40,7 +40,7 @@ if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_ena
 
 
 
-
+player addEventHandler["GetInMan",{_this spawn valor_fnc_GetInEVH}];
 player addEventHandler["Killed", {_this spawn valor_fnc_onPlayerKilled}];
 player addEventHandler["handleDamage",{}];
 player addEventHandler["Respawn", {}];

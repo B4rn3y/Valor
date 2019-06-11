@@ -1,10 +1,10 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_zombie_destroyer">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-199.273346,-1187.348511,-109.273354,-1137.348755,0.000000,"init"};
+item0[] = {"init",0,250,-199.273346,-1187.348511,-109.273354,-1137.348755,0.000000,"init"};
 item1[] = {"check_",4,218,-50.743286,-1008.001770,39.256721,-958.001831,0.000000,"check?"};
 item2[] = {"destroy_local_ze",2,250,-50.682007,-884.838684,39.317986,-834.838684,0.000000,"destroy local zeds"};
-item3[] = {"set_waittime",2,250,-207.358200,-1004.916626,-117.358177,-954.916626,0.000000,"set waittime"};
+item3[] = {"set_waittime",2,4346,-207.358200,-1004.916626,-117.358177,-954.916626,0.000000,"set waittime"};
 item4[] = {"true",4,218,-216.085632,-892.474060,-126.085632,-842.474060,0.000000,"true"};
 item5[] = {"array_check",4,218,-208.172592,-1112.007813,-118.172592,-1062.007813,0.000000,"array check"};
 link0[] = {0,5};
@@ -82,7 +82,7 @@ class FSM
                         name = "set_waittime";
                         itemno = 3;
                         init = /*%FSM<STATEINIT""">*/"" \n
-                         "_wait = diag_ticktime + random[180,200,220];"/*%FSM</STATEINIT""">*/;
+                         "_wait = diag_ticktime + random[30,40,60];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

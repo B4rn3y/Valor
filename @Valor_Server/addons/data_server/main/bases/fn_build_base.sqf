@@ -15,12 +15,15 @@ if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknow
 if(_gang_id isEqualTo -1) exitWith {diag_log "Valor Error :: _gang_id unknown";_container enableSimulation true;};
 if(_requester isEqualTo objNull) exitWith {diag_log "Valor Error :: _requester unknown";_container enableSimulation true;};
 if(_container isEqualTo objNull) exitWith {diag_log "Valor Error :: _container unknown";_container enableSimulation true;};
-
-
-
+if(missionNamespace getvariable[format["Base_build_ID_%1",_base_id],false]) exitWith {};
+_pos_container = getposatl _container;
+deleteVehicle _container;
+sleep random 5;
+if(missionNamespace getvariable[format["Base_build_ID_%1",_base_id],false]) exitWith {};
+missionNamespace setvariable[format["Base_build_ID_%1",_base_id],true];
 _query = format["Update bases set build = '1' where base_id = '%1'",_base_id];
 [_query,1] call valor_fnc_db_sync;
-_pos_container = getposatl _container;
+
 
 _near_players = {
 	_man_close = nearestobjects[_pos_container,["Man"],200];
@@ -32,24 +35,24 @@ _near_players = {
 
 
 
-_veh_close = nearestobjects[getposatl _container,["Landvehicle","Air","Ship"],100];
+_veh_close = nearestobjects[_pos_container,["Landvehicle","Air","Ship"],100];
 
 "Valor Server :: The Server is waiting for all Vehicles to leave a radius of 100m around the crate to spawn the base. If this status cant be reached in 3 minutes the server is gonna spawn the base." remoteexec["systemchat",(call _near_players)];
 _time = 0;
-waitUntil{sleep 1; _time = _time + 1; if(_time >= 180) exitWith {}; _veh_close = nearestobjects[getposatl _container,["Landvehicle","Air","Ship"],100]; _veh_close isEqualTo []};
+waitUntil{sleep 1; _time = _time + 1; if(_time >= 180) exitWith {}; _veh_close = nearestobjects[_pos_container,["Landvehicle","Air","Ship"],100]; _veh_close isEqualTo []};
 
 
 
 {
 	deleteVehicle _x;
-} foreach (nearestObjects[getposatl _container,["Land_CncBarrierMedium_F"],10]);
-deleteVehicle _container;
+} foreach (nearestObjects[_pos_container,["Land_CncBarrierMedium_F"],10]);
+
 
 "Valor Server :: The Server is now starting building the base." remoteexec["systemchat",(call _near_players)];
 [_base_id,_config_id,_gang_id] spawn valor_fnc_build_base_objects;
 
 
-
+_base_id spawn {sleep 60;missionNamespace setvariable[format["Base_build_ID_%1",_this],nil];};
 
 
 

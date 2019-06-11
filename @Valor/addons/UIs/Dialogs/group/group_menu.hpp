@@ -68,7 +68,7 @@ class group_menu {
 		{
 			idc = 2400;
 			text = "Leave"; //--- ToDo: Localize;
-			onbuttonClick = "[] spawn valor_fnc_leageGang;";
+			onbuttonClick = "[] spawn valor_fnc_leaveGang;";
 			x = 0.787879;
 			y = 0.121212;
 			w = 0.202273;

@@ -66,7 +66,7 @@ _query = format["INSERT INTO bases (group_id, config_id, classname, pos, dir, ve
 
 
  sleep 5;
-_query = format["SELECT base_id FROM bases WHERE group_id='%1' && pos like %2%3%2",_gang_id,"%",_pos];
+_query = format["SELECT base_id FROM bases WHERE group_id='%1' && pos like '%2%3%2'",_gang_id,"%",_pos];
 _queryResult = [_query,2] call valor_fnc_db_sync;
 
 if(typeName _queryResult isEqualTo "ARRAY") then {

@@ -65,7 +65,7 @@ link31[] = {26,10};
 link32[] = {27,26};
 link33[] = {28,6};
 globals[] = {0.000000,0,0,0,0,640,480,1,214,6316128,1,-675.658081,302.715942,-494.432373,-1131.841431,901,587,1};
-window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,919};
+window[] = {0,-1,-1,-1,-1,785,26,1466,26,1,919};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -160,7 +160,7 @@ class FSM
                          "" \n
                          "_the_house = selectRandom _houses;" \n
                          "" \n
-                         "_var = cursorObject getvariable[""valor_base_ids"",[]];"/*%FSM</STATEINIT""">*/;
+                         "_var = _the_house getvariable[""valor_base_ids"",[]];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

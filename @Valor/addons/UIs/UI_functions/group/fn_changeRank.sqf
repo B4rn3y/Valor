@@ -1,6 +1,7 @@
 
 private ["_promote","_display","_listbox_member","_sel","_rank","_pid","_members","_entry","_current_rank","_new_entry","_index"];
-_promote = [0,false,[false]];
+_promote = param[0,false,[false]];
+diag_log str _promote;
 _display = findDisplay 3004;
 if(isnull _display) exitWith {};
 _listbox_member = _display displayCtrl 1500;
@@ -25,6 +26,7 @@ _entry = [];
 if(_entry isEqualTo []) exitWith {diag_log "Valor :: Cant find Pid in array"};
 
 _current_rank = _entry select 1;
+diag_log str [_current_rank, _promote];
 if(_current_rank isEqualTo 2 && _promote) exitWith {systemchat "Valor :: You cant use the Promote Button for that"};
 if(_current_rank isEqualTo 1 && !_promote) exitWith {systemchat "Valor :: You cant use the Demote Button for that"};
 _rank = 1;

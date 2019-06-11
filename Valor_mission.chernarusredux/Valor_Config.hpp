@@ -86,8 +86,8 @@ class Valor_settings {
 		map_hidement_MARKER_BRUSH = "SolidFull";   // marker brush for hidement markers
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
 
-		no_ZED_spawn_Zones[] = {{"Trader_Zone_1",200},{"Trader_Zone_2",600}};
-		no_loot_spawn_Zones[] = {{"Trader_Zone_1",200},{"Trader_Zone_2",600}};
+		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500}};
+		no_loot_spawn_Zones[] = {{"Survivor_city_1",500}};
 
 		not_liftable[] = {"B_CargoNet_01_ammo_F"};
 

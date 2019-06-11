@@ -64,12 +64,8 @@ class CfgFunctions
 		class traderzones
 		{
 			file = "\data\main\traderzones";
-			class addEVH_trader {};
-			class handledamage_traderzone {};
-			class punish_killer {};
-			class GetInEVH {};
-			class takeEVH_trader {};
-			class inventory_opened_trader {};
+			class setupVariablesTrader {};
+
 		};
 
 		class init
@@ -159,6 +155,8 @@ class CfgFunctions
 			class on_put {};
 			class rope_attached {};
 			class onPlayerKilled {};
+			class GetInEVH {};
+			class takeEVH_trader {};
 		};
 
 		class zombie

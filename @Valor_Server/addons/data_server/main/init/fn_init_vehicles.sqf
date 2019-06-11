@@ -1,8 +1,8 @@
 
 
-private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_type","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop"];
+private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop","_mode","_number"];
 
-_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop from persistent_vehicles";
+_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, mode , group_id, cop from persistent_vehicles";
 
 _res = [_query,2,true] call valor_fnc_db_sync;
 
@@ -26,6 +26,9 @@ _vehicle = objNull;
 	_fuel = _x select 7;
 	_damage = _x select 8;
 	_shop = _x select 9;
+	_mode = _x select 10;
+	_number = _x select 11;
+	_cop = _x select 12;
 	_classname = call compile _classname;
 	if(_shop isEqualTo 0) then {
 
@@ -55,10 +58,16 @@ _vehicle = objNull;
 			_vehicle setdir _dir;
 			_vehicle setposatl _pos;
 			_vehicle setVectorUp _vector;
+			_vehicle setvariable["group_restricted",[_mode,_number],true];
 
 			[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;
 			[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
 		};
+
+		if(_cop isEqualTo 1) then {
+			_vehicle setvariable["group_restricted",[-2,-1],true];
+		};
+
 		_vehicle setvariable ["DBID",_id,true];
 		_vehicle disableTIEquipment true;
 		//_vehicle disableNVGEquipment true;

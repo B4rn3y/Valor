@@ -16,8 +16,18 @@ disabledAI = 1;
 joinUnassigned = 1;
 enableDebugConsole = 2;
 
+wreckLimit = 5;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 240;
 
+corpseLimit = 30;
+corpseRemovalMinTime = 600;
+corpseRemovalMaxTime = 1200;
 
+respawnDialog = 0;
+respawnOnStart = -1;
+Briefing = 0;
+allowFunctionsRecompile = 0;
 
 
 #include "Valor_Config.hpp"

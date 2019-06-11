@@ -1,17 +1,108 @@
-private ["_container","_var","_base_id","_gang_id","_config_id","_base_config","_stuff","_cargo","_arr_count_item","_classname","_amount_needed","_index","_txt","_amount"];
-_container = _this select 1;
 
+private ["_container","_container2","_exit","_var","_mode","_number","_time","_base_id","_gang_id","_config_id","_object_id","_group_id","_base_config","_stuff","_cargo","_arr_count_item","_classname","_amount_needed","_index","_txt","_amount"];
+_container = _this select 1;
+_container2 = _this select 2;
+
+if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container iskindof "SHIP" || _container2 iskindof "Landvehicle" || _container2 iskindof "AIR" || _container2 iskindof "SHIP") exitWith {
+
+	if(playerSide in [opfor,independent,blufor]) exitWith {};
+	_exit = false;
+	_var = _container getvariable "group_restricted";
+	if(isnil "_var") exitWith {};
+
+	_mode = _var select 0;
+	_number = _var select 1;
+	_var = nil;
+	switch (_mode) do
+	{
+		case 1:
+		{
+			if(isnil "valor_group") exitWith {_exit = true;};
+			if(valor_group isEqualTo []) exitWith {_exit = true;};
+
+			if!(_number isEqualTo (valor_group select 0)) exitWith {_exit = true;};
+		};
+
+		case -2:
+		{
+			_exit = true;
+		};
+
+		default
+		{
+			if!(_number isEqualTo (getplayeruid player)) exitWith {_exit = true;};
+		};
+	};
+
+
+
+
+	if!(_exit) then {
+		if(_container2 iskindof "Landvehicle" || _container2 iskindof "AIR" || _container2 iskindof "SHIP") then {
+			_var = _container2 getvariable "group_restricted";
+			if(isnil "_var") exitWith {};
+
+			_mode = _var select 0;
+			_number = _var select 1;
+
+			switch (_mode) do
+			{
+				case 1:
+				{
+					if(isnil "valor_group") exitWith {_exit = true;};
+					if(valor_group isEqualTo []) exitWith {_exit = true;};
+
+					if!(_number isEqualTo (valor_group select 0)) exitWith {_exit = true;};
+				};
+
+				case -2:
+				{
+					_exit = true;
+				};
+
+				default
+				{
+					if!(_number isEqualTo (getplayeruid player)) exitWith {_exit = true;};
+				};
+			};
+		};
+	};
+
+
+	if(_exit) exitWith {
+		0 spawn {
+			waitUntil {!isNull (findDisplay 602)};
+			closeDialog 0;
+			for "_i" from 1 to 6 do {
+		        closeDialog 0;
+		        sleep 0.2;
+		    };
+		    waitUntil {(!isNull (findDisplay 602))};
+		    closeDialog 0;
+		    closeDialog 0;
+		};
+	};
+
+};
+
+
+_var = nil;
 
 _var = _container getvariable "cop";
 if(!(isnil "_var") && playerside != opfor) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
-
+if!(isnil "_var") exitWith {};
 _var = _container getvariable "valor_base_ids";
 if(isnil "_var") exitWith {};
+if(isnil "valor_group") exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
+iF(valor_group isEqualTo []) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
 
 _base_id = _var select 0;
 _gang_id = _var select 1;
 _config_id = _var select 2;
 _object_id = -1;
+_group_id = valor_group select 0;
+if!(_group_id isEqualTo _gang_id) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
+
 if(count _var > 3) then {
 	_object_id = _var select 3;
 };

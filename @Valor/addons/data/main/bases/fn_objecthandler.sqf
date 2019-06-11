@@ -8,7 +8,11 @@ if(valor_group isEqualTo []) exitWith {};
 if(isnull _object) exitWith	{
 	_object = nearestobject[player,"Land_Net_Fence_Gate_F"];
 	if!(isNull _object) then {
-		if(player distance _object < 5) then {
+		_var = _object getvariable["valor_base_ids",-1];
+		if(_var isEqualTo -1) exitWith {};
+		_group_opject = _var select 1;
+		_group_player = valor_group select 0;
+		if(player distance _object < 5 && _group_opject isEqualTo _group_player) then {
 			[_object] call valor_fnc_lockdoor;
 		};
 	};
