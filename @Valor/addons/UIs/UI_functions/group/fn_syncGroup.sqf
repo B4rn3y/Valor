@@ -16,6 +16,7 @@ switch (_index) do
 	case 1:
 	{
 		Valor_group = [];
+		player setvariable["Valor_group_id",nil,true];
 	};
 
 	case 2:

@@ -1,8 +1,10 @@
+private ["_refresh","_display","_str_text_playtime","_listbox_member","_btn_leave","_btn_invite","_btn_kick","_btn_promote","_disply","_btn_demote","_btn_setLeader","_btn_create_group","_btn_close","_btn_delete_gang","_background_no_gang","_combo_players","_edit_group_name","_rank","_online","_ret","_pid","_var"];
 _refresh = param[0,false,[false]];
-if(_refresh) then {
+disableSerialization;
+if!(_refresh) then {
 	closedialog 0;
 
-	disableSerialization;
+
 	if(!createDialog "group_menu") exitWith {systemChat "Valor Error :: Could not create the dialog!";};
 };
 _display = findDisplay 3004;
@@ -12,7 +14,7 @@ _listbox_member = _display displayCtrl 1500;
 _btn_leave = _display displayCtrl 2400;
 _btn_invite = _display displayCtrl 2401;
 _btn_kick = _display displayCtrl 2402;
-_btn_promote = _disply displayCtrl 2403;
+_btn_promote = _display displayCtrl 2403;
 _btn_demote = _display displayCtrl 2404;
 _btn_setLeader = _display displayCtrl 2405;
 _btn_create_group = _display displayCtrl 2406;
@@ -25,8 +27,17 @@ _combo_players = _display displayCtrl 2100;
 
 _edit_group_name = _display displayCtrl 1400;
 
-{_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang];
+_background_no_gang ctrlsetfade 0;
+_background_no_gang ctrlCommit 0;
 
+_edit_group_name ctrlsetfade 0;
+_edit_group_name ctrlCommit 0;
+
+_btn_create_group ctrlSetFade 0;
+_btn_create_group ctrlCommit 0;
+
+
+{_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang];
 
 _rank = [getPlayerUID player] call valor_fnc_getGroupRank;
 
@@ -40,7 +51,7 @@ _edit_group_name ctrlCommit 0;
 
 _btn_create_group ctrlSetFade 1;
 _btn_create_group ctrlCommit 0;
-{_x ctrlEnable false;} foreach [_listbox_member,_btn_leave];
+{_x ctrlEnable true;} foreach [_listbox_member,_btn_leave];
 
 if(_rank > 1) then {
 	{_x ctrlEnable true;} foreach [_btn_invite,_btn_kick,_combo_players];
@@ -65,9 +76,9 @@ lbclear _listbox_member;
 
 	_id = _listbox_member lbAdd format["[%1] - %2",_rank,_name];
 	_listbox_member lbSetData[_id,_pid];
-
-	if!(isnull _online) then {
-		if((side _online) in [opfor,independent,blufor]) then {
+	_player = call _online;
+	if!(isnull _player) then {
+		if((side _player) in [opfor,independent,blufor]) then {
 			_listbox_member lbSetColor[_id,[1,0.502,0,1]];
 		} else {
 			_listbox_member lbSetColor[_id,[0.004,0.875,0.004,1]];

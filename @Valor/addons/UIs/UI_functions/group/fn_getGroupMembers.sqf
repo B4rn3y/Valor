@@ -9,7 +9,7 @@ _ret = [];
 		_ret pushBack _x;
 	};
 
-} foreach (playableUnits - [player]);
+} foreach playableUnits;
 
 _ret
 

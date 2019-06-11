@@ -57,6 +57,7 @@ class group_menu {
 		class member_listbox: valor_RscListbox
 		{
 			idc = 1500;
+			sizeEx = 0.040;
 			x = 0.38005;
 			y = 0.121212;
 			w = 0.392929;
@@ -67,6 +68,7 @@ class group_menu {
 		{
 			idc = 2400;
 			text = "Leave"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_leageGang;";
 			x = 0.787879;
 			y = 0.121212;
 			w = 0.202273;
@@ -76,6 +78,7 @@ class group_menu {
 		{
 			idc = 2401;
 			text = "Invite"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_invite_player;";
 			x = 0.789142;
 			y = 0.220539;
 			w = 0.202273;
@@ -85,6 +88,7 @@ class group_menu {
 		{
 			idc = 2402;
 			text = "Kick"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_kick;";
 			x = 0.789141;
 			y = 0.26936;
 			w = 0.202273;
@@ -94,6 +98,7 @@ class group_menu {
 		{
 			idc = 2408;
 			text = "Delete gang"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_deleteGang;";
 			x = 0.789141;
 			y = 0.46633;
 			w = 0.202273;
@@ -103,6 +108,7 @@ class group_menu {
 		{
 			idc = 2403;
 			text = "Promote"; //--- ToDo: Localize;
+			onbuttonClick = "[true] spawn valor_fnc_changeRank;";
 			x = 0.789141;
 			y = 0.318182;
 			w = 0.202273;
@@ -112,6 +118,7 @@ class group_menu {
 		{
 			idc = 2404;
 			text = "Demote"; //--- ToDo: Localize;
+			onbuttonClick = "[false] spawn valor_fnc_changeRank;";
 			x = 0.789141;
 			y = 0.367003;
 			w = 0.202273;
@@ -121,6 +128,7 @@ class group_menu {
 		{
 			idc = 2405;
 			text = "Set Leader"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_setNewLeader;";
 			x = 0.789141;
 			y = 0.415825;
 			w = 0.202273;
@@ -130,6 +138,7 @@ class group_menu {
 		class combo_players: valor_RscCombo
 		{
 			idc = 2100;
+			sizeEx = 0.035;
 			x = 0.7875;
 			y = 0.168821;
 			w = 0.20101;
@@ -142,12 +151,14 @@ class group_menu {
 			y = 0.0467339;
 			w = 0.644192;
 			h = 0.788552;
-			colorBackground[] = {0,0,0,0.3};
+			colorBackground[] = {0,0,0,0.7};
 		};
 		class btn_create_group: valor_RscButtonMenu
 		{
 			idc = 2406;
 			text = "Create Group"; //--- ToDo: Localize;
+			colorBackground[] = {1,0,0,1};
+			onbuttonClick = "[] spawn valor_fnc_createGang;";
 			x = 0.593434;
 			y = 0.444444;
 			w = 0.184596;
@@ -156,6 +167,7 @@ class group_menu {
 		class edit_group_name: valor_RscEdit
 		{
 			idc = 1400;
+			text = "";
 			x = 0.506313;
 			y = 0.390572;
 			w = 0.338636;
@@ -165,6 +177,7 @@ class group_menu {
 		{
 			idc = 2407;
 			text = "Close"; //--- ToDo: Localize;
+			onbuttonClick = "closedialog 0;";
 			x = -0.00126261;
 			y = 0.838384;
 			w = 0.102525;

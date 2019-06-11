@@ -31,8 +31,8 @@ switch(playerside) do {
 		_position = param[9,[],[[],""]];
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
-		_group = param[12,[],[[],""]];
-		_quest = param[13,[],[[],""]];
+		_group = param[12,[],[[]]];
+		_quests = param[13,[],[[],""]];
 
 
 
@@ -56,7 +56,9 @@ switch(playerside) do {
 
 
 		Valor_group = _group;
-		player setVariable["Valor_group_id",(Valor_group select 0),true];
+		if!(Valor_group isEqualTo []) then {
+			player setVariable["Valor_group_id",(Valor_group select 0),true];
+		};
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
 	};
 

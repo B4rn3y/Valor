@@ -1,5 +1,6 @@
 
-private ["_playerside","_getplayeruid","_requester","_resolution","_steamName","_productVersion","_new_inserted","_query","_tickTime","_queryResult","_name"];
+private ["_playerside","_getplayeruid","_requester","_resolution","_steamName","_productVersion","_new_inserted","_query","_tickTime","_queryResult","_group_var","_queryResult_group_info","_grp_name","_grp_id","_queryResult_group_members"];
+
 _playerside = param[0,sideUnknown,[sideUnknown]];
 _name = param[1,"",[""]];
 _getplayeruid = param[2,"",[""]];
@@ -25,7 +26,7 @@ switch (_playerside) do
 {
 	case opfor:
 	{
-        _query = format["Select uid, cash, bankacc,humanity , gear_cop , stats_cop, adminlevel, donatorlevel,alive_cop,  position_cop, Map, playtime, coplevel from players where pid = '%1'",_getplayeruid];
+        _query = format["Select players.uid, cash, bankacc,humanity , gear_cop , stats_cop, adminlevel, donatorlevel,alive_cop,  position_cop, Map, playtime, coplevel from players where pid = '%1'",_getplayeruid];
     };
 
      case civilian:
@@ -66,7 +67,21 @@ if(typeName _queryResult isEqualTo "STRING" || count _queryResult isEqualTo 0) e
 };
 
 
+_group_var = [];
 
+_query = format["Select name, id from groups where id in (Select group_id from group_members where pid = '%1')",_getplayeruid];
+_queryResult_group_info = [_query,2] call valor_fnc_db_sync;
+
+if!(_queryResult_group_info isEqualTo []) then {
+    _grp_name = _queryResult_group_info select 0;
+    _grp_id = _queryResult_group_info select 1;
+
+    _query = format["Select pid, rank, name from group_members where group_id in (Select group_id from group_members where pid = '%1')",_getplayeruid];
+    _queryResult_group_members = [_query,2,true] call valor_fnc_db_sync;
+    _group_var = [_grp_id,_queryResult_group_members,_grp_name];
+};
+
+_queryResult pushBack _group_var;
 
 [(if(_new_inserted) then {2} else {0}),_queryResult] remoteExecCall ["valor_fnc_mainInit",_requester];
 

@@ -71,7 +71,8 @@ _type = switch (true) do
 
 _damage = getAllHitPointsDamage _vehicle select 2;
 _damage = [_damage] call valor_fnc_mresarray;
-_fuel = 0;
+_fuel = 1;
+if!(_cop) then {_fuel = 0;};
 [_vehicle] call valor_fnc_clear_vehicle;
 _inventory = [_vehicle] call valor_fnc_getvehiclecargo;
 _vehicle setfuel _fuel;

@@ -5,7 +5,7 @@ _display = findDisplay 3004;
 if(isnull _display) exitWith {};
 _listbox_member = _display displayCtrl 1500;
 _sel = lbCurSel _listbox_member;
-if(_sel isEqualTo -1) exitWith {};
+if(_sel isEqualTo -1) exitWith {systemchat "Valor :: You havent selected anyone"};
 
 _rank = [getplayeruid player] call valor_fnc_getGroupRank;
 
@@ -28,8 +28,9 @@ if(_his_rank >= _rank) exitWith {systemchat "Valor :: You cant kick this person"
 
 
 _members = _members - [_entry];
-valor_group set[1,_members];
+//valor_group set[1,_members];
 
-[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 [1,player,valor_group select 0,_pid,0] remoteexec["valor_fnc_syncGroupDB",2];
+[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
+
 

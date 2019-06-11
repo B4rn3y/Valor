@@ -5,21 +5,21 @@ _display = findDisplay 3004;
 if(isnull _display) exitWith {};
 _listbox_member = _display displayCtrl 1500;
 _sel = lbCurSel _listbox_member;
-if(_sel isEqualTo -1) exitWith {};
+if(_sel isEqualTo -1) exitWith {systemchat "Valor :: You havent selected anyone"};
 
 _rank = [getplayeruid player] call valor_fnc_getGroupRank;
 iF!(_rank isEqualTo 3) exitWith {systemchat "Valor :: Only the leader can promote or demote"};
 
-_pid = _listbox_member lbData _sel;
-if(_pid isEqualTo "") exitWith {diag_log "Valor :: No Pid"};
-if(_pid isEqualTo getplayeruid player) exitWith {systemchat "Valor :: Thats u, u ****!"};
+_pid_tofind = _listbox_member lbData _sel;
+if(_pid_tofind isEqualTo "") exitWith {diag_log "Valor :: No Pid"};
+if(_pid_tofind isEqualTo getplayeruid player) exitWith {systemchat "Valor :: Thats u, u ****!"};
 
 _members = valor_group select 1;
 
 _entry = [];
 {
 	_pid = _x select 0;
-	if(_pid isEqualTo getplayeruid player) exitWith {_entry = _x};
+	if(_pid isEqualTo _pid_tofind) exitWith {_entry = _x};
 } foreach _members;
 
 if(_entry isEqualTo []) exitWith {diag_log "Valor :: Cant find Pid in array"};
@@ -36,6 +36,7 @@ _index = _members find _entry;
 _members set[_index,_new_entry];
 
 
-[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
+
 [1,player,valor_group select 0,_entry select 0,_rank] remoteexec["valor_fnc_syncGroupDB",2];
+[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 

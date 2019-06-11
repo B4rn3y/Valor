@@ -21,7 +21,7 @@ class CfgFunctions
 			class inString {};
 			class arrayWithNull {};
 			class ArrayRemoveDoubles {};
-
+			class findPlayerToUID {};
 		};
 	};
 };

@@ -19,8 +19,9 @@ if(_entry isEqualTo []) exitWith {diag_log "Valor :: Cant find Pid in array"};
 
 _members = _members - [_entry];
 
-[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 [1,player,valor_group select 0,getplayeruid player,0] remoteexec["valor_fnc_syncGroupDB",2];
+[0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 
 valor_group = [];
 player setvariable["Valor_group_id",nil,true];
+if!(isnull (finddisplay 3004)) then {[true] call valor_fnc_opengroupmenu;};

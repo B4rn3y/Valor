@@ -48,6 +48,23 @@ class CfgFunctions
 			class buyvehiclefinish {};
 			class buyvehicle {};
 		};
+
+		class groupMenu
+		{
+			file = "\UIs\UI_functions\group";
+			class changeRank {};
+			class createGang {};
+			class deleteGang {};
+			class getGroupMembers {};
+			class getGroupRank {};
+			class invite_player {};
+			class kick {};
+			class leaveGang {};
+			class opengroupmenu {};
+			class player_invited {};
+			class setNewLeader {};
+			class syncGroup {};
+		};
 	};
 };
 
