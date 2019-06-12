@@ -8,7 +8,7 @@ _dir = param[4,0,[1337]];
 _price = param[5,0,[1337]];
 if(_vehicle_ID isEqualTo -1 || isnull _requester || _classname isEqualTo "" || _pos isEqualTo [] || _price isEqualTo 0) exitWith {};
 
-_close_vehicles = nearestObjects[_pos,["Landvehicle","Air","Ship"],20];
+_close_vehicles = nearestObjects[_pos,["Landvehicle","Air","Ship"],10];
 iF!(_close_vehicles isEqualTo []) exitWith {
 		"Valor Error :: Could not spawn the vehicle, something is blocking the spawn." remoteExec["systemchat",_requester];
 };

@@ -6,7 +6,7 @@ if(isnull _display) exitWith {};
 if!(isnil "Valor_creating") exitWith {systemchat "Valor :: You cant do that yet"};
 _edit_group_name = _display displayCtrl 1400;
 _btn_create_group = _display displayCtrl 2406;
-
+if!(playerside isEqualTo civilian) exitWith {};
 _group_name = ctrltext _edit_group_name;
 
 _length = count (toArray(_group_name));
