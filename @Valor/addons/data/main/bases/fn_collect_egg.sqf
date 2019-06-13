@@ -1,8 +1,8 @@
 private ["_assigned","_item_info","_item_name","_item_amount","_item_text","_time","_cP","_cpUp"];
 
-// this addaction["Mine", valor_fnc_harvestitem,["valor_Land_Cliff_stone_medium_F",2,"Mining Stone"],1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]
-// this addaction["Collect", valor_fnc_harvestitem,["valor_Land_WoodenLog_F",2,"Collecting logs"],1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]
-
+// this addaction["Mine", valor_fnc_harvestitem,["valor_Land_Cliff_stone_medium_F",2,"Mining Stone.."],1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]
+// this addaction["Collect", valor_fnc_harvestitem,["valor_Land_WoodenLog_F",2,"Collecting logs.."],1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]
+// this addaction["Collect", valor_fnc_collect_egg,["Valor_raptor_egg",2,"Searching.."],1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]
 _assigned = _this select 0;
 _item_info = _this select 3; // "valor_Land_Cliff_stone_medium_F" "valor_Land_WoodenLog_F"
 if(isnil "_item_info") exitWith {};
@@ -46,5 +46,12 @@ if!(alive player) exitWith {valor_is_processing=nil;};
 if(player distance _assigned > 10) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
 if((vehicle player) != player) exitWith {systemchat "Valor :: You cant do that in a vehicle!"; valor_is_processing = nil;};
 
-[_item_name,_item_amount] call valor_fnc_additem;
+_rnd = random 100;
+if!(_rnd <=2 ) then {
+	Systemchat "Valor :: You havent found anything T_T";
+} else {
+	Systemchat "Valor :: YOU FOUND AN EGG!!";
+	[_item_name,_item_amount] call valor_fnc_additem;
+};
+
 valor_is_processing = nil;

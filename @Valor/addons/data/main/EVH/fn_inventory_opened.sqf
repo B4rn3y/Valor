@@ -3,6 +3,14 @@ private ["_container","_container2","_exit","_var","_mode","_number","_time","_b
 _container = _this select 1;
 _container2 = _this select 2;
 
+// setup evh for double click action
+waituntil {!(isnull (finddisplay 602))};
+((findDisplay 602) displayCtrl 633) ctrlSetEventHandler ["LBDblClick", "[_this,""u""] call valor_fnc_inventory_useItem"]; //uniform
+((findDisplay 602) displayCtrl 638 ) ctrlSetEventHandler ["LBDblClick", "[_this,""v""] call valor_fnc_inventory_useItem"]; // vest
+((findDisplay 602) displayCtrl 619 ) ctrlSetEventHandler ["LBDblClick", "[_this,""b""] call valor_fnc_inventory_useItem"]; // backpack
+
+
+
 if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container iskindof "SHIP" || _container2 iskindof "Landvehicle" || _container2 iskindof "AIR" || _container2 iskindof "SHIP") exitWith {
 
 	if(playerSide in [opfor,independent,blufor]) exitWith {};

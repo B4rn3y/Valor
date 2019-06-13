@@ -21,3 +21,10 @@ _distance = 600;
 	};
 } foreach (allMissionObjects "ALL");
 
+
+
+
+for "_d" from 1 to 6 do {
+	[(selectrandom ["babe_raptorb_east_3_F","babe_raptorb_east_5_F","babe_raptorb_east_6_F","babe_raptorb_east_4_F","babe_raptorb_east_2_F","babe_raptor_east_6_F","babe_raptorb_east_F","babe_raptor_east_2_F","babe_raptor_east_3_F","babe_raptor_east_4_F","babe_raptor_east_5_F","babe_raptor_east_F"])] spawn valor_fnc_raptorMonitoring_server;
+};
+

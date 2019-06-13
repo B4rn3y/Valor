@@ -83,5 +83,11 @@ class CfgFunctions
 			file= "\data_server\main\group";
 			class syncGroupDB {};
 		};
+
+		class entities
+		{
+			file= "\data_server\main\entities";
+			class raptorMonitoring_server {ext = ".fsm";};
+		};
 	};
 };

@@ -104,6 +104,13 @@ switch (_index) do
 		sleep 1;
 		_query = format["Delete from groups where id= '%1'",_group_id];
 		[_query,1] call valor_fnc_db_sync;
+		sleep 1;
+		_query = format["Delete from base_objects where base_id in (Select base_id from bases where group_id = '%1')",_group_id];
+		[_query,1] call valor_fnc_db_sync;
+		sleep 1;
+		_query = format["Delete from bases where group_id = '%1'",_group_id];
+		[_query,1] call valor_fnc_db_sync;
+
 	};
 
 	case 4: // add new player

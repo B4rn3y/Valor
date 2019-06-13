@@ -2,9 +2,9 @@ private ["_refresh","_display","_str_text_playtime","_listbox_member","_btn_leav
 _refresh = param[0,false,[false]];
 disableSerialization;
 if!(_refresh) then {
-	closedialog 0;
 
 
+	if!(isnull (findDisplay 3004)) exitWith {};
 	if(!createDialog "group_menu") exitWith {systemChat "Valor Error :: Could not create the dialog!";};
 };
 _display = findDisplay 3004;

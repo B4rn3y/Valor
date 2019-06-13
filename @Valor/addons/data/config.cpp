@@ -144,6 +144,7 @@ class CfgFunctions
 			class objecthandler {};
 			class additem {};
 			class harvestItem {};
+			class collect_egg {};
 		};
 
 
@@ -168,6 +169,7 @@ class CfgFunctions
 			class GetInEVH {};
 			class takeEVH_trader {};
 			class processEVH {};
+			class inventory_useItem {};
 		};
 
 		class zombie
