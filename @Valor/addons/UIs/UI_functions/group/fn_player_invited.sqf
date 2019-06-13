@@ -19,7 +19,7 @@ _action = [
 if!(_action) exitWith {};
 
 _group_member pushback [getplayeruid player,1,name player];
-player setvariable["Valor_group_id",_group_id,true];
+player setvariable["Valor_group_id",[_group_id,_group_name],true];
 Valor_group = [_group_id,_group_member,_group_name];
 
 [4,player,valor_group select 0] remoteexec["valor_fnc_syncGroupDB",2];

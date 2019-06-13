@@ -33,6 +33,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 	_object setVectorUp _vector;
 	_object setposatl _pos;
 	_object setdir _dir;
+	_object allowDamage false;
 	_object setVectorUp _vector;
 	_object setvariable["valor_base_ids",[_base_id,_gang_id,_config_id,_id],true];
 	if(_classname in ["B_CargoNet_01_ammo_F"]) then {

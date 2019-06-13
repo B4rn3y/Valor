@@ -183,5 +183,24 @@ class group_menu {
 			w = 0.102525;
 			h = 0.0444445;
 		};
+		class combo_groups: valor_RscCombo
+		{
+			idc = 2101;
+			sizeEx = 0.035;
+			x = 0.790404;
+			y = 0.515152;
+			w = 0.20101;
+			h = 0.0444444;
+		};
+		class btn_give_group_belongings: valor_RscButtonMenu
+		{
+			idc = 2409;
+			text = "G. Group Prop."; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_give_Group_Properties";
+			x = 0.790404;
+			y = 0.56734;
+			w = 0.202273;
+			h = 0.0410775;
+		};
 	};
 };

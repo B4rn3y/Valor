@@ -68,6 +68,14 @@ class CfgFunctions
 
 		};
 
+		class medical
+		{
+			file = "\data\main\medical";
+			class revive {};
+			class revived {};
+			class respawn {};
+		};
+
 		class init
 		{
 			file = "\data\main\Init";
@@ -134,6 +142,8 @@ class CfgFunctions
 			class place_base {};
 			class lockdoor {};
 			class objecthandler {};
+			class additem {};
+			class harvestItem {};
 		};
 
 
@@ -157,6 +167,7 @@ class CfgFunctions
 			class onPlayerKilled {};
 			class GetInEVH {};
 			class takeEVH_trader {};
+			class processEVH {};
 		};
 
 		class zombie

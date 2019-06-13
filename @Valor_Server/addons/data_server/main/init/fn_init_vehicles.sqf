@@ -1,6 +1,6 @@
 
 
-private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop","_mode","_number"];
+private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop","_mode","_number","_cop","_atl","_veh","_grp_name"];
 
 _query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, mode , group_id, cop from persistent_vehicles";
 
@@ -48,15 +48,22 @@ _vehicle = objNull;
 		if(_alive isequalto 0) then {
 			_vehicle setfuel 0;
 			_vehicle setdir (_spawnpos select 1);
-			_vehicle setposatl (_spawnpos select 0);
+			_atl = (_spawnpos select 0);
+			_atl = [_atl select 0,_atl select 1,_atl select 2 + 0.3];
+			_vehicle setposatl _atl;
 			_vehicle setVectorUp (_spawnpos select 2);
 			[_vehicle] call valor_fnc_clear_vehicle;
 			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
+			if(_cop isEqualTo 1) then {
+				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos _grp_name)) < 600) then {_vehicle setvariable["group_restricted",[-2,-1],true];};};
+			};
 		} else {
 			_vehicle setfuel _fuel;
 			_vehicle setdir _dir;
-			_vehicle setposatl _pos;
+			_atl = _pos;
+			_atl = [_atl select 0,_atl select 1,_atl select 2 + 0.3];
+			_vehicle setposatl _atl;
 			_vehicle setVectorUp _vector;
 			_vehicle setvariable["group_restricted",[_mode,_number],true];
 
@@ -64,9 +71,7 @@ _vehicle = objNull;
 			[_vehicle,_damage] spawn valor_fnc_setvehicleDamage;
 		};
 
-		if(_cop isEqualTo 1) then {
-			_vehicle setvariable["group_restricted",[-2,-1],true];
-		};
+
 
 		_vehicle setvariable ["DBID",_id,true];
 		_vehicle disableTIEquipment true;

@@ -1,10 +1,10 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_player_monitor">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
+item0[] = {"init",0,250,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
 item1[] = {"_",2,250,-383.141510,-842.570557,-293.141510,-792.570618,0.000000,""};
 item2[] = {"w8_for__Login",4,218,-378.158234,-932.344849,-288.158234,-882.344788,0.000000,"w8" \n "for " \n "Login"};
-item3[] = {"pos_check",4,218,-381.643982,-761.792236,-291.643982,-711.792236,0.000000,"pos check"};
+item3[] = {"pos_check",4,4314,-381.643982,-761.792236,-291.643982,-711.792236,0.000000,"pos check"};
 item4[] = {"sync_pos",2,250,-382.822144,-678.140320,-292.822144,-628.140320,0.000000,"sync pos"};
 item5[] = {"stats_check",4,218,-247.329590,-758.257690,-157.329590,-708.257690,1.000000,"stats check"};
 item6[] = {"sync_stats",2,250,-241.438599,-675.783936,-151.438599,-625.783936,0.000000,"sync stats"};
@@ -28,7 +28,7 @@ link11[] = {9,11};
 link12[] = {10,1};
 link13[] = {11,10};
 globals[] = {0.000000,0,0,0,0,640,480,1,216,6316128,1,-847.208923,129.187073,-314.011475,-1018.036072,1226,884,1};
-window[] = {2,-1,-1,-1,-1,993,234,1674,234,3,1244};
+window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1244};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -110,7 +110,7 @@ class FSM
                                         priority = 0.000000;
                                         to="sync_pos";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _last_check_pos) > _check_time_pos && (getposatl player distance _last_pos) > 2"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _last_check_pos) > _check_time_pos && (getposatl player distance _last_pos) > 2 && valor_alive isequalto 1"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

@@ -1,4 +1,5 @@
 _container = _this select 1;
+if(valor_alive isEqualTo 0) exitWith {};
 Valor_gear = [player] call valor_fnc_gear_to_var;
 
 

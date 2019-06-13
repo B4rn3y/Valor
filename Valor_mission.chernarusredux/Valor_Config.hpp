@@ -76,6 +76,8 @@ class Valor_settings {
 		Hunger_multiplier = 1; // Description: Do i need one?
 		Thirst_multiplier = 1;
 
+		Time_until_dead = 60; // the time a player is revivable after being shot dead
+
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
 		map_hidement_bottom_left[] = {500,500};   // start pos in map position in the bottim left

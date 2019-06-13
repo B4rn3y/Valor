@@ -64,6 +64,8 @@ class CfgFunctions
 			class player_invited {};
 			class setNewLeader {};
 			class syncGroup {};
+			class getActiveGroups {};
+			class give_Group_Properties {};
 		};
 	};
 };

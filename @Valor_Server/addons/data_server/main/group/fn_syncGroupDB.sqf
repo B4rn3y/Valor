@@ -1,5 +1,5 @@
 
-private ["_index","_requester","_pid","_grp_name","_query","_queryresult","_gang_id","_var","_group_id","_rank","_pid_new_leader","_pid_old_leader"];
+private ["_index","_requester","_pid","_grp_name","_query","_queryresult","_gang_id","_var","_group_id","_rank","_pid_new_leader","_pid_old_leader","_group_id_old","_group_id_new","_vehicles","_id_group_veh"];
 _index = param[0,-1,[0]];
 
 if(_index isEqualTo -1) exitWith {};
@@ -28,7 +28,21 @@ switch (_index) do
 		[_query,1] call valor_fnc_db_sync;
 
 		[2,_gang_id,_var] remoteexec["valor_fnc_syncGroup",_requester];
-		_requester setvariable["Valor_group_id",_gang_id,true];
+		_requester setvariable["Valor_group_id",[_gang_id,_grp_name],true];
+
+
+		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
+		{
+			_var = _x getVariable["group_restricted",[]];
+			if!(_var isEqualTo []) then {
+				_id_group_veh = _var select 1;
+				if(_id_group_veh isEqualTo (call compile (getplayeruid _requester))) then {
+					_x setvariable["group_restricted",[1,_gang_id],true];
+					_x setvariable["update_this",true,true];
+				};
+			};
+		} foreach _vehicles;
+
 	};
 
 	case 1: // promote/demote/kick player
@@ -87,7 +101,7 @@ switch (_index) do
 
 		_query = format["Delete from group_members where group_id= '%1'",_group_id];
 		[_query,1] call valor_fnc_db_sync;
-
+		sleep 1;
 		_query = format["Delete from groups where id= '%1'",_group_id];
 		[_query,1] call valor_fnc_db_sync;
 	};
@@ -97,9 +111,57 @@ switch (_index) do
 		_requester = param[1,objNull,[objNull]];
 		if(isnull _requester) exitWith {};
 		_group_id = param[2,-1,[0]];
+		if(_group_id isEqualTo -1) exitWith {};
 		_query = format["Insert into group_members (group_id,name,pid,rank) VALUES ('%1','%2','%3','%4')",_group_id,name _requester,getplayeruid _requester,1];
 		[_query,1] call valor_fnc_db_sync;
 
+		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
+		{
+			_var = _x getVariable["group_restricted",[]];
+			if!(_var isEqualTo []) then {
+				_id_group_veh = _var select 1;
+				if(_id_group_veh isEqualTo (call compile (getplayeruid _requester))) then {
+					_x setvariable["group_restricted",[1,_group_id],true];
+					_x setvariable["update_this",true,true];
+				};
+			};
+		} foreach _vehicles;
+
+	};
+
+
+	case 5: // give Group properties
+	{
+		_requester = param[1,objNull,[objNull]];
+		if(isnull _requester) exitWith {};
+		_group_id_old = param[2,-1,[0]];
+		if(_group_id_old isEqualTo -1) exitWith {};
+		_group_id_new = param[3,-1,[0]];
+		if(_group_id_new isEqualTo -1) exitWith {};
+
+		_query = format["Update bases set group_id = '%1' where group_id= '%2'",_group_id_new,_group_id_old];
+		[_query,1] call valor_fnc_db_sync;
+
+		sleep 1;
+
+		_query = format["Update base_objects set group_id = '%1' where group_id= '%2'",_group_id_new,_group_id_old];
+		[_query,1] call valor_fnc_db_sync;
+
+		sleep 1;
+		_query = format["Update persistent_vehicles set group_id = '%1' where group_id= '%2'",_group_id_new,_group_id_old];
+		[_query,1] call valor_fnc_db_sync;
+
+		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
+		{
+			_var = _x getVariable["group_restricted",[]];
+			if!(_var isEqualTo []) then {
+				_id_group_veh = _var select 1;
+				if(_id_group_veh isEqualTo _group_id_old) then {
+					_x setvariable["group_restricted",[1,_group_id_new],true];
+					_x setvariable["update_this",true,true];
+				};
+			};
+		} foreach _vehicles;
 	};
 
 

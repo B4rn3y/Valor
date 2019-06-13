@@ -14,6 +14,7 @@ if(isnil "VALOR_IN_TRADER") then {
 		};
 	};
 	if!(vehicle player isEqualTo player) then {
+		if(playerSide isEqualTo opfor) exitWith {_vehicle setvariable["group_restricted",[-2,-1],true];};
 		if(isnil "Valor_group") exitWith {0 call _set_var;};
 		if(valor_group isEqualTo []) then {
 			0 call _set_var;

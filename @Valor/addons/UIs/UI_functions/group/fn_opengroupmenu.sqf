@@ -1,4 +1,4 @@
-private ["_refresh","_display","_str_text_playtime","_listbox_member","_btn_leave","_btn_invite","_btn_kick","_btn_promote","_disply","_btn_demote","_btn_setLeader","_btn_create_group","_btn_close","_btn_delete_gang","_background_no_gang","_combo_players","_edit_group_name","_rank","_online","_ret","_pid","_var"];
+private ["_refresh","_display","_str_text_playtime","_listbox_member","_btn_leave","_btn_invite","_btn_kick","_btn_promote","_btn_demote","_btn_setLeader","_btn_create_group","_btn_close","_btn_delete_gang","_btn_give_group_properties","_background_no_gang","_combo_players","_combo_groups","_edit_group_name","_rank","_online","_ret","_pid","_player","_var","_active_groups","_id_group"];
 _refresh = param[0,false,[false]];
 disableSerialization;
 if!(_refresh) then {
@@ -20,10 +20,12 @@ _btn_setLeader = _display displayCtrl 2405;
 _btn_create_group = _display displayCtrl 2406;
 _btn_close = _display displayCtrl 2407;
 _btn_delete_gang = _display displayCtrl 2408;
+_btn_give_group_properties = _display displayCtrl 2409;
 
 _background_no_gang = _display displayCtrl 1004;
 
 _combo_players = _display displayCtrl 2100;
+_combo_groups = _display displayCtrl 2101;
 
 _edit_group_name = _display displayCtrl 1400;
 
@@ -38,7 +40,7 @@ _btn_create_group ctrlCommit 0;
 
 _str_text_playtime ctrlSetStructuredText parsetext format["<t  color='#01DF01' size='1.5'>%1 hours</t> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString];
 
-{_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang];
+{_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang,_combo_groups,_btn_give_group_properties];
 
 _rank = [getPlayerUID player] call valor_fnc_getGroupRank;
 
@@ -58,7 +60,7 @@ if(_rank > 1) then {
 	{_x ctrlEnable true;} foreach [_btn_invite,_btn_kick,_combo_players];
 };
 if(_rank > 2) then {
-	{_x ctrlEnable true;} foreach [_btn_promote,_btn_demote,_btn_setLeader,_btn_delete_gang];
+	{_x ctrlEnable true;} foreach [_btn_promote,_btn_demote,_btn_setLeader,_btn_delete_gang,_combo_groups,_btn_give_group_properties];
 };
 
 
@@ -100,5 +102,14 @@ lbclear _listbox_member;
 	_var = nil;
 } foreach playableUnits;
 
+_active_groups = 0 call valor_fnc_getActiveGroups;
+_active_groups = _active_groups - [[(valor_group select 0),(valor_group select 2)]];
+{
+	_id_group = _x select 0;
+	_name = _x select 1;
+	_id = _combo_groups lbadd _name;
+	_combo_groups lbSetData[_id,_name];
+	_combo_groups lbSetValue[_id,_id_group];
 
+} foreach _active_groups;
 
