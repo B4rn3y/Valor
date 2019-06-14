@@ -51,6 +51,8 @@ class CfgFunctions
 			class numbersafe {};
 			class binmake {};
 			class itemInInventory {};
+			class escInterupt {};
+			class clientDisconnect {};
 		};
 
 		class atmosphere
@@ -119,7 +121,7 @@ class CfgFunctions
 			class player_monitor {ext = ".fsm";};
 			class load_BAMBI_GEAR {};
 			class step_update {};
-			class syncPlayerToDB {ext = ".fsm";};
+			class syncPlayerToDB {};
 			class VAR_to_gear {};
 			class survival {ext = ".fsm";};
 			class GetOutMan {};
@@ -145,6 +147,7 @@ class CfgFunctions
 			class additem {};
 			class harvestItem {};
 			class collect_egg {};
+			class hatch_raptor {};
 		};
 
 
@@ -197,6 +200,7 @@ class CfgFunctions
 			class raptorMonitoring {ext = ".fsm";};
 			class raptor_roam {};
 			class jumpattack {};
+			class raptor_checkforTarget_group {};
 		};
 	};
 };

@@ -49,7 +49,7 @@ waitUntil{sleep 1; _time = _time + 1; if(_time >= 180) exitWith {}; _veh_close =
 
 
 "Valor Server :: The Server is now starting building the base." remoteexec["systemchat",(call _near_players)];
-[_base_id,_config_id,_gang_id] spawn valor_fnc_build_base_objects;
+[_base_id,_config_id,_gang_id,0,"babe_raptorb_east_5_F"] spawn valor_fnc_build_base_objects;
 
 
 _base_id spawn {sleep 60;missionNamespace setvariable[format["Base_build_ID_%1",_this],nil];};

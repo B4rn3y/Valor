@@ -128,8 +128,8 @@ class CfgDebriefing
 	class NotWhitelisted
 	{
 		title = "Mission Failed";
-		subtitle = "Du wurdest nicht freigeschaltet um diesen Slot zu benutzen.";
-		description = "Du bist nicht berechtig diesen Slot zu nutzen, Bewerbungen können im Forum getätigt werden!";
+		subtitle = "You are not whitelisted to use this slot.";
+		description = "You are not whitelisted for using this slot, you can become whitelisted in Vybor.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -137,9 +137,9 @@ class CfgDebriefing
 
 	class Blacklisted
 	{
-		title = ">>>GESPERRt<<<";
-		subtitle = "Du wurdest gesperrt.";
-		description = ">>>>!Du wurdest für diesen Server gesperrt!<<<";
+		title = ">>>BLOCKED<<<";
+		subtitle = "YOU ARE BLOCKED.";
+		description = ">>>>!You are blocked from this Server!<<<";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -147,9 +147,9 @@ class CfgDebriefing
 
 	class Vars_set
 	{
-		title = ">>>ERROR Variablen<<<";
-		subtitle = "Du hattest Variablen gesetzt.";
-		description = ">>>>!Du hattest Variablen gesetzt die nicht hätten sein dürfen!<<<";
+		title = ">>>ERROR Variables<<<";
+		subtitle = "Your client had variables set.";
+		description = ">>>>!Your client had variables set which you shouldnt!<<<";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -158,8 +158,8 @@ class CfgDebriefing
 	class Soft_whitelist
 	{
 		title = "Mission Failed";
-		subTitle = "Soft Whitelist aktiv!";
-		description = "Die Soft Whitelist ist auf dem Server aktuell aktiv, bitte versuche es zu einem späteren Zeitpunkt erneut";
+		subTitle = "Soft Whitelist active!";
+		description = "The soft Whitelist is active, check back later";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -167,9 +167,9 @@ class CfgDebriefing
 
 	class Aborted
 	{
-		title = "Getrennt!";
-		subTitle = "Spielerdaten wurden gespeichert!";
-		description = "Danke für das Spielen <3";
+		title = "Aborted!";
+		subTitle = "Disconnected";
+		description = "Your player data was saved. Thank you for playing <3";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -177,9 +177,9 @@ class CfgDebriefing
 
 	class Server_Error
 	{
-		title = "Server Fehler!";
-		subTitle = "Es gab einen internen Server Fehler";
-		description = "Der Server hatte beim Starten einen Fehler, bitte kontaktiere deswegen einen Admin wenn Sie nicht schon bescheid wissen, danke.";
+		title = "Server Error!";
+		subTitle = "There was an intern server error";
+		description = "The server had issues starting, inform the admins if they dont know about it.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -187,9 +187,9 @@ class CfgDebriefing
 
 	class Bad_Version
 	{
-		title = "Version ungleich!";
-		subTitle = "Ungleiche Version!";
-		description = "Du und der Server benutzen eine andere Version von VALOR.";
+		title = "Version!";
+		subTitle = "Wrong Version!";
+		description = "You and the Server have different versions of VALOR.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -197,9 +197,9 @@ class CfgDebriefing
 
 	class Error
 	{
-		title = "Fehler!";
-		subTitle = "Es gab einen internen Fehler";
-		description = "Es gab einen Fehler. Bitte connecte erneut zum Server und versuche es erneut.";
+		title = "Error!";
+		subTitle = "BIG ERROR";
+		description = "There was an error, please reconnect and try again.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};

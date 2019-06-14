@@ -19,6 +19,7 @@ switch (_code) do
 	case 219: // WINDOWS LEFT
 	{
 		[cursorObject] call valor_fnc_objecthandler;
+		[cursortarget] call valor_fnc_openinteractionmenu;
 	};
 
 

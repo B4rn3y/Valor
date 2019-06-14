@@ -13,7 +13,7 @@ private ["_query","_res","_ammobox_ring","_base_id","_gang_id","_config_id","_bu
 
 
 
-_query = "Select base_id, group_id, config_id, build, classname, pos, dir, vector, inventory, cop from bases";
+_query = "Select base_id, group_id, config_id, build, classname, pos, dir, vector, inventory, cop, raptor, raptor_classname from bases";
 _res = [_query,2,true] call valor_fnc_db_sync;
 
 
@@ -33,6 +33,8 @@ _ammobox_ring = [["Land_CncBarrierMedium_F",[0.00683594,2.19067,-0.776215],356.7
 	_vector = _x select 7;
 	_inv = _x select 8;
 	_cop = _x select 9;
+	_raptor = _x select 10;
+	_raptor_classname = call compile (_x select 11);
 
 	if(_cop isEqualTo 0) then {
 		if(_build isEqualTo 0) then {
@@ -62,7 +64,7 @@ _ammobox_ring = [["Land_CncBarrierMedium_F",[0.00683594,2.19067,-0.776215],356.7
 
 			} foreach _ammobox_ring;
 		} else {
-			[_base_id,_config_id,_gang_id] spawn valor_fnc_build_base_objects;
+			[_base_id,_config_id,_gang_id,_raptor,_raptor_classname] spawn valor_fnc_build_base_objects;
 		};
 	} else {
 		_ammobox = _classname createVehicle [0,0,10];

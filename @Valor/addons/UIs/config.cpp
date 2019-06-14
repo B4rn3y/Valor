@@ -39,6 +39,12 @@ class CfgFunctions
 			class acceptQuest {};
 		};
 
+		class interaction
+		{
+			file = "\UIs\UI_functions\interaction";
+			class openinteractionmenu {};
+		};
+
 		class carshop
 		{
 			file = "\UIs\UI_functions\carshop";

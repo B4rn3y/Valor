@@ -32,7 +32,7 @@ waitUntil {!isnull _ammobox};
 _ammobox allowDamage false;
 [_ammobox] call valor_fnc_clear_vehicle;
 _ammobox setdir _dir;
-_ammobox setposatl _pos;
+_ammobox setposatl [_pos select 0,_pos select 1, 0];
 _ammobox setVectorUp _vector;
 _ammobox setdir _dir;
 _ammobox setVectorUp _vector;

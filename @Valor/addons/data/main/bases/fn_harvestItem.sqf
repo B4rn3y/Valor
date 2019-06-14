@@ -39,7 +39,7 @@ while{true} do
 	if(!isnil "Valor_interrupt") exitWith {};
 };
 player removeAction _id;
-
+player switchmove "";
 if(!isnil "Valor_interrupt") exitWith {valor_is_processing=nil;Valor_interrupt = niL;};
 Valor_interrupt = niL;
 if!(alive player) exitWith {valor_is_processing=nil;};

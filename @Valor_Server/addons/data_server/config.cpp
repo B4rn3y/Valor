@@ -67,6 +67,7 @@ class CfgFunctions
 			class savecrate {};
 			class build_base {};
 			class build_base_objects {};
+			class insert_raptor {};
 		};
 
 		class init
@@ -88,6 +89,7 @@ class CfgFunctions
 		{
 			file= "\data_server\main\entities";
 			class raptorMonitoring_server {ext = ".fsm";};
+			class raptorMonitoring_server_group {ext = ".fsm";};
 		};
 	};
 };

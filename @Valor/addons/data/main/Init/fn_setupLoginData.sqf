@@ -100,7 +100,7 @@ switch(playerside) do {
 		Valor_position = [_position] call valor_fnc_mToArray;
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
-		Valor_completed_quests = _quests;
+		Valor_completed_quests = [];
 
 
 		Valor_group = [];

@@ -44,6 +44,7 @@ while{true} do
 	if(!isnil "Valor_interrupt") exitWith {};
 };
 player removeAction _id;
+player switchmove "";
 if(!isnil "Valor_interrupt") exitWith {valor_is_processing=nil;_person_reviving setvariable["reviving",nil,true];};
 if!(alive player) exitWith {valor_is_processing=nil;_person_reviving setvariable["reviving",nil,true];};
 if(player distance _unit > 10) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;_person_reviving setvariable["reviving",nil,true];};

@@ -14,7 +14,7 @@ if  !((vehicle _unit) isEqualTo _unit) then {
     _unit setPosATL [(getPosATL _unit select 0) + 3, (getPosATL _unit select 1) + 1, (getPosATL _unit select 2)];
 };
 
-_evh_id = (findDisplay 46) displaySetEventHandler ["KeyDown","if((_this select 1) == 1) then {true}"];
+_evh_id = (findDisplay 46) displayAddEventHandler  ["KeyDown","if((_this select 1) == 1) then {true}"];
 
 
 //Set some vars
@@ -54,10 +54,12 @@ while {((time - _time_died)< _time_until_dead)&&!(player getvariable["revived",f
 	_str_text ctrlSetStructuredText parsetext format["<t color='#FF0000' align='center' size='1.5'>DEATH IN:</t><br/><t  color='#FFFFFF' align='center' size='1.1'>%1</t>",round (_time_until_dead - (time - _time_died))];
 	sleep 1;
 };
-ctrlDelete _str_text;
+if(player getvariable["reviving",false]) then {
+	_str_text ctrlSetStructuredText parsetext format["<t color='#0055FF' align='center' size='1.5'>You are being revived</t>"];
+};
 
 waitUntil {!(player getvariable["reviving",false])};
-
+ctrlDelete _str_text;
 
 (findDisplay 46) displayRemoveEventHandler ["KeyDown",_evh_id];
 if(player getvariable["revived",false]) exitWith {[_unit] spawn valor_fnc_revived};

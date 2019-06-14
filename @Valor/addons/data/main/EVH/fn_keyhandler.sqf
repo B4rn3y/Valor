@@ -9,8 +9,10 @@ switch (_code) do
 {
 	case 1: //ESC
 	{
+		[] spawn valor_fnc_escInterupt;
 	};
 };
+
 switch (true) do
 {
 	case (_code in (actionKeys "compass")):
