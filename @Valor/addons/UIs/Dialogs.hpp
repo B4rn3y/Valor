@@ -3,7 +3,7 @@
 #include "Dialogs\carshop\carshop.hpp"     			// ID 3003
 #include "Dialogs\group\group_menu.hpp"    			// ID 3004
 #include "Dialogs\interaction\interactionmenu.hpp"  // ID 3005
-
+#include "Dialogs\ticket\ticket.hpp"  				// ID 3006
 
 
 

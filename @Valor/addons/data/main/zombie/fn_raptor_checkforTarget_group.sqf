@@ -10,7 +10,6 @@ _targets = nearestObjects[_zombie,["MAN"],_see_range];
 
 _targets = _targets select {_var = _x getvariable["valor_group_id",[-1,"test"]];(isplayer _x && ((_zombie distance _x) <= _see_range)) && !(_x getvariable["valor_zmbienoaggro",false]) && alive _x && ([_zombie,_x] call valor_fnc_zombie_checkVisibility) && !(_group_id isEqualTo (_var select 0))};
 
-diag_log str _targets;
 
 if(_targets isEqualTo []) exitWith {[]};
 

@@ -54,8 +54,6 @@ if (_extDBNotLoaded isEqualType []) exitWith {
     };
 } forEach allUnits;
 
-diag_log "Valor :: Waiting for players to join before init";
-waitUntil {sleep 1;!(playableUnits isEqualTo [])};
 diag_log "Valor :: setting Variables";
 [] call valor_fnc_vars;
 diag_log "Valor :: Variables set";

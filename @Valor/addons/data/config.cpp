@@ -53,6 +53,7 @@ class CfgFunctions
 			class itemInInventory {};
 			class escInterupt {};
 			class clientDisconnect {};
+			class say3D {};
 		};
 
 		class atmosphere
@@ -68,6 +69,16 @@ class CfgFunctions
 			file = "\data\main\traderzones";
 			class setupVariablesTrader {};
 
+		};
+
+		class interact
+		{
+			file = "\data\main\interact";
+			class restrainAction {};
+			class restrain {};
+			class unrestrain {};
+			class escortAction {};
+			class stopEscorting {};
 		};
 
 		class medical

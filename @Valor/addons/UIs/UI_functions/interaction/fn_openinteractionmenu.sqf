@@ -27,7 +27,46 @@ _create_display = {
 		_x ctrlShow false;
 	} foreach [_btn_1,_btn_2,_btn_3,_btn_4,_btn_5,_btn_6,_btn_7,_btn_8,_btn_9,_btn_10];
 };
+
+
+_attached_player = objNull;
+{iF(isplayer _x) exitWith {_attached_player = _x};} foreach (attachedObjects player);
+
+
+
+
 _classname = typeof OBJ_focused;
+
+
+
+
+
+
+// another player (restrained)
+if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["valor_restrained",false] && ((player distance OBJ_focused) < 3.1)) || !(_attached_player isEqualTo objNull)) exitWith {
+
+	call _create_display;
+	_btn_1 ctrlshow true;
+	_btn_1 ctrlsettext "Unrestrain";
+	_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_unrestrain;";
+
+	if(isnull _attached_player) then {
+		_btn_2 ctrlshow true;
+		_btn_2 ctrlsettext "Escort";
+		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_escortAction;";
+	} else {
+		OBJ_focused = _attached_player;
+		_btn_2 ctrlshow true;
+		_btn_2 ctrlsettext "Stop Escorting";
+		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_stopEscorting;";
+	};
+
+	_btn_3 ctrlshow true;
+	_btn_3 ctrlsettext "Ticket";
+	_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_unrestrain;";
+};
+
+
 
 
 switch (_classname) do

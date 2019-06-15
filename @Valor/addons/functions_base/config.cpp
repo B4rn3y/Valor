@@ -23,6 +23,7 @@ class CfgFunctions
 			class ArrayRemoveDoubles {};
 			class findPlayerToUID {};
 			class getConfig {};
+			class numberText {};
 		};
 	};
 };

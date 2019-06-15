@@ -132,7 +132,7 @@ class interactionmenu {
 		{
 			idc = 2410;
 			text = "Close"; //--- ToDo: Localize;
-			onButtonClick = "";
+			onButtonClick = "closedialog 0;";
 			x = 0.310606;
 			y = 0.883838;
 			w = 0.376515;

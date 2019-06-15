@@ -1,9 +1,10 @@
+private ["_unit","_pid","_time","_person_reviving","_time_until_dead","_cP","_cpUp"];
 
 _unit = param[0,objNull,[objNull]];
 if(isnull _unit) exitWith {};
 _pid = param[3,"",[""]];
 if(_pid isEqualTo "") exitWith {};
-
+if!(isnil "valor_is_processing") exitWith {};
 _time = _unit getvariable["time_dead",-1];
 iF(_time isEqualTo -1) exitWith {};
 

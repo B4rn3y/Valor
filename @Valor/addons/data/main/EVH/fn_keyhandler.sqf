@@ -20,5 +20,10 @@ switch (true) do
 		["compass",valor_fnc_3DCompass] call valor_fnc_stackOnEachFrame;
 		_handle = true;
 	};
+
+	case (_code isEqualTo 19 && _shift): //RESTRAIN R + Shift
+	{
+		[] spawn valor_fnc_restrainAction;
+	};
 };
 _handle;
