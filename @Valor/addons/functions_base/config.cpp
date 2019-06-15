@@ -24,6 +24,7 @@ class CfgFunctions
 			class findPlayerToUID {};
 			class getConfig {};
 			class numberText {};
+			class isNumber {};
 		};
 	};
 };

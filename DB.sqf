@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `alive` tinyint(1) NOT NULL DEFAULT '1',
+  `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `alive_cop` tinyint(1) NOT NULL DEFAULT '1',
   `position` varchar(64) NOT NULL DEFAULT '"[]"',
   `position_cop` varchar(64) NOT NULL DEFAULT '"[]"',
@@ -67,6 +68,20 @@ CREATE TABLE IF NOT EXISTS `player_satistics` (
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
+
+DROP TABLE IF EXISTS `valor_settings`;
+CREATE TABLE `valor_settings` (
+`varname`  varchar(50) CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL DEFAULT '' ,
+`varvalue`  text CHARACTER SET latin1 COLLATE latin1_german1_ci NULL ,
+`public`  enum('true','false') CHARACTER SET latin1 COLLATE latin1_german1_ci NULL DEFAULT 'false' ,
+PRIMARY KEY (`varname`)
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci;
+
 
 -- --------------------------------------------------------
 
@@ -230,3 +245,4 @@ CREATE TABLE IF NOT EXISTS `bases` (
 
 -- --------------------------------------------------------
 
+INSERT INTO `valor_settings` (`varname`, `varvalue`, `public`) VALUES ('COP_BANK', '0', 'false');

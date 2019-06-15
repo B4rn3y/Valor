@@ -40,7 +40,8 @@ switch (_mode) do
 	};
 	case 7:
 	{
-		_set pushback (if(Valor_arrested) then {1} else {0});
+		//_set pushback (if(Valor_arrested) then {1} else {0});
+		_set pushBack Valor_arrested
 	};
 	case 8:
 	{

@@ -80,6 +80,9 @@ class Valor_settings {
 
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
+		max_ticket = 1000; // THe max amount for a ticket the cops can make
+		jailtime = 15; // The time in minutes somebody is in jail
+
 		map_hidement_bottom_left[] = {500,500};   // start pos in map position in the bottim left
 		map_hidement_top_right[] = {16500,16500};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
 

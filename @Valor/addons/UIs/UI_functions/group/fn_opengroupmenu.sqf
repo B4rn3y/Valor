@@ -95,7 +95,7 @@ lbclear _listbox_member;
 
 {
 	_var = _x getVariable "Valor_group_id";
-	if(isnil "_var") then {
+	if(isnil "_var" && side _x isEqualTo civilian) then {
 		_id = _combo_players lbadd (name _x);
 		_combo_players lbSetData[_id,getplayeruid _x];
 	};

@@ -49,6 +49,7 @@ class CfgFunctions
 			// persistent Vehicles end
 			class insert_vehicleprice {};
 			class insert_cop_crate {};
+			class update_cop_bankDB {};
 		};
 
 		class carshop
@@ -77,6 +78,7 @@ class CfgFunctions
 			class init_bases {};
 			class initServer {postinit = 1;};
 			class init_map {};
+			class init_vars {};
 		};
 
 		class groups

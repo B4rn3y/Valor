@@ -71,6 +71,13 @@ class CfgFunctions
 
 		};
 
+		class cop
+		{
+			file = "\data\main\cop";
+			class update_cop_bank {};
+
+		};
+
 		class interact
 		{
 			file = "\data\main\interact";
@@ -79,6 +86,8 @@ class CfgFunctions
 			class unrestrain {};
 			class escortAction {};
 			class stopEscorting {};
+			class arrested {};
+			class arrestAction {};
 		};
 
 		class medical

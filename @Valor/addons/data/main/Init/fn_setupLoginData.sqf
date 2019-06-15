@@ -13,7 +13,7 @@ if(!isnil "Valor_adminlevel" || !isnil "Valor_donatorlevel") exitWith {
 	[player,format["Der Spieler %1(%2) Steamname %3 hatte eine compilefinal Variable vor dem Einloggen gesetzt",profilename,player,profileNameSteam]] remoteexec["valor_fnc_admin_inform",-2];
 };
 
-Valor_arrested = false;
+Valor_arrested = 0;
 
 switch(playerside) do {
 
@@ -31,8 +31,9 @@ switch(playerside) do {
 		_position = param[9,[],[[],""]];
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
-		_group = param[12,[],[[]]];
-		_quests = param[13,[],[[],""]];
+		_arrested = param[12,0,[1337]];
+		_group = param[13,[],[[]]];
+		_quests = param[14,[],[[],""]];
 
 
 
@@ -53,7 +54,7 @@ switch(playerside) do {
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
 		Valor_completed_quests = _quests;
-
+		Valor_arrested = _arrested;
 
 		Valor_group = _group;
 		if!(Valor_group isEqualTo []) then {
@@ -101,6 +102,7 @@ switch(playerside) do {
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
 		Valor_completed_quests = [];
+		Valor_arrested = 0;
 
 
 		Valor_group = [];
@@ -124,3 +126,12 @@ if(Valor_alive isEqualTo 0) then {
 
 diag_log format["Valor Alive: %1 - Typename %2",Valor_alive,typename Valor_alive];
 diag_log format["Valor Position: %1 - Typename %2",Valor_position,typename Valor_position];
+
+
+
+if(playerSide isEqualTo civilian && Valor_arrested isEqualTo 1) then {
+	_jailtime = 15;
+	_jailtime = getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "jailtime");
+	[_jailtime] spawn valor_fnc_arrested;
+};
+

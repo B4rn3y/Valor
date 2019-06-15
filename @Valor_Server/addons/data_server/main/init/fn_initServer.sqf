@@ -7,7 +7,7 @@ diag_log "----------------------------------------------------------------------
 diag_log "---------------------------------- Starting Valor Server Init ---------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 
-waitUntil {sleep 1;time > 7};
+waitUntil {sleep 1;time > 30};
 
 diag_log "Valor :: Waiting for Mission to start";
 
@@ -56,6 +56,7 @@ if (_extDBNotLoaded isEqualType []) exitWith {
 
 diag_log "Valor :: setting Variables";
 [] call valor_fnc_vars;
+[] call valor_fnc_init_vars;
 diag_log "Valor :: Variables set";
 diag_log "Valor :: Starting Time Module";
 [] spawn valor_fnc_time_module;

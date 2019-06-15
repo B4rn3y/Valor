@@ -45,6 +45,14 @@ class CfgFunctions
 			class openinteractionmenu {};
 		};
 
+		class ticket
+		{
+			file = "\UIs\UI_functions\ticket";
+			class ticketDialog {};
+			class ticketAction {};
+			class payticket {};
+		};
+
 		class carshop
 		{
 			file = "\UIs\UI_functions\carshop";

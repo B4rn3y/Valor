@@ -63,7 +63,7 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 
 	_btn_3 ctrlshow true;
 	_btn_3 ctrlsettext "Ticket";
-	_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_unrestrain;";
+	_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
 };
 
 

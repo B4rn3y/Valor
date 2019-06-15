@@ -43,7 +43,7 @@ class ticket {
 		{
 			idc = 2400;
 			text = "ticket"; //--- ToDo: Localize;
-			onButtonClick = "closedialog 0;";
+			onButtonClick = "[] spawn valor_fnc_ticketAction;";
 			x = 0.30303;
 			y = 0.483165;
 			w = 0.0911617;
