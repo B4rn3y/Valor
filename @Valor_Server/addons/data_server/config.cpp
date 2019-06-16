@@ -71,6 +71,12 @@ class CfgFunctions
 			class insert_raptor {};
 		};
 
+		class outposts
+		{
+			file = "\data_server\main\outposts";
+			class changeOutpostStatus {};
+		};
+
 		class init
 		{
 			file = "\data_server\main\init";
@@ -79,6 +85,7 @@ class CfgFunctions
 			class initServer {postinit = 1;};
 			class init_map {};
 			class init_vars {};
+			class init_outposts {};
 		};
 
 		class groups

@@ -71,6 +71,14 @@ class CfgFunctions
 
 		};
 
+		class outposts
+		{
+			file = "\data\main\outposts";
+			class outpost_config {};
+			class build_outpost_objects {};
+			class upgrade_outpost {};
+		};
+
 		class cop
 		{
 			file = "\data\main\cop";
@@ -109,6 +117,7 @@ class CfgFunctions
 			class variables {};
 			class init_traders {};
 			class initVehicles {};
+			class init_outposts_client {};
 		};
 
 		class loot_system
@@ -187,6 +196,7 @@ class CfgFunctions
 			class keyhandler {};
 			class keyUp {};
 			class on_put {};
+			class on_take {};
 			class rope_attached {};
 			class onPlayerKilled {};
 			class GetInEVH {};

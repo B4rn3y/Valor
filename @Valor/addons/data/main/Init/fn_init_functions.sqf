@@ -35,6 +35,7 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 0 spawn valor_fnc_initVehicles; // setup the Vehicle Repair actions
 
+0 spawn valor_fnc_init_outposts_client; // setup the outposts
 
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 
@@ -47,6 +48,7 @@ player addEventHandler["Respawn", {}];
 player addEventHandler["InventoryClosed", {_this call valor_fnc_inventory_closed}];
 player addEventHandler["InventoryOpened", {_this spawn valor_fnc_inventory_opened}];
 player addEventHandler["Put", {_this call valor_fnc_on_put}];
+player addEventHandler["Take", {_this call valor_fnc_on_take}];
 player addEventHandler["GetOutMan",{_this call valor_fnc_GetOutMan}];
 player removeAllMPEventHandlers "MPHit";
 player removeAllMPEventHandlers "MPKilled";

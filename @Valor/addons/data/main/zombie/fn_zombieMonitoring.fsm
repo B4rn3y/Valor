@@ -6,7 +6,7 @@ item1[] = {"h_user_leer_",4,218,-378.520935,-1042.524658,-288.520935,-992.524719
 item2[] = {"h_user_array_nicht",4,218,-206.257385,-968.118774,-116.257393,-918.118774,0.000000,"häuser array" \n "nicht leer"};
 item3[] = {"find_SPAWN_POS_",2,250,-206.870605,-893.733765,-116.870613,-843.733765,0.000000,"find" \n "SPAWN" \n "POS" \n ""};
 item4[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
-item5[] = {"Zombie_zu_weit_w",4,4314,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
+item5[] = {"Zombie_zu_weit_w",4,218,-44.503357,-375.201538,45.496643,-325.201508,1.000000,"Zombie zu weit" \n "weg"};
 item6[] = {"END",1,250,-511.362885,-1043.612183,-421.362762,-993.612305,0.000000,"END"};
 item7[] = {"_",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,""};
 item8[] = {"END_1",1,250,277.658508,-373.462280,367.658630,-323.462280,0.000000,"END"};
@@ -28,7 +28,7 @@ item23[] = {"w8_and_search_for",4,218,-81.304024,-658.902161,8.695984,-608.90216
 item24[] = {"__2",2,250,-217.493988,-375.325500,-127.493958,-325.325500,0.000000,""};
 item25[] = {"true",4,218,-214.480911,-464.716736,-124.480904,-414.716705,0.000000,"true"};
 item26[] = {"spawning_ZED",2,250,-205.416138,-724.819458,-115.416138,-674.819458,0.000000,"spawning" \n "ZED"};
-item27[] = {"no_base",4,218,-206.478638,-814.974060,-116.478653,-764.974121,0.000000,"no base"};
+item27[] = {"no_base",4,4314,-206.478638,-814.974060,-116.478653,-764.974121,0.000000,"no base"};
 item28[] = {"base",4,218,-512.754333,-903.874939,-422.754395,-853.875000,0.000000,"base"};
 link0[] = {0,1};
 link1[] = {0,2};
@@ -64,8 +64,8 @@ link30[] = {25,11};
 link31[] = {26,10};
 link32[] = {27,26};
 link33[] = {28,6};
-globals[] = {0.000000,0,0,0,0,640,480,1,214,6316128,1,-862.789307,274.395203,-252.253418,-993.127197,901,587,1};
-window[] = {0,-1,-1,-1,-1,863,104,1544,104,1,919};
+globals[] = {0.000000,0,0,0,0,640,480,1,214,6316128,1,-994.197144,519.395264,-575.523132,-1425.742065,1045,587,1};
+window[] = {0,-1,-1,-1,-1,914,21,1682,155,1,1063};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -160,7 +160,8 @@ class FSM
                          "" \n
                          "_the_house = selectRandom _houses;" \n
                          "" \n
-                         "_var = _the_house getvariable[""valor_base_ids"",[]];"/*%FSM</STATEINIT""">*/;
+                         "_var = _the_house getvariable[""valor_base_ids"",[]];" \n
+                         "_var1 = _the_house getvariable[""valor_outpost_ids"",[]];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -171,7 +172,7 @@ class FSM
                                         priority = 0.000000;
                                         to="END";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(_var isequalto [])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_var isequalto []) || !(_var1 isequalto [])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -182,7 +183,7 @@ class FSM
                                         priority = 0.000000;
                                         to="spawning_ZED";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_var isequalto [])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_var isequalto []) && (_var1 isequalto [])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

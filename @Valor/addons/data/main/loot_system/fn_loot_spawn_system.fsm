@@ -21,8 +21,8 @@ link6[] = {6,7};
 link7[] = {7,8};
 link8[] = {8,9};
 link9[] = {9,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-870.019348,76.099304,-357.726746,-931.457825,412,587,1};
-window[] = {0,-1,-1,-1,-1,863,104,1544,104,1,430};
+globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-534.959229,-91.438873,-299.903503,-931.809509,412,587,1};
+window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,430};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -153,8 +153,9 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_piles_Nmbr = 0;" \n
                          "{" \n
                          "      _var = _x getvariable[""valor_base_ids"",[]];" \n
+                         "	   _var1 = _x getvariable[""valor_outpost_ids"",[]];" \n
                          "		_buildingpos = _x buildingPos -1;" \n
-                         "		if(!(_buildingpos isEqualTo []) && (_var isequalto [])) then {" \n
+                         "		if(!(_buildingpos isEqualTo []) && (_var isequalto []) && (_var1 isequalto [])) then {" \n
                          "" \n
                          "			_how_much_piles = random (count (_buildingpos) + 1);" \n
                          "			//if!(_how_much_piles isEqualTo 0) then {_how_much_piles = round(_how_much_piles / 2);};" \n

@@ -42,6 +42,16 @@ switch (_build) do
 		_query = format["Update bases set inventory = '%1' where base_id = '%2'",([_crate] call valor_fnc_getVehicleCargo),_base_id];
 		[_query,1] call valor_fnc_db_sync;
 	};
+
+	case 3:
+	{
+		_var = _crate getvariable "valor_outpost_ids";
+		if(isnil "_var") exitWith {};
+		_config_id = _var select 1;
+		if(_config_id isequalto -1) exitWith {diag_log "Valor :: Var _config_id  of one Vehicle is nil"};
+		_query = format["Update outposts set inventory = '%1' where config_id = '%2'",([_crate] call valor_fnc_getVehicleCargo),_config_id];
+		[_query,1] call valor_fnc_db_sync;
+	};
 };
 
 

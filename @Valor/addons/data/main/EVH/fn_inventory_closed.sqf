@@ -26,3 +26,8 @@ if!(isnil "_var") then {
 	 	[_container,0] remoteexec["valor_fnc_savecrate",2];
 	 };
 };
+
+_var = _container getvariable "valor_outpost_ids";
+if!(isnil "_var") exitWith {
+	[_container,3] remoteexec["valor_fnc_savecrate",2];
+};

@@ -245,4 +245,19 @@ CREATE TABLE IF NOT EXISTS `bases` (
 
 -- --------------------------------------------------------
 
+
+DROP TABLE IF EXISTS `outposts`;
+CREATE TABLE IF NOT EXISTS `outposts` (
+  `outpost_id` int(6) NOT NULL AUTO_INCREMENT,
+  `config_id` int(10) NOT NULL,
+  `build` tinyint(1) NOT NULL DEFAULT '0',
+  `inventory` text NOT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`outpost_id`),
+  KEY `group_id` (`config_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
 INSERT INTO `valor_settings` (`varname`, `varvalue`, `public`) VALUES ('COP_BANK', '0', 'false');
