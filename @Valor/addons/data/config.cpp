@@ -165,6 +165,7 @@ class CfgFunctions
 			class intro {};
 			class 3dCompass {};
 			class zombie_horde_announcement {};
+			class zombie_horde_damage_display {};
 		};
 
 		class bases

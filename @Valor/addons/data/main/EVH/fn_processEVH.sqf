@@ -184,6 +184,49 @@ switch (true) do
 		};
 	};
 
+	case (typeof Vendor isEqualTo "Land_Net_Fence_Gate_F"):
+	{
+
+		_code = {
+
+		    private ["_obj","_pos","_sPos","_ctrl2","_ctrl","_distance","_perc"];
+			_obj = Vendor;
+		    //_pos = [visiblePosition _obj select 0, visiblePosition _obj select 1, (getPosATL _obj select 2) + 1.5];
+		    _pos = _obj modelToWorld [0,0,1.5];
+		    _sPos = worldToScreen _pos;
+
+		    if!(_sPos isEqualTo []) then {
+		    	_sPos = [(_sPos select 0) - 0.15, _sPos select 1];
+		    };
+		    _ctrl2 = controlNull;
+		    _ctrl = controlNull;
+		    _distance = (positionCameraToWorld [0,0,0]) distance _obj;
+
+		    if(!(_sPos isEqualTo []) &&  _distance < 15) then {
+		        if(isnull ((finddisplay 46) displayctrl 1234)) then {
+		            _ctrl = (finddisplay 46) ctrlCreate ["valor_RscProgress", 1234];
+		            _ctrl2 = (finddisplay 46) ctrlCreate ["valor_RscStructuredText", 1235];
+
+		        } else {
+		            _ctrl = ((finddisplay 46) displayctrl 1234);
+		            _ctrl2 = ((finddisplay 46) displayctrl 1235);
+		        };
+
+		        _ctrl ctrlSetPosition _sPos;
+
+		        _perc = _obj getvariable["percent",100];
+		        _ctrl progressSetPosition (_perc/100);
+		        _ctrl2 ctrlSetStructuredText parsetext format["<t size='0.65' align='center'>%1 (%2%3)...</t>",EVHText,round _perc,"%"];
+		        _ctrl ctrlCommit 0;
+		        _ctrl2 ctrlSetPosition (ctrlPosition _ctrl);
+		        _ctrl2 ctrlCommit 0;
+		    } else {
+			    ctrldelete ((finddisplay 46) displayctrl 1234);
+			    ctrldelete ((finddisplay 46) displayctrl 1235);
+			};
+		};
+	};
+
 	default
 	{
 

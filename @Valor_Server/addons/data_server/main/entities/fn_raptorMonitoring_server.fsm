@@ -60,8 +60,8 @@ link28[] = {23,9};
 link29[] = {24,6};
 link30[] = {25,26};
 link31[] = {26,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-825.138428,537.094604,-164.255188,-1145.684326,1227,884,1};
-window[] = {2,-1,-1,-1,-1,993,234,1674,234,3,1245};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-770.157227,123.603668,-7.249512,-966.806641,815,587,1};
+window[] = {0,-1,-1,-1,-1,941,182,1622,182,1,833};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -120,7 +120,7 @@ class FSM
                          "_zombie = createAgent [_ZClassname, [0,0,0], [], 0, ""FORM""];" \n
                          "_zombie setposatl _pos;" \n
                          "_zombie setdir random 360;" \n
-                         "_zombie allowdamage false;" \n
+                         "" \n
                          "" \n
                          "" \n
                          "" \n
@@ -129,7 +129,9 @@ class FSM
                          "_zombie setCombatMode ""BLUE"";" \n
                          "_zombie setBehaviour ""CARELESS"";" \n
                          "systemchat ""Spawning Raptor"";" \n
-                         "[_zombie] spawn valor_fnc_mark_Object;"/*%FSM</STATEINIT""">*/;
+                         "[_zombie] spawn valor_fnc_mark_Object;" \n
+                         "" \n
+                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -260,7 +262,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Move_to_Him";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!isnull(_zombie getvariable[""VALOR_Target"",Objnull])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!isnull(_zombie getvariable[""VALOR_Target"",Objnull])) && alive _zombie"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -306,7 +308,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Attack";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_raptor_canattack)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_raptor_canattack) && alive _zombie"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
