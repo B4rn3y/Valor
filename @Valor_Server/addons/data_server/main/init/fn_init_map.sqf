@@ -3,7 +3,7 @@ private ["_marker","_distance","_classname"];
 _marker = "Survivor_city_1";
 _distance = 600;
 
-
+civilian setfriend[opfor,1];
 {
 	_x setvariable["cop",true,true];
 	if!(typeOf _x isEqualTo "Land_Net_Fence_Gate_F") then {

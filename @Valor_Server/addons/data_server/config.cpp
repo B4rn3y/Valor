@@ -100,6 +100,7 @@ class CfgFunctions
 			class zombie_horde_init {};
 			class zombie_attack_event {};
 			class set_outpost_destroyed {};
+			class zombie_damage_EVH {};
 			class zombie_monitoring_event_main {ext = ".fsm";};
 			class zombieMonitoring_event {ext = ".fsm";};
 		};

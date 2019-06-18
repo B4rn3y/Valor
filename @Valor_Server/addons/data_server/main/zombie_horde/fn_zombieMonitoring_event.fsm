@@ -80,8 +80,8 @@ link38[] = {32,10};
 link39[] = {33,34};
 link40[] = {34,36};
 link41[] = {36,35};
-globals[] = {0.000000,0,0,0,0,640,480,1,228,6316128,1,-1484.448853,1208.207886,371.193420,-1070.950439,1096,587,1};
-window[] = {0,-1,-1,-1,-1,912,53,1714,153,1,1114};
+globals[] = {0.000000,0,0,0,0,640,480,1,228,6316128,1,-946.170776,643.815735,-276.615967,-1128.187256,1096,587,1};
+window[] = {0,-1,-1,-1,-1,863,104,1765,104,1,1114};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -420,7 +420,9 @@ class FSM
                          "} foreach playableunits;" \n
                          "_ret" \n
                          "};" \n
-                         "[_zombie] spawn valor_fnc_mark_Object;"/*%FSM</STATEINIT""">*/;
+                         "[_zombie] spawn valor_fnc_mark_Object;" \n
+                         "" \n
+                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
