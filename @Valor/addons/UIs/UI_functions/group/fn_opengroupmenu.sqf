@@ -37,7 +37,7 @@ _edit_group_name ctrlCommit 0;
 
 _btn_create_group ctrlSetFade 0;
 _btn_create_group ctrlCommit 0;
-
+if!(playerside isEqualTo civilian) then {_btn_create_group ctrlEnable false;};
 _str_text_playtime ctrlSetStructuredText parsetext format["<t  color='#01DF01' size='1.5'>%1 hours</t> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString];
 
 {_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang,_combo_groups,_btn_give_group_properties];

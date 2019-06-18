@@ -51,7 +51,7 @@ _fieldManual ctrlSetText "";
 // player is ingame all is fine
 if(!isnil "Valor_init_done") then {
 	_abortButton ctrlEnable false;
-	if(player getVariable["restrained",false]) then {
+	if(player getVariable["valor_restrained",false]) then {
 		_abortButton ctrlEnable false;
 	} else {
 		_timeStamp = time + 5;

@@ -65,6 +65,8 @@ diag_log "Valor :: Starting Base Init";
 waitUntil {!isnil "Valor_base_init_finished"};
 Valor_base_init_finished = nil;
 [] spawn valor_fnc_init_outposts;
+waitUntil {!isnil "Valor_outpost_init_finished"};
+Valor_outpost_init_finished = nil;
 diag_log "Valor :: Base init finished";
 [] call valor_fnc_init_map;
 diag_log "Valor :: Init Vehicles";

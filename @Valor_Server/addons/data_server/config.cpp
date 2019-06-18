@@ -94,6 +94,16 @@ class CfgFunctions
 			class syncGroupDB {};
 		};
 
+		class zombie_horde
+		{
+			file= "\data_server\main\zombie_horde";
+			class zombie_horde_init {};
+			class zombie_attack_event {};
+			class set_outpost_destroyed {};
+			class zombie_monitoring_event_main {ext = ".fsm";};
+			class zombieMonitoring_event {ext = ".fsm";};
+		};
+
 		class entities
 		{
 			file= "\data_server\main\entities";

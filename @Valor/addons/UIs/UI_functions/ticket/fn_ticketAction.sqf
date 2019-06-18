@@ -1,7 +1,7 @@
 
 private ["_unit","_display","_edit","_txt","_nmbr","_max_nmbr"];
 _unit = OBJ_focused;
-if(isNil "_unit" OR isNull _unit OR !isPlayer _unit OR !(_unit getvariable["restrained",false])) exitWith {};
+if(isNil "_unit" OR isNull _unit OR !isPlayer _unit OR !(_unit getvariable["valor_restrained",false])) exitWith {};
 
 
 

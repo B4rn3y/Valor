@@ -18,7 +18,7 @@ switch (_code) do
 
 	case 219: // WINDOWS LEFT
 	{
-		if(player getVariable ["restrained",false]) exitWith{systemChat "You cant do anything while being restrained";_handle};
+		if(player getVariable ["valor_restrained",false]) exitWith{systemChat "You cant do anything while being restrained";_handle};
 		[cursorObject] call valor_fnc_objecthandler;
 		[cursortarget] call valor_fnc_openinteractionmenu;
 	};

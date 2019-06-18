@@ -1,7 +1,6 @@
 private ["_outpost"];
 _id = param[0,-1,[0]];
 if(_id isEqualTo -1) exitWith {[]};
-_outpost = [];
 
 _outpost = switch (_id) do
 {
@@ -12,11 +11,17 @@ _outpost = switch (_id) do
 			[["Land_Metal_Shed_F",[5691.02,7339.11,-3.05176e-005],112.239,[0,0,1],false],["Land_CncBarrierMedium_F",[5692.7,7338.48,0],111.82,[0,0,1],false],["B_CargoNet_01_ammo_F",[5689.22,7339.75,0.00164795],113.032,[-0.00415465,-0.039945,0.999193],true]],
 			[
 				["valor_Land_DuctTape_F",1]
-			]
+			],
+			[[5701.69,7339.76,0.00134277],40], // start search for objects
+			[5861.3,7263.05,0.00143433],		// pos to spawn zeds @
+			"Metal"
 		]
 	};
 
-
+	default
+	{
+		[]
+	};
 
 };
 

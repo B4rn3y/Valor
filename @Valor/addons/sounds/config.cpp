@@ -23,7 +23,7 @@ class CfgSounds
 	class adventurer
 	{
 		name = "adventurer";
-		sound[] = {"\sounds\others\adventurer.ogg", 2, 1,50};
+		sound[] = {"\sounds\others\adventurer.ogg", 70, 1,50};
 		titles[] = {};
 	};
 
@@ -37,7 +37,14 @@ class CfgSounds
 	class cuff
 	{
 		name = "cuff";
-		sound[] = {"\sounds\others\cuff.ogg", 2, 1,50};
+		sound[] = {"\sounds\others\cuff.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class horde_sound
+	{
+		name = "horde_sound";
+		sound[] = {"\sounds\others\horde_sound.ogg", 70, 1,50};
 		titles[] = {};
 	};
 };

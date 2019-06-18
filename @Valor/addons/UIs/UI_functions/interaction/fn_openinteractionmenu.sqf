@@ -2,7 +2,7 @@
 private ["_cursortarget","_display","_btn_1","_btn_2","_btn_3","_btn_4","_btn_5","_btn_6","_btn_7","_btn_8","_btn_9","_btn_10","_classname"];
 
 OBJ_focused = param[0,objNull,[objNull]];
-if(isnull _cursortarget) exitWith {};
+if(player getvariable["valor_restrained",false]) exitWith {};
 if!(isnull (findDisplay 3005)) exitWith {};
 
 _create_display = {
@@ -40,8 +40,6 @@ _classname = typeof OBJ_focused;
 
 
 
-
-
 // another player (restrained)
 if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["valor_restrained",false] && ((player distance OBJ_focused) < 3.1)) || !(_attached_player isEqualTo objNull)) exitWith {
 
@@ -61,9 +59,13 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_stopEscorting;";
 	};
 
-	_btn_3 ctrlshow true;
-	_btn_3 ctrlsettext "Ticket";
-	_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
+	if(playerSide isEqualTo opfor) then {
+		_btn_3 ctrlshow true;
+		_btn_3 ctrlsettext "Ticket";
+		_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
+	} else {
+
+	};
 };
 
 

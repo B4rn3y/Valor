@@ -2,7 +2,7 @@
 
 private["_unit"];
 _unit = param [0,ObjNull,[ObjNull]];
-if(isNil "_unit" OR isNull _unit OR !isPlayer _unit OR !(_unit getvariable["restrained",false])) exitWith {};
+if(isNil "_unit" OR isNull _unit OR !isPlayer _unit OR !(_unit getvariable["valor_restrained",false])) exitWith {};
 
 disableSerialization;
 if!(createDialog "ticket") exitWith {systemChat "Valor :: Could not create the dialog"};

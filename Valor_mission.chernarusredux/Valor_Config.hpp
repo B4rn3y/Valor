@@ -83,6 +83,16 @@ class Valor_settings {
 		max_ticket = 1000; // THe max amount for a ticket the cops can make
 		jailtime = 15; // The time in minutes somebody is in jail
 
+		zombie_horde_probability = 20; // The probablity the horde event gets trigged during this server start, in this case its 20%
+		zombie_horde_amount = 20; // The amount of Zombies during the EVENT, in this case its 20 ZEds
+		zombie_horde_damage = 10; // the damage a zombie takes looks like this   DAMAGE_TAKEN = ACTUAL DAMAGE / 10
+		zombie_damage = 50; // the damage a zombie makes to the gate in one hit
+		zombie_horde_start_time[] = {3600,4000,4400}; // The time after which the events starts
+		outpost_gate_health = 1000; // the amount of life the gate has
+		zombie_event_time = 600; // the duration of the event in seconds
+		zombie_event_time_begin = 180; // Time time between event anouncement and actual begin
+		amount_cops_needed = 1; // The minimum amount of cops needed to start the event
+
 		map_hidement_bottom_left[] = {500,500};   // start pos in map position in the bottim left
 		map_hidement_top_right[] = {16500,16500};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
 

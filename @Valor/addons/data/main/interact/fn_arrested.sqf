@@ -1,6 +1,6 @@
 
 private ["_jailtime","_markerpos","_time","_distance"];
-_jailtime = param[1,-1,[-1]];
+_jailtime = param[0,-1,[-1]];
 if(_jailtime isEqualTo -1) exitWith {};
 waitUntil {!isnil "valor_init_done"};
 Valor_thirst = 100;

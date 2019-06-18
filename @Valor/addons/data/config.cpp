@@ -68,7 +68,7 @@ class CfgFunctions
 		{
 			file = "\data\main\traderzones";
 			class setupVariablesTrader {};
-
+			class pay {};
 		};
 
 		class outposts
@@ -164,6 +164,7 @@ class CfgFunctions
 			class admin_inform {};
 			class intro {};
 			class 3dCompass {};
+			class zombie_horde_announcement {};
 		};
 
 		class bases

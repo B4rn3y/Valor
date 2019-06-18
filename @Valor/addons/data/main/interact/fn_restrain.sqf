@@ -19,13 +19,13 @@ if(isNull _cop) exitWith {};
 
 
 	private["_time"];
-	while {player getVariable ["restrained",false]} do
+	while {player getVariable ["valor_restrained",false]} do
 	{
 		_time = serverTime;
 		waitUntil {(serverTime - _time) > (5 * 60)};
 
-		if( !(call _players_close) && (player getVariable["restrained",FALSE]) && vehicle player isEqualTo player) exitWith {
-			player setVariable["restrained",nil,TRUE];
+		if( !(call _players_close) && (player getVariable["valor_restrained",FALSE]) && vehicle player isEqualTo player) exitWith {
+			player setVariable["valor_restrained",nil,TRUE];
 			detach player;
 			systemchat "Valor :: You are unrestrained because nobody was close to watch you, good luck."
 		};
@@ -34,18 +34,18 @@ if(isNull _cop) exitWith {};
 
 titleText["PLAIN","You were restrained"];
 
-while {player getVariable ["restrained",false]} do
+while {player getVariable ["valor_restrained",false]} do
 {
 	if(vehicle player isEqualTo player) then {
 		player playMove "AmovPercMstpSnonWnonDnon_Ease";
 	};
 
 	_state = vehicle player;
-	waitUntil {animationState player != "AmovPercMstpSnonWnonDnon_Ease" || !(player getvariable["restrained",false]) || vehicle player != _state};
+	waitUntil {animationState player != "AmovPercMstpSnonWnonDnon_Ease" || !(player getvariable["valor_restrained",false]) || vehicle player != _state};
 
 	if(!alive player) exitWith
 	{
-		player setVariable ["restrained",nil,true];
+		player setVariable ["valor_restrained",nil,true];
 		detach _player;
 
 	};

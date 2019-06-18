@@ -21,6 +21,10 @@ deleteVehicle _container;
 _query = format["Update outposts set build = '1' where config_id = '%1'",_config_id];
 [_query,1] call valor_fnc_db_sync;
 
+_ret = [_config_id] call valor_fnc_outpost_config;
+_markertext = format["[Done] %1 Outpost",_ret select 5];
+_markername = format["Valor_outpost_marker_%1",_config_id];
+_markername setMarkerText _markertext;
 
 
 

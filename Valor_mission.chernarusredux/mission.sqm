@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=1284;
+		nextID=1285;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-387.43317,805.59949,15895.985};
-		dir[]={-0.88650197,-0.43963104,-0.14514983};
-		up[]={-0.4340291,0.89808142,-0.071061067};
-		aside[]={-0.16159356,-1.4879042e-006,0.98697239};
+		pos[]={3880.2937,336.54568,8808.957};
+		dir[]={-0.5142414,-0.39336899,0.76212996};
+		up[]={-0.22003126,0.91937321,0.32609671};
+		aside[]={0.82895684,-3.259629e-009,0.55933225};
 	};
 };
 binarizationWanted=0;
@@ -229,7 +229,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=532;
+		items=533;
 		class Item0
 		{
 			dataType="Object";
@@ -15855,6 +15855,46 @@ class Mission
 			};
 			id=1283;
 			type="Land_Canal_Wall_D_center_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item532
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3868.3201,311.78339,8845.8701};
+				angles[]={0,3.5714149,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1284;
+			type="Hhedgehog_concreteBig";
 			class CustomAttributes
 			{
 				class Attribute0

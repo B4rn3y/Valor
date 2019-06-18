@@ -32,7 +32,7 @@ switch (playerside) do
 			_unit setvariable["percent",_cP * 100];
 
 			if(_cP >= 1) exitWith {};
-			if!(_restrained_person getvariable["restrained",false]) exitWith {};
+			if!(_restrained_person getvariable["valor_restrained",false]) exitWith {};
 			if(player distance _restrained_person > 5) exitWith {};
 			if((vehicle player) != player) exitWith {};
 			if!(alive player) exitWith {};
@@ -40,18 +40,18 @@ switch (playerside) do
 		};
 		player removeAction _id;
 		player switchmove "";
-		if!(_restrained_person getvariable["restrained",false]) exitWith {valor_is_processing=nil;};
+		if!(_restrained_person getvariable["valor_restrained",false]) exitWith {valor_is_processing=nil;};
 		if(!isnil "Valor_interrupt") exitWith {valor_is_processing=nil;};
 		if!(alive player) exitWith {valor_is_processing=nil;};
 		if(player distance _unit > 5) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
 		if((vehicle player) != player) exitWith {systemchat "Valor :: You cant do that in a vehicle!"; valor_is_processing = nil;};
 		if(isnull _restrained_person) exitWith {systemchat "Valor :: This person is already offline";valor_is_processing = nil;};
 		valor_is_processing = nil;
-		_restrained_person setvariable["restrained",nil,true];
+		_restrained_person setvariable["valor_restrained",nil,true];
 	};
 
 	case opfor:
 	{
-		_restrained_person setvariable["restrained",nil,true];
+		_restrained_person setvariable["valor_restrained",nil,true];
 	};
 };
