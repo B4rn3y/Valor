@@ -79,6 +79,33 @@ a=["a3\structures_f\civ\dead\humanskull_f.p3d",
 "a3\structures_f\items\luggage\suitcase_f.p3d"];
 
 
+i = 0;
+pos = getposworld player vectoradd [0,2,.2];
+
+obj = createSimpleObject [a#i,pos];
+
+
+
+0 spawn{
+_str = a#i;
+while{_str find "\" > -1}do{
+	_str = _str select [(_str find "\") + 1,500];
+};
+_str = _str select [0, count _str -6];
+
+
+screenshot (_str+ "_icon.png");
+sleep .2;
+
+deleteVehicle obj;
+i=i+1;
+
+obj = createSimpleObject [a#i,pos];
+
+};
+
+
+
 
 0 spawn{
 	_cur = objnull;
