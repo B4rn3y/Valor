@@ -146,12 +146,14 @@ class CfgFunctions
 		{
 			file = "\data\main\mission_persistance";
 			class clearPlayerInventory {};
+			class clearPlayerInventory_object {};
 			class gear_to_VAR {};
 			class player_monitor {ext = ".fsm";};
 			class load_BAMBI_GEAR {};
 			class step_update {};
 			class syncPlayerToDB {};
 			class VAR_to_gear {};
+			class VAR_to_gear_object {};
 			class survival {ext = ".fsm";};
 			class GetOutMan {};
 			class onEachFrameHandler {};

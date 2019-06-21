@@ -2,7 +2,7 @@
 private ["_vehicle_send","_requester","_shop","_price","_type","_classname","_query","_queryresult","_entry","_current_sellers"];
 _vehicle_send = param[0,objNull,[objNull]];
 _requester = param[1,objNull,[objnull]];
-_shop = param[2,"survivor_city_1",["",[]]];
+_shop = param[2,"survivor_city",["",[]]];
 _price = param[3,100,[100]];
 _type = "error";
 iF(isnull _vehicle_send || isnull _requester) exitWith {};

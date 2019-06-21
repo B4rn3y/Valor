@@ -134,25 +134,18 @@ _handgun = "";
 		case 14:
 		{
 			if!(_x isEqualTo "") then {
-				player addBackpack _x;
+				player addHeadgear _x;
 			};
 		};
 
 		case 15:
 		{
 			if!(_x isEqualTo "") then {
-				player addHeadgear _x;
-			};
-		};
-
-		case 16:
-		{
-			if!(_x isEqualTo "") then {
 				player addgoggles _x;
 			};
 		};
 
-		case 17:
+		case 16:
 		{
 			{
 				if!(_x isEqualTo "") then {
@@ -162,7 +155,7 @@ _handgun = "";
 			} foreach _x;
 		};
 
-		case 18:
+		case 17:
 		{
 			{
 				if!(_x isEqualTo "") then {

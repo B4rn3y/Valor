@@ -24,8 +24,6 @@ _arr pushback (uniformitems _unit);
 // vest
 _arr pushback (vest _unit);
 _arr pushback (vestitems _unit);
-// backpack
-_arr pushback (backpack _unit);
 // helmet
 _arr pushback (headgear _unit);
 // goggles

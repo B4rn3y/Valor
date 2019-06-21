@@ -101,7 +101,18 @@ CREATE TABLE IF NOT EXISTS `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
-
+DROP TABLE IF EXISTS `item_shop`;
+CREATE TABLE IF NOT EXISTS `item_shop` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(256) NOT NULL,
+  `price` int(6) NOT NULL DEFAULT '100',
+  `stock` int(6) NOT NULL DEFAULT '0',
+  `seller` varchar(128) NOT NULL default '["survivor_city"]',
+  `cop` tinyint(1) NOT NULL DEFAULT '0',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -172,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_prices` (
   `classname` varchar(64) NOT NULL,
   `price` int(10) NOT NULL default '100',
   `type` text NOT NULL,
-  `seller` varchar(128) NOT NULL default '["survivor_camp"]',
+  `seller` varchar(128) NOT NULL default '["survivor_city"]',
   `sold` int(6) NOT NULL DEFAULT '0',
   `bought` int(6) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

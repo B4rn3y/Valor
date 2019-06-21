@@ -39,6 +39,13 @@ class CfgFunctions
 			class acceptQuest {};
 		};
 
+		class item_shop
+		{
+			file = "\UIs\UI_functions\Item_Shop";
+			class fillItemShop {};
+			class openItemShop {};
+		};
+
 		class interaction
 		{
 			file = "\UIs\UI_functions\interaction";

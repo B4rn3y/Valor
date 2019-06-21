@@ -50,6 +50,7 @@ class CfgFunctions
 			class insert_vehicleprice {};
 			class insert_cop_crate {};
 			class update_cop_bankDB {};
+			class insert_item_shop {};
 		};
 
 		class carshop
@@ -59,6 +60,12 @@ class CfgFunctions
 			class createvehicleshop {};
 			class setvehicleinshop {};
 			class shopvehiclereset {};
+		};
+
+		class Item_shop
+		{
+			file = "\data_server\main\item_shop";
+			class Itemshop_request {};
 		};
 
 		class bases

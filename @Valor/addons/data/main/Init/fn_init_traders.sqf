@@ -26,7 +26,7 @@ _trader switchMove "Acts_carFixingWheel";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
-_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city_1",[3835.22,8835.58,0.00442505],26]];
+_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city",[3835.22,8835.58,0.00442505],26]];
 
 
 
@@ -126,6 +126,7 @@ _trader switchMove "Acts_CivilShocked_1";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["Acts_CivilShocked_1","Acts_CivilShocked_2"];}];
+_trader addaction["Shop",valor_fnc_openItemShop,"survivor_city"];
 
 
 _position = [3799.74,8827.1,0.00146484];
