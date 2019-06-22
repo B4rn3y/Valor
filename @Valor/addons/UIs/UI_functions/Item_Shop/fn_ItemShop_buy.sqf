@@ -35,7 +35,7 @@ _config = _data select 5;
 
 _can_pay = [_price,true] call valor_fnc_pay;
 
-if!(_can_pay) exitWith{hint format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext]; _buy_sell_BTN ctrlEnable true;};
+if!(_can_pay) exitWith{titletext["PLAIN DOWN",format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext]]; _buy_sell_BTN ctrlEnable true;};
 
 _new_stock = _stock - 1;
 if(_new_stock isEqualTo 0) then {
@@ -86,4 +86,4 @@ switch (true) do
 	};
 };
 
-
+_buy_sell_BTN ctrlEnable true;
