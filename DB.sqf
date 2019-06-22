@@ -107,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `item_shop` (
   `classname` varchar(256) NOT NULL,
   `price` int(6) NOT NULL DEFAULT '100',
   `stock` int(6) NOT NULL DEFAULT '0',
+  `type` varchar(256) NOT NULL,
   `seller` varchar(128) NOT NULL default '["survivor_city"]',
-  `cop` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

@@ -1,4 +1,11 @@
+private ["_box1","_trader","_attachToObject","_position","_dir"];
 
+// create box for item shop ["B_supplyCrate_F",[3789.1,8844.84,0],24.7621]
+_box1 = "B_supplyCrate_F" createVehicleLocal [0,0,0];
+_box1 setposatl [3789.1,8844.84,0];
+_box1 setdir 24.7621;
+_box1 allowdamage false;
+[_box1] call valor_fnc_clear_vehicle;
 
 
 private ["_trader","_attachToObject","_position","_dir"];

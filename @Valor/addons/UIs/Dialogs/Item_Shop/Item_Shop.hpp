@@ -28,9 +28,11 @@ class Item_Shop {
 	};
 
 	class controls {
-		class RscListbox_1500: valor_RscListNBox
+		class RscListbox_1500: valor_RscListBox
 		{
 			idc = 1500;
+			sizeEx = 0.040;
+			onLBselChanged = "[] spawn valor_fnc_ItemShop_lb_changed;";
 			x = 0.00429715 * safezoneW + safezoneX;
 			y = 0.0666666 * safezoneH + safezoneY;
 			w = 0.238361 * safezoneW;

@@ -158,6 +158,7 @@ class CfgFunctions
 			class GetOutMan {};
 			class onEachFrameHandler {};
 			class stackOnEachFrame {};
+			class clear_vehicle {};
 		};
 
 		class others

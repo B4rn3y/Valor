@@ -44,6 +44,7 @@ class CfgFunctions
 			file = "\UIs\UI_functions\Item_Shop";
 			class fillItemShop {};
 			class openItemShop {};
+			class ItemShop_lb_changed {};
 		};
 
 		class interaction

@@ -13,7 +13,7 @@ if(isnil "VALOR_IN_TRADER") then {
 			_vehicle setvariable["group_restricted",[_mode,valor_group select 0],true];
 		};
 	};
-	if!(vehicle player isEqualTo player) then {
+	if(!(vehicle player isEqualTo player) && (driver vehicle player isEqualTo player)) then {
 		if(playerSide isEqualTo opfor) exitWith {_vehicle setvariable["group_restricted",[-2,-1],true];};
 		if(isnil "Valor_group") exitWith {0 call _set_var;};
 		if(valor_group isEqualTo []) then {
@@ -24,7 +24,7 @@ if(isnil "VALOR_IN_TRADER") then {
 	};
 } else {
 	VALOR_IN_TRADER = nil;
-	if!(vehicle player isEqualTo player) then {
+	if(!(vehicle player isEqualTo player) && (driver vehicle player isEqualTo player)) then {
 		_vehicle setvariable["group_restricted",nil,true];
 	};
 };

@@ -58,11 +58,10 @@ if(_final_arr isEqualTo []) exitWith {
 };
 
 {
-	_id = _listbox lbadd format["%1 - %2",_x select 2,getText(configFile >> "CfgVehicles" >> (_x select 1) >> "displayName")];
+	_id = _listbox lbadd format["%1 - %2",([(_x select 2)] call valor_fnc_numbertext),getText(configFile >> "CfgVehicles" >> (_x select 1) >> "displayName")];
 	_listbox lbSetValue[_id,_x select 0];
 								// classname, price, pos, dir
 	_listbox lbSetData[_id,str([_x select 1,_x select 2,_seller select 1,_seller select 2])];
-	diag_log str([_x select 1,_x select 2,_seller select 1,_seller select 2]);
 } foreach _final_arr;
 
 lbSort _listbox;

@@ -104,7 +104,7 @@ class Valor_settings {
 		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500}};
 		no_loot_spawn_Zones[] = {{"Survivor_city_1",500}};
 
-		not_liftable[] = {"B_CargoNet_01_ammo_F"};
+		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F"};
 
 	};
 

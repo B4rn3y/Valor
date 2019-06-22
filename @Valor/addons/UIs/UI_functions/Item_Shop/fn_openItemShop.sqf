@@ -28,23 +28,22 @@ disableSerialization;
 if(!createDialog "Item_Shop") exitWith {systemChat "Valor Error :: Could not create the dialog!";valor_intro_cam cameraEffect ["TERMINATE","BACK"];camDestroy valor_intro_cam; deleteVehicle VALOR_PREVIEW_MODEL; player hideObject false;};
 _display = findDisplay 3007;
 _header = _display displayCtrl 1001;
-_listNbox = _display displayCtrl 1500;
+_listbox = _display displayCtrl 1500;
 _buy_sell_BTN = _display displayCtrl 2400;
 _switch_BTN = _display displayCtrl 2402;
 _str_text_name = _display displayCtrl 1100;
 _str_text_stock = _display displayCtrl 1101;
 _str_text_Price = _display displayCtrl 1102;
+_listbox lbadd "Loading Items from server...";
 
 _str_text_name ctrlSetStructuredText parseText " <t size='1.1' align='center'>Name</t> ";
 _str_text_stock ctrlSetStructuredText parseText " <t size='1.1' align='center'>Stock</t> ";
 _str_text_Price ctrlSetStructuredText parseText " <t size='1.1' align='center'>Price</t> ";
 
-_listNbox lnbAddColumn 0.3;
-_listNbox lnbAddColumn 0.6;
-_listNbox lnbAddColumn 0.9;
+showChat false;
 
-//[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
-
+[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
+Valor_last_added= [uniform player,"uniform"];
 waitUntil {isnull(finddisplay 3007)};
 valor_intro_cam cameraEffect ["TERMINATE","BACK"];
 camDestroy valor_intro_cam;
@@ -54,3 +53,6 @@ if!(isnil "VALOR_PREVIEW_MODEL") then {
 	VALOR_PREVIEW_MODEL = nil;
 };
  player hideObject false;
+showChat true;
+
+Valor_last_added = nil;
