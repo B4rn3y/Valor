@@ -52,6 +52,7 @@ class Item_Shop {
 		{
 			idc = 2400;
 			text = "Buy"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_ItemShop_buy;";
 			x = 0.00468731 * safezoneW + safezoneX;
 			y = 0.906482 * safezoneH + safezoneY;
 			w = 0.237578 * safezoneW;

@@ -92,7 +92,7 @@ _items = _p_weapons + _hgun_weapons + _sweapon + _magazines + _uniforms + _vests
 	_type = call compile (_x select 4);
 	_config = [_classname] call valor_fnc_getconfig;
 	if!(_stock isEqualTo 0) then {
-		_id = _listbox lbadd format["%1 - %2",([_price] call valor_fnc_numbertext),getText(configFile >> _config >> _classname >> "displayName")];
+		_id = _listbox lbadd format["$%1 - %2",([_price] call valor_fnc_numbertext),getText(configFile >> _config >> _classname >> "displayName")];
 		_listbox lbSetPicture[_id,getText(configFile >> _config >> _classname >> "picture")];
 		_listbox lbSetTooltip[_id,getText(configFile >> _config >> _classname >> "descriptionshort")];
 		_listbox lbSetData[_id,str([_DBid,_classname,_price,_stock,_type,_config])];

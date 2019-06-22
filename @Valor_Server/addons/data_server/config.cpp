@@ -65,6 +65,7 @@ class CfgFunctions
 		{
 			file = "\data_server\main\item_shop";
 			class Itemshop_request {};
+			class update_item_stock {};
 		};
 
 		class bases

@@ -1,8 +1,7 @@
 
 
 //VALOR_PREVIEW_MODEL
-
-private ["_display","_header","_listbox","_buy_sell_BTN","_switch_BTN","_str_text_name","_str_text_stock","_str_text_Price","_index","_btn_text","_data","_DB_ID","_classname","_price","_stock","_type","_config","_wep"];
+private ["_display","_header","_listbox","_buy_sell_BTN","_switch_BTN","_str_text_name","_str_text_stock","_str_text_Price","_index","_btn_text","_data","_DB_ID","_classname","_price","_stock","_type","_config","_type_old","_classname_old","_replaced","_wep"];
 disableSerialization;
 _display = findDisplay 3007;
 _header = _display displayCtrl 1001;
@@ -39,8 +38,9 @@ _config = _data select 5;
 
 _type_old = Valor_last_added select 1;
 _classname_old = Valor_last_added select 0;
-
+_replaced = false;
 if!(_type_old isEqualTo _type) then {
+	_replaced = true;
 	switch (_type_old) do
 	{
 		case "pweapon":
@@ -104,13 +104,18 @@ if!(_type_old isEqualTo _type) then {
 
 };
 
-
+if(_replaced) then {
+	Valor_last_added = ["",_type];
+};
 
 switch (_type) do
 {
 	case "pweapon":
 	{
 		_wep = primaryWeapon VALOR_PREVIEW_MODEL;
+		if(_replaced) then {
+			Valor_last_added set[0,_wep];
+		};
 		if!(_wep isEqualTo "") then {
 			VALOR_PREVIEW_MODEL removeWeapon _wep;
 		};
@@ -120,6 +125,9 @@ switch (_type) do
 	case "sweapon":
 	{
 		_wep = secondaryWeapon VALOR_PREVIEW_MODEL;
+		if(_replaced) then {
+			Valor_last_added set[0,_wep];
+		};
 		if!(_wep isEqualTo "") then {
 			VALOR_PREVIEW_MODEL removeWeapon _wep;
 		};
@@ -129,6 +137,9 @@ switch (_type) do
 	case "hweapon":
 	{
 		_wep = handgunWeapon VALOR_PREVIEW_MODEL;
+		if(_replaced) then {
+			Valor_last_added set[0,_wep];
+		};
 		if!(_wep isEqualTo "") then {
 			VALOR_PREVIEW_MODEL removeWeapon _wep;
 		};
@@ -137,30 +148,45 @@ switch (_type) do
 
 	case "uniform":
 	{
+		if(_replaced) then {
+			Valor_last_added set[0,uniform VALOR_PREVIEW_MODEL];
+		};
 		removeUniform VALOR_PREVIEW_MODEL;
 		VALOR_PREVIEW_MODEL forceAddUniform _classname;
 	};
 
 	case "vest":
 	{
+		if(_replaced) then {
+			Valor_last_added set[0,vest VALOR_PREVIEW_MODEL];
+		};
 		removeVest VALOR_PREVIEW_MODEL;
 		VALOR_PREVIEW_MODEL addVest _classname;
 	};
 
 	case "backpack":
 	{
+		if(_replaced) then {
+			Valor_last_added set[0,backpack VALOR_PREVIEW_MODEL];
+		};
 		removeBackpack VALOR_PREVIEW_MODEL;
 		VALOR_PREVIEW_MODEL addBackpack _classname;
 	};
 
 	case "headgear":
 	{
+		if(_replaced) then {
+			Valor_last_added set[0,headgear VALOR_PREVIEW_MODEL];
+		};
 		removeHeadgear VALOR_PREVIEW_MODEL;
 		VALOR_PREVIEW_MODEL addHeadgear _classname;
 	};
 
 	case "goggles":
 	{
+		if(_replaced) then {
+			Valor_last_added set[0,goggles VALOR_PREVIEW_MODEL];
+		};
 		removeGoggles VALOR_PREVIEW_MODEL;
 		VALOR_PREVIEW_MODEL addGoggles _classname;
 	};
@@ -171,6 +197,6 @@ switch (_type) do
 
 
 
-
+diag_log str Valor_last_added;
 
 
