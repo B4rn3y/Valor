@@ -67,6 +67,7 @@ class CfgFunctions
 			class Itemshop_request {};
 			class update_item_stock {};
 			class Itemshop_sellprice_request {};
+			class incrementStock {};
 		};
 
 		class bases

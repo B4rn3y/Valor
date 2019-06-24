@@ -62,7 +62,7 @@ _find_classname_price = {
 };
 
 
-
+_names = [_classname];
 
 
 
@@ -75,6 +75,9 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (uniformitems player);
 		removeUniform player;
 		removeUniform VALOR_PREVIEW_MODEL;
@@ -85,6 +88,9 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (backpackitems player);
 		removeBackpackGlobal player;
 		removeBackpack VALOR_PREVIEW_MODEL;
@@ -95,10 +101,16 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (primaryWeaponItems player);
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (primaryWeaponMagazine player);
 		player removeWeapon _classname;
 		VALOR_PREVIEW_MODEL removeWeapon _classname;
@@ -121,10 +133,16 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (secondaryWeaponItems player);
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (secondaryWeaponMagazine player);
 		player removeWeapon _classname;
 		VALOR_PREVIEW_MODEL removeWeapon _classname;
@@ -147,10 +165,16 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (handgunItems player);
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (handgunMagazine player);
 		player removeWeapon _classname;
 		VALOR_PREVIEW_MODEL removeWeapon _classname;
@@ -178,6 +202,9 @@ switch (_remove_id) do
 		{
 			_price_extra = _x call _find_classname_price;
 			_price = _price + _price_extra;
+			if!(_x isEqualTo "") then {
+				_names pushback _x;
+			};
 		} foreach (vestItems player);
 		removeVest player;
 		removeVest VALOR_PREVIEW_MODEL;
@@ -218,3 +245,37 @@ _buy_sell_BTN ctrlEnable true;
 titletext["PLAIN DOWN", format["You sold a %1 for $%2",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)]];
 
 Valor_bankacc = Valor_bankacc + _price;
+
+
+_entry = toArray str _names;
+_ret = [];
+{
+	switch (_x) do
+	{
+		case 91:
+		{
+			_ret pushBack 40;
+		};
+
+		case 93:
+		{
+			_ret pushBack 41;
+		};
+
+		case 34:
+		{
+			_ret pushBack 39;
+		};
+
+		default
+		{
+			_ret pushBack _x;
+		};
+	};
+} foreach _entry;
+
+
+_names = tostring _ret;
+
+
+[_names,VALOR_SELLER_SHOP] remoteexec["valor_fnc_incrementStock",2];

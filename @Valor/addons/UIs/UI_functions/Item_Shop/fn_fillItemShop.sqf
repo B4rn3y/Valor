@@ -83,10 +83,10 @@ _items = _p_weapons + _hgun_weapons + _sweapon + _magazines + _uniforms + _vests
 
 {
 	_DBid = _x select 0;
-	_classname = call compile (_x select 1);
+	_classname = _x select 1;
 	_price = _x select 2;
 	_stock = _x select 3;
-	_type = call compile (_x select 4);
+	_type = _x select 4;
 	_infinite = _x select 5;
 	_config = [_classname] call valor_fnc_getconfig;
 	if!(_stock isEqualTo 0) then {

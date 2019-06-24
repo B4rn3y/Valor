@@ -12,7 +12,7 @@ if(_classname isEqualTo "" || _price isEqualTo -1 || isnull _requester || _type 
 };
 _query = "";
 
-_query = format["Insert into item_shop (classname,price,stock,seller,type) VALUES ('%1','%2','%3','%4','%5')",(str _classname),_price,_stock,[_shop],(str _type)];
+_query = format["Insert into item_shop (classname,price,stock,seller,type) VALUES ('%1','%2','%3','%4','%5')",( _classname),_price,_stock,[_shop],(_type)];
 
 [_query,1] call valor_fnc_db_sync;
 
