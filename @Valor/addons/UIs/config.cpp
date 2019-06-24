@@ -47,6 +47,10 @@ class CfgFunctions
 			class ItemShop_lb_changed {};
 			class update_item_stock_client {};
 			class ItemShop_buy {};
+			class openItemSellMenu {};
+			class fillItemShop_sell {};
+			class ItemShop_sell {};
+			class switchItemShop {};
 		};
 
 		class interaction

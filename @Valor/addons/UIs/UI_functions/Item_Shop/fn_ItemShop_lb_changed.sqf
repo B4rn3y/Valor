@@ -33,7 +33,7 @@ _price = _data select 2;
 _stock = _data select 3;
 _type = _data select 4;
 _config = _data select 5;
-
+_infinite = _data select 6;
 
 
 _type_old = Valor_last_added select 1;

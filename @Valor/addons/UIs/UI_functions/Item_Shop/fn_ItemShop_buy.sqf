@@ -7,9 +7,6 @@ _header = _display displayCtrl 1001;
 _listbox = _display displayCtrl 1500;
 _buy_sell_BTN = _display displayCtrl 2400;
 _switch_BTN = _display displayCtrl 2402;
-_str_text_name = _display displayCtrl 1100;
-_str_text_stock = _display displayCtrl 1101;
-_str_text_Price = _display displayCtrl 1102;
 
 if(isnull _display) exitWith {};
 _index = lbCurSel _listbox;
@@ -32,21 +29,22 @@ _price = _data select 2;
 _stock = _data select 3;
 _type = _data select 4;
 _config = _data select 5;
+_infinite = _data select 6;
 
 _can_pay = [_price,true] call valor_fnc_pay;
 
 if!(_can_pay) exitWith{titletext["PLAIN DOWN",format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext]]; _buy_sell_BTN ctrlEnable true;};
 
 _new_stock = _stock - 1;
-if(_new_stock isEqualTo 0) then {
+if(_new_stock <= 0 && _infinite isEqualTo 0) then {
 	_listbox lbDelete _index;
 };
 
-if(_new_stock < 0) then {
+if(_new_stock < 0 && _infinite isEqualTo 1) then {
 	_new_stock = -1;
 };
 
-if!(_new_stock isEqualTo -1) then {
+if(_infinite isEqualTo 0) then {
 	_man_close = nearestObjects[player,["MAN"],12];
 	_man_close = _man_close - [player];
 	_actual_man = [];
@@ -87,3 +85,4 @@ switch (true) do
 };
 
 _buy_sell_BTN ctrlEnable true;
+titletext["PLAIN DOWN", format["You bought a %1 for $%2, check the Loot-BOX",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)]];

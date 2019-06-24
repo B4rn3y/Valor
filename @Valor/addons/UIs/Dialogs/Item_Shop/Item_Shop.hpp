@@ -32,11 +32,10 @@ class Item_Shop {
 		{
 			idc = 1500;
 			sizeEx = 0.040;
-			onLBselChanged = "[] spawn valor_fnc_ItemShop_lb_changed;";
-			x = 0.00429715 * safezoneW + safezoneX;
-			y = 0.0666666 * safezoneH + safezoneY;
-			w = 0.238361 * safezoneW;
-			h = 0.829074 * safezoneH;
+			x = 0.00234404 * safezoneW + safezoneX;
+			y = 0.0324073 * safezoneH + safezoneY;
+			w = 0.240314 * safezoneW;
+			h = 0.863333 * safezoneH;
 		};
 		class close_BTN: valor_RscButtonMenu
 		{
@@ -51,8 +50,7 @@ class Item_Shop {
 		class buy_sell_BTN: valor_RscButtonMenu
 		{
 			idc = 2400;
-			text = "Buy"; //--- ToDo: Localize;
-			onbuttonClick = "[] spawn valor_fnc_ItemShop_buy;";
+			text = ""; //--- ToDo: Localize;
 			x = 0.00468731 * safezoneW + safezoneX;
 			y = 0.906482 * safezoneH + safezoneY;
 			w = 0.237578 * safezoneW;
@@ -62,37 +60,11 @@ class Item_Shop {
 		{
 			idc = 2402;
 			text = "Switch"; //--- ToDo: Localize;
+			onbuttonClick = "[] spawn valor_fnc_switchItemShop;";
 			x = 0.00468746 * safezoneW + safezoneX;
 			y = 0.937037 * safezoneH + safezoneY;
 			w = 0.237578 * safezoneW;
 			h = 0.0253704 * safezoneH;
-		};
-		class STR_TEXT_NAME: valor_RscStructuredText
-		{
-			idc = 1100;
-			text = "";
-			x = 0.0042969 * safezoneW + safezoneX;
-			y = 0.0296302 * safezoneH + safezoneY;
-			w = 0.0742969 * safezoneW;
-			h = 0.0346296 * safezoneH;
-		};
-		class str_text_stock: valor_RscStructuredText
-		{
-			idc = 1101;
-			text = "";
-			x = 0.0789057 * safezoneW + safezoneX;
-			y = 0.0296301 * safezoneH + safezoneY;
-			w = 0.0809374 * safezoneW;
-			h = 0.0346296 * safezoneH;
-		};
-		class str_text_price: valor_RscStructuredText
-		{
-			idc = 1102;
-			text = "";
-			x = 0.160546 * safezoneW + safezoneX;
-			y = 0.0296294 * safezoneH + safezoneY;
-			w = 0.0821092 * safezoneW;
-			h = 0.0346296 * safezoneH;
 		};
 
 	};

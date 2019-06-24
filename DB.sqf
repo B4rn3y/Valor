@@ -107,8 +107,21 @@ CREATE TABLE IF NOT EXISTS `item_shop` (
   `classname` varchar(256) NOT NULL,
   `price` int(6) NOT NULL DEFAULT '100',
   `stock` int(6) NOT NULL DEFAULT '0',
+  `infinite` tinyint(1) NOT NULL DEFAULT '0',
   `type` varchar(256) NOT NULL,
   `seller` varchar(128) NOT NULL default '["survivor_city"]',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `item_sell_prices`;
+CREATE TABLE IF NOT EXISTS `item_sell_prices` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(256) NOT NULL,
+  `price` int(6) NOT NULL DEFAULT '100',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -272,3 +285,4 @@ CREATE TABLE IF NOT EXISTS `outposts` (
 -- --------------------------------------------------------
 
 INSERT INTO `valor_settings` (`varname`, `varvalue`, `public`) VALUES ('COP_BANK', '0', 'false');
+INSERT INTO `outposts` (`config_id`, `build`, `inventory`) VALUES ('0', '0', '"[]"');
