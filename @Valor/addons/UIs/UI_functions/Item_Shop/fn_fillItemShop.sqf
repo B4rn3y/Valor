@@ -24,7 +24,7 @@ _headgear = [];
 _goggles = [];
 
 {
-	_type = call compile(_x select 4);
+	_type = _x select 4;
 	switch (_type) do
 	{
 		case "pweapon":
@@ -89,6 +89,7 @@ _items = _p_weapons + _hgun_weapons + _sweapon + _magazines + _uniforms + _vests
 	_type = _x select 4;
 	_infinite = _x select 5;
 	_config = [_classname] call valor_fnc_getconfig;
+	diag_log str [_DBid,_classname,_price,_stock,_type,_infinite,_config];
 	if!(_stock isEqualTo 0) then {
 		_id = _listbox lbadd format["$%1 - %2",([_price] call valor_fnc_numbertext),getText(configFile >> _config >> _classname >> "displayName")];
 		_listbox lbSetPicture[_id,getText(configFile >> _config >> _classname >> "picture")];

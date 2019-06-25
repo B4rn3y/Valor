@@ -22,7 +22,7 @@ if(isnil "VALOR_PREVIEW_MODEL") then {
 	showCinemaBorder false;
 	valor_intro_cam camCommit 0;
 	_pos = getposatl VALOR_PREVIEW_MODEL;
-	_pos set[2,0.9];
+	_pos set[2,(_pos select 2)+0.9];
 	valor_intro_cam camSetTarget _pos;
 	valor_intro_cam camSetPos (player modelToWorld[0,2,1]);
 	valor_intro_cam camCommit 0;

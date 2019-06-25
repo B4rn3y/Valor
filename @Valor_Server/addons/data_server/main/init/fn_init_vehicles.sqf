@@ -9,6 +9,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 //if(count _res isEqualTo 0) exitWith {diag_log "Valor :: Init Vehicles - No Vehicles"};
 diag_log str _res;
 diag_log typename _res;
+_height_spawn = 10;
 _vehicle = objNull;
 {
 	//diag_log str _x;
@@ -42,16 +43,18 @@ _vehicle = objNull;
 		} else {
 			waitUntil {!((nearestobjects[_pos,[_classname],100]) isEqualTo [])};
 		};*/
-		_vehicle = createVehicle[_classname,[0,0,0],[],0,"CAN_COLLIDE"];
+		_vehicle = createVehicle[_classname,[0,0,_height_spawn],[],0,"CAN_COLLIDE"];
+		_height_spawn = _height_spawn + 20;
 		waitUntil {!isnull _vehicle};
 		_vehicle allowDamage false;
 		if(_alive isequalto 0) then {
 			_vehicle setfuel 0;
 			_vehicle setdir (_spawnpos select 1);
 			_atl = (_spawnpos select 0);
-			_atl = [_atl select 0,_atl select 1,_atl select 2 + 0.3];
-			_vehicle setposatl _atl;
+			_atl = [_atl select 0,_atl select 1,(_atl select 2) + 0.5];
 			_vehicle setVectorUp (_spawnpos select 2);
+			_vehicle setposatl _atl;
+
 			[_vehicle] call valor_fnc_clear_vehicle;
 			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
@@ -62,9 +65,9 @@ _vehicle = objNull;
 			_vehicle setfuel _fuel;
 			_vehicle setdir _dir;
 			_atl = _pos;
-			_atl = [_atl select 0,_atl select 1,_atl select 2 + 0.3];
-			_vehicle setposatl _atl;
+			_atl = [_atl select 0,_atl select 1,(_atl select 2) + 0.5];
 			_vehicle setVectorUp _vector;
+			_vehicle setposatl _atl;
 			_vehicle setvariable["group_restricted",[_mode,_number],true];
 
 			[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;

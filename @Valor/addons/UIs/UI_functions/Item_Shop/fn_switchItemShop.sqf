@@ -6,10 +6,10 @@ if(isnull _display) exitWith {};
 _switch_BTN ctrlEnable false;
 if(isnil "Valor_item_shop_sell") then {
 	Valor_item_shop_sell = true;
-	[nil,nil,nil,VALOR_SELLER_SHOP] call valor_fnc_openItemShop;
+	[nil,nil,nil,VALOR_SELLER_SHOP] spawn valor_fnc_openItemShop;
 } else {
 	Valor_item_shop_sell = nil;
-	[nil,nil,nil,VALOR_SELLER_SHOP] call valor_fnc_openItemShop;
+	[nil,nil,nil,VALOR_SELLER_SHOP] spawn valor_fnc_openItemShop;
 };
 
 sleep 5;

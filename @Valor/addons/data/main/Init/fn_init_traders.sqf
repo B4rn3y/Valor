@@ -75,6 +75,7 @@ _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
 _trader addaction["Object Shop",{}];
+_trader addaction["Shop",valor_fnc_openItemShop,"cop_shop_1"];
 
 
 

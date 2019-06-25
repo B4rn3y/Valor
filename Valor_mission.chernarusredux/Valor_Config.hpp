@@ -64,11 +64,11 @@ class Valor_settings {
 		headgear[] = {"H_Bandanna_gry"};
 		backpack[] = {"B_Carryall_khk"};
 
-		uniforms_cop[] = {"rhs_uniform_m88_patchless"};// just arrays with stuff to add
+		uniforms_cop[] = {"CUP_U_O_RUS_EMR_1"};// just arrays with stuff to add
 		goggles_cop[] = {"G_Bandanna_khk"};
-		headgear_cop[] = {"CUP_H_BAF_PARA_BERET"};
-		backpack_cop[] = {"CUP_B_USPack_Coyote"};
-		vest_cop[] = {"CUP_V_B_BAF_MTP_Osprey_Mk4_Scout"};
+		headgear_cop[] = {"CUP_H_SLA_SLCap"};
+		backpack_cop[] = {"CUP_B_HikingPack_civ"};
+		vest_cop[] = {"CUP_V_RUS_6B45_2"};
 	};
 
 	class settings {

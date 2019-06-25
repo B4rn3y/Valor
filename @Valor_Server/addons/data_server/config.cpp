@@ -50,6 +50,7 @@ class CfgFunctions
 			class insert_cop_crate {};
 			class update_cop_bankDB {};
 			class insert_item_shop {};
+			class insert_item_sell_price {};
 		};
 
 		class carshop
@@ -68,6 +69,7 @@ class CfgFunctions
 			class update_item_stock {};
 			class Itemshop_sellprice_request {};
 			class incrementStock {};
+			class insert_item_sell_price {};
 		};
 
 		class bases

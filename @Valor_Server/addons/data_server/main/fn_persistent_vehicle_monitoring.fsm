@@ -22,7 +22,7 @@ link7[] = {6,7};
 link8[] = {7,1};
 link9[] = {8,9};
 globals[] = {0.000000,0,0,0,0,640,480,1,200,6316128,1,-703.415222,92.387390,-365.376221,-1331.708008,728,884,1};
-window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,746};
+window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,746};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -73,7 +73,7 @@ class FSM
                         itemno = 3;
                         init = /*%FSM<STATEINIT""">*/"_delete = [];" \n
                          "{" \n
-                         "	if(isnull (_x select 0)) then {" \n
+                         "	if(isnull (_x select 0) || !(alive (_x select 0))) then {" \n
                          "		[(_x select 1)] call valor_fnc_vehicleDelete;" \n
                          "		_delete pushback _foreachindex;" \n
                          "	} else {" \n
