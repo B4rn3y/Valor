@@ -71,6 +71,8 @@ diag_log "Valor :: Base init finished";
 [] call valor_fnc_init_map;
 diag_log "Valor :: Init Vehicles";
 [] spawn valor_fnc_init_vehicles;
+waitUntil {!isnil "Valor_vehicles_init_finished"};
+Valor_vehicles_init_finished = nil;
 diag_log "Valor :: Vehicles loaded";
 diag_log "Valor :: Starting Zombie Destroyer";
 [] spawn valor_fnc_zombie_destroyer;

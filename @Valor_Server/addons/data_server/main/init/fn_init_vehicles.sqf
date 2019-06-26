@@ -59,7 +59,7 @@ _vehicle = objNull;
 			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
 			if(_cop isEqualTo 1) then {
-				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos _grp_name)) < 600) then {_vehicle setvariable["group_restricted",[-2,-1],true];};};
+				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos "Survivor_city_1")) < 600) then {_veh setvariable["group_restricted",[-2,-1],true];};};
 			};
 		} else {
 			_vehicle setfuel _fuel;
@@ -106,7 +106,7 @@ _vehicle = objNull;
 [] spawn valor_fnc_persistent_vehicle_monitoring;
 
 
-
+Valor_vehicles_init_finished = true;
 
 
 

@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=1301;
+		nextID=1306;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3801.4058,317.90778,8850.4014};
-		dir[]={-0.70267975,-0.61773324,-0.35311177};
-		up[]={-0.55200863,0.78634155,-0.27739528};
-		aside[]={-0.44902566,5.1374082e-007,0.89354312};
+		pos[]={3853.9648,324.93896,8880.7852};
+		dir[]={-0.28968346,-0.45039624,-0.84459698};
+		up[]={-0.14618737,0.89272612,-0.42622313};
+		aside[]={-0.94596726,4.4237822e-008,0.32445028};
 	};
 };
 binarizationWanted=0;
@@ -56,13 +56,14 @@ addons[]=
 	"A3_Structures_F_Heli_Furniture",
 	"A3_Structures_F_Items_Tools",
 	"CUP_CAStructures_Mil",
-	"A3_Structures_F_Exp_Walls_Polewalls"
+	"A3_Structures_F_Exp_Walls_Polewalls",
+	"chernarusredux_buildings_a2"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="CUP_Editor_Plants_Config";
@@ -198,6 +199,11 @@ class AddonsMetaData
 			className="CUP_CAStructures_Mil";
 			name="CUP_CAStructures_Mil";
 		};
+		class Item22
+		{
+			className="chernarusredux_buildings_a2";
+			name="chernarusredux_buildings_a2";
+		};
 	};
 };
 randomSeed=13256572;
@@ -230,7 +236,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=535;
+		items=536;
 		class Item0
 		{
 			dataType="Object";
@@ -15978,6 +15984,47 @@ class Mission
 			};
 			id=1297;
 			type="Land_PoleWall_01_3m_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item535
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3826.853,312.40695,8887.5361};
+				angles[]={0,0.44443065,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1301;
+			type="Land_Fuel_tank_stairs";
+			atlOffset=-3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0

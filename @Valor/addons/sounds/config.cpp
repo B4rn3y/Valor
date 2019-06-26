@@ -20,6 +20,20 @@ class CfgSounds
 		titles[] = {};
 	};
 
+	class repair
+	{
+		name = "repair";
+		sound[] = {"\sounds\effects\action_repair_0.ogg", 70, 1,500};
+		titles[] = {};
+	};
+
+	class refuel
+	{
+		name = "refuel";
+		sound[] = {"\sounds\effects\action_refuel_0.ogg", 70, 1,500};
+		titles[] = {};
+	};
+
 	class adventurer
 	{
 		name = "adventurer";

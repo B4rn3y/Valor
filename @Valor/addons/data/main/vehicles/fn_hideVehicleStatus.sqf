@@ -11,7 +11,7 @@ _vehicle removeAction _ADD_ID;
 {_vehicle removeAction _x;} foreach (_vehicle getvariable["ADDACTION_IDS",[]]);
 _vehicle setvariable["ADDACTION_IDS",nil];
 
-_vehicle addaction["<t color='#0000ff'>Show Vehicle Status</t>",Valor_fnc_showVehicleDamage];
+_vehicle addaction["<t color='#0000ff'>Show Vehicle Status</t>",Valor_fnc_showVehicleDamage,[],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player",20];
 
 
 

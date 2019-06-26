@@ -191,6 +191,9 @@ class CfgFunctions
 			class hideVehicleStatus {};
 			class repairVehicle {};
 			class showVehicleDamage {};
+			class removeVehiclePart {};
+			class refuelVehicle {};
+			class refuelFuelcan {};
 		};
 
 		class EVH

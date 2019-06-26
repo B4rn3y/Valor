@@ -7,6 +7,13 @@ _box1 setdir 24.7621;
 _box1 allowdamage false;
 [_box1] call valor_fnc_clear_vehicle;
 
+// create box for item shop ["B_supplyCrate_F",[3789.1,8844.84,0],24.7621]
+_box2 = "B_supplyCrate_F" createVehicleLocal [0,0,0];
+_box2 setposatl [3833.52,8872.43,0.912323];
+_box2 setdir 116.323;
+_box2 allowdamage false;
+[_box2] call valor_fnc_clear_vehicle;
+
 
 private ["_trader","_attachToObject","_position","_dir"];
 _position = [3787.37,8838.06,0.00149536];

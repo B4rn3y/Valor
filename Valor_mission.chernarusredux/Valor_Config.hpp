@@ -71,10 +71,29 @@ class Valor_settings {
 		vest_cop[] = {"CUP_V_RUS_6B45_2"};
 	};
 
+	class repair_system {
+		Wheel_repair = "valor_van_02_rimless_tire";
+		Fuel_repair = "valor_ducttape";
+		Engine_repair = "valor_tankboresighter_01";
+		Hull_repair = "valor_torquewrench_01";
+		Glass_repair = "valor_ducttape";
+		HRotor_repair = "valor_rotor";
+		VRotor_repair = "valor_torquewrench_01";
+		Avionics_repair = "valor_torquewrench_01";
+
+		Wheel_remove = "valor_van_02_rimless_tire";
+		Engine_remove = "valor_tankboresighter_01";
+		Glass_remove = "valor_ducttape";
+		HRotor_remove = "valor_rotor";
+	};
+
 	class settings {
 		Spawn_with_map = 1; // 1 = with map  0 = without Map
 		Hunger_multiplier = 1; // Description: Do i need one?
 		Thirst_multiplier = 1;
+
+		Fuelcan_amount = 20; // The amount of litres in a fuelcan
+		Objects_refueling[] = {"Land_Ind_TankSmall2","Land_Fuel_tank_stairs","Land_Ind_TankSmall","Land_Fuel_tank_big"}; // The objects you can refill fuelcans from
 
 		Time_until_dead = 60; // the time a player is revivable after being shot dead
 
