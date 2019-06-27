@@ -194,6 +194,7 @@ class CfgFunctions
 			class removeVehiclePart {};
 			class refuelVehicle {};
 			class refuelFuelcan {};
+			class setHitPointDamage {};
 		};
 
 		class EVH

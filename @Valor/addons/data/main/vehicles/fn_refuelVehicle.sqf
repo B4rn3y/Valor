@@ -40,6 +40,8 @@ if(["valor_canisterfuel",1,true] call valor_fnc_itemInInventory) then {
 		_vehicle setvariable["Update_this",true,true];
 	};
 
+	titleText["PLAIN DOWN",format["You filled %1l in the vehicle",_fuel_in_Jerrycan]];
+
 } else {
 	systemchat format["Valor :: You need a full Canister to do that :X"];
 };
