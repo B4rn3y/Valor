@@ -97,6 +97,7 @@ class CfgFunctions
 			class init_map {};
 			class init_vars {};
 			class init_outposts {};
+			class init_fuelstations {};
 		};
 
 		class groups

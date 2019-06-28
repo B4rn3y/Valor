@@ -41,7 +41,7 @@ _remove_id = -1;
 } foreach valor_gear;
 
 
-if(_remove_id isEqualTo -1) exitWith {_buy_sell_BTN ctrlEnable true;titleText["PLAIN DOWN","The item could not be found in your inventory O.o"]};
+if(_remove_id isEqualTo -1) exitWith {_buy_sell_BTN ctrlEnable true;titleText["The item could not be found in your inventory O.o","PLAIN DOWN"]};
 
 _save_id = -1;
 if(typeName _remove_id isEqualTo "ARRAY") then {
@@ -242,7 +242,7 @@ switch (_remove_id) do
 };
 
 _buy_sell_BTN ctrlEnable true;
-titletext["PLAIN DOWN", format["You sold a %1 for $%2",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)]];
+titletext[format["You sold a %1 for $%2",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)],"PLAIN DOWN"];
 
 Valor_bankacc = Valor_bankacc + _price;
 

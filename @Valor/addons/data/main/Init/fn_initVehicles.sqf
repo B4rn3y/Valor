@@ -12,13 +12,14 @@ _all_vehicles = allMissionObjects "LandVehicle" + allMissionObjects "Air" + allM
 } foreach _all_vehicles;
 
 
-
+/*
 _Map_center = [worldSize / 2, worldsize / 2, 0];
 _objs_classnames = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "Objects_refueling");
 if(_objs_classnames isEqualTo []) exitWith {};
 _objs = nearestObjects[_Map_center,_objs_classnames,worldsize];
-
+*/
+if(isnil "VALOR_FUELSTATIONS") exitWith {diag_log "Valor ERROR :: The Fuelstation Var is unknown"};
 {
 	_x addaction["Refill Fuelcans",Valor_fnc_refuelFuelcan,[],1.5,false,false,"","((_target distance player) <= 4.2) && vehicle player isEqualTo player && ((""valor_canisterfuel_empty"" in uniformitems player) || (""valor_canisterfuel_empty"" in vestItems player) || (""valor_canisterfuel_empty"" in backpackItems player))",20];
-} foreach _objs;
+} foreach VALOR_FUELSTATIONS;
 

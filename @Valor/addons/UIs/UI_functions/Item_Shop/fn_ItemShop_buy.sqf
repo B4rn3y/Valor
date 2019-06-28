@@ -33,7 +33,7 @@ _infinite = _data select 6;
 
 _can_pay = [_price,true] call valor_fnc_pay;
 
-if!(_can_pay) exitWith{titletext["PLAIN DOWN",format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext]]; _buy_sell_BTN ctrlEnable true;};
+if!(_can_pay) exitWith{titletext[format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext],"PLAIN DOWN"]; _buy_sell_BTN ctrlEnable true;};
 
 _new_stock = _stock - 1;
 if(_new_stock <= 0 && _infinite isEqualTo 0) then {
@@ -85,4 +85,4 @@ switch (true) do
 };
 
 _buy_sell_BTN ctrlEnable true;
-titletext["PLAIN DOWN", format["You bought a %1 for $%2, check the Loot-BOX",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)]];
+titletext[format["You bought a %1 for $%2, check the Loot-BOX",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)],"PLAIN DOWN"];
