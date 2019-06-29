@@ -71,6 +71,32 @@ CREATE TABLE IF NOT EXISTS `player_satistics` (
 
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `loottable_classnames`;
+CREATE TABLE IF NOT EXISTS `loottable_classnames` (
+  `uid` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(100) NOT NULL,
+  `table_type` varchar(50) NOT NULL,
+  `min_prob` varchar(50) NOT NULL,
+  `max_prob` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `spawn_with` varchar(256) NOT NULL,
+  `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `loottable_houses`;
+CREATE TABLE IF NOT EXISTS `loottable_houses` (
+  `uid` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(100) NOT NULL,
+  `table_type` varchar(256) NOT NULL,
+  `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
 
 DROP TABLE IF EXISTS `valor_settings`;
 CREATE TABLE `valor_settings` (
@@ -156,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
+-- --------------------------------------------------------
 --
 -- Table structure for table `houses`
 -- Needed for extDB latest update on git
@@ -172,6 +199,7 @@ CREATE TABLE IF NOT EXISTS `group_members` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
+-- --------------------------------------------------------
 --
 -- Table structure for table `houses`
 -- Needed for extDB latest update on git
@@ -186,6 +214,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
+-- --------------------------------------------------------
 --
 -- Table structure for table `houses`
 -- Needed for extDB latest update on git
@@ -349,3 +378,49 @@ INSERT INTO `persistent_vehicles` (`id`,`pos`,`classname`,`type`,`alive`,`shop`,
 INSERT INTO `persistent_vehicles` (`id`,`pos`,`classname`,`type`,`alive`,`shop`,`spawnpos`,`Spawndamage`,`inventory`,`fuel`,`damage`,`sold`,`bought`,`mode`,`group_id`,`cop`,`insert_time`,`last_seen`) VALUES (32,'[[4602.19,9753.21,-0.267731],172.778,[0.00183869,0.00556368,0.999983]]','\"rhs_tigr_3camo_msv\"','land',0,0,'[[4602.19,9753.21,0.0336914],172.777,[0.00163039,0.00543611,0.999984]]','\"[1,1,1,1,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,1,0.85,0.9,0.9,0.9,1,1,1,1,0.9,0.9,0,0,0.9,0,0,0.9,0,0.9,0,0,0.9,0.9]\"','\"[[[],[]],[[],[]],[[],[]],[[],[]]]\"',0,'\"[1,1,1,1,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,1,0.85,0.9,0.9,0.9,1,1,1,1,0,0,0,0,0.9,0,0,0,0,0.9,0,0,0.9,0.9]\"',0,0,0,-1,0,'2019-06-25 00:01:35','2019-06-25 13:36:50');
 INSERT INTO `persistent_vehicles` (`id`,`pos`,`classname`,`type`,`alive`,`shop`,`spawnpos`,`Spawndamage`,`inventory`,`fuel`,`damage`,`sold`,`bought`,`mode`,`group_id`,`cop`,`insert_time`,`last_seen`) VALUES (33,'[[3853.32,8888.33,-0.00427246],206.634,[0.00691489,0.00837288,0.999941]]','\"CUP_C_Lada_GreenTK_CIV\"','land',0,0,'[[3853.32,8888.34,-0.0218811],206.637,[0.00775195,0.00894888,0.99993]]','\"[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\"','\"[[[],[]],[[],[]],[[],[]],[[],[]]]\"',1,'\"[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\"',0,0,0,-1,1,'2019-06-25 00:06:17','2019-06-25 13:36:50');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////// TESTS DO NOT USE EVERYTHING BELOW THIS
+
+
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (12,'srifle_EBR_F','general','0.0001','0.0010','weapon','[[\"20Rnd_762x51_Mag\",4,\"magazin\"]]','2019-06-28 22:43:14');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (13,'arifle_TRG20_F','general','1.0001','3','weapon','[[\"30Rnd_556x45_Stanag\",4,\"magazin\"]]','2019-06-28 22:43:14');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (14,'U_BG_Guerilla2_3','general','1','5','item','[]','2019-06-28 22:43:38');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (15,'U_C_Poor_1','general','1','10','item','[]','2019-06-28 22:44:00');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (16,'CUP_U_C_Fireman_01','general','1','3','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (17,'CUP_U_C_Citizen_01','general','1','7','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (18,'CUP_U_O_CHDKZ_Bardak','general','1','7','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (19,'U_C_HunterBody_grn','general','1','10','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (20,'CUP_U_C_Pilot_01','general','1','7','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (21,'CUP_U_C_Profiteer_01','general','1','6','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (22,'CUP_U_C_Rocker_03','general','1','5','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (23,'CUP_U_C_Suit_01','general','1','6','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (24,'CUP_U_C_Villager_02','general','1','6','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (25,'CUP_U_C_Worker_02','general','1','6','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (26,'CUP_V_OI_TKI_Jacket1_04','general','1','6','item','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (27,'B_AssaultPack_blk','general','1','10','backpack','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (28,'CUP_B_Bergen_BAF','general','1','7','backpack','[]','2019-06-28 22:47:35');
+INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (29,'B_Carryall_khk','general','1','2','backpack','[]','2019-06-28 22:47:35');
+
+
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (12,'Land_HouseV_2L','general','2019-06-28 22:41:20');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (13,'Land_HouseV_1I4','general','2019-06-28 22:41:20');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (14,'Land_HouseV2_04_interier_dam','general','2019-06-28 22:41:20');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (15,'Land_HouseV_2I','general','2019-06-28 22:41:20');

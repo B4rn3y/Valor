@@ -7,7 +7,7 @@ diag_log "----------------------------------------------------------------------
 diag_log "---------------------------------- Starting Valor Server Init ---------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 
-waitUntil {sleep 1;time > 30};
+waitUntil {sleep 1;time > 10};
 
 diag_log "Valor :: Waiting for Mission to start";
 
@@ -57,6 +57,7 @@ if (_extDBNotLoaded isEqualType []) exitWith {
 diag_log "Valor :: setting Variables";
 [] call valor_fnc_vars;
 [] call valor_fnc_init_vars;
+[] call valor_fnc_init_loottable;
 diag_log "Valor :: Variables set";
 diag_log "Valor :: Searching for Fuelstations";
 [] call valor_fnc_init_fuelstations;
@@ -84,6 +85,10 @@ diag_log "Valor :: Starting Zombie Destroyer";
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call valor_fnc_clientDisconnect; false;}];
+
+{
+    diag_log format["Valor :: Releasing server for players in %1 seconds",_x];
+} foreach [20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
 publicVariable "Valor_Server_loaded";
 
 diag_log "----------------------------------------------------------------------------------------------------";

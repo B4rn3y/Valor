@@ -16,6 +16,6 @@ _query = format["Insert into item_shop (classname,price,stock,seller,type) VALUE
 
 [_query,1] call valor_fnc_db_sync;
 
-format["VALOR ERROR :: Inserted %1 into the DB",_classname] remoteExec["systemChat",_requester];
+format["VALOR :: Inserted %1 into the DB",_classname] remoteExec["systemChat",_requester];
 
 

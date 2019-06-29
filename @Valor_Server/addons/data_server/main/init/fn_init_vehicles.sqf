@@ -2,7 +2,7 @@
 
 private ["_query","_res","_vehicle","_pos","_dir","_vector","_classname","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop","_mode","_number","_cop","_atl","_veh","_grp_name"];
 
-_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, mode , group_id, cop from persistent_vehicles";
+_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, mode , group_id, cop from persistent_vehicles;";
 
 _res = [_query,2,true] call valor_fnc_db_sync;
 

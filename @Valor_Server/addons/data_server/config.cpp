@@ -51,6 +51,8 @@ class CfgFunctions
 			class update_cop_bankDB {};
 			class insert_item_shop {};
 			class insert_item_sell_price {};
+			class insert_loottable_classname {};
+			class insert_loottable_house {};
 		};
 
 		class carshop
@@ -69,7 +71,6 @@ class CfgFunctions
 			class update_item_stock {};
 			class Itemshop_sellprice_request {};
 			class incrementStock {};
-			class insert_item_sell_price {};
 		};
 
 		class bases
@@ -98,6 +99,7 @@ class CfgFunctions
 			class init_vars {};
 			class init_outposts {};
 			class init_fuelstations {};
+			class init_loottable {};
 		};
 
 		class groups
