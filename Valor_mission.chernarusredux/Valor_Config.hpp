@@ -145,6 +145,25 @@ class Valor_settings {
 		//independent_spawnPoints[] = {{"Athira","\a3\ui_f\data\map\MapControl\bunker_ca.paa","spawn_athira"}};
 
 	};
+
+	class rules_and_info {
+		message[] =
+		{
+			{
+				"Test1",
+				"HERE GOES THE DESCRIPTION FOR Test1"
+			},
+			{
+				"PLACEHOLDER",
+				0
+			},
+			{
+				"TEST2",
+				"SOMETHING WITH TEST 2"
+			}
+		};
+	};
+
 };
 
 

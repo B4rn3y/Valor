@@ -42,7 +42,7 @@ class group_menu {
 			w = 0.347474;
 			h = 0.630303;
 		};
-		class str_text_header_money: RscStructuredText
+		class str_text_header_money: valor_RscStructuredText
 		{
 			idc = 1101;
 			x = 0.00252557;
@@ -106,11 +106,11 @@ class group_menu {
 		class BTN_INFO_RULES: valor_RscButtonMenu
 		{
 			idc = 2411;
-			text = "INFO & RULES"; //--- ToDo: Localize;
-			onbuttonClick = "";
+			text = "INFO a. RULES"; //--- ToDo: Localize;
+			onbuttonClick = "0 call valor_fnc_openinfomenu;";
 			x = 0.102273;
 			y = 0.838384;
-			w = 0.163131;
+			w = 0.171969;
 			h = 0.0444445;
 		};
 		class btn_delete_gang: valor_RscButtonMenu

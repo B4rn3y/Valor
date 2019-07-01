@@ -1,6 +1,6 @@
-class group_menu {
-	idd = 3004;
-	name= "group_menu";
+class info {
+	idd = 3008;
+	name= "info";
 	movingEnable = false;
 	enableSimulation = true;
 
@@ -32,6 +32,8 @@ class group_menu {
 		class member_listbox: valor_RscListbox
 		{
 			idc = 1500;
+			sizeEx = 0.040;
+			onLBselChanged = "[] call valor_fnc_info_onLBChanged;";
 			x = 0.00252485;
 			y = 0.0521883;
 			w = 0.266666;

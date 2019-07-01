@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `bases` (
   `raptor` tinyint(1) NOT NULL DEFAULT '0',
   `raptor_classname` varchar(128) NOT NULL DEFAULT '"babe_raptorb_east_5_F"',
   `build` int(10) NOT NULL DEFAULT '0',
-  `classname` text NOT NULL DEFAULT,
+  `classname` text NOT NULL,
   `pos` text NOT NULL,
   `dir` varchar(64) NOT NULL,
   `vector` text NOT NULL,
@@ -382,7 +382,7 @@ INSERT INTO `persistent_vehicles` (`id`,`pos`,`classname`,`type`,`alive`,`shop`,
 
 
 
-////// VEHICLE PRICES
+-- VEHICLE PRICES
 
 /*
 -- Query: SELECT * FROM valor.vehicle_prices
@@ -443,7 +443,7 @@ INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`b
 
 
 
-///////////////////////// TESTS DO NOT USE EVERYTHING BELOW THIS
+-- TESTS DO NOT USE EVERYTHING BELOW THIS
 
 
 INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (12,'srifle_EBR_F','general','0.0001','0.0010','weapon','[[\"20Rnd_762x51_Mag\",4,\"magazin\"]]','2019-06-28 22:43:14');

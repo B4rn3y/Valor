@@ -11,9 +11,9 @@ if(_vehicle_ID isEqualTo -1 || isnull _vehicle || _classname isEqualTo "" || _pr
 _got_money_and_paid = true;
 
 iF(_got_money_and_paid) then {
-	systemchat format["Valor :: You bought a %1",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")];
+	titleText[format["Valor :: You bought a %1",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")],"PLAIN DOWN"];
 } else {
-	systemchat format["Valor :: You do not have enough money to pay for the %1. Deleting Vehicle...",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")];
+	titleText[format["Valor :: You do not have enough money to pay for the %1. Deleting Vehicle...",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")],"PLAIN DOWN"];
 	[_vehicle_ID,_vehicle,_classname] remoteExec["valor_fnc_shopvehiclereset",2];
 };
 

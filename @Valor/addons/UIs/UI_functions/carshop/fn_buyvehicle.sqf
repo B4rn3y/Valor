@@ -21,13 +21,20 @@ _spawndir = _config select 3;
 if(_classname isEqualTo "" || _id isEqualTo -1 || _price isEqualTo 0 || _spawnpos isEqualTo []) exitWith {diag_log "Valor Error :: Exiting buyvehicle Function line 21"};
 
 
+
+// So we need some sort of payment check here, WIP
+_can_pay = [_price,true] call valor_fnc_pay;
+
+if!(_can_pay) exitWith{titletext[format["You are missing $%1 on your bank!",[((Valor_bankacc - _price)* -1)] call valor_fnc_numbertext],"PLAIN DOWN"]; };
+
+
+
 closeDialog 0;
 
 
-// So we need some sort of payment check here, WIP
 
 
-systemchat "Valor :: Your Purchase is being processed. This may take a while.";
+titleText["Valor :: Your Purchase is being processed. This may take a while.","PLAIN DOWN"];
 
 sleep random 7;
 

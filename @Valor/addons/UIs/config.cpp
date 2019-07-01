@@ -95,6 +95,13 @@ class CfgFunctions
 			class getActiveGroups {};
 			class give_Group_Properties {};
 		};
+
+		class info
+		{
+			file = "\UIs\UI_functions\info";
+			class openinfomenu {};
+			class info_onLBChanged {};
+		};
 	};
 };
 
