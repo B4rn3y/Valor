@@ -42,6 +42,5 @@ switch (playerside) do
 	};
 };
 valor_alive = 1;
-[5] call valor_fnc_step_update;
-[0] call valor_fnc_step_update;
+[] call valor_fnc_syncPlayerToDB;
 [] call valor_fnc_closeLoadingScreen;

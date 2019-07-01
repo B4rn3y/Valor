@@ -382,6 +382,52 @@ INSERT INTO `persistent_vehicles` (`id`,`pos`,`classname`,`type`,`alive`,`shop`,
 
 
 
+////// VEHICLE PRICES
+
+/*
+-- Query: SELECT * FROM valor.vehicle_prices
+-- Date: 2019-07-01 19:53
+*/
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (4,'\"CUP_C_TT650_CIV\"',1000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:44:28','2019-07-01 18:44:28');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (5,'\"CUP_C_Lada_White_CIV\"',2000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:45:16','2019-07-01 18:45:16');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (6,'\"CUP_C_Lada_GreenTK_CIV\"',2000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:46:30','2019-07-01 18:46:30');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (7,'\"CUP_C_Volha_Gray_TKCIV\"',3000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:47:26','2019-07-01 18:47:26');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (8,'\"CUP_C_Volha_Limo_TKCIV\"',3000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:47:41','2019-07-01 18:47:41');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (9,'\"CUP_B_S1203_Ambulance_CDF\"',4000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:49:45','2019-07-01 18:49:45');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (10,'\"CUP_C_Golf4_camodark_Civ\"',6000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:50:17','2019-07-01 18:50:17');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (11,'\"interceptor_1\"',11000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:56:35','2019-07-01 18:56:35');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (13,'\"Fox_Tahoe_Apocalypse\"',15000,'land','[\"survivor_city\"]',0,0,'2019-07-01 18:59:15','2019-07-01 18:59:15');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (14,'\"Fox_Viper\"',12000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:00:44','2019-07-01 19:00:44');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (15,'\"Fox_Charger_Apocalypse\"',14000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:02:34','2019-07-01 19:02:34');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (16,'\"CUP_C_LR_Transport_CTK\"',19000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:03:30','2019-07-01 19:03:30');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (17,'\"Fox_DaytonaStratos\"',14000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:04:41','2019-07-01 19:04:41');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (18,'\"Fox_DaytonaGeneral\"',14000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:04:53','2019-07-01 19:04:53');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (19,'\"Fox_Fireengine\"',45000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:08:22','2019-07-01 19:08:22');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (20,'\"warrig_black\"',55000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:10:12','2019-07-01 19:10:12');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (21,'\"CUP_O_UAZ_Unarmed_RU\"',13000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:11:59','2019-07-01 19:11:59');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (22,'\"CUP_C_Ikarus_Chernarus\"',23000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:14:50','2019-07-01 19:14:50');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (23,'\"CUP_O_Kamaz_Open_RU\"',50000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:16:29','2019-07-01 19:16:29');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (24,'\"CUP_C_V3S_Open_TKC\"',50000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:18:07','2019-07-01 19:18:07');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (25,'\"CUP_C_Ural_Civ_02\"',60000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:18:43','2019-07-01 19:18:43');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (26,'\"RHS_Ural_Open_Civ_01\"',58000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:20:21','2019-07-01 19:20:21');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (27,'\"rhs_tigr_msv\"',50000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:22:36','2019-07-01 19:22:36');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (28,'\"CUP_O_Volha_SLA\"',3000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:23:09','2019-07-01 19:23:09');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (29,'\"rhs_tigr_3camo_msv\"',50000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:24:12','2019-07-01 19:24:12');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (30,'\"rhs_zil131_msv\"',60000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:24:52','2019-07-01 19:24:52');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (31,'\"B_T_MRAP_01_F\"',55000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:26:00','2019-07-01 19:26:00');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (32,'\"CUP_I_SUV_Armored_ION\"',120000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:31:24','2019-07-01 19:31:24');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (33,'\"CUP_B_HMMWV_M2_NATO_T\"',110000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:31:42','2019-07-01 19:31:42');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (34,'\"CUP_O_GAZ_Vodnik_PK_RU\"',140000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:33:43','2019-07-01 19:33:43');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (35,'\"CUP_B_SA330_Puma_HC1_BAF\"',80000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:37:37','2019-07-01 19:37:37');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (36,'\"CUP_B_UH1Y_UNA_USMC\"',92000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:39:25','2019-07-01 19:39:25');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (37,'\"CUP_B_UH60M_Unarmed_US\"',95000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:40:02','2019-07-01 19:40:02');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (38,'\"CUP_B_CH53E_GER\"',110000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:42:12','2019-07-01 19:42:12');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (39,'\"CUP_O_MI6T_RU\"',125000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:42:28','2019-07-01 19:42:28');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (40,'\"CUP_O_UH1H_SLA\"',140000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:45:13','2019-07-01 19:45:13');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (41,'\"CUP_O_Mi8_CHDKZ\"',150000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:46:41','2019-07-01 19:46:41');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (42,'\"CUP_B_Mi171Sh_Unarmed_ACR\"',170000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:47:28','2019-07-01 19:47:28');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (43,'\"CUP_B_CH47F_GB\"',230000,'helicopter','[\"survivor_city\"]',0,0,'2019-07-01 19:50:50','2019-07-01 19:50:50');
+INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`bought`,`insert_time`,`last_seen`) VALUES (44,'\"AlessioAventadorM\"',250000,'land','[\"survivor_city\"]',0,0,'2019-07-01 19:53:39','2019-07-01 19:53:39');
 
 
 

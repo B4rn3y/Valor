@@ -6,7 +6,7 @@ if(isnull _unit) exitWith {};
 Valor_gear = [_unit] call valor_fnc_gear_to_VAR;
 [Valor_gear] spawn valor_fnc_VAR_to_gear;
 waitUntil {!isnil "Valor_gear_loaded"};
-
+VALOR_CASH = _unit getvariable["cash",0];
 
 player setvariable["revived",nil,true];
 player setvariable["reviving",nil,true];

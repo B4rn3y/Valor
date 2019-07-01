@@ -20,6 +20,9 @@ _evh_id = (findDisplay 46) displayAddEventHandler  ["KeyDown","if((_this select 
 //Set some vars
 _time_died = time;
 _unit setvariable["time_dead",_time_died,true];
+_unit setvariable["cash",Valor_cash,true];
+_unit setvariable["realname",profileName,true];
+_unit setVariable["PID",getplayeruid player,true];
 
 //Setup our camera view
 valor_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
@@ -40,6 +43,7 @@ valor_deathCamera camCommit 0;
 
 _players = playableUnits - [player];
 [_unit, [format["Revive %1",profileName], valor_fnc_revive,getplayeruid player,1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]] remoteExec ["addAction",_players];
+[_unit, [format["Search %1",profileName], valor_fnc_corpse_money_grabber,getplayeruid player,1.5,true,true,"","(_originalTarget distance player) < 5 && alive player"]] remoteExec ["addAction",_players];
 
 _time_until_dead = getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Time_until_dead");
 

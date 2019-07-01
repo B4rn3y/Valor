@@ -96,6 +96,7 @@ class CfgFunctions
 			class stopEscorting {};
 			class arrested {};
 			class arrestAction {};
+			class corpse_money_grabber {};
 		};
 
 		class medical
@@ -118,6 +119,7 @@ class CfgFunctions
 			class init_traders {};
 			class initVehicles {};
 			class init_outposts_client {};
+			class initcorpses {};
 		};
 
 		class loot_system

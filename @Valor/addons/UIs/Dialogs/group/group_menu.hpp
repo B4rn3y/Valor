@@ -33,23 +33,22 @@ class group_menu {
 			w = 0.0772727;
 			h = 0.0511784;
 		};
-		class header_playtime: valor_RscText
-		{
-			idc = 1003;
-			text = "Playtime:"; //--- ToDo: Localize;
-			x = 0.00505069;
-			y = 0.0740739;
-			w = 0.101263;
-			h = 0.0427609;
-		};
-		class str_text_playtime: valor_RscStructuredText
+		class str_text_stats: valor_RscStructuredText
 		{
 			idc = 1100;
 			text = "";
-			x = 0.00252528;
-			y = 0.124579;
-			w = 0.298232;
-			h = 0.0797979;
+			x = 0.00252524;
+			y = 0.203771;
+			w = 0.347474;
+			h = 0.630303;
+		};
+		class str_text_header_money: RscStructuredText
+		{
+			idc = 1101;
+			x = 0.00252557;
+			y = 0.050505;
+			w = 0.348737;
+			h = 0.0377104;
 		};
 	};
 
@@ -74,6 +73,16 @@ class group_menu {
 			w = 0.202273;
 			h = 0.0410775;
 		};
+		class BTN_give_money: valor_RscButtonMenu
+		{
+			idc = 2410;
+			text = "give"; //--- ToDo: Localize;
+			onbuttonClick = "";
+			x = 0.286616;
+			y = 0.0909089;
+			w = 0.0684343;
+			h = 0.0612794;
+		};
 		class btn_invite: valor_RscButtonMenu
 		{
 			idc = 2401;
@@ -93,6 +102,16 @@ class group_menu {
 			y = 0.26936;
 			w = 0.202273;
 			h = 0.0410775;
+		};
+		class BTN_INFO_RULES: valor_RscButtonMenu
+		{
+			idc = 2411;
+			text = "INFO & RULES"; //--- ToDo: Localize;
+			onbuttonClick = "";
+			x = 0.102273;
+			y = 0.838384;
+			w = 0.163131;
+			h = 0.0444445;
 		};
 		class btn_delete_gang: valor_RscButtonMenu
 		{
@@ -144,6 +163,15 @@ class group_menu {
 			w = 0.20101;
 			h = 0.0444444;
 		};
+		class combo_players_money: valor_RscCombo
+		{
+			idc = 2102;
+			sizeEx = 0.035;
+			x = 0.00252515;
+			y = 0.153198;
+			w = 0.283081;
+			h = 0.0478114;
+		};
 		class background_noGang: valor_RscText
 		{
 			idc = 1004;
@@ -172,6 +200,15 @@ class group_menu {
 			y = 0.390572;
 			w = 0.338636;
 			h = 0.0494949;
+		};
+		class edit_give_money: valor_RscEdit
+		{
+			idc = 1401;
+			text = "";
+			x = 0.00378817;
+			y = 0.094276;
+			w = 0.281818;
+			h = 0.0579124;
 		};
 		class btn_close: valor_RscButtonMenu
 		{

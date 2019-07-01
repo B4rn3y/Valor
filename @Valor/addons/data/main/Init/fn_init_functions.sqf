@@ -13,6 +13,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 0 spawn valor_fnc_init_traders;
 
+0 call valor_fnc_initcorpses;
+
 // Starting player hunger/thirst system
 [getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Hunger_multiplier"),getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Thirst_multiplier")] spawn valor_fnc_survival;
 

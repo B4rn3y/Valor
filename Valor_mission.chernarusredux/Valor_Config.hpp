@@ -125,6 +125,8 @@ class Valor_settings {
 
 		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F"};
 
+		chance_vehicle_shop = 33; // The chance that a vehicle gets into the store after being destroyed, in this case its 33%
+
 	};
 
 	class loot_settings {
