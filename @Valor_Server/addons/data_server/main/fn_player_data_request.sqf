@@ -31,7 +31,7 @@ switch (_playerside) do
 
      case civilian:
     {
-        _query = format["Select uid, cash, bankacc,humanity , gear, stats, adminlevel, donatorlevel, alive, position, Map, playtime, arrested from players where pid = '%1'",_getplayeruid];
+        _query = format["Select uid, cash, bankacc,humanity , gear, stats, adminlevel, donatorlevel, alive, position, Map, playtime, arrested, application from players where pid = '%1'",_getplayeruid];
     };
 
 

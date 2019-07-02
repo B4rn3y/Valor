@@ -102,7 +102,19 @@ class CfgFunctions
 			class openinfomenu {};
 			class info_onLBChanged {};
 		};
+
+		class applications
+		{
+			file = "\UIs\UI_functions\applications";
+			class openapplicationsmenu {};
+			class applications_onLBChanged {};
+			class apply {};
+			class fillapplicationsmenu {};
+			class show_application_response {};
+			class accept_application {};
+		};
 	};
+
 };
 
 

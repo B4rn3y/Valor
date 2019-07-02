@@ -91,6 +91,8 @@ _men = [];
 	};
 } foreach _man_close;
 
+_men = _men - [player];
+
 {
 	_id = _combo_players_money lbadd format["%1",name _X];
 	_combo_players_money lbSetData[_id,getplayeruid _x];

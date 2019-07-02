@@ -40,7 +40,7 @@ _trader switchMove "Acts_carFixingWheel";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
-_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city",[3835.22,8835.58,0.00442505],26]];
+_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city",[3835.22,8835.58,0.00442505],26],1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 
@@ -81,8 +81,8 @@ _trader switchMove "AidlPercMstpSrasWrflDnon_G01";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
-_trader addaction["Object Shop",{}];
-_trader addaction["Shop",valor_fnc_openItemShop,"cop_shop_1"];
+
+_trader addaction["Shop",valor_fnc_openItemShop,"cop_shop_1",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 
@@ -111,7 +111,7 @@ _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
 _trader setvariable["Quest_Queue",0];
-_trader addaction["Talk to",valor_fnc_openQuestMenu];
+_trader addaction["Talk to",valor_fnc_openQuestMenu,nil,1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 
@@ -141,7 +141,7 @@ _trader switchMove "Acts_CivilShocked_1";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["Acts_CivilShocked_1","Acts_CivilShocked_2"];}];
-_trader addaction["Shop",valor_fnc_openItemShop,"survivor_city"];
+_trader addaction["Shop",valor_fnc_openItemShop,"survivor_city",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 _position = [3799.74,8827.1,0.00146484];

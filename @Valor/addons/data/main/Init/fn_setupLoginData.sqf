@@ -32,8 +32,9 @@ switch(playerside) do {
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
 		_arrested = param[12,0,[1337]];
-		_group = param[13,[],[[]]];
-		_quests = param[14,[],[[],""]];
+		_application = param[13,0,[0]];
+		_group = param[14,[],[[]]];
+		_quests = param[15,[],[[],""]];
 
 
 
@@ -55,6 +56,14 @@ switch(playerside) do {
 		Valor_playtime = call compile _playtime;
 		Valor_completed_quests = _quests;
 		Valor_arrested = _arrested;
+
+		if!(_application isEqualTo 0) then {
+			if(_application isEqualTo 2) then {
+				Valor_application = true;
+			} else {
+				Valor_application = false;
+			};
+		};
 
 		Valor_group = _group;
 		if!(Valor_group isEqualTo []) then {

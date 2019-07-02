@@ -64,6 +64,14 @@ class CfgFunctions
 			class shopvehiclereset {};
 		};
 
+		class cop_management
+		{
+			file = "\data_server\main\cop_management";
+			class get_applications {};
+			class insert_application {};
+			class update_coplevel {};
+		};
+
 		class Item_shop
 		{
 			file = "\data_server\main\item_shop";

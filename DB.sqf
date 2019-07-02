@@ -45,8 +45,29 @@ CREATE TABLE IF NOT EXISTS `players` (
   `Map` text NOT NULL,
   `playtime` varchar(32) NOT NULL DEFAULT '0',
   `online` tinyint(1) NOT NULL DEFAULT '0',
+  `application` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `pid` (`pid`),
+  KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
+
+
+
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `applications`;
+CREATE TABLE IF NOT EXISTS `applications` (
+  `uid` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `grp_name` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
+  `bankacc` int(100) NOT NULL DEFAULT '5000',
+  `humanity` int(100) NOT NULL DEFAULT '3500',
+  `playtime` varchar(32) NOT NULL DEFAULT '0',
+  `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `pid` (`pid`),
   KEY `name` (`name`)
@@ -443,7 +464,7 @@ INSERT INTO `vehicle_prices` (`id`,`classname`,`price`,`type`,`seller`,`sold`,`b
 
 
 
--- TESTS DO NOT USE EVERYTHING BELOW THIS
+-- TESTS DO NOT USE ANYTHING BELOW THIS
 
 
 INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`max_prob`,`type`,`spawn_with`,`insert_time`) VALUES (12,'srifle_EBR_F','general','0.0001','0.0010','weapon','[[\"20Rnd_762x51_Mag\",4,\"magazin\"]]','2019-06-28 22:43:14');

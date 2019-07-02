@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=1306;
+		nextID=1307;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3853.9648,324.93896,8880.7852};
-		dir[]={-0.28968346,-0.45039624,-0.84459698};
-		up[]={-0.14618737,0.89272612,-0.42622313};
-		aside[]={-0.94596726,4.4237822e-008,0.32445028};
+		pos[]={3832.5957,322.14661,8844.623};
+		dir[]={0.41330889,-0.55426991,0.72258574};
+		up[]={0.27529624,0.83219951,0.48130199};
+		aside[]={0.86811626,3.6539859e-007,-0.49654785};
 	};
 };
 binarizationWanted=0;
@@ -57,7 +57,8 @@ addons[]=
 	"A3_Structures_F_Items_Tools",
 	"CUP_CAStructures_Mil",
 	"A3_Structures_F_Exp_Walls_Polewalls",
-	"chernarusredux_buildings_a2"
+	"chernarusredux_buildings_a2",
+	"A3_Structures_F_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
@@ -236,7 +237,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=536;
+		items=537;
 		class Item0
 		{
 			dataType="Object";
@@ -16025,6 +16026,47 @@ class Mission
 			id=1301;
 			type="Land_Fuel_tank_stairs";
 			atlOffset=-3.0517578e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item536
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3838.519,312.74142,8861.9033};
+				angles[]={0,0.44479716,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{this addaction[""Apply"",valor_fnc_apply,nil,1.5,false,false,"""",""((_target distance player) <= 2) && vehicle player isEqualTo player"",20];}";
+				disableSimulation=1;
+			};
+			id=1306;
+			type="Land_Noticeboard_F";
+			atlOffset=0.91000366;
 			class CustomAttributes
 			{
 				class Attribute0
