@@ -112,6 +112,7 @@ class CfgFunctions
 			class fillapplicationsmenu {};
 			class show_application_response {};
 			class accept_application {};
+			class cop_level_update {};
 		};
 	};
 

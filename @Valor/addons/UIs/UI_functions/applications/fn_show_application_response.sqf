@@ -11,8 +11,8 @@ if(_accepted) then {
 	_control ctrlSetText "UIs\textures\applications\accept.jpg";
 	_control ctrlCommit 0;
 	player addaction["I read the message",{
-		ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
-		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];
+		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
+
 		}];
 } else {
 	_control = (findDisplay 46) ctrlCreate ["RscPicture", 1337];
@@ -20,8 +20,7 @@ if(_accepted) then {
 	_control ctrlSetText "UIs\textures\applications\decline.jpg";
 	_control ctrlCommit 0;
 	player addaction["I read the message",{
-		ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
-		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];
+		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
 		}];
 };
 
