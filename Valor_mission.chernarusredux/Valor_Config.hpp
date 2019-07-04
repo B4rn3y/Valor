@@ -87,6 +87,17 @@ class Valor_settings {
 		HRotor_remove = "valor_rotor";
 	};
 
+	class farming {
+		Vehicles_hay_bale_attach[] = {
+			{"RHS_Ural_Open_Civ_01",{{0,-0.2,0.6},{0,-1.9,0.6}}},
+			{"CUP_C_V3S_Open_TKC",{{0,0,0.1},{0,-1.8,0.1}}},
+			{"CUP_O_Kamaz_Open_RU",{{0,1,0},{0,-1.3,0}}},
+			{"warrig_black",{{0,-3.8,2.2}}},
+			{"rhs_zil131_msv",{{0,-0.1,0.2},{0,-1.8,0.2}}},
+			{"CUP_C_Ural_Civ_02",{{0,-0.2,0.1},{0,-2.1,0.1}}}
+		};
+	};
+
 	class settings {
 		Spawn_with_map = 1; // 1 = with map  0 = without Map
 		Hunger_multiplier = 1; // Description: Do i need one?

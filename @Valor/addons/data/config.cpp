@@ -184,6 +184,7 @@ class CfgFunctions
 			class harvestItem {};
 			class collect_egg {};
 			class hatch_raptor {};
+			class load_hay_bale {};
 		};
 
 
