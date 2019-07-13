@@ -277,5 +277,5 @@ _ret = [];
 
 _names = tostring _ret;
 
-
-[_names,VALOR_SELLER_SHOP] remoteexec["valor_fnc_incrementStock",2];
+[[_names,VALOR_SELLER_SHOP],"valor_fnc_incrementStock",2] call valor_fnc_remoteexec;
+//[_names,VALOR_SELLER_SHOP] remoteexec["valor_fnc_incrementStock",2];

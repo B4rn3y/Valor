@@ -38,8 +38,8 @@ titleText["Valor :: Your Purchase is being processed. This may take a while.","P
 
 sleep random 7;
 
-
-[_id,player,_classname,_spawnpos,_spawndir,_price] remoteExec["valor_fnc_createvehicleshop",2];
+[[_id,player,_classname,_spawnpos,_spawndir,_price],"valor_fnc_createvehicleshop",2] call valor_fnc_remoteexec;
+//[_id,player,_classname,_spawnpos,_spawndir,_price] remoteExec["valor_fnc_createvehicleshop",2];
 
 
 

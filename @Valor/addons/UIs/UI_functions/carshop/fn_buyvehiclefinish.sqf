@@ -14,7 +14,8 @@ iF(_got_money_and_paid) then {
 	titleText[format["Valor :: You bought a %1",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")],"PLAIN DOWN"];
 } else {
 	titleText[format["Valor :: You do not have enough money to pay for the %1. Deleting Vehicle...",getText(configFile >> "CfgVehicles" >> _classname >> "displayName")],"PLAIN DOWN"];
-	[_vehicle_ID,_vehicle,_classname] remoteExec["valor_fnc_shopvehiclereset",2];
+	//[_vehicle_ID,_vehicle,_classname] remoteExec["valor_fnc_shopvehiclereset",2];
+	[[_vehicle_ID,_vehicle,_classname],"valor_fnc_shopvehiclereset",2] call valor_fnc_remoteexec;
 };
 
 

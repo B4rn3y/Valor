@@ -50,7 +50,9 @@ if(_infinite isEqualTo 0) then {
 	_actual_man = [];
 	{if(isplayer _x) then {_actual_man pushback _x};} foreach _man_close;
 	// remote to server
-	[_DB_ID,_new_stock] remoteexec["valor_fnc_update_item_stock",2];
+
+	[[_DB_ID,_new_stock],"valor_fnc_update_item_stock",2] call valor_fnc_remoteexec;
+	//[_DB_ID,_new_stock] remoteexec["valor_fnc_update_item_stock",2];
 	if(_actual_man isEqualTo []) exitWith {};
 	// remote smth
 	[_DB_ID,_new_stock] remoteExec["valor_fnc_update_item_stock_client",_actual_man];

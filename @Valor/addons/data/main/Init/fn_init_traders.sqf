@@ -144,6 +144,35 @@ _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["A
 _trader addaction["Shop",valor_fnc_openItemShop,"survivor_city",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
+
+_position = [3693.13,8550.28,0.00137329];
+_dir = 318.524;
+_trader = "CUP_C_C_Villager_01" createVehiclelocal [0,0,0];
+_trader setposatl _position;
+waitUntil {_trader distance _position < 1};
+_trader setdir _dir;
+
+_trader addweapon "CUP_arifle_AK74M";
+removeGoggles _trader;
+_trader setVariable ["BIS_fnc_animalBehaviour_disable", true];
+_trader setVariable ["BIS_enableRandomization", false];
+{_trader disableAI _x} foreach ["FSM","AIMINGERROR","SUPPRESSION","AUTOTARGET","TARGET","COVER","SUPPRESSION","AUTOCOMBAT","CHECKVISIBLE","ANIM"];
+
+_attachToObject = "Logic" createVehicleLocal [0, 0, 0];
+_attachToObject setPosATL _position;
+_attachToObject setdir _dir;
+_trader reveal _attachToObject;
+_attachToObject disableCollisionWith _trader;
+_trader disableCollisionWith _attachToObject;
+_trader attachto[_attachToObject,[0,0,0]];
+_trader switchMove "Acts_AidlPercMstpSnonWnonDnon_warmup_8_loop";
+_trader allowdamage false;
+_trader removeAllEventHandlers "HandleDamage";
+_trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["Acts_AidlPercMstpSnonWnonDnon_warmup_8_loop"];}];
+_trader addaction["Sell Hay Bales",valor_fnc_sell_hay_bale,"",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
+
+
+
 _position = [3799.74,8827.1,0.00146484];
 _dir = 27;
 _trader = "babe_raptor_2_F" createVehiclelocal [0,0,0];

@@ -97,6 +97,13 @@ class CfgFunctions
 			class changeOutpostStatus {};
 		};
 
+		class HC
+		{
+			file = "\data_server\main\HC";
+			class get_vehicle_monitor_list {};
+			class HC_check {ext = ".fsm";};
+		};
+
 		class init
 		{
 			file = "\data_server\main\init";

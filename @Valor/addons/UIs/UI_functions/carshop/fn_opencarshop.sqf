@@ -35,8 +35,8 @@ _id = _listbox lbAdd "Visualizing data...";
 _listbox lbSetColor[_id,[1,0,0,1]];
 
 
-
-[_seller,player] remoteExec["valor_fnc_shop_request",2];
+[[_seller,player],"valor_fnc_shop_request",2] call valor_fnc_remoteexec;
+//[_seller,player] remoteExec["valor_fnc_shop_request",2];
 
 
 

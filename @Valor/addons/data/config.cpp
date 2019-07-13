@@ -71,6 +71,12 @@ class CfgFunctions
 			class pay {};
 		};
 
+		class HC
+		{
+			file = "\data\main\HC";
+			class remoteexec {};
+		};
+
 		class outposts
 		{
 			file = "\data\main\outposts";
@@ -185,6 +191,7 @@ class CfgFunctions
 			class collect_egg {};
 			class hatch_raptor {};
 			class load_hay_bale {};
+			class sell_hay_bale {};
 		};
 
 

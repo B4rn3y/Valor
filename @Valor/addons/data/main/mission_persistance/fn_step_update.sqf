@@ -67,5 +67,5 @@ switch (_mode) do
 if(_error) exitWith {};
 
 
-
-_set remoteexec["valor_fnc_step_update_db",2];
+[_set,"valor_fnc_step_update_db",2] call valor_fnc_remoteexec;
+//_set remoteexec["valor_fnc_step_update_db",2];

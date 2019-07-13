@@ -72,8 +72,8 @@ _classnames = tostring _ret;
 
 
 
-
-[_classnames,player] remoteExec["valor_fnc_Itemshop_sellprice_request",2];
+[[_classnames,player],"valor_fnc_Itemshop_sellprice_request",2] call valor_fnc_remoteexec;
+//[_classnames,player] remoteExec["valor_fnc_Itemshop_sellprice_request",2];
 
 
 

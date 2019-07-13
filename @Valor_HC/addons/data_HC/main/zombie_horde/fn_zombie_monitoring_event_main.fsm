@@ -1,0 +1,363 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_zombie_monitoring_event_main">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-198.507584,-829.058228,-108.507584,-779.058167,0.000000,"init"};
+item1[] = {"w8",4,218,-195.571960,-716.020142,-105.571960,-666.020142,0.000000,"w8"};
+item2[] = {"END",1,250,-553.784180,-834.665466,-463.784271,-784.665466,0.000000,"END"};
+item3[] = {"smth_is_wrong",4,218,-366.850342,-836.836548,-276.850342,-786.836548,0.000000,"smth" \n "is wrong"};
+item4[] = {"_",2,250,-196.448303,-612.372131,-106.448303,-562.372131,0.000000,""};
+item5[] = {"enough__cops",4,218,-195.485413,-543.851990,-105.485413,-493.851288,0.000000,"enough " \n "cops"};
+item6[] = {"not_enough_cops",4,218,-375.588745,-614.815674,-285.588745,-564.815674,0.000000,"not" \n "enough" \n "cops"};
+item7[] = {"END_1",1,250,-565.410889,-610.272400,-475.410950,-560.272400,0.000000,"END"};
+item8[] = {"send__message_to",2,250,-198.442749,-476.777039,-108.442749,-426.777039,0.000000,"send " \n "message to " \n "players"};
+item9[] = {"can_start_",4,218,-198.434845,-414.866547,-108.434837,-364.866547,0.000000,"can start?"};
+item10[] = {"spawn__zombies_f",2,4346,-201.123199,-355.861145,-111.123199,-305.861145,0.000000,"spawn" \n " zombies first"};
+item11[] = {"w8",4,218,-200.375793,-299.629639,-110.375793,-249.629639,0.000000,"w8"};
+item12[] = {"check_zombies",2,250,-204.107452,-159.511230,-114.107452,-109.511230,0.000000,"check zombies"};
+item13[] = {"__1",4,218,-152.398712,-77.386719,-62.398712,-27.386719,0.000000,""};
+item14[] = {"_",4,218,-79.477661,-113.886383,10.522339,-63.886383,0.000000,""};
+item15[] = {"some__zeds_r_mis",2,250,35.460205,-156.565918,125.460213,-106.565918,0.000000,"some " \n "zeds" \n "r missed"};
+item16[] = {"w8",4,218,-79.132477,-191.676300,10.867523,-141.676300,0.000000,"w8"};
+item17[] = {"set_waittime",2,250,-216.149536,-21.299927,-126.149513,28.700073,0.000000,"set" \n "waittime"};
+item18[] = {"w8",4,218,-274.741089,-84.606415,-184.741089,-34.606415,0.000000,"w8"};
+item19[] = {"exit",4,218,36.463791,-22.580566,126.463791,27.419434,0.000000,"exit"};
+item20[] = {"END_2",1,250,223.887817,-28.964600,313.887756,21.035400,0.000000,"END"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,4};
+link3[] = {3,2};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {5,8};
+link7[] = {6,7};
+link8[] = {8,9};
+link9[] = {9,10};
+link10[] = {10,11};
+link11[] = {11,12};
+link12[] = {12,13};
+link13[] = {12,14};
+link14[] = {13,17};
+link15[] = {14,15};
+link16[] = {15,16};
+link17[] = {15,19};
+link18[] = {16,12};
+link19[] = {17,18};
+link20[] = {17,19};
+link21[] = {18,12};
+link22[] = {19,20};
+globals[] = {0.000000,0,0,0,0,640,480,1,236,6316128,1,-663.104187,388.136597,126.744812,-633.203979,812,587,1};
+window[] = {0,-1,-1,-32000,-32000,967,208,1648,208,1,830};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_zombie_monitoring_event_main";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_waittime = param[0,-1,[-1]];" \n
+                         "_zombie_amount = param[1,-1,[-1]];" \n
+                         "_gate_health = param[2,-1,[-1]];" \n
+                         "_gate = param[3,Objnull,[Objnull]];" \n
+                         "_zombie_spawn_pos = param[4,[],[[]]];" \n
+                         "_event_duration = param[5,-1,[-1]];" \n
+                         "_cop_amount_needed = param[6,-1,[-1]];" \n
+                         "_zombie_event_time_begin = param[7,-1,[-1]];" \n
+                         "_outpost_name = param[8,"""",[""""]];" \n
+                         "_zombie_damage = param[9,-1,[-1]];" \n
+                         "_config_id = param[10,-1,[-1]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "smth_is_wrong">*/
+                                class smth_is_wrong
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_waittime isequalto -1 || _zombie_amount isequalto -1 || _gate_health isequalto -1 || isnull _gate || _zombie_spawn_pos isequalto [] || _event_duration isequalto -1 || _cop_amount_needed isequalto -1 || _zombie_event_time_begin isequalto -1 || _outpost_name isequalto """" || _zombie_damage isequalto -1 || _config_id isequalto -1"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _waittime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor Server :: Exiting horde event, not enough cops"";" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "_">*/
+                class _
+                {
+                        name = "_";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor Server :: checking if enough cops are online"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "not_enough_cops">*/
+                                class not_enough_cops
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="END_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"playersnumber opfor < _cop_amount_needed"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "enough__cops">*/
+                                class enough__cops
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="send__message_to";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"playersnumber opfor >= _cop_amount_needed"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END_1">*/
+                class END_1
+                {
+                        name = "END_1";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor Server :: Not enough cops online"";" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "send__message_to">*/
+                class send__message_to
+                {
+                        name = "send__message_to";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[_outpost_name,_zombie_event_time_begin] remoteexec[""valor_fnc_zombie_horde_announcement"",-2];" \n
+                         "" \n
+                         "_starttime = servertime + _zombie_event_time_begin;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "can_start_">*/
+                                class can_start_
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="spawn__zombies_f";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _starttime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "spawn__zombies_f">*/
+                class spawn__zombies_f
+                {
+                        name = "spawn__zombies_f";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"_zombie_classnames = [_zombie_amount] call valor_fnc_zombie_config;" \n
+                         "_gate setvariable[""valor_health"",_gate_health,true];" \n
+                         "[_gate,_gate_health] remoteexec[""valor_fnc_zombie_horde_damage_display"",opfor]; " \n
+                         "" \n
+                         "{" \n
+                         "	[_x,_gate,_zombie_spawn_pos,_zombie_damage] spawn valor_fnc_ZombieMonitoring_event;" \n
+                         "} foreach _zombie_classnames;" \n
+                         "" \n
+                         "_waittime = servertime + 30;" \n
+                         "" \n
+                         "_endtime = servertime + _event_duration;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="check_zombies";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _waittime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "check_zombies">*/
+                class check_zombies
+                {
+                        name = "check_zombies";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/"_zombies_close = nearestobjects[_zombie_spawn_pos,[""RyanZombieCrawler1Opfor"",""RyanZombieCrawler10Opfor"",""RyanZombieCrawler11Opfor"",""RyanZombieCrawler12Opfor"",""RyanZombieCrawler13Opfor"",""RyanZombieCrawler14Opfor"",""RyanZombieCrawler15Opfor"",""RyanZombieCrawler16Opfor"",""RyanZombieCrawler17Opfor"",""RyanZombieCrawler18Opfor"",""RyanZombieCrawler19Opfor"",""RyanZombieCrawler20Opfor"",""RyanZombieCrawler21Opfor"",""RyanZombieCrawler22Opfor"",""RyanZombieCrawler23Opfor"",""RyanZombieCrawler24Opfor"",""RyanZombieCrawler25Opfor"",""RyanZombieCrawler4Opfor"",""RyanZombieCrawler5Opfor"",""RyanZombieCrawler6Opfor"",""RyanZombieCrawler7Opfor"",""RyanZombieCrawler9Opfor"",""RyanZombieCrawler32Opfor"",""RyanZombieCrawler26Opfor"",""RyanZombieCrawler27Opfor"",""RyanZombieCrawler28Opfor"",""RyanZombieCrawler29Opfor"",""RyanZombieCrawler30Opfor"",""RyanZombieCrawler31Opfor"",""RyanZombieCrawler8Opfor"",""RyanZombieCrawler2Opfor"",""RyanZombieC_man_1Opfor"",""RyanZombieC_man_hunter_1_FOpfor"",""RyanZombieC_man_pilot_FOpfor"",""RyanZombieC_journalist_FOpfor"",""RyanZombieC_OrestesOpfor"",""RyanZombieC_NikosOpfor"",""RyanZombie15Opfor"",""RyanZombie16Opfor"",""RyanZombie17Opfor"",""RyanZombie18Opfor"",""RyanZombie19Opfor"",""RyanZombie20Opfor"",""RyanZombie21Opfor"",""RyanZombie22Opfor"",""RyanZombie23Opfor"",""RyanZombie24Opfor"",""RyanZombie25Opfor"",""RyanZombieC_man_polo_2_FOpfor"",""RyanZombieC_man_polo_4_FOpfor"",""RyanZombieC_man_polo_5_FOpfor"",""RyanZombieC_man_polo_6_FOpfor"",""RyanZombieC_man_p_fugitive_FOpfor"",""RyanZombieC_scientist_FOpfor"",""RyanZombie26Opfor"",""RyanZombie27Opfor"",""RyanZombie28Opfor"",""RyanZombie29Opfor"",""RyanZombie30Opfor"",""RyanZombie32Opfor"",""RyanZombie31Opfor"",""RyanZombieC_man_polo_1_FOpfor"",""RyanZombieC_man_w_worker_FOpfor"",""RyanZombieB_Soldier_05_fOpfor"",""RyanZombieB_Rangemaster_FOpfor"",""RyanZombieB_Soldier_02_fOpfor"",""RyanZombieB_Soldier_lite_FOpfor"",""RyanZombieB_Soldier_lite_F_1Opfor"",""RyanZombieB_Soldier_02_f_1Opfor"",""RyanZombieB_Soldier_02_f_1_1Opfor"",""RyanZombieB_Soldier_03_fOpfor"",""RyanZombieB_Soldier_03_f_1Opfor"",""RyanZombieB_Soldier_03_f_1_1Opfor"",""RyanZombieB_Soldier_04_fOpfor"",""RyanZombieB_Soldier_04_f_1Opfor"",""RyanZombieB_Soldier_04_f_1_1Opfor"",""RyanZombieC_man_1mediumOpfor"",""RyanZombieC_man_hunter_1_FmediumOpfor"",""RyanZombieC_man_pilot_FmediumOpfor"",""RyanZombieC_journalist_FmediumOpfor"",""RyanZombieC_OrestesmediumOpfor"",""RyanZombieC_NikosmediumOpfor"",""RyanZombie15mediumOpfor"",""RyanZombie16mediumOpfor"",""RyanZombie17mediumOpfor"",""RyanZombie18mediumOpfor"",""RyanZombie19mediumOpfor"",""RyanZombie20mediumOpfor"",""RyanZombie21mediumOpfor"",""RyanZombie22mediumOpfor"",""RyanZombie23mediumOpfor"",""RyanZombie24mediumOpfor"",""RyanZombie25mediumOpfor"",""RyanZombieC_man_polo_2_FmediumOpfor"",""RyanZombieC_man_polo_4_FmediumOpfor"",""RyanZombieC_man_polo_5_FmediumOpfor"",""RyanZombieC_man_polo_6_FmediumOpfor"",""RyanZombieC_man_p_fugitive_FmediumOpfor"",""RyanZombieC_scientist_FmediumOpfor"",""RyanZombie26mediumOpfor"",""RyanZombie27mediumOpfor"",""RyanZombie28mediumOpfor"",""RyanZombie29mediumOpfor"",""RyanZombie30mediumOpfor"",""RyanZombie32mediumOpfor"",""RyanZombie31mediumOpfor"",""RyanZombieC_man_polo_1_FmediumOpfor"",""RyanZombieC_man_w_worker_FmediumOpfor"",""RyanZombieB_Soldier_05_fmediumOpfor"",""RyanZombieB_RangeMaster_FmediumOpfor"",""RyanZombieB_Soldier_02_fmediumOpfor"",""RyanZombieB_Soldier_lite_FmediumOpfor"",""RyanZombieB_Soldier_lite_F_1mediumOpfor"",""RyanZombieB_Soldier_02_f_1mediumOpfor"",""RyanZombieB_Soldier_02_f_1_1mediumOpfor"",""RyanZombieB_Soldier_03_fmediumOpfor"",""RyanZombieB_Soldier_03_f_1mediumOpfor"",""RyanZombieB_Soldier_03_f_1_1mediumOpfor"",""RyanZombieB_Soldier_04_fmediumOpfor"",""RyanZombieB_Soldier_04_f_1mediumOpfor"",""RyanZombieB_Soldier_04_f_1_1mediumOpfor"",""RyanZombieC_man_1slowOpfor"",""RyanZombieC_man_hunter_1_FslowOpfor"",""RyanZombieC_man_pilot_FslowOpfor"",""RyanZombieC_journalist_FslowOpfor"",""RyanZombieC_OrestesslowOpfor"",""RyanZombieC_NikosslowOpfor"",""RyanZombie15slowOpfor"",""RyanZombie16slowOpfor"",""RyanZombie17slowOpfor"",""RyanZombie18slowOpfor"",""RyanZombie19slowOpfor"",""RyanZombie20slowOpfor"",""RyanZombie21slowOpfor"",""RyanZombie22slowOpfor"",""RyanZombie23slowOpfor"",""RyanZombie24slowOpfor"",""RyanZombie25slowOpfor"",""RyanZombieC_man_polo_2_FslowOpfor"",""RyanZombieC_man_polo_4_FslowOpfor"",""RyanZombieC_man_polo_5_FslowOpfor"",""RyanZombieC_man_polo_6_FslowOpfor"",""RyanZombieC_man_p_fugitive_FslowOpfor"",""RyanZombieC_scientist_FslowOpfor"",""RyanZombie26slowOpfor"",""RyanZombie27slowOpfor"",""RyanZombie28slowOpfor"",""RyanZombie29slowOpfor"",""RyanZombie30slowOpfor"",""RyanZombie32slowOpfor"",""RyanZombie31slowOpfor"",""RyanZombieC_man_polo_1_FslowOpfor"",""RyanZombieC_man_w_worker_FslowOpfor"",""RyanZombieB_Soldier_05_fslowOpfor"",""RyanZombieB_RangeMaster_FslowOpfor"",""RyanZombieB_Soldier_02_fslowOpfor"",""RyanZombieB_Soldier_lite_FslowOpfor"",""RyanZombieB_Soldier_lite_F_1slowOpfor"",""RyanZombieB_Soldier_02_f_1slowOpfor"",""RyanZombieB_Soldier_02_f_1_1slowOpfor"",""RyanZombieB_Soldier_03_fslowOpfor"",""RyanZombieB_Soldier_03_f_1slowOpfor"",""RyanZombieB_Soldier_03_f_1_1slowOpfor"",""RyanZombieB_Soldier_04_fslowOpfor"",""RyanZombieB_Soldier_04_f_1slowOpfor"",""RyanZombieB_Soldier_04_f_1_1slowOpfor"",""RyanZombieSpider1Opfor"",""RyanZombieSpider10Opfor"",""RyanZombieSpider11Opfor"",""RyanZombieSpider12Opfor"",""RyanZombieSpider13Opfor"",""RyanZombieSpider14Opfor"",""RyanZombieSpider15Opfor"",""RyanZombieSpider16Opfor"",""RyanZombieSpider17Opfor"",""RyanZombieSpider18Opfor"",""RyanZombieSpider19Opfor"",""RyanZombieSpider2Opfor"",""RyanZombieSpider20Opfor"",""RyanZombieSpider21Opfor"",""RyanZombieSpider22Opfor"",""RyanZombieSpider23Opfor"",""RyanZombieSpider24Opfor"",""RyanZombieSpider25Opfor"",""RyanZombieSpider3Opfor"",""RyanZombieSpider4Opfor"",""RyanZombieSpider5Opfor"",""RyanZombieSpider6Opfor"",""RyanZombieSpider7Opfor"",""RyanZombieSpider9Opfor"",""RyanZombieSpider26Opfor"",""RyanZombieSpider27Opfor"",""RyanZombieSpider28Opfor"",""RyanZombieSpider29Opfor"",""RyanZombieSpider30Opfor"",""RyanZombieSpider32Opfor"",""RyanZombieSpider31Opfor"",""RyanZombieSpider8Opfor"",""RyanZombieC_man_1walkerOpfor"",""RyanZombieC_man_hunter_1_FwalkerOpfor"",""RyanZombieC_man_pilot_FwalkerOpfor"",""RyanZombieC_journalist_FwalkerOpfor"",""RyanZombieC_OresteswalkerOpfor"",""RyanZombieC_NikoswalkerOpfor"",""RyanZombie15walkerOpfor"",""RyanZombie16walkerOpfor"",""RyanZombie17walkerOpfor"",""RyanZombie18walkerOpfor"",""RyanZombie19walkerOpfor"",""RyanZombie20walkerOpfor"",""RyanZombie21walkerOpfor"",""RyanZombie22walkerOpfor"",""RyanZombie23walkerOpfor"",""RyanZombie24walkerOpfor"",""RyanZombie25walkerOpfor"",""RyanZombieC_man_polo_2_FwalkerOpfor"",""RyanZombieC_man_polo_4_FwalkerOpfor"",""RyanZombieC_man_polo_5_FwalkerOpfor"",""RyanZombieC_man_polo_6_FwalkerOpfor"",""RyanZombieC_man_p_fugitive_FwalkerOpfor"",""RyanZombieC_scientist_FwalkerOpfor"",""RyanZombie26walkerOpfor"",""RyanZombie27walkerOpfor"",""RyanZombie28walkerOpfor"",""RyanZombie29walkerOpfor"",""RyanZombie30walkerOpfor"",""RyanZombie32walkerOpfor"",""RyanZombie31walkerOpfor"",""RyanZombieC_man_polo_1_FwalkerOpfor"",""RyanZombieC_man_w_worker_FwalkerOpfor"",""RyanZombieB_Soldier_05_fwalkerOpfor"",""RyanZombieB_RangeMaster_FwalkerOpfor"",""RyanZombieB_Soldier_02_fwalkerOpfor"",""RyanZombieB_Soldier_lite_FwalkerOpfor"",""RyanZombieB_Soldier_lite_F_1walkerOpfor"",""RyanZombieB_Soldier_02_f_1walkerOpfor"",""RyanZombieB_Soldier_02_f_1_1walkerOpfor"",""RyanZombieB_Soldier_03_fwalkerOpfor"",""RyanZombieB_Soldier_03_f_1walkerOpfor"",""RyanZombieB_Soldier_03_f_1_1walkerOpfor"",""RyanZombieB_Soldier_04_fwalkerOpfor"",""RyanZombieB_Soldier_04_f_1walkerOpfor"",""RyanZombieB_Soldier_04_f_1_1walkerOpfor""],200];" \n
+                         "" \n
+                         "_zombies_server = [];" \n
+                         "{if(local _x && _x getvariable[""horde_event"",false] && alive _x) then {_zombies_server pushback _x};} foreach _zombies_close;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="some__zeds_r_mis";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count _zombies_server) < _zombie_amount"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__1">*/
+                                class __1
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count _zombies_server) >= _zombie_amount"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "some__zeds_r_mis">*/
+                class some__zeds_r_mis
+                {
+                        name = "some__zeds_r_mis";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"_zeds_to_spawn = _zombie_amount - (count _zombies_server);" \n
+                         "" \n
+                         "_zombie_classnames = [_zeds_to_spawn] call valor_fnc_zombie_config;" \n
+                         "" \n
+                         "" \n
+                         "{" \n
+                         "	[_x,_gate,_zombie_spawn_pos,_zombie_damage] spawn valor_fnc_ZombieMonitoring_event;" \n
+                         "} foreach _zombie_classnames;" \n
+                         "" \n
+                         "_waittime = servertime + 30;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "exit">*/
+                                class exit
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="END_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnull _gate || servertime > _endtime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 16;
+                                        priority = 0.000000;
+                                        to="check_zombies";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _waittime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_waittime">*/
+                class set_waittime
+                {
+                        name = "set_waittime";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/"_waittime = servertime + 10;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "exit">*/
+                                class exit
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="END_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnull _gate || servertime > _endtime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 18;
+                                        priority = 0.000000;
+                                        to="check_zombies";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _waittime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END_2">*/
+                class END_2
+                {
+                        name = "END_2";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor Server :: The horde event is over"";" \n
+                         "if!(isnull _gate) then {" \n
+                         "	_gate setvariable[""valor_health"",nil,true];" \n
+                         "	[_outpost_name,_zombie_event_time_begin,1] remoteexec[""valor_fnc_zombie_horde_announcement"",-2];" \n
+                         "} else {" \n
+                         "	[_config_id] spawn valor_fnc_set_outpost_destroyed;" \n
+                         "	[_outpost_name,_zombie_event_time_begin,2] remoteexec[""valor_fnc_zombie_horde_announcement"",-2];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "END",
+                "END_1",
+                "END_2",
+        };
+};
+/*%FSM</COMPILE>*/

@@ -53,7 +53,8 @@ if(isnil "Valor_item_shop_sell") then {
 	_listbox ctrlRemoveAllEventHandlers "LBSelChanged";
 	_listbox ctrlSetEventHandler ["LBSelChanged","[] spawn valor_fnc_ItemShop_lb_changed;"];
 
-	[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
+	[[_seller,player],"valor_fnc_Itemshop_request",2] call valor_fnc_remoteexec;
+	//[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
 } else {
 	0 call valor_fnc_openItemSellMenu;
 };

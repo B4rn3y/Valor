@@ -45,7 +45,8 @@ if!(isnil "_var") exitWith {
 	} foreach _arr_count_item;
 
 	if(_all_items) then {
-		[_config_id,_id,_container] remoteexec["valor_fnc_changeOutpostStatus",2];
+		[[_config_id,_id,_container],"valor_fnc_changeOutpostStatus",2] call valor_fnc_remoteexec;
+		//[_config_id,_id,_container] remoteexec["valor_fnc_changeOutpostStatus",2];
 		systemchat "Valor :: All items are available, sending build request to server";
 	};
 
