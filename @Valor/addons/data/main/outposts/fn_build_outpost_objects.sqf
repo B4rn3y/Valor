@@ -9,6 +9,10 @@ if(_outpost_id isEqualTo -1) exitWith {diag_log "Valor Error :: _outpost_id unkn
 if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknown"};
 if(_build isEqualTo -1) exitWith {diag_log "Valor Error :: _build unknown"};
 
+_isserver = if(isServer) then {true} else {false};
+if(!hasInterface && !isDedicated) then {
+	_isserver = true;
+};
 
 
 if(_build isEqualTo 1) then {
@@ -20,7 +24,7 @@ if(_build isEqualTo 1) then {
 		_vector = _x select 3;
 		_public = _x select 4;
 		_addaction = "";
-		if(_public && isServer) then {
+		if(_public && _isserver) then {
 			_object = _classname createVehicle [0,0,10];
 			waitUntil {!isnil "_object"};
 			waitUntil {!isnull _object};
@@ -62,7 +66,7 @@ if(_build isEqualTo 1) then {
 		_dir = _x select 2;
 		_vector = _x select 3;
 		_public = _x select 4;
-		if(_public && isServer) then {
+		if(_public && _isserver) then {
 			_object = _classname createVehicle [0,0,10];
 			waitUntil {!isnil "_object"};
 			waitUntil {!isnull _object};

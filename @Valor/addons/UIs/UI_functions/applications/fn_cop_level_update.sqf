@@ -39,7 +39,8 @@ if!(_action) exitWith {};
 
 
 
-[_nmbr,_pid] remoteExec["valor_fnc_update_coplevel",2];
+//[_nmbr,_pid] remoteExec["valor_fnc_update_coplevel",2];
+[[_nmbr,_pid],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
 
 systemchat format["Valor :: You set %1 rank to %2",_name,_nmbr];
 

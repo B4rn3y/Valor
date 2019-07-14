@@ -44,15 +44,19 @@ _man = 0 call _online;
 if!(isNull _man) exitWith {
 	[_accept] remoteExec["valor_fnc_show_application_response",_man];
 	if(_accept) then {
-		[1,_pid,0,true] remoteExec["valor_fnc_update_coplevel",2];
+		[[1,_pid,0,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+		//[1,_pid,0,true] remoteExec["valor_fnc_update_coplevel",2];
 	} else {
-		[0,_pid,0,true] remoteExec["valor_fnc_update_coplevel",2];
+		[[0,_pid,0,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+		//[0,_pid,0,true] remoteExec["valor_fnc_update_coplevel",2];
 	};
 };
 
 if(_accept) then {
-	[1,_pid,2,true] remoteExec["valor_fnc_update_coplevel",2];
+	[[1,_pid,2,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+	//[1,_pid,2,true] remoteExec["valor_fnc_update_coplevel",2];
 } else {
-	[0,_pid,1,true] remoteExec["valor_fnc_update_coplevel",2];
+	[[0,_pid,1,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+	//[0,_pid,1,true] remoteExec["valor_fnc_update_coplevel",2];
 };
 

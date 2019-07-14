@@ -56,7 +56,9 @@ _index = _members find _entry;
 _members set[_index,_new_entry];
 
 
-[2,player,valor_group select 0,_pid,getplayeruid player] remoteexec["valor_fnc_syncGroupDB",2];
+//[2,player,valor_group select 0,_pid,getplayeruid player] remoteexec["valor_fnc_syncGroupDB",2];
+[[2,player,valor_group select 0,_pid,getplayeruid player],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
+
 [0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 
 

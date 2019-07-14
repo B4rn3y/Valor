@@ -52,8 +52,9 @@ _removed = false;
 if!(_removed) exitWith {systemchat "Valor :: You dont have a Raptor egg to hatch in the inventory"};
 
 _range = ([_config_id] call valor_fnc_base_config) select 3;
+[[_base_id,getposatl OBJ_focused,_group_id,_config_id,_range],"valor_fnc_insert_raptor",2] call valor_fnc_remoteexec;
 
-[_base_id,getposatl OBJ_focused,_group_id,_config_id,_range] remoteExec["valor_fnc_insert_raptor",2];
+//[_base_id,getposatl OBJ_focused,_group_id,_config_id,_range] remoteExec["valor_fnc_insert_raptor",2];
 systemchat "Valor :: The raptor is being spawned";
 
 

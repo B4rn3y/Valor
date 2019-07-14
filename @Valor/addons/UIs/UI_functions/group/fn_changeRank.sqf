@@ -39,6 +39,7 @@ _members set[_index,_new_entry];
 
 
 
-[1,player,valor_group select 0,_entry select 0,_rank] remoteexec["valor_fnc_syncGroupDB",2];
+//[1,player,valor_group select 0,_entry select 0,_rank] remoteexec["valor_fnc_syncGroupDB",2];
+[[1,player,valor_group select 0,_entry select 0,_rank],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
 [0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 

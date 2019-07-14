@@ -21,4 +21,5 @@ if(_badChar) exitWith {systemchat "Valor :: Your group name has an invalid chara
 
 _btn_create_group spawn {_btn = _this;disableSerialization;{Valor_creating = true;_btn ctrlSetText format["Waiting  -  [%1]",_x];sleep 1;} foreach [7,6,5,4,3,2,1];_btn ctrlSetText "Create Group"; Valor_creating = nil;};
 
-[0,player,getPlayerUID player,_group_name] remoteexec["valor_fnc_syncGroupDB",2];
+[[0,player,getPlayerUID player,_group_name],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
+//[0,player,getPlayerUID player,_group_name] remoteexec["valor_fnc_syncGroupDB",2];

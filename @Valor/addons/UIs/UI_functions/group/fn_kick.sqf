@@ -36,7 +36,9 @@ if!(isnull _he) then {
 	_he setvariable["Valor_group_id",nil,true];
 };
 
-[1,player,valor_group select 0,_pid,0] remoteexec["valor_fnc_syncGroupDB",2];
+//[1,player,valor_group select 0,_pid,0] remoteexec["valor_fnc_syncGroupDB",2];
+[[1,player,valor_group select 0,_pid,0],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
+
 [0,valor_group select 0,_members] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 
 

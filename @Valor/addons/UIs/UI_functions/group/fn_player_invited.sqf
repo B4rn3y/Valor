@@ -22,7 +22,9 @@ _group_member pushback [getplayeruid player,1,name player];
 player setvariable["Valor_group_id",[_group_id,_group_name],true];
 Valor_group = [_group_id,_group_member,_group_name];
 
-[4,player,valor_group select 0] remoteexec["valor_fnc_syncGroupDB",2];
+//[4,player,valor_group select 0] remoteexec["valor_fnc_syncGroupDB",2];
+[[4,player,valor_group select 0],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
+
 [0,valor_group select 0,_group_member] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 
 

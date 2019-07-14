@@ -42,7 +42,7 @@ if (_extDBNotLoaded isEqualType []) exitWith {
     publicVariable "Valor_Server_loaded";
 };
 HC_AVAILABLE = false;
-_max = 60;
+_max = 10;
 for "_d" from 0 to _max do {
     diag_log format["Waiting to start %1",_max - _d];
     sleep 1;

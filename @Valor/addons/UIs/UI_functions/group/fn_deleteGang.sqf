@@ -25,7 +25,8 @@ _action = [
 
 if!(_action) exitWith {};
 
-[3,player,valor_group select 0] remoteexec["valor_fnc_syncGroupDB",2];
+[[3,player,valor_group select 0],"valor_fnc_syncGroupDB",2] call valor_fnc_remoteexec;
+//[3,player,valor_group select 0] remoteexec["valor_fnc_syncGroupDB",2];
 [1,valor_group select 0] remoteexec["valor_fnc_syncGroup",([valor_group select 0] call valor_fnc_getGroupMembers)];
 
 

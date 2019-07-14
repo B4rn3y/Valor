@@ -111,7 +111,8 @@ if(Valor_placed) then {
 
 					 // Here goes the Gang ID
 		if(valor_group isEqualTo []) exitWith {systemchat "Valor :: You are not in a group anymore"};
-		[_message_server,(Valor_group select 0),player,Valor_config_id,[typeof _ammobox,getposatl _ammobox,getdir _ammobox,vectorUp _ammobox]] remoteExec["valor_fnc_insert_base",2];
+		//[_message_server,(Valor_group select 0),player,Valor_config_id,[typeof _ammobox,getposatl _ammobox,getdir _ammobox,vectorUp _ammobox]] remoteExec["valor_fnc_insert_base",2];
+		[[_message_server,(Valor_group select 0),player,Valor_config_id,[typeof _ammobox,getposatl _ammobox,getdir _ammobox,vectorUp _ammobox]],"valor_fnc_insert_base",2] call valor_fnc_remoteexec;
 		deleteVehicle _ammobox;
 		systemchat "The request has been send to the server, please stand by.";
 	} else {

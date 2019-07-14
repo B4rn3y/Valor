@@ -21,4 +21,5 @@ _edit ctrlCommit 0;
 _edit ctrlSetText "0";
 _listbox lbadd "Loading...";
 
-[player] remoteExec["valor_fnc_get_applications",2];
+//[player] remoteExec["valor_fnc_get_applications",2];
+[[player],"valor_fnc_get_applications",2] call valor_fnc_remoteexec;

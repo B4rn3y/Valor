@@ -45,14 +45,14 @@ item40[] = {"position_known",4,218,-1326.025391,-940.332825,-1236.025269,-890.33
 item41[] = {"No_Position_know",4,218,-1218.846436,-1006.083801,-1128.846436,-956.083862,1.000000,"No Position" \n "known"};
 item42[] = {"END_2",1,250,-1220.651855,-1091.078613,-1130.651855,-1041.078369,0.000000,"END"};
 item43[] = {"set_player__to_p",2,250,-1456.196045,-937.151917,-1366.195801,-887.151855,0.000000,"set player" \n " to position"};
-item44[] = {"END_3",1,4346,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
+item44[] = {"END_3",1,250,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
 item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
 item47[] = {"Vars_set",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Vars set"};
 item48[] = {"Exit_Type_4",2,250,43.231445,-1020.873779,133.231445,-970.874146,0.000000,"Exit Type"};
 item49[] = {"Vars_ok",4,218,-207.573914,-1306.259155,-117.573914,-1256.259155,0.000000,"Vars ok"};
 item50[] = {"setpos",2,250,-221.175781,-1748.270508,-131.175781,-1698.270508,0.000000,"setpos"};
-item51[] = {"END_4",1,250,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
+item51[] = {"END_4",1,4346,-218.672852,-1910.239868,-128.672791,-1860.239136,0.000000,"END"};
 item52[] = {"W8_a_bit",4,218,-220.971619,-1828.581055,-130.971619,-1778.581055,0.000000,"W8 a bit"};
 item53[] = {"gear_loaded",4,218,-880.963806,-930.504517,-790.963806,-880.504517,0.000000,"gear loaded"};
 item54[] = {"Load_some_Shit",2,250,-998.947998,-934.153503,-908.947937,-884.153503,0.000000,"Load some" \n "Shit"};
@@ -140,8 +140,8 @@ link68[] = {64,65};
 link69[] = {65,40};
 link70[] = {65,41};
 link71[] = {66,48};
-globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-2491.101074,-538.720703,73.595825,-1584.938721,691,587,1};
-window[] = {2,-1,-1,-32000,-32000,931,98,1538,172,1,709};
+globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-962.256287,364.338379,-872.224609,-1999.155762,691,587,1};
+window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,709};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -377,7 +377,8 @@ class FSM
                 {
                         name = "Send_query__request";
                         itemno = 15;
-                        init = /*%FSM<STATEINIT""">*/"[playerside, profilename, getplayeruid player,player,getResolution,profileNameSteam,productVersion] remoteexec[""valor_fnc_player_data_request"",2];" \n
+                        init = /*%FSM<STATEINIT""">*/"//[playerside, profilename, getplayeruid player,player,getResolution,profileNameSteam,productVersion] remoteexec[""valor_fnc_player_data_request"",2];" \n
+                         "[[playerside, profilename, getplayeruid player,player,getResolution,profileNameSteam,productVersion],""valor_fnc_player_data_request"",2] call valor_fnc_remoteexec;" \n
                          "diag_log ""Valor :: Player found >> Sending Query Request to Server"";" \n
                          "" \n
                          "player setvariable[""PID"",getplayeruid player,true];" \n

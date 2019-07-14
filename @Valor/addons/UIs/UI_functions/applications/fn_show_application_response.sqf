@@ -11,7 +11,9 @@ if(_accepted) then {
 	_control ctrlSetText "UIs\textures\applications\accept.jpg";
 	_control ctrlCommit 0;
 	player addaction["I read the message",{
-		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
+		//[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];
+		[[0,getplayeruid player,0,false,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+		ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
 
 		}];
 } else {
@@ -20,7 +22,9 @@ if(_accepted) then {
 	_control ctrlSetText "UIs\textures\applications\decline.jpg";
 	_control ctrlCommit 0;
 	player addaction["I read the message",{
-		[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
+		//[0,getplayeruid player,0,false,true] remoteExec["valor_fnc_update_coplevel",2];
+		[[0,getplayeruid player,0,false,true],"valor_fnc_update_coplevel",2] call valor_fnc_remoteexec;
+		ctrlDelete ((findDisplay 46) displayCtrl 1337);player removeAction (_this select 2);
 		}];
 };
 

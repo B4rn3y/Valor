@@ -8,13 +8,19 @@ _build = 1;
 if(_outpost_id isEqualTo -1) exitWith {diag_log "Valor Error :: _outpost_id unknown"};
 if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknown"};
 
+_isserver = if(isServer) then {true} else {false};
+if(!hasInterface && !isDedicated) then {
+	_isserver = true;
+};
+
+
 {
 	_classname = _x select 0;
 	_pos = _x select 1;
 	_dir = _x select 2;
 	_vector = _x select 3;
 	_public = _x select 4;
-	iF(isServer && _public) then {
+	iF(_isserver && _public) then {
 		_obj = nearestObject[_pos,_classname];
 		deleteVehicle _obj;
 	};
@@ -32,7 +38,7 @@ if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknow
 	_vector = _x select 3;
 	_public = _x select 4;
 	_addaction = "";
-	if(_public && isServer) then {
+	if(_public && _isserver) then {
 		_object = _classname createVehicle [0,0,10];
 		waitUntil {!isnil "_object"};
 		waitUntil {!isnull _object};
