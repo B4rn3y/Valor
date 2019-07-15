@@ -8,7 +8,7 @@ _type = param[4,"",[""]];
 _table_type = param[5,"",[""]];
 _spawn_with = param[6,[],[[]]];
 
-if(_classname isEqualTo "" || _min_prob isEqualTo -1 || _max_prob isEqualTo -1 || isnull _requester || _type isEqualTo "" || _table_type isEqualTo "" || _spawn_with isEqualTo []) exitWith {
+if(_classname isEqualTo "" || _min_prob isEqualTo -1 || _max_prob isEqualTo -1 || isnull _requester || _type isEqualTo "" || _table_type isEqualTo "") exitWith {
 	format["VALOR ERROR :: Could not insert %1 into the DB",_classname] remoteExec["systemChat",_requester];
 };
 _query = "";

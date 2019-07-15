@@ -1,6 +1,6 @@
 private ["_classname_house","_table","_current_table"];
 _classname_house = param[0,"",[""]];
-if(_classname_house isEqualTo "") exitWith {systemchat "ERROR: Classname House unbekannt"};
+//if(_classname_house isEqualTo "") exitWith {systemchat "ERROR: Classname House unbekannt"};
 
 
 _table = "";

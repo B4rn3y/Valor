@@ -62,18 +62,24 @@ if(isnil "lootspawn_house_config") then {
 diag_log "Valor Client :: Start editing Lootspawn Config";
 
 _config_copy = lootspawn_config;
-_max = 0;
+
+_tables = [];
+
+
 {
+	_max = 0;
 	{
 		_max = _max + ((_x select 1) - (_x select 0));
 	} foreach (_x select 1);
+	_tables pushBack [(_x select 0),(100/_max)];
 } foreach _config_copy;
 
-_multiplikator = 100 / _max;
 
-
+_tables_rdy = [];
 {
-	_actual_selection = _x select 1;
+	_tableName = _x select 0;
+	_multiplikator = _x select 1;
+	_actual_selection = (_config_copy select _foreachindex) select 1;
 	_counter = 0;
 	{
 		_min = (_x select 0) * _multiplikator;
@@ -83,13 +89,16 @@ _multiplikator = 100 / _max;
 		_max = _min + _difference;
 		_counter = _max;
 		_actual_selection set [_foreachindex,[_min,_max,_x select 2,_x select 3,_x select 4]];
-	} foreach (_x select 1);
-	_actual_selection = [_x select 0,_actual_selection];
-	_config_copy set [_foreachindex,_actual_selection];
+	} foreach ((_config_copy select _foreachindex) select 1);
 
-} foreach _config_copy;
+	_tables_rdy pushBack[_tableName,_actual_selection];
+
+} foreach _tables;
 
 
-lootspawn_config = _config_copy;
+
+lootspawn_config = _tables_rdy;
+
+
 
 diag_log "Valor Client :: Lootspawn Config Edit complete";
