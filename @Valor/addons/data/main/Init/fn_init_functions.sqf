@@ -26,8 +26,15 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 	// WIP
 
 
+
+
+(All_loot_tables select 0) addPublicVariableEventHandler {0 call valor_fnc_check_config;};
+
+
 0 call valor_fnc_check_config;
 0 spawn valor_fnc_loot_spawn_system;
+
+
 
 
 // Now look what part of the map the player discovered and remove hidement for it;

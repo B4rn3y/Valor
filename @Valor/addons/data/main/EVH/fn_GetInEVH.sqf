@@ -35,6 +35,7 @@ switch (_mode) do
 
 	default
 	{
+		if(_number isEqualTo -1) exitWith {};
 		if!(_number isEqualTo (call compile getplayeruid player)) exitWith {waituntil{!(player isEqualTo vehicle player)};while {!(vehicle player isEqualTo player)} do {player action ["Eject", vehicle player];player action ["getOut", vehicle player];sleep 1;};};
 	};
 };

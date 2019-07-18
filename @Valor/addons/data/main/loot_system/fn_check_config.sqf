@@ -1,85 +1,111 @@
 
+private ["_exit","_array","_new_array","_table_name_var","_table_name","_copy","_tables_add","_stuff_to_add","_tables","_table","_max","_tables_rdy","_tableName_var","_tableName","_multiplikator","_counter","_min","_difference","_foreachindex"];
 
 
-private ["_config_copy","_max","_multiplikator","_actual_selection","_counter","_min","_difference","_foreachindex"];
 diag_log "Valor Client  :: Checking Config for Lootspawn";
 
-if(isnil "lootspawn_config") then {
-	diag_log "Valor Client :: Lootspawn Config nil - setting default value";
-	lootspawn_config = [
-		["general",
-			[
-				[0.0001,0.0010,"srifle_EBR_F","weapon",[["20Rnd_762x51_Mag",4,"magazin"]]],
-				[1.0001,3.0000,"arifle_TRG20_F","weapon",[["30Rnd_556x45_Stanag",4,"magazin"]]],
-				[1,5,"U_BG_Guerilla2_3","item" , []],
-				[1,10,"U_C_Poor_1","item" , []],
-				[1,3,"CUP_U_C_Fireman_01","item" , []],
-				[1,7,"CUP_U_C_Citizen_01","item" , []],
-				[1,5,"CUP_U_O_CHDKZ_Bardak","item" , []],
-				[1,10,"U_C_HunterBody_grn","item" , []],
-				[1,7,"CUP_U_C_Pilot_01","item" , []],
-				[1,6,"CUP_U_C_Profiteer_01","item" , []],
-				[1,5,"CUP_U_C_Rocker_03","item" , []],
-				[1,6,"CUP_U_C_Suit_01","item" , []],
-				[1,6,"CUP_U_C_Villager_02","item" , []],
-				[1,6,"CUP_U_C_Worker_02","item" , []],
-				[1,6,"CUP_V_OI_TKI_Jacket1_04","item" , []],
-				[1,10,"B_AssaultPack_blk","backpack" , []],
-				[1,7,"CUP_B_Bergen_BAF","backpack" , []],
-				[1,2,"B_Carryall_khk","backpack" , []]
-			]
-		]
-	];
-
-} else {diaG_log "Valor Client :: Loottable Config found"};
-
-
-
-
-if(isnil "lootspawn_house_config") then {
-	diag_log "Valor Client :: Lootspawn House Config nil - setting default value";
-	lootspawn_house_config = [
-		["general",
-			[
-				"Land_HouseV_2L",
-				"Land_HouseV_1I4",
-				"Land_HouseV2_04_interier_dam",
-				"Land_HouseV_2I"
-			]
-		]
-
-	];
-
-} else {diaG_log "Valor Client :: House Config for Housespawns found"};
 
 
 
 
 
+if(isnil "lootspawn_house_config") exitWith {diag_log "Valor Client :: Lootspawn House Config nil"};
+if(isnil "All_loot_tables") exitWith {diag_log "Valor Client :: All_loot_tables nil"};
+_exit = false;
+
+{
+	if(isnil _x) exitWith {diag_log format["Valor Client :: %1 nil",_x];_exit = true;};
+} foreach All_loot_tables;
+
+if(_exit)exitWith {};
+
+
+
+
+_array = [];
+{
+	call compile format["_array = %1;",_x];
+	_new_array = [];
+	{
+		_new_array pushback [(call compile(_x select 0)),(call compile(_x select 1)),_x select 2,_x select 3,(call compile(_x select 4))];
+	} foreach _array;
+
+	call compile format["%1=_new_array;",_x];
+} foreach All_loot_tables;
 
 
 
 diag_log "Valor Client :: Start editing Lootspawn Config";
+{
+	_table_name_var = _x;
+	_table_name = _table_name_var select [17,(count(_table_name_var))];
+	_copy = [];
+	call compile format["_copy = %1;",_table_name_var];
 
-_config_copy = lootspawn_config;
+	_tables_add = switch (_table_name) do
+	{
+		case "h_military":
+		{
+			["m_military","l_military"]
+		};
+
+		case "m_military":
+		{
+			["l_military"]
+		};
+
+		case "food":
+		{
+			["general"]
+		};
+
+		case "firestation":
+		{
+			["m_military","l_military"]
+		};
+
+		default
+		{
+			[]
+		};
+	};
+
+	if!(_tables_add isEqualTo []) then {
+		{
+			_stuff_to_add = [];
+			call compile format["_stuff_to_add = lootspawn_config_%1;",_x];
+			_copy append _stuff_to_add;
+		} foreach _tables_add;
+
+		call compile format["%1 = _copy;",_table_name_var];
+	};
+
+} foreach All_loot_tables;
+
+
+
+
 
 _tables = [];
-
-
 {
+	_table = _x;
+
 	_max = 0;
 	{
 		_max = _max + ((_x select 1) - (_x select 0));
-	} foreach (_x select 1);
-	_tables pushBack [(_x select 0),(100/_max)];
-} foreach _config_copy;
+	} foreach (call compile _table);
+	_tables pushBack [_table,(_table select [17,(count(_table))]),(100/_max)];
+} foreach All_loot_tables;
 
 
 _tables_rdy = [];
 {
-	_tableName = _x select 0;
-	_multiplikator = _x select 1;
-	_actual_selection = (_config_copy select _foreachindex) select 1;
+
+	_tableName_var = _x select 0;
+	_tableName = _x select 1;
+	_multiplikator = _x select 2;
+	_copy = [];
+	call compile format["_copy = %1;",_tableName_var];
 	_counter = 0;
 	{
 		_min = (_x select 0) * _multiplikator;
@@ -88,16 +114,13 @@ _tables_rdy = [];
 		_min = _counter;
 		_max = _min + _difference;
 		_counter = _max;
-		_actual_selection set [_foreachindex,[_min,_max,_x select 2,_x select 3,_x select 4]];
-	} foreach ((_config_copy select _foreachindex) select 1);
+		_copy set [_foreachindex,[_min,_max,_x select 2,_x select 3,_x select 4]];
+	} foreach (call compile _tableName_var);
 
-	_tables_rdy pushBack[_tableName,_actual_selection];
+	call compile format["%1 = _copy;",_tableName_var];
 
 } foreach _tables;
 
-
-
-lootspawn_config = _tables_rdy;
 
 
 

@@ -1,7 +1,7 @@
 
 
 
-
+VALOR_INTRO = true;
 
 
 valor_intro_cam = "camera" camCreate [0, 0, 0];
@@ -81,7 +81,9 @@ sleep 7;
 valor_intro_cam cameraEffect ["TERMINATE","BACK"];
 camDestroy valor_intro_cam;
 
+sleep 5;
 
+VALOR_INTRO = nil;
 
 /*
 

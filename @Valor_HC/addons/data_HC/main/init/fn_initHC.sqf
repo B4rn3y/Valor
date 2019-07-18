@@ -70,8 +70,8 @@ if(isnil "VALOR_SERVER_STARTING") then {
     waitUntil {!isnil "Valor_vehicles_init_finished"};
     Valor_vehicles_init_finished = nil;
     systemchat "Valor :: Vehicles loaded";
-    systemchat "Valor :: Starting Zombie Destroyer";
-    [] spawn valor_fnc_zombie_destroyer;
+    //systemchat "Valor :: Starting Zombie Destroyer";
+    //[] spawn valor_fnc_zombie_destroyer;
     ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
 
     {
@@ -83,10 +83,10 @@ if(isnil "VALOR_SERVER_STARTING") then {
 } else {
 
     systemchat "Valor :: HC is starting something";
-    systemchat "Valor :: Starting Zombie Destroyer";
-    [] spawn valor_fnc_zombie_destroyer;
-    systemchat "Valor :: Starting Time Module";
-    [] spawn valor_fnc_time_module;
+    //systemchat "Valor :: Starting Zombie Destroyer";
+    //[] spawn valor_fnc_zombie_destroyer;
+   // systemchat "Valor :: Starting Time Module";
+    //[] spawn valor_fnc_time_module;
 
     [] remoteExec["valor_fnc_get_vehicle_monitor_list",2];
     [] spawn valor_fnc_persistent_vehicle_monitoring;

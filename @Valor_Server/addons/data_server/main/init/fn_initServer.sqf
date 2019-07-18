@@ -112,6 +112,8 @@ if!(HC_AVAILABLE) then {
     addMissionEventHandler ["HandleDisconnect",{_this call valor_fnc_clientDisconnect; false;}];
 };
 
+civilian setfriend[opfor,1];
+
 [] spawn valor_fnc_HC_check;
 
 diag_log "----------------------------------------------------------------------------------------------------";

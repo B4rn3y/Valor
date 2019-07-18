@@ -137,6 +137,7 @@ class CfgFunctions
 			class loot_spawn_system {ext = ".fsm";};
 			class spawn_loot {};
 			class can_SPAWN_LOOT {};
+			class start_loot_spawn {};
 		};
 
 		class map_hidement

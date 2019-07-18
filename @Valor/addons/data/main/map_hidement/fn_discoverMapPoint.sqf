@@ -2,8 +2,10 @@ private ["_markerPOS","_markername"];
 
 _markerPOS = param[0,[],[[],""]];
 _markername = param[1,"",[""]];
+_count = param[2,0,[-1]];
 if(_markerPOS isEqualTo []) exitWith {};
 if(_markername isEqualTo "") exitWith {};
+
 
 
 
@@ -14,4 +16,6 @@ if!(isnil "Valor_debug") then {
 
 deleteMarkerLocal _markername;
 
-[9] call valor_fnc_step_update;
+if(_count >= 3) then {
+	[9] call valor_fnc_step_update;
+};

@@ -1,14 +1,23 @@
 
 private ["_pos","_house_classname","_rnd","_loot","_near_weaponholder","_holder","_debug","_txt","_classname","_count","_typ"];
 _pos = param[0,[],[[]]];
-_house_classname = param[1,"",[""]];
+_house = param[1,objNull,["",objNull]];
+if(isnull _house) exitWith {};
+_house_classname = typeOf _house;
 if(_house_classname isEqualTo "") exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: House Classname unbekannt"};0};
 if(_pos isEqualTo []) exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: POS unbekannt"};0};
 _rnd = random 101;
-_loot = [_rnd,([_house_classname] call valor_fnc_find_loottable)] call valor_fnc_find_loot_in_table;
-if(_loot isEqualTo []) exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: LOOT NIL"};0};
+
+
+_pos = _house modelToWorld _pos;
 _near_weaponholder = nearestObjects[_pos,["groundweaponholder"],1];
 if!(_near_weaponholder isEqualTo []) exitWith {0};
+sleep random 10;
+_near_weaponholder = nearestObjects[_pos,["groundweaponholder"],1];
+if!(_near_weaponholder isEqualTo []) exitWith {0};
+_loot = [_rnd,([_house_classname] call valor_fnc_find_loottable)] call valor_fnc_find_loot_in_table;
+if(_loot isEqualTo []) exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: LOOT NIL"};0};
+
 _holder =  createVehicle ["groundweaponholder",_pos, [], 0, "can_Collide"];
 
 switch ((_loot select 1)) do

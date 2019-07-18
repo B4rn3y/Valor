@@ -21,8 +21,8 @@ link6[] = {6,7};
 link7[] = {7,8};
 link8[] = {8,9};
 link9[] = {9,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-534.959229,-91.438873,-299.903503,-931.809509,412,587,1};
-window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,430};
+globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-466.062012,-22.541626,-397.861938,-1029.767944,412,587,1};
+window[] = {0,-1,-1,-1,-1,967,208,1648,208,1,430};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -90,7 +90,7 @@ class FSM
                 {
                         name = "delete_abandon_P";
                         itemno = 4;
-                        init = /*%FSM<STATEINIT""">*/"_delete_Counter = 0;" \n
+                        init = /*%FSM<STATEINIT""">*/"" \n
                          "_piles = allmissionobjects ""groundweaponholder"";" \n
                          "_all_people = playableunits;" \n
                          "if!(isMultiplayer) then {_all_people = allunits;};" \n
@@ -102,7 +102,7 @@ class FSM
                          "		if((_thePile distance _x) < _range_delete) then {_delete = false;};" \n
                          "" \n
                          "	} foreach _all_people;" \n
-                         "	if(_delete) then {deleteVehicle _thePile;_delete_Counter = _delete_Counter + 1;};" \n
+                         "	if(_delete) then {deleteVehicle _thePile;};" \n
                          "} foreach _piles;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -150,34 +150,10 @@ class FSM
                 {
                         name = "spawn_Loot";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"_piles_Nmbr = 0;" \n
-                         "{" \n
-                         "      _var = _x getvariable[""valor_base_ids"",[]];" \n
-                         "	   _var1 = _x getvariable[""valor_outpost_ids"",[]];" \n
-                         "		_buildingpos = _x buildingPos -1;" \n
-                         "		if(!(_buildingpos isEqualTo []) && (_var isequalto []) && (_var1 isequalto [])) then {" \n
-                         "" \n
-                         "			_how_much_piles = random (count (_buildingpos) + 1);" \n
-                         "			//if!(_how_much_piles isEqualTo 0) then {_how_much_piles = round(_how_much_piles / 2);};" \n
-                         "" \n
-                         "			if(_how_much_piles > 6) then {_how_much_piles = 6};" \n
-                         "			" \n
-                         "			for ""_D"" from 1 to _how_much_piles do {" \n
-                         "				_sel = selectRandom _buildingpos;" \n
-                         "				_buildingpos = _buildingpos - [_sel];" \n
-                         "				_piles_Nmbr = _piles_Nmbr + ([_sel,(typeof _x)] call valor_fnc_spawn_loot);" \n
-                         "			};" \n
-                         "" \n
-                         "		};" \n
+                        init = /*%FSM<STATEINIT""">*/"[_range_for_spawn] spawn valor_fnc_start_loot_spawn;" \n
                          "" \n
                          "" \n
-                         "" \n
-                         "	} foreach ( (getpos player) nearObjects [""House"",_range_for_spawn]);" \n
-                         "" \n
-                         "" \n
-                         "if!(isnil ""valor_debug"") then {" \n
-                         "	systemchat format[""Piles: %1 - Houses: %2 - deleted: %3"",_piles_Nmbr,count( (getpos player) nearObjects [""House"",_range_for_spawn]),_delete_Counter];" \n
-                         "};"/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
