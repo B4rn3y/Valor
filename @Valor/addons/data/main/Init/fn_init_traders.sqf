@@ -40,7 +40,7 @@ _trader switchMove "Acts_carFixingWheel";
 _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
-_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city",[3835.22,8835.58,0.00442505],26],1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
+_trader addaction["Carshop",valor_fnc_opencarshop,["survivor_city",[3840.02,8826.65,-0.00354004],24.357],1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 

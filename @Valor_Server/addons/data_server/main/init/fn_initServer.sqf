@@ -96,7 +96,7 @@ if!(HC_AVAILABLE) then {
     {
         diag_log format["Valor :: Releasing server for players in %1 seconds",_x];
         sleep 1;
-    } foreach [20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
+    } foreach [5,4,3,2,1];
     VALOR_SERVER_STARTING = false;
     publicVariable "Valor_Server_loaded";
     publicVariable "VALOR_SERVER_STARTING";
