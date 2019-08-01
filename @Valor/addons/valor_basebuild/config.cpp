@@ -37,11 +37,35 @@ class CfgVehicles
 			};
 		};
 	};
+	class valor_baseFloor40: Items_base_F
+	{
+		scope=2;
+		author="Bloodwyn";
+		model="\valor_basebuild\models\stronghold_base_40m.p3d";
+		displayName="Base Floor 40m";
+		vehicleClass="Objects";
+		armor=20000;
+		icon="iconObject";
+		mapSize=1;
+	};
+	class valor_baseFloor45: valor_baseFloor40
+	{
+		model="\valor_basebuild\models\stronghold_base_45m.p3d";
+		displayName="Base Floor 45m";
+	};
+	class valor_baseFloor50: valor_baseFloor45
+	{
+		model="\valor_basebuild\models\stronghold_base_50m.p3d";
+		displayName="Base Floor 50m";
+	};
+	class valor_baseFloor55: valor_baseFloor45
+	{
+		model="\valor_basebuild\models\stronghold_base_55m.p3d";
+		displayName="Base Floor 55m";
+	};
+	class valor_baseFloor60: valor_baseFloor45
+	{
+		model="\valor_basebuild\models\stronghold_base_60m.p3d";
+		displayName="Base Floor 60m";
+	};
 };
-
-
-
-
-
-
-
