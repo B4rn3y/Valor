@@ -64,6 +64,14 @@ if(_var_object isEqualTo -1) exitWith {};
 _gorup_id = valor_group select 0;
 _object_group_id = _var_object select 1;
 if(_gorup_id isEqualTo _object_group_id && player distance _object < 10) then {
+	if(typeof _object isEqualTo "valor_drawBridge") exitWith {
+		_st = _object animationPhase "draw";
+		if(_st isEqualTo 0) then {
+			_object animate["draw",1];
+		} else {
+			_object animate["draw",0];
+		};
+	};
 	[_object] call valor_fnc_lockdoor;
 };
 

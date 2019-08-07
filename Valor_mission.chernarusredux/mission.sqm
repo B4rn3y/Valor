@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=1842;
+		nextID=1849;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3798.2183,328.45029,8834.8701};
-		dir[]={0.87335074,-0.43110922,-0.22724667};
-		up[]={0.41761678,0.90207618,-0.10866714};
-		aside[]={-0.25184879,-1.6491249e-006,-0.96787989};
+		pos[]={4466.0107,521.44434,8560.6807};
+		dir[]={-0.86112505,-0.47112793,0.19146411};
+		up[]={-0.45998806,0.8820138,0.10227422};
+		aside[]={0.21706124,3.3646211e-007,0.97623229};
 	};
 };
 binarizationWanted=0;
@@ -338,7 +338,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=804;
+		items=729;
 		class Item0
 		{
 			dataType="Object";
@@ -15334,7 +15334,7 @@ class Mission
 			};
 			id=1232;
 			type="Land_Saw_F";
-			atlOffset=3.0517578e-005;
+			atlOffset=6.1035156e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18453,17 +18453,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3693.3701,299.74805,8460.458};
-				angles[]={0,3.451144,0};
+				position[]={3958.7476,310.2695,8628.3027};
+				angles[]={0,4.9944901,0};
 			};
 			side="Empty";
-			flags=1;
+			flags=5;
 			class Attributes
 			{
 			};
 			id=1418;
 			type="Land_Net_Fence_Gate_F";
-			atlOffset=0.75601196;
+			atlOffset=0.098144531;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18557,8 +18557,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3688.5759,298.58496,8462.041};
-				angles[]={0,3.4789231,0};
+				position[]={3960.3691,309.40906,8633.0713};
+				angles[]={0,5.0852127,0};
 			};
 			side="Empty";
 			flags=5;
@@ -18597,8 +18597,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3698.134,298.79501,8458.877};
-				angles[]={0,3.4789231,0};
+				position[]={3956.666,309.01779,8623.8652};
+				angles[]={0,5.3805246,0};
 			};
 			side="Empty";
 			flags=5;
@@ -18608,6 +18608,7 @@ class Mission
 			};
 			id=1420;
 			type="Land_Net_Fence_4m_F";
+			atlOffset=-3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18637,70 +18638,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3694.4307,297.93552,8463.71};
-				angles[]={0,0.30014378,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1422;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.42199707;
-		};
-		class Item595
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3706.3091,298.81458,8501.6592};
-				angles[]={6.2631893,3.447556,0.019996032};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1427;
-			type="CUP_Railway_railsN_40";
-		};
-		class Item596
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3716.5498,299.44241,8532.3643};
-				angles[]={6.2706842,0.36904925,0.012501417};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1428;
-			type="CUP_Railway_railsN_curve_R25_10";
-		};
-		class Item597
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3728.0149,299.86465,8554.3428};
-				angles[]={6.2731848,0.59113073,0.01499443};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1429;
-			type="CUP_Railway_railsN_curve_R25_10";
-		};
-		class Item598
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={3747.6846,300.53937,8580.126};
 				angles[]={6.2731848,3.8160427,0.022495884};
 			};
@@ -18712,7 +18649,7 @@ class Mission
 			id=1430;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item599
+		class Item595
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18728,7 +18665,7 @@ class Mission
 			id=1431;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item600
+		class Item596
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18783,7 +18720,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item601
+		class Item597
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18838,7 +18775,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item602
+		class Item598
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18854,7 +18791,7 @@ class Mission
 			id=1434;
 			type="CUP_Railway_railsN_curve_R25_10";
 		};
-		class Item603
+		class Item599
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18870,7 +18807,7 @@ class Mission
 			id=1435;
 			type="CUP_Railway_railsN_curve_R25_10";
 		};
-		class Item604
+		class Item600
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18886,7 +18823,7 @@ class Mission
 			id=1436;
 			type="CUP_Railway_railsN_curve_R25_10";
 		};
-		class Item605
+		class Item601
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18902,7 +18839,7 @@ class Mission
 			id=1437;
 			type="CUP_Railway_railsN_curve_R25_10";
 		};
-		class Item606
+		class Item602
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18957,7 +18894,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item607
+		class Item603
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -19012,7 +18949,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item608
+		class Item604
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19028,7 +18965,7 @@ class Mission
 			id=1440;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item609
+		class Item605
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19044,7 +18981,7 @@ class Mission
 			id=1441;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item610
+		class Item606
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19060,7 +18997,7 @@ class Mission
 			id=1442;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item611
+		class Item607
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19077,7 +19014,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.11422729;
 		};
-		class Item612
+		class Item608
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19094,7 +19031,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.12106323;
 		};
-		class Item613
+		class Item609
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19111,7 +19048,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.17111206;
 		};
-		class Item614
+		class Item610
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19128,7 +19065,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.20404053;
 		};
-		class Item615
+		class Item611
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19145,7 +19082,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.17111206;
 		};
-		class Item616
+		class Item612
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19162,7 +19099,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.16952515;
 		};
-		class Item617
+		class Item613
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19179,7 +19116,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.24499512;
 		};
-		class Item618
+		class Item614
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19196,7 +19133,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.24621582;
 		};
-		class Item619
+		class Item615
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19213,7 +19150,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.18988037;
 		};
-		class Item620
+		class Item616
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19230,7 +19167,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.18685913;
 		};
-		class Item621
+		class Item617
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19247,7 +19184,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.20440674;
 		};
-		class Item622
+		class Item618
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19263,7 +19200,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.40304565;
 		};
-		class Item623
+		class Item619
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19279,7 +19216,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.71707153;
 		};
-		class Item624
+		class Item620
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19295,7 +19232,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=1.0175171;
 		};
-		class Item625
+		class Item621
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19311,7 +19248,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.5369873;
 		};
-		class Item626
+		class Item622
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19328,7 +19265,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.24026489;
 		};
-		class Item627
+		class Item623
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19345,7 +19282,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.079528809;
 		};
-		class Item628
+		class Item624
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19361,7 +19298,7 @@ class Mission
 			id=1461;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item629
+		class Item625
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19377,7 +19314,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=1.0108032;
 		};
-		class Item630
+		class Item626
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19394,7 +19331,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.18267822;
 		};
-		class Item631
+		class Item627
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19411,7 +19348,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.095947266;
 		};
-		class Item632
+		class Item628
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19427,7 +19364,7 @@ class Mission
 			id=1466;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item633
+		class Item629
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19444,7 +19381,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.23764038;
 		};
-		class Item634
+		class Item630
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19461,7 +19398,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.0675354;
 		};
-		class Item635
+		class Item631
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19478,7 +19415,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.09588623;
 		};
-		class Item636
+		class Item632
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19494,7 +19431,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.39718628;
 		};
-		class Item637
+		class Item633
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19510,7 +19447,7 @@ class Mission
 			id=1472;
 			type="CUP_Railway_railsN_40";
 		};
-		class Item638
+		class Item634
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19526,7 +19463,7 @@ class Mission
 			type="CUP_Railway_rails_up_40";
 			atlOffset=0.7868042;
 		};
-		class Item639
+		class Item635
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19543,7 +19480,7 @@ class Mission
 			type="CUP_Railway_rails_passing_10";
 			atlOffset=0.041442871;
 		};
-		class Item640
+		class Item636
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19560,7 +19497,7 @@ class Mission
 			type="CUP_Railway_railsN_25";
 			atlOffset=-0.55056763;
 		};
-		class Item641
+		class Item637
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19576,7 +19513,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.64224243;
 		};
-		class Item642
+		class Item638
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19592,7 +19529,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.98916626;
 		};
-		class Item643
+		class Item639
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19608,7 +19545,7 @@ class Mission
 			type="CUP_Railway_railsN_40";
 			atlOffset=0.38189697;
 		};
-		class Item644
+		class Item640
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -19621,7 +19558,7 @@ class Mission
 			type="HeadlessClient_F";
 			atlOffset=6.1035156e-005;
 		};
-		class Item645
+		class Item641
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19637,7 +19574,7 @@ class Mission
 			type="CUP_Railway_railsN_curve_L25_10";
 			atlOffset=0.62646484;
 		};
-		class Item646
+		class Item642
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19653,7 +19590,7 @@ class Mission
 			type="CUP_Railway_railsN_curve_L25_10";
 			atlOffset=0.47515869;
 		};
-		class Item647
+		class Item643
 		{
 			dataType="Object";
 			class PositionInfo
@@ -19669,1484 +19606,7 @@ class Mission
 			type="CUP_Railway_railsN_curve_L25_10";
 			atlOffset=0.29766846;
 		};
-		class Item648
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5252.5098,360.62704,8257.6816};
-				angles[]={0.0025135824,5.8028135,0.024989013};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1485;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.13339233;
-		};
-		class Item649
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5261.7632,360.63846,8234.6963};
-				angles[]={6.2581892,5.9992785,0.039979152};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1486;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.095397949;
-		};
-		class Item650
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5265.543,359.93292,8210.501};
-				angles[]={6.2357211,6.2566004,0.03748076};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1487;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.18112183;
-		};
-		class Item651
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5263.6201,358.73102,8185.791};
-				angles[]={6.2357211,0.18091755,0.029989703};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1488;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.22219849;
-		};
-		class Item652
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5256.4575,356.63895,8154.2896};
-				angles[]={6.2157898,3.3783453,0.024989013};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1489;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.22772217;
-		};
-		class Item653
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5247.0654,354.0907,8115.4868};
-				angles[]={6.228241,3.3783453,0.010000871};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1491;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.27304077;
-		};
-		class Item654
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5237.6909,351.86618,8076.7192};
-				angles[]={6.228241,3.3783453,0.010000871};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1492;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.31808472;
-		};
-		class Item655
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5228.3022,350.1265,8037.875};
-				angles[]={6.2507033,3.3783453,6.2806721};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1493;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.29110718;
-		};
-		class Item656
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5218.957,348.97153,7999.084};
-				angles[]={6.2556973,3.3783453,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1495;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.20147705;
-		};
-		class Item657
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5209.5801,347.65091,7960.2837};
-				angles[]={6.2407074,3.3783453,6.2731848};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1496;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.35943604;
-		};
-		class Item658
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5200.2124,346.04312,7921.5137};
-				angles[]={6.2357211,3.3783453,6.2656851};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1497;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.38970947;
-		};
-		class Item659
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5190.8369,343.86093,7882.7632};
-				angles[]={6.2083287,3.3783453,6.2606897};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1498;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.26229858;
-		};
-		class Item660
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5181.4512,340.98782,7844.0137};
-				angles[]={6.1959062,3.3783453,6.2432065};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1499;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.3694458;
-		};
-		class Item661
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5172.1021,338.19781,7805.3057};
-				angles[]={6.2083287,3.3783453,6.2457047};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1500;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.33847046;
-		};
-		class Item662
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5162.7368,336.30679,7766.4966};
-				angles[]={6.2407088,3.3783453,6.2382188};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1501;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.57861328;
-		};
-		class Item663
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5153.5537,336.07837,7735.793};
-				angles[]={0.0024897563,0.39732122,6.2083287};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1502;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.47924805;
-		};
-		class Item664
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5141.5171,337.43466,7714.2041};
-				angles[]={0.034989785,0.62259412,6.2008677};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1503;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.47183228;
-		};
-		class Item665
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5125.1113,338.85638,7696.1587};
-				angles[]={0.029989703,0.8538686,6.2556973};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1504;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.3265686;
-		};
-		class Item666
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5104.5986,339.36444,7682.7681};
-				angles[]={0,1.1308038,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1505;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.53338623;
-		};
-		class Item667
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5081.2524,339.36411,7674.5483};
-				angles[]={0,1.3340336,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1506;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.61273193;
-		};
-		class Item668
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5056.7476,339.3779,7671.6519};
-				angles[]={0,1.5721612,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1507;
-			type="CUP_Railway_railsN_curve_L25_10";
-			atlOffset=0.79629517;
-		};
-		class Item669
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5032.0537,339.08398,7673.5547};
-				angles[]={0,1.7025533,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1510;
-			type="CUP_Railway_rails_up_25";
-			atlOffset=0.94265747;
-		};
-		class Item670
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5000.0854,338.53241,7677.7427};
-				angles[]={0,1.6999204,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1511;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.67791748;
-		};
-		class Item671
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4960.4873,337.33188,7682.8169};
-				angles[]={0.024996169,1.6990856,0.029989703};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1512;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.3348999;
-		};
-		class Item672
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4921.1304,335.84253,7688.1201};
-				angles[]={0.012496647,4.8526645,0.039979152};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1513;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.27435303;
-		};
-		class Item673
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4881.7842,334.01523,7693.7012};
-				angles[]={0.0050017489,4.8530302,0.075555585};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1514;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.16131592;
-		};
-		class Item674
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4842.3657,331.99872,7699.3013};
-				angles[]={0.0099949092,4.8526645,0.054944519};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1515;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=-0.2194519;
-		};
-		class Item675
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4803.1309,330.27771,7704.8164};
-				angles[]={0.0099949092,4.8526645,0.054944519};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1516;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.75698853;
-		};
-		class Item676
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4765.3154,328.39172,7710.749};
-				angles[]={0.047490869,4.8802328,0.05312315};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1517;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.32070923;
-		};
-		class Item677
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4830.7925,332.01727,7700.0615};
-			};
-			areaSize[]={5,-1,5};
-			flags=1;
-			id=1518;
-			type="ModuleHideTerrainObjects_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item678
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4782.3882,328.9938,7708.4648};
-			};
-			areaSize[]={5,-1,5};
-			flags=1;
-			id=1519;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=-3.0517578e-005;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item679
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={5121.5054,339.83957,7693.8809};
-			};
-			areaSize[]={5,-1,5};
-			flags=1;
-			id=1520;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=0.9569397;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item680
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4734.061,325.68396,7716.0103};
-				angles[]={0,4.8797541,0.12054373};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1521;
-			type="CUP_Railway_railsN_25";
-			atlOffset=0.025268555;
-		};
-		class Item681
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4717.1689,325.26926,7719.3257};
-				angles[]={0.010000871,4.9281497,6.2731848};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1525;
-			type="CUP_Railway_rails_passing_25";
-			atlOffset=3.0517578e-005;
-		};
-		class Item682
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4693.2813,324.44894,7725.3477};
-				angles[]={0.077775672,1.8560399,0.05271421};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1527;
-			type="CUP_Railway_rails_down_25";
-			atlOffset=0.079315186;
-		};
-		class Item683
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4662.1948,322.24622,7734.3667};
-				angles[]={0.079824187,1.8571647,0.062419467};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1528;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.95767212;
-		};
-		class Item684
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4624.0259,318.65329,7745.4038};
-				angles[]={0.074856833,1.8571647,0.079832405};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1529;
-			type="CUP_Railway_railsN_40";
-			atlOffset=1.0012817;
-		};
-		class Item685
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4586.749,315.02722,7756.2202};
-				angles[]={0.044976059,1.8571647,0.07734444};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1530;
-			type="CUP_Railway_railsN_40";
-			atlOffset=1.0194092;
-		};
-		class Item686
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4549.6133,311.75134,7766.9868};
-				angles[]={0.079824187,1.8571647,0.062419467};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1531;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.98217773;
-		};
-		class Item687
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4511.6704,307.35046,7778.0229};
-				angles[]={0.080275796,1.8620425,0.12297434};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1532;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.36828613;
-		};
-		class Item688
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4473.3652,303.23132,7788.9219};
-				angles[]={0.0099949092,4.9845886,0.062419467};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1533;
-			type="CUP_Railway_railsN_40";
-		};
-		class Item689
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4433.9741,301.91571,7796.8472};
-				angles[]={5.6723657,0,0.20157489};
-			};
-			areaSize[]={15,0,15};
-			flags=1;
-			id=1534;
-			type="ModuleHideTerrainObjects_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item690
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4434.9961,301.79214,7799.6421};
-				angles[]={6.2606921,4.9845886,0.01499443};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1535;
-			type="CUP_Railway_railsN_40";
-			atlOffset=3.0517578e-005;
-		};
-		class Item691
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4396.5688,302.92136,7810.3872};
-				angles[]={6.2406778,4.9861741,6.2288628};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1536;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.04598999;
-		};
-		class Item692
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4359.3911,305.0737,7823.2168};
-				angles[]={6.2432065,5.1067042,6.2506957};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1537;
-			type="CUP_Railway_railsN_40";
-			atlOffset=3.0517578e-005;
-		};
-		class Item693
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4322.6353,306.62103,7838.4844};
-				angles[]={6.2357187,5.1074729,6.2673469};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1538;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.020965576;
-		};
-		class Item694
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4285.8423,307.28729,7853.9731};
-				angles[]={6.2581916,5.1160603,0.010000871};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1539;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.15432739;
-		};
-		class Item695
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4249.2886,307.17242,7869.5703};
-				angles[]={6.2606921,5.1160603,0.01499443};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1540;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.20254517;
-		};
-		class Item696
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4212.6396,306.71729,7885.2236};
-				angles[]={6.270689,5.1160603,0.024996169};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1541;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.17077637;
-		};
-		class Item697
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4176.022,305.75873,7900.8921};
-				angles[]={6.270689,5.1160603,0.03748076};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1542;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.071533203;
-		};
-		class Item698
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4139.5142,304.80853,7916.5205};
-				angles[]={6.2706842,5.1160603,0.027494613};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1543;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.00018310547;
-		};
-		class Item699
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4102.9014,304.15997,7932.1729};
-				angles[]={6.2606845,5.1160603,0.022501182};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1544;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.18557739;
-		};
-		class Item700
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4067.0303,303.91202,7947.4888};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1545;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.34542847;
-		};
-		class Item701
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4031.1267,303.9068,7962.8149};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1546;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.45129395;
-		};
-		class Item702
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3994.6746,303.90384,7978.3892};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1547;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.58148193;
-		};
-		class Item703
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3957.9182,303.90976,7994.0967};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1548;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.74285889;
-		};
-		class Item704
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3921.1973,303.90393,8009.7783};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1549;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.74783325;
-		};
-		class Item705
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3884.6113,303.89188,8025.4116};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1550;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.61535645;
-		};
-		class Item706
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3847.9539,303.87787,8041.0713};
-				angles[]={0,5.1160603,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1551;
-			type="CUP_Railway_railsN_40";
-			atlOffset=0.21096802;
-		};
-		class Item707
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3812.959,304.21487,8055.9658};
-				angles[]={6.2606845,5.1160603,6.2731905};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1552;
-			type="CUP_Railway_railsN_40";
-		};
-		class Item708
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3776.458,304.57126,8071.5708};
-				angles[]={6.2631865,5.1160603,0.010000871};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1553;
-			type="CUP_Railway_railsN_40";
-			atlOffset=3.0517578e-005;
-		};
-		class Item709
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3739.7568,303.95889,8087.2788};
-				angles[]={6.2731905,5.1160603,0.03748076};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1554;
-			type="CUP_Railway_railsN_40";
-		};
-		class Item710
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3712.7439,302.91132,8099.6743};
-				angles[]={6.268187,5.2134538,0.05743961};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1555;
-			type="CUP_Railway_railsN_curve_R30_20";
-			atlOffset=0.11819458;
-		};
-		class Item711
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3641.6011,300.21689,8146.5283};
-				angles[]={0,5.485846,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1556;
-			type="CUP_Railway_railsN_curve_R30_20";
-			atlOffset=-0.43130493;
-		};
-		class Item712
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3687.4844,301.16348,8115.231};
-				angles[]={6.2581267,5.2775707,0.091454767};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1558;
-			type="CUP_Railway_railsN_40";
-			atlOffset=-0.47418213;
-		};
-		class Item713
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3659.1599,300.53381,8133.2944};
-				angles[]={6.2556973,5.2767887,0.012491877};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1559;
-			type="CUP_Railway_rails_passing_25";
-			atlOffset=0.10455322;
-		};
-		class Item714
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3676.4277,300.61789,8122.2554};
-				angles[]={0,5.285944,0.036905412};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1560;
-			type="CUP_Railway_railsN_25";
-			atlOffset=-0.5897522;
-		};
-		class Item715
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3615.9333,300.76669,8191.3467};
-				angles[]={0,6.0966082,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1562;
-			type="CUP_Railway_railsN_curve_R30_20";
-			atlOffset=0.5055542;
-		};
-		class Item716
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3616.1462,300.55307,8210.1777};
-				angles[]={0.032573428,0.21233702,0.039979152};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1563;
-			type="CUP_Railway_railsN_curve_R30_20";
-			atlOffset=-0.0052490234;
-		};
-		class Item717
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3682.6655,297.34265,8425.709};
-				angles[]={0,0.30014378,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1564;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.28536987;
-		};
-		class Item718
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3671.7578,297.76544,8391.0176};
-				angles[]={0.03748076,3.4532187,0.010000871};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1565;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=-3.0517578e-005;
-		};
-		class Item719
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3659.7617,299.13312,8353.043};
-				angles[]={0.042478051,0.30014378,0.014998405};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1566;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=-3.0517578e-005;
-		};
-		class Item720
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3647.9656,300.7178,8314.8916};
-				angles[]={0.084374748,0.30014381,0.03748076};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1567;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.13082886;
-		};
-		class Item721
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3636.1516,301.58725,8276.9971};
-				angles[]={0,0.30014381,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1568;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=0.44223022;
-		};
-		class Item722
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3624.3721,300.81277,8238.8818};
-				angles[]={6.2806721,0.30014381,0.039979152};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1569;
-			type="CUP_Railway_rails_up_40";
-			atlOffset=-0.00036621094;
-		};
-		class Item723
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3622.3662,300.80807,8173.2485};
-				angles[]={0,5.7964883,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=1570;
-			type="CUP_Railway_railsN_curve_R30_20";
-			atlOffset=0.63009644;
-		};
-		class Item724
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3634.1707,300.16492,8154.6055};
-				angles[]={6.2154875,2.5165415,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1571;
-			type="CUP_Railway_railsN_25";
-			atlOffset=-0.094116211;
-		};
-		class Item725
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3721.4729,303.10181,8094.8281};
-				angles[]={5.6723657,0,0.20157489};
-			};
-			areaSize[]={15,0,15};
-			flags=1;
-			id=1572;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=-0.31088257;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item726
+		class Item644
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21186,7 +19646,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item727
+		class Item645
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21226,7 +19686,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item728
+		class Item646
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21267,7 +19727,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item729
+		class Item647
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21308,7 +19768,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item730
+		class Item648
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21347,7 +19807,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item731
+		class Item649
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21387,7 +19847,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item732
+		class Item650
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21428,7 +19888,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item733
+		class Item651
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21468,7 +19928,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item734
+		class Item652
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21509,7 +19969,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item735
+		class Item653
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21550,7 +20010,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item736
+		class Item654
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21590,7 +20050,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item737
+		class Item655
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21629,7 +20089,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item738
+		class Item656
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21668,7 +20128,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item739
+		class Item657
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21707,7 +20167,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item740
+		class Item658
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -21764,7 +20224,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item741
+		class Item659
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21803,7 +20263,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item742
+		class Item660
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21844,7 +20304,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item743
+		class Item661
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21884,7 +20344,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item744
+		class Item662
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21924,7 +20384,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item745
+		class Item663
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21964,7 +20424,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item746
+		class Item664
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22004,7 +20464,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item747
+		class Item665
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22044,7 +20504,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item748
+		class Item666
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22084,7 +20544,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item749
+		class Item667
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22124,7 +20584,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item750
+		class Item668
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22164,7 +20624,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item751
+		class Item669
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22204,7 +20664,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item752
+		class Item670
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22244,7 +20704,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item753
+		class Item671
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22283,7 +20743,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item754
+		class Item672
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22324,7 +20784,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item755
+		class Item673
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22364,7 +20824,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item756
+		class Item674
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22403,7 +20863,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item757
+		class Item675
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22443,7 +20903,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item758
+		class Item676
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22483,7 +20943,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item759
+		class Item677
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22522,7 +20982,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item760
+		class Item678
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22561,7 +21021,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item761
+		class Item679
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22600,7 +21060,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item762
+		class Item680
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22654,7 +21114,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item763
+		class Item681
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22695,7 +21155,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item764
+		class Item682
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22735,7 +21195,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item765
+		class Item683
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22774,7 +21234,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item766
+		class Item684
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22813,7 +21273,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item767
+		class Item685
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22853,7 +21313,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item768
+		class Item686
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22894,7 +21354,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item769
+		class Item687
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22935,7 +21395,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item770
+		class Item688
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22976,7 +21436,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item771
+		class Item689
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23017,7 +21477,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item772
+		class Item690
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23058,7 +21518,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item773
+		class Item691
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23099,7 +21559,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item774
+		class Item692
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23140,7 +21600,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item775
+		class Item693
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23180,7 +21640,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item776
+		class Item694
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23221,7 +21681,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item777
+		class Item695
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -23275,7 +21735,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item778
+		class Item696
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23315,7 +21775,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item779
+		class Item697
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23356,7 +21816,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item780
+		class Item698
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -23410,7 +21870,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item781
+		class Item699
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23451,7 +21911,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item782
+		class Item700
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23492,7 +21952,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item783
+		class Item701
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23532,7 +21992,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item784
+		class Item702
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23573,7 +22033,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item785
+		class Item703
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23614,7 +22074,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item786
+		class Item704
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23654,7 +22114,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item787
+		class Item705
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23694,7 +22154,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item788
+		class Item706
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23734,7 +22194,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item789
+		class Item707
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23774,7 +22234,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item790
+		class Item708
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23815,7 +22275,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item791
+		class Item709
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23856,7 +22316,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item792
+		class Item710
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23896,7 +22356,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item793
+		class Item711
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23912,7 +22372,7 @@ class Mission
 			id=1820;
 			type="Land_PowerGenerator_wreck_F";
 		};
-		class Item794
+		class Item712
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23953,7 +22413,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item795
+		class Item713
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23994,7 +22454,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item796
+		class Item714
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24035,7 +22495,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item797
+		class Item715
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24076,7 +22536,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item798
+		class Item716
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24117,7 +22577,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item799
+		class Item717
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24158,7 +22618,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item800
+		class Item718
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24199,7 +22659,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item801
+		class Item719
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24240,7 +22700,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item802
+		class Item720
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24281,7 +22741,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item803
+		class Item721
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24296,6 +22756,264 @@ class Mission
 			};
 			id=1837;
 			type="Land_t_malus1s";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item722
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3952.7983,308.56979,8619.5527};
+				angles[]={0,2.1480145,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1842;
+			type="Land_Canal_Wall_10m_F";
+			atlOffset=2.8356934;
+		};
+		class Item723
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3733.3999,301.02383,8562.3135};
+				angles[]={6.2731848,0.67463952,0.017505653};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1843;
+			type="CUP_Railway_rails_linebreak_concrete";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item724
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3736.2009,301.31155,8562.8691};
+				angles[]={6.2731848,0,0.017505653};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1844;
+			type="CUP_b_betula2w_summer";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item725
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3733.3218,301.28326,8565.0781};
+				angles[]={6.2731848,0,0.017500184};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1845;
+			type="CUP_b_betula2w_summer";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item726
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5248.1387,361.33966,8266.5742};
+				angles[]={0.0075011365,5.6072588,0.020001993};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1846;
+			type="CUP_Railway_rails_linebreak_concrete";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item727
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5245.3896,361.52734,8267.042};
+				angles[]={0.0074931863,4.8798914,0.014998405};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1847;
+			type="CUP_b_betula2w_summer";
+			atlOffset=-3.0517578e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item728
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5248.0474,361.54883,8269.5127};
+				angles[]={0.0075011365,4.8798914,0.017500184};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=1848;
+			type="CUP_b_betula2w_summer";
 			class CustomAttributes
 			{
 				class Attribute0

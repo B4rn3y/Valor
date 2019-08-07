@@ -79,6 +79,8 @@ if(isnil "VALOR_SERVER_STARTING") then {
         sleep 1;
     } foreach [10,9,8,7,6,5,4,3,2,1];
     publicVariable "Valor_Server_loaded";
+    VALOR_SERVER_STARTING = false;
+    publicVariable "VALOR_SERVER_STARTING";
 
 } else {
 

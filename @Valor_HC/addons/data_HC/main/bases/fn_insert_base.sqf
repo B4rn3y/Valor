@@ -83,7 +83,7 @@ _ammobox setvariable["valor_base_ids",[_base_id,_gang_id,_config_id],true];
 	_pos = _x select 1;
 	_dir = _x select 2;
 	_vector = _x select 3;
-	_query = format["INSERT INTO base_objects (base_id, classname, pos, dir, vector) VALUES('%1', '%2','%3','%4','%5')",_base_id,(str _classname),_pos,_dir,_vector];
+	_query = format["INSERT INTO base_objects (base_id, classname, pos, dir, vector,inventory) VALUES('%1', '%2','%3','%4','%5','[]')",_base_id,(str _classname),_pos,_dir,_vector];
 	[_query,1] call valor_fnc_db_sync;
 
 } foreach _blueprint;

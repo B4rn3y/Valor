@@ -13,8 +13,8 @@ link2[] = {2,4};
 link3[] = {3,1};
 link4[] = {4,3};
 link5[] = {5,3};
-globals[] = {0.000000,0,0,0,0,640,480,1,200,6316128,1,-656.498718,45.470764,-422.346497,-1274.737915,728,884,1};
-window[] = {2,-1,-1,-1,-1,811,52,1492,52,3,746};
+globals[] = {0.000000,0,0,0,0,640,480,1,200,6316128,1,-551.396729,150.572754,-433.917358,-1286.308716,728,884,1};
+window[] = {2,-1,-1,-1,-1,993,234,1674,234,3,746};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -55,14 +55,14 @@ class FSM
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"" \n
                          "if(isnil ""HC1"") then {" \n
-                         "	if(HC_AVAILABLE) then {publicvariable ""HC_AVAILABLE""};" \n
+                         "	if(HC_AVAILABLE) then {HC_AVAILABLE = false;publicvariable ""HC_AVAILABLE""};" \n
                          "	HC_AVAILABLE = false;" \n
                          "} else {" \n
                          "	if(isnull HC1) then {	" \n
-                         "		if(HC_AVAILABLE) then {publicvariable ""HC_AVAILABLE""};" \n
+                         "		if(HC_AVAILABLE) then {HC_AVAILABLE = false;publicvariable ""HC_AVAILABLE""};" \n
                          "		HC_AVAILABLE = false;" \n
                          "	} else {" \n
-                         "		if!(HC_AVAILABLE) then {publicvariable ""HC_AVAILABLE""};" \n
+                         "		if!(HC_AVAILABLE) then {HC_AVAILABLE = true;publicvariable ""HC_AVAILABLE""};" \n
                          "		HC_AVAILABLE = true" \n
                          "	};" \n
                          "};" \n

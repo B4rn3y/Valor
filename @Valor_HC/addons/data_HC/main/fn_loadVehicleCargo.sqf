@@ -5,7 +5,7 @@ _cargo = param[1,"""[]""",["",[]]];
 if(isNull _vehicle) exitWith {false};
 
 [_vehicle] call valor_fnc_clear_vehicle;
-
+if(_cargo isEqualTo []) exitWith {false};
 _arr = [_cargo] call valor_fnc_mtoArray;
 if(typename _arr isEqualTo "STRING") then {_arr = call compile _arr;};
 

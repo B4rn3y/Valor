@@ -44,6 +44,9 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 			[_raptor_classname,_pos,_gang_id,_range] spawn valor_fnc_raptorMonitoring_server_group;
 		};
 	} else {
+		if(typeof _object isEqualTo "valor_drawBridge") then {
+			_object animate["draw",1];
+		};
 		if([_object] call valor_fnc_lockdoor) then {
 			diag_log format["Valor Server :: The object %1 has been locked",_classname];
 		};
