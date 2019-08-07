@@ -66,6 +66,12 @@ class CfgFunctions
 			class shopvehiclereset {};
 		};
 
+		class bandits
+		{
+			file = "\data_HC\main\bandits";
+			class spawn_bandits {};
+		};
+
 		class cop_management
 		{
 			file = "\data_HC\main\cop_management";

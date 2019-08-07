@@ -81,6 +81,8 @@ addMissionEventHandler ["Ended",{}];
 0 spawn{(findDisplay 46) displayAddEventHandler ["KeyDown",valor_fnc_keyhandler];};
 0 spawn{(findDisplay 46) displayAddEventHandler ["KeyUp",valor_fnc_keyUp];};
 
+[player] joinSilent (createGroup opfor);
+
 0 spawn {
 	Valor_functions_started = true;
 	sleep 10;

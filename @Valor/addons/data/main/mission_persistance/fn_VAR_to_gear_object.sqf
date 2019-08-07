@@ -171,14 +171,14 @@ _handgun = "";
 
 
 
-
+/*
 
 0 spawn {
 	Valor_gear_loaded = true;
 	sleep 3;
 	Valor_gear_loaded = nil;
 };
-
+*/
 
 
 

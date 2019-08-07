@@ -113,6 +113,13 @@ if!(HC_AVAILABLE) then {
 };
 
 civilian setfriend[opfor,1];
+opfor setfriend[civilian,1];
+
+civilian setFriend[independent,0];
+independent setFriend[civilian,0];
+
+opfor setFriend[independent,0];
+independent setFriend[opfor,0];
 
 [] spawn valor_fnc_HC_check;
 
