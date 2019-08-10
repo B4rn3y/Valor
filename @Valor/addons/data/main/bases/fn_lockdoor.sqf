@@ -2,10 +2,28 @@
 private ["_house","_ret","_numberOfDoors","_locked"];
 _house = param[0,objNull,[objNull]];
 _ret = false;
-
+_numberOfDoors = 0;
 if(isnull _house) exitWith {_ret};
 
-_numberOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
+
+_numberOfDoors = switch (typeof _house) do
+{
+	case "Land_Garaz_long_open":
+	{
+		6
+	};
+
+	case "Land_Gate_IndVar2_5":
+	{
+		2
+	};
+
+	default
+	{
+		getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
+	};
+};
+
 
 if(_numberOfDoors isEqualTo -1 OR _numberOfDoors isEqualTo 0) exitWith {_ret}; //MEH
 

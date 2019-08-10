@@ -18,8 +18,8 @@ showHud false;
 
 
 0 spawn {
-	waitUntil {sleep 1;!isnull (findDisplay 46)};
-	sleep 2;
+
+	waitUntil {((!isnull (findDisplay 46)) && (!isnull (findDisplay 63)))};
 
 	0 call valor_fnc_openLoadingScreen;
 

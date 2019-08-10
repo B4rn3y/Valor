@@ -108,12 +108,13 @@ _men = _men - [player];
 	_listbox_member lbSetData[_id,_pid];
 	_player = call _online;
 	if!(isnull _player) then {
-		if((side _player) in [opfor,independent,blufor]) then {
+		_var = _x getVariable ["Valor_group_id",[-1,"ERROR"]];
+		if(_var isEqualTo [-1,"ERROR"]) then {
 			_listbox_member lbSetColor[_id,[1,0.502,0,1]];
 		} else {
 			_listbox_member lbSetColor[_id,[0.004,0.875,0.004,1]];
 		};
-
+		_var = nil;
 	} else {
 		_listbox_member lbSetColor[_id,[1,0,0,1]];
 	};
@@ -121,8 +122,8 @@ _men = _men - [player];
 } foreach (valor_group select 1);
 
 {
-	_var = _x getVariable "Valor_group_id";
-	if(isnil "_var" && side _x isEqualTo civilian) then {
+	_var = _x getVariable ["Valor_group_id",[-1,"ERROR"]];
+	if(_var isEqualTo [-1,"ERROR"] && !(_x getvariable["cop",false])) then {
 		_id = _combo_players lbadd (name _x);
 		_combo_players lbSetData[_id,getplayeruid _x];
 	};

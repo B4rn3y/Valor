@@ -68,6 +68,8 @@ switch(playerside) do {
 		Valor_group = _group;
 		if!(Valor_group isEqualTo []) then {
 			player setVariable["Valor_group_id",[(Valor_group select 0),(Valor_group select 2)],true];
+		} else {
+			player setVariable["Valor_group_id",[-1,"ERROR"],true];
 		};
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
 	};
@@ -116,6 +118,8 @@ switch(playerside) do {
 
 		Valor_group = [];
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;
+
+		player setVariable["cop",true,true];
 	};
 
 
