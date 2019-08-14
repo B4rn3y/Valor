@@ -906,6 +906,110 @@ class CfgWeapons
  			mass=40;
  		};
  	};
+    class valor_blueprint1: valor_item_base
+    {
+        displayName = "Blueprint 1";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+    class valor_blueprint2: valor_item_base
+    {
+        displayName = "Blueprint 2";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
 
+    class valor_blueprint3: valor_item_base
+    {
+        displayName = "Blueprint 3";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
 
+    class valor_blueprint4: valor_item_base
+    {
+        displayName = "Blueprint 4";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+    class valor_blueprint5: valor_item_base
+    {
+        displayName = "Blueprint 5";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+        class valor_blueprint6: valor_item_base
+    {
+        displayName = "Blueprint 6";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+
+    class valor_blueprint7: valor_item_base
+    {
+        displayName = "Blueprint 7";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+
+    class valor_blueprint8: valor_item_base
+    {
+        displayName = "Blueprint 8";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+
+    class valor_blueprint9: valor_item_base
+    {
+        displayName = "Blueprint 9";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+
+    class valor_blueprint10: valor_item_base
+    {
+        displayName = "Blueprint 10";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
 };
