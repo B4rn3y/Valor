@@ -55,7 +55,10 @@ switch (_mode) do
 	{
 		_set pushback Valor_completed_quests;
 	};
-
+	case 11:
+	{
+		_set pushback [Valor_xp,Valor_level];
+	};
 	default
 	{
 		_error = true;

@@ -29,6 +29,8 @@ CREATE TABLE IF NOT EXISTS `players` (
   `coplevel`  enum('0','1','2','3','4','5','6','7','8','9','10') CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT '0' ,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '5000',
+  `xp` int(100) NOT NULL DEFAULT '0',
+  `level` int(100) NOT NULL DEFAULT '0',
   `humanity` int(100) NOT NULL DEFAULT '3500',
   `gear` text NOT NULL,
   `gear_cop` text NOT NULL,

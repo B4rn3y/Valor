@@ -1,5 +1,5 @@
 
-private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime"];
+private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime","_arrested","_application","_xp","_xp_info","_coplevel","_jailtime"];
 
 {
 	diag_log str [_foreachindex,_x];
@@ -33,8 +33,8 @@ switch(playerside) do {
 		_playtime = param[11,0,[1337,""]];
 		_arrested = param[12,0,[1337]];
 		_application = param[13,0,[0]];
-		_group = param[14,[],[[]]];
-		_quests = param[15,[],[[],""]];
+		_xp = param[14,0,[0]];
+		_group = param[15,[],[[]]];
 
 
 
@@ -54,8 +54,14 @@ switch(playerside) do {
 		Valor_position = [_position] call valor_fnc_mToArray;
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
-		Valor_completed_quests = _quests;
+		Valor_completed_quests = [];
 		Valor_arrested = _arrested;
+		Valor_XP = _xp;
+		_xp_info = [Valor_XP] call valor_fnc_init_level;
+		Valor_level = _xp_info select 0;
+		Valor_level_xp = _xp_info select 1;
+		Valor_xp_next_level = _xp_info select 2;
+		Valor_xp_needed_level = _xp_info select 3;
 
 		if!(_application isEqualTo 0) then {
 			if(_application isEqualTo 2) then {
@@ -88,7 +94,7 @@ switch(playerside) do {
 		_map_revealed = param[10,"",[[],""]];
 		_playtime = param[11,0,[1337,""]];
 		_coplevel = param[12,0,[1337,""]];
-		_quests = param[13,[],[[],""]];
+		_xp = param[13,0,[0,""]];
 
 
 		if!(_coplevel > 0) then {
@@ -113,6 +119,12 @@ switch(playerside) do {
 		if(typeName Valor_position isEqualTo "STRING") then {Valor_position = call compile format["%1", Valor_position];};
 		Valor_playtime = call compile _playtime;
 		Valor_completed_quests = [];
+		Valor_XP = _xp;
+		_xp_info = [Valor_XP] call valor_fnc_init_level;
+		Valor_level = _xp_info select 0;
+		Valor_level_xp = _xp_info select 1;
+		Valor_xp_next_level = _xp_info select 2;
+		Valor_xp_needed_level = _xp_info select 3;
 		Valor_arrested = 0;
 
 

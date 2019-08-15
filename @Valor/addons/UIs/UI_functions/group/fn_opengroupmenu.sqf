@@ -108,7 +108,7 @@ _men = _men - [player];
 	_listbox_member lbSetData[_id,_pid];
 	_player = call _online;
 	if!(isnull _player) then {
-		_var = _x getVariable ["Valor_group_id",[-1,"ERROR"]];
+		_var = _player getVariable ["Valor_group_id",[-1,"ERROR"]];
 		if(_var isEqualTo [-1,"ERROR"]) then {
 			_listbox_member lbSetColor[_id,[1,0.502,0,1]];
 		} else {

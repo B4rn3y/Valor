@@ -113,6 +113,13 @@ class CfgFunctions
 			class respawn {};
 		};
 
+		class level
+		{
+			file = "\data\main\level";
+			class addexp {};
+			class init_level {};
+		};
+
 		class init
 		{
 			file = "\data\main\Init";
