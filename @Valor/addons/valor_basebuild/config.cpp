@@ -14,6 +14,7 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class Items_base_F;
 	class House_Small_F;
 	class valor_drawBridge: House_Small_F
 	{
@@ -71,5 +72,23 @@ class CfgVehicles
 		scope=2;
 		model="\valor_basebuild\models\stronghold_base_60m.p3d";
 		displayName="Base Floor 60m";
+	};
+	class valor_piano: Items_base_F
+	{
+		scope=2;
+		model="\valor_basebuild\models\piano.p3d";
+		displayName="Piano";
+	};
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+
+	class piano
+	{
+		name = "piano";
+		sound[] = {"valor_basebuild\crash.ogg", 1, 1,180};
+		titles[] = {};
 	};
 };
