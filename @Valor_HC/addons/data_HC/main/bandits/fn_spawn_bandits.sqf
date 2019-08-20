@@ -26,6 +26,8 @@ _marker setMarkerText _markertext;
 	_soldier setdir _dir;
 	[_bandit_gear,_soldier] call valor_fnc_var_to_gear_object;
 	_soldier doWatch _watch_position;
+
+	_soldier addeventhandler["killed",valor_fnc_on_bandit_killed];
 } foreach _positions;
 
 
@@ -53,4 +55,6 @@ _marker setMarkerText _markertext;
 	_soldier setdir _dir;
 	[_bandit_gear,_soldier] call valor_fnc_var_to_gear_object;
 	_soldier doWatch _watch_position;
+
+	_soldier addeventhandler["killed",valor_fnc_on_bandit_killed];
 } foreach _positions;

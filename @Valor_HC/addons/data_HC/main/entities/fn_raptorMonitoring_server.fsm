@@ -60,8 +60,8 @@ link28[] = {23,9};
 link29[] = {24,6};
 link30[] = {25,26};
 link31[] = {26,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-438.931946,515.004700,-204.259430,-891.324463,815,587,1};
-window[] = {0,-1,-1,-1,-1,993,234,1674,234,1,833};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-263.506775,630.254333,73.902496,-885.656006,815,587,1};
+window[] = {0,-1,-1,-1,-1,889,130,1570,130,1,833};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -131,7 +131,9 @@ class FSM
                          "systemchat ""Spawning Raptor"";" \n
                          "[_zombie] spawn valor_fnc_mark_Object;" \n
                          "" \n
-                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];"/*%FSM</STATEINIT""">*/;
+                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];" \n
+                         "" \n
+                         "_zombie addeventhandler[""killed"",valor_fnc_on_raptor_killed];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -155,7 +157,7 @@ class FSM
                         name = "delete_raptor";
                         itemno = 4;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
-                         "_zombie setdamage 1;" \n
+                         "" \n
                          "deletevehicle _zombie;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -181,7 +183,7 @@ class FSM
                         name = "set_waittime";
                         itemno = 5;
                         init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -205,7 +207,7 @@ class FSM
                         name = "set_waittime_1";
                         itemno = 6;
                         init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -229,7 +231,7 @@ class FSM
                         name = "target_";
                         itemno = 9;
                         init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_raptor_checkforTarget;" \n
-                         " "/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Checking for Targets""; "/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -275,7 +277,7 @@ class FSM
                         name = "Move_to_Him";
                         itemno = 12;
                         init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_zombie_moveToTarget;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Move to Target"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -320,7 +322,7 @@ class FSM
                 {
                         name = "_";
                         itemno = 15;
-                        init = /*%FSM<STATEINIT""">*/"" \n
+                        init = /*%FSM<STATEINIT""">*/"systemchat ""Can not Attack Target - Check Visibility"";" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[2,2.5,3];" \n
                          "_last_pos_seen = getposatl (_zombie getvariable[""VALOR_Target"",Objnull]);"/*%FSM</STATEINIT""">*/;
@@ -358,7 +360,7 @@ class FSM
                         name = "Attack";
                         itemno = 18;
                         init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] spawn valor_fnc_raptor_attack;" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "systemchat ""Attacking"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -385,7 +387,7 @@ class FSM
                          "" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[20,25,30];" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "systemchat ""No Target - Roamaing"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -409,7 +411,7 @@ class FSM
                         name = "__1";
                         itemno = 22;
                         init = /*%FSM<STATEINIT""">*/"_zombie setvariable[""VALOR_Target"",Objnull];" \n
-                         "" \n
+                         "systemchat ""Resetting target"";" \n
                          "" \n
                          "_zombie setDestination [getposATL _zombie, ""LEADER Direct"", true];" \n
                          "_zombie setDestination [_last_pos_seen, ""LEADER PLANNED"", true];" \n

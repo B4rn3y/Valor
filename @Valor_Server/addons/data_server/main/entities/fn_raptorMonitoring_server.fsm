@@ -3,9 +3,9 @@
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
 item1[] = {"w8",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"w8"};
-item2[] = {"spawning_Raptor",2,4346,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
+item2[] = {"spawning_Raptor",2,250,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "Raptor"};
 item3[] = {"Zombie_Tod",4,218,35.523804,-491.069733,125.523804,-441.069794,2.000000,"Zombie Tod"};
-item4[] = {"delete_raptor",2,250,304.272095,-825.775085,394.272095,-775.775085,0.000000,"delete raptor"};
+item4[] = {"delete_raptor",2,4346,304.272095,-825.775085,394.272095,-775.775085,0.000000,"delete raptor"};
 item5[] = {"set_waittime",2,250,161.336792,-477.810760,251.336792,-427.810760,0.000000,"set waittime"};
 item6[] = {"set_waittime_1",2,250,-398.211243,-690.971985,-308.211243,-640.971985,0.000000,"set waittime"};
 item7[] = {"warten_f_r_despa",4,218,294.867249,-476.845581,384.867249,-426.845612,0.000000,"warten für" \n "despawn"};
@@ -60,8 +60,8 @@ link28[] = {23,9};
 link29[] = {24,6};
 link30[] = {25,26};
 link31[] = {26,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-770.157227,123.603668,-7.249512,-966.806641,815,587,1};
-window[] = {0,-1,-1,-1,-1,941,182,1622,182,1,833};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-263.506775,630.254333,73.902496,-885.656006,815,587,1};
+window[] = {0,-1,-1,-1,-1,889,130,1570,130,1,833};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -131,7 +131,9 @@ class FSM
                          "systemchat ""Spawning Raptor"";" \n
                          "[_zombie] spawn valor_fnc_mark_Object;" \n
                          "" \n
-                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];"/*%FSM</STATEINIT""">*/;
+                         "_zombie addeventhandler[""HandleDamage"",{_this call valor_fnc_zombie_damage_EVH}];" \n
+                         "" \n
+                         "_zombie addeventhandler[""killed"",valor_fnc_on_raptor_killed];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -155,7 +157,7 @@ class FSM
                         name = "delete_raptor";
                         itemno = 4;
                         init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
-                         "_zombie setdamage 1;" \n
+                         "" \n
                          "deletevehicle _zombie;" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

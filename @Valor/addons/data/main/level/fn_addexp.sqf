@@ -9,7 +9,7 @@ if!(isnil "Valor_multiplier") then {
 };
 
 _XP = round _XP;
-if(_description isEqualTo "" OR _XP isEqualTo 0) exitWith {};
+if(_description isEqualTo "" || _XP isEqualTo 0) exitWith {};
 
 
 if(_XP >= Valor_xp_next_level) then {

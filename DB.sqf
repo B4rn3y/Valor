@@ -1281,7 +1281,7 @@ INSERT INTO `loottable_classnames` (`uid`,`classname`,`table_type`,`min_prob`,`m
 
 /*
 -- Query: SELECT * FROM valor.loottable_houses
--- Date: 2019-07-16 18:37
+-- Date: 2019-08-20 22:30
 */
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (100,'Land_Misc_deerstand','farming','2019-07-16 14:35:53');
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (101,'Land_Hlidac_budka','l_military','2019-07-16 14:37:03');
@@ -1459,3 +1459,27 @@ INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VA
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (273,'Land_Cargo_Patrol_V2_F','l_military','2019-07-16 15:13:34');
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (274,'Land_Cargo_House_V2_F','l_military','2019-07-16 15:13:41');
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (275,'Land_Cargo_HQ_V2_F','m_military','2019-07-16 15:13:48');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (276,'Land_FireEscape_01_tall_F','industrial','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (277,'Land_bouda_plech_open','industrial','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (278,'Land_chr_tent_01','m_military','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (279,'Land_chr_tent_east','m_military','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (280,'Land_Posed','l_military','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (281,'Land_chr_tent_03','m_military','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (282,'Land_chr_tent_med','medical','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (283,'Land_chr_tent_01_white','medical','2019-08-20 22:30:21');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (284,'Land_chr_tent_03_white','medical','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (285,'Land_Barracks_01_dilapidated_F','h_military','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (286,'Land_chr_tent_02_white','medical','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (287,'Land_chr_tent_01_bio','m_military','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (288,'Land_chr_tent_02_bio','m_military','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (289,'Land_chr_tent_bio','m_military','2019-08-20 22:30:22');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (290,'Land_chr_tent_02_cross','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (291,'Land_chr_tent_01_cross','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (292,'Land_Budova4_in','h_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (293,'Land_ReservoirTank_Rust_F','industrial','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (294,'Land_chr_tent_03_bio','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (295,'Land_chr_tent_field_hospital_bio','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (296,'Land_chr_tent_02','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (297,'Land_chr_tent_03_cross','m_military','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (298,'Land_Mil_Repair_center_EP1','industrial','2019-08-20 22:30:23');
+INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (299,'Land_chr_garage','industrial','2019-08-20 22:30:24');

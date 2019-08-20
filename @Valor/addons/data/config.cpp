@@ -250,6 +250,8 @@ class CfgFunctions
 			class zombieMainMonitoring {ext = ".fsm";};
 			class zombieMonitoring {ext = ".fsm";};
 			class can_SPAWN_ZED {};
+			class on_zombie_killed {};
+			class on_bandit_killed {};
 			//Raptors
 			class raptor_attack {};
 			class raptor_canattack {};
@@ -258,6 +260,7 @@ class CfgFunctions
 			class raptor_roam {};
 			class jumpattack {};
 			class raptor_checkforTarget_group {};
+			class on_raptor_killed {};
 		};
 	};
 };
