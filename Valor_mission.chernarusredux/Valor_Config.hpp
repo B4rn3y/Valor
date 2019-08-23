@@ -108,6 +108,62 @@ class Valor_settings {
 		};
 	};
 
+
+	class classes {
+		classes_available[] =
+		{
+			{
+				0,        // unique ID of this class
+				"Hunter", // Name of the class
+				0,        // needed level to unlock
+				"Here goes a descritption of this class in html text format", // short descritption of the class
+				"Here goes a descritption of this class in html text format", // long descritption of the class
+				{
+					{0,"Hunter Level 1","You can blah blah blah"},
+					{1,"Hunter Level 2","You can blah blah blah"},
+					{2,"Hunter Level 3","You can blah blah blah"}
+				}
+			},
+			{
+				1,        // unique ID of this class
+				"Mechanic", // Name of the class
+				0,        // needed level to unlock
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				{
+					{3,"Mechanic Level 1","You can blah blah blah"},
+					{4,"Mechanic Level 2","You can blah blah blah"},
+					{5,"Mechanic Level 3","You can blah blah blah"}
+				}
+			},
+			{
+				2,        // unique ID of this class
+				"Medic", // Name of the class
+				0,        // needed level to unlock
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				{
+					{6,"Medic Level 1","You can blah blah blah"},
+					{7,"Medic Level 2","You can blah blah blah"},
+					{8,"Medic Level 3","You can blah blah blah"}
+				}
+			},
+			{
+				3,        // unique ID of this class
+				"Looter", // Name of the class
+				30,        // needed level to unlock
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				"Here goes a descritption of this class in html text format", // descritption of the class
+				{
+					{9,"Looter Level 1","You can blah blah blah"},
+					{10,"Looter Level 2","You can blah blah blah"},
+					{11,"Looter Level 3","You can blah blah blah"}
+				}
+			}
+		};
+	};
+
+
 	class settings {
 		Spawn_with_map = 1; // 1 = with map  0 = without Map
 		Hunger_multiplier = 1; // Description: Do i need one?

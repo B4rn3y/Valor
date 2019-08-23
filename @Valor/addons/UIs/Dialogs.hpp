@@ -7,7 +7,7 @@
 #include "Dialogs\Item_Shop\Item_Shop.hpp"  		// ID 3007
 #include "Dialogs\info\info.hpp"  		            // ID 3008
 #include "Dialogs\applications\applications.hpp"  	// ID 3009
-
+#include "Dialogs\class\class.hpp"  	            // ID 3010
 
 
 

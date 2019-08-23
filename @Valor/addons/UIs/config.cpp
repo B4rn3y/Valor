@@ -103,6 +103,12 @@ class CfgFunctions
 			class info_onLBChanged {};
 		};
 
+		class classes
+		{
+			file = "\UIs\UI_functions\class";
+			class openclassmenu {};
+		};
+
 		class applications
 		{
 			file = "\UIs\UI_functions\applications";
