@@ -1,5 +1,5 @@
 
-private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime","_arrested","_application","_xp","_xp_info","_coplevel","_jailtime"];
+private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime","_arrested","_application","_xp","_classes","_xp_info","_coplevel","_jailtime"];
 
 {
 	diag_log str [_foreachindex,_x];
@@ -34,7 +34,8 @@ switch(playerside) do {
 		_arrested = param[12,0,[1337]];
 		_application = param[13,0,[0]];
 		_xp = param[14,0,[0]];
-		_group = param[15,[],[[]]];
+		_classes = param[15,"",["",[]]];
+		_group = param[16,[],[[]]];
 
 
 
@@ -62,6 +63,8 @@ switch(playerside) do {
 		Valor_level_xp = _xp_info select 1;
 		Valor_xp_next_level = _xp_info select 2;
 		Valor_xp_needed_level = _xp_info select 3;
+
+		Valor_classes_unlock = call compile _classes;
 
 		if!(_application isEqualTo 0) then {
 			if(_application isEqualTo 2) then {
@@ -95,7 +98,7 @@ switch(playerside) do {
 		_playtime = param[11,0,[1337,""]];
 		_coplevel = param[12,0,[1337,""]];
 		_xp = param[13,0,[0,""]];
-
+		_classes = param[14,"",["",[]]];
 
 		if!(_coplevel > 0) then {
 			NOT_WHITELISTED = true;
@@ -126,6 +129,8 @@ switch(playerside) do {
 		Valor_xp_next_level = _xp_info select 2;
 		Valor_xp_needed_level = _xp_info select 3;
 		Valor_arrested = 0;
+
+		Valor_classes_unlock = call compile _classes;
 
 
 		Valor_group = [];

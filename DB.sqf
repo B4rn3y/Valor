@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `xp` int(100) NOT NULL DEFAULT '0',
   `level` int(100) NOT NULL DEFAULT '0',
   `humanity` int(100) NOT NULL DEFAULT '3500',
+  `classes` varchar(100) NOT NULL DEFAULT '[[false,-1],[false,-1],[false,-1]]',
   `gear` text NOT NULL,
   `gear_cop` text NOT NULL,
   `quests` text,
@@ -1483,3 +1484,42 @@ INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VA
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (297,'Land_chr_tent_03_cross','m_military','2019-08-20 22:30:23');
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (298,'Land_Mil_Repair_center_EP1','industrial','2019-08-20 22:30:23');
 INSERT INTO `loottable_houses` (`uid`,`classname`,`table_type`,`insert_time`) VALUES (299,'Land_chr_garage','industrial','2019-08-20 22:30:24');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+-- Query: SELECT * FROM valor.players
+-- Date: 2019-08-24 20:42
+*/
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (13,'Nico','76561198252584662','5',0,5000,0,0,3500,'\"[`CUP_U_O_RUS_EMR_1`,``,`CUP_hgun_BallisticShield_Armed`,[``,``,``,``],[`CUP_15Rnd_9x19_M9`],``,[``,``,``,``],[],``,[``,``,``,``],[],[`CUP_15Rnd_9x19_M9`,`CUP_15Rnd_9x19_M9`,`CUP_15Rnd_9x19_M9`,`CUP_15Rnd_9x19_M9`,`CUP_15Rnd_9x19_M9`,`CUP_15Rnd_9x19_M9`],`CUP_V_CZ_vest07`,[],`rhs_altyn_bala`,``,[`ItemMap`,`ItemCompass`,`ItemWatch`,`ItemRadio`,`ItemGPS`,`Laserdesignator_01_khk_F`],[]]\"','\"[`rhs_uniform_emr_patchless`,`CUP_B_HikingPack_Civ`,``,[``,``,``,``],[],``,[``,``,``,``],[],``,[``,``,``,``],[],[`valor_tankboresighter_01`],`CUP_V_RUS_6B45_2`,[],`CUP_H_SLA_SLCap`,`G_Bandanna_khk`,[`ItemMap`],[]]\"',NULL,'\"[10,100,0,12000]\"','\"[44,100,0,12000]\"','5','0',1,0,1,'\"[[3848.33,8878.18,0.00143433],167.892]\"','\"[[3843.62,8872.42,0.903809],216.405]\"','','144',0,0,'2019-07-13 15:01:30','2019-07-21 17:53:27');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (14,'Armin Papperger','76561198000771544','5',0,489000,0,0,3500,'\"[`CUP_U_O_Partisan_TTsKO`,``,``,[``,``,``,``],[],``,[``,``,``,``],[],``,[``,``,``,``],[],[],``,[],``,``,[`ItemMap`],[]]\"','\"[`rhs_uniform_emr_patchless`,``,``,[``,``,``,``],[],``,[``,``,``,``],[],``,[``,``,``,``],[],[],`CUP_V_C_Police_Holster`,[`MadArmA_Revolver_01`],`CUP_H_SLA_OfficerCap`,`G_Aviator`,[`ItemGPS`],[]]\"',NULL,'\"[-50,100,0,12000]\"','\"[88,100,0,12000]\"','5','0',1,0,1,'\"[[4659.76,10051.9,0.00143433],294.978]\"','\"[[11370.1,4720.26,0.00190735],9.14634]\"','\"1111111111111111111011111111111111111111111111111111111111101111111111111110110111111110111101111111111001111111111111111111111111111111111111111111111111111111111111111111011111111111111110101111111111111111111111111111111101111111111111111111111111111111111111111111111111111111111111111\"','459',0,0,'2019-07-14 15:25:12','2019-08-19 20:45:56');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (15,'Seth Davenport','76561198030438715','5',0,0,0,0,3500,'\"[`CUP_U_B_US_BDU_roll2_glove`,`CUP_B_HikingPack_Civ`,`CUP_glaunch_6G30`,[``,``,``,``],[`CUP_6Rnd_HE_GP25_M`],``,[``,``,``,``],[],`MadArmA_Execution`,[``,``,``,``],[`2Rnd_127x108_Mag`],[`10Rnd_127x54_Mag`,`10Rnd_127x54_Mag`,`10Rnd_127x54_Mag`],`V_PlateCarrier1_rgr`,[`Binocular`],``,``,[`ItemMap`,`ItemCompass`,`ItemWatch`,`ItemGPS`],[]]\"','\"[``,``,``,[``,``,``,``],[],``,[``,``,``,``],[],``,[``,``,``,``],[],[],``,[],``,`CUP_PMC_G_thug`,[`ItemMap`,`ItemCompass`,`ItemWatch`,`ItemGPS`,`Rangefinder`],[]]\"',NULL,'\"[-663,100,0,12000]\"','\"[-32,100,0,12000]\"','5','0',1,0,1,'\"[[3844.34,8876.52,0.903809],213.551]\"','\"[[4648.1,10091.6,0.00143433],170.79]\"','','846',0,0,'2019-07-14 17:52:36','2019-07-21 17:51:59');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (18,'Barney','76561198018512569','5',0,419000,7160,15,3500,'\"[`CUP_U_O_TK_Green`,`B_AssaultPack_rgr`,`CUP_lmg_minimi`,[``,``,``,``],[`CUP_200Rnd_TE4_Red_Tracer_556x45_M249`],``,[``,``,``,``],[],``,[``,``,``,``],[],[`valor_Raptor_Egg`,`valor_tankboresighter_01`],`V_PlateCarrier1_wdl`,[`CUP_200Rnd_TE4_Red_Tracer_556x45_M249`],`H_Booniehat_khk_hs`,``,[`ItemMap`,`ItemCompass`],[`CUP_200Rnd_TE4_Red_Tracer_556x45_M249`]]\"','\"[`rhs_uniform_emr_patchless`,`CUP_B_HikingPack_Civ`,`CUP_srifle_M14_DMR`,[``,``,`optic_SOS`,``],[`CUP_20Rnd_762x51_DMR`],``,[``,``,``,``],[],``,[``,``,``,``],[],[],`CUP_V_RUS_6B45_2`,[],`BL_eimer_Hat`,`G_Bandanna_khk`,[`ItemMap`],[]]\"',NULL,'\"[-2302,100,0,12000]\"','\"[-219,100,0,12000]\"','5','0',1,0,1,'\"[[3792.05,8839.25,0.00143433],180.196]\"','\"[[7894.26,8389.34,0.00164795],132.636]\"','','2409',0,0,'2019-07-17 00:52:01','2019-08-24 15:50:18');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (19,'Inch','76561198158204122','5',0,0,0,0,3500,'\"[]\"','\"[]\"',NULL,'\"[74,100,0,12000]\"','[100,100,0,12000]','5','0',1,0,1,'\"[[5154.07,7563.07,0.00128174],305.995]\"','[]','\"1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111011111111111011111111111111101111111111111111111111111111111111111111111111111111111111111\"','15',0,0,'2019-07-20 16:41:38','2019-08-10 16:12:19');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (20,'Bloodwyn','76561198055205907','5',0,0,0,0,3500,'\"[`CUP_U_C_Mechanic_03`,`B_Carryall_khk`,`CUP_arifle_AK47_Early`,[``,``,``,``],[`CUP_30Rnd_762x39_AK47_M`],``,[``,``,``,``],[],``,[``,``,``,``],[],[`CUP_30Rnd_762x39_AK47_M`],`V_PlateCarrier1_wdl`,[`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`],`H_Bandanna_gry`,`G_Bandanna_blk`,[`ItemMap`],[`valor_woodenlog`,`valor_van_02_rimless_tire`,`valor_ducttape`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`]]\"','\"[`rhs_uniform_emr_patchless`,`CUP_B_HikingPack_Civ`,`CUP_arifle_HK416_CQB_Black`,[``,``,``,``],[`CUP_30Rnd_556x45_PMAG_QP`],``,[``,``,``,``],[],``,[``,``,``,``],[],[],`CUP_V_CZ_vest13`,[],`CUP_H_SLA_SLCap`,`G_Bandanna_khk`,[`ItemMap`],[`CUP_smg_MP5A5`]]\"',NULL,'\"[-27,100,0.35,12000]\"','\"[61,100,0.0360616,12000]\"','5','0',1,0,1,'\"[[8656.09,13248.6,0.00144196],298.205]\"','\"[[12010.4,9099.58,14.0324],44.9263]\"','','141',0,0,'2019-07-20 16:41:38','2019-08-09 23:58:27');
+INSERT INTO `players` (`uid`,`name`,`pid`,`coplevel`,`cash`,`bankacc`,`xp`,`level`,`humanity`,`gear`,`gear_cop`,`quests`,`stats`,`stats_cop`,`adminlevel`,`donatorlevel`,`alive`,`arrested`,`alive_cop`,`position`,`position_cop`,`Map`,`playtime`,`online`,`application`,`insert_time`,`last_seen`) VALUES (21,'Blackdog','76561198027669628','5',0,0,0,0,3500,'\"[`CUP_U_O_TK_Green`,`B_Carryall_khk`,`CUP_arifle_AK47_Early`,[``,``,``,``],[`CUP_30Rnd_762x39_AK47_M`],``,[``,``,``,``],[],``,[``,``,``,``],[],[],`V_PlateCarrier1_wdl`,[`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`,`CUP_30Rnd_762x39_AK47_M`],`H_Bandanna_gry`,`G_Bandanna_blk`,[`ItemMap`,`ItemCompass`],[`valor_portable_generator`,`valor_woodenlog`]]\"','\"[`rhs_uniform_emr_patchless`,`CUP_B_HikingPack_Civ`,`CUP_arifle_HK416_CQB_Black`,[``,``,``,``],[`CUP_30Rnd_556x45_PMAG_QP`],``,[``,``,``,``],[],``,[``,``,``,``],[],[],`CUP_V_CZ_vest13`,[],`CUP_H_SLA_SLCap`,`G_Bandanna_khk`,[`ItemMap`],[`CUP_smg_MP5A5`]]\"',NULL,'\"[-23,100,0.25,12000]\"','\"[61,100,0.0360616,12000]\"','5','0',1,0,1,'\"[[8661.42,13277.8,0.00144196],352.3]\"','\"[[12010.4,9099.58,14.0324],44.9263]\"','','141',0,0,'2019-07-20 16:41:38','2019-08-09 23:58:27');

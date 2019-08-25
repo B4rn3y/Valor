@@ -8,6 +8,7 @@
 #include "Dialogs\info\info.hpp"  		            // ID 3008
 #include "Dialogs\applications\applications.hpp"  	// ID 3009
 #include "Dialogs\class\class.hpp"  	            // ID 3010
+#include "Dialogs\skills\skills.hpp"  	            // ID 3011
 
 
 

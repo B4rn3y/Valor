@@ -107,6 +107,16 @@ class CfgFunctions
 		{
 			file = "\UIs\UI_functions\class";
 			class openclassmenu {};
+			class selectClass {};
+			class unlockClassSlot {};
+			class updateclassmenu {};
+		};
+
+		class skills
+		{
+			file = "\UIs\UI_functions\skills";
+			class openskillmenu {};
+			class skill_menu_TreeSelChanged {};
 		};
 
 		class applications

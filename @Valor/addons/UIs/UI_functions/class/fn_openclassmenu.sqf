@@ -1,8 +1,9 @@
+private ["_display","_BTN_Unlock_class_1","_BTN_Unlock_class_2","_BTN_Unlock_class_3","_header_main_slots_class","_header_class_1","_header_class_2","_header_class_3","_current_classes_active_str_text","_container_main","_counter_controls","_classes","_find_class","_id_class","_ret","_btns_unlock_classes","_active_classes","_active","_foreachindex","_class_id","_class_name","_needed_level","_description_short","_description_long","_background","_container","_text_name_of_class","_text_class_short","_text_class_long","_btn","_text_level_needed","_class_1","_class_2","_class_3"];
 
-private ["_display","_BTN_Unlock_class_1","_BTN_Unlock_class_2","_BTN_Unlock_class_3","_header_main_slots_class","_header_class_1","_disply","_header_class_2","_header_class_3","_current_classes_active_str_text","_container_main","_classes","_find_class","_id_class","_ret","_btns_unlock_classes","_active_classes","_active","_foreachindex","_class_id","_class_name","_needed_level","_description_short","_description_long","_container","_text_name_of_class","_text_class_short","_text_class_long","_btn","_text_level_needed"];
 
 
 createDialog "class_dialog";
+disableSerialization;
 _display = findDisplay 3010;
 _BTN_Unlock_class_1 = _display displayCtrl 2400;
 _BTN_Unlock_class_2 = _display displayCtrl 2401;
@@ -17,7 +18,7 @@ _current_classes_active_str_text = _display displayCtrl 1104;
 
 _container_main = _display displayCtrl 1499;
 
-
+_counter_controls = 0;
 
 _classes = getArray(missionConfigFile >> "Valor_settings" >> "classes" >> "classes_available");
 if(_classes isEqualTo []) exitWith {closeDialog 0;};
@@ -49,7 +50,7 @@ _active_classes = [];
 		};
 	} else {
 		(_btns_unlock_classes select _foreachindex) ctrlSetText "UNLOCK";
-			(_btns_unlock_classes select _foreachindex) buttonSetAction "";
+		(_btns_unlock_classes select _foreachindex) buttonSetAction format["[%1] call valor_fnc_unlockClassSlot;",_foreachindex];
 	};
 } foreach Valor_classes_unlock;
 
@@ -61,39 +62,45 @@ _active_classes = [];
 	_description_short = _x select 3;
 	_description_long = _x select 4;
 
-	_background = _display ctrlCreate ["valor_rsctext", -1, _container_main];
+	_background = _display ctrlCreate ["valor_rsctext", _counter_controls, _container_main];
 	_background ctrlSetPosition[0,((0.26835 * _foreachindex) + (0.0025 * _foreachindex)),0.785606,0.26835];
 	_background ctrlSetBackgroundColor [0,0,0,0.7];
 	_background ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
-	_container = _display ctrlCreate ["valor_RscControlsGroup", -1, _container_main];
+	_container = _display ctrlCreate ["valor_RscControlsGroup", _counter_controls, _container_main];
 	_container ctrlSetPosition[0,((0.26835 * _foreachindex) + (0.0025 * _foreachindex)),0.785606,0.26835];
 	//_container ctrlSetBackgroundColor [0,0,0,0.7];
 	//_container ctrlSetBackgroundColor [1,0,1,1];
 	_container ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
-	_text_name_of_class = _display ctrlCreate["valor_RscStructuredText",-1,_container];
+	_text_name_of_class = _display ctrlCreate["valor_RscStructuredText",_counter_controls,_container];
 	_text_name_of_class ctrlSetStructuredText parsetext _class_name;
 	_text_name_of_class ctrlSetPosition[0,0,0.165657,0.0646464];
 	//_text_name_of_class ctrlSetBackgroundColor [1,0,1,1];
 	_text_name_of_class ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
-	_text_class_short = _display ctrlCreate["valor_RscStructuredText",-1,_container];
+	_text_class_short = _display ctrlCreate["valor_RscStructuredText",_counter_controls,_container];
 	_text_class_short ctrlSetStructuredText parsetext _description_short;
 	_text_class_short ctrlSetPosition[0.284808,0,0.490151,0.0646464];
 	//_text_class_short ctrlSetBackgroundColor [1,0,1,1];
 	_text_class_short ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
-	_text_class_long = _display ctrlCreate["valor_RscStructuredText",-1,_container];
+	_text_class_long = _display ctrlCreate["valor_RscStructuredText",_counter_controls,_container];
 	_text_class_long ctrlSetStructuredText parsetext _description_long;
 	_text_class_long ctrlSetPosition[0,0.0686464,0.774242,0.190909];
 	//_text_class_long ctrlSetBackgroundColor [1,0,1,1];
 	_text_class_long ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
-	_btn = _display ctrlCreate["valor_RscButtonMenu",-1,_container];
+	_btn = _display ctrlCreate["valor_RscButtonMenu",_counter_controls,_container];
 	_btn ctrlSetPosition[0.167657,0,0.115151,0.0646464];
 	//_btn ctrlSetBackgroundColor [1,0,1,1];
 	_btn ctrlCommit 0;
+	_counter_controls = _counter_controls + 1;
 
 
 	switch (true) do
@@ -101,6 +108,7 @@ _active_classes = [];
 		case (_class_id in _active_classes):
 		{
 			_btn ctrlSetText "Remove";
+			_btn buttonSetAction format["[%1,true] call valor_fnc_selectClass;",_class_id];
 		};
 
 		case (_needed_level > Valor_level):
@@ -108,16 +116,18 @@ _active_classes = [];
 			_btn ctrlSetText "LEARN";
 			_btn ctrlEnable false;
 
-			_text_level_needed = _display ctrlCreate["valor_RscStructuredText",-1,_container_main];
+			_text_level_needed = _display ctrlCreate["valor_RscStructuredText",_counter_controls,_container_main];
 			_text_level_needed ctrlSetStructuredText parsetext format["<br/><br/><t font='PuristaMedium' align='center'>LEVEL %1 REQUIRED!</t>",_needed_level];
 			_text_level_needed ctrlSetBackgroundColor[0,0,0,0.7];
 			_text_level_needed ctrlSetPosition[0,((0.26835 * _foreachindex) + (0.0025 * _foreachindex)),0.785606,0.26835];
 			_text_level_needed ctrlCommit 0;
+			_counter_controls = _counter_controls + 1;
 		};
 
 		default
 		{
 			_btn ctrlSetText "LEARN";
+			_btn buttonSetAction format["[%1,false] call valor_fnc_selectClass;",_class_id];
 		};
 	};
 

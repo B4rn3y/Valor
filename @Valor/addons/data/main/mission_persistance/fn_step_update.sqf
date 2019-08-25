@@ -59,6 +59,10 @@ switch (_mode) do
 	{
 		_set pushback [Valor_xp,Valor_level];
 	};
+	case 12:
+	{
+		_set pushback Valor_classes_unlock;
+	};
 	default
 	{
 		_error = true;

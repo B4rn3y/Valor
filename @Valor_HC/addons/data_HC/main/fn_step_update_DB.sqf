@@ -1,6 +1,5 @@
 
-
-private ["_mode","_side","_query","_gear","_cash","_bankacc","_money","_stats","_alive","_pos","_arrested","_playtime","_xp_info"];
+private ["_mode","_side","_query","_gear","_cash","_bankacc","_money","_stats","_alive","_pos","_arrested","_playtime","_xp_info","_class_info"];
 _mode = param[0,-1,[1]];
 _uid = param[1,"",[""]];
 _side = param[2,sideUnknown,[west]];
@@ -135,6 +134,14 @@ switch (_mode) do
 		_xp_info = param[3,[],["",[]]];
 		if(_xp_info isEqualTo []) exitWith {};
 		_query = format["Update players set xp = '%1', level = '%3' where pid = '%2'",(_xp_info select 0),_uid,(_xp_info select 1)];
+
+	};
+
+	case 12:
+	{
+		_class_info = param[3,[],["",[]]];
+		if(_class_info isEqualTo []) exitWith {};
+		_query = format["Update players set classes = '%1' where pid = '%2'",_class_info,_uid];
 
 	};
 };
