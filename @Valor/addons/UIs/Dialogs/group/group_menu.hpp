@@ -113,6 +113,28 @@ class group_menu {
 			w = 0.171969;
 			h = 0.0444445;
 		};
+
+		class btn_close: valor_RscButtonMenu
+		{
+			idc = 2407;
+			text = "Close"; //--- ToDo: Localize;
+			onbuttonClick = "closedialog 0;";
+			x = -0.00126261;
+			y = 0.838384;
+			w = 0.102525;
+			h = 0.0444445;
+		};
+
+		class btn_skills: valor_RscButtonMenu
+		{
+			idc = 2412;
+			text = "Skills"; //--- ToDo: Localize;
+			onbuttonClick = " 0 spawn valor_fnc_openskillmenu;";
+			x = 0.275253;
+			y = 0.838384;
+			w = 0.102525;
+			h = 0.0444445;
+		};
 		class btn_delete_gang: valor_RscButtonMenu
 		{
 			idc = 2408;
@@ -209,16 +231,6 @@ class group_menu {
 			y = 0.094276;
 			w = 0.281818;
 			h = 0.0579124;
-		};
-		class btn_close: valor_RscButtonMenu
-		{
-			idc = 2407;
-			text = "Close"; //--- ToDo: Localize;
-			onbuttonClick = "closedialog 0;";
-			x = -0.00126261;
-			y = 0.838384;
-			w = 0.102525;
-			h = 0.0444445;
 		};
 		class combo_groups: valor_RscCombo
 		{

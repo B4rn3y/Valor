@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `bankacc` int(100) NOT NULL DEFAULT '5000',
   `xp` int(100) NOT NULL DEFAULT '0',
   `level` int(100) NOT NULL DEFAULT '0',
-  `humanity` int(100) NOT NULL DEFAULT '3500',
+  `humanity` int(100) NOT NULL DEFAULT '2500',
   `classes` varchar(100) NOT NULL DEFAULT '[[false,-1],[false,-1],[false,-1]]',
   `gear` text NOT NULL,
   `gear_cop` text NOT NULL,

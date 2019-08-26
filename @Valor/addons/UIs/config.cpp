@@ -103,6 +103,12 @@ class CfgFunctions
 			class info_onLBChanged {};
 		};
 
+		class humanity
+		{
+			file = "\UIs\UI_functions\humanity";
+			class openHumanityMenu {};
+		};
+
 		class classes
 		{
 			file = "\UIs\UI_functions\class";

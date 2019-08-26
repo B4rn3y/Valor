@@ -14,6 +14,13 @@ if  !((vehicle _unit) isEqualTo _unit) then {
     _unit setPosATL [(getPosATL _unit select 0) + 3, (getPosATL _unit select 1) + 1, (getPosATL _unit select 2)];
 };
 
+
+if!(Valor_group isEqualTo []) then {
+	player setVariable["Valor_group_id",[(Valor_group select 0),(Valor_group select 2)],true];
+} else {
+	player setVariable["Valor_group_id",[-1,"ERROR"],true];
+};
+
 _evh_id = (findDisplay 46) displayAddEventHandler  ["KeyDown","if((_this select 1) == 1) then {true}"];
 
 

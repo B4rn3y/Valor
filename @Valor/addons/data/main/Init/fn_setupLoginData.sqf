@@ -66,6 +66,8 @@ switch(playerside) do {
 
 		Valor_classes_unlock = call compile _classes;
 
+		Valor_humanity = _humanity;
+
 		if!(_application isEqualTo 0) then {
 			if(_application isEqualTo 2) then {
 				Valor_application = true;
@@ -132,6 +134,7 @@ switch(playerside) do {
 
 		Valor_classes_unlock = call compile _classes;
 
+		Valor_humanity = _humanity;
 
 		Valor_group = [];
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;

@@ -87,6 +87,10 @@ class Valor_settings {
 		HRotor_remove = "valor_rotor";
 	};
 
+	class humanity {		// b3    b2  b1 s    h1   h2    h3
+		humanity_config[] = {-5000,-2500,0,2500,5000,7500,10000};  // dont change the amount of entries in this array
+	};
+
 
 	class level_system {
 		playtime = 250; // the amount of XP the player gets every 15 minutes
@@ -206,8 +210,8 @@ class Valor_settings {
 						{28,15,"Imposing intellect Level 1","You get 3% more XP.",1.03},
 						{29,18,"Imposing intellect Level 2","You get 6% more XP.",1.06},
 						{30,24,"Imposing intellect Level 3","You get 9% more XP.",1.09},
-						{31,28,"Imposing intellect Level 2","You get 12% more XP.",1.12},
-						{32,32,"Imposing intellect Level 3","You get 15% more XP.",1.15}
+						{31,28,"Imposing intellect Level 4","You get 12% more XP.",1.12},
+						{32,32,"Imposing intellect Level 5","You get 15% more XP.",1.15}
 					}
 				}
 			},

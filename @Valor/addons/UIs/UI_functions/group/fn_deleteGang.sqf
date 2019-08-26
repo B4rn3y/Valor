@@ -7,7 +7,7 @@ if!(_rank isEqualTo 3) exitWith {systemchat "Valor :: Only the leader can do tha
 
 
 _action = [
-	format["Do you really want to delte this group?"],
+	format["Do you really want to delete this group?"],
 	"Valor Group Sytem",
 	"YES",
 	"NO"
