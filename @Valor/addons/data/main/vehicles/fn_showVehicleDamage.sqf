@@ -1,7 +1,6 @@
+private ["_vehicle","_ADD_ID","_classname","_hitpoints","_names","_damage","_arr_with_names_and_damage","_foreachindex","_arr_for_IDS","_ID","_damage_perc"];
 
 
-
-private ["_vehicle","_ADD_ID","_classname","_hitpoints","_names","_damage","_arr_with_names_and_damage","_foreachindex","_arr_for_IDS","_ID"];
 _vehicle = param[0,objNull,[objNull]];
 _ADD_ID = param[2,-1,[-1]];
 if(isnull _vehicle) exitWith {};
@@ -22,6 +21,8 @@ _arr_with_names_and_damage = [];
 } foreach _names;
 
 _arr_for_IDS = [];
+
+_damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 
 {
 	switch (true) do
@@ -45,10 +46,10 @@ _arr_for_IDS = [];
 		case ((_x select 0)isEqualTo "hitlfwheel"):
 		{
 
-			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitlmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitlmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitlmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitlmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -57,10 +58,10 @@ _arr_for_IDS = [];
 		case ((_x select 0)isEqualTo "hitrfwheel"):
 		{
 
-			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitrmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitrmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitrmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitrmwheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -69,10 +70,10 @@ _arr_for_IDS = [];
 		case ((_x select 0)isEqualTo "hitrbwheel"):
 		{
 
-			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitrf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > 0.15",str("hitrf2wheel")],20];
+			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitrf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > %2",str("hitrf2wheel"),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitrf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= 0.15",str("hitrf2wheel")],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitrf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= %2",str("hitrf2wheel"),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -81,10 +82,10 @@ _arr_for_IDS = [];
 		case ((_x select 0)isEqualTo "hitlbwheel"):
 		{
 
-			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitlf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > 0.15",str("hitlf2wheel")],20];
+			_ID = _vehicle addaction[format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}],valor_fnc_repairVehicle,["Wheel",[_x select 0,"hitlf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) > %2",str("hitlf2wheel"),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitlf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= 0.15",str("hitlf2wheel")],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Wheel",[_x select 0,"hitlf2wheel"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage %1) <= %2",str("hitlf2wheel"),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -100,10 +101,10 @@ _arr_for_IDS = [];
 		case ((_x select 0)isEqualTo "hitengine"):
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["Engine",[_x select 0]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage ""hitengine"") > 0.15",20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["Engine",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage ""hitengine"") > %1",_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Engine",[_x select 0]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitengine"") <= 0.15",20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Engine",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitengine"") <= %1",_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -128,10 +129,10 @@ _arr_for_IDS = [];
 		case ([(_x select 0),"hrotor"] call KRON_fnc_StrInStr): // Main Rotor
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["HRotor",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player   && (_target getHitPointDamage %1) > 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["HRotor",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player   && (_target getHitPointDamage %1) > %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["HRotor",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player   && (_target getHitPointDamage %1) <= 0.15",str(_x select 0)],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["HRotor",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player   && (_target getHitPointDamage %1) <= %2",str(_x select 0),_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};

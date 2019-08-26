@@ -90,6 +90,7 @@ class Valor_settings {
 
 	class level_system {
 		playtime = 250; // the amount of XP the player gets every 15 minutes
+		map_point = 50; // the amount of XP the player gets every 15 minutes
 
 		zombie_killed = 50;    // the amount a zombie kill gives the player
 		raptor_killed = 150;    // the amount a raptor kill gives the player
@@ -122,24 +123,24 @@ class Valor_settings {
 				"The class Scout has the ability to let you run faster, lose less food and water aswell as grant you more XP when discovering the map.", // long descritption of the class
 				{
 					{
-						"Shoes of Hermes",
-						{0,0,"Shoes of Hermes Level 1","You can run 4% faster than usual.",4},
-						{1,15,"Shoes of Hermes Level 2","You can run 8% faster than usual.",8},
-						{2,25,"Shoes of Hermes Level 3","You can run 12% faster than usual.",12},
-						{3,35,"Shoes of Hermes Level 4","You can run 16% faster than usual.",16},
-						{4,45,"Shoes of Hermes Level 5","You can run 20% faster than usual.",20}
+						{"Shoes of Hermes","SOH"}, // +
+						{0,0,"Shoes of Hermes Level 1","You can run 4% faster than usual.",1.04},
+						{1,15,"Shoes of Hermes Level 2","You can run 8% faster than usual.",1.08},
+						{2,25,"Shoes of Hermes Level 3","You can run 12% faster than usual.",1.12},
+						{3,35,"Shoes of Hermes Level 4","You can run 16% faster than usual.",1.16},
+						{4,45,"Shoes of Hermes Level 5","You can run 20% faster than usual.",1.20}
 					},
 					{
-						"Ascetic",
-						{5,0,"Ascetic Level 1","Your food and water drain 5% slower than usual.",5},
-						{6,5,"Ascetic Level 2","Your food and water drain 10% slower than usual.",10},
-						{7,10,"Ascetic Level 3","Your food and water drain 15% slower than usual.",15},
-						{8,15,"Ascetic Level 4","Your food and water drain 20% slower than usual.",20},
-						{9,20,"Ascetic Level 5","Your food and water drain 25% slower than usual.",25}
+						{"Ascetic","Ascetic"}, // +
+						{5,0,"Ascetic Level 1","Your food and water drain 5% slower than usual.",1.05},
+						{6,5,"Ascetic Level 2","Your food and water drain 10% slower than usual.",1.10},
+						{7,10,"Ascetic Level 3","Your food and water drain 15% slower than usual.",1.15},
+						{8,15,"Ascetic Level 4","Your food and water drain 20% slower than usual.",1.20},
+						{9,20,"Ascetic Level 5","Your food and water drain 25% slower than usual.",1.25}
 					},
 					{
-						"Explorer",
-						{10,0,"Explorer Level 1","You get extra XP when you discover a map point.",1.5}
+						{"Explorer","Explorer"}, // +
+						{10,0,"Explorer Level 1","You get extra XP when you discover a map point.",2}
 					}
 				}
 			},
@@ -147,19 +148,19 @@ class Valor_settings {
 				1,        // unique ID of this class
 				"Mechanic", // Name of the class
 				0,        // needed level to unlock
-				"Skills: Do it yourself, Gasoline King, Improvisation", // descritption of the class
+				"Skills: Carglass, Gasoline King, Improvisation", // descritption of the class
 				"This class lets you repair and maintain vehicles more easily.", // descritption of the class
 				{
 					{
-						"Do it yourself",
-						{11,0,"Do it yourself Level 1","You can remove parts from vehicles damaged up to 80%.",5},
-						{12,5,"Do it yourself Level 2","You can remove parts from vehicles damaged up to 75%.",10},
-						{13,7,"Do it yourself Level 3","You can remove parts from vehicles damaged up to 70%.",15},
-						{14,12,"Do it yourself Level 4","You can remove parts from vehicles damaged up to 65%.",20},
-						{15,18,"Do it yourself Level 5","You can remove parts from vehicles damaged up to 60%.",25}
+						{"Carglass","Carglass"},  // +
+						{11,0,"Carglass Level 1","You can remove parts from vehicles damaged up to 80%.",0.2},
+						{12,5,"Carglass Level 2","You can remove parts from vehicles damaged up to 75%.",0.25},
+						{13,7,"Carglass Level 3","You can remove parts from vehicles damaged up to 70%.",0.3},
+						{14,12,"Carglass Level 4","You can remove parts from vehicles damaged up to 65%.",0.35},
+						{15,18,"Carglass Level 5","You can remove parts from vehicles damaged up to 60%.",0.4}
 					},
 					{
-						"Gasoline King",
+						{"Gasoline King","GK"}, // +
 						{16,5,"Gasoline King Level 1","Fuelcans you use can hold 5 litres more.",5},
 						{17,17,"Gasoline King Level 2","Fuelcans you use can hold 10 litres more.",10},
 						{18,22,"Gasoline King Level 3","Fuelcans you use can hold 15 litres more.",15},
@@ -167,7 +168,7 @@ class Valor_settings {
 						{20,43,"Gasoline King Level 5","Fuelcans you use can hold 25 litres more.",25}
 					},
 					{
-						"Improvisation",
+						{"Improvisation","Improvisation"},// +
 						{21,35,"Improvisation Level 1","You dont need any material to repair a broken windscreen.",true}
 					}
 				}
@@ -180,16 +181,16 @@ class Valor_settings {
 				"A Medic can heal himself and revive others faster.", // descritption of the class
 				{
 					{
-						"First aid",
+						{"First aid","FA"}, // -
 						{22,0,"First aid Level 1","Every medical item you use will heal you to 100%.",true}
 					},
 					{
-						"High voltage",
-						{23,0,"High voltage Level 1","You reanimate 10% faster.",0.9},
-						{24,5,"High voltage Level 2","You reanimate 20% faster.",0.8},
-						{25,10,"High voltage Level 3","You reanimate 30% faster.",0.7},
-						{26,20,"High voltage Level 4","You reanimate 40% faster.",0.6},
-						{27,30,"High voltage Level 5","You reanimate 50% faster.",0.5}
+						{"High voltage","HV"}, // +
+						{23,0,"High voltage Level 1","You reanimate 10% faster.",1.1},
+						{24,5,"High voltage Level 2","You reanimate 20% faster.",1.2},
+						{25,10,"High voltage Level 3","You reanimate 30% faster.",1.3},
+						{26,20,"High voltage Level 4","You reanimate 40% faster.",1.4},
+						{27,30,"High voltage Level 5","You reanimate 50% faster.",1.5}
 					}
 				}
 			},
@@ -201,7 +202,7 @@ class Valor_settings {
 				"The Savant is a person conentrating on his own improvement, therefor a Savant gets more XP in general.", // descritption of the class
 				{
 					{
-						"Imposing intellect",
+						{"Imposing intellect","II"},  // +
 						{28,15,"Imposing intellect Level 1","You get 3% more XP.",1.03},
 						{29,18,"Imposing intellect Level 2","You get 6% more XP.",1.06},
 						{30,24,"Imposing intellect Level 3","You get 9% more XP.",1.09},
@@ -218,7 +219,7 @@ class Valor_settings {
 				"A Looter is better at gathering and harvesting ressources aswell as persuading the treaders.", // descritption of the class
 				{
 					{
-						"Silver tongue",
+						{"Silver tongue","ST"}, // -
 						{33,20,"Silver tongue Level 1","You get 2% better prices from the traders.",1.02},
 						{34,27,"Silver tongue Level 2","You get 4% better prices from the traders.",1.04},
 						{35,32,"Silver tongue Level 3","You get 6% better prices from the traders.",1.06},
@@ -226,7 +227,7 @@ class Valor_settings {
 						{37,40,"Silver tongue Level 5","You get 10% better prices from the traders.",1.10}
 					},
 					{
-						"Miner",
+						{"Miner","Miner"}, // +
 						{38,20,"Miner Level 1","You get 1 more item when harvesting.",1},
 						{39,22,"Miner Level 2","You get 2 more items when harvesting.",2},
 						{40,25,"Miner Level 3","You get 3 more items when harvesting.",3},
@@ -234,7 +235,7 @@ class Valor_settings {
 						{42,38,"Miner Level 5","You get 5 more items when harvesting.",5}
 					},
 					{
-						"Paleontologist",
+						{"Paleontologist","Paleontologist"}, // +
 						{43,35,"Miner Level 1","You have a 1% higher chance to find a rapotr egg.",1},
 						{44,45,"Miner Level 2","You have a 2% higher chance to find a rapotr egg.",2},
 						{45,60,"Miner Level 3","You have a 3% higher chance to find a rapotr egg.",3}
@@ -249,7 +250,7 @@ class Valor_settings {
 				"Soldiers are more skilled with weapons, take less damage from zeds and gain more XP when fighting.", // descritption of the class
 				{
 					{
-						"Weapon Finesse",
+						{"Weapon Finesse","WF"}, // +
 						{46,30,"Weapon Finesse Level 1","You have 2% less recoil than usual.",2},
 						{47,40,"Weapon Finesse Level 2","You have 4% less recoil than usual.",4},
 						{48,45,"Weapon Finesse Level 3","You have 6% less recoil than usual.",6},
@@ -257,16 +258,16 @@ class Valor_settings {
 						{50,55,"Weapon Finesse Level 5","You have 10% less recoil than usual.",10}
 					},
 					{
-						"Veteran",
-						{51,30,"Veteran Level 1","You get 10% less damage from zombies."},
-						{52,35,"Veteran Level 2","You get 15% less damage from zombies."},
-						{53,40,"Veteran Level 3","You get 20% less damage from zombies."},
-						{54,45,"Veteran Level 4","You get 25% less damage from zombies."},
-						{55,50,"Veteran Level 5","You get 35% less damage from zombies."}
+						{"Veteran","Veteran"}, // +
+						{51,30,"Veteran Level 1","You get 10% less damage from zombies.",0.9},
+						{52,35,"Veteran Level 2","You get 15% less damage from zombies.",0.85},
+						{53,40,"Veteran Level 3","You get 20% less damage from zombies.",0.8},
+						{54,45,"Veteran Level 4","You get 25% less damage from zombies.",0.75},
+						{55,50,"Veteran Level 5","You get 35% less damage from zombies.",0.65}
 					},
 					{
-						"Fighting Spirit",
-						{60,30,"Fighting Spirit Level 1","You get extra XP when you kill a zombie.",1.5}
+						{"Fighting Spirit","FS"}, // +
+						{60,30,"Fighting Spirit Level 1","You get extra XP when you kill a zombie.",2}
 					}
 				}
 			}

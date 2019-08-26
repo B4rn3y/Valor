@@ -10,7 +10,7 @@ if(isnull _killer && isnull _instigator) exitWith {};
 
 _person_add = if(isnull _killer) then {_instigator} else {_killer};
 _xp_add =  getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "zombie_killed");
-
+_xp_add = _xp_add * (missionNamespace getvariable["Valor_skill_FS",1]);
 
 if(_person_add isEqualTo player) then {
 	[_xp_add,"Zombie killed"] spawn valor_fnc_addexp;

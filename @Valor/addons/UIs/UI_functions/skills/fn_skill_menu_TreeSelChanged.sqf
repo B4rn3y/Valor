@@ -30,7 +30,7 @@ _class = [];
 _skill = [];
 {
 	{
-		if!(typename _X isEqualTo "STRING") then {
+		if!(count _X isEqualTo 2) then {
 			if((_x select 0) isEqualTo (_data select 1)) exitWith {_skill = _x;};
 		};
 	} foreach _x;

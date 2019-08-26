@@ -146,3 +146,15 @@ _class_2 = if((Valor_classes_unlock select 1) select 0) then {if(((Valor_classes
 _class_3 = if((Valor_classes_unlock select 2) select 0) then {if(((Valor_classes_unlock select 2) select 1) isEqualTo -1) then {"Empty"} else {([((Valor_classes_unlock select 2) select 1)] call _find_class) select 1};} else {"Not Learned"};
 
 _current_classes_active_str_text ctrlSetStructuredText parsetext format["<t align='center' size='0.7' >INFO:</t><br/><t align='left' size='0.7' >Slot 1:</t><t align='right' size='0.7' >%1</t><br/><t align='left' size='0.7' >Slot 2:</t><t align='right' size='0.7' >%2</t><br/><t align='left' size='0.7' >Slot 3:</t><t align='right' size='0.7' >%3</t><br/>",_class_1,_class_2,_class_3];
+
+
+
+
+
+waitUntil {isnull (findDisplay 3010)};
+
+if!(isnil "Valor_class_changed") then {
+	Valor_class_changed = nil;
+	[12] call valor_fnc_step_update;
+	0 spawn valor_fnc_init_skills;
+};

@@ -22,4 +22,4 @@ iF(Valor_level < _needed_level) exitWith {systemChat "Valor :: Your level is not
 Valor_classes_unlock set[_class_slot,[true,-1]];
 
 0 call valor_fnc_updateClassMenu;
-[12] call valor_fnc_step_update;
+Valor_class_changed = true;

@@ -26,6 +26,8 @@ _vel = velocity _target;
 _dir = direction _zombie;
 _strength = _zombie call RZ_fnc_zombie_getHumanVelocityStrength;
 [_target, [(_vel select 0) + (sin _dir * _strength), (_vel select 1) + (cos _dir * _strength), (_vel select 2) + random 1]] remoteExecCall ["fnc_RyanZombies_Velocity"];
+_target setdamage ((damage _target) + (0.1 * (_target getvariable["Valor_skill_Veteran",1])));
+
 sleep 1.2;
 _zombie setvariable["ATTACKING",nil];
 

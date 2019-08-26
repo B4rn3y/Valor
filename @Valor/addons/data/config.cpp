@@ -133,6 +133,7 @@ class CfgFunctions
 			class initVehicles {};
 			class init_outposts_client {};
 			class initcorpses {};
+			class init_skills {};
 		};
 
 		class loot_system

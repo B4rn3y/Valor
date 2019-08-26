@@ -16,6 +16,7 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 0 call valor_fnc_initcorpses;
 
 // Starting player hunger/thirst system
+
 [getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Hunger_multiplier"),getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Thirst_multiplier")] spawn valor_fnc_survival;
 
 
@@ -45,6 +46,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 0 spawn valor_fnc_initVehicles; // setup the Vehicle Repair actions
 
 0 spawn valor_fnc_init_outposts_client; // setup the outposts
+
+0 spawn valor_fnc_init_skills;  // init the skills
 
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 

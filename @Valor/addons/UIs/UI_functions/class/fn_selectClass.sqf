@@ -29,4 +29,4 @@ if(_remove) then {
 };
 
 0 call valor_fnc_updateClassMenu;
-[12] call valor_fnc_step_update;
+Valor_class_changed = true;

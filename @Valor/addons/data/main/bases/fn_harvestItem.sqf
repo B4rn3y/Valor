@@ -12,7 +12,7 @@ _item_name = _item_info select 0;
 _item_amount = _item_info select 1;
 _item_text = _item_info select 2;
 
-
+_item_amount = _item_amount + (missionNamespace getvariable["Valor_skill_Miner",0]);
 
 
 valor_is_processing = true;

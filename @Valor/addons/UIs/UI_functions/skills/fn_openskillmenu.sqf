@@ -46,8 +46,8 @@ _index_0 = _tv tvadd[[],"Available Skills:"];
 		_index_1 = _tv tvadd[[_index_0],_name];
 		{
 			{
-				if(typename _x isEqualTo "STRING") then {
-					_index_2 = _tv tvadd[[_index_0,_index_1],_x];
+				if(count _x isEqualTo 2) then {
+					_index_2 = _tv tvadd[[_index_0,_index_1],_x select 0];
 				} else {
 					_index_3 = _tv tvadd[[_index_0,_index_1,_index_2],format["[%1] %2",_x select 1,_x select 2]];
 					if(Valor_level >= (_x select 1)) then {
@@ -64,3 +64,5 @@ _index_0 = _tv tvadd[[],"Available Skills:"];
 } foreach Valor_classes_unlock;
 
 tvExpandAll _tv;
+
+waitUntil {isnull (findDisplay 3011)};

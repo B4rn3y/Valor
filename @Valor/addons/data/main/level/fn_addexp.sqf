@@ -8,9 +8,10 @@ if!(isnil "Valor_multiplier") then {
 	_XP = _XP * Valor_multiplier;
 };
 
-_XP = round _XP;
-if(_description isEqualTo "" || _XP isEqualTo 0) exitWith {};
 
+if(_description isEqualTo "" || _XP isEqualTo 0) exitWith {};
+_XP = _XP * (missionNamespace getvariable["Valor_skill_II",1]);
+_XP = round _XP;
 
 if(_XP >= Valor_xp_next_level) then {
 	Valor_XP = Valor_XP + _XP;
@@ -21,6 +22,7 @@ if(_XP >= Valor_xp_next_level) then {
 	Valor_xp_needed_level = _xp_info select 3;
 	playSound "achievement";
 	[11] call valor_fnc_step_update;
+	0 spawn valor_fnc_init_skills;  // update the skills
 } else {
 	Valor_XP = Valor_XP + _XP;
 	Valor_level_xp = Valor_level_xp + _XP;

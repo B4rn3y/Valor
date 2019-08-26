@@ -1,7 +1,8 @@
 
 
+private ["_vehicle","_ADD_ID","_part","_item","_valor_config_name","_config_names","_config_name","_improvisation","_ID","_ids"];
 
-private ["_vehicle","_ADD_ID","_part","_item"];
+
 _vehicle = param[0,objNull,[objNull]];
 _ADD_ID = param[2,-1,[-1]];
 _part = param[3,[],[[]]];
@@ -10,12 +11,22 @@ if(isnull _vehicle) exitWith {};
 _valor_config_name = _part select 0;
 _config_names = _part select 1;
 _config_name = _config_names select 0;
-diag_log str [_valor_config_name,_config_names];
-_item = gettext(missionConfigFile >> "Valor_settings" >> "repair_system" >> format["%1_repair",_valor_config_name]);
 
+_item = gettext(missionConfigFile >> "Valor_settings" >> "repair_system" >> format["%1_repair",_valor_config_name]);
+_improvisation = missionNamespace getvariable["Valor_skill_Improvisation",false];
 
 if(_item isEqualTo "") exitWith {systemchat "Valor :: This cant be repaired"};
 
+
+if(_valor_config_name isEqualTo "Glass" && _improvisation) exitWith {
+	playsound "repair";
+	player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+	[_vehicle,_config_names,0] remoteexec["valor_fnc_setHitpointDamage",0];
+
+	if!(_vehicle getvariable["Update_this",false]) then {
+		_vehicle setvariable["Update_this",true,true];
+	};
+};
 
 if([_item,1,true] call valor_fnc_itemInInventory) then {
 	playsound "repair";
