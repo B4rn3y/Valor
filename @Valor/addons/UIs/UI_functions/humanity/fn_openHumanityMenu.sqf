@@ -11,7 +11,7 @@ _str_text_bandit = _display displayCtrl 1102;
 _str_text_murders = _display displayCtrl 1103;
 _str_text_zombies = _display displayCtrl 1104;
 _str_text_killed = _display displayCtrl 1105;
-
+_str_text_raptors = _display displayCtrl 1106;
 
 _humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
 
@@ -69,4 +69,4 @@ _str_text_humanity ctrlSetStructuredText parseText format["<t color='#000000' al
 
 {
 	_x ctrlSetStructuredText parseText format["<t color='#000000' align='center' size='1.6'>%1</t>",(Valor_stats_entities select _foreachindex)];
-} foreach [_str_text_bandit,_str_text_murders,_str_text_zombies,_str_text_killed];
+} foreach [_str_text_bandit,_str_text_murders,_str_text_zombies,_str_text_killed,_str_text_raptors];

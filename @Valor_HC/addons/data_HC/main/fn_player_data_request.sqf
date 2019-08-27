@@ -26,12 +26,12 @@ switch (_playerside) do
 {
 	case opfor:
 	{
-        _query = format["Select uid, cash, bankacc,humanity , gear_cop , stats_cop, adminlevel, donatorlevel,alive_cop,  position_cop, Map, playtime, coplevel, xp, classes from players where pid = '%1'",_getplayeruid];
+        _query = format["Select uid, cash, bankacc,humanity , gear_cop , stats_cop, adminlevel, donatorlevel,alive_cop,  position_cop, Map, playtime, coplevel, xp, classes, stats_killed from players where pid = '%1'",_getplayeruid];
     };
 
      case civilian:
     {
-        _query = format["Select uid, cash, bankacc,humanity , gear, stats, adminlevel, donatorlevel, alive, position, Map, playtime, arrested, application, xp, classes from players where pid = '%1'",_getplayeruid];
+        _query = format["Select uid, cash, bankacc,humanity , gear, stats, adminlevel, donatorlevel, alive, position, Map, playtime, arrested, application, xp, classes, stats_killed from players where pid = '%1'",_getplayeruid];
     };
 
 

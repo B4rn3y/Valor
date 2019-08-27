@@ -120,6 +120,12 @@ class CfgFunctions
 			class init_level {};
 		};
 
+		class humanity_data
+		{
+			file = "\data\main\humanity";
+			class addHumanity {};
+		};
+
 		class init
 		{
 			file = "\data\main\Init";
@@ -227,6 +233,7 @@ class CfgFunctions
 			class on_take {};
 			class rope_attached {};
 			class onPlayerKilled {};
+			class onEntityKilled {};
 			class GetInEVH {};
 			class takeEVH_trader {};
 			class processEVH {};

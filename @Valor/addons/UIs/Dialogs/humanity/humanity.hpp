@@ -79,6 +79,15 @@ class humanity {
 			w = 0.213636;
 			h = 0.079798;
 		};
+		class raptors_pic: valor_RscPicture
+		{
+			idc = 1208;
+			text = "\UIs\textures\humanity\raptor.paa";
+			x = 0.0214646;
+			y = 0.675084;
+			w = 0.213636;
+			h = 0.079798;
+		};
 		class text_humanity: valor_RscStructuredText
 		{
 			idc = 1101;
@@ -116,6 +125,14 @@ class humanity {
 			idc = 1105;
 			x = 0.251263;
 			y = 0.590909;
+			w = 0.237752;
+			h = 0.0754883;
+		};
+		class text_raptors: valor_RscStructuredText
+		{
+			idc = 1106;
+			x = 0.252525;
+			y = 0.681818;
 			w = 0.237752;
 			h = 0.0754883;
 		};

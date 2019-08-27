@@ -5,6 +5,7 @@ disableSerialization;
 closeDialog 0;
 _unit = param [0,ObjNull,[ObjNull]];
 _killer = param [1,ObjNull,[ObjNull]];
+_instigator = param[2,ObjNull,[ObjNull]];
 Valor_alive = 0;
 [5] call valor_fnc_step_update;
 
@@ -74,6 +75,13 @@ ctrlDelete _str_text;
 
 (findDisplay 46) displayRemoveEventHandler ["KeyDown",_evh_id];
 if(player getvariable["revived",false]) exitWith {[_unit] spawn valor_fnc_revived};
+
+_person_add_stat = if(isnull _instigator) then {if(isnull _killer) then {ObjNull} else {if(_killer isEqualTo player) then {ObjNull} else {_killer}};} else {if(_instigator isEqualTo player) then {ObjNull} else {_instigator};};
+if!(isnull _person_add_stat) then {
+	["Player",Valor_humanity] remoteExec["valor_fnc_onEntityKilled",[_person_add_stat]];
+};
+Valor_stats_entities set[3,((Valor_stats_entities select 3)+1)];
+[13] call valor_fnc_step_update;
 
 
 [] spawn valor_fnc_respawn;

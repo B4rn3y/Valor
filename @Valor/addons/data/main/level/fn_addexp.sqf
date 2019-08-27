@@ -4,8 +4,8 @@ private ["_XP","_description","_xp_info","_xp_save_amount","_text","_display","_
 _XP = param[0,0,[0]];
 _description = param[1,"",[""]];
 
-if!(isnil "Valor_multiplier") then {
-	_XP = _XP * Valor_multiplier;
+if!(isnil "Valor_XP_multiplier") then {
+	_XP = _XP * Valor_XP_multiplier;
 };
 
 
@@ -30,7 +30,7 @@ if(_XP >= Valor_xp_next_level) then {
 	if(isnil "Valor_xp_save") then {
 		Valor_xp_save = _XP
 	} else {
-		_xp_save_amount = 50;
+		_xp_save_amount = 300;
 		Valor_xp_save = Valor_xp_save + _XP;
 		if(Valor_xp_save >= _xp_save_amount) then {
 			[11] call valor_fnc_step_update;

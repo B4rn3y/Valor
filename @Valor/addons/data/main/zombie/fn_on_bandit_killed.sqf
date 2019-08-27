@@ -1,5 +1,5 @@
 
-private ["_unit","_killer","_instigator","_person_add","_xp_add"];
+private ["_unit","_killer","_instigator","_person_add"];
 
 _unit = param[0,objNull,[objNull]];
 _killer = param[1,objNull,[objNull]];
@@ -9,13 +9,13 @@ if(isnull _killer && isnull _instigator) exitWith {};
 
 
 _person_add = if(isnull _killer) then {_instigator} else {_killer};
-_xp_add =  getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "bandit_killed");
+//_xp_add =  getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "bandit_killed");
 
 
 if(_person_add isEqualTo player) then {
-	[_xp_add,"Bandit killed"] spawn valor_fnc_addexp;
+	["Bandit"] spawn valor_fnc_onEntityKilled;
 } else {
-	[_xp_add,"Bandit killed"] remoteExec["valor_fnc_addexp",[_person_add]];
+	["Bandit"] remoteExec["valor_fnc_onEntityKilled",[_person_add]];
 };
 
 

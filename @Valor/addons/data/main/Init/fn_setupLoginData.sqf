@@ -1,5 +1,5 @@
 
-private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime","_arrested","_application","_xp","_classes","_xp_info","_coplevel","_jailtime"];
+private ["_foreachindex","_valor_uid","_cash","_bankacc","_humanity","_gear","_stats","_adminlvel","_donorlevel","_alive","_position","_map_revealed","_playtime","_arrested","_application","_xp","_classes","_stats_killed","_xp_info","_coplevel","_jailtime"];
 
 {
 	diag_log str [_foreachindex,_x];
@@ -35,7 +35,8 @@ switch(playerside) do {
 		_application = param[13,0,[0]];
 		_xp = param[14,0,[0]];
 		_classes = param[15,"",["",[]]];
-		_group = param[16,[],[[]]];
+		_stats_killed = param[16,"",["",[]]];
+		_group = param[17,[],[[]]];
 
 
 
@@ -67,6 +68,7 @@ switch(playerside) do {
 		Valor_classes_unlock = call compile _classes;
 
 		Valor_humanity = _humanity;
+		Valor_stats_entities = call compile _stats_killed;
 
 		if!(_application isEqualTo 0) then {
 			if(_application isEqualTo 2) then {
@@ -101,6 +103,7 @@ switch(playerside) do {
 		_coplevel = param[12,0,[1337,""]];
 		_xp = param[13,0,[0,""]];
 		_classes = param[14,"",["",[]]];
+		_stats_killed = param[15,"",["",[]]];
 
 		if!(_coplevel > 0) then {
 			NOT_WHITELISTED = true;
@@ -135,6 +138,7 @@ switch(playerside) do {
 		Valor_classes_unlock = call compile _classes;
 
 		Valor_humanity = _humanity;
+		Valor_stats_entities = call compile _stats_killed;
 
 		Valor_group = [];
 		Valor_map = [_map_revealed] call valor_fnc_map_hidement_mArray;

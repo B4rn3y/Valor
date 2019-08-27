@@ -63,6 +63,10 @@ switch (_mode) do
 	{
 		_set pushback Valor_classes_unlock;
 	};
+	case 13:
+	{
+		_set pushback [valor_humanity,Valor_stats_entities];
+	};
 	default
 	{
 		_error = true;

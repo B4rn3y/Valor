@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `xp` int(100) NOT NULL DEFAULT '0',
   `level` int(100) NOT NULL DEFAULT '0',
   `humanity` int(100) NOT NULL DEFAULT '2500',
+  `stats_killed` varchar(150) NOT NULL DEFAULT '[0,0,0,0,0]',
   `classes` varchar(100) NOT NULL DEFAULT '[[false,-1],[false,-1],[false,-1]]',
   `gear` text NOT NULL,
   `gear_cop` text NOT NULL,

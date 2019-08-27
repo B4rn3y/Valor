@@ -89,6 +89,18 @@ class Valor_settings {
 
 	class humanity {		// b3    b2  b1 s    h1   h2    h3
 		humanity_config[] = {-5000,-2500,0,2500,5000,7500,10000};  // dont change the amount of entries in this array
+
+		kill_bandit_3 = 250;
+		kill_bandit_2 = 150;
+		kill_bandit_1 = 100;
+		kill_survivor = -50;
+		kill_hero_1 = -100;
+		kill_hero_2 = -150;
+		kill_hero_3 = -250;
+
+		zombie_killed = 10;
+		raptor_killed = -20;
+		bandit_killed = 30;
 	};
 
 
