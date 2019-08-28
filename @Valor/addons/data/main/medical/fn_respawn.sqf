@@ -16,8 +16,8 @@ _old_group = group player;
 [player] joinSilent (createGroup opfor);
 deleteGroup _old_group;
 
-
-
+Valor_poising = false;
+Valor_radiation = 0;
 valor_hunger = 100;
 valor_thirst = 100;
 Valor_cash = 0;
@@ -42,6 +42,8 @@ if!(Valor_group isEqualTo []) then {
 } else {
 	player setVariable["Valor_group_id",[-1,"ERROR"],true];
 };
+
+0 spawn valor_fnc_init_skills;  // init the skills
 
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 player addEventHandler["GetInMan",{_this spawn valor_fnc_GetInEVH}];

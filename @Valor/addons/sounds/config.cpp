@@ -68,6 +68,55 @@ class CfgSounds
 		sound[] = {"\sounds\others\achievement.ogg", 70, 1,50};
 		titles[] = {};
 	};
+
+	class geiger_level_0
+	{
+		name = "geiger_level_0";
+		sound[] = {"\sounds\effects\geiger_level_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class geiger_level_1
+	{
+		name = "geiger_level_1";
+		sound[] = {"\sounds\effects\geiger_level_1.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class geiger_level_2
+	{
+		name = "geiger_level_2";
+		sound[] = {"\sounds\effects\geiger_level_2.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class geiger_level_3
+	{
+		name = "geiger_level_3";
+		sound[] = {"\sounds\effects\geiger_level_3.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class cough_0
+	{
+		name = "cough_0";
+		sound[] = {"\sounds\effects\cough_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class cough_1
+	{
+		name = "cough_1";
+		sound[] = {"\sounds\effects\cough_1.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class cough_2
+	{
+		name = "cough_2";
+		sound[] = {"\sounds\effects\cough_2.ogg", 70, 1,50};
+		titles[] = {};
+	};
 };
 
 

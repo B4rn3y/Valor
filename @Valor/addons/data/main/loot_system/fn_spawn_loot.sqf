@@ -15,7 +15,7 @@ if!(_near_weaponholder isEqualTo []) exitWith {0};
 sleep random 10;
 _near_weaponholder = nearestObjects[_pos,["groundweaponholder"],1];
 if!(_near_weaponholder isEqualTo []) exitWith {0};
-_loot = [_rnd,([_house_classname] call valor_fnc_find_loottable)] call valor_fnc_find_loot_in_table;
+_loot = [_rnd,([_house_classname,_house] call valor_fnc_find_loottable)] call valor_fnc_find_loot_in_table;
 if(_loot isEqualTo []) exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: LOOT NIL"};0};
 
 _holder =  createVehicle ["groundweaponholder",_pos, [], 0, "can_Collide"];

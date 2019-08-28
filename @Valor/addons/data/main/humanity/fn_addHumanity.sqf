@@ -153,9 +153,9 @@ if(isnil "VALOR_XP_INFO") then {VALOR_XP_INFO = [];};
 
 
 if(_humanity > 0) then {
-	_text = parsetext format["<t align='left' color='#00FF00'>+%1hmy</t><t align='left'> - %2</t>",_humanity,_description];
+	_text = parsetext format["<t align='left' color='#00FF00'>+%1hm</t><t align='left'> - %2</t>",_humanity,_description];
 } else {
-	_text = parsetext format["<t align='left' color='#CA0000'>-%1hmy</t><t align='left'> - %2</t>",_humanity,_description];
+	_text = parsetext format["<t align='left' color='#CA0000'>%1hm</t><t align='left'> - %2</t>",_humanity,_description];
 };
 
 

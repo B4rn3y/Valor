@@ -71,6 +71,13 @@ class Valor_settings {
 		vest_cop[] = {"CUP_V_RUS_6B45_2"};
 	};
 
+	class radiation {
+		radiation_zones[] =   // Enter a pos here([2517.46,5075.55,0.00143433]) or a mapmarker name together with a distance    -  [[2517.46,5075.55,0.00143433],80],["radiation_zone_1",80]
+		{
+			{{2517.46,5075.55,0.00143433},80} // Zeleno
+		};
+	};
+
 	class repair_system {
 		Wheel_repair = "valor_van_02_rimless_tire";
 		Fuel_repair = "valor_ducttape";

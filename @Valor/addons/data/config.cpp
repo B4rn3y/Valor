@@ -89,7 +89,13 @@ class CfgFunctions
 		{
 			file = "\data\main\cop";
 			class update_cop_bank {};
+		};
 
+		class radiation
+		{
+			file = "\data\main\radiation";
+			class radiation {};
+			class radiation_lowering {};
 		};
 
 		class interact
@@ -140,6 +146,7 @@ class CfgFunctions
 			class init_outposts_client {};
 			class initcorpses {};
 			class init_skills {};
+			class init_radiation_zones {};
 		};
 
 		class loot_system

@@ -54,6 +54,11 @@ diag_log "Valor Client :: Start editing Lootspawn Config";
 			["l_military"]
 		};
 
+		case "radiation_zone":
+		{
+			["h_military"]
+		};
+
 		case "food":
 		{
 			["general"]
