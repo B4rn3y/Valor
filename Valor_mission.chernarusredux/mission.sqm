@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=1895;
+		nextID=1897;
 	};
 	class MarkerIDProvider
 	{
-		nextID=12;
+		nextID=13;
 	};
 	class Camera
 	{
-		pos[]={3805.97,408.63171,8740.6816};
-		dir[]={0.37790471,-0.83272207,0.40472826};
-		up[]={0.56836069,0.55358171,0.60870063};
-		aside[]={0.73093003,-1.7433194e-007,-0.68248886};
+		pos[]={7349.0181,389.77966,9270.1455};
+		dir[]={-0.96823394,-0.1869956,0.16607805};
+		up[]={-0.18431166,0.98235667,0.031613663};
+		aside[]={0.16905788,3.2910248e-007,0.9856168};
 	};
 };
 binarizationWanted=0;
@@ -388,7 +388,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=751;
+		items=753;
 		class Item0
 		{
 			dataType="Object";
@@ -23992,6 +23992,26 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item751
+		{
+			dataType="Marker";
+			position[]={7348.9878,382.99799,9270.3057};
+			name="marker_12";
+			text="Hero Trader";
+			type="mil_triangle";
+			id=1895;
+			atlOffset=0.24621582;
+		};
+		class Item752
+		{
+			dataType="Marker";
+			position[]={10324.342,361.22299,12087.945};
+			name="marker_13";
+			text="Bandit Trader";
+			type="mil_triangle";
+			id=1896;
+			atlOffset=0.24594116;
 		};
 	};
 };

@@ -59,6 +59,13 @@ class CfgFunctions
 			class openinteractionmenu {};
 		};
 
+		class HUD
+		{
+			file = "\UIs\UI_functions\HUD";
+			class setupHUD {};
+			class updateHUD {};
+		};
+
 		class ticket
 		{
 			file = "\UIs\UI_functions\ticket";

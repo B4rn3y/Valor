@@ -1,13 +1,12 @@
 
 
 class valor_screen {
-	idd = 1337;
+	idd = 2001;
 	duration = 10e10;
     fadein = 0;
     fadeout = 0;
 	name= "valor_screen";
-	onload = "uinamepespace setvariable['valor_screen',_this select 0]";
-	onUnload = "uiNamespace setVariable ['valor_screen',displayNull];";
+	onload = "    uiNamespace setvariable['valor_screen',_this select 0];    ";
 	movingEnable = false;
 	enableSimulation = true;
 	objects[] = {};

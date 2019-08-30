@@ -51,6 +51,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 0 spawn valor_fnc_init_skills;  // init the skills
 
+0 call valor_fnc_setupHUD;
+
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 
 

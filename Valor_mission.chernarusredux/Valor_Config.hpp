@@ -74,7 +74,8 @@ class Valor_settings {
 	class radiation {
 		radiation_zones[] =   // Enter a pos here([2517.46,5075.55,0.00143433]) or a mapmarker name together with a distance    -  [[2517.46,5075.55,0.00143433],80],["radiation_zone_1",80]
 		{
-			{{2517.46,5075.55,0.00143433},80} // Zeleno
+			{{2517.46,5075.55,0.00143433},80}, // Zeleno
+			{{8147,9019.73,56.9659},130}       // Altar
 		};
 	};
 
