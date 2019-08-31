@@ -33,6 +33,7 @@ if!(Valor_group isEqualTo []) then {
 
 0 spawn valor_fnc_init_skills;  // init the skills
 
+
 if(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "fatigue_enabled") isEqualTo 0) then {player enableFatigue false;} else {player enableFatigue true;};
 player addEventHandler["GetInMan",{_this spawn valor_fnc_GetInEVH}];
 player addEventHandler["Killed", {_this spawn valor_fnc_onPlayerKilled}];
@@ -50,6 +51,8 @@ player removeAllMPEventHandlers "MPRespawn";
 closeDialog 0;
 valor_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy valor_deathCamera;
+
+0 call valor_fnc_setupHUD;  // setup HUD
 
 player setDir (getdir _unit);
 player setPosASL (visiblePositionASL _unit);

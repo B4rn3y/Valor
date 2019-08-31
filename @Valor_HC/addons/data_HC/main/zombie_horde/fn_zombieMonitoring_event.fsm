@@ -9,7 +9,7 @@ item4[] = {"Zombie_Tod",4,218,63.509888,-140.311066,153.509888,-90.311127,2.0000
 item5[] = {"Zombie_zu_weit_w",4,218,-16.517273,-24.442871,73.482727,25.557159,1.000000,"Zombie zu weit" \n "weg"};
 item6[] = {"END",1,250,-511.362885,-1043.612183,-421.362762,-993.612305,0.000000,"END"};
 item7[] = {"_",2,250,189.322876,-127.052094,279.322876,-77.052094,0.000000,""};
-item8[] = {"END_1",1,4346,305.644592,-22.703613,395.644714,27.296387,0.000000,"END"};
+item8[] = {"END_1",1,250,305.644592,-22.703613,395.644714,27.296387,0.000000,"END"};
 item9[] = {"warten_f_r_despa",4,218,301.759216,-127.197083,391.759216,-77.197113,0.000000,"warten für" \n "despawn"};
 item10[] = {"true",4,218,-182.212341,-311.274597,-92.212349,-261.274658,0.000000,"true"};
 item11[] = {"target_",2,250,-182.277100,-208.944336,-92.277100,-158.944336,0.000000,"target?"};
@@ -31,7 +31,7 @@ item26[] = {"spawning_ZED",2,250,-207.330933,-904.814087,-117.330933,-854.814087
 item27[] = {"move_to_gate",2,250,-210.051819,-657.800354,-120.051819,-607.800354,0.000000,"move to" \n "gate"};
 item28[] = {"close_enough",4,218,-347.644409,-727.481018,-257.644409,-677.481018,0.000000,"close" \n "enough"};
 item29[] = {"isnull__gate",4,218,-204.139160,-541.463928,-114.139160,-491.463959,0.000000,"isnull _gate"};
-item30[] = {"attack_1",2,250,-466.479065,-666.612854,-376.479065,-616.612854,0.000000,"attack"};
+item30[] = {"attack_1",2,4346,-466.479065,-666.612854,-376.479065,-616.612854,0.000000,"attack"};
 item31[] = {"w8",4,218,-348.756592,-623.916931,-258.756653,-573.916931,0.000000,"w8"};
 item32[] = {"__3",2,250,-203.252625,-425.051941,-113.252617,-375.051941,0.000000,""};
 item33[] = {"Zombie_Tod",4,218,-52.827698,-649.002991,37.172302,-599.003113,2.000000,"Zombie Tod"};
@@ -80,7 +80,7 @@ link38[] = {32,10};
 link39[] = {33,34};
 link40[] = {34,36};
 link41[] = {36,35};
-globals[] = {0.000000,0,0,0,0,640,480,1,228,6316128,1,-824.312256,765.674194,213.724945,-637.844849,1096,587,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,228,6316128,1,-798.199768,791.786621,80.256439,-771.314819,1096,587,1};
 window[] = {0,-1,-1,-1,-1,993,234,1895,234,1,1114};
 *//*%FSM</HEAD>*/
 class FSM
@@ -151,7 +151,7 @@ class FSM
                         name = "_";
                         itemno = 7;
                         init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
-                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -174,7 +174,7 @@ class FSM
                 {
                         name = "END_1";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
+                        init = /*%FSM<STATEINIT""">*/"" \n
                          "" \n
                          "deletevehicle _zombie;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -189,7 +189,7 @@ class FSM
                         name = "target_";
                         itemno = 11;
                         init = /*%FSM<STATEINIT""">*/"[_zombie] call valor_fnc_zombie_checkforTarget;" \n
-                         "systemchat ""Checking for Targets""; "/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -246,7 +246,7 @@ class FSM
                         name = "Move_to_Him";
                         itemno = 14;
                         init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] call valor_fnc_zombie_moveToTarget;" \n
-                         "systemchat ""Move to Target"";"/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -280,7 +280,7 @@ class FSM
                 {
                         name = "__1";
                         itemno = 17;
-                        init = /*%FSM<STATEINIT""">*/"systemchat ""Can not Attack Target - Check Visibility"";" \n
+                        init = /*%FSM<STATEINIT""">*/"" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[2,2.5,3];" \n
                          "_last_pos_seen = getposatl (_zombie getvariable[""VALOR_Target"",Objnull]);"/*%FSM</STATEINIT""">*/;
@@ -318,7 +318,7 @@ class FSM
                         name = "Attack";
                         itemno = 20;
                         init = /*%FSM<STATEINIT""">*/"[_zombie,(_zombie getvariable[""VALOR_Target"",Objnull])] spawn valor_fnc_zombie_attack;" \n
-                         "systemchat ""Attacking"";"/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -345,7 +345,7 @@ class FSM
                          "" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[20,25,30];" \n
-                         "systemchat ""No Target - Roamaing"";"/*%FSM</STATEINIT""">*/;
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -369,7 +369,7 @@ class FSM
                         name = "__2";
                         itemno = 24;
                         init = /*%FSM<STATEINIT""">*/"_zombie setvariable[""VALOR_Target"",Objnull];" \n
-                         "systemchat ""Resetting target"";" \n
+                         "" \n
                          "" \n
                          "_zombie setDestination [getposATL _zombie, ""LEADER Direct"", true];" \n
                          "_zombie setDestination [_last_pos_seen, ""LEADER PLANNED"", true];" \n

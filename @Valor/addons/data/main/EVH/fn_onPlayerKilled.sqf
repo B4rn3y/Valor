@@ -24,6 +24,8 @@ if!(Valor_group isEqualTo []) then {
 
 _evh_id = (findDisplay 46) displayAddEventHandler  ["KeyDown","if((_this select 1) == 1) then {true}"];
 
+// delete HUD
+0 spawn valor_fnc_deleteHUD;
 
 //Set some vars
 _time_died = time;

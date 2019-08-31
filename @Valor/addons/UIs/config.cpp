@@ -64,6 +64,7 @@ class CfgFunctions
 			file = "\UIs\UI_functions\HUD";
 			class setupHUD {};
 			class updateHUD {};
+			class deleteHUD {};
 		};
 
 		class ticket

@@ -41,7 +41,7 @@ _skills = [];
 } foreach Valor_classes_unlock;
 
 
-_save = 1;
+_save = "nil";
 _var_name = "";
 {
 	_skill = _x;
@@ -51,18 +51,21 @@ _var_name = "";
 			if(Valor_level >= _needed_level) then {
 				_save = _x select 4;
 			};
-			if(_foreachindex isEqualTo (count _skill - 1) && !isnil "_save") then {
+
+			if(_foreachindex isEqualTo (count _skill - 1) && !(_save isEqualTo "nil")) then {
 				if(_save isEqualTo "true" || _save isEqualTo "false") then {
 					_save = call compile _save;
 				};
+
 				missionNamespace setvariable[format["%1",_var_name],_save];
 			};
 		} else {
 			_var_name = format["Valor_skill_%1",_x select 1];
 
 		};
-		_save = nil;
+
 	} foreach _skill;
+	_save = "nil";
 } foreach _skills;
 
 

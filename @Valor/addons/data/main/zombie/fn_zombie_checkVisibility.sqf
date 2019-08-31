@@ -8,6 +8,7 @@ _zombie = param[0,objNull,[objNull]];
 _target = param[1,objNull,[objNull]];
 if(isnull _zombie) exitWith {false};
 if(isnull _target) exitWith {false};
+if(!alive _target) exitWith {false};
 _see_range = 40;
 _smell_range = 2;
 _visible_factor = 0.95;
