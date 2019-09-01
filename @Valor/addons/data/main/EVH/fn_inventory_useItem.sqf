@@ -1,4 +1,6 @@
-private ["_control_and_index","_place","_control","_index","_idc","_item_name","_classname","_config","_displayName"];
+private ["_control_and_index","_place","_control","_index","_idc","_item_name","_classname","_config","_displayName","_food_item_info","_type","_amount_fill","_sounds","_item_add","_fountains","_medic_item_info","_amount_heal","_new_damage"];
+
+
 _control_and_index = param[0,[],[[]]];
 if(_control_and_index isEqualTo []) exitWith {};
 _place = param[1,"",[""]];
@@ -40,19 +42,163 @@ switch (_place) do
 	};
 };
 
+systemChat _classname;
+
+
+_food_item_info = getArray(missionConfigFile >> "Valor_settings" >> "food_items" >> _classname);
+//_food_item_info = ["food",60,["action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"],""];
+if!(_food_item_info isEqualTo []) exitWith {
+
+	_type = _food_item_info select 0;
+	_amount_fill = _food_item_info select 1;
+	_sounds = _food_item_info select 2;
+	_item_add = _food_item_info select 3;
+
+
+
+	if(_type isEqualTo "food") then {
+		if((Valor_hunger + _amount_fill) > 100) then {
+			Valor_hunger = 100;
+		} else {
+			Valor_hunger = Valor_hunger + _amount_fill;
+		};
+		playSound selectRandom _sounds;
+	} else {
+		if((Valor_thirst + _amount_fill) > 100) then {
+			Valor_thirst = 100;
+		} else {
+			Valor_thirst = Valor_thirst + _amount_fill;
+		};
+
+		playSound selectRandom _sounds;
+	};
+
+	[_place,_classname,_item_add] spawn {
+		switch (_this select 0) do
+		{
+			case "u":
+			{
+				player removeItemFromUniform (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToUniform (_this select 2);
+				};
+			};
+
+			case "v":
+			{
+				player removeItemFromVest (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToVest (_this select 2);
+				};
+			};
+
+			case "b":
+			{
+				player removeItemFromBackpack (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToBackpack (_this select 2);
+				};
+			};
+		};
+	};
+	false
+};
+
+_medic_item_info = getArray(missionConfigFile >> "Valor_settings" >> "medic_items" >> _classname);
+
+if!(_medic_item_info isEqualTo []) exitWith {
+
+	_amount_heal = _medic_item_info select 0;
+	_sounds = _medic_item_info select 1;
+	_item_add = _medic_item_info select 2;
+
+	_new_damage = getDammage player - (_amount_heal / 100);
+	if(_new_damage < 0 || (missionNamespace getvariable["Valor_skill_FA",false])) then {
+		_new_damage = 0;
+	};
+
+	player setdamage _new_damage;
+
+	playSound selectrandom _sounds;
+	if(vehicle player isEqualTo player) then {
+		player playMoveNow "ainvpknlmstpslaywrfldnon_medic";
+	};
+
+	[_place,_classname,_item_add] spawn {
+		switch (_this select 0) do
+		{
+			case "u":
+			{
+				player removeItemFromUniform (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToUniform (_this select 2);
+				};
+			};
+
+			case "v":
+			{
+				player removeItemFromVest (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToVest (_this select 2);
+				};
+			};
+
+			case "b":
+			{
+				player removeItemFromBackpack (_this select 1);
+				if!((_this select 2) isEqualTo "") then {
+					player addItemToBackpack (_this select 2);
+				};
+			};
+		};
+	};
+	false
+};
+
 
 
 // add classname here together with functions
 switch (_classname) do
 {
+	case "valor_waterbottle_01_empty" : {
+		if!(vehicle player isEqualTo player) exitWith {};
+		_fountains = nearestTerrainObjects[player,["FOUNTAIN"],3.5];
+		if!(_fountains isEqualTo []) then {
+			_item_add = "valor_bottleplastic_v2";
+			playSound "action_fillwater_0";
+			[_classname,_item_add,_place] spawn {
+				switch (_this select 2) do
+				{
+					case "u":
+					{
+						player removeItemFromUniform (_this select 0);
+						if!((_this select 1) isEqualTo "") then {
+							player addItemToUniform (_this select 1);
+						};
+					};
 
+					case "v":
+					{
+						player removeItemFromVest (_this select 0);
+						if!((_this select 1) isEqualTo "") then {
+							player addItemToVest (_this select 1);
+						};
+					};
 
-	default
-	{
-		/* STATEMENT */
+					case "b":
+					{
+						player removeItemFromBackpack (_this select 0);
+						if!((_this select 1) isEqualTo "") then {
+							player addItemToBackpack (_this select 1);
+						};
+					};
+				};
+			};
+		};
 	};
-};
 
+
+};
 
 
 

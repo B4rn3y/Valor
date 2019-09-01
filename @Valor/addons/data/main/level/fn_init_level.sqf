@@ -4,8 +4,8 @@ private ["_xp","_base_level_xp","_add_per_level","_ret","_max_xp_this_level","_c
 _xp = param[0,0,[0]];
 
 
-_base_level_xp = 100;
-_add_per_level = 50;
+_base_level_xp = getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "level_one_XP_needed");
+_add_per_level = getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "level_XP_gain");
 
 
 _ret = [0,0]; // level, xp

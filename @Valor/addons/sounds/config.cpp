@@ -117,6 +117,132 @@ class CfgSounds
 		sound[] = {"\sounds\effects\cough_2.ogg", 70, 1,50};
 		titles[] = {};
 	};
+
+	class action_eat_0
+	{
+		name = "action_eat_0";
+		sound[] = {"\sounds\effects\action_eat_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_1
+	{
+		name = "action_eat_1";
+		sound[] = {"\sounds\effects\action_eat_1.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_2
+	{
+		name = "action_eat_2";
+		sound[] = {"\sounds\effects\action_eat_2.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_3
+	{
+		name = "action_eat_3";
+		sound[] = {"\sounds\effects\action_eat_3.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_chips_0
+	{
+		name = "action_eat_chips_0";
+		sound[] = {"\sounds\effects\action_eat_chips_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_chips_1
+	{
+		name = "action_eat_chips_1";
+		sound[] = {"\sounds\effects\action_eat_chips_1.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_eat_chips_2
+	{
+		name = "action_eat_chips_2";
+		sound[] = {"\sounds\effects\action_eat_chips_2.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_fillwater_0
+	{
+		name = "action_fillwater_0";
+		sound[] = {"\sounds\effects\action_fillwater_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_soda_0
+	{
+		name = "action_soda_0";
+		sound[] = {"\sounds\effects\action_soda_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class action_drink_0
+	{
+		name = "action_drink_0";
+		sound[] = {"\sounds\effects\action_drink_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class bandage_0
+	{
+		name = "bandage_0";
+		sound[] = {"\sounds\effects\bandage_0.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class bandage_1
+	{
+		name = "bandage_1";
+		sound[] = {"\sounds\effects\bandage_1.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class bandage_2
+	{
+		name = "bandage_2";
+		sound[] = {"\sounds\effects\bandage_2.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class morphine_01
+	{
+		name = "morphine_01";
+		sound[] = {"\sounds\effects\morphine_01.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class painkiller_01
+	{
+		name = "painkiller_01";
+		sound[] = {"\sounds\effects\painkiller_01.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class painkiller_02
+	{
+		name = "painkiller_02";
+		sound[] = {"\sounds\effects\painkiller_02.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class painkiller_03
+	{
+		name = "painkiller_03";
+		sound[] = {"\sounds\effects\painkiller_03.ogg", 70, 1,50};
+		titles[] = {};
+	};
+
+	class painkiller_04
+	{
+		name = "painkiller_04";
+		sound[] = {"\sounds\effects\painkiller_04.ogg", 70, 1,50};
+		titles[] = {};
+	};
 };
 
 

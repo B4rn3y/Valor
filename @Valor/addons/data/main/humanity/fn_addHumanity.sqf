@@ -141,7 +141,12 @@ if!(_current_role isEqualTo _new_role) then {
 		_pic ctrlCommit 3;
 		_str_text ctrlCommit 3;
 
-		sleep 10;
+		sleep 15;
+		_pic ctrlsetfade 0;
+		_str_text ctrlSetFade 0;
+		_pic ctrlCommit 5;
+		_str_text ctrlCommit 5;
+		sleep 6;
 		ctrlDelete _str_text;
 		ctrlDelete _pic;
 	};

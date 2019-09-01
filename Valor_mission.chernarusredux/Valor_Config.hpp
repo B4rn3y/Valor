@@ -79,6 +79,26 @@ class Valor_settings {
 		};
 	};
 
+ 	class food_items {
+		valor_bakedbeans[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""}; //what type of food, food to fill, array with sounds it can make, classname of item to add
+		valor_cerealsbox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},""};
+		valor_orange_01[] = {"food",40,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""};
+		valor_tacticalbacon[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""};
+		valor_ricebox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},""};
+
+		valor_can_v1[] = {"water",100,{"action_soda_0"},""};
+		valor_can_v2[] = {"water",100,{"action_soda_0"},""};
+		valor_can_v3[] = {"water",100,{"action_soda_0"},""};
+		valor_bottleplastic_v2[] = {"water",100,{"action_drink_0"},"valor_waterbottle_01_empty"};
+	};
+
+	class medic_items {
+		valor_bandage[] = {40,{"bandage_0","bandage_1","bandage_2"},""};
+		valor_bloodbag[] = {100,{"morphine_01"},""};
+		valor_painkillers[] = {60,{"painkiller_01","painkiller_02","painkiller_03","painkiller_04"},""};
+		valor_vitaminbottle[] = {60,{"painkiller_01","painkiller_02","painkiller_03","painkiller_04"},""};
+	};
+
 	class repair_system {
 		Wheel_repair = "valor_van_02_rimless_tire";
 		Fuel_repair = "valor_ducttape";
@@ -113,6 +133,10 @@ class Valor_settings {
 
 
 	class level_system {
+		level_one_XP_needed = 100; // The amount of XP you need to surpass the first level
+		level_XP_gain = 50;        // The amount of XP added to the 'level_one_XP_needed' foreach level
+
+
 		playtime = 250; // the amount of XP the player gets every 15 minutes
 		map_point = 50; // the amount of XP the player gets every 15 minutes
 
@@ -202,10 +226,10 @@ class Valor_settings {
 				"Medic", // Name of the class
 				0,        // needed level to unlock
 				"Skills: First aid, High voltage", // descritption of the class
-				"A Medic can heal himself and revive others faster.", // descritption of the class
+				"A Medic can heal himself and revive others faster and more efficient.", // descritption of the class
 				{
 					{
-						{"First aid","FA"}, // -
+						{"First aid","FA"}, // +
 						{22,0,"First aid Level 1","Every medical item you use will heal you to 100%.",true}
 					},
 					{
@@ -307,7 +331,7 @@ class Valor_settings {
 		Fuelcan_amount = 20; // The amount of litres in a fuelcan
 		Objects_refueling[] = {"Land_Ind_TankSmall2","Land_Fuel_tank_stairs","Land_Ind_TankSmall","Land_Fuel_tank_big"}; // The objects you can refill fuelcans from
 
-		Time_until_dead = 60; // the time a player is revivable after being shot dead
+		Time_until_dead = 60; // the time a player is revivable after being shot dead(in seconds)
 
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
@@ -4977,8 +5001,8 @@ class Houses_spawn_config
 	{
 		pos[]=
 			{
-				{0.195801,0.855469,-1.41772},
-				{1.44775,-1.85449,-1.41772}
+				{0.195801,0.855469,-1.31775},
+				{1.44775,-1.85449,-1.31775}
 			};
 	};
 
