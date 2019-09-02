@@ -113,7 +113,7 @@ if(Valor_radiation > 0) then {
 	_radiation_pic ctrlCommit 0;
 	switch (true) do
 	{
-		case (Valor_radiation isEqualTo 100):
+		case (Valor_radiation >= 100):
 		{
 			_radiation_pic ctrlSetText "\UIs\textures\HUD\radiation_100.paa";
 		};

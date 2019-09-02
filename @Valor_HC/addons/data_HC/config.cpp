@@ -72,6 +72,13 @@ class CfgFunctions
 			class spawn_bandits {};
 		};
 
+		class loot_drops
+		{
+			file = "\data_HC\main\loot_drops";
+			class init_loot_drops {};
+			class loot_drop_cycle {ext = ".fsm";};
+		};
+
 		class cop_management
 		{
 			file = "\data_HC\main\cop_management";

@@ -58,6 +58,18 @@ class cfgZombie_classes // arrays of different types of zeds sorted by their out
 
 class Valor_settings {
 
+	class loot_drops {
+		waittime[] = {3300,3600,3900};
+		plane_radius = 8200;
+		item_amount = 8;
+		planes[] =
+		{
+			{"CUP_I_C130J_Cargo_AAF",{0.821777,-17.7808,-5.65906}},
+			{"CUP_O_AN2_TK",{0.295898,-7.7832,-2.35278}},
+			{"CUP_C_C47_CIV",{0.187012,-12.0381,-2.85372}}
+		};
+	};
+
 	class Bambi_gear {
 		uniforms[] = {"U_BG_Guerilla2_1"};// just arrays with stuff to add
 		goggles[] = {"G_Bandanna_blk"};

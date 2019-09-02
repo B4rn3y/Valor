@@ -73,6 +73,7 @@ if(isnil "VALOR_SERVER_STARTING") then {
     systemchat "Valor :: Loading Bandit Camps";
     0 call valor_fnc_spawn_bandits;
     systemchat "Valor :: Bandit Camps loaded";
+    0 spawn valor_fnc_init_loot_drops;
     //systemchat "Valor :: Starting Zombie Destroyer";
     //[] spawn valor_fnc_zombie_destroyer;
     ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;

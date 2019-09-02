@@ -1,0 +1,377 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, loot_drop_cycle">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-205.765137,-164.527954,-115.765137,-114.528061,0.000000,"init"};
+item1[] = {"good_",4,218,-202.439957,-58.174740,-112.439957,-8.174740,0.000000,"good?"};
+item2[] = {"not_good",4,218,-378.469421,-163.285858,-288.469421,-113.285858,0.000000,"not good"};
+item3[] = {"END",1,250,-534.622070,-157.917618,-444.622131,-107.917618,0.000000,"END"};
+item4[] = {"spawn_plane",2,250,-442.645569,59.429169,-352.645538,109.429169,0.000000,"spawn" \n "plane"};
+item5[] = {"set_waittime",2,250,-194.571472,64.965027,-104.571472,114.965027,0.000000,"set waittime"};
+item6[] = {"start_",4,218,-316.354340,61.074402,-226.354340,111.074402,0.000000,"start?"};
+item7[] = {"__isnull__plane",4,218,-443.448029,132.328110,-353.448029,182.328110,0.000000,"!isnull _plane"};
+item8[] = {"create_pilot",2,250,-445.000183,197.087265,-355.000183,247.087250,0.000000,"create pilot"};
+item9[] = {"__isnull_pilot",4,218,-447.443115,265.873901,-357.443115,315.873901,0.000000,"!isnull pilot"};
+item10[] = {"add_waypoints",2,250,-452.375977,331.808838,-362.375946,381.808838,0.000000,"add waypoints"};
+item11[] = {"near_drop_pos",4,4314,-452.233673,394.828918,-362.233673,444.828918,0.000000,"near drop pos"};
+item12[] = {"drop_crate",2,250,-454.395874,456.478943,-364.395874,506.478943,0.000000,"drop crate"};
+item13[] = {"near_delete_pos",4,218,-454.836182,522.845215,-364.836182,572.845215,0.000000,"near delete pos"};
+item14[] = {"delete_vehicle",2,250,-451.135712,587.769104,-361.135712,637.769043,0.000000,"delete vehicle"};
+item15[] = {"true",4,218,-199.056213,588.475952,-109.056213,638.475952,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,5};
+link3[] = {2,3};
+link4[] = {4,7};
+link5[] = {5,6};
+link6[] = {6,4};
+link7[] = {7,8};
+link8[] = {8,9};
+link9[] = {9,10};
+link10[] = {10,11};
+link11[] = {11,12};
+link12[] = {12,13};
+link13[] = {13,14};
+link14[] = {14,15};
+link15[] = {15,5};
+globals[] = {0.000000,0,0,0,0,640,480,1,93,6316128,1,-641.297607,-173.219269,707.510132,149.486725,510,608,1};
+window[] = {0,-1,-1,-1,-1,858,78,1324,78,1,528};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "loot_drop_cycle";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_waittime_array = param[0,[],[[]]];" \n
+                         "_plane_array = param[1,[],[[]]];" \n
+                         "_radius = param[2,0,[0]];" \n
+                         "_loottable = param[3,[],[[]]];" \n
+                         "_crate_items_amount = param[4,8,[0]];" \n
+                         "" \n
+                         "_middle_map = [worldsize/2,worldsize/2,0];" \n
+                         "_crate_type = ""I_CargoNet_01_ammo_F"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "not_good">*/
+                                class not_good
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_waittime_array isequalto [] || _plane_array isequalto [] || _radius isequalto 0 || _loottable isequalto []"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "good_">*/
+                                class good_
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_waittime_array isequalto [] || _plane_array isequalto [] || _radius isequalto 0 || _loottable isequalto [])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/"systemchat ""Valor :: Ending drop cylcle"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "spawn_plane">*/
+                class spawn_plane
+                {
+                        name = "spawn_plane";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_start_pos = [_middle_map, 1, worldsize, 0, 1] call BIS_fnc_findSafePos;" \n
+                         "_start_pos pushback 100;" \n
+                         "" \n
+                         "_plane_entry = selectrandom _plane_array;" \n
+                         "_plane_name = _plane_entry select 0;" \n
+                         "_modelPos = _plane_entry select 1; " \n
+                         "" \n
+                         "" \n
+                         "_plane = createVehicle [_plane_name,_start_pos, [], 0, ""FLY""];" \n
+                         "" \n
+                         "if!(isnil ""_crate"") then {deletevehicle _crate};" \n
+                         "if!(isnil ""_para"") then {deletevehicle _para};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isnull__plane">*/
+                                class __isnull__plane
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="create_pilot";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isnull _plane"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_waittime">*/
+                class set_waittime
+                {
+                        name = "set_waittime";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"_time_start = servertime + (random _waittime_array);" \n
+                         "systemchat format[""Valor :: Drop Cycle time start - %1"",_time_start];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "start_">*/
+                                class start_
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="spawn_plane";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > _time_start"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "create_pilot">*/
+                class create_pilot
+                {
+                        name = "create_pilot";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"_startTime = time;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "//_timeDestroy =time + ( HeliCrashConfig select 13);" \n
+                         "" \n
+                         "clearWeaponCargoGlobal _plane;" \n
+                         "clearMagazineCargoGlobal _plane;" \n
+                         "clearItemCargoGlobal _plane;" \n
+                         "_plane setVehicleAmmo 0;" \n
+                         "" \n
+                         " _plane engineOn true;" \n
+                         "//_crashwreck flyInHeight 80;" \n
+                         "//_crashwreck forceSpeed 120;" \n
+                         "_crashwreck setspeedmode ""FULL"";" \n
+                         "" \n
+                         "_aigroup = createGroup civilian;" \n
+                         "_helipilot = _aigroup createUnit [""B_Pilot_F"",getPos _plane,[],0,""FORM""];" \n
+                         "_helipilot moveinDriver _plane;" \n
+                         "_helipilot assignAsDriver _plane;" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isnull_pilot">*/
+                                class __isnull_pilot
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="add_waypoints";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"assigneddriver _plane isequalto _helipilot"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "add_waypoints">*/
+                class add_waypoints
+                {
+                        name = "add_waypoints";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"_drop_pos =[_middle_map, 1, _radius, 5, 0,0,0,[[_start_pos,4000]]] call BIS_fnc_findSafePos;" \n
+                         "_drop_pos pushback 100;" \n
+                         "_delete_pos =[_middle_map, (worldsize/2), worldsize, 0, 1] call BIS_fnc_findSafePos;" \n
+                         "_delete_pos pushback 100;" \n
+                         "" \n
+                         "_wp_drop = _aigroup addwaypoint[_drop_pos,0];" \n
+                         "_wp_drop setWaypointType ""MOVE"";" \n
+                         "_wp_drop setWaypointBehaviour ""CARELESS"";" \n
+                         "_wp_drop setWaypointStatements [""true"", """"];" \n
+                         "" \n
+                         "_wp_delete = _aigroup addwaypoint[_delete_pos,0];" \n
+                         "_wp_delete setWaypointType ""MOVE"";" \n
+                         "_wp_delete setWaypointBehaviour ""CARELESS"";" \n
+                         "_wp_delete setWaypointStatements [""true"", """"];	"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "near_drop_pos">*/
+                                class near_drop_pos
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="drop_crate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_plane distance _drop_pos) <= 200"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "drop_crate">*/
+                class drop_crate
+                {
+                        name = "drop_crate";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/"_para = ""B_Parachute_02_F"" createVehicle [-100,0,100];" \n
+                         "_crate = _crate_type createVehicle [-100,0,80];" \n
+                         "_crate allowdamage false;" \n
+                         "" \n
+                         "deletewaypoint _wp_drop;" \n
+                         "" \n
+                         "clearWeaponCargoGlobal _crate;" \n
+                         "clearMagazineCargoGlobal _crate;" \n
+                         "clearItemCargoGlobal _crate;" \n
+                         "clearBackpackCargoGlobal _crate;" \n
+                         "" \n
+                         "_crate attachTo [_para, [0,0,0]];" \n
+                         "_para setposatl(_plane modeltoworld _modelPos);" \n
+                         "_para setVectorUp [0,0.01, 0.05];" \n
+                         "" \n
+                         "for ""_d"" from 1 to _crate_items_amount do {" \n
+                         "	_rnd = random 100;" \n
+                         "	{" \n
+                         "		_min = _x select 0;" \n
+                         "		_max = _x select 1;" \n
+                         "		if(_min <= _rnd && _max >= _rnd) then {" \n
+                         "			_classname = _x select 2;" \n
+                         "			_type = _x select 3;" \n
+                         "			_spawn_with = _x select 4;" \n
+                         "			switch(_type) do {" \n
+                         "				case ""weapon"":" \n
+                         "				{" \n
+                         "					_crate addweaponcargoglobal[_classname,1];" \n
+                         "				};" \n
+                         "				case ""magazin"":" \n
+                         "				{" \n
+                         "					_crate addmagazinecargoglobal[_classname,1];" \n
+                         "				};" \n
+                         "				case ""item"":" \n
+                         "				{" \n
+                         "					_crate additemcargoglobal[_classname,1];" \n
+                         "				};" \n
+                         "				case ""backpack"":" \n
+                         "				{" \n
+                         "					_crate addbackpackcargoglobal[_classname,1];" \n
+                         "				};" \n
+                         "				default {" \n
+                         "					_crate additemcargoglobal[_classname,1];" \n
+                         "				};" \n
+                         "			};" \n
+                         "			{" \n
+                         "				switch(_x select 2) do {" \n
+                         "				case ""weapon"":" \n
+                         "				{" \n
+                         "					_crate addweaponcargoglobal[(_x select 0),(_x select 1)];" \n
+                         "				};" \n
+                         "				case ""magazin"":" \n
+                         "				{" \n
+                         "					_crate addmagazinecargoglobal[(_x select 0),(_x select 1)];" \n
+                         "				};" \n
+                         "				case ""item"":" \n
+                         "				{" \n
+                         "					_crate additemcargoglobal[(_x select 0),(_x select 1)];" \n
+                         "				};" \n
+                         "				case ""backpack"":" \n
+                         "				{" \n
+                         "					_crate addbackpackcargoglobal[(_x select 0),(_x select 1)];" \n
+                         "				};" \n
+                         "				default {" \n
+                         "					_crate additemcargoglobal[(_x select 0),(_x select 1)];" \n
+                         "				};" \n
+                         "			};" \n
+                         "			} foreach _spawn_with;" \n
+                         "" \n
+                         "		};" \n
+                         "	} foreach _loottable;" \n
+                         "};" \n
+                         "" \n
+                         "[_crate,_para] spawn {" \n
+                         "	_crt = _this select 0;" \n
+                         "	_par = _this select 1;" \n
+                         "" \n
+                         "	while{true} do {" \n
+                         "		sleep 0.25;" \n
+                         "		_h = (getposatl _crt) select 2;" \n
+                         "		if(_h <= 3) then {" \n
+                         "			detach _crt;" \n
+                         "		};" \n
+                         "	};" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "near_delete_pos">*/
+                                class near_delete_pos
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="delete_vehicle";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_plane distance _delete_pos) <= 500"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "delete_vehicle">*/
+                class delete_vehicle
+                {
+                        name = "delete_vehicle";
+                        itemno = 14;
+                        init = /*%FSM<STATEINIT""">*/"deletewaypoint _wp_delete;" \n
+                         "" \n
+                         "deletevehicle(assigneddriver _plane);" \n
+                         "deletevehicle _plane;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 15;
+                                        priority = 0.000000;
+                                        to="set_waittime";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "END",
+        };
+};
+/*%FSM</COMPILE>*/
