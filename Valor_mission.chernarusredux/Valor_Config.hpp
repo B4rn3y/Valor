@@ -296,9 +296,9 @@ class Valor_settings {
 					},
 					{
 						{"Paleontologist","Paleontologist"}, // +
-						{43,35,"Miner Level 1","You have a 1% higher chance to find a rapotr egg.",1},
-						{44,45,"Miner Level 2","You have a 2% higher chance to find a rapotr egg.",2},
-						{45,60,"Miner Level 3","You have a 3% higher chance to find a rapotr egg.",3}
+						{43,35,"Miner Level 1","You have a 1% higher chance of finding a raptor egg.",1},
+						{44,45,"Miner Level 2","You have a 2% higher chance of finding a raptor egg.",2},
+						{45,60,"Miner Level 3","You have a 3% higher chance of finding a raptor egg.",3}
 					}
 				}
 			},
