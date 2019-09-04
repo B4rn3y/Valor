@@ -180,7 +180,7 @@ class Valor_settings {
 				"Scout", // Name of the class
 				0,        // needed level to unlock
 				"Skills: Shoes of Hermes, Ascetic, Explorer", // short descritption of the class
-				"The class Scout has the ability to let you run faster, lose less food and water aswell as grant you more XP when discovering the map.", // long descritption of the class
+				"The Scout class has the ability to let you run faster, lose less food and water as well as granting you more XP when discovering the map.", // long descritption of the class
 				{
 					{
 						{"Shoes of Hermes","SOH"}, // +
