@@ -12,9 +12,9 @@ _tv = _display displayCtrl 1111;
 _sell_btn = _display displayCtrl 2400;
 
 _classname = _tv tvData _selectionPath;
-systemchat "1";
+
 if(91 in(toArray _classname)) then {
-	systemchat "2";
+
 	_compiled_arr = call compile _classname;
 	_classname = _compiled_arr select 0;
 	_type = _compiled_arr select 1;

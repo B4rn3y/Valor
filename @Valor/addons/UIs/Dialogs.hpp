@@ -11,5 +11,5 @@
 #include "Dialogs\skills\skills.hpp"  	           			// ID 3011
 #include "Dialogs\humanity\humanity.hpp"  	        		// ID 3012
 #include "Dialogs\sell_player_items\sell_player_items.hpp"  // ID 3013
-
+#include "Dialogs\sell_vehicle_items\sell_vehicle_items.hpp"// ID 3014
 

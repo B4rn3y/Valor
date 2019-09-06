@@ -1,8 +1,9 @@
 _pos = _this select 1;
 _vehicle = _this select 2;
-VALOR_LAST_VEHICLE = _vehicle;
+
 
 if!(_pos isEqualTo "driver") exitWith {};
+VALOR_LAST_VEHICLE = _vehicle;
 if(_vehicle iskindof "Landvehicle" || _vehicle iskindof "AIR" || _vehicle iskindof "SHIP") then {
 	_var = _vehicle getvariable "Update_this";
 	if(isnil "_var") then {

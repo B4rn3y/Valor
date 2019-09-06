@@ -158,6 +158,7 @@ _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["Acts_CivilShocked_1","Acts_CivilShocked_2"];}];
 _trader addaction["Shop",valor_fnc_openItemShop,"survivor_city",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 _trader addaction["Sell Inventory Items",valor_fnc_open_sell_player_items_menu,"survivor_city",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
+_trader addaction["Sell Vehicle Items",valor_fnc_open_sell_vehicle_items_menu,"survivor_city",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 _position = [3693.13,8550.28,0.00137329];

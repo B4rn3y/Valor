@@ -58,6 +58,14 @@ class CfgFunctions
 			class sell_player_items_menu {};
 		};
 
+		class sell_veh_items
+		{
+			file = "\UIs\UI_functions\sell_vehicle_items";
+			class fill_sell_vehicle_items_menu {};
+			class open_sell_vehicle_items_menu {};
+			class sell_vehicle_items_menu {};
+		};
+
 		class interaction
 		{
 			file = "\UIs\UI_functions\interaction";

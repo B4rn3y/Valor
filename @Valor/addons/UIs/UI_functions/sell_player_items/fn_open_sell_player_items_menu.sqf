@@ -169,14 +169,15 @@ _fin_array = [];
 } foreach _arr;
 
 _str = (toString _fin_array);
-test = _str;
+
 [[player,_str],"valor_fnc_get_item_sell_prices",2] call valor_fnc_remoteexec;
 
 
 waitUntil {isnull(findDisplay 3013)};
 
-[[Valor_shop_sold_items,_shop_type],"valor_fnc_Itemshop_insert_update_new_item_sold",2] call valor_fnc_remoteexec;
-
+if!(Valor_shop_sold_items isEqualTo []) then {
+	[[Valor_shop_sold_items,_shop_type],"valor_fnc_Itemshop_insert_update_new_item_sold",2] call valor_fnc_remoteexec;
+};
 Valor_shop_sold_items = nil;
 
 
