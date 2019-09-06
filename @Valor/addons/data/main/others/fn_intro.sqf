@@ -12,7 +12,7 @@ valor_intro_cam camCommit 0;
 valor_intro_cam camSetTarget [6774.69,2543.35,5.89238];
 valor_intro_cam camSetPos [8441.4,2616.64,4.37143];
 valor_intro_cam camCommit 0;
-playsound "intro_sound";
+//playsound "intro_sound";
 
 //valor_intro_cam camSetTarget [6774.69,2543.35,5.89238];
 //valor_intro_cam camSetPos [7165.92,2246.04,20.0015];

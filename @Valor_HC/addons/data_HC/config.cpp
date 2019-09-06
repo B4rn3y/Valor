@@ -72,6 +72,13 @@ class CfgFunctions
 			class spawn_bandits {};
 		};
 
+		class items_sell
+		{
+			file = "\data_HC\main\items_sell";
+			class get_item_sell_prices {};
+			class init_sold_items {};
+		};
+
 		class loot_drops
 		{
 			file = "\data_HC\main\loot_drops";
@@ -92,8 +99,7 @@ class CfgFunctions
 			file = "\data_HC\main\item_shop";
 			class Itemshop_request {};
 			class update_item_stock {};
-			class Itemshop_sellprice_request {};
-			class incrementStock {};
+			class Itemshop_insert_update_new_item_sold {};
 		};
 
 		class bases

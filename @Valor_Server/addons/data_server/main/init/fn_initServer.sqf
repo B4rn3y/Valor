@@ -65,6 +65,9 @@ if!(HC_AVAILABLE) then {
     publicVariable "VALOR_SERVER_STARTING";
     [] call valor_fnc_init_loottable;
     diag_log "Valor :: Variables set";
+    systemchat "Valor :: Starting sold items init";
+    [] call valor_fnc_init_sold_items;
+    systemchat "Valor :: sold items init finished";
     diag_log "Valor :: Searching for Fuelstations";
     [] call valor_fnc_init_fuelstations;
     diag_log "Valor :: Fuelstations found and published";
@@ -87,6 +90,7 @@ if!(HC_AVAILABLE) then {
     diag_log "Valor :: Vehicles loaded";
     diag_log "Valor :: Starting Zombie Destroyer";
     [] spawn valor_fnc_zombie_destroyer;
+    0 spawn valor_fnc_init_loot_drops;
     ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
 
 

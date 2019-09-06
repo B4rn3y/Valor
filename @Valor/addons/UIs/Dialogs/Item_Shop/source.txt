@@ -1,17 +1,16 @@
-/* #Kuzoza
+/* #Zehyne
 $[
 	1.063,
 	["itemshop",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
 	[1000,"bckgrnd",[1,"",["-0.00195263 * safezoneW + safezoneX","-0.00277717 * safezoneH + safezoneY","0.247735 * safezoneW","1.00408 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"",[1,"",["0.00234404 * safezoneW + safezoneX","0.0324073 * safezoneH + safezoneY","0.240314 * safezoneW","0.863333 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1500,"",[1,"",["0.00507843 * safezoneW + safezoneX","0.0324073 * safezoneH + safezoneY","0.236799 * safezoneW","0.899444 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[2401,"close_BTN",[1,"Close",["0.00468775 * safezoneW + safezoneX","0.966667 * safezoneH + safezoneY","0.237578 * safezoneW","0.0253704 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2400,"buy_sell_BTN",[1,"Buy",["0.00468731 * safezoneW + safezoneX","0.906482 * safezoneH + safezoneY","0.237578 * safezoneW","0.0253704 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[2402,"SWUTCH_BTN",[1,"Switch",["0.00468746 * safezoneW + safezoneX","0.937037 * safezoneH + safezoneY","0.237578 * safezoneW","0.0253704 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2400,"buy_sell_BTN",[1,"Buy",["0.00468727 * safezoneW + safezoneX","0.937963 * safezoneH + safezoneY","0.237578 * safezoneW","0.0253704 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
 	[1001,"header",[1,"",["-0.00156277 * safezoneW + safezoneX","0 * safezoneH + safezoneY","0.247344 * safezoneW","0.0262963 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
 ////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by Barney, v1.063, #Kuzoza)
+// GUI EDITOR OUTPUT START (by Barney, v1.063, #Zehyne)
 ////////////////////////////////////////////////////////
 
 class bckgrnd: RscText
@@ -26,10 +25,10 @@ class bckgrnd: RscText
 class RscListbox_1500: RscListbox
 {
 	idc = 1500;
-	x = 0.00234404 * safezoneW + safezoneX;
+	x = 0.00507843 * safezoneW + safezoneX;
 	y = 0.0324073 * safezoneH + safezoneY;
-	w = 0.240314 * safezoneW;
-	h = 0.863333 * safezoneH;
+	w = 0.236799 * safezoneW;
+	h = 0.899444 * safezoneH;
 };
 class close_BTN: RscButtonMenu
 {
@@ -44,17 +43,8 @@ class buy_sell_BTN: RscButtonMenu
 {
 	idc = 2400;
 	text = "Buy"; //--- ToDo: Localize;
-	x = 0.00468731 * safezoneW + safezoneX;
-	y = 0.906482 * safezoneH + safezoneY;
-	w = 0.237578 * safezoneW;
-	h = 0.0253704 * safezoneH;
-};
-class SWUTCH_BTN: RscButtonMenu
-{
-	idc = 2402;
-	text = "Switch"; //--- ToDo: Localize;
-	x = 0.00468746 * safezoneW + safezoneX;
-	y = 0.937037 * safezoneH + safezoneY;
+	x = 0.00468727 * safezoneW + safezoneX;
+	y = 0.937963 * safezoneH + safezoneY;
 	w = 0.237578 * safezoneW;
 	h = 0.0253704 * safezoneH;
 };

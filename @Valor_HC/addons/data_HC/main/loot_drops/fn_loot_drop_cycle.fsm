@@ -12,8 +12,8 @@ item7[] = {"__isnull__plane",4,218,-443.448029,132.328110,-353.448029,182.328110
 item8[] = {"create_pilot",2,250,-445.000183,197.087265,-355.000183,247.087250,0.000000,"create pilot"};
 item9[] = {"__isnull_pilot",4,218,-447.443115,265.873901,-357.443115,315.873901,0.000000,"!isnull pilot"};
 item10[] = {"add_waypoints",2,250,-452.375977,331.808838,-362.375946,381.808838,0.000000,"add waypoints"};
-item11[] = {"near_drop_pos",4,4314,-452.233673,394.828918,-362.233673,444.828918,0.000000,"near drop pos"};
-item12[] = {"drop_crate",2,250,-454.395874,456.478943,-364.395874,506.478943,0.000000,"drop crate"};
+item11[] = {"near_drop_pos",4,218,-452.233673,394.828918,-362.233673,444.828918,0.000000,"near drop pos"};
+item12[] = {"drop_crate",2,4346,-454.395874,456.478943,-364.395874,506.478943,0.000000,"drop crate"};
 item13[] = {"near_delete_pos",4,218,-454.836182,522.845215,-364.836182,572.845215,0.000000,"near delete pos"};
 item14[] = {"delete_vehicle",2,250,-451.135712,587.769104,-361.135712,637.769043,0.000000,"delete vehicle"};
 item15[] = {"true",4,218,-199.056213,588.475952,-109.056213,638.475952,0.000000,"true"};
@@ -33,8 +33,8 @@ link12[] = {12,13};
 link13[] = {13,14};
 link14[] = {14,15};
 link15[] = {15,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,93,6316128,1,-641.297607,-173.219269,707.510132,149.486725,510,608,1};
-window[] = {0,-1,-1,-1,-1,858,78,1324,78,1,528};
+globals[] = {0.000000,0,0,0,0,640,480,1,93,6316128,1,-799.245789,271.676636,944.103394,-6.437561,685,608,1};
+window[] = {0,-1,-1,-1,-1,962,182,1428,182,1,703};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -51,7 +51,7 @@ class FSM
                          "_radius = param[2,0,[0]];" \n
                          "_loottable = param[3,[],[[]]];" \n
                          "_crate_items_amount = param[4,8,[0]];" \n
-                         "" \n
+                         "_max_fly_time = param[5,600,[0]];" \n
                          "_middle_map = [worldsize/2,worldsize/2,0];" \n
                          "_crate_type = ""I_CargoNet_01_ammo_F"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -110,7 +110,9 @@ class FSM
                          "_plane = createVehicle [_plane_name,_start_pos, [], 0, ""FLY""];" \n
                          "" \n
                          "if!(isnil ""_crate"") then {deletevehicle _crate};" \n
-                         "if!(isnil ""_para"") then {deletevehicle _para};"/*%FSM</STATEINIT""">*/;
+                         "if!(isnil ""_para"") then {deletevehicle _para};" \n
+                         "" \n
+                         "_max_time = servertime + _max_fly_time;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -135,6 +137,7 @@ class FSM
                         itemno = 5;
                         init = /*%FSM<STATEINIT""">*/"_time_start = servertime + (random _waittime_array);" \n
                          "systemchat format[""Valor :: Drop Cycle time start - %1"",_time_start];" \n
+                         "" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -227,7 +230,7 @@ class FSM
                                         priority = 0.000000;
                                         to="drop_crate";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_plane distance _drop_pos) <= 200"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_plane distance _drop_pos) <= 200) || !(alive _plane) ||(servertime > _max_time)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -319,8 +322,11 @@ class FSM
                          "	while{true} do {" \n
                          "		sleep 0.25;" \n
                          "		_h = (getposatl _crt) select 2;" \n
-                         "		if(_h <= 3) then {" \n
+                         "		if(_h <= 2) exitwith {" \n
                          "			detach _crt;" \n
+                         "			[format[""The UN has dropped a supply crate at %1/%2"",(mapGridPosition _crt select [0,3]),(mapGridPosition _crt select [3,6])],true,20] remoteexec[""valor_fnc_exp_hint"",-2];" \n
+                         "	      sleep 3;" \n
+                         "         deletevehicle _par;" \n
                          "		};" \n
                          "	};" \n
                          "};"/*%FSM</STATEINIT""">*/;
@@ -334,7 +340,7 @@ class FSM
                                         priority = 0.000000;
                                         to="delete_vehicle";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_plane distance _delete_pos) <= 500"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_plane distance _delete_pos) <= 500)  || !(alive _plane) ||(servertime > _max_time)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

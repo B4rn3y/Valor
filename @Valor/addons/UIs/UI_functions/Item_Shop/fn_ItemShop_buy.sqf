@@ -4,23 +4,22 @@ private ["_display","_header","_listbox","_buy_sell_BTN","_switch_BTN","_str_tex
 disableSerialization;
 _display = findDisplay 3007;
 _header = _display displayCtrl 1001;
-_listbox = _display displayCtrl 1500;
+_tree = _display displayCtrl 1500;
 _buy_sell_BTN = _display displayCtrl 2400;
 _switch_BTN = _display displayCtrl 2402;
 
 if(isnull _display) exitWith {};
-_index = lbCurSel _listbox;
-if(_index isEqualTo -1) exitWith {};
+_index = tvCurSel _tree;
+if(_index isEqualTo []) exitWith {};
 
-_btn_text = ctrlText _buy_sell_BTN;
 
-if!(_btn_text isEqualTo "BUY") exitWith {};
 _box = (getposatl player) nearestobject "B_supplyCrate_F";
 if(isnull _box) exitWith {hint "Error :: Could not find the Lootbox"};
 
 
-_data = _listbox lbdata _index;
+_data = _tree tvData _index;
 if(_data isEqualTo "") exitWith {};
+//diag_log _data;
 _buy_sell_BTN ctrlEnable false;
 _data = call compile _data;
 _DB_ID = _data select 0;
@@ -37,17 +36,20 @@ if!(_can_pay) exitWith{titletext[format["You are missing $%1 on your bank!",[((V
 
 _new_stock = _stock - 1;
 if(_new_stock <= 0 && _infinite isEqualTo 0) then {
-	_listbox lbDelete _index;
+	_tree tvDelete _index;
 };
 
 if(_new_stock < 0 && _infinite isEqualTo 1) then {
-	_new_stock = -1;
+	_new_stock = 1;
 };
 
 if(_infinite isEqualTo 0) then {
 	_man_close = nearestObjects[player,["MAN"],12];
 	_man_close = _man_close - [player];
 	_actual_man = [];
+
+	_tree tvSetData[_index,str([_DB_ID,_classname,_price,_new_stock,_type,_config,_infinite])];
+	//diag_log str([_DB_ID,_classname,_price,_new_stock,_type,_config,_infinite]);
 	{if(isplayer _x) then {_actual_man pushback _x};} foreach _man_close;
 	// remote to server
 

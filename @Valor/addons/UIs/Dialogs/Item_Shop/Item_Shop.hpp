@@ -23,20 +23,20 @@ class Item_Shop {
 			y = 0 * safezoneH + safezoneY;
 			w = 0.247344 * safezoneW;
 			h = 0.0262963 * safezoneH;
-			colorBackground[] = {0,0,0,1};
+			colorBackground[] = {1,0.502,0,1};
 		};
 	};
 
 	class controls {
-		class RscListbox_1500: valor_RscListBox
+		/*class RscListbox_1500: valor_RscTree
 		{
 			idc = 1500;
-			sizeEx = 0.040;
-			x = 0.00234404 * safezoneW + safezoneX;
+			//sizeEx = 0.040;
+			x = 0.00507843 * safezoneW + safezoneX;
 			y = 0.0324073 * safezoneH + safezoneY;
-			w = 0.240314 * safezoneW;
-			h = 0.863333 * safezoneH;
-		};
+			w = 0.236799 * safezoneW;
+			h = 0.899444 * safezoneH;
+		};*/
 		class close_BTN: valor_RscButtonMenu
 		{
 			idc = 2401;
@@ -51,18 +51,8 @@ class Item_Shop {
 		{
 			idc = 2400;
 			text = ""; //--- ToDo: Localize;
-			x = 0.00468731 * safezoneW + safezoneX;
-			y = 0.906482 * safezoneH + safezoneY;
-			w = 0.237578 * safezoneW;
-			h = 0.0253704 * safezoneH;
-		};
-		class SWUTCH_BTN: valor_RscButtonMenu
-		{
-			idc = 2402;
-			text = "Switch"; //--- ToDo: Localize;
-			onbuttonClick = "[] spawn valor_fnc_switchItemShop;";
-			x = 0.00468746 * safezoneW + safezoneX;
-			y = 0.937037 * safezoneH + safezoneY;
+			x = 0.00468727 * safezoneW + safezoneX;
+			y = 0.937963 * safezoneH + safezoneY;
 			w = 0.237578 * safezoneW;
 			h = 0.0253704 * safezoneH;
 		};

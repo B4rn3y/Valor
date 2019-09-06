@@ -51,6 +51,9 @@ if(isnil "VALOR_SERVER_STARTING") then {
     systemchat "Valor :: HC is starting everything";
     [] call valor_fnc_init_loottable;
     systemchat "Valor :: Variables set";
+    systemchat "Valor :: Starting sold items init";
+    [] call valor_fnc_init_sold_items;
+    systemchat "Valor :: sold items init finished";
     systemchat "Valor :: Searching for Fuelstations";
     [] call valor_fnc_init_fuelstations;
     systemchat "Valor :: Fuelstations found and published";

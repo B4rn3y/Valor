@@ -11,7 +11,7 @@ _radiation_zones = getArray(missionConfigFile >> "Valor_settings" >> "radiation"
 		_pos = getMarkerPos _pos;
 	};
 	_trg = createTrigger ["EmptyDetector", _pos,false];
-	_trg setTriggerArea [_radius, _radius, 0, false];
+	_trg setTriggerArea [_radius, _radius, 0, false,70];
 	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_trg setTriggerStatements ["(vehicle player) in thisList", format["[%1,%2] spawn valor_fnc_radiation;",_pos,_radius], ""];
 

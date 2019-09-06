@@ -77,8 +77,22 @@ class CfgFunctions
 			file = "\data_server\main\item_shop";
 			class Itemshop_request {};
 			class update_item_stock {};
-			class Itemshop_sellprice_request {};
-			class incrementStock {};
+			class Itemshop_insert_update_new_item_sold {};
+		};
+
+
+		class items_sell
+		{
+			file = "\data_server\main\items_sell";
+			class get_item_sell_prices {};
+			class init_sold_items {};
+		};
+
+		class loot_drops
+		{
+			file = "\data_server\main\loot_drops";
+			class init_loot_drops {};
+			class loot_drop_cycle {ext = ".fsm";};
 		};
 
 		class bases

@@ -26,6 +26,7 @@ if(isnil "VALOR_PREVIEW_MODEL") then {
 	valor_intro_cam camSetTarget _pos;
 	valor_intro_cam camSetPos (player modelToWorld[0,2,1]);
 	valor_intro_cam camCommit 0;
+
 };
 
 
@@ -38,26 +39,34 @@ if(isnull (findDisplay 3007)) then {
 
 if(_error) exitWith{systemChat "Valor Error :: Could not create the dialog!";valor_intro_cam cameraEffect ["TERMINATE","BACK"];camDestroy valor_intro_cam; deleteVehicle VALOR_PREVIEW_MODEL; player hideObject false;};
 
-if(isnil "Valor_item_shop_sell") then {
 
-	_display = findDisplay 3007;
-	_header = _display displayCtrl 1001;
-	_listbox = _display displayCtrl 1500;
-	_buy_sell_BTN = _display displayCtrl 2400;
-	_switch_BTN = _display displayCtrl 2402;
-	lbClear _listbox;
-	_listbox lbadd "Loading Items from server...";
-	_buy_sell_BTN ctrlSetText "BUY";
-	_buy_sell_BTN ctrlRemoveAllEventHandlers "ButtonClick";
-	_buy_sell_BTN ctrlSetEventHandler ["ButtonClick","[] spawn valor_fnc_ItemShop_buy;"];
-	_listbox ctrlRemoveAllEventHandlers "LBSelChanged";
-	_listbox ctrlSetEventHandler ["LBSelChanged","[] spawn valor_fnc_ItemShop_lb_changed;"];
 
-	[[_seller,player],"valor_fnc_Itemshop_request",2] call valor_fnc_remoteexec;
-	//[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
-} else {
-	0 call valor_fnc_openItemSellMenu;
+_display = findDisplay 3007;
+_header = _display displayCtrl 1001;
+_tree = _display displayCtrl 1500;
+iF(isnull _tree) then {
+	_tree = (finddisplay 3007) ctrlCreate ["RscTreeSearch", 1500];
+	_tree ctrlSetFont "PuristaMedium";
+	_tree ctrlSetFontHeight 0.04;
+	_tree ctrlSetPosition [0.00507843 * safezoneW + safezoneX,0.0324073 * safezoneH + safezoneY,0.236799 * safezoneW,0.899444 * safezoneH];
+	_tree ctrlSetBackgroundColor [0,0,0,0.25];
+	_tree ctrlCommit 0;
+	//_tv ctrlAddEventHandler ["TreeDblClick","_this spawn {}"];
+
 };
+tvClear _tree;
+_buy_sell_BTN = _display displayCtrl 2400;
+_switch_BTN = _display displayCtrl 2402;
+tvClear _tree;
+_tree tvadd[[], "Loading Items from server..."];
+_buy_sell_BTN ctrlSetText "BUY";
+_buy_sell_BTN ctrlRemoveAllEventHandlers "ButtonClick";
+_buy_sell_BTN ctrlSetEventHandler ["ButtonClick","[] spawn valor_fnc_ItemShop_buy;"];
+
+
+[[_seller,player],"valor_fnc_Itemshop_request",2] call valor_fnc_remoteexec;
+//[_seller,player] remoteExec["valor_fnc_Itemshop_request",2];
+
 showChat false;
 Valor_last_added= [uniform player,"uniform"];
 waitUntil {isnull(finddisplay 3007)};

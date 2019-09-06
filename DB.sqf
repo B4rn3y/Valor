@@ -173,6 +173,21 @@ CREATE TABLE IF NOT EXISTS `item_sell_prices` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `classname` varchar(256) NOT NULL,
   `price` int(6) NOT NULL DEFAULT '100',
+  `type` varchar(100) NOT NULL DEFAULT 'item',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `items_sold`;
+CREATE TABLE IF NOT EXISTS `items_sold` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(256) NOT NULL,
+  `price` int(6) NOT NULL DEFAULT '100',
+  `type` varchar(100) NOT NULL DEFAULT 'item',
+  `seller` varchar(128) NOT NULL,
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

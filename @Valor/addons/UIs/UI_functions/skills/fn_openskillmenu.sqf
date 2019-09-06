@@ -1,4 +1,3 @@
-
 createDialog "skills";
 
 _display = findDisplay 3011;
