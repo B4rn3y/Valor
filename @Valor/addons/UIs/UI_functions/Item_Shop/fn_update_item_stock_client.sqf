@@ -18,7 +18,7 @@ _str_text_Price = _display displayCtrl 1102;
 _count_header = 0;
 while {true} do
 {
-	_count = _tree tvCount _count_header;
+	_count = _tree tvCount [_count_header];
 	if(_count > 0) then {
 		for "_d" from 0 to (_count - 1) do {
 			_data = _tree tvData [_count_header,_d];

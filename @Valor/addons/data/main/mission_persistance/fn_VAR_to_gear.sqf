@@ -149,8 +149,9 @@ _handgun = "";
 		{
 			{
 				if!(_x isEqualTo "") then {
-					player addItem _x;
-					player assignItem _x;
+					//player addItem _x;
+					//player assignItem _x;
+					player linkItem _x;
 				};
 			} foreach _x;
 		};
