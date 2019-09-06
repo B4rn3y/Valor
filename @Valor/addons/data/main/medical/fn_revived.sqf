@@ -1,26 +1,32 @@
 
-private ["_unit","_new_player_unit","_old_player_unit","_old_group","_obj"];
+private ["_unit","_dir","_pos","_new_player_unit","_old_player_unit","_old_old_player_unit","_old_group","_obj"];
 _unit = param[0,objNull,[objNull]];
 if(isnull _unit) exitWith {};
+Valor_gear = [_unit] call valor_fnc_gear_to_VAR;
+VALOR_CASH = _unit getvariable["cash",0];
+_dir = getdir _unit;
+_pos = visiblePositionASL _unit;
 
 if((call valor_coplevel) isEqualTo 0 && playerside isEqualTo opfor) then {
 	_new_player_unit = (createGroup opfor) createUnit["C_man_w_worker_F",player,[],0,"CAN_COLLIDE"];
 	_old_player_unit = _unit;
+	_old_old_player_unit = player;
 	selectPlayer _new_player_unit;
 	waitUntil {_new_player_unit isEqualTo player};
-	deleteVehicle _old_player_unit;
+	_old_player_unit spawn {sleep 1; deleteVehicle _this};
+	_old_old_player_unit spawn {sleep 1; deleteVehicle _this};
 };
 
 _old_group = group player;
 [player] joinSilent (createGroup opfor);
 deleteGroup _old_group;
-_unit = _new_player_unit;
 
 
-Valor_gear = [_unit] call valor_fnc_gear_to_VAR;
+
+
 [Valor_gear] spawn valor_fnc_VAR_to_gear;
 waitUntil {!isnil "Valor_gear_loaded"};
-VALOR_CASH = _unit getvariable["cash",0];
+
 
 player setvariable["revived",nil,true];
 player setvariable["reviving",nil,true];
@@ -54,12 +60,12 @@ camDestroy valor_deathCamera;
 
 0 call valor_fnc_setupHUD;  // setup HUD
 
-player setDir (getdir _unit);
-player setPosASL (visiblePositionASL _unit);
-deleteVehicle _unit;
+player setDir _dir;
+player setPosASL _pos;
+
 valor_alive =1;
 0 call valor_fnc_syncPlayerToDB;
-if(!(surfaceIsWater (visiblePositionASL player)))then{
+if(!(surfaceIsWater _pos))then{
 
 	player setDamage 0.3;
 
