@@ -59,7 +59,8 @@ class cfgZombie_classes // arrays of different types of zeds sorted by their out
 class Valor_settings {
 
 	class loot_drops {
-		waittime[] = {3300,3600,3900};
+		//waittime[] = {3300,3600,3900};
+		waittime[] = {200,220,230};
 		plane_radius = 8200;
 		item_amount = 8;
 		planes[] =
@@ -296,9 +297,20 @@ class Valor_settings {
 					},
 					{
 						{"Paleontologist","Paleontologist"}, // +
+
+						{43,35,"Miner Level 1","You have a 1% higher chance to find a raptor egg.",1},
+						{44,45,"Miner Level 2","You have a 2% higher chance to find a raptor egg.",2},
+						{45,60,"Miner Level 3","You have a 3% higher chance to find a raptor egg.",3}
+
 						{43,35,"Miner Level 1","You have a 1% higher chance of finding a raptor egg.",1},
 						{44,45,"Miner Level 2","You have a 2% higher chance of finding a raptor egg.",2},
 						{45,60,"Miner Level 3","You have a 3% higher chance of finding a raptor egg.",3}
+
+
+						{43,35,"Miner Level 1","You have a 1% higher chance of finding a raptor egg.",1},
+						{44,45,"Miner Level 2","You have a 2% higher chance of finding a raptor egg.",2},
+						{45,60,"Miner Level 3","You have a 3% higher chance of finding a raptor egg.",3}
+
 					}
 				}
 			},
