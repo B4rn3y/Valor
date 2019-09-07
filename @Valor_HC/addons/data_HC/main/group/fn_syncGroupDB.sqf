@@ -31,17 +31,6 @@ switch (_index) do
 		_requester setvariable["Valor_group_id",[_gang_id,_grp_name],true];
 
 
-		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
-		{
-			_var = _x getVariable["group_restricted",[]];
-			if!(_var isEqualTo []) then {
-				_id_group_veh = _var select 1;
-				if(_id_group_veh isEqualTo (call compile (getplayeruid _requester))) then {
-					_x setvariable["group_restricted",[1,_gang_id],true];
-					_x setvariable["update_this",true,true];
-				};
-			};
-		} foreach _vehicles;
 
 	};
 

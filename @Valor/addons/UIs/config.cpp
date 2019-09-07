@@ -88,6 +88,13 @@ class CfgFunctions
 			class payticket {};
 		};
 
+		class key_g
+		{
+			file = "\UIs\UI_functions\key_menu";
+			class give_key_menu {};
+			class open_key_menu {};
+		};
+
 		class carshop
 		{
 			file = "\UIs\UI_functions\carshop";

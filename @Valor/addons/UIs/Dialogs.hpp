@@ -12,4 +12,4 @@
 #include "Dialogs\humanity\humanity.hpp"  	        		// ID 3012
 #include "Dialogs\sell_player_items\sell_player_items.hpp"  // ID 3013
 #include "Dialogs\sell_vehicle_items\sell_vehicle_items.hpp"// ID 3014
-
+#include "Dialogs\key_menu\key_menu.hpp"                    // ID 3015

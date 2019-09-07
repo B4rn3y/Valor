@@ -4,28 +4,20 @@ _vehicle = vehicle player;
 if(isnil "VALOR_IN_TRADER") then {
 	VALOR_IN_TRADER = true;
 
-	_set_var = {
-		_mode = _this;
-
-		if(_mode isEqualTo 0) then {
-			_vehicle setvariable["group_restricted",[_mode,getplayeruid player],true];
-		} else {
-			_vehicle setvariable["group_restricted",[_mode,valor_group select 0],true];
-		};
-	};
 	if(!(vehicle player isEqualTo player) && (driver vehicle player isEqualTo player)) then {
-		if(playerSide isEqualTo opfor) exitWith {_vehicle setvariable["group_restricted",[-2,-1],true];};
-		if(isnil "Valor_group") exitWith {0 call _set_var;};
-		if(valor_group isEqualTo []) then {
-			0 call _set_var;
-		} else {
-			1 call _set_var;
-		};
+		["You entered the Survivor city, you can now lock your vehicle. (Use the 'U' key)"] spawn valor_fnc_exp_hint;
+		Valor_vehicles_key pushBackUnique _vehicle;
+		_vehicle setvariable["owners",[getPlayerUID player],true];
+		_vehicle setvariable["update_this",true,true];
+
 	};
 } else {
 	VALOR_IN_TRADER = nil;
 	if(!(vehicle player isEqualTo player) && (driver vehicle player isEqualTo player)) then {
-		_vehicle setvariable["group_restricted",nil,true];
+		_vehicle lock 0;
+		_vehicle setvariable["owners",nil,true];
+		_vehicle setvariable["update_this",true,true];
+		["You left the Survivor city, your vehicle is now unlocked"] spawn valor_fnc_exp_hint;
 	};
 };
 

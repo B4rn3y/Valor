@@ -15,67 +15,9 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 
 	if(playerSide in [opfor,independent,blufor]) exitWith {};
 	_exit = false;
-	_var = _container getvariable "group_restricted";
-	if(isnil "_var") exitWith {};
-
-	_mode = _var select 0;
-	_number = _var select 1;
-	_var = nil;
-	switch (_mode) do
-	{
-		case 1:
-		{
-			if(isnil "valor_group") exitWith {_exit = true;};
-			if(valor_group isEqualTo []) exitWith {_exit = true;};
-
-			if!(_number isEqualTo (valor_group select 0)) exitWith {_exit = true;};
-		};
-
-		case -2:
-		{
-			_exit = true;
-		};
-
-		default
-		{
-			if!(_number isEqualTo (getplayeruid player)) exitWith {_exit = true;};
-		};
+	iF((locked _container) isEqualTo 2) then {
+		_exit = true;
 	};
-
-
-
-
-	if!(_exit) then {
-		if(_container2 iskindof "Landvehicle" || _container2 iskindof "AIR" || _container2 iskindof "SHIP") then {
-			_var = _container2 getvariable "group_restricted";
-			if(isnil "_var") exitWith {};
-
-			_mode = _var select 0;
-			_number = _var select 1;
-
-			switch (_mode) do
-			{
-				case 1:
-				{
-					if(isnil "valor_group") exitWith {_exit = true;};
-					if(valor_group isEqualTo []) exitWith {_exit = true;};
-
-					if!(_number isEqualTo (valor_group select 0)) exitWith {_exit = true;};
-				};
-
-				case -2:
-				{
-					_exit = true;
-				};
-
-				default
-				{
-					if!(_number isEqualTo (getplayeruid player)) exitWith {_exit = true;};
-				};
-			};
-		};
-	};
-
 
 	if(_exit) exitWith {
 		0 spawn {

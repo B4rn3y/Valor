@@ -1,6 +1,5 @@
 
-
-private ["_all_vehicles"];
+private ["_all_vehicles","_var","_Map_center","_objs_classnames","_objs"];
 
 _all_vehicles = allMissionObjects "LandVehicle" + allMissionObjects "Air" + allMissionObjects "Ship";
 {
@@ -9,6 +8,10 @@ _all_vehicles = allMissionObjects "LandVehicle" + allMissionObjects "Air" + allM
 	if((typeof _x) isKindOf "helicopter") then {
 		_x addEventHandler["RopeAttach",Valor_fnc_rope_attached];
 	};
+	/*_var = _x getvariable["owners",[]];
+	if((getplayeruid player) in _var) then {
+		Valor_vehicles_key pushBackUnique _x;
+	};*/
 } foreach _all_vehicles;
 
 
