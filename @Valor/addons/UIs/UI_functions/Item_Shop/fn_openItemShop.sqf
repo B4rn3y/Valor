@@ -1,3 +1,4 @@
+private ["_seller","_classname","_pos","_error","_display","_header","_tree","_tv","_buy_sell_BTN","_switch_BTN","_box"];
 if(isnil "VALOR_PREVIEW_MODEL") then {
 	closedialog 0;
 };
@@ -82,3 +83,32 @@ showChat true;
 
 Valor_last_added = nil;
 VALOR_SELLER_SHOP = nil;
+
+
+
+if!(isnil "Valor_Notice_Loot_box") exitWith {};
+
+0 spawn {
+	Valor_Notice_Loot_box = true;
+	_box = (getposatl player) nearestobject "B_supplyCrate_F";
+	if(isnull _box) exitWith {hint "Error :: Could not find the Lootbox"};
+	Valor_box = _box;
+
+
+	["Hint_LootBox",
+		{
+			if!(isnil "Valor_box") then {
+				drawIcon3D ["", [1,1,1,1], (Valor_box modelToWorld [0,0,1]), 0, 0, 0, "Loot-Box", 1, 0.05, "PuristaMedium"];
+			};
+
+		}
+	] call valor_fnc_stackOnEachFrame;
+
+	sleep 30;
+
+	["Hint_LootBox",{}] call valor_fnc_stackOnEachFrame;
+
+};
+
+
+

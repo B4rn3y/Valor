@@ -2,6 +2,22 @@
 private ["_number_of_zeds","_zombieArt","_multi","_number_of_medium","_number_of_crawlers","_number_of_fast","_number_of_slow","_number_of_spider","_number_of_walker","_achieved_nmbr","_arr","_arr_anders","_nmbr","_returned_array","_classnames","_D"];
 _number_of_zeds = param[0,8,[1337]];
 _zombieArt = param[1,"normal",[""]];
+
+_players_close = count (playableUnits - [player]) select {(_x distance player) < 80;};
+if!(_players_close isEqualTo 0) then {
+	_number_of_zeds = ceil (_number_of_zeds / _players_close);
+};
+
+if(_number_of_zeds < 1) then {
+	_number_of_zeds = 1;
+};
+
+iF(_number_of_zeds isEqualTo 1) exitWith {
+	_type = selectRandom ["crawler","fast","slow","spider","walker"];
+	_classnames = getarray(missionConfigFile >> "cfgZombie_classes" >> (_x select 0) >> _zombieArt);
+	[selectrandom _classnames]
+};
+
 _multi =  0.6;
 switch (true) do
 {

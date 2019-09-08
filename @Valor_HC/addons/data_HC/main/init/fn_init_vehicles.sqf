@@ -59,12 +59,13 @@ _vehicle = objNull;
 			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
 			if(_cop isEqualTo 1) then {
-				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos "Survivor_city_1")) < 600) then {_veh setvariable["group_restricted",[-2,-1],true];};};
+				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos "Survivor_city_1")) < 600) then {_veh setvariable["owners",["COP"],true];[_vehicle,2] remoteExec["lock",0];};};
 			};
 		} else {
 			if!(_owners isEqualTo []) then {
-				_vehicle setvariable["valor_owners",_owners,true];
+				_vehicle setvariable["owners",_owners,true];
 			};
+
 			_vehicle setfuel _fuel;
 			_vehicle setdir _dir;
 			_atl = _pos;
@@ -72,7 +73,7 @@ _vehicle = objNull;
 			_vehicle setVectorUp _vector;
 			_vehicle setposatl _atl;
 			if(_number isEqualTo 1) then {
-				_vehicle lock 2;
+				[_vehicle,2] remoteExec["lock",0];
 			};
 
 			[_vehicle,_inventory] call valor_fnc_loadVehicleCargo;

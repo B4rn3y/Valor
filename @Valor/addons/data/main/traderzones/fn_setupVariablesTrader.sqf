@@ -7,7 +7,11 @@ if(isnil "VALOR_IN_TRADER") then {
 	if(!(vehicle player isEqualTo player) && (driver vehicle player isEqualTo player)) then {
 		["You entered the Survivor city, you can now lock your vehicle. (Use the 'U' key)"] spawn valor_fnc_exp_hint;
 		Valor_vehicles_key pushBackUnique _vehicle;
-		_vehicle setvariable["owners",[getPlayerUID player],true];
+		if!((call valor_coplevel) > 0) then {
+			_vehicle setvariable["owners",[getPlayerUID player],true];
+		} else {
+			_vehicle setvariable["owners",["COP"],true];
+		};
 		_vehicle setvariable["update_this",true,true];
 
 	};

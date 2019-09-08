@@ -1,5 +1,5 @@
 
-private ["_display","_listbox","_edit","_my_vehicles","_cities","_markerpos","_max_distance","_distance","_var","_X"];
+private ["_display","_listbox","_edit","_cop","_my_vehicles","_cities","_markerpos","_max_distance","_distance","_var","_X"];
 
 createDialog "key_menu";
 
@@ -8,7 +8,7 @@ if(isnull _display) exitWith {};
 
 _listbox = _display displayCtrl 1500;
 _edit = _display displayCtrl 1400;
-
+_cop = if((call valor_coplevel) > 0) then {true} else {false};
 _my_vehicles = [];
 _cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "cities");
 {
@@ -22,9 +22,16 @@ _cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "citie
 			_x setvariable["owners",nil,true];
 			_x setVariable["update_this",true,true];
 		} else {
+
 			if((getPlayerUID player) in _var) then {
-				_my_vehicles pushBack _x;
+				_my_vehicles pushBackUnique _x;
 			};
+			if(_cop) then {
+				if("COP" in _var) then {
+					_my_vehicles pushBackUnique _x;
+				};
+			};
+
 		};
 	} foreach (allMissionObjects "LandVehicle" + allMissionObjects "Air" + allMissionObjects "Ship");
 } foreach _cities;
@@ -38,6 +45,6 @@ _cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "citie
 
 
 {
-	_id = _edit lbadd format["%1(%2)",name _x,player distance _x];
+	_id = _edit lbadd format["%1",name _x];
 	_edit lbSetData[_id,getplayeruid _x];
 } foreach (((nearestObjects[player,["Man"],20]) select {isplayer _x})-[player]);

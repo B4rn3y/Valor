@@ -33,13 +33,24 @@ switch (true) do
 			if((typeof _veh isKindOf "Air") || (typeof _veh isKindOf "Landvehicle") || (typeof _veh isKindOf "Ship")) then {
 				_lock = locked _veh;
 				_var = _veh getvariable["owners",[]];
-				iF!((getplayeruid player) in _var) exitWith {};
-				iF(_lock isEqualTo 2) then {
-					_veh lock 0;
-					systemchat "Valor :: The vehicle is now unlocked.";
+				if!((call valor_coplevel)>0) then {
+					iF!((getplayeruid player) in _var) exitWith {};
+					iF(_lock isEqualTo 2) then {
+						[_veh,0] remoteExec["lock",0];
+						systemchat "Valor :: The vehicle is now unlocked.";
+					} else {
+						[_veh,2] remoteExec["lock",0];
+						systemchat "Valor :: The vehicle is now locked.";
+					};
 				} else {
-					_veh lock 2;
-					systemchat "Valor :: The vehicle is now locked.";
+					if(!(getplayeruid player in _var) && !("COP" in _var)) exitWith {};
+					iF(_lock isEqualTo 2) then {
+						[_veh,0] remoteExec["lock",0];
+						systemchat "Valor :: The vehicle is now unlocked.";
+					} else {
+						[_veh,2] remoteExec["lock",0];
+						systemchat "Valor :: The vehicle is now locked.";
+					};
 				};
 			};
 		};

@@ -20,7 +20,6 @@ if(isnull _veh) exitWith {["This vehicle does not exist anymore O.o"] spawn valo
 
 
 _pid = _edit lbData _pl_sel;
-_pid = getplayeruid player;
 _player = playableUnits select {getplayeruid _x isEqualTo _pid};
 
 iF(_player isEqualTo []) exitWith {["The selected player cant be found"] spawn valor_fnc_exp_hint;};

@@ -90,3 +90,5 @@ switch (true) do
 
 _buy_sell_BTN ctrlEnable true;
 titletext[format["You bought a %1 for $%2, check the Loot-BOX",getText(configFile >> _config >> _classname >> "displayName"),([_price] call valor_fnc_numbertext)],"PLAIN DOWN"];
+
+
