@@ -1,6 +1,5 @@
 -folgende h‰user abschlieﬂbar machen ["Land_ds_HouseV_2T2","Land_ds_HouseV_3I1","Land_ds_HouseV_3I2","Land_House_1W10_F","Land_House_1W08_F","Land_House_2W02_F"]
 -Kisten objekt ohne physik
--bandit basen lvl 2-3
 -Objekt cement bags
 -Objekt reinforcement material
 -objekt limestone
