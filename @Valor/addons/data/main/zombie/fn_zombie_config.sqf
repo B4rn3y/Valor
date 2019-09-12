@@ -3,7 +3,7 @@ private ["_number_of_zeds","_zombieArt","_multi","_number_of_medium","_number_of
 _number_of_zeds = param[0,8,[1337]];
 _zombieArt = param[1,"normal",[""]];
 
-_players_close = count (playableUnits - [player]) select {(_x distance player) < 80;};
+_players_close = count ((playableUnits - [player]) select {(_x distance player) < 80;});
 if!(_players_close isEqualTo 0) then {
 	_number_of_zeds = ceil (_number_of_zeds / _players_close);
 };
