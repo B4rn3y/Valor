@@ -38,6 +38,39 @@ class CfgVehicles
 			};
 		};
 	};
+	class valor_baseFloor10: House_Small_F
+	{
+		scope=2;
+		author="Bloodwyn";
+		model="\valor_basebuild\models\stronghold_base_10m.p3d";
+		displayName="Base Floor 10m";
+		vehicleClass="Objects";
+		armor=20000;
+		icon="iconObject";
+		mapSize=1;
+	};
+	class valor_baseFloor25: House_Small_F
+	{
+		scope=2;
+		author="Bloodwyn";
+		model="\valor_basebuild\models\stronghold_base_25m.p3d";
+		displayName="Base Floor 25m";
+		vehicleClass="Objects";
+		armor=20000;
+		icon="iconObject";
+		mapSize=1;
+	};
+	class valor_baseFloor30: House_Small_F
+	{
+		scope=2;
+		author="Bloodwyn";
+		model="\valor_basebuild\models\stronghold_base_30m.p3d";
+		displayName="Base Floor 30m";
+		vehicleClass="Objects";
+		armor=20000;
+		icon="iconObject";
+		mapSize=1;
+	};
 	class valor_baseFloor40: House_Small_F
 	{
 		scope=2;
