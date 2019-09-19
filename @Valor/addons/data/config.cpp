@@ -215,6 +215,10 @@ class CfgFunctions
 			class hatch_raptor {};
 			class load_hay_bale {};
 			class sell_hay_bale {};
+			class set_base_objects {};
+			class get_max_base_level {};
+			class show_needed_mats {};
+			class has_base_access {};
 		};
 
 

@@ -14,7 +14,7 @@ if(_number_of_zeds < 1) then {
 
 iF(_number_of_zeds isEqualTo 1) exitWith {
 	_type = selectRandom ["crawler","fast","slow","spider","walker"];
-	_classnames = getarray(missionConfigFile >> "cfgZombie_classes" >> (_x select 0) >> _zombieArt);
+	_classnames = getarray(missionConfigFile >> "cfgZombie_classes" >> _type >> _zombieArt);
 	[selectrandom _classnames]
 };
 

@@ -110,6 +110,7 @@ class CfgFunctions
 			class build_base {};
 			class build_base_objects {};
 			class insert_raptor {};
+			class upgrade_base {};
 		};
 
 		class outposts

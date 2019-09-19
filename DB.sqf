@@ -300,6 +300,7 @@ DROP TABLE IF EXISTS `base_objects`;
 CREATE TABLE IF NOT EXISTS `base_objects` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `base_id` int(10) NOT NULL,
+  `layout_id` int(10) NOT NULL,
   `classname` text NOT NULL,
   `pos` text NOT NULL,
   `dir` varchar(64) NOT NULL,
@@ -319,12 +320,14 @@ CREATE TABLE IF NOT EXISTS `base_objects` (
 DROP TABLE IF EXISTS `bases`;
 CREATE TABLE IF NOT EXISTS `bases` (
   `base_id` int(6) NOT NULL AUTO_INCREMENT,
-  `group_id` int(10) NOT NULL,
   `config_id` int(10) NOT NULL,
+  `layout_id` int(10) NOT NULL,
+  `group_id` int(10) NOT NULL,
+  `owner` varchar(17) NOT NULL,
+  `entry_list` text NOT NULL,
   `cop` tinyint(1) NOT NULL DEFAULT '0',
   `raptor` tinyint(1) NOT NULL DEFAULT '0',
   `raptor_classname` varchar(128) NOT NULL DEFAULT '"babe_raptorb_east_5_F"',
-  `build` int(10) NOT NULL DEFAULT '0',
   `classname` text NOT NULL,
   `pos` text NOT NULL,
   `dir` varchar(64) NOT NULL,
@@ -332,8 +335,7 @@ CREATE TABLE IF NOT EXISTS `bases` (
   `inventory` text NOT NULL,
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`base_id`),
-  KEY `group_id` (`group_id`)
+  PRIMARY KEY (`base_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
