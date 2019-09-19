@@ -49,7 +49,7 @@ class CfgVehicles
 		icon="iconObject";
 		mapSize=1;
 	};
-	class valor_baseFloor25: House_Small_F
+	class valor_baseFloor25: valor_baseFloor10
 	{
 		scope=2;
 		author="Bloodwyn";
@@ -60,7 +60,7 @@ class CfgVehicles
 		icon="iconObject";
 		mapSize=1;
 	};
-	class valor_baseFloor30: House_Small_F
+	class valor_baseFloor30: valor_baseFloor10
 	{
 		scope=2;
 		author="Bloodwyn";
@@ -71,7 +71,7 @@ class CfgVehicles
 		icon="iconObject";
 		mapSize=1;
 	};
-	class valor_baseFloor40: House_Small_F
+	class valor_baseFloor40: valor_baseFloor10
 	{
 		scope=2;
 		author="Bloodwyn";
@@ -82,29 +82,65 @@ class CfgVehicles
 		icon="iconObject";
 		mapSize=1;
 	};
-	class valor_baseFloor45: House_Small_F
+	class valor_baseFloor45: valor_baseFloor10
 	{
 		scope=2;
 		model="\valor_basebuild\models\stronghold_base_45m.p3d";
 		displayName="Base Floor 45m";
 	};
-	class valor_baseFloor50: House_Small_F
+	class valor_baseFloor50: valor_baseFloor10
 	{
 		scope=2;
 		model="\valor_basebuild\models\stronghold_base_50m.p3d";
 		displayName="Base Floor 50m";
 	};
-	class valor_baseFloor55: House_Small_F
+	class valor_baseFloor55: valor_baseFloor10
 	{
 		scope=2;
 		model="\valor_basebuild\models\stronghold_base_55m.p3d";
 		displayName="Base Floor 55m";
 	};
-	class valor_baseFloor60: House_Small_F
+	class valor_baseFloor60: valor_baseFloor10
 	{
 		scope=2;
 		model="\valor_basebuild\models\stronghold_base_60m.p3d";
 		displayName="Base Floor 60m";
+	};
+	class valor_baseFloor16x17: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_16_17.p3d";
+		displayName="Base Floor 16x17";
+	};
+	class valor_baseFloor15_5x20: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_15-5_20.p3d";
+		displayName="Base Floor 15.5x20";
+	};
+	class valor_baseFloor8x15: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_8_15.p3d";
+		displayName="Base Floor 8x15";
+	};
+	class valor_baseFloor11x12_5: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_11_12-5.p3d";
+		displayName="Base Floor 11x12.5";
+	};
+	class valor_baseFloor8_5x14: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_8-5_14.p3d";
+		displayName="Base Floor 8.5x14";
+	};
+	class valor_baseFloor7x13: valor_baseFloor10
+	{
+		scope=2;
+		model="\valor_basebuild\models\stronghold_base_7_13.p3d";
+		displayName="Base Floor 7x13";
 	};
 	class valor_piano: Items_base_F
 	{
