@@ -33,3 +33,6 @@ if!(isnil "Valor_group") then {
 
 
 } foreach _nets_close;
+
+
+_ret

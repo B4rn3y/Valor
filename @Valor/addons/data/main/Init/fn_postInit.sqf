@@ -1,6 +1,6 @@
 
 if (isServer) exitWith {};
-
+if(!hasInterface && !isDedicated) exitWith {};
 if (!hasInterface) exitWith {};
 enableSaving [false, false];
 

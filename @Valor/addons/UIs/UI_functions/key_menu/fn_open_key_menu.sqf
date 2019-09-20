@@ -38,7 +38,7 @@ _cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "citie
 
 
 {
-	_id = _listbox lbadd format["%1(%2m)",getText(configFile >> "CfgVehicles" >> (typeof _X) >> "displayname"),(player distance _x)];
+	_id = _listbox lbadd format["%1(%2m)",getText(configFile >> "CfgVehicles" >> (typeof _X) >> "displayname"),round(player distance _x)];
 	_listbox lbSetData[_id,netid _x];
 	_listbox lbSetPicture[_id,getText(configFile >> "CfgVehicles" >> (typeof _X) >> "picture")];
 } foreach _my_vehicles;

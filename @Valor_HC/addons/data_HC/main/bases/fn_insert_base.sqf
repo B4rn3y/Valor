@@ -11,7 +11,10 @@ _group_id = param[3,-1,[0]];
 _group_name = param[4,"",[""]];
 _layout_id = 0;
 _h = 10;
+_entry_list = [[getplayeruid _requester,name _requester],[_group_id,_group_name]];
+_owner = getPlayerUID player;
 diag_log "Valor Server :: Request received";
+
 
 
 if(isnull _requester) exitWith {diag_log "Valor Error :: _requester unknown"};
@@ -55,14 +58,14 @@ if!((count _queryResult) isEqualTo 0) exitWith {
 	["You already have a base of this kind, exiting."] remoteExec["valor_fnc_exp_hint",[_requester]];
 };
 
+
 _objects_with_pos = [];
 _objects = _objects - [_ammobox_0];
 _objects_to_build = _objects_to_build - [_ammobox_0];
 
-
-_query = format["INSERT INTO bases (owner, config_id, layout_id, classname, pos, dir, vector, inventory,entry_list,group_id) VALUES('%1', '%2','%3','%4','%5','%6','%7','%8','%9','%10')",getplayeruid _requester,_config_id,_layout_id,(str (_ammobox_0 select 0)),(_ammobox_0 select 1),(_ammobox_0 select 2),(_ammobox_0 select 3),_inventory,[[getPlayerUID _requester,name _requester],[_group_id,_group_name]],_group_id];
+_raptor_classname = selectrandom ["babe_raptorb_east_3_F","babe_raptorb_east_5_F","babe_raptorb_east_6_F","babe_raptorb_east_4_F","babe_raptorb_east_2_F","babe_raptor_east_6_F","babe_raptorb_east_F","babe_raptor_east_2_F","babe_raptor_east_3_F","babe_raptor_east_4_F","babe_raptor_east_5_F","babe_raptor_east_F"];
+_query = format["INSERT INTO bases (owner, config_id, layout_id, classname, pos, dir, vector, inventory,entry_list,group_id,raptor_classname) VALUES('%1', '%2','%3','%4','%5','%6','%7','%8','%9','%10','%11')",getplayeruid _requester,_config_id,_layout_id,(str (_ammobox_0 select 0)),(_ammobox_0 select 1),(_ammobox_0 select 2),(_ammobox_0 select 3),[],[[getPlayerUID _requester,name _requester],[_group_id,_group_name]],_group_id,str _raptor_classname];
 [_query,1] call valor_fnc_db_sync;
-
 
 
 sleep 5;
@@ -72,14 +75,16 @@ _query = format["SELECT base_id FROM bases WHERE owner='%1' && config_id = '%2'"
 _queryResult = [_query,2] call valor_fnc_db_sync;
 
 
-
 if((count _queryResult) isEqualTo 0) exitWith {
 	["There was an error inserting the base into the database, exiting."] remoteExec["valor_fnc_exp_hint",[_requester]];
 };
 
+
 _base_id = _queryResult select 0;
 
 _box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id,[[getPlayerUID _requester,name _requester],[_group_id,_group_name]]],true];
+
+
 
 {
 	_classname = _x select 0;
@@ -126,6 +131,7 @@ _box allowDamage false;
 _box setdir (_ammobox_0 select 2);
 _box setVectorUp (_ammobox_0 select 3);
 _box setposatl (_ammobox_0 select 1);
+_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id,_entry_list,_owner],true];
 _inventory = [_box] call valor_fnc_getvehiclecargo;
 _objects_with_pos pushBack [_box,(_ammobox_0 select 1)];
 

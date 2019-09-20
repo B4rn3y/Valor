@@ -23,6 +23,8 @@ if(_base_id isEqualTo -1 || _config_id isEqualTo -1 || _layout_id isEqualTo -1 |
 _query = format["Select id, classname, pos, dir, vector, inventory from base_objects where base_id = '%1' and layout_id = '%2'",_base_id,_layout_id];
 _res = [_query,2,true] call valor_fnc_db_sync;
 
+_res pushBack [-1,_classname,_pos,str(_dir),_vector,_inventory];
+
 {
 
 	_id = _x select 0;

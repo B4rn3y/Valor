@@ -30,7 +30,7 @@ _query = format["Delete from items_sold"];
 [_query,1] call valor_fnc_db_sync;
 
 
-_query = format["Delete from item_shop where where stock <= 0 && infinite = '0';"];
+_query = format["Delete from item_shop where stock <= 0 && infinite = '0';"];
 [_query,1] call valor_fnc_db_sync;
 
 

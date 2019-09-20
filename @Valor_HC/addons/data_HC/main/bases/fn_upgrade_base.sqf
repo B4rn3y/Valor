@@ -97,11 +97,11 @@ if!(_new_box isEqualTo []) then {
 	_query = format["Update bases set pos = '%1', dir = '%2', vector = '%3', inventory = '%4', layout_id = '%5' where base_id = '%6'",_new_box select 1, call compile(_new_box select 2),_new_box select 3,[_box] call valor_fnc_getvehiclecargo,(_layout_id + 1),_base_id];
 	[_query,1] call valor_fnc_db_sync;
 
-	_query = format["Select owner from bases where base_id = '%1'",_base_id];
-	_owner = [_query,2] call valor_fnc_db_sync;
-	_owner = _owner select 0;
+	_query = format["Select entry_list from bases where base_id = '%1'",_base_id];
+	_entry_list = [_query,2] call valor_fnc_db_sync;
+	_entry_list = _entry_list select 0;
 
-	_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id+1,[_owner]],true];
+	_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id+1,_entry_list],true];
 };
 
 missionNamespace setvariable[format["valor_base_%1",_base_id],nil];

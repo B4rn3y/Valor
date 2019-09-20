@@ -69,10 +69,10 @@ while {dialog} do
 		_actual_amount = _x select 1;
 		_amount_needed = _x select 2;
 		if(_actual_amount >= _amount_needed) then {
-			_show_text = _show_text + format["<t size='1' color='#36FF00'>[%1,%2] - %3</t><br/>",_amount_needed,_actual_amount,gettext(configfile >> ([_classname] call valor_fnc_getconfig) >> _classname >> "displayname")];
+			_show_text = _show_text + format["<t size='1' color='#36FF00'>[%1/%2] - %3</t><br/>",_amount_needed,_actual_amount,gettext(configfile >> ([_classname] call valor_fnc_getconfig) >> _classname >> "displayname")];
 		} else {
 			_all = false;
-			_show_text = _show_text + format["<t size='1' color='#FF0000'>[%1,%2] - %3</t><br/>",_amount_needed,_actual_amount,gettext(configfile >> ([_classname] call valor_fnc_getconfig) >> _classname >> "displayname")];
+			_show_text = _show_text + format["<t size='1' color='#FF0000'>[%1/%2] - %3</t><br/>",_amount_needed,_actual_amount,gettext(configfile >> ([_classname] call valor_fnc_getconfig) >> _classname >> "displayname")];
 		};
 	} foreach _item_show;
 

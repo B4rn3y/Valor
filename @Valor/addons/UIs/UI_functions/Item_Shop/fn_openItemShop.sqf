@@ -107,6 +107,8 @@ if!(isnil "Valor_Notice_Loot_box") exitWith {};
 	sleep 30;
 
 	["Hint_LootBox",{}] call valor_fnc_stackOnEachFrame;
+	Valor_Notice_Loot_box = nil;
+	Valor_box = nil;
 
 };
 
