@@ -34,7 +34,7 @@ _ammobox_0 = [];
 	_dir = _x select 2;
 	_vec = _x select 3;
 	_level = _x select 4;
-	if(_level isEqualTo 0) then {
+	if(0 in _level) then {
 		if(_classname isEqualTo "B_CargoNet_01_ammo_F") then {
 			_ammobox_0 = _x;
 		} else {
