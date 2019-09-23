@@ -14,6 +14,7 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class Land_ds_HouseV_3I1;
 	class Items_base_F;
 	class House_Small_F;
 	class valor_drawBridge: House_Small_F
@@ -147,6 +148,78 @@ class CfgVehicles
 		scope=2;
 		model="\valor_basebuild\models\piano.p3d";
 		displayName="Piano";
+	};
+
+	// ------------------------------------------ Houses ---------------------------------------
+
+	class valor_Land_ds_HouseV_3I1 : Land_ds_HouseV_3I1
+	{
+		scope = 2;
+		displayName="Land_ds_HouseV_3I1 (Lockable)";
+		class UserActions
+		{
+			class OpenDoors1
+			{
+				displayNameDefault="$STR_DN_OUT_O_DOOR_DEFAULT";
+				displayName="$STR_DN_OUT_O_DOOR";
+				position="Door_1_trigger";
+				actionNamedSel="Door_1";
+				radius=1.5;
+				aiMaxRange=5.25;
+				onlyForPlayer=0;
+				condition="this animationPhase ""Door_1"" < 0.5";
+				statement="if(this getVariable [""bis_disabled_Door_1"",0] != 1)then{this animate [""Door_1"", 1];};";
+			};
+			class CloseDoors1: OpenDoors1
+			{
+				displayNameDefault="$STR_DN_OUT_C_DOOR_DEFAULT";
+				displayName="$STR_DN_OUT_C_DOOR";
+				condition="this animationPhase ""Door_1"" >= 0.5";
+				statement="this animate [""Door_1"", 0]";
+			};
+			class OpenDoors2: OpenDoors1
+			{
+				position="Door_2_trigger";
+				actionNamedSel="Door_2";
+				condition="this animationPhase ""Door_2"" < 0.5";
+				statement="if(this getVariable [""bis_disabled_Door_2"",0] != 1)then{this animate [""Door_2"", 1];};";
+			};
+			class CloseDoors2: CloseDoors1
+			{
+				position="Door_2_trigger";
+				actionNamedSel="Door_2";
+				condition="this animationPhase ""Door_2"" >= 0.5";
+				statement="this animate [""Door_2"", 0]";
+			};
+			class OpenDoors3: OpenDoors1
+			{
+				position="Door_3_trigger";
+				actionNamedSel="Door_3";
+				condition="this animationPhase ""Door_3"" < 0.5";
+				statement="if(this getVariable [""bis_disabled_Door_3"",0] != 1)then{this animate [""Door_3"", 1];};";
+			};
+			class CloseDoors3: CloseDoors1
+			{
+				position="Door_3_trigger";
+				actionNamedSel="Door_3";
+				condition="this animationPhase ""Door_3"" >= 0.5";
+				statement="this animate [""Door_3"", 0]";
+			};
+			class OpenDoors4: OpenDoors1
+			{
+				position="Door_4_trigger";
+				actionNamedSel="Door_4";
+				condition="this animationPhase ""Door_4"" < 0.5";
+				statement="if(this getVariable [""bis_disabled_Door_4"",0] != 1)then{this animate [""Door_4"", 1];};";
+			};
+			class CloseDoors4: CloseDoors1
+			{
+				position="Door_4_trigger";
+				actionNamedSel="Door_4";
+				condition="this animationPhase ""Door_4"" >= 0.5";
+				statement="this animate [""Door_4"", 0]";
+			};
+		};
 	};
 };
 
