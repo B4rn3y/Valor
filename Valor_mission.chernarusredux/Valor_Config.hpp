@@ -112,6 +112,11 @@ class Valor_settings {
 		valor_vitaminbottle[] = {60,{"painkiller_01","painkiller_02","painkiller_03","painkiller_04"},""};
 	};
 
+	class bases {
+		min_distance_other_base = 2;
+		min_distance_town = 700;
+	};
+
 	class repair_system {
 		Wheel_repair = "valor_van_02_rimless_tire";
 		Fuel_repair = "valor_ducttape";

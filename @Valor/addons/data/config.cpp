@@ -219,6 +219,7 @@ class CfgFunctions
 			class get_max_base_level {};
 			class show_needed_mats {};
 			class has_base_access {};
+			class open_base {};
 		};
 
 

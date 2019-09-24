@@ -3,6 +3,8 @@ private ["_container","_container2","_exit","_var","_mode","_number","_time","_c
 _container = _this select 1;
 _container2 = _this select 2;
 
+if(Valor_block_inventory) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 1)} do {closeDialog 0; sleep 0.1;};};};
+
 // setup evh for double click action
 waituntil {!(isnull (finddisplay 602))};
 ((findDisplay 602) displayCtrl 633) ctrlSetEventHandler ["LBDblClick", "[_this,""u""] call valor_fnc_inventory_useItem"]; //uniform

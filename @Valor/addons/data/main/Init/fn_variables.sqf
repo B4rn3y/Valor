@@ -11,6 +11,7 @@ VALOR_LAST_VEHICLE = objNull;
 Valor_stats_entities = [0,0,0,0,0];
 Valor_radiation = 0;
 Valor_poising = false;
+Valor_block_inventory = false;
 
 
 Valor_map = 0 call valor_fnc_get_hidement_array;

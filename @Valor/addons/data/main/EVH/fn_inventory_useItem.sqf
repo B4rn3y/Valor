@@ -156,7 +156,7 @@ if!(_medic_item_info isEqualTo []) exitWith {
 };
 
 
-
+// ["valor_blueprint1","valor_blueprint2","valor_blueprint3","valor_blueprint4","valor_blueprint5","valor_blueprint6","valor_blueprint7"]
 // add classname here together with functions
 switch (_classname) do
 {
@@ -197,6 +197,40 @@ switch (_classname) do
 		};
 	};
 
+	case "valor_blueprint1": // Hero_lvl_1_house
+	{
+		[1,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint2": // Hero_lvl_2_house
+	{
+		[2,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint3": // Hero_lvl_3_house
+	{
+		[3,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint4": // Bandit_lvl_1_house
+	{
+		[4,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint5": // Bandit_lvl_2_house
+	{
+		[5,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint6": // Bandit_lvl_3_house
+	{
+		[6,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint7": // Big Fortress
+	{
+		[7,_classname,_place] spawn valor_fnc_place_Base;
+	};
 
 };
 

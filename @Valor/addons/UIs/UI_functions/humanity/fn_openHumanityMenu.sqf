@@ -65,7 +65,7 @@ _role = switch (true) do
 
 _pic_player ctrlSetText format["\UIs\textures\humanity\humanity_%1.paa",_role];
 
-_str_text_humanity ctrlSetStructuredText parseText format["<t color='#000000' align='center' size='1.6'>%1</t>",Valor_humanity];
+_str_text_humanity ctrlSetStructuredText parseText format["<t color='#000000' align='center' size='1.6'>%1</t>",[valor_humanity] call valor_fnc_numbertext];
 
 {
 	_x ctrlSetStructuredText parseText format["<t color='#000000' align='center' size='1.6'>%1</t>",(Valor_stats_entities select _foreachindex)];

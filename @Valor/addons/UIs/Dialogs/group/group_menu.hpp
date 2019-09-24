@@ -135,6 +135,36 @@ class group_menu {
 			w = 0.102525;
 			h = 0.0444445;
 		};
+		class btn_class: valor_RscButtonMenu
+		{
+			idc = 2413;
+			text = "Classes"; //--- ToDo: Localize;
+			onbuttonClick = " 0 spawn valor_fnc_openclassmenu;";
+			x = 0.378788;
+			y = 0.838384;
+			w = 0.115151;
+			h = 0.0444445;
+		};
+		class btn_stats: valor_RscButtonMenu
+		{
+			idc = 2414;
+			text = "Stats"; //--- ToDo: Localize;
+			onbuttonClick = " 0 spawn valor_fnc_openHumanityMenu;";
+			x = 0.49495;
+			y = 0.838384;
+			w = 0.102525;
+			h = 0.0444445;
+		};
+		class btn_keys: valor_RscButtonMenu
+		{
+			idc = 2415;
+			text = "Keys"; //--- ToDo: Localize;
+			onbuttonClick = " 0 spawn valor_fnc_open_key_menu;";
+			x = 0.598485;
+			y = 0.838384;
+			w = 0.102525;
+			h = 0.0444445;
+		};
 		class btn_delete_gang: valor_RscButtonMenu
 		{
 			idc = 2408;

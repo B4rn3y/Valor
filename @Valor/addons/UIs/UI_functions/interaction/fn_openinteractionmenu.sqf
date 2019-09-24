@@ -79,10 +79,19 @@ switch (_classname) do
 		{
 			case civilian:
 			{
+				_var = OBJ_focused getvariable["valor_base_ids",[]];
+				if!((count _var) >= 5) exitWith {};
+				if!([_var select 0] call valor_fnc_has_base_access) exitWith {};
 				call _create_display;
+
 				_btn_1 ctrlshow true;
-				_btn_1 ctrlsettext "Hatch Raptor";
-				_btn_1 buttonSetAction "closeDialog 0;[] spawn valor_fnc_hatch_raptor;";
+				_btn_1 ctrlsettext "Manage Entry List";
+				_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_open_base_entry;";
+
+				_btn_2 ctrlshow true;
+				_btn_2 ctrlsettext "Hatch Raptor";
+				_btn_2 buttonSetAction "closeDialog 0;[] spawn valor_fnc_hatch_raptor;";
+
 			};
 		};
 	};

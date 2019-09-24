@@ -52,6 +52,8 @@ switch (true) do
 						systemchat "Valor :: The vehicle is now locked.";
 					};
 				};
+			} else {
+				[cursorObject] spawn valor_fnc_open_base;
 			};
 		};
 	};

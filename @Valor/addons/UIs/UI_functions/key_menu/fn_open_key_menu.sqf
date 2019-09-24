@@ -36,6 +36,10 @@ _cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "citie
 	} foreach (allMissionObjects "LandVehicle" + allMissionObjects "Air" + allMissionObjects "Ship");
 } foreach _cities;
 
+if(_my_vehicles isEqualTo []) exitWith {
+	_listbox lbAdd "You dont have any vehicles.";
+};
+
 
 {
 	_id = _listbox lbadd format["%1(%2m)",getText(configFile >> "CfgVehicles" >> (typeof _X) >> "displayname"),round(player distance _x)];

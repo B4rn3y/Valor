@@ -95,6 +95,15 @@ class CfgFunctions
 			class open_key_menu {};
 		};
 
+		class base_entry
+		{
+			file = "\UIs\UI_functions\base_entry";
+			class add_group_entry_list {};
+			class add_player_entry_list {};
+			class open_base_entry {};
+			class remove_from_entry_list {};
+		};
+
 		class carshop
 		{
 			file = "\UIs\UI_functions\carshop";

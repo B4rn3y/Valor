@@ -1,4 +1,4 @@
-private ["_display","_BTN_Unlock_class_1","_BTN_Unlock_class_2","_BTN_Unlock_class_3","_header_main_slots_class","_header_class_1","_header_class_2","_header_class_3","_current_classes_active_str_text","_container_main","_counter_controls","_classes","_find_class","_id_class","_ret","_btns_unlock_classes","_active_classes","_active","_foreachindex","_class_id","_class_name","_needed_level","_description_short","_description_long","_background","_container","_text_name_of_class","_text_class_short","_text_class_long","_btn","_text_level_needed","_class_1","_class_2","_class_3"];
+private ["_display","_BTN_Unlock_class_1","_BTN_Unlock_class_2","_BTN_Unlock_class_3","_header_main_slots_class","_header_class_1","_header_class_2","_header_class_3","_current_classes_active_str_text","_container_main","_counter_controls","_classes","_find_class","_id_class","_ret","_in_city","_cities","_pos","_btns_unlock_classes","_active_classes","_active","_foreachindex","_class_id","_class_name","_needed_level","_description_short","_description_long","_background","_container","_text_name_of_class","_text_class_short","_text_class_long","_btn","_text_level_needed","_class_1","_class_2","_class_3"];
 
 
 
@@ -33,6 +33,14 @@ _find_class =
 	_ret
 };
 
+_in_city = false;
+_cities = getarray(missionConfigFile >> "Valor_settings" >> "settings" >> "cities");
+{
+	_pos = getMarkerPos (_x select 0);
+	if((player distance _pos) < (_x select 1)) exitWith {_in_city = true;};
+} foreach _cities;
+
+
 
 _btns_unlock_classes = [_BTN_Unlock_class_1,_BTN_Unlock_class_2,_BTN_Unlock_class_3];
 _active_classes = [];
@@ -53,6 +61,10 @@ _active_classes = [];
 		(_btns_unlock_classes select _foreachindex) buttonSetAction format["[%1] call valor_fnc_unlockClassSlot;",_foreachindex];
 	};
 } foreach Valor_classes_unlock;
+
+if!(_in_city) then {
+	{_x ctrlEnable false;} foreach _btns_unlock_classes;
+};
 
 
 {
@@ -131,6 +143,10 @@ _active_classes = [];
 		};
 	};
 
+	if!(_in_city) then {
+		_btn ctrlEnable false;
+	};
+
 } foreach _classes;
 
 
@@ -145,7 +161,7 @@ _class_1 = if((Valor_classes_unlock select 0) select 0) then {if(((Valor_classes
 _class_2 = if((Valor_classes_unlock select 1) select 0) then {if(((Valor_classes_unlock select 1) select 1) isEqualTo -1) then {"Empty"} else {([((Valor_classes_unlock select 1) select 1)] call _find_class) select 1};} else {"Not Learned"};
 _class_3 = if((Valor_classes_unlock select 2) select 0) then {if(((Valor_classes_unlock select 2) select 1) isEqualTo -1) then {"Empty"} else {([((Valor_classes_unlock select 2) select 1)] call _find_class) select 1};} else {"Not Learned"};
 
-_current_classes_active_str_text ctrlSetStructuredText parsetext format["<t align='center' size='0.7' >INFO:</t><br/><t align='left' size='0.7' >Slot 1:</t><t align='right' size='0.7' >%1</t><br/><t align='left' size='0.7' >Slot 2:</t><t align='right' size='0.7' >%2</t><br/><t align='left' size='0.7' >Slot 3:</t><t align='right' size='0.7' >%3</t><br/>",_class_1,_class_2,_class_3];
+_current_classes_active_str_text ctrlSetStructuredText parsetext format["<t align='center' size='0.7' >INFO:</t><br/><t align='left' size='0.7' >Slot 1:</t><t align='right' size='0.7' >%1</t><br/><t align='left' size='0.7' >Slot 2:</t><t align='right' size='0.7' >%2</t><br/><t align='left' size='0.7' >Slot 3:</t><t align='right' size='0.7' >%3</t><br/><br/><t size='0.7' >Classes can only be changed/unlocked in a city!</t>",_class_1,_class_2,_class_3];
 
 
 
