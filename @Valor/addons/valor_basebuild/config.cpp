@@ -14,6 +14,7 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class B_CargoNet_01_ammo_F;
 	class Land_ds_HouseV_3I1;
 	class Items_base_F;
 	class House_Small_F;
@@ -220,6 +221,19 @@ class CfgVehicles
 				statement="this animate [""Door_4"", 0]";
 			};
 		};
+	};
+	class valor_CargoNet : B_CargoNet_01_ammo_F
+	{
+		scope = 2;
+		displayName = "Valor Cargo Net (no PhysX)";
+		simulation = "house";
+	};
+	class valor_CargoNet_infinite : B_CargoNet_01_ammo_F
+	{
+		displayName = "Valor Cargo Net (infinite space (not really))";
+		maximumLoad=2147483646; // max Integer hopefully worx
+		transportMaxWeapons=2147483647;
+		transportMaxMagazines=2147483647;
 	};
 };
 
