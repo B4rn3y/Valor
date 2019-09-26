@@ -4,11 +4,11 @@ private ["_base_id","_query"];
 
 _base_id = param[0,-1,[0]];
 _pos = param[1,[],[[]]];
-_group_id = param[2,-1,[0]];
+_group_id = param[2,objNull,[objNull]];
 _config_id = param[3,-1,[0]];
 _range = param[4,[10,50],[[]]];
 if(_base_id isEqualTo -1) exitWith {diag_log "Valor ERROR :: Raptor insert Unknown _base_id"};
-if(_group_id isEqualTo -1) exitWith {diag_log "Valor ERROR :: Raptor insert Unknown _group_id"};
+if(isnull _group_id) exitWith {diag_log "Valor ERROR :: Raptor insert Unknown _group_id"};
 if(_config_id isEqualTo -1) exitWith {diag_log "Valor ERROR :: Raptor insert Unknown _config_id"};
 if(_pos isEqualTo []) exitWith {diag_log "Valor ERROR :: Raptor insert Unknown _pos"};
 

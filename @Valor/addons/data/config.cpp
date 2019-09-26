@@ -251,6 +251,7 @@ class CfgFunctions
 			class takeEVH_trader {};
 			class processEVH {};
 			class inventory_useItem {};
+			class FiredMan {};
 		};
 
 		class zombie
@@ -282,6 +283,7 @@ class CfgFunctions
 			class jumpattack {};
 			class raptor_checkforTarget_group {};
 			class on_raptor_killed {};
+			class deal_damage_veh {};
 		};
 	};
 };

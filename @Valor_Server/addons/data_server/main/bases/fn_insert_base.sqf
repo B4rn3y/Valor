@@ -58,6 +58,15 @@ if!((count _queryResult) isEqualTo 0) exitWith {
 	["You already have a base of this kind, exiting."] remoteExec["valor_fnc_exp_hint",[_requester]];
 };
 
+iF(_config_id isEqualTo 7) then {
+	_query = format["SELECT base_id FROM bases WHERE group_id='%1' && config_id = '%2'",_group_id,_config_id];
+	_queryResult = [_query,2] call valor_fnc_db_sync;
+};
+
+if!((count _queryResult) isEqualTo 0) exitWith {
+	["Your group already has a base of this kind, exiting."] remoteExec["valor_fnc_exp_hint",[_requester]];
+};
+
 
 _objects_with_pos = [];
 _objects = _objects - [_ammobox_0];

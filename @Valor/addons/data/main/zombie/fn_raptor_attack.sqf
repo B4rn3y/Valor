@@ -38,7 +38,7 @@ if(_target iskindof "LandVehicle" || _target iskindof "Air") then {
 
 
 	_zombie playactionnow _anim;
-	[_zombie, _target] call babe_am_fnc_deal_damage_veh;
+	[_zombie, _target] call valor_fnc_deal_damage_veh;
 
 	_open = ((gettext(configfile >> "CfgVehicles" >> typeof _target >> "attenuationEffectType")) == "OpenCarAttenuation");
 

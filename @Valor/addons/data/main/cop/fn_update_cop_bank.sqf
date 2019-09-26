@@ -1,7 +1,7 @@
 
 _ret = true;
 _amount = param[0,-1,[-1]];
-_add = param[false,[false]];
+_add = param[1,false,[false]];
 if(_amount isEqualTo -1) exitWith {false};
 if(isnil "save_object") exitWith {false};
 

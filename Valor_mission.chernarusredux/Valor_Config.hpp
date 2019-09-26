@@ -151,12 +151,12 @@ class Valor_settings {
 
 
 	class level_system {
-		level_one_XP_needed = 100; // The amount of XP you need to surpass the first level
-		level_XP_gain = 50;        // The amount of XP added to the 'level_one_XP_needed' foreach level
+		level_one_XP_needed = 500; // The amount of XP you need to surpass the first level
+		level_XP_gain = 100;        // The amount of XP added to the 'level_one_XP_needed' foreach level
 
 
 		playtime = 250; // the amount of XP the player gets every 15 minutes
-		map_point = 50; // the amount of XP the player gets every 15 minutes
+		map_point = 75; // the amount of XP the player gets every 15 minutes
 
 		zombie_killed = 50;    // the amount a zombie kill gives the player
 		raptor_killed = 150;    // the amount a raptor kill gives the player

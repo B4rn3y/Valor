@@ -51,7 +51,7 @@ class base_entry {
 		{
 			idc = 2400;
 			text = "add"; //--- ToDo: Localize;
-			onbuttonClick = "0 spawn valor_fnc_add_player_entry_list;";
+			onbuttonClick = "0 spawn valor_fnc_add_group_entry_list;";
 			x = 0.651515;
 			y = 0.350168;
 			w = 0.117676;
@@ -61,7 +61,7 @@ class base_entry {
 		{
 			idc = 2401;
 			text = "add"; //--- ToDo: Localize;
-			onbuttonClick = "0 spawn valor_fnc_add_group_entry_list;";
+			onbuttonClick = "0 spawn valor_fnc_add_player_entry_list;";
 			x = 0.651516;
 			y = 0.244108;
 			w = 0.117676;

@@ -50,6 +50,7 @@ player addEventHandler["InventoryOpened", {_this spawn valor_fnc_inventory_opene
 player addEventHandler["Put", {_this call valor_fnc_on_put}];
 player addEventHandler["Take", {_this call valor_fnc_on_take}];
 player addEventHandler["GetOutMan",{_this call valor_fnc_GetOutMan}];
+player addEventHandler["FiredMan",{_this call valor_fnc_FiredMan}];
 player removeAllMPEventHandlers "MPHit";
 player removeAllMPEventHandlers "MPKilled";
 player removeAllMPEventHandlers "MPRespawn";

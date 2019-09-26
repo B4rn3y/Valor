@@ -13,7 +13,29 @@ if(isnull _object) then {
 
 
 if(isnull _object) exitWith {};
-if((player distance _object)>7) exitWith {};
+
+
+
+
+_custom_distance = switch (typeof _object) do
+{
+	case "Land_Offices_01_V1_F":
+	{
+		20
+	};
+
+	default
+	{
+		9
+	};
+};
+
+
+
+
+
+
+if((player distance _object)>_custom_distance) exitWith {};
 
 
 _var = _object getvariable["cop",false];
@@ -201,10 +223,13 @@ for "_i" from 1 to _numberOfDoors do {
 		};
 };
 
+
 if(_door isEqualTo -1) exitWith {};
 
 _lock = _object getVariable[format["bis_disabled_Door_%1",_door],0];
 _locked = if(_lock isEqualTo 0) then {false} else {true};
+
+
 
 if(_locked) then {
 	_object setVariable[format["bis_disabled_Door_%1",_door],0,true];

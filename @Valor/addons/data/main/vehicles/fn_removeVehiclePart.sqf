@@ -30,8 +30,15 @@ _ids = _vehicle getvariable["ADDACTION_IDS",[]];
 _ids pushback _ID;
 _vehicle setvariable["ADDACTION_IDS",_ids];
 */
-_holder =  createVehicle ["groundweaponholder",(getposatl player), [], 0, "can_Collide"];
-_holder addItemCargoGlobal [_item, 1];
+
+_near_holder = nearestObjects[player,["groundweaponholder"],1];
+if!(_near_holder isEqualTo []) then {
+	_holder = _near_holder select 0;
+	_holder addItemCargoGlobal [_item, 1];
+} else {
+	_holder =  createVehicle ["groundweaponholder",(getposatl player), [], 0, "can_Collide"];
+	_holder addItemCargoGlobal [_item, 1];
+};
 
 if!(_vehicle getvariable["Update_this",false]) then {
 		_vehicle setvariable["Update_this",true,true];

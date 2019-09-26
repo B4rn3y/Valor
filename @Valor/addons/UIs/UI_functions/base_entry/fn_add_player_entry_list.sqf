@@ -22,7 +22,7 @@ _cur_sel = lbCurSel _combo_players;
 if(_cur_sel isEqualTo -1) exitWith {};
 
 
-_data = lbData _combo_players;
+_data = _combo_players lbData _cur_sel;
 if(_data isEqualTo "") exitWith {};
 _pid = (call compile _data) select 0;
 _name = (call compile _data) select 1;

@@ -7,7 +7,7 @@ if(_ticket isEqualTo -1) exitWith {};
 
 
 if((Valor_bankacc - _ticket) < 0) exitWith {
-	(format["Valor :: %1 has not enough money to pay this ticket.",profileName]) remoteExec["systemChat",_unit];
+	[format["Valor :: %1 has not enough money to pay this ticket.",profileName]] remoteExec["valor_fnc_exp_hint",_unit];
 };
 
 _action = [
@@ -19,11 +19,13 @@ _action = [
 
 if(_action) then {
 	if([_ticket,true] call valor_fnc_pay) then {
-		(format["Valor :: %1 has paid the ticket.",profileName]) remoteExec["systemChat",_unit];
+		[format["Valor :: %1 has paid the ticket.",profileName]] remoteExec["valor_fnc_exp_hint",_unit];
 		systemChat "Valor :: You paid the ticket";
 		[_ticket,true] call valor_fnc_update_cop_bank;
 	} else {
-		(format["Valor :: %1 could not pay for some reason O.o",profileName]) remoteExec["systemChat",_unit];
+		[format["Valor :: %1 could not pay for some reason O.o",profileName]] remoteExec["valor_fnc_exp_hint",_unit];
 	};
 
-} else {};
+} else {
+	[format["Valor :: %1 refused to pay the ticket.",profileName]] remoteExec["valor_fnc_exp_hint",_unit];
+};

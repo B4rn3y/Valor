@@ -41,11 +41,12 @@ _index = _members find _entry;
 _members set[_index,_new_entry];
 
 
-_pid = getplayeruid player;
+
 _entry = [];
+_player_pid = getplayeruid player;
 {
 	_pid_loop = _x select 0;
-	if(_pid isEqualTo _pid_loop) exitWith {_entry = _x};
+	if(_player_pid isEqualTo _pid_loop) exitWith {_entry = _x};
 } foreach _members;
 if(_entry isEqualTo []) exitWith {diag_log "Valor :: Cant find Pid in array"};
 

@@ -19,15 +19,19 @@ _combo_group = _display displayCtrl 2101;
 
 
 _cur_sel = lbCurSel _combo_group;
+
 if(_cur_sel isEqualTo -1) exitWith {};
 
 
-_data = lbData _combo_group;
+_data = _combo_group lbData _cur_sel;
+
 if(_data isEqualTo "") exitWith {};
 _id = (call compile _data) select 0;
 _name = (call compile _data) select 1;
 
 _entry_list pushBack [_id,_name];
+
+
 Valor_base_box setvariable["valor_base_ids",[_var select 0, _var select 1, _var select 2,_entry_list,_var select 4],true];
 
 [[_var select 0,_entry_list],"valor_fnc_update_entry_list",2] call valor_fnc_remoteexec;

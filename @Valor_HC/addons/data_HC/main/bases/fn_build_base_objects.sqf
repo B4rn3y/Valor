@@ -49,7 +49,7 @@ _res pushBack [-1,_classname,_pos,str(_dir),_vector,_inventory,str([_layout_id])
 			_ret = [_object,_inv] call valor_fnc_loadVehicleCargo;
 			if(_raptor isEqualTo 1) then {
 				_range = ([_config_id,_layout_id] call valor_fnc_base_config) select 2;
-				[_raptor_classname,_pos,_entry_list,_range] spawn valor_fnc_raptorMonitoring_server_group;
+				[_raptor_classname,_pos,_object,_range] spawn valor_fnc_raptorMonitoring_server_group;
 			};
 		} else {
 			_object setvariable["valor_base_ids",[_base_id,_config_id,_layout_id],true];
