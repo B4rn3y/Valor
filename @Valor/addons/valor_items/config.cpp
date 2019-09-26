@@ -52,9 +52,29 @@ class CfgWeapons
             mass=3;
         };
     };
+
+    class valor_cinder_blocks: valor_item_base
+    {
+        displayName = "Cinder Blocks";
+        model = "valor_items\models\cinderblocks.p3d";
+        picture =  "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_CinderBlock_01_F.jpg";
+        class ItemInfo
+        {
+            mass=70;
+        };
+    };
+    class valor_cement_bag: valor_item_base
+    {
+        displayName = "Cement Bag";
+        model = "valor_items\models\bag.p3d";
+        picture = "\valor_items\ui\cement_icon.paa";
+        class ItemInfo
+        {
+            mass=70;
+        };
+    };
+
     //automaticly generated
-
-
  	class valor_humanskull: valor_item_base
  	{
  		displayName = "Skull";
@@ -908,7 +928,7 @@ class CfgWeapons
  	};
     class valor_blueprint1: valor_item_base
     {
-        displayName = "Blueprint 1";
+        displayName = "Hero Level 1 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -918,7 +938,7 @@ class CfgWeapons
     };
     class valor_blueprint2: valor_item_base
     {
-        displayName = "Blueprint 2";
+        displayName = "Hero Level 2 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -929,7 +949,7 @@ class CfgWeapons
 
     class valor_blueprint3: valor_item_base
     {
-        displayName = "Blueprint 3";
+        displayName = "Hero Level 3 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -940,7 +960,7 @@ class CfgWeapons
 
     class valor_blueprint4: valor_item_base
     {
-        displayName = "Blueprint 4";
+        displayName = "Bandit Level 1 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -950,7 +970,7 @@ class CfgWeapons
     };
     class valor_blueprint5: valor_item_base
     {
-        displayName = "Blueprint 5";
+        displayName = "Bandit Level 2 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -960,7 +980,7 @@ class CfgWeapons
     };
         class valor_blueprint6: valor_item_base
     {
-        displayName = "Blueprint 6";
+        displayName = "Bandit Level 3 Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -971,7 +991,7 @@ class CfgWeapons
 
     class valor_blueprint7: valor_item_base
     {
-        displayName = "Blueprint 7";
+        displayName = "Castle Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
