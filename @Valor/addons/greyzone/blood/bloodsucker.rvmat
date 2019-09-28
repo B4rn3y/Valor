@@ -1,0 +1,4 @@
+class StageTI
+{
+	texture="greyzone\blood\thermal_ti_ca.paa";
+};
