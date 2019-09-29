@@ -78,6 +78,16 @@ class valor_HUD {
 			w = 0.0293749 * safezoneW;
 			h = 0.0448147 * safezoneH;
 		};
+
+		class humanity: valor_RscPicture
+		{
+			idc = 1206;
+			text = "\UIs\textures\HUD\humanity_hero_1_HUD.paa";
+			x = 0.908594 * safezoneW + safezoneX;
+			y = 0.13704 * safezoneH + safezoneY;
+			w = 0.0899209 * safezoneW;
+			h = 0.130922 * safezoneH;
+		};
 	};
 
 	class controls {

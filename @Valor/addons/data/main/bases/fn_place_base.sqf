@@ -1,5 +1,4 @@
-private ["_config_id","_item_used","_place","_exit","_needed_level","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role","_max_lvl","_objects","_d","_cur_objects","_all_objects_unique","_find_entry","_entry","_ret","_ix","_foreachindex","_objects_with_Data","_obj","_other_entries","_show_objects","_hide_objects","_stage","_classname","_pos_dependent","_dir_dependent","_vector_dependent","_object","_player_pos","_spawnpos","_place_id","_cancel_id","_build_objects","_cities","_can_be_placed","_min_distance_other_base","_min_distance_town","_nearestLocations","_cur_object","_other_obj","_var","_pos","_confirm_id","_replace_id","_arr_with_object_data"];
-
+private ["_config_id","_item_used","_place","_exit","_needed_level","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role","_can_build","_str_text","_max_lvl","_objects","_d","_cur_objects","_all_objects_unique","_find_entry","_entry","_ret","_ix","_foreachindex","_objects_with_Data","_obj","_other_entries","_show_objects","_hide_objects","_stage","_classname","_pos_dependent","_dir_dependent","_vector_dependent","_object","_player_pos","_spawnpos","_place_id","_cancel_id","_build_objects","_cities","_can_be_placed","_min_distance_other_base","_min_distance_town","_nearestLocations","_cur_object","_other_obj","_var","_pos","_confirm_id","_replace_id","_arr_with_object_data"];
 
 
 _config_id = param[0,-1,[0]];
@@ -18,6 +17,7 @@ Placing_base = true;
 
 Valor_block_inventory = true;
 
+Valor_base_place_Y = 0;
 
 _needed_level = ([_config_id,0] call valor_fnc_base_config) select 3;
 
@@ -38,46 +38,54 @@ _role = switch (true) do
 {
 	case (Valor_humanity <= _humanity_border_B3):
 	{
-		"bandit_3"
+		["bandit_3","bandit_2","bandit_1"]
 	};
 
 	case (Valor_humanity <= _humanity_border_B2):
 	{
-		"bandit_2"
+		["bandit_2","bandit_1"]
 	};
 
 	case (Valor_humanity <= _humanity_border_B1):
 	{
-		"bandit_1"
+		["bandit_1"]
 	};
 
 	case (Valor_humanity < _humanity_border_H1):
 	{
-		"survivor"
+		["survivor"]
 	};
 
 	case (Valor_humanity < _humanity_border_H2):
 	{
-		"hero_1"
+		["hero_1"]
 	};
 
 	case (Valor_humanity < _humanity_border_H3):
 	{
-		"hero_2"
+		["hero_2","hero_1"]
 	};
 
 	case (Valor_humanity >= _humanity_border_H3):
 	{
-		"hero_3"
+		["hero_3","hero_2","hero_1"]
 	};
 };
 
-if!(_role in _needed_level) exitWith {Placing_base = nil;Valor_block_inventory = false;[format["You need to be a %1 to build this.",_needed_level]] spawn valor_fnc_exp_hint;};
+_can_build = false;
+{
+	if(_x in _role) exitWith {_can_build = true};
+} foreach _needed_level;
+
+if!(_can_build) exitWith {Placing_base = nil;Valor_base_place_Y = nil;Valor_block_inventory = false;[format["You need to be a %1 to build this.",_role]] spawn valor_fnc_exp_hint;};
 
 
 
 
-
+_str_text = (findDisplay 46) ctrlCreate ["RscStructuredText", -1];
+_str_text ctrlSetPosition [0.5505,0.6936,0.521715,0.70606];
+_str_text ctrlSetStructuredText parsetext format["<t color='%1' size='1'>Page UP</t> - Raise Base  <br/><t size='1' color='%1'>Page DOWN</t> - Lower Base ","#0007D8"];
+_str_text ctrlCommit 0;
 
 
 
@@ -205,7 +213,7 @@ _cancel_id = player addaction["Cancel",{Valor_base_placed = false;}];
 			_player_pos = getposatl player;
 			_spawnpos = player modelToWorld _pos_dependent;
 			_object setdir (_dir_dependent + getdir player);
-			_object setposatl _spawnpos;
+			_object setposatl [_spawnpos select 0, _spawnpos select 1, (_spawnpos select 2)+ Valor_base_place_Y];
 			_object setvectorup (player vectorModelToWorld _vector_dependent);
 
 		} foreach valor_all_base_objects;
@@ -218,6 +226,30 @@ waitUntil {!isnil "Valor_base_placed"};
 
 ["Base_preview",{}] call valor_fnc_stackOnEachFrame;
 sleep 0.1;
+
+ctrlDelete _str_text;
+
+if!(Valor_base_placed) exitWith
+{
+	{
+		deleteVehicle (_x select 0);
+	} foreach valor_all_base_objects;
+	Valor_base_placed = nil;
+	valor_all_base_objects = nil;
+	valor_objectarray_placed_hidden = nil;
+	valor_objectarray_placed_show = nil;
+	Placing_base = nil;
+	Valor_base_place_Y = nil;
+	Valor_block_inventory = false;
+	player removeAction _place_id;
+	player removeAction _cancel_id;
+};
+
+
+
+
+
+
 
 _build_objects = [];
 {_build_objects pushback (_x select 0);} foreach valor_all_base_objects;
@@ -240,34 +272,21 @@ _nearestLocations = nearestlocations [position player, ["NameCity","NameVillage"
 	if((typeName _can_be_placed) isEqualTo "STRING") exitWith {};
 
 	{
-		if((_cur_object distance _x) < _min_distance_town) exitWith {_can_be_placed = format["Too close to a city/village - Current Distance: %1",round(_cur_object distance _x)]};
+		if((_cur_object distance (getpos _x)) < _min_distance_town) exitWith {_can_be_placed = format["Too close to a city/village - Current Distance: %1m - Allowed: %2m",round(_cur_object distance (getpos _x)),_min_distance_town]};
 	} foreach _nearestLocations;
 	if((typeName _can_be_placed) isEqualTo "STRING") exitWith {};
 
 	{
 		_pos = getmarkerpos (_x select 0);
-		if((_cur_object distance _pos) < _min_distance_town) exitWith {_can_be_placed = format["Too close to a Valor made city/village - Current Distance: %1",round(_cur_object distance _x)]};
+		if((_cur_object distance _pos) < _min_distance_town) exitWith {_can_be_placed = format["Too close to a Valor made city/village - Current Distance: %1m - Allowed: %2m",round(_cur_object distance _x),_min_distance_town]};
 	} foreach _cities;
 
 } foreach valor_all_base_objects;
 
 
 
-if((typeName _can_be_placed) isEqualTo "STRING") then {
+if((typeName _can_be_placed) isEqualTo "STRING") exitWith {
 	[_can_be_placed] spawn valor_fnc_exp_hint;
-	Valor_base_placed = false;
-};
-
-
-
-
-
-
-
-
-
-if!(Valor_base_placed) exitWith
-{
 	{
 		deleteVehicle (_x select 0);
 	} foreach valor_all_base_objects;
@@ -276,10 +295,23 @@ if!(Valor_base_placed) exitWith
 	valor_objectarray_placed_hidden = nil;
 	valor_objectarray_placed_show = nil;
 	Placing_base = nil;
+	Valor_base_place_Y = nil;
 	Valor_block_inventory = false;
 	player removeAction _place_id;
 	player removeAction _cancel_id;
+
+	[_config_id,_item_used,_place] spawn valor_fnc_place_base;
 };
+
+
+
+
+
+
+
+
+
+
 
 Valor_base_placed = nil;
 
@@ -311,6 +343,7 @@ if(Valor_base_placed isEqualTo "cancel") exitWith
 	valor_objectarray_placed_hidden = nil;
 	valor_objectarray_placed_show = nil;
 	Placing_base = nil;
+	Valor_base_place_Y = nil;
 	Valor_block_inventory = false;
 };
 
@@ -324,6 +357,7 @@ if!(Valor_base_placed) exitWith {
 	valor_objectarray_placed_hidden = nil;
 	valor_objectarray_placed_show = nil;
 	Placing_base = nil;
+	Valor_base_place_Y = nil;
 	Valor_block_inventory = false;
 
 	[_config_id,_item_used,_place] spawn valor_fnc_place_base;
@@ -345,6 +379,7 @@ valor_all_base_objects = nil;
 valor_objectarray_placed_hidden = nil;
 valor_objectarray_placed_show = nil;
 Placing_base = nil;
+Valor_base_place_Y = nil;
 Valor_block_inventory = false;
 
 

@@ -63,6 +63,10 @@ if(isnil "VALOR_SERVER_STARTING") then {
     [] spawn valor_fnc_init_bases;
     waitUntil {!isnil "Valor_base_init_finished"};
     Valor_base_init_finished = nil;
+    diag_log "Valor :: Starting Walls Init";
+    [] spawn valor_fnc_init_walls;
+    waitUntil {!isnil "Valor_wall_init_finished"};
+    Valor_wall_init_finished = nil;
     [] spawn valor_fnc_init_outposts;
     waitUntil {!isnil "Valor_outpost_init_finished"};
     Valor_outpost_init_finished = nil;

@@ -21,9 +21,9 @@ if(_remove) then {
 } else {
 	_index = -1;
 	{
-		if((_x select 1) isEqualTo -1) exitWith {_index = _foreachindex;};
+		if((_x select 0) && (_x select 1) isEqualTo -1) exitWith {_index = _foreachindex;};
 	} foreach Valor_classes_unlock;
-	if(_index isEqualTo -1) exitWith {systemChat "Valor :: You dont have a free class slot, remove one class or unlock more class slots."};
+	if(_index isEqualTo -1) exitWith { ["Valor :: You dont have a free class slot, remove one class or unlock more class slots."] spawn valor_Fnc_exp_hint;};
 	Valor_classes_unlock set[_index,[true,_class_id]];
 
 };

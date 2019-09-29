@@ -96,6 +96,19 @@ CREATE TABLE IF NOT EXISTS `player_satistics` (
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `player_satistics`
+--
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE IF NOT EXISTS `log` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `log` text NOT NULL,
+  `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
 DROP TABLE IF EXISTS `loottable_classnames`;
 CREATE TABLE IF NOT EXISTS `loottable_classnames` (
   `uid` int(6) NOT NULL AUTO_INCREMENT,
@@ -300,12 +313,14 @@ DROP TABLE IF EXISTS `base_objects`;
 CREATE TABLE IF NOT EXISTS `base_objects` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `base_id` int(10) NOT NULL,
-  `layout_id` int(10) NOT NULL,
+  `group_id` int(10) NOT NULL DEFAULT '-1',
+  `layout_id` varchar(64) NOT NULL,
   `classname` text NOT NULL,
   `pos` text NOT NULL,
   `dir` varchar(64) NOT NULL,
   `vector` text NOT NULL,
   `inventory` text NOT NULL,
+  `wall` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),

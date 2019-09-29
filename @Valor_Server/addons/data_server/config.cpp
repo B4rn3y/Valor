@@ -34,6 +34,7 @@ class CfgFunctions
 			class syncPlayerToDB_server {};
 			class insert_player {};
 			class time_module {ext = ".fsm";};
+			class log {};
 			// persistent Vehicles start
 			class getVehicleCargo {};
 			class getVehicleDamage {};
@@ -105,6 +106,8 @@ class CfgFunctions
 			class insert_raptor {};
 			class upgrade_base {};
 			class update_entry_list {};
+			class insert_wall {};
+			class init_walls {};
 		};
 
 		class outposts

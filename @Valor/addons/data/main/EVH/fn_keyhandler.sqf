@@ -29,6 +29,7 @@ switch (true) do
 	case (_code isEqualTo 22):
 	{
 		_veh = cursorObject;
+		if(!(vehicle player isEqualTo player) && !(isnil "VALOR_IN_TRADER")) then {_veh = vehicle player};
 
 		if((typeof _veh isKindOf "Air") || (typeof _veh isKindOf "Landvehicle") || (typeof _veh isKindOf "Ship")) then {
 			_lock = locked _veh;
@@ -56,6 +57,17 @@ switch (true) do
 			[cursorObject] spawn valor_fnc_open_base;
 		};
 
+	};
+
+
+	case (_code isEqualTo 201): //Page UP
+	{
+		if!(isnil "Valor_base_place_Y") then {Valor_base_place_Y = Valor_base_place_Y + 0.1;};
+	};
+
+	case (_code isEqualTo 209): //Page DOWN
+	{
+		if!(isnil "Valor_base_place_Y") then {Valor_base_place_Y = Valor_base_place_Y - 0.1;};
 	};
 };
 _handle;

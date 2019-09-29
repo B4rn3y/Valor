@@ -35,7 +35,7 @@ _listbox lbAdd "--Cops--";
 	_coplevel = _x select 0;
 	_name = _x select 1;
 	_pid = _x select 2;
-	if!(_pid isEqualTo getplayeruid player) then {
+	if(!(_pid isEqualTo getplayeruid player) && (_coplevel > 0)) then {
 		_id = _listbox lbadd format["[%2]-%1",_name,_coplevel];
 		_listbox lbSetData[_id,(str [_coplevel,_name,_pid])];
 		_listbox lbSetValue[_id,2];

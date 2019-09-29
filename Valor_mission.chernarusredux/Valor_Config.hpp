@@ -113,8 +113,9 @@ class Valor_settings {
 	};
 
 	class bases {
-		min_distance_other_base = 2;
+		min_distance_other_base = 10;
 		min_distance_town = 700;
+		max_distance_wall = 250;
 	};
 
 	class repair_system {
@@ -147,6 +148,7 @@ class Valor_settings {
 		zombie_killed = 10;
 		raptor_killed = -20;
 		bandit_killed = 30;
+		bloodsucker_killed = 500;
 	};
 
 
@@ -161,6 +163,7 @@ class Valor_settings {
 		zombie_killed = 50;    // the amount a zombie kill gives the player
 		raptor_killed = 150;    // the amount a raptor kill gives the player
 		bandit_killed = 80;     // the amount a bandit kill gives the player
+		bloodsucker_killed = 1000;
 	};
 
 

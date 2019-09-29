@@ -151,7 +151,56 @@ if(_var) exitWith {
 
 
 
+_var = _object getvariable["valor_wall_ids",[-1,-1]];
+if!(_var isEqualTo [-1,-1]) exitWith {
+	_id = _var select 0;
+	_group_id = _var select 1;
+	if(isnil "valor_group") exitWith {};
+	if(valor_group isEqualTo []) exitWith {};
+	if!((valor_group select 0) isEqualTo _group_id) exitWith {};
 
+	_numberOfDoors = switch (typeof _object) do
+	{
+		case "Land_Garaz_long_open":
+		{
+			6
+		};
+
+		case "Land_Gate_IndVar2_5":
+		{
+			2
+		};
+
+		case "Land_Gate_IndVar2_5":
+		{
+			2
+		};
+
+		default
+		{
+			getNumber(configFile >> "CfgVehicles" >> (typeOf _object) >> "numberOfDoors");
+		};
+	};
+
+
+	_lock = _object getVariable[format["bis_disabled_Door_%1",1],0];
+	_locked = if(_lock isEqualTo 0) then {false} else {true};
+
+
+	if(_locked) then {
+		for "_d" from 1 to _numberOfDoors do {
+			_object setVariable[format["bis_disabled_Door_%1",_d],0,true];
+			_object animate[format["Door_%1_rot",_d],1];
+		};
+	} else {
+		for "_d" from 1 to _numberOfDoors do {
+			_object animate[format["Door_%1_rot",_d],0];
+			_object setVariable[format["bis_disabled_Door_%1",_d],1,true];
+		};
+
+	};
+
+};
 
 
 

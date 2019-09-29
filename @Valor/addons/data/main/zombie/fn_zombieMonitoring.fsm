@@ -29,10 +29,10 @@ item24[] = {"__2",2,250,-217.493988,-375.325500,-127.493958,-325.325500,0.000000
 item25[] = {"true",4,218,-214.480911,-464.716736,-124.480904,-414.716705,0.000000,"true"};
 item26[] = {"spawning_ZED",2,250,-205.416138,-724.819458,-115.416138,-674.819458,0.000000,"spawning" \n "ZED"};
 item27[] = {"no_base",4,218,-206.478638,-814.974060,-116.478653,-764.974121,0.000000,"no base"};
-item28[] = {"base",4,218,-512.754333,-903.874939,-422.754395,-853.875000,0.000000,"base"};
+item28[] = {"base",4,4314,-512.754333,-903.874939,-422.754395,-853.875000,0.000000,"base"};
 item29[] = {"hear_Target",4,218,-51.608582,-504.110138,38.391418,-454.110260,0.000000,"hear Target"};
 item30[] = {"move_to_pos",2,250,53.056091,-531.708984,143.056107,-481.708984,0.000000,"move to pos"};
-item31[] = {"_",4,4314,-55.169189,-557.173950,34.830811,-507.173889,0.000000,""};
+item31[] = {"_",4,218,-55.169189,-557.173950,34.830811,-507.173889,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,6};
@@ -71,8 +71,8 @@ link34[] = {28,6};
 link35[] = {29,30};
 link36[] = {30,31};
 link37[] = {31,11};
-globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-758.198242,350.582214,-260.549255,-883.376160,1045,587,1};
-window[] = {0,-1,-1,-1,-1,901,-83,1578,142,1,1063};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-853.092468,468.234802,-329.824097,-1072.043457,1045,587,1};
+window[] = {0,-1,-1,-1,-1,941,182,1843,182,1,1063};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -167,7 +167,8 @@ class FSM
                          "_the_house = selectRandom _houses;" \n
                          "" \n
                          "_var = _the_house getvariable[""valor_base_ids"",[]];" \n
-                         "_var1 = _the_house getvariable[""valor_outpost_ids"",[]];"/*%FSM</STATEINIT""">*/;
+                         "_var1 = _the_house getvariable[""valor_outpost_ids"",[]];" \n
+                         "_var2 = _the_house getvariable[""valor_wall_ids"",[]];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -178,7 +179,7 @@ class FSM
                                         priority = 0.000000;
                                         to="END";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(_var isequalto []) || !(_var1 isequalto [])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_var isequalto []) || !(_var1 isequalto []) || !(_var2 isequalto [])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

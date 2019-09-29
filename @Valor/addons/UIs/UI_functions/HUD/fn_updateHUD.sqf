@@ -1,6 +1,6 @@
+private ["_ui","_progressbar","_str_text_inside_progressbar","_lvl_display","_hunger_inside","_thirst_inside","_radiation_pic","_health_pic","_humanity_pic","_dmg_player","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3"];
 
 
-private ["_ui","_progressbar","_str_text_inside_progressbar","_lvl_display","_hunger_inside","_thirst_inside","_radiation_pic","_health_pic","_dmg_player"];
 
 _ui = uiNamespace getVariable ["valor_HUD",displayNull];
 if(isnull _ui) exitWith {};
@@ -11,6 +11,7 @@ _hunger_inside = _ui displayCtrl 1201;
 _thirst_inside = _ui displayCtrl 1203;
 _radiation_pic = _ui displayCtrl 1204;
 _health_pic = _ui displayCtrl 1205;
+_humanity_pic = _ui displayCtrl 1206;
 
 _progressbar progressSetPosition (Valor_level_xp/Valor_xp_needed_level);
 _str_text_inside_progressbar ctrlSetStructuredText parsetext format["<t  size='1.0' align='center'>%1 / %2</t>",Valor_level_xp,Valor_xp_needed_level];
@@ -152,4 +153,57 @@ if(Valor_radiation > 0) then {
 } else {
 	_radiation_pic ctrlSetFade 1;
 	_radiation_pic ctrlCommit 0;
+};
+
+
+
+
+_humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
+
+_humanity_border_B3 = _humanity_config select 0;
+_humanity_border_B2 = _humanity_config select 1;
+_humanity_border_B1 = _humanity_config select 2;
+_humanity_border_SU = _humanity_config select 3;
+_humanity_border_H1 = _humanity_config select 4;
+_humanity_border_H2 = _humanity_config select 5;
+_humanity_border_H3 = _humanity_config select 6;
+
+
+
+switch (true) do
+{
+	case (Valor_humanity <= _humanity_border_B3):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_bandit_3_HUD.paa";
+	};
+
+	case (Valor_humanity <= _humanity_border_B2):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_bandit_2_HUD.paa";
+	};
+
+	case (Valor_humanity <= _humanity_border_B1):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_bandit_1_HUD.paa";
+	};
+
+	case (Valor_humanity < _humanity_border_H1):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_bandit_1_HUD.paa";
+	};
+
+	case (Valor_humanity < _humanity_border_H2):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_hero_1_HUD.paa";
+	};
+
+	case (Valor_humanity < _humanity_border_H3):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_hero_2_HUD.paa";
+	};
+
+	case (Valor_humanity >= _humanity_border_H3):
+	{
+		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_hero_3_HUD.paa";
+	};
 };

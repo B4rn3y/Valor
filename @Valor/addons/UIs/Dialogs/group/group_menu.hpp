@@ -77,7 +77,7 @@ class group_menu {
 		{
 			idc = 2410;
 			text = "give"; //--- ToDo: Localize;
-			onbuttonClick = "";
+			onbuttonClick = "0 spawn valor_fnc_give_money_to_player;";
 			x = 0.286616;
 			y = 0.0909089;
 			w = 0.0684343;

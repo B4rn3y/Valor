@@ -131,6 +131,8 @@ class CfgFunctions
 			class syncGroup {};
 			class getActiveGroups {};
 			class give_Group_Properties {};
+			class get_money {};
+			class give_money_to_player {};
 		};
 
 		class info

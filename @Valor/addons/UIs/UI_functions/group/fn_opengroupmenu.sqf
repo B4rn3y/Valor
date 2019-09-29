@@ -41,14 +41,17 @@ _edit_group_name ctrlCommit 0;
 _btn_create_group ctrlSetFade 0;
 _btn_create_group ctrlCommit 0;
 if!(playerside isEqualTo civilian) then {_btn_create_group ctrlEnable false;};
-_str_text_stats ctrlSetStructuredText parsetext format[" <t size='0.9'>Playtime</t><br/> <t  color='#01DF01' size='1.5'>%1 hours</t> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString];
+_str_text_stats ctrlSetStructuredText parsetext format[" <t size='0.9'>Cash</t><br/> <t  color='#01DF01' size='1.5'>$%2</t><br/><t size='0.9'>Bank</t><br/> <t  color='#01DF01' size='1.5'>$%3</t><br/><t size='0.9'>Playtime</t><br/> <t  color='#01DF01' size='1.5'>%1 hours</t><br/> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString,[valor_cash] call valor_fnc_numbertext,[valor_bankacc] call valor_fnc_numbertext];
 
 {_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang,_combo_groups,_btn_give_group_properties];
 
 _edit_give_money ctrlSetText "0";
 _rank = [getPlayerUID player] call valor_fnc_getGroupRank;
 
-if(_rank isEqualTo 0) exitWith {};
+if(_rank isEqualTo 0) exitWith {
+
+	{_x ctrlSetBackgroundColor [0,0,0,0.2];} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang,_combo_groups,_btn_give_group_properties];
+};
 
 _background_no_gang ctrlsetfade 1;
 _background_no_gang ctrlCommit 0;

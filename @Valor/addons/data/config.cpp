@@ -220,6 +220,7 @@ class CfgFunctions
 			class show_needed_mats {};
 			class has_base_access {};
 			class open_base {};
+			class place_wall {};
 		};
 
 
@@ -262,6 +263,8 @@ class CfgFunctions
 			class agentMonitoring {ext = ".fsm";};
 			class animalMonitoring {ext = ".fsm";};
 
+			class BloodSuckerMonitoring  {ext = ".fsm";};
+
 			class zombie_config {};
 			class zombie_attack {};
 			class zombie_canattack {};
@@ -274,6 +277,7 @@ class CfgFunctions
 			class can_SPAWN_ZED {};
 			class on_zombie_killed {};
 			class on_bandit_killed {};
+			class on_bloodsucker_killed {};
 			//Raptors
 			class raptor_attack {};
 			class raptor_canattack {};
