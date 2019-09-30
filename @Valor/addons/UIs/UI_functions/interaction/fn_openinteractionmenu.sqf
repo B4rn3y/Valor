@@ -69,11 +69,11 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 };
 
 
-
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
 
 switch (_classname) do
 {
-	case "B_CargoNet_01_ammo_F":
+	case _base_box_classname:
 	{
 		switch (playerside) do
 		{

@@ -24,17 +24,6 @@ switch (_build) do
 
 	case 1:
 	{
-		_var = _crate getvariable "valor_base_ids";
-		if(isnil "_var") exitWith {};
-		_base_id = _var select 0;
-		if(_base_id isequalto -1) exitWith {diag_log "Valor :: Var _base_id  of one Vehicle is nil"};
-		_object_id = _var select 3;
-		_query = format["Update base_objects set inventory = '%1' where id = '%2'",([_crate] call valor_fnc_getVehicleCargo),_object_id];
-		[_query,1] call valor_fnc_db_sync;
-	};
-
-	case 2:
-	{
 		_var = _crate getvariable "cop";
 		if(isnil "_var") exitWith {};
 		_base_id = _var;
@@ -43,7 +32,7 @@ switch (_build) do
 		[_query,1] call valor_fnc_db_sync;
 	};
 
-	case 3:
+	case 2:
 	{
 		_var = _crate getvariable "valor_outpost_ids";
 		if(isnil "_var") exitWith {};

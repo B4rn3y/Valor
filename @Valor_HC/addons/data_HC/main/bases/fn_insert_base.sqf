@@ -28,6 +28,8 @@ if(_group_name isEqualTo "") exitWith {diag_log "Valor Error :: _group_name unkn
 _objects_to_build = [];
 _ammobox_0 = [];
 
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+
 {
 	_classname = _x select 0;
 	_pos = _x select 1;
@@ -35,7 +37,7 @@ _ammobox_0 = [];
 	_vec = _x select 3;
 	_level = _x select 4;
 	if(0 in _level) then {
-		if(_classname isEqualTo "B_CargoNet_01_ammo_F") then {
+		if(_classname isEqualTo _base_box_classname) then {
 			_ammobox_0 = _x;
 		} else {
 			_objects_to_build pushBack _x;

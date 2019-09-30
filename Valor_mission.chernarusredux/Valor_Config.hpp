@@ -116,6 +116,8 @@ class Valor_settings {
 		min_distance_other_base = 10;
 		min_distance_town = 700;
 		max_distance_wall = 250;
+
+		base_box_classname = "valor_CargoNet_infinite";
 	};
 
 	class repair_system {
@@ -393,7 +395,7 @@ class Valor_settings {
 
 		cities[] = {{"Survivor_city_1",700}};
 
-		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F"};
+		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F","valor_CargoNet_infinite"};
 
 		chance_vehicle_shop = 33; // The chance that a vehicle gets into the store after being destroyed, in this case its 33%
 

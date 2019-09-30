@@ -37,7 +37,8 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 
 };
 
-if!(typeof _container isEqualTo "B_CargoNet_01_ammo_F") exitWith {};
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+if!(typeof _container isEqualTo _base_box_classname) exitWith {};
 
 // cop crate
 _var = nil;

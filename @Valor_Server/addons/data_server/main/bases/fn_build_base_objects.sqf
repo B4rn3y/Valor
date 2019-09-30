@@ -25,6 +25,8 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 
 _res pushBack [-1,_classname,_pos,str(_dir),_vector,_inventory,str([_layout_id])];
 
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+
 {
 
 	_id = _x select 0;
@@ -44,7 +46,7 @@ _res pushBack [-1,_classname,_pos,str(_dir),_vector,_inventory,str([_layout_id])
 		_object setdir _dir;
 		_object allowDamage false;
 		_object setVectorUp _vector;
-		if(_classname in ["B_CargoNet_01_ammo_F"]) then {
+		if(_classname in [_base_box_classname]) then {
 			_object setvariable["valor_base_ids",[_base_id,_config_id,_layout_id,_entry_list,_owner],true];
 			_ret = [_object,_inv] call valor_fnc_loadVehicleCargo;
 			if(_raptor isEqualTo 1) then {

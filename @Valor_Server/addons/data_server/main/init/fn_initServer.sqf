@@ -68,9 +68,6 @@ if!(HC_AVAILABLE) then {
     systemchat "Valor :: Starting sold items init";
     [] call valor_fnc_init_sold_items;
     systemchat "Valor :: sold items init finished";
-    diag_log "Valor :: Searching for Fuelstations";
-    [] call valor_fnc_init_fuelstations;
-    diag_log "Valor :: Fuelstations found and published";
 
     diag_log "Valor :: Starting Time Module";
     [true] spawn valor_fnc_time_module;
@@ -96,6 +93,10 @@ if!(HC_AVAILABLE) then {
     [] spawn valor_fnc_zombie_destroyer;
     0 spawn valor_fnc_init_loot_drops;
     ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
+
+    systemchat "Valor :: Searching for Fuelstations";
+    [] call valor_fnc_init_fuelstations;
+    systemchat "Valor :: Fuelstations found and published";
 
 
     /* Event handler for disconnecting players */

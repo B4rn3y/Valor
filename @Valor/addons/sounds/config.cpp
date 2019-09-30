@@ -58,14 +58,14 @@ class CfgSounds
 	class horde_sound
 	{
 		name = "horde_sound";
-		sound[] = {"\sounds\others\horde_sound.ogg", 70, 1,50};
+		sound[] = {"\sounds\others\horde_sound.ogg", 7, 1,50};
 		titles[] = {};
 	};
 
 	class achievement
 	{
 		name = "achievement";
-		sound[] = {"\sounds\others\achievement.ogg", 70, 1,50};
+		sound[] = {"\sounds\others\achievement.ogg", 7, 1,50};
 		titles[] = {};
 	};
 

@@ -21,6 +21,7 @@ Valor_base_place_Y = 0;
 
 _needed_level = ([_config_id,0] call valor_fnc_base_config) select 3;
 
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
 
 _humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
 
@@ -77,7 +78,7 @@ _can_build = false;
 	if(_x in _role) exitWith {_can_build = true};
 } foreach _needed_level;
 
-if!(_can_build) exitWith {Placing_base = nil;Valor_base_place_Y = nil;Valor_block_inventory = false;[format["You need to be a %1 to build this.",_role]] spawn valor_fnc_exp_hint;};
+if!(_can_build) exitWith {Placing_base = nil;Valor_base_place_Y = nil;Valor_block_inventory = false;[format["You need to be a %1 to build this.",_needed_level]] spawn valor_fnc_exp_hint;};
 
 
 
@@ -191,6 +192,17 @@ valor_all_base_objects = [];
 valor_all_base_objects append valor_objectarray_placed_show;
 valor_all_base_objects append valor_objectarray_placed_hidden;
 
+
+
+_vehicles_close = nearestobjects[player,["Landvehicle","Air","Ship"],500];
+if!(_vehicles_close isEqualTo []) then {
+	{
+		_object = _x select 0;
+		{
+			_x disableCollisionWith _object;
+		} foreach _vehicles_close;
+	} foreach valor_all_base_objects;
+};
 
 
 

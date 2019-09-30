@@ -14,24 +14,21 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 
 _var = _container getvariable "cop";
 if!(isnil "_var") exitWith {
-	[[_container,2],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
+	[[_container,1],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
 	//[_container,2] remoteexec["valor_fnc_savecrate",2];
 };
 
 
 _var = _container getvariable "valor_base_ids";
-if!(isnil "_var") then {
-	if(count _var > 3) then {
-		[[_container,1],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
-		//[_container,1] remoteexec["valor_fnc_savecrate",2];
-	} else {
+if!(isnil "_var") exitWith {
+	if(count _var >= 5) then {
 		[[_container,0],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
-	 	//[_container,0] remoteexec["valor_fnc_savecrate",2];
-	 };
+		//[_container,1] remoteexec["valor_fnc_savecrate",2];
+	};
 };
 
 _var = _container getvariable "valor_outpost_ids";
 if!(isnil "_var") exitWith {
-	[[_container,3],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
+	[[_container,2],"valor_fnc_savecrate",2] call valor_fnc_remoteexec;
 	//[_container,3] remoteexec["valor_fnc_savecrate",2];
 };

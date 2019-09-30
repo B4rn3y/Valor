@@ -54,9 +54,6 @@ if(isnil "VALOR_SERVER_STARTING") then {
     systemchat "Valor :: Starting sold items init";
     [] call valor_fnc_init_sold_items;
     systemchat "Valor :: sold items init finished";
-    systemchat "Valor :: Searching for Fuelstations";
-    [] call valor_fnc_init_fuelstations;
-    systemchat "Valor :: Fuelstations found and published";
     systemchat "Valor :: Starting Time Module";
     [] spawn valor_fnc_time_module;
     systemchat "Valor :: Starting Base Init";
@@ -84,6 +81,11 @@ if(isnil "VALOR_SERVER_STARTING") then {
     //systemchat "Valor :: Starting Zombie Destroyer";
     //[] spawn valor_fnc_zombie_destroyer;
     ["Update players set online = '0' where online = '1'",1] call valor_fnc_db_sync;
+
+
+    systemchat "Valor :: Searching for Fuelstations";
+    [] call valor_fnc_init_fuelstations;
+    systemchat "Valor :: Fuelstations found and published";
 
     {
         systemchat format["Valor :: Releasing server for players in %1 seconds",_x];

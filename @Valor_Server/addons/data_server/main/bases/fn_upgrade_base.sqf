@@ -32,6 +32,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 
 _this_layout = _layout_id + 1;
 
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
 
 _new_box = [];
 _box = objNull;
@@ -67,7 +68,7 @@ for "_d" from _this_layout to _max_lvl do {
 		_object setVectorUp _vec;
 		_object setvariable["valor_base_ids",[_base_id,_config_id,_this_layout],true];
 
-		if(_classname isEqualTo "B_CargoNet_01_ammo_F") then {
+		if(_classname isEqualTo _base_box_classname) then {
 			_new_box = _x;
 			[_object] call valor_fnc_clear_vehicle;
 			_box = _object;
@@ -145,11 +146,12 @@ if!(_new_box isEqualTo []) then {
 	_query = format["Update bases set pos = '%1', dir = '%2', vector = '%3', inventory = '%4', layout_id = '%5' where base_id = '%6'",_new_box select 1, call compile(_new_box select 2),_new_box select 3,[_box] call valor_fnc_getvehiclecargo,(_layout_id + 1),_base_id];
 	[_query,1] call valor_fnc_db_sync;
 
-	_query = format["Select entry_list from bases where base_id = '%1'",_base_id];
+	_query = format["Select entry_list,owner from bases where base_id = '%1'",_base_id];
 	_entry_list = [_query,2] call valor_fnc_db_sync;
+	_owner = _entry_list select 1;
 	_entry_list = _entry_list select 0;
 
-	_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id+1,_entry_list],true];
+	_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id+1,_entry_list,_owner],true];
 };
 
 sleep 20;

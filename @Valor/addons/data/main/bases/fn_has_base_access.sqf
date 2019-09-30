@@ -3,8 +3,8 @@ private ["_base_id","_nets_close","_ret","_pid","_var","_entry_list","_entry"];
 _base_id = param[0,-1,[0]];
 _range = param[1,150,[0]];
 if(_base_id isEqualTo -1) exitWith {false};
-
-_nets_close = nearestObjects[player,["B_CargoNet_01_ammo_F"],_range];
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_nets_close = nearestObjects[player,[_base_box_classname],_range];
 _ret = false;
 _group = -2;
 _pid = getPlayerUID player;
