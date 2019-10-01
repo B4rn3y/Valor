@@ -14,123 +14,123 @@ class CfgSounds
 	class blood_attack_0
 	{
 	  	name = "blood_attack_0";
-	  	sound[] = {"\greyzone\blood\sound\attack_0.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\attack_0.ogg",6,1,500,1,0.0,0.0,0.0};
 	  	titles[] = {};
 	};
 	class blood_attack_1 : blood_attack_0
 	{
 	  	name = "blood_attack_1";
-	  	sound[] = {"\greyzone\blood\sound\attack_1.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\attack_1.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_attack_3 : blood_attack_0
 	{
 	  	name = "blood_attack_3";
-	  	sound[] = {"\greyzone\blood\sound\attack_3.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\attack_3.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_attack_hit_3 : blood_attack_0
 	{
 	  	name = "blood_attack_hit_3";
-	  	sound[] = {"\greyzone\blood\sound\attack_hit_3.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\attack_hit_3.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_die_0 : blood_attack_0
 	{
 	  	name = "blood_die_0";
-	  	sound[] = {"\greyzone\blood\sound\die_0.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\die_0.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_die_1 : blood_attack_0
 	{
 	  	name = "blood_die_1";
-	  	sound[] = {"\greyzone\blood\sound\die_1.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\die_1.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_die_2 : blood_attack_0
 	{
 	  	name = "blood_die_2";
-	  	sound[] = {"\greyzone\blood\sound\die_2.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\die_2.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_die_3 : blood_attack_0
 	{
 	  	name = "blood_die_3";
-	  	sound[] = {"\greyzone\blood\sound\die_3.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\die_3.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_die_4 : blood_attack_0
 	{
 	  	name = "blood_die_4";
-	  	sound[] = {"\greyzone\blood\sound\die_4.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\die_4.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_distant_1 : blood_attack_0
 	{
 	  	name = "blood_distant_1";
-	  	sound[] = {"\greyzone\blood\sound\distant_1.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\distant_1.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_distant_2 : blood_attack_0
 	{
 	  	name = "blood_distant_2";
-	  	sound[] = {"\greyzone\blood\sound\distant_2.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\distant_2.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_distant_3 : blood_attack_0
 	{
 	  	name = "blood_distant_3";
-	  	sound[] = {"\greyzone\blood\sound\distant_3.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\distant_3.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_hit_0 : blood_attack_0
 	{
 	  	name = "blood_hit_0";
-	  	sound[] = {"\greyzone\blood\sound\hit_0.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\hit_0.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_hit_1 : blood_attack_0
 	{
 	  	name = "blood_hit_1";
-	  	sound[] = {"\greyzone\blood\sound\hit_1.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\hit_1.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_hit_2 : blood_attack_0
 	{
 	  	name = "blood_hit_2";
-	  	sound[] = {"\greyzone\blood\sound\hit_2.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\hit_2.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_hit_5 : blood_attack_0
 	{
 	  	name = "blood_hit_5";
-	  	sound[] = {"\greyzone\blood\sound\hit_5.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\hit_5.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_hit_6 : blood_attack_0
 	{
 	  	name = "blood_hit_6";
-	  	sound[] = {"\greyzone\blood\sound\hit_6.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\hit_6.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_0 : blood_attack_0
 	{
 	  	name = "blood_idle_0";
-	  	sound[] = {"\greyzone\blood\sound\idle_0.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_0.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_1 : blood_attack_0
 	{
 	  	name = "blood_idle_1";
-	  	sound[] = {"\greyzone\blood\sound\idle_1.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_1.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_2 : blood_attack_0
 	{
 	  	name = "blood_idle_2";
-	  	sound[] = {"\greyzone\blood\sound\idle_2.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_2.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_3 : blood_attack_0
 	{
 	  	name = "blood_idle_3";
-	  	sound[] = {"\greyzone\blood\sound\idle_3.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_3.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_4 : blood_attack_0
 	{
 	  	name = "blood_idle_4";
-	  	sound[] = {"\greyzone\blood\sound\idle_4.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_4.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_idle_5 : blood_attack_0
 	{
 	  	name = "blood_idle_5";
-	  	sound[] = {"\greyzone\blood\sound\idle_5.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\idle_5.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 	class blood_invisible : blood_attack_0
 	{
 	  	name = "blood_invisible";
-	  	sound[] = {"\greyzone\blood\sound\invisible.ogg",2,1,200,1,0.0,0.0,0.0};
+	  	sound[] = {"\greyzone\blood\sound\invisible.ogg",6,1,500,1,0.0,0.0,0.0};
 	};
 };
 
