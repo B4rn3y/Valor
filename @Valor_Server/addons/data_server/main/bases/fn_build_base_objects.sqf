@@ -1,4 +1,4 @@
-private ["_base_id","_config_id","_layout_id","_owner","_entry_list","_classname","_pos","_dir","_vector","_inventory","_cop","_raptor","_raptor_classname","_query","_res","_inv","_object","_ret","_range"];
+private ["_base_id","_config_id","_layout_id","_owner","_entry_list","_classname","_pos","_dir","_vector","_inventory","_cop","_raptor","_raptor_classname","_query","_res","_base_box_classname","_box","_inv","_stage","_object","_ret","_range"];
 
 
 _base_id = param[0,-1,[0]];
@@ -26,7 +26,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 _res pushBack [-1,_classname,_pos,str(_dir),_vector,_inventory,str([_layout_id])];
 
 _base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
-
+_box = Objnull;
 {
 
 	_id = _x select 0;
@@ -47,6 +47,7 @@ _base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >
 		_object allowDamage false;
 		_object setVectorUp _vector;
 		if(_classname in [_base_box_classname]) then {
+			_box = _object;
 			_object setvariable["valor_base_ids",[_base_id,_config_id,_layout_id,_entry_list,_owner],true];
 			_ret = [_object,_inv] call valor_fnc_loadVehicleCargo;
 			if(_raptor isEqualTo 1) then {
@@ -66,7 +67,12 @@ _base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >
 
 } foreach _res;
 
-
+if!(isnull _box) then {
+	_range = (([_config_id,0] call valor_fnc_base_config) select 2) select 0;
+	{
+		_x hideObject true;
+	} foreach (nearestTerrainObjects[_box,["TREE","SMALL TREE","BUSH"],_range]);
+};
 
 
 

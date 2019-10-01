@@ -44,14 +44,14 @@ player switchmove "";
 if(!isnil "Valor_interrupt") exitWith {valor_is_processing=nil;Valor_interrupt = niL;};
 Valor_interrupt = niL;
 if!(alive player) exitWith {valor_is_processing=nil;};
-if(player distance _assigned > 10) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
-if((vehicle player) != player) exitWith {systemchat "Valor :: You cant do that in a vehicle!"; valor_is_processing = nil;};
+if(player distance _assigned > 10) exitWith {["Valor :: You moved too far away!"] spawn valor_Fnc_exp_hint;valor_is_processing=nil;};
+if((vehicle player) != player) exitWith {["Valor :: You cant do that in a vehicle!"] spawn valor_Fnc_exp_hint; valor_is_processing = nil;};
 
 _rnd = random 100;
 if!(_rnd <=_percentage_find ) then {
-	Systemchat "Valor :: You havent found anything T_T";
+	["Valor :: You havent found anything T_T"] spawn valor_Fnc_exp_hint;
 } else {
-	Systemchat "Valor :: YOU FOUND AN EGG!!";
+	["Valor :: YOU FOUND AN EGG!!"] spawn valor_Fnc_exp_hint;
 	[_item_name,_item_amount] call valor_fnc_additem;
 };
 

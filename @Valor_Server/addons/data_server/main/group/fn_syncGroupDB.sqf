@@ -143,21 +143,6 @@ switch (_index) do
 		_query = format["Update base_objects set group_id = '%1' where group_id= '%2'",_group_id_new,_group_id_old];
 		[_query,1] call valor_fnc_db_sync;
 
-		sleep 1;
-		_query = format["Update persistent_vehicles set group_id = '%1' where group_id= '%2'",_group_id_new,_group_id_old];
-		[_query,1] call valor_fnc_db_sync;
-
-		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
-		{
-			_var = _x getVariable["group_restricted",[]];
-			if!(_var isEqualTo []) then {
-				_id_group_veh = _var select 1;
-				if(_id_group_veh isEqualTo _group_id_old) then {
-					_x setvariable["group_restricted",[1,_group_id_new],true];
-					_x setvariable["update_this",true,true];
-				};
-			};
-		} foreach _vehicles;
 	};
 
 

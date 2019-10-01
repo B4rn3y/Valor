@@ -147,6 +147,7 @@ class CfgFunctions
 			class initcorpses {};
 			class init_skills {};
 			class init_radiation_zones {};
+			class init_bases_client {};
 		};
 
 		class loot_system

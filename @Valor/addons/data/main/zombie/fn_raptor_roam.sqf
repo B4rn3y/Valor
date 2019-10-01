@@ -9,7 +9,9 @@ _range = param[2,[10,50],[[]]];
 if(isnull _zombie) exitWith {};
 if(_pos isEqualTo []) exitWith {};
 
+
 _zombie forceSpeed 2;
+
 _zombie setDestination [getposATL _zombie, "LEADER Direct", true];
 _zombie setDestination [([_pos, (_range select 0), (_range select 1), 10, 0, 20, 0] call BIS_fnc_findSafePos), "LEADER PLANNED", true];
 

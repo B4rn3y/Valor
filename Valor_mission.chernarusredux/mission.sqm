@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1897;
+		nextID=1899;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7349.0181,389.77966,9270.1455};
-		dir[]={-0.96823394,-0.1869956,0.16607805};
-		up[]={-0.18431166,0.98235667,0.031613663};
-		aside[]={0.16905788,3.2910248e-007,0.9856168};
+		pos[]={3839.4995,539.42297,8724.2549};
+		dir[]={0.097312972,-0.85335553,0.51234025};
+		up[]={0.15923092,0.52136451,0.83833152};
+		aside[]={0.9825145,4.0990562e-007,-0.18661763};
 	};
 };
 binarizationWanted=0;
@@ -388,7 +388,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=753;
+		items=754;
 		class Item0
 		{
 			dataType="Object";
@@ -15338,7 +15338,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this addaction[""Collect"", valor_fnc_harvestitem,[""valor_Land_WoodenLog_F"",2,""Collecting logs..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
+				init="call{this addaction[""Collect"", valor_fnc_harvestitem,[""valor_woodenlog"",2,""Collecting logs..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
 				disableSimulation=1;
 			};
 			id=1231;
@@ -15385,7 +15385,7 @@ class Mission
 			};
 			id=1232;
 			type="Land_Saw_F";
-			atlOffset=3.0517578e-005;
+			atlOffset=6.1035156e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15562,7 +15562,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this addaction[""Mine"", valor_fnc_harvestitem,[""valor_Land_Cliff_stone_medium_F"",2,""Mining Stone..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
+				init="call{this addaction[""Mine"", valor_fnc_harvestitem,[""valor_cliff_stone_medium"",2,""Mining Stone..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
 				disableSimulation=1;
 			};
 			id=1262;
@@ -18464,8 +18464,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3958.7476,310.2695,8628.3027};
-				angles[]={0,4.9944901,0};
+				position[]={3958.748,310.26953,8628.3027};
+				angles[]={0,4.9944863,0};
 			};
 			side="Empty";
 			flags=5;
@@ -18474,7 +18474,7 @@ class Mission
 			};
 			id=1418;
 			type="Land_Net_Fence_Gate_F";
-			atlOffset=0.098144531;
+			atlOffset=0.098175049;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18506,7 +18506,7 @@ class Mission
 												"SCALAR"
 											};
 										};
-										value=0;
+										value=5;
 									};
 								};
 								class Item1
@@ -20729,7 +20729,7 @@ class Mission
 			};
 			id=1747;
 			type="Land_File1_F";
-			atlOffset=0.95062256;
+			atlOffset=0.95925903;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24012,6 +24012,23 @@ class Mission
 			type="mil_triangle";
 			id=1896;
 			atlOffset=0.24594116;
+		};
+		class Item753
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3693.0505,299.60367,8460.7402};
+				angles[]={0,3.463552,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1898;
+			type="Land_Canal_Wall_10m_F";
+			atlOffset=3.9169617;
 		};
 	};
 };

@@ -144,6 +144,7 @@ _box setVectorUp (_ammobox_0 select 3);
 _box setposatl (_ammobox_0 select 1);
 _box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id,_entry_list,_owner],true];
 _inventory = [_box] call valor_fnc_getvehiclecargo;
+
 _objects_with_pos pushBack [_box,(_ammobox_0 select 1)];
 
 
@@ -153,4 +154,14 @@ _objects_with_pos pushBack [_box,(_ammobox_0 select 1)];
 
 
 [format["The Base got inserted into the database, now put the required items into the crate and build the base"]]remoteExec["valor_fnc_exp_hint",_requester];
+
+
+
+sleep 60;
+if(isnull _box) exitWith {};
+_box setdir (_ammobox_0 select 2);
+_box setVectorUp (_ammobox_0 select 3);
+_box setposatl (_ammobox_0 select 1);
+
+[] remoteexeccall["valor_fnc_init_bases_client",-2];
 

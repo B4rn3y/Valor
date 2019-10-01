@@ -119,6 +119,8 @@ if!(HC_AVAILABLE) then {
     [] spawn valor_fnc_persistent_vehicle_monitoring;
 
     addMissionEventHandler ["HandleDisconnect",{_this call valor_fnc_clientDisconnect; false;}];
+
+    0 spawn {sleep 60;0 call valor_fnc_init_bases_client;};
 };
 
 civilian setfriend[opfor,1];

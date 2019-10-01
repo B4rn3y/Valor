@@ -14,3 +14,4 @@
 #include "Dialogs\sell_vehicle_items\sell_vehicle_items.hpp"// ID 3014
 #include "Dialogs\key_menu\key_menu.hpp"                    // ID 3015
 #include "Dialogs\base_entry\base_entry.hpp"                // ID 3016
+#include "Dialogs\bank_menu\bank_menu.hpp"                  // ID 3017

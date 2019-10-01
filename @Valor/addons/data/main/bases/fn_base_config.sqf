@@ -16,7 +16,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_1"]
 				]
 			};
@@ -28,7 +28,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_1"]
 				]
 			};
@@ -49,7 +49,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_2"]
 				]
 			};
@@ -61,7 +61,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_2"]
 				]
 			};
@@ -81,7 +81,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_3"]
 				]
 			};
@@ -93,7 +93,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["hero_3"]
 				]
 			};
@@ -113,7 +113,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_1"]
 				]
 			};
@@ -125,7 +125,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_1"]
 				]
 			};
@@ -145,7 +145,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_2"]
 				]
 			};
@@ -157,7 +157,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_2"]
 				]
 			};
@@ -177,7 +177,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_3"]
 				]
 			};
@@ -189,7 +189,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[15,30],
+					[20,40],
 					["bandit_3"]
 				]
 			};
@@ -209,7 +209,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[50,80],
+					[70,120],
 					["bandit_3","hero_3"]
 				]
 			};
@@ -222,7 +222,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[50,80],
+					[70,120],
 					["bandit_3","hero_3"]
 				]
 			};
@@ -235,7 +235,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[50,80],
+					[70,120],
 					["bandit_3","hero_3"]
 				]
 			};
@@ -248,7 +248,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[50,80],
+					[70,120],
 					["bandit_3","hero_3"]
 				]
 			};
@@ -260,7 +260,7 @@ _base = switch (_id) do
 					[
 						["valor_ducttape",20]
 					],
-					[50,80],
+					[70,120],
 					["bandit_3","hero_3"]
 				]
 			};

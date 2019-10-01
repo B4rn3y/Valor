@@ -32,6 +32,13 @@ class CfgFunctions
 			class updateLoadingScreen {};
 		};
 
+		class bank_menu
+		{
+			file = "\UIs\UI_functions\bank_menu";
+			class bank_menu_transfer_money {};
+			class open_bank_menu {};
+		};
+
 		class quest
 		{
 			file = "\UIs\UI_functions\quest";

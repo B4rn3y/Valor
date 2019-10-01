@@ -92,6 +92,10 @@ switch (_classname) do
 				_btn_2 ctrlsettext "Hatch Raptor";
 				_btn_2 buttonSetAction "closeDialog 0;[] spawn valor_fnc_hatch_raptor;";
 
+				_btn_3 ctrlshow true;
+				_btn_3 ctrlsettext "Bank Menu";
+				_btn_3 buttonSetAction "closeDialog 0;[] spawn valor_fnc_open_bank_menu;";
+
 			};
 		};
 	};

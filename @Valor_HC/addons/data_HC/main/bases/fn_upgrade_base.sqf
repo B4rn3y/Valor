@@ -154,15 +154,18 @@ if!(_new_box isEqualTo []) then {
 	_box setvariable["valor_base_ids",[_base_id,_config_id,_layout_id+1,_entry_list,_owner],true];
 };
 
-sleep 20;
+sleep 10;
 missionNamespace setvariable[format["valor_base_%1",_base_id],nil];
 
 
 
 
+sleep 60;
 
-
-
+if(isnull _box) exitWith {};
+_box setposatl (_new_box select 1);
+_box setdir (_new_box select 2);
+_box setVectorUp (_new_box select 3);
 
 
 
