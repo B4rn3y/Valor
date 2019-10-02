@@ -26,6 +26,17 @@ switch (true) do
 		[] spawn valor_fnc_restrainAction;
 	};
 
+	case 41: //^
+	{
+		[] call valor_fnc_opengroupmenu;
+	};
+
+	case 219: // WINDOWS LEFT
+	{
+		if(player getVariable ["valor_restrained",false]) exitWith{["You cant do anything while being restrained"] spawn valor_fn_exp_hint;_handle};
+		[cursortarget] call valor_fnc_openinteractionmenu;
+	};
+
 	case (_code isEqualTo 22):
 	{
 		_veh = cursorObject;
