@@ -2,11 +2,14 @@
 
 
 private ["_text","_silent","_time","_length_mult","_display","_TextField","_pic","_Header","_posText","_posPic","_textHigh","_activeNotifications","_ctrlPic","_ctrlText"];
-
-_text = param[0,"",[""]];
-_silent = param[1,true,[true]];
-_time = param[2,-1,[0]];
-
+_text = _this;
+_silent = true;
+_time = -1;
+if!((typeName _this) isEqualTo "STRING") then {
+	_text = param[0,"",[""]];
+	_silent = param[1,true,[true]];
+	_time = param[2,-1,[0]];
+};
 if(_text isEqualTo "") exitWith {};
 
 

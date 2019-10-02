@@ -1,3 +1,4 @@
+private ["_display","_str_text","_classes","_find_class","_id_class","_ret","_tv","_TV","_empty","_index","_index_2","_index_0","_unlocked","_class_data","_level_needed","_skills","_index_1","_index_3"];
 createDialog "skills";
 
 _display = findDisplay 3011;
@@ -62,6 +63,10 @@ _index_0 = _tv tvadd[[],"Available Skills:"];
 	};
 } foreach Valor_classes_unlock;
 
+if(_empty) then {
+	_tv tvadd[[_index_0],"Ûnlock and learn classes in order to unlock skills."];
+};
+
 tvExpandAll _tv;
 
-waitUntil {isnull (findDisplay 3011)};
+//waitUntil {isnull (findDisplay 3011)};

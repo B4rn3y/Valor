@@ -10,7 +10,7 @@ if(_vehicle_ID isEqualTo -1 || isnull _requester || _classname isEqualTo "" || _
 
 _close_vehicles = nearestObjects[_pos,["Landvehicle","Air","Ship"],10];
 iF!(_close_vehicles isEqualTo []) exitWith {
-		"Valor Error :: Could not spawn the vehicle, something is blocking the spawn." remoteExec["systemchat",_requester];
+		["Valor Error :: Could not spawn the vehicle, something is blocking the spawn."] remoteExec["valor_fnc_exp_hint",_requester];
 };
 
 _query = format["Select id from persistent_vehicles where classname like '%1%2%1' and shop = '1';","%",_classname];
@@ -19,7 +19,7 @@ _id = [_query,2] call valor_fnc_db_sync;
 
 
 if(_id isEqualTo []) exitWith {
-	"Valor Error :: This vehicle was already bought" remoteExec["systemchat",_requester];
+	["Valor Error :: This vehicle was already bought"] remoteExec["valor_fnc_exp_hint",_requester];
 };
 
 
@@ -58,6 +58,8 @@ if([_vehicle_ID,0] call valor_fnc_setvehicleinshop) then {
 	[_vehicle_ID,_price,_vehicle,_classname] remoteExec["valor_fnc_buyvehiclefinish",_requester];
 	_vehicle allowdamage true;
 	_vehicle setdamage 0;
+
+	_requester setDir ([_requester, _vehicle] call BIS_fnc_dirTo);
 } else {
-	"Valor Error :: The Server could not flag the vehicle as bought." remoteExec["systemchat",_requester];
+	["Valor Error :: The Server could not flag the vehicle as bought."] remoteExec["valor_fnc_exp_hint",_requester];
 };

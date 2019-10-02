@@ -58,42 +58,42 @@ class CfgSounds
 	class horde_sound
 	{
 		name = "horde_sound";
-		sound[] = {"\sounds\others\horde_sound.ogg", 7, 1,50};
+		sound[] = {"\sounds\others\horde_sound.ogg", 3, 1,50};
 		titles[] = {};
 	};
 
 	class achievement
 	{
 		name = "achievement";
-		sound[] = {"\sounds\others\achievement.ogg", 7, 1,50};
+		sound[] = {"\sounds\others\achievement.ogg", 3, 1,50};
 		titles[] = {};
 	};
 
 	class geiger_level_0
 	{
 		name = "geiger_level_0";
-		sound[] = {"\sounds\effects\geiger_level_0.ogg", 70, 1,50};
+		sound[] = {"\sounds\effects\geiger_level_0.ogg", 30, 1,50};
 		titles[] = {};
 	};
 
 	class geiger_level_1
 	{
 		name = "geiger_level_1";
-		sound[] = {"\sounds\effects\geiger_level_1.ogg", 70, 1,50};
+		sound[] = {"\sounds\effects\geiger_level_1.ogg", 30, 1,50};
 		titles[] = {};
 	};
 
 	class geiger_level_2
 	{
 		name = "geiger_level_2";
-		sound[] = {"\sounds\effects\geiger_level_2.ogg", 70, 1,50};
+		sound[] = {"\sounds\effects\geiger_level_2.ogg", 30, 1,50};
 		titles[] = {};
 	};
 
 	class geiger_level_3
 	{
 		name = "geiger_level_3";
-		sound[] = {"\sounds\effects\geiger_level_3.ogg", 70, 1,50};
+		sound[] = {"\sounds\effects\geiger_level_3.ogg", 30, 1,50};
 		titles[] = {};
 	};
 

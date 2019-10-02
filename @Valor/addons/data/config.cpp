@@ -148,6 +148,7 @@ class CfgFunctions
 			class init_skills {};
 			class init_radiation_zones {};
 			class init_bases_client {};
+			class init_bloodsucker_zones {};
 		};
 
 		class loot_system
@@ -279,6 +280,7 @@ class CfgFunctions
 			class on_zombie_killed {};
 			class on_bandit_killed {};
 			class on_bloodsucker_killed {};
+			class check_bloodsucker_spawn {};
 			//Raptors
 			class raptor_attack {};
 			class raptor_canattack {};

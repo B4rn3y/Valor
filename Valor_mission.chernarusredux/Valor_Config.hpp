@@ -92,6 +92,23 @@ class Valor_settings {
 		};
 	};
 
+	class bloodsucker_settings {
+		bloodsucker_zones[] = {
+			{{6494.53,5164.28,0},1500,500,true},
+			{{10720.8,5120.31,0},1500,500,true},
+			{{11455.2,11334,0},50,50,false},
+			{{6895.31,11442.8,0},100,100,false},
+			{{9163.58,7674.52,0},500,750,true}
+		};
+		bloodsucker_appearance_probability = 10;
+	};
+
+	class lift_config {
+		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F","valor_CargoNet_infinite"};
+
+		min_distance_base_lift = 35;
+	};
+
  	class food_items {
 		valor_bakedbeans[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""}; //what type of food, food to fill, array with sounds it can make, classname of item to add
 		valor_cerealsbox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},""};
@@ -394,8 +411,6 @@ class Valor_settings {
 		no_loot_spawn_Zones[] = {{"Survivor_city_1",500}};
 
 		cities[] = {{"Survivor_city_1",700}};
-
-		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F","valor_CargoNet_infinite"};
 
 		chance_vehicle_shop = 33; // The chance that a vehicle gets into the store after being destroyed, in this case its 33%
 

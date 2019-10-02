@@ -9,11 +9,11 @@ item4[] = {"w8",4,218,-206.348511,-592.450562,-116.348511,-542.450562,0.000000,"
 item5[] = {"setpos",2,250,34.313721,-590.600769,124.313744,-540.600769,0.000000,"setpos"};
 item6[] = {"END",1,250,-511.362885,-1043.612183,-421.362762,-993.612305,0.000000,"END"};
 item7[] = {"attack",4,218,-49.091988,-469.632935,40.908020,-419.632904,0.000000,"attack"};
-item8[] = {"END_1",1,250,615.693115,-446.933502,705.693237,-396.933441,0.000000,"END"};
+item8[] = {"END_1",1,4346,615.693115,-446.933502,705.693237,-396.933441,0.000000,"END"};
 item9[] = {"attack",2,250,41.097717,-315.831482,131.097717,-265.831482,0.000000,"attack"};
 item10[] = {"w8",4,218,114.482910,-466.764008,204.482910,-416.764008,0.000000,"w8"};
 item11[] = {"player_zed_dead",4,218,280.420166,-447.249329,370.420166,-397.249359,0.000000,"player/zed dead"};
-item12[] = {"kill_BS",2,4346,386.533875,-448.873840,476.533875,-398.873840,0.000000,"kill BS"};
+item12[] = {"kill_BS",2,250,386.533875,-448.873840,476.533875,-398.873840,0.000000,"kill BS"};
 item13[] = {"w8",4,218,497.001099,-450.184235,587.001099,-400.184235,0.000000,"w8"};
 item14[] = {"time_up",4,218,619.619141,-586.919312,709.619141,-536.919312,0.000000,"time up"};
 link0[] = {0,1};
@@ -34,8 +34,8 @@ link14[] = {11,12};
 link15[] = {12,13};
 link16[] = {13,8};
 link17[] = {14,8};
-globals[] = {0.000000,0,0,0,0,640,480,1,231,6316128,1,-414.807556,866.842346,-168.793640,-888.725159,1045,587,1};
-window[] = {0,-1,-1,-1,-1,941,182,1843,182,1,1063};
+globals[] = {0.000000,0,0,0,0,640,480,1,231,6316128,1,-689.802979,884.283997,-144.605164,-1028.805176,1045,587,1};
+window[] = {0,-1,-1,-32000,-32000,901,-18,1643,142,1,1063};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -47,7 +47,9 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_target = player;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_target = player;" \n
+                         "" \n
+                         "0 spawn {Valor_bloodsucker_active = true;};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -81,7 +83,7 @@ class FSM
                 {
                         name = "create__BS";
                         itemno = 2;
-                        init = /*%FSM<STATEINIT""">*/"_hear_distance = 100;" \n
+                        init = /*%FSM<STATEINIT""">*/"_hear_distance = 200;" \n
                          "_attack_perc = 10;" \n
                          "_show_perc = 15;" \n
                          "_attack_time = 600;" \n
@@ -141,13 +143,13 @@ class FSM
                          "};" \n
                          "" \n
                          "" \n
-                         "_pos = [player, 20, 60, 1, 0, 0.85, 0] call BIS_fnc_findSafePos;" \n
+                         "_pos = [player, 20, 100, 1, 0, 0.85, 0] call BIS_fnc_findSafePos;" \n
                          "_pos append [0];" \n
                          "_zombie setposatl _pos;" \n
                          "_time = diag_ticktime;" \n
                          "_zombie setDir ([_zombie, player] call BIS_fnc_dirTo);" \n
                          "" \n
-                         "[_zombie,selectrandom[""blood_invisible"",""blood_distant_3"",""blood_distant_2"",""blood_distant_1""]] remoteExecCall[""say3D"",(playableUnits select {_distance = _zombie distance _x; alive _x && (_distance < _hear_distance)})];" \n
+                         "[_zombie,selectrandom[""blood_attack_0"",""blood_invisible"",""blood_distant_3"",""blood_distant_2"",""blood_distant_1""]] remoteExecCall[""say3D"",(playableUnits select {_distance = _zombie distance _x; alive _x && (_distance < _hear_distance)})];" \n
                          "" \n
                          "" \n
                          "" \n
@@ -212,7 +214,7 @@ class FSM
                 {
                         name = "END";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"0 spawn {Valor_bloodsucker_active = nil;};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -224,7 +226,7 @@ class FSM
                 {
                         name = "END_1";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"" \n
+                        init = /*%FSM<STATEINIT""">*/"0 spawn {Valor_bloodsucker_active = nil;};" \n
                          "" \n
                          "deletevehicle _zombie;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -245,7 +247,7 @@ class FSM
                          "" \n
                          "" \n
                          "" \n
-                         "[_zombie,selectrandom[""blood_hit_0"",""blood_hit_1"",""blood_hit_2"",""blood_hit_5"",""blood_hit_6""]] remoteExecCall[""say3D"",(playableUnits select {_distance = _zombie distance _x; alive _x && (_distance < _hear_distance)})];" \n
+                         "[_zombie,selectrandom[""blood_attack_0"",""blood_hit_0"",""blood_hit_1"",""blood_hit_2"",""blood_hit_5"",""blood_hit_6""]] remoteExecCall[""say3D"",(playableUnits select {_distance = _zombie distance _x; alive _x && (_distance < _hear_distance)})];" \n
                          "" \n
                          "" \n
                          "player setdamage (damage player + 0.25);" \n
