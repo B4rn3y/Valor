@@ -1002,7 +1002,7 @@ class CfgWeapons
 
     class valor_blueprint8: valor_item_base
     {
-        displayName = "Blueprint 8";
+        displayName = "Wall Entrance Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -1013,7 +1013,7 @@ class CfgWeapons
 
     class valor_blueprint9: valor_item_base
     {
-        displayName = "Blueprint 9";
+        displayName = "Wall Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -1032,4 +1032,45 @@ class CfgWeapons
             mass=15;
         };
     };
+    class valor_blueprint11: valor_item_base
+    {
+        displayName = "Blueprint 11";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+    class valor_blueprint12: valor_item_base
+    {
+        displayName = "Blueprint 12";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+    class valor_blueprint13: valor_item_base
+    {
+        displayName = "Blueprint 13";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+    class valor_blueprint14: valor_item_base
+    {
+        displayName = "Blueprint 14";
+        model = "a3\structures_f\items\documents\file1_f.p3d";
+        picture = "\valor_items\ui\file1_icon.paa";
+        class ItemInfo
+        {
+            mass=15;
+        };
+    };
+
 };
