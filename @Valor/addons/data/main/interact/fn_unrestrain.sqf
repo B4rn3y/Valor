@@ -1,6 +1,5 @@
+private ["_restrained_person","_time","_cP","_cpUp"];
 
-
-private ["_restrained_person","_time","_cP","_cpUp","_unit"];
 
 _restrained_person = param [0,Objnull,[Objnull]];
 
@@ -29,7 +28,7 @@ switch (playerside) do
 
 			sleep _time;
 			_cP = _cP + _cpUp;
-			_unit setvariable["percent",_cP * 100];
+			_restrained_person setvariable["percent",_cP * 100];
 
 			if(_cP >= 1) exitWith {};
 			if!(_restrained_person getvariable["valor_restrained",false]) exitWith {};
@@ -43,7 +42,7 @@ switch (playerside) do
 		if!(_restrained_person getvariable["valor_restrained",false]) exitWith {valor_is_processing=nil;};
 		if(!isnil "Valor_interrupt") exitWith {valor_is_processing=nil;};
 		if!(alive player) exitWith {valor_is_processing=nil;};
-		if(player distance _unit > 5) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
+		if(player distance _restrained_person > 5) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
 		if((vehicle player) != player) exitWith {systemchat "Valor :: You cant do that in a vehicle!"; valor_is_processing = nil;};
 		if(isnull _restrained_person) exitWith {systemchat "Valor :: This person is already offline";valor_is_processing = nil;};
 		valor_is_processing = nil;

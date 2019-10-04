@@ -17,12 +17,12 @@ _bloodsucker_zones = getArray(missionConfigFile >> "Valor_settings" >> "bloodsuc
 		_isrecttangle = call compile _isrecttangle;
 	};
 	_trg = createTrigger ["EmptyDetector", _pos,false];
-	_trg setTriggerArea [_a, _b, 0, _isrecttangle,70];
+	_trg setTriggerArea [_a, _b, 0, _isrecttangle];
 	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_trg setTriggerStatements ["(vehicle player) in thisList", format["[] spawn valor_fnc_check_bloodsucker_spawn;"], ""];
 
-
-	_mkr_radius = createMarkerlocal[format["Valor_bloodsucker_Zone_1_%1",_foreachindex],_pos];
+	/*
+	_mkr_radius = createMarkerlocal[format["Valor_bloodsucker_Zone1_1_%1",_foreachindex],_pos];
 	if(_isrecttangle) then {
 		_mkr_radius setMarkerShapeLocal "RECTANGLE";
 	} else {
@@ -31,6 +31,8 @@ _bloodsucker_zones = getArray(missionConfigFile >> "Valor_settings" >> "bloodsuc
 	_mkr_radius setMarkerSizeLocal [_a,_b];
 	_mkr_radius setMarkerBrushLocal "Solid";
 
+	_mkr_radius setMarkerDirLocal 0;
+	*/
 
 
 } foreach _bloodsucker_zones;

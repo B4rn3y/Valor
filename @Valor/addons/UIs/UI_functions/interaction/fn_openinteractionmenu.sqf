@@ -1,5 +1,5 @@
+private ["_create_display","_display","_btn_1","_btn_2","_btn_3","_btn_4","_btn_5","_btn_6","_btn_7","_btn_8","_btn_9","_btn_10","_attached_player","_classname","_veh_close","_v_close","_pos","_can_pull_out","_base_box_classname","_var"];
 
-private ["_cursortarget","_display","_btn_1","_btn_2","_btn_3","_btn_4","_btn_5","_btn_6","_btn_7","_btn_8","_btn_9","_btn_10","_classname"];
 
 OBJ_focused = param[0,objNull,[objNull]];
 if(player getvariable["valor_restrained",false]) exitWith {};
@@ -59,12 +59,45 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_stopEscorting;";
 	};
 
-	if(playerSide isEqualTo opfor) then {
+	_veh_close = (nearestObjects[player,["Landvehicle","Air","Ship"],10]) select {alive _x && ((locked _x) isEqualTo 0)};
+	if(_veh_close isEqualTo []) then {
 		_btn_3 ctrlshow true;
-		_btn_3 ctrlsettext "Ticket";
-		_btn_3 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
+		_btn_3 ctrlsettext "Put in Vehicle";
+		_btn_3 ctrlEnable false;
+	} else {
+		_btn_3 ctrlshow true;
+		_btn_3 ctrlsettext "Put in Vehicle";
+		_btn_3 buttonSetAction "closeDialog 0;_v_close = (nearestObjects[player,[""Landvehicle"",""Air"",""Ship""],10]) select {alive _x && ((locked _x) isEqualTo 0)}; if(_v_close isEqualTo []) exitWith {[""There is no suitable vehicle close""] spawn valor_fnc_exp_hint;};detach OBJ_focused;[OBJ_focused,(_v_close select 0)] remoteExecCall[""moveInCargo"",OBJ_focused];";
+	};
+
+	if(playerSide isEqualTo opfor) then {
+		_btn_4 ctrlshow true;
+		_btn_4 ctrlsettext "Ticket";
+		_btn_4 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
 	} else {
 
+	};
+};
+
+
+if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname isKindOf "Ship" ) && alive OBJ_focused && ((player distance OBJ_focused) < 15.1)) exitWith {
+
+	call _create_display;
+	_btn_1 ctrlshow true;
+	_btn_1 ctrlEnable false;
+	_btn_1 ctrlsettext format["DB-ID: %1",OBJ_focused getvariable["DBID",-1]];
+	_btn_1 buttonSetAction "";
+
+
+	_btn_2 ctrlshow true;
+	_btn_2 ctrlsettext "Unflip";
+	_btn_2 buttonSetAction "closeDialog 0;_pos = getposatl OBJ_focused; OBJ_focused setposatl[_pos select 0, _pos select 1, (_pos select 2) + 1]; [OBJ_focused,[0,0,1]] remoteExecCall [""setVectorUp"",0];";
+
+	_can_pull_out = if(count (crew OBJ_focused) > 0) then {{if(_x getVariable["valor_restrained",false]) exitWith {true}} foreach (crew OBJ_focused);} else {false};
+	if(_can_pull_out) then {
+		_btn_3 ctrlshow true;
+		_btn_3 ctrlsettext "Pull out";
+		_btn_3 buttonSetAction "closeDialog 0;{if(_x getVariable[""valor_restrained"",false]) then {_x action [""Eject"", OBJ_focused];};} foreach (crew OBJ_focused);";
 	};
 };
 
