@@ -15,11 +15,21 @@ class valor_screen {
 		class THE_SCREEN: valor_rscpicture
 		{
 			idc = -1;
-			text = "UIs\textures\loadscreen.paa";
+			text = "UIs\textures\loadscreen.jpg";
+
+ 			x = safezoneX;
+ 			y = (safezoneH+safeZoneY)/2 - safezoneH;
+ 			w = safezoneW;
+ 			h = safezoneW / safeZoneH * safezoneW;
+
+			/*
 			x = -0.00520938 * safezoneW + safezoneX;
 			y = -0.00379999 * safezoneH + safezoneY;
+			//w = 1.00635 * safezoneW;
+			//h = 1.00593 * safezoneH;
 			w = 1.00635 * safezoneW;
-			h = 1.00593 * safezoneH;
+			h = 1.00635 * safezoneW;
+			*/
 		};
 	};
 
@@ -36,4 +46,3 @@ class valor_screen {
 
 	};
 };
-
