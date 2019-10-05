@@ -89,6 +89,7 @@ class CfgFunctions
 		{
 			file = "\data\main\cop";
 			class update_cop_bank {};
+			class set_attach_pos {};
 		};
 
 		class radiation

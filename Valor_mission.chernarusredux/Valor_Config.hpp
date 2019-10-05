@@ -388,6 +388,7 @@ class Valor_settings {
 
 		max_ticket = 1000; // THe max amount for a ticket the cops can make
 		jailtime = 15; // The time in minutes somebody is in jail
+		classname_siren = "valor_lightbar";
 
 		zombie_horde_probability = 20; // The probablity the horde event gets trigged during this server start, in this case its 20%
 		zombie_horde_amount = 40; // The amount of Zombies during the EVENT, in this case its 20 ZEds

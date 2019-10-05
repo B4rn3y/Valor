@@ -59,14 +59,16 @@ _active_groups = 0 call valor_fnc_getActiveGroups;
 	};
 } foreach _active_groups;
 
-_listbox lbadd "Players:";
+_id = _listbox lbadd "Players:";
+_listbox lbSetColor[_id,[0,0.663,0.329,1]];
 {
 	_id = _listbox lbadd (_x select 1);
 	_listbox lbSetData[_id,(_x select 0)];
 } foreach _entry_players;
 
 
-_listbox lbadd "Groups:";
+_id = _listbox lbadd "Groups:";
+_listbox lbSetColor[_id,[0,0.663,0.329,1]];
 {
 	_id = _listbox lbadd (_x select 1);
 	_listbox lbSetValue[_id,(_x select 0)];

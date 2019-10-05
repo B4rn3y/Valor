@@ -93,6 +93,8 @@ class CfgFunctions
 			class get_applications {};
 			class insert_application {};
 			class update_coplevel {};
+
+			class update_attach_pos {};
 		};
 
 		class Item_shop

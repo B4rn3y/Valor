@@ -98,6 +98,32 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 		_btn_3 ctrlshow true;
 		_btn_3 ctrlsettext "Pull out";
 		_btn_3 buttonSetAction "closeDialog 0;{if(_x getVariable[""valor_restrained"",false]) then {_x action [""Eject"", OBJ_focused];};} foreach (crew OBJ_focused);";
+	} else {
+		_btn_3 ctrlshow true;
+		_btn_3 ctrlsettext "Pull out";
+		_btn_3 ctrlEnable false;
+	};
+
+	if(playerside isEqualTo opfor) then {
+		if(!isnil "VALOR_IN_TRADER" && (attachedObjects OBJ_focused isEqualTo [])) then {
+			_btn_4 ctrlshow true;
+			_btn_4 ctrlsettext "Attach Siren";
+			_btn_4 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_set_attach_pos;";
+		} else {
+			_btn_4 ctrlshow true;
+			_btn_4 ctrlsettext "Attach Siren";
+			_btn_4 ctrlEnable false;
+		};
+
+		if(!isnil "VALOR_IN_TRADER" && !(attachedObjects OBJ_focused isEqualTo [])) then {
+			_btn_5 ctrlshow true;
+			_btn_5 ctrlsettext "Remove Siren";
+			_btn_5 buttonSetAction "closeDialog 0;_id = OBJ_focused getvariable[""DBID"",-1];if(_id isEqualTo -1) exitWith {[""ERROR: DBID unknown""] spawn valor_fnC_exp_hint;}; [[1,_id],""valor_fnc_update_attach_pos"",2] call valor_fnc_remoteexec; {deleteVehicle _x;} foreach (attachedObjects OBJ_focused);";
+		} else {
+			_btn_5 ctrlshow true;
+			_btn_5 ctrlsettext "Remove Siren";
+			_btn_5 ctrlEnable false;
+		};
 	};
 };
 

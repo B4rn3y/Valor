@@ -228,8 +228,10 @@ CREATE TABLE IF NOT EXISTS `persistent_vehicles` (
   `sold` int(6) NOT NULL DEFAULT '0',
   `bought` int(6) NOT NULL DEFAULT '0',
   `owners` text NOT NULL,
+  `attach_pos` text NOT NULL,
   `locked` tinyint(1) NOT NULL DEFAULT '0',
   `cop` tinyint(1) NOT NULL DEFAULT '0',
+  `updated` int(64) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

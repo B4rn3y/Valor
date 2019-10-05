@@ -75,11 +75,23 @@ switch (true) do
 	case (_code isEqualTo 201): //Page UP
 	{
 		if!(isnil "Valor_base_place_Y") then {Valor_base_place_Y = Valor_base_place_Y + 0.1;};
+		if!(isnil "Valor_siren_place_Z") then {Valor_siren_place_Z = Valor_siren_place_Z + 0.05; VALOR_SIREN attachto[VALOR_ATTACH_VEHICLE,[0,VALOR_SIREN_PLACE_Y,Valor_siren_place_Z]];};
 	};
 
 	case (_code isEqualTo 209): //Page DOWN
 	{
 		if!(isnil "Valor_base_place_Y") then {Valor_base_place_Y = Valor_base_place_Y - 0.1;};
+		if!(isnil "Valor_siren_place_Z") then {Valor_siren_place_Z = Valor_siren_place_Z - 0.05; VALOR_SIREN attachto[VALOR_ATTACH_VEHICLE,[0,VALOR_SIREN_PLACE_Y,Valor_siren_place_Z]];};
+	};
+
+	case (_code isEqualTo 199): //POS 1
+	{
+		if!(isnil "VALOR_SIREN_PLACE_Y") then {VALOR_SIREN_PLACE_Y = VALOR_SIREN_PLACE_Y + 0.05; VALOR_SIREN attachto[VALOR_ATTACH_VEHICLE,[0,VALOR_SIREN_PLACE_Y,Valor_siren_place_Z]];};
+	};
+
+	case (_code isEqualTo 207): //END
+	{
+		if!(isnil "VALOR_SIREN_PLACE_Y") then {VALOR_SIREN_PLACE_Y = VALOR_SIREN_PLACE_Y - 0.05; VALOR_SIREN attachto[VALOR_ATTACH_VEHICLE,[0,VALOR_SIREN_PLACE_Y,Valor_siren_place_Z]];};
 	};
 };
 _handle;

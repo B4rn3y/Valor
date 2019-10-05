@@ -2,7 +2,7 @@
 
 private ["_query","_res","_height_spawn","_vehicle","_pos","_dir","_vector","_classname","_alive","_spawnpos","_spawndamage","_inventory","_fuel","_damage","_shop","_owners","_number","_cop","_atl","_veh"];
 
-_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, owners , locked, cop from persistent_vehicles;";
+_query = "Select id, pos, classname, alive, spawnpos, spawndamage, inventory, fuel, damage, shop, owners , locked, cop, attach_pos from persistent_vehicles;";
 
 _res = [_query,2,true] call valor_fnc_db_sync;
 
@@ -30,6 +30,7 @@ _vehicle = objNull;
 	_owners = _x select 10;
 	_number = _x select 11;
 	_cop = _x select 12;
+	_attach_pos = _x select 13;
 	_classname = call compile _classname;
 	if(_shop isEqualTo 0) then {
 
@@ -59,14 +60,35 @@ _vehicle = objNull;
 			[_vehicle,_spawndamage] spawn valor_fnc_setvehicleDamage;
 			[_vehicle,random [30,150,360]] spawn {sleep (_this select 1);[_this select 0] call valor_fnc_saveVehicleComplete;};
 			if(_cop isEqualTo 1) then {
+				if!(_attach_pos isEqualTo [] || _attach_pos isEqualTo "") then {
+					_classname_attach_object = gettext(missionConfigFile >> "Valor_settings" >> "settings" >> "classname_siren");
+					if(_classname_attach_object isEqualTo "") exitWith {};
+
+					_siren = _classname_attach_object createVehicle [0,0,0];
+					_siren attachto [_vehicle,_attach_pos];
+					_siren allowDamage false;
+				};
 				_vehicle spawn {_veh = _this; sleep 5; if((_veh distance (getmarkerpos "Survivor_city_1")) < 600) then {_veh setvariable["owners",["COP"],true];[_veh,2] remoteExec["lock",0];};};
 			} else {
 				[_vehicle,0] remoteExec["lock",0];
+				if!(_attach_pos isEqualTo [] || _attach_pos isEqualTo "") then {
+					[1,_id] spawn valor_fnc_update_attach_pos;
+				};
 			};
 		} else {
 			if!(_owners isEqualTo []) then {
 				_vehicle setvariable["owners",_owners,true];
 			};
+
+			if!(_attach_pos isEqualTo [] || _attach_pos isEqualTo "") then {
+				_classname_attach_object = gettext(missionConfigFile >> "Valor_settings" >> "settings" >> "classname_siren");
+				if(_classname_attach_object isEqualTo "") exitWith {};
+
+				_siren = _classname_attach_object createVehicle [0,0,0];
+				_siren attachto [_vehicle,_attach_pos];
+				_siren allowDamage false;
+			};
+
 
 			_vehicle setfuel _fuel;
 			_vehicle setdir _dir;
