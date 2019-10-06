@@ -71,6 +71,27 @@ switch (true) do
 
 	};
 
+	//Shift + L Key?
+	case (_code isequalto 38 && _shift):
+	{
+		if(vehicle player != player) then {
+			if(isnil "valor_sirenLight_active") then {
+
+				[vehicle player] call valor_fnc_sirenLights;
+				_handle = true;
+			};
+
+			[] spawn
+			{
+				valor_sirenLight_active = true;
+				sleep 2;
+				valor_sirenLight_active = nil;
+			};
+		};
+
+
+	};
+
 
 	case (_code isEqualTo 201): //Page UP
 	{
