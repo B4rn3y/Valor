@@ -18,9 +18,9 @@ class valor_screen {
 			text = "UIs\textures\loadscreen.jpg";
 
  			x = safezoneX;
- 			y = (safezoneH+safeZoneY)/2 - safezoneH;
+ 			y = .5 - safeZoneW*1.3333333333*.5;
  			w = safezoneW;
- 			h = safezoneW / safeZoneH * safezoneW;
+ 			h = safeZoneW*1.3333333333;
 
 			/*
 			x = -0.00520938 * safezoneW + safezoneX;
