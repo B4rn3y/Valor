@@ -83,6 +83,7 @@ class CfgFunctions
 			class outpost_config {};
 			class build_outpost_objects {};
 			class upgrade_outpost {};
+			class show_needed_mats_outposts {};
 		};
 
 		class cop

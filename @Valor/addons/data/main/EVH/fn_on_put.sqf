@@ -1,4 +1,4 @@
-
+/*
 private ["_player","_container","_object","_var","_base_id","_gang_id","_config_id","_base_config","_stuff","_cargo","_arr_count_item","_classname","_amount_needed","_index","_txt","_all_items","_amount"];
 
 _player = _this select 0;
@@ -53,3 +53,4 @@ if!(isnil "_var") exitWith {
 
 };
 
+*/

@@ -10,11 +10,12 @@ if(_container isEqualTo objNull) exitWith {diag_log "Valor Error :: _container u
 if(_config_id isEqualTo -1) exitWith {};
 if(_outpost_id isEqualTo -1) exitWith {};
 if(missionNamespace getvariable[format["Outpost_build_ID_%1",_outpost_id],false]) exitWith {};
+_pos_container = getposatl _container;
 
 sleep random 5;
 if(missionNamespace getvariable[format["Outpost_build_ID_%1",_outpost_id],false]) exitWith {};
 missionNamespace setvariable[format["Outpost_build_ID_%1",_outpost_id],true];
-_pos_container = getposatl _container;
+
 deleteVehicle _container;
 
 
@@ -40,7 +41,7 @@ _near_players = {
 
 _veh_close = nearestobjects[_pos_container,["Landvehicle","Air","Ship"],100];
 
-"Valor Server :: The Server is waiting for all Vehicles to leave a radius of 100m around the crate to spawn the outpost. If this status cant be reached in 3 minutes the server is gonna spawn the outpost." remoteexec["systemchat",(call _near_players)];
+"Valor Server :: The Server is waiting for all Vehicles to leave a radius of 100m around the crate to spawn the outpost. If this status cant be reached in 3 minutes the server is gonna spawn the outpost." remoteexec["valor_fnc_exp_hint",(call _near_players)];
 _time = 0;
 waitUntil{sleep 1; _time = _time + 1; if(_time >= 180) exitWith {}; _veh_close = nearestobjects[_pos_container,["Landvehicle","Air","Ship"],100]; _veh_close isEqualTo []};
 

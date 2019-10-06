@@ -53,6 +53,43 @@ if!(isnil "_var") exitWith {};
 // outposts
 _var = _container getvariable "valor_outpost_ids";
 if!(isnil "_var") exitWith {
+	_outpost_id = _var select 0;
+	_config_id = _var select 1;
+	_build = _var select 2;
+
+	[_outpost_id,_config_id,_build,_container] spawn valor_fnc_show_needed_mats_outposts;
+};
+
+
+
+
+
+
+
+
+
+// bases
+_var = nil;
+_var = _container getvariable "valor_base_ids";
+if(isnil "_var") exitWith {};
+_base_id = _var select 0;
+_config_id = _var select 1;
+_layout_id = _var select 2;
+
+_max_layout = [_config_id] call valor_fnc_get_max_base_level;
+
+if!(_max_layout isEqualTo _layout_id) exitWith {[_base_id,_config_id,_layout_id,_container] spawn valor_fnc_show_needed_mats;};
+
+if!([_base_id] call valor_fnc_has_base_access) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
+
+
+
+
+
+
+
+
+/*
 	_id = _var select 0;
 	_config_id = _var select 1;
 	_build = _var select 2;
@@ -100,38 +137,7 @@ if!(isnil "_var") exitWith {
 		hint parseText _txt;
 		sleep 1;
 	};
-};
-
-
-
-
-
-
-
-
-
-// bases
-_var = nil;
-_var = _container getvariable "valor_base_ids";
-if(isnil "_var") exitWith {};
-_base_id = _var select 0;
-_config_id = _var select 1;
-_layout_id = _var select 2;
-
-_max_layout = [_config_id] call valor_fnc_get_max_base_level;
-
-if!(_max_layout isEqualTo _layout_id) exitWith {[_base_id,_config_id,_layout_id,_container] spawn valor_fnc_show_needed_mats;};
-
-if!([_base_id] call valor_fnc_has_base_access) exitWith {0 spawn {waitUntil {dialog}; _time = diag_tickTime; while {diag_tickTime < (_time + 3)} do {closeDialog 0; sleep 0.1;};};};
-
-
-
-
-
-
-
-
-
+*/
 
 
 

@@ -10,10 +10,10 @@ if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknow
 if(_build isEqualTo -1) exitWith {diag_log "Valor Error :: _build unknown"};
 
 _isserver = if(isServer) then {true} else {false};
-if(!hasInterface && !isDedicated) then {
-	_isserver = true;
-};
-
+//if(!hasInterface && !isDedicated) then {
+//	_isserver = true;
+//};
+_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
 
 if(_build isEqualTo 1) then {
 
@@ -35,7 +35,7 @@ if(_build isEqualTo 1) then {
 			_object allowDamage false;
 			_object setVectorUp _vector;
 			_object setvariable["valor_outpost_ids",[_outpost_id,_config_id,_build],true];
-			if(_classname in ["B_CargoNet_01_ammo_F"]) then {
+			if(_classname in [_base_box_classname]) then {
 				_ret = [_object,_inventory] call valor_fnc_loadVehicleCargo;
 			};
 		};
@@ -77,7 +77,7 @@ if(_build isEqualTo 1) then {
 			_object allowDamage false;
 			_object setVectorUp _vector;
 			_object setvariable["valor_outpost_ids",[_outpost_id,_config_id,_build],true];
-			if(_classname in ["B_CargoNet_01_ammo_F"]) then {
+			if(_classname in [_base_box_classname]) then {
 				_ret = [_object,_inventory] call valor_fnc_loadVehicleCargo;
 			};
 		};

@@ -9,7 +9,7 @@ if(isnil "VALOR_IN_TRADER") exitWith {};
 
 _classname_attach_object = gettext(missionConfigFile >> "Valor_settings" >> "settings" >> "classname_siren");
 if(_classname_attach_object isEqualTo "") exitWith {};
-
+if!(isnil "VALOR_SIREN") exitWith {};
 VALOR_SIREN = _classname_attach_object createVehicle [0,0,0];
 VALOR_SIREN allowDamage false;
 VALOR_ATTACH_VEHICLE = _veh;
@@ -38,6 +38,7 @@ player removeAction _cancel_id;
 
 if!(VALOR_SIREN_PLACED) exitWith {
 	ctrlDelete _str_text;
+	detach VALOR_SIREN;
 	deleteVehicle VALOR_SIREN;
 	VALOR_SIREN_PLACE_Y = nil;
 	Valor_siren_place_Z = nil;
@@ -62,6 +63,7 @@ player removeAction _cancel_id;
 
 if(VALOR_SIREN_PLACED isEqualTo false) exitWith {
 	ctrlDelete _str_text;
+	detach VALOR_SIREN;
 	deleteVehicle VALOR_SIREN;
 	VALOR_SIREN_PLACE_Y = nil;
 	Valor_siren_place_Z = nil;
@@ -72,6 +74,7 @@ if(VALOR_SIREN_PLACED isEqualTo false) exitWith {
 
 if(VALOR_SIREN_PLACED isEqualTo "Replace") exitWith {
 	ctrlDelete _str_text;
+	detach VALOR_SIREN;
 	deleteVehicle VALOR_SIREN;
 	VALOR_SIREN_PLACE_Y = nil;
 	Valor_siren_place_Z = nil;
@@ -79,7 +82,7 @@ if(VALOR_SIREN_PLACED isEqualTo "Replace") exitWith {
 	VALOR_ATTACH_VEHICLE = nil;
 	VALOR_SIREN_PLACED = nil;
 	sleep 0.1;
-	[_veh] spawn valor_fn_set_attach_pos;
+	[_veh] spawn valor_fnc_set_attach_pos;
 };
 
 _attach_pos = [0,VALOR_SIREN_PLACE_Y,Valor_siren_place_Z];
