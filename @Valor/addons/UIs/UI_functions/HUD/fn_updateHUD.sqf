@@ -157,7 +157,7 @@ if(Valor_radiation > 0) then {
 
 
 
-
+/*
 _humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
 
 _humanity_border_B3 = _humanity_config select 0;
@@ -207,3 +207,4 @@ switch (true) do
 		_humanity_pic ctrlSetText "\UIs\textures\HUD\humanity_hero_3_HUD.paa";
 	};
 };
+*/

@@ -9,10 +9,10 @@ if(_outpost_id isEqualTo -1) exitWith {diag_log "Valor Error :: _outpost_id unkn
 if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknown"};
 if(_build isEqualTo -1) exitWith {diag_log "Valor Error :: _build unknown"};
 
-_isserver = if(isServer) then {true} else {false};
-//if(!hasInterface && !isDedicated) then {
-//	_isserver = true;
-//};
+_isserver = if(isServer && !HC_AVAILABLE) then {true} else {false};
+if(!hasInterface && !isDedicated && HC_AVAILABLE) then {
+	_isserver = true;
+};
 _base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
 
 if(_build isEqualTo 1) then {

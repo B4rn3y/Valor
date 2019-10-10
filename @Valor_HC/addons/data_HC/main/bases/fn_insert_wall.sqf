@@ -39,7 +39,23 @@ _h = 23;
 	waitUntil {!isnil "_obj"};
 	waitUntil {!isnull _obj};
 	_obj allowDamage false;
-	_doors = getNumber(configFile >> "CfgVehicles" >> _classname >> "numberOfDoors");
+	_doors = switch (typeof _object) do
+	{
+		case "Land_Garaz_long_open":
+		{
+			6
+		};
+
+		case "Land_Gate_IndVar2_5":
+		{
+			2
+		};
+
+		default
+		{
+			getNumber(configFile >> "CfgVehicles" >> (typeOf _object) >> "numberOfDoors");
+		};
+	};
 	if(_doors isEqualTo 0) then {
 		_obj enableSimulation false;
 	};

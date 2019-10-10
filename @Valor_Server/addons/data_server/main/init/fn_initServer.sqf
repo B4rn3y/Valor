@@ -111,6 +111,9 @@ if!(HC_AVAILABLE) then {
     publicVariable "VALOR_SERVER_STARTING";
 } else {
     diag_log "Valor :: STARTING WITH HC ONLINE";
+    [] spawn valor_fnc_init_outposts;
+    waitUntil {!isnil "Valor_outpost_init_finished"};
+    Valor_outpost_init_finished = nil;
     diag_log "Valor :: Starting Time Module";
     [] spawn valor_fnc_time_module;
     diag_log "Valor :: Starting Zombie Destroyer";

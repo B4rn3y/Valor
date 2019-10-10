@@ -8,11 +8,10 @@ _build = 1;
 if(_outpost_id isEqualTo -1) exitWith {diag_log "Valor Error :: _outpost_id unknown"};
 if(_config_id isEqualTo -1) exitWith {diag_log "Valor Error :: _config_id unknown"};
 
-_isserver = if(isServer) then {true} else {false};
-if(!hasInterface && !isDedicated) then {
+_isserver = if(isServer && !HC_AVAILABLE) then {true} else {false};
+if(!hasInterface && !isDedicated && HC_AVAILABLE) then {
 	_isserver = true;
 };
-
 
 {
 	_classname = _x select 0;

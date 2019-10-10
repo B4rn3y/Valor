@@ -8,7 +8,7 @@ _pos = (_unit getvariable["valor_shot_pos",[[0,0,0],0,0]]) select 0;
 _time = (_unit getvariable["valor_shot_pos",[[0,0,0],0,0]]) select 2;
 
 _distance_change = 10;
-_distance_hear = 75;
+_distance_hear = 120;
 _distance_hear_silenced = 0;
 
 

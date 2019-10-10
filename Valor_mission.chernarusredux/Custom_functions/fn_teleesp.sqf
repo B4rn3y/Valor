@@ -201,6 +201,34 @@ drawic =
 		} foreach (Entities "LandVehicle"+ Entities "Air" + Entities"Ship");
 
 		{
+			if (!isnull _x and sveh) then
+			{
+				_icon = "\Ryanzombies\icons\zombie1.paa";
+				_irad = 30;
+				_ctrl drawIcon [_icon, vmc, getPosASL _x, _iscale*_irad, _iscale*_irad, getDir _x, "Raptor", 1];
+			};
+		} foreach (entities [["babe_raptorb_east_3_F","babe_raptorb_east_5_F","babe_raptorb_east_6_F","babe_raptorb_east_4_F","babe_raptorb_east_2_F","babe_raptor_east_6_F","babe_raptorb_east_F","babe_raptor_east_2_F","babe_raptor_east_3_F","babe_raptor_east_4_F","babe_raptor_east_5_F","babe_raptor_east_F"], []]);
+
+		{
+			if (!isnull _x and sveh) then
+			{
+				_icon = "\Ryanzombies\icons\zombie1.paa";
+				_irad = 30;
+				_ctrl drawIcon [_icon, vmc, getPosASL _x, _iscale*_irad, _iscale*_irad, getDir _x, "Bloodsucker", 1];
+			};
+		} foreach (entities [["Valor_bloodsucker"], []]);
+
+
+		{
+			if (!isnull _x and sveh) then
+			{
+				_icon = getText(configFile >> "CfgVehicles" >> typeOf _x >> "icon");
+				_irad = 30;
+				_ctrl drawIcon [_icon, vmc, getPosASL _x, _iscale*_irad, _iscale*_irad, getDir _x, "Zombie", 1];
+			};
+		} foreach (entities [["RyanZombieCrawler1Opfor","RyanZombieCrawler10Opfor","RyanZombieCrawler11Opfor","RyanZombieCrawler12Opfor","RyanZombieCrawler13Opfor","RyanZombieCrawler14Opfor","RyanZombieCrawler15Opfor","RyanZombieCrawler16Opfor","RyanZombieCrawler17Opfor","RyanZombieCrawler18Opfor","RyanZombieCrawler19Opfor","RyanZombieCrawler20Opfor","RyanZombieCrawler21Opfor","RyanZombieCrawler22Opfor","RyanZombieCrawler23Opfor","RyanZombieCrawler24Opfor","RyanZombieCrawler25Opfor","RyanZombieCrawler4Opfor","RyanZombieCrawler5Opfor","RyanZombieCrawler6Opfor","RyanZombieCrawler7Opfor","RyanZombieCrawler9Opfor","RyanZombieC_man_1Opfor","RyanZombieC_man_hunter_1_FOpfor","RyanZombieC_man_pilot_FOpfor","RyanZombieC_journalist_FOpfor","RyanZombieC_OrestesOpfor","RyanZombieC_NikosOpfor","RyanZombie15Opfor","RyanZombie16Opfor","RyanZombie17Opfor","RyanZombie18Opfor","RyanZombie19Opfor","RyanZombie20Opfor","RyanZombie21Opfor","RyanZombie22Opfor","RyanZombie23Opfor","RyanZombie24Opfor","RyanZombie25Opfor","RyanZombieC_man_polo_2_FOpfor","RyanZombieC_man_polo_4_FOpfor","RyanZombieC_man_polo_5_FOpfor","RyanZombieC_man_polo_6_FOpfor","RyanZombieC_man_p_fugitive_FOpfor","RyanZombieC_scientist_FOpfor","RyanZombieC_man_1mediumOpfor","RyanZombieC_man_hunter_1_FmediumOpfor","RyanZombieC_man_pilot_FmediumOpfor","RyanZombieC_journalist_FmediumOpfor","RyanZombieC_OrestesmediumOpfor","RyanZombieC_NikosmediumOpfor","RyanZombie15mediumOpfor","RyanZombie16mediumOpfor","RyanZombie17mediumOpfor","RyanZombie18mediumOpfor","RyanZombie19mediumOpfor","RyanZombie20mediumOpfor","RyanZombie21mediumOpfor","RyanZombie22mediumOpfor","RyanZombie23mediumOpfor","RyanZombie24mediumOpfor","RyanZombie25mediumOpfor","RyanZombieC_man_polo_2_FmediumOpfor","RyanZombieC_man_polo_4_FmediumOpfor","RyanZombieC_man_polo_5_FmediumOpfor","RyanZombieC_man_polo_6_FmediumOpfor","RyanZombieC_man_p_fugitive_FmediumOpfor","RyanZombieC_scientist_FmediumOpfor","RyanZombieC_man_1slowOpfor","RyanZombieC_man_hunter_1_FslowOpfor","RyanZombieC_man_pilot_FslowOpfor","RyanZombieC_journalist_FslowOpfor","RyanZombieC_OrestesslowOpfor","RyanZombieC_NikosslowOpfor","RyanZombie15slowOpfor","RyanZombie16slowOpfor","RyanZombie17slowOpfor","RyanZombie18slowOpfor","RyanZombie19slowOpfor","RyanZombie20slowOpfor","RyanZombie21slowOpfor","RyanZombie22slowOpfor","RyanZombie23slowOpfor","RyanZombie24slowOpfor","RyanZombie25slowOpfor","RyanZombieC_man_polo_2_FslowOpfor","RyanZombieC_man_polo_4_FslowOpfor","RyanZombieC_man_polo_5_FslowOpfor","RyanZombieC_man_polo_6_FslowOpfor","RyanZombieC_man_p_fugitive_FslowOpfor","RyanZombieC_scientist_FslowOpfor","RyanZombieSpider1Opfor","RyanZombieSpider10Opfor","RyanZombieSpider11Opfor","RyanZombieSpider12Opfor","RyanZombieSpider13Opfor","RyanZombieSpider14Opfor","RyanZombieSpider15Opfor","RyanZombieSpider16Opfor","RyanZombieSpider17Opfor","RyanZombieSpider18Opfor","RyanZombieSpider19Opfor","RyanZombieSpider2Opfor","RyanZombieSpider20Opfor","RyanZombieSpider21Opfor","RyanZombieSpider22Opfor","RyanZombieSpider23Opfor","RyanZombieSpider24Opfor","RyanZombieSpider25Opfor","RyanZombieSpider3Opfor","RyanZombieSpider4Opfor","RyanZombieSpider5Opfor","RyanZombieSpider6Opfor","RyanZombieSpider7Opfor","RyanZombieSpider9Opfor","RyanZombieC_man_1walkerOpfor","RyanZombieC_man_hunter_1_FwalkerOpfor","RyanZombieC_man_pilot_FwalkerOpfor","RyanZombieC_journalist_FwalkerOpfor","RyanZombieC_OresteswalkerOpfor","RyanZombieC_NikoswalkerOpfor","RyanZombie15walkerOpfor","RyanZombie16walkerOpfor","RyanZombie17walkerOpfor","RyanZombie18walkerOpfor","RyanZombie19walkerOpfor","RyanZombie20walkerOpfor","RyanZombie21walkerOpfor","RyanZombie22walkerOpfor","RyanZombie23walkerOpfor","RyanZombie24walkerOpfor","RyanZombie25walkerOpfor","RyanZombieC_man_polo_2_FwalkerOpfor","RyanZombieC_man_polo_4_FwalkerOpfor","RyanZombieC_man_polo_5_FwalkerOpfor","RyanZombieC_man_polo_6_FwalkerOpfor","RyanZombieC_man_p_fugitive_FwalkerOpfor","RyanZombieC_scientist_FwalkerOpfor"], []]);
+
+		{
 			if ((!isnull _x) and (getPlayerUID _x != "") and !(vehicle _x != _x)) then
 			{
 				if (_x == player) then {_color = [0, 0, 0, 1];} else {_color = pmc;};

@@ -9,7 +9,8 @@ _item_amount = getnumber(missionConfigFile >> "Valor_settings" >> "loot_drops" >
 
 
 waitUntil {!isnil "lootspawn_config_loot_drop"};
-
+waitUntil {!isnil "lootspawn_config_m_military"};
+waitUntil {!isnil "lootspawn_config_h_military"};
 
 _loottable_compiled = [];
 _conter = 0;
@@ -19,7 +20,7 @@ _conter = 0;
 	_loottable_compiled pushback [_min,_max,_x select 2,_x select 3, (call compile (_x select 4))];
 	_diff = _max - _min;
 	_conter = _conter + _diff;
-} foreach lootspawn_config_loot_drop;
+} foreach (lootspawn_config_loot_drop + lootspawn_config_m_military + lootspawn_config_h_military);
 
 _mult = 100/_conter;
 _loottable = [];

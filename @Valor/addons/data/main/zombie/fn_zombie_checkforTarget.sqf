@@ -9,7 +9,7 @@ _ignore_sounds = param[1,false,[false]];
 
 if(isnull _zombie) exitWith {[]};
 _see_range = 40;
-_distance_hear = 100;
+_distance_hear = 150;
 _track_range = _distance_hear + _see_range;
 _time_passed_allowed = 40;
 

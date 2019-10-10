@@ -56,7 +56,12 @@ diag_log "Valor Client :: Start editing Lootspawn Config";
 
 		case "radiation_zone":
 		{
-			["h_military"]
+			["h_military","m_military"]
+		};
+
+		case "loot_drop":
+		{
+			["h_military","m_military"]
 		};
 
 		case "food":

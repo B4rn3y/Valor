@@ -171,11 +171,6 @@ if!(_var isEqualTo [-1,-1]) exitWith {
 			2
 		};
 
-		case "Land_Gate_IndVar2_5":
-		{
-			2
-		};
-
 		default
 		{
 			getNumber(configFile >> "CfgVehicles" >> (typeOf _object) >> "numberOfDoors");
@@ -190,11 +185,11 @@ if!(_var isEqualTo [-1,-1]) exitWith {
 	if(_locked) then {
 		for "_d" from 1 to _numberOfDoors do {
 			_object setVariable[format["bis_disabled_Door_%1",_d],0,true];
-			_object animate[format["Door_%1_rot",_d],1];
+			_object animate[format["door_%1_rot",_d],1];
 		};
 	} else {
 		for "_d" from 1 to _numberOfDoors do {
-			_object animate[format["Door_%1_rot",_d],0];
+			_object animate[format["door_%1_rot",_d],0];
 			_object setVariable[format["bis_disabled_Door_%1",_d],1,true];
 		};
 

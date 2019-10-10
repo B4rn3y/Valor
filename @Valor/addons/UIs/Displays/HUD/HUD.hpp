@@ -78,7 +78,7 @@ class valor_HUD {
 			w = 0.0293749 * safezoneW;
 			h = 0.0448147 * safezoneH;
 		};
-
+		/*
 		class humanity: valor_RscPicture
 		{
 			idc = 1206;
@@ -88,6 +88,7 @@ class valor_HUD {
 			w = 0.0899209 * safezoneW;
 			h = 0.130922 * safezoneH;
 		};
+		*/
 	};
 
 	class controls {

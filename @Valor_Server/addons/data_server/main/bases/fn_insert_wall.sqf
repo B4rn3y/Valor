@@ -21,13 +21,13 @@ if(_objects isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint_itembox 
 	_pos = _x select 1;
 	_dir = _x select 2;
 	_vec = _x select 3;
-	_query = format["INSERT INTO base_objects (classname, pos, dir, vector,inventory, group_id, wall) VALUES('%1', '%2','%3','%4','[]','%5','1')",(str _classname),_pos,_dir,_vec,_group_id];
+	_query = format["INSERT INTO base_objects (classname, pos, dir, vector,inventory, group_id, wall, base_id,layout_id) VALUES('%1', '%2','%3','%4','[]','%5','1','-1','[]')",(str _classname),_pos,_dir,_vec,_group_id];
 	[_query,1] call valor_fnc_db_sync;
 
 } foreach _objects;
 
 
-
+_h = 23;
 {
 	_obj = nil;
 	_h = _h + 10;
@@ -39,7 +39,23 @@ if(_objects isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint_itembox 
 	waitUntil {!isnil "_obj"};
 	waitUntil {!isnull _obj};
 	_obj allowDamage false;
-	_doors = getNumber(configFile >> "CfgVehicles" >> _classname >> "numberOfDoors");
+	_doors = switch (typeof _object) do
+	{
+		case "Land_Garaz_long_open":
+		{
+			6
+		};
+
+		case "Land_Gate_IndVar2_5":
+		{
+			2
+		};
+
+		default
+		{
+			getNumber(configFile >> "CfgVehicles" >> (typeOf _object) >> "numberOfDoors");
+		};
+	};
 	if(_doors isEqualTo 0) then {
 		_obj enableSimulation false;
 	};

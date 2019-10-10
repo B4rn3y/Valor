@@ -87,8 +87,7 @@ class Valor_settings {
 	class radiation {
 		radiation_zones[] =   // Enter a pos here([2517.46,5075.55,0.00143433]) or a mapmarker name together with a distance    -  [[2517.46,5075.55,0.00143433],80],["radiation_zone_1",80]
 		{
-			{{2517.46,5075.55,0.00143433},80}, // Zeleno
-			{{8147,9019.73,56.9659},130}       // Altar
+			{{2517.46,5075.55,0.00143433},80} // Zeleno
 		};
 	};
 
@@ -392,8 +391,8 @@ class Valor_settings {
 		siren_attach_pos_right[] = {0.5,0.6,0.1};
 		siren_attach_pos_left[] = {-0.5,0.6,0.1};
 
-		siren_color_right[] = {20, 0.1, 0.1};
-		siren_color_left[] = {0.1, 0.1, 20};
+		siren_color_right[] = {10, 0.1, 0.1};
+		siren_color_left[] = {0.1,10,0.1};
 
 		zombie_horde_probability = 20; // The probablity the horde event gets trigged during this server start, in this case its 20%
 		zombie_horde_amount = 40; // The amount of Zombies during the EVENT, in this case its 20 ZEds

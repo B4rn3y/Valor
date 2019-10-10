@@ -98,7 +98,7 @@ switch (_type_killed) do
 		_xp_add =  getnumber(missionConfigFile >> "Valor_settings" >> "level_system" >> "bloodsucker_killed");
 		_humanity_change = getnumber(missionConfigFile >> "Valor_settings" >> "humanity" >> "bloodsucker_killed");
 		_text = "Bloodsucker killed";
-		//Valor_stats_entities set[4,((Valor_stats_entities select 4)+1)];
+		Valor_stats_entities set[5,((Valor_stats_entities select 5)+1)];
 	};
 
 };

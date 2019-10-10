@@ -11,8 +11,8 @@ class humanity {
 		{
 			idc = 1200;
 			text = "\UIs\textures\humanity\journal_page2.paa";
-			x = -0.481061;
-			y = -0.16835;
+			x = -0.4625;
+			y = -0.16;
 			w = 2.00783;
 			h = 1.35589;
 		};
@@ -20,10 +20,10 @@ class humanity {
 		{
 			idc = 1201;
 			text = "\UIs\textures\humanity\humanity_hero_3.paa";
-			x = 0.345959;
-			y = -0.0505054;
-			w = 0.82096;
-			h = 1.07643;
+			x = 0.4125;
+			y = -0.06;
+			w = 0.71995;
+			h = 0.951851;
 		};
 		class pic_journal: valor_RscPicture
 		{
@@ -88,6 +88,15 @@ class humanity {
 			w = 0.213636;
 			h = 0.079798;
 		};
+		class bloodsucker_pic: valor_RscPicture
+		{
+			idc = 1209;
+			text = "\UIs\textures\humanity\bloodsucker.paa";
+			x = 0.0189394;
+			y = 0.771044;
+			w = 0.213636;
+			h = 0.079798;
+		};
 		class text_humanity: valor_RscStructuredText
 		{
 			idc = 1101;
@@ -135,6 +144,22 @@ class humanity {
 			y = 0.681818;
 			w = 0.237752;
 			h = 0.0754883;
+		};
+		class bloodsucker_text: valor_RscStructuredText
+		{
+			idc = 1107;
+			x = 0.251263;
+			y = 0.782828;
+			w = 0.237752;
+			h = 0.0754883;
+		};
+		class hero_bandit_text: valor_RscStructuredText
+		{
+			idc = 1108;
+			x = 0.575;
+			y = 0.86;
+			w = 0.470075;
+			h = 0.136095;
 		};
 
 	};

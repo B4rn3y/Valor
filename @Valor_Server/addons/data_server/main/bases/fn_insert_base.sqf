@@ -1,5 +1,5 @@
+private ["_requester","_config_id","_objects","_group_id","_group_name","_layout_id","_h","_entry_list","_owner","_other_config_id","_blueprint_itembox","_objects_to_build","_ammobox_0","_base_box_classname","_classname","_pos","_dir","_vec","_level","_query","_queryResult","_objects_with_pos","_raptor_classname","_base_id","_box","_obj","_doors","_inventory"];
 
-private ["_requester","_config_id","_objects","_layout_id","_h","_blueprint_itembox","_objects_to_build","_ammobox_0","_classname","_pos","_dir","_vec","_level","_query","_queryResult","_objects_with_pos","_box","_inventory","_base_id","_obj","_doors"];
 
 
 
@@ -15,7 +15,7 @@ _entry_list = [[getplayeruid _requester,name _requester],[_group_id,_group_name]
 _owner = getPlayerUID player;
 diag_log "Valor Server :: Request received";
 
-
+_other_config_id = ([_config_id,0] call valor_Fnc_base_config) select 4;
 
 if(isnull _requester) exitWith {diag_log "Valor Error :: _requester unknown"};
 if(_group_id isEqualTo -1) exitWith {diag_log "Valor Error :: _group_id unknown"};
@@ -53,7 +53,7 @@ if(_objects_to_build isEqualTo []) exitWith {diag_log "Valor :: _objects_to_buil
 
 
 
-_query = format["SELECT base_id FROM bases WHERE owner='%1' && config_id = '%2'",getplayeruid _requester,_config_id];
+_query = format["SELECT base_id FROM bases WHERE owner='%1' && (config_id = '%2' || config_id = '%3')",getplayeruid _requester,_config_id,_other_config_id];
 _queryResult = [_query,2] call valor_fnc_db_sync;
 
 if!((count _queryResult) isEqualTo 0) exitWith {
