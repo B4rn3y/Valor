@@ -42,6 +42,19 @@ class CfgWeapons
         };
     };
 
+    class valor_hook: valor_item_base
+    {
+        author = "Bloodwyn";
+        displayName = "grappling hook";
+        picture = "\valor_items\ui\grapplinghook_icon.paa";
+        model = "valor_items\models\grapplinghook.p3d";
+        descriptionShort = "Climb walls like Sp!der(man)";
+        class ItemInfo
+        {
+            mass=3;
+        };
+    };
+
     class valor_Raptor_Egg: valor_item_base
     {
         displayName = "Raptor Egg";

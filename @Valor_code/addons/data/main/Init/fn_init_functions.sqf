@@ -101,6 +101,14 @@ addMissionEventHandler ["Ended",{}];
 	Valor_functions_started = nil;
 };
 
+0 spawn {
+	waitUntil {player getVariable ["AUR_Actions_Loaded",false]};
+	player removeAction ((actionids player select {(player actionParams _x)#0 isEqualTo "Rappel Self"})#0);
+	player addAction ["Rappel Self", {
+		[player, vehicle player] call AUR_Rappel_Action;
+	}, nil, 0, false, true, "", "[player] call AUR_Rappel_Action_Check && ""valor_hook"" in items player"];
+};
+
 /* what i need to do
 - loot spawn system
 - implement my gang system
