@@ -60,7 +60,7 @@ class Valor_settings {
 
 	class loot_drops {
 		//waittime[] = {3300,3600,3900};
-		waittime[] = {200,220,230};
+		waittime[] = {2700,3600,4500};
 		plane_radius = 8200;
 		item_amount = 8;
 		planes[] =

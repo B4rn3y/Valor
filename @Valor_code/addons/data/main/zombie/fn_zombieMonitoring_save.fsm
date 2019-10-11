@@ -1,0 +1,278 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_ZombieMonitoring">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
+item1[] = {"h_user_leer_",4,218,-373.049683,-930.364563,-283.049683,-880.364563,1.000000,"häuser leer?"};
+item2[] = {"h_user_array_nicht",4,218,-208.992981,-836.809326,-118.992981,-786.809326,0.000000,"häuser array" \n "nicht leer"};
+item3[] = {"spawning_ZED",2,4346,-210.974060,-755.585327,-120.974060,-705.585327,0.000000,"spawning" \n "ZED"};
+item4[] = {"Zombie_Tod",4,218,-71.814087,-339.525116,18.185913,-289.525177,2.000000,"Zombie Tod"};
+item5[] = {"Zombie_zu_weit_w",4,218,156.917603,-415.856079,246.917603,-365.856049,1.000000,"Zombie zu weit" \n "weg"};
+item6[] = {"END",1,250,-522.305359,-928.716492,-432.305206,-878.716492,0.000000,"END"};
+item7[] = {"_",2,250,-71.240417,-269.226349,18.759583,-219.226349,0.000000,""};
+item8[] = {"END_1",1,250,157.920532,-190.917664,247.920685,-140.917664,0.000000,"END"};
+item9[] = {"warten_f_r_despa",4,218,-74.123779,-187.531586,15.876221,-137.531616,0.000000,"warten für" \n "despawn"};
+item10[] = {"true",4,218,-212.761963,-640.250488,-122.761963,-590.250488,0.000000,"true"};
+item11[] = {"ROAM__BITCH",2,250,-212.761963,-512.898193,-122.761963,-462.898193,0.000000,"ROAM " \n "BITCH"};
+item12[] = {"w8",4,218,-209.410278,-416.826172,-119.410278,-366.826172,0.000000,"w8"};
+item13[] = {"__1",2,250,-77.589417,-417.943298,12.410599,-367.943298,0.000000,""};
+item14[] = {"attacking_",4,218,-77.589485,-510.323120,12.410522,-460.323181,0.000000,"attacking?"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,6};
+link3[] = {2,3};
+link4[] = {3,10};
+link5[] = {4,7};
+link6[] = {5,8};
+link7[] = {7,9};
+link8[] = {9,8};
+link9[] = {10,11};
+link10[] = {11,12};
+link11[] = {12,13};
+link12[] = {13,4};
+link13[] = {13,5};
+link14[] = {13,14};
+link15[] = {14,11};
+globals[] = {0.000000,0,0,0,0,640,480,1,192,6316128,1,-858.872131,367.551025,-101.284851,-984.869629,1227,884,1};
+window[] = {2,-1,-1,-1,-1,941,182,1622,182,3,1245};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_ZombieMonitoring";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_ZClassname = param[0,""RyanZombieC_man_1mediumOpfor"",[""""]];" \n
+                         "_houses = param[1,[],[[]]];" \n
+                         "_index = param[2,0,[1337]];" \n
+                         "diag_log format[""Valor :: Zombie Monitoring started for Zombie %1"",_ZClassname];" \n
+                         "" \n
+                         "" \n
+                         "_zombie_roam = " \n
+                         "{" \n
+                         "	_this domove ([_this, 0, 20, 1, 0, 0.85, 0] call BIS_fnc_findSafePos);" \n
+                         "};" \n
+                         "_ticktime = diag_ticktime;" \n
+                         "_wait_time_roam = 20;" \n
+                         "_spawn_house = nearestobject[player,""house""];" \n
+                         "_wait_time = _wait_time_roam;" \n
+                         "" \n
+                         "_w8 = random 5;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "h_user_leer_">*/
+                                class h_user_leer_
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_houses isequalto []"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "h_user_array_nicht">*/
+                                class h_user_array_nicht
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="spawning_ZED";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_houses isequalto []) && (diaG_ticktime - _ticktime) > (_index + _w8)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "spawning_ZED">*/
+                class spawning_ZED
+                {
+                        name = "spawning_ZED";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/"if(count _houses isEqualTo 1) then {" \n
+                         "	_spawn_house = _houses select 0;" \n
+                         "} else {" \n
+                         "	_spawn_house = _houses select _index;" \n
+                         "};" \n
+                         "_grp = creategroup east;" \n
+                         "_spawn_house = _houses select 0;" \n
+                         "_pos = [0,0,0];" \n
+                         "_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
+                         "" \n
+                         "if(_poses isequalto []) then {" \n
+                         "	_spawn_house = selectrandom _houses;" \n
+                         "	_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
+                         "};" \n
+                         "" \n
+                         "if(_poses isequalto []) then {" \n
+                         "	_spawn_house = selectrandom _houses;" \n
+                         "	_poses = [_spawn_house] call BIS_fnc_buildingPositions;" \n
+                         "};" \n
+                         "" \n
+                         "if(count _poses isequalto 0) then {" \n
+                         "	_pos = [_spawn_house, 0, 20, 1, 0, 0.85, 0] call BIS_fnc_findSafePos;" \n
+                         "	if!(count _pos isequalto 3) then {" \n
+                         "		_pos pushback 0;" \n
+                         "	};" \n
+                         "} else {" \n
+                         "	_pos = selectrandom _poses;" \n
+                         "};" \n
+                         "" \n
+                         "" \n
+                         "_zombie = _grp createUnit [_ZClassname,[0,0,0],[],0,""NONE""];" \n
+                         "_zombie setpos _pos;" \n
+                         "[_zombie] join grpnull;" \n
+                         "deletegroup _grp;" \n
+                         "if(!isnil ""Valor_debug"") then {" \n
+                         "	systemchat format[""Spawning %1 @ %2 distance %3"",_ZClassname,_spawn_house,(player distance _zombie)];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="ROAM__BITCH";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _ticktime) > 10"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: houses var empty"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "_">*/
+                class _
+                {
+                        name = "_";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"_ticktime =diag_ticktime;" \n
+                         "systemchat ""Zombie dead"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "warten_f_r_despa">*/
+                                class warten_f_r_despa
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="END_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _ticktime) > 300"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END_1">*/
+                class END_1
+                {
+                        name = "END_1";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Valor :: Deleting Zombie"";" \n
+                         "deletevehicle _zombie;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "ROAM__BITCH">*/
+                class ROAM__BITCH
+                {
+                        name = "ROAM__BITCH";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/"_zombie call _zombie_roam;" \n
+                         "_ticktime = diag_ticktime;" \n
+                         "_wait_time = _wait_time_roam + random 10;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="__1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime - _ticktime) > _wait_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__1">*/
+                class __1
+                {
+                        name = "__1";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Zombie_Tod">*/
+                                class Zombie_Tod
+                                {
+                                        itemno = 4;
+                                        priority = 2.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _zombie"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Zombie_zu_weit_w">*/
+                                class Zombie_zu_weit_w
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="END_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(player distance _zombie) > 200"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "attacking_">*/
+                                class attacking_
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="ROAM__BITCH";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"speed _zombie isequalto 0 && alive _zombie && (player distance _zombie) < 200"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "END",
+                "END_1",
+        };
+};
+/*%FSM</COMPILE>*/

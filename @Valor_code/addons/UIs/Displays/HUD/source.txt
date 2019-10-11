@@ -1,0 +1,177 @@
+/* #Wepeni
+$[
+	1.063,
+	["HUD",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1100,"",[1,"",["0.874999 * safezoneW + safezoneX","0.965742 * safezoneH + safezoneY","0.120417 * safezoneW","0.0235185 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"border_hunger",[1,"status_food_border_CA.paa",["0.960547 * safezoneW + safezoneX","0.851482 * safezoneH + safezoneY","0.0375781 * safezoneW","0.0559259 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1201,"hunger_inside_pic",[1,"status_food_inside_4_ca.paa",["0.959765 * safezoneW + safezoneX","0.848704 * safezoneH + safezoneY","0.0391405 * safezoneW","0.0605556 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1202,"pic_border_thirst",[1,"status_thirst_border_CA.paa",["0.957108 * safezoneW + safezoneX","0.795925 * safezoneH + safezoneY","0.0407031 * safezoneW","0.0614814 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1203,"pic_thirst_inside",[1,"status_thirst_inside_4_ca.paa",["0.955157 * safezoneW + safezoneX","0.793149 * safezoneH + safezoneY","0.0442187 * safezoneW","0.066111 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1204,"radiation_pic",[1,"radiation_100.paa",["0.963283 * safezoneW + safezoneX","0.752852 * safezoneH + safezoneY","0.0297656 * safezoneW","0.0383335 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1205,"health_pic",[1,"blood_1.paa",["0.966015 * safezoneW + safezoneX","0.912963 * safezoneH + safezoneY","0.0293749 * safezoneW","0.0448147 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Barney, v1.063, #Wepeni)
+////////////////////////////////////////////////////////
+
+class RscStructuredText_1100: RscStructuredText
+{
+	idc = 1100;
+	x = 0.874999 * safezoneW + safezoneX;
+	y = 0.965742 * safezoneH + safezoneY;
+	w = 0.120417 * safezoneW;
+	h = 0.0235185 * safezoneH;
+};
+class border_hunger: RscPicture
+{
+	idc = 1200;
+	text = "status_food_border_CA.paa";
+	x = 0.960547 * safezoneW + safezoneX;
+	y = 0.851482 * safezoneH + safezoneY;
+	w = 0.0375781 * safezoneW;
+	h = 0.0559259 * safezoneH;
+};
+class hunger_inside_pic: RscPicture
+{
+	idc = 1201;
+	text = "status_food_inside_4_ca.paa";
+	x = 0.959765 * safezoneW + safezoneX;
+	y = 0.848704 * safezoneH + safezoneY;
+	w = 0.0391405 * safezoneW;
+	h = 0.0605556 * safezoneH;
+};
+class pic_border_thirst: RscPicture
+{
+	idc = 1202;
+	text = "status_thirst_border_CA.paa";
+	x = 0.957108 * safezoneW + safezoneX;
+	y = 0.795925 * safezoneH + safezoneY;
+	w = 0.0407031 * safezoneW;
+	h = 0.0614814 * safezoneH;
+};
+class pic_thirst_inside: RscPicture
+{
+	idc = 1203;
+	text = "status_thirst_inside_4_ca.paa";
+	x = 0.955157 * safezoneW + safezoneX;
+	y = 0.793149 * safezoneH + safezoneY;
+	w = 0.0442187 * safezoneW;
+	h = 0.066111 * safezoneH;
+};
+class radiation_pic: RscPicture
+{
+	idc = 1204;
+	text = "radiation_100.paa";
+	x = 0.963283 * safezoneW + safezoneX;
+	y = 0.752852 * safezoneH + safezoneY;
+	w = 0.0297656 * safezoneW;
+	h = 0.0383335 * safezoneH;
+};
+class health_pic: RscPicture
+{
+	idc = 1205;
+	text = "blood_1.paa";
+	x = 0.966015 * safezoneW + safezoneX;
+	y = 0.912963 * safezoneH + safezoneY;
+	w = 0.0293749 * safezoneW;
+	h = 0.0448147 * safezoneH;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
+
+
+/* #Hijimo
+$[
+	1.063,
+	["HUD",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1100,"",[1,"",["0.874999 * safezoneW + safezoneX","0.965742 * safezoneH + safezoneY","0.120417 * safezoneW","0.0235185 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"border_hunger",[1,"status_food_border_CA.paa",["0.960547 * safezoneW + safezoneX","0.851482 * safezoneH + safezoneY","0.0375781 * safezoneW","0.0559259 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1201,"hunger_inside_pic",[1,"status_food_inside_4_ca.paa",["0.959765 * safezoneW + safezoneX","0.848704 * safezoneH + safezoneY","0.0391405 * safezoneW","0.0605556 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1202,"pic_border_thirst",[1,"status_thirst_border_CA.paa",["0.957108 * safezoneW + safezoneX","0.795925 * safezoneH + safezoneY","0.0407031 * safezoneW","0.0614814 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1203,"pic_thirst_inside",[1,"status_thirst_inside_4_ca.paa",["0.955157 * safezoneW + safezoneX","0.793149 * safezoneH + safezoneY","0.0442187 * safezoneW","0.066111 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1204,"radiation_pic",[1,"radiation_100.paa",["0.963283 * safezoneW + safezoneX","0.752852 * safezoneH + safezoneY","0.0297656 * safezoneW","0.0383335 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1205,"health_pic",[1,"blood_1.paa",["0.966015 * safezoneW + safezoneX","0.912963 * safezoneH + safezoneY","0.0293749 * safezoneW","0.0448147 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1206,"",[1,"herolevel1paa.paa",["0.908594 * safezoneW + safezoneX","0.13704 * safezoneH + safezoneY","0.0899209 * safezoneW","0.130922 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Barney, v1.063, #Hijimo)
+////////////////////////////////////////////////////////
+
+class RscStructuredText_1100: RscStructuredText
+{
+	idc = 1100;
+	x = 0.874999 * safezoneW + safezoneX;
+	y = 0.965742 * safezoneH + safezoneY;
+	w = 0.120417 * safezoneW;
+	h = 0.0235185 * safezoneH;
+};
+class border_hunger: RscPicture
+{
+	idc = 1200;
+	text = "status_food_border_CA.paa";
+	x = 0.960547 * safezoneW + safezoneX;
+	y = 0.851482 * safezoneH + safezoneY;
+	w = 0.0375781 * safezoneW;
+	h = 0.0559259 * safezoneH;
+};
+class hunger_inside_pic: RscPicture
+{
+	idc = 1201;
+	text = "status_food_inside_4_ca.paa";
+	x = 0.959765 * safezoneW + safezoneX;
+	y = 0.848704 * safezoneH + safezoneY;
+	w = 0.0391405 * safezoneW;
+	h = 0.0605556 * safezoneH;
+};
+class pic_border_thirst: RscPicture
+{
+	idc = 1202;
+	text = "status_thirst_border_CA.paa";
+	x = 0.957108 * safezoneW + safezoneX;
+	y = 0.795925 * safezoneH + safezoneY;
+	w = 0.0407031 * safezoneW;
+	h = 0.0614814 * safezoneH;
+};
+class pic_thirst_inside: RscPicture
+{
+	idc = 1203;
+	text = "status_thirst_inside_4_ca.paa";
+	x = 0.955157 * safezoneW + safezoneX;
+	y = 0.793149 * safezoneH + safezoneY;
+	w = 0.0442187 * safezoneW;
+	h = 0.066111 * safezoneH;
+};
+class radiation_pic: RscPicture
+{
+	idc = 1204;
+	text = "radiation_100.paa";
+	x = 0.963283 * safezoneW + safezoneX;
+	y = 0.752852 * safezoneH + safezoneY;
+	w = 0.0297656 * safezoneW;
+	h = 0.0383335 * safezoneH;
+};
+class health_pic: RscPicture
+{
+	idc = 1205;
+	text = "blood_1.paa";
+	x = 0.966015 * safezoneW + safezoneX;
+	y = 0.912963 * safezoneH + safezoneY;
+	w = 0.0293749 * safezoneW;
+	h = 0.0448147 * safezoneH;
+};
+class RscPicture_1206: RscPicture
+{
+	idc = 1206;
+	text = "herolevel1paa.paa";
+	x = 0.908594 * safezoneW + safezoneX;
+	y = 0.13704 * safezoneH + safezoneY;
+	w = 0.0899209 * safezoneW;
+	h = 0.130922 * safezoneH;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
