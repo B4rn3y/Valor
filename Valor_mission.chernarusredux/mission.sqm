@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1899;
+		nextID=1901;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3839.4995,539.42297,8724.2549};
+		pos[]={3757.0249,539.42297,8651.0537};
 		dir[]={0.097312972,-0.85335553,0.51234025};
 		up[]={0.15923092,0.52136451,0.83833152};
 		aside[]={0.9825145,4.0990562e-007,-0.18661763};
@@ -359,9 +359,61 @@ randomSeed=13256572;
 class ScenarioData
 {
 	author="[G4] Barney";
+	saving=0;
+	disabledAI=1;
+	class Header
+	{
+		gameType="Survive";
+	};
+	wreckRemovalMaxTime=3600;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
+	assetType="Free";
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -15385,7 +15437,7 @@ class Mission
 			};
 			id=1232;
 			type="Land_Saw_F";
-			atlOffset=6.1035156e-005;
+			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0

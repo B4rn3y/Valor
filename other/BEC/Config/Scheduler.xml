@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Scheduler>
+	<job id='0'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>030000</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 1 hour!</cmd>
+	</job>
+	<job id='1'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>033000</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 30 Minutes!</cmd>
+	</job>
+	<job id='2'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>034500</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 15 Minutes!</cmd>
+	</job>
+	<job id='3'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>035000</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 10 Minutes!</cmd>
+	</job>
+	<job id='4'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>035500</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 5 Minutes!</cmd>
+	</job>
+	<job id='5'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>035700</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 3 Minutes!</cmd>
+	</job>
+	<job id='6'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>035900</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 1 Minutes!</cmd>
+	</job>
+	<job id='7'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>035930</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>say -1 Server Restart in 30 SECONDS!</cmd>
+	</job>
+	<job id='8'>
+		<day>1,2,3,4,5,6,7</day>
+		<start>040000</start>
+		<runtime>000020</runtime>
+		<loop>0</loop>
+		<cmd>C:\Arma3\A3Server\BEC\restart_server.bat</cmd>
+	</job>
+</Scheduler>

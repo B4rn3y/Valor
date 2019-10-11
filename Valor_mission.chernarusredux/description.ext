@@ -1,11 +1,33 @@
 
+showHUD[] = {
+	1,	// Scripted HUD (same as showHUD command)
+	1,	// Vehicle + soldier info
+	1,	// Vehicle radar [HIDDEN]
+	1,	// Vehicle compass [HIDDEN]
+	1,	// Tank direction indicator
+	1,	// Commanding menu
+	0,	// Group Bar
+	1	// HUD Weapon Cursors
+};
+
+enableDebugConsole[] = {
+	"76561198055205907", //Bloodwyn
+	"76561198018512569" //Barney
+	//
+};
 
 
-
-
-
-author = "Valor People";
-
+author = "Valor Team";
+onLoadName = "Valor Mod";
+onLoadMission = "RPG/Survival Server";
+onLoadIntro = "Welcome to Valor!";
+loadScreen = "UIs\textures\loadscreen.jpg";
+class Header
+{
+	gameType = Survive;
+	minPlayers = 1;
+	maxPlayers = 195;
+};
 
 // ----RESPAWN SETTINGS----
 respawn = BASE;
@@ -14,7 +36,7 @@ respawndelay = 5;
 
 disabledAI = 1;
 joinUnassigned = 1;
-enableDebugConsole = 2;
+//enableDebugConsole = 2;
 
 wreckLimit = 5;
 wreckRemovalMinTime = 60;

@@ -1,0 +1,65 @@
+/* #Duqypi
+$[
+	1.063,
+	["CarShop",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1000,"main_background",[1,"",["-5.3747e-005 * safezoneW + safezoneX","0.0370311 * safezoneH + safezoneY","0.183021 * safezoneW","0.519815 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"header",[1,"Valor Car Shop",["3.988e-005 * safezoneW + safezoneX","-6.01232e-005 * safezoneH + safezoneY","0.182917 * safezoneW","0.0374074 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.83],[-1,-1,-1,-1],"","-1"],[]],
+	[1500,"listbox_cars",[1,"",["0.00364614 * safezoneW + safezoneX","0.0444448 * safezoneH + safezoneY","0.174583 * safezoneW","0.432778 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2400,"button_buy",[1,"Buy",["0.00312586 * safezoneW + safezoneX","0.482407 * safezoneH + safezoneY","0.174584 * safezoneW","0.0318519 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[2401,"button_close",[1,"Close",["0.00312505 * safezoneW + safezoneX","0.516667 * safezoneH + safezoneY","0.174584 * safezoneW","0.0318519 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Barney, v1.063, #Duqypi)
+////////////////////////////////////////////////////////
+
+class main_background: RscText
+{
+	idc = 1000;
+	x = -5.3747e-005 * safezoneW + safezoneX;
+	y = 0.0370311 * safezoneH + safezoneY;
+	w = 0.183021 * safezoneW;
+	h = 0.519815 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class header: RscText
+{
+	idc = 1001;
+	text = "Valor Car Shop"; //--- ToDo: Localize;
+	x = 3.988e-005 * safezoneW + safezoneX;
+	y = -6.01232e-005 * safezoneH + safezoneY;
+	w = 0.182917 * safezoneW;
+	h = 0.0374074 * safezoneH;
+	colorBackground[] = {0,0,0,0.83};
+};
+class listbox_cars: RscListbox
+{
+	idc = 1500;
+	x = 0.00364614 * safezoneW + safezoneX;
+	y = 0.0444448 * safezoneH + safezoneY;
+	w = 0.174583 * safezoneW;
+	h = 0.432778 * safezoneH;
+};
+class button_buy: RscButtonMenu
+{
+	idc = 2400;
+	text = "Buy"; //--- ToDo: Localize;
+	x = 0.00312586 * safezoneW + safezoneX;
+	y = 0.482407 * safezoneH + safezoneY;
+	w = 0.174584 * safezoneW;
+	h = 0.0318519 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class button_close: RscButtonMenu
+{
+	idc = 2401;
+	text = "Close"; //--- ToDo: Localize;
+	x = 0.00312505 * safezoneW + safezoneX;
+	y = 0.516667 * safezoneH + safezoneY;
+	w = 0.174584 * safezoneW;
+	h = 0.0318519 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
