@@ -62,6 +62,6 @@
 		<start>040000</start>
 		<runtime>000020</runtime>
 		<loop>0</loop>
-		<cmd>C:\Arma3\A3Server\BEC\restart_server.bat</cmd>
+		<cmd>C:\Arma3\A3Server\BEC\stopserver.bat</cmd>
 	</job>
 </Scheduler>
