@@ -142,6 +142,9 @@ class Valor_settings {
 		Engine_repair = "valor_tankboresighter_01";
 		Hull_repair = "valor_torquewrench_01";
 		Glass_repair = "valor_ducttape";
+		Winch_repair = "valor_metalwire";
+		Turret_repair = "valor_torquewrench_01";
+		Gun_repair = "valor_torquewrench_01";
 		HRotor_repair = "valor_rotor";
 		VRotor_repair = "valor_torquewrench_01";
 		Avionics_repair = "valor_torquewrench_01";
@@ -192,7 +195,11 @@ class Valor_settings {
 			{"CUP_O_Kamaz_Open_RU",{{0,1,0},{0,-1.3,0}}},
 			{"warrig_black",{{0,-3.8,2.2}}},
 			{"rhs_zil131_msv",{{0,-0.1,0.2},{0,-1.8,0.2}}},
-			{"CUP_C_Ural_Civ_02",{{0,-0.2,0.1},{0,-2.1,0.1}}}
+			{"CUP_C_Ural_Civ_02",{{0,-0.2,0.1},{0,-2.1,0.1}}},
+			{"CUP_O_Kamaz_RU",{{-0.00341797,-1.38281,-0.834412},{-0.12207,0.225586,-0.80188}},
+			{"CUP_C_Ural_Civ_03",{{-0.0249023,-1.63867,-0.654266},{-0.027832,-0.250977,-0.604065}},
+			{"CUP_B_Ural_CDF",{{0.0341797,-1.84766,-0.546295},{-0.00976563,-0.238281,-0.555573}},
+			{"C_Truck_02_transport_F",{{0.000976563,-2.89063,-0.688232},{0.0405273,-1.3916,-0.559708},{0.0688477,0.182617,-0.565979}}}
 		};
 	};
 
@@ -419,11 +426,14 @@ class Valor_settings {
 
 		chance_vehicle_shop = 33; // The chance that a vehicle gets into the store after being destroyed, in this case its 33%
 
+		restart_time = 240; // Restart every 4h
+
 	};
 
 	class loot_settings {
 		LootPile_Spawn_Range = 80; // Range to spawn Lootpiles in Building around Player
 		Lootpile_Delete_Range = 120; // If every player is more than 120m from a lootpile away it will get deleted
+		LootPile_house_spawn_cooldown = 600; // cooldown for a house to spawn new loot in
 
 		Loot_Cyklus_time[] = {40,50,60}; // Time between every Lootspawn Cyklus - min 40s - max 60s
 

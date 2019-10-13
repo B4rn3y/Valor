@@ -19,7 +19,7 @@ link6[] = {5,2};
 link7[] = {6,7};
 link8[] = {7,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,178,6316128,1,-688.811279,325.445374,-293.777039,-1024.504395,1227,884,1};
-window[] = {2,-1,-1,-32000,-32000,863,104,1544,104,3,1245};
+window[] = {2,-1,-1,-1,-1,811,52,1492,52,3,1245};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -62,18 +62,18 @@ class FSM
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"_zombienmbr = 0;" \n
                          "if(vehicle player isequalto player) then {" \n
-                         "	_houses = nearestobjects[player,[""house""],100];" \n
+                         "	_houses = ((nearestobjects[player,[""house""],100]) - (nearestobjects[player,[""house""],30]));" \n
                          "	_houses_count = count _houses;" \n
                          "	switch (true) do" \n
                          "	{" \n
                          "		case (_houses_count > 70):" \n
                          "		{" \n
-                         "			_zombienmbr = 7;" \n
+                         "			_zombienmbr = 4;" \n
                          "		};	" \n
                          "" \n
                          "		case (_houses_count > 50):" \n
                          "		{" \n
-                         "			_zombienmbr = 5;" \n
+                         "			_zombienmbr = 3;" \n
                          "		};" \n
                          "" \n
                          "		case (_houses_count > 20):" \n

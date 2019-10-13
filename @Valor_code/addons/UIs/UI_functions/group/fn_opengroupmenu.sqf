@@ -41,7 +41,9 @@ _edit_group_name ctrlCommit 0;
 _btn_create_group ctrlSetFade 0;
 _btn_create_group ctrlCommit 0;
 if!(playerside isEqualTo civilian) then {_btn_create_group ctrlEnable false;};
-_str_text_stats ctrlSetStructuredText parsetext format[" <t size='0.9'>Cash</t><br/> <t  color='#01DF01' size='1.5'>$%2</t><br/><t size='0.9'>Bank</t><br/> <t  color='#01DF01' size='1.5'>$%3</t><br/><t size='0.9'>Playtime</t><br/> <t  color='#01DF01' size='1.5'>%1 hours</t><br/> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString,[valor_cash] call valor_fnc_numbertext,[valor_bankacc] call valor_fnc_numbertext];
+
+
+_str_text_stats ctrlSetStructuredText parsetext format[" <t size='0.9'>Cash</t><br/> <t  color='#01DF01' size='1.5'>$%2</t><br/><t size='0.9'>Bank</t><br/> <t  color='#01DF01' size='1.5'>$%3</t><br/><t size='0.9'>Playtime</t><br/> <t  color='#01DF01' size='1.5'>%1 hours</t><br/><t size='0.9'>Uptime</t><t size='0.7'> (Restart every %4 hours)</t><br/> <t  color='#01DF01' size='1.5'>%5 hours</t><br/> ",[Valor_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString,[valor_cash] call valor_fnc_numbertext,[valor_bankacc] call valor_fnc_numbertext,[(getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "restart_time")*60),"HH"] call BIS_fnc_secondsToString,[(servertime), "HH:MM"] call BIS_fnc_secondsToString];
 
 {_x ctrlEnable false;} foreach [_listbox_member,_btn_leave,_btn_invite,_btn_kick,_btn_promote,_btn_demote,_btn_setLeader,_combo_players,_btn_delete_gang,_combo_groups,_btn_give_group_properties];
 

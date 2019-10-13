@@ -1,4 +1,4 @@
-private ["_vehicle","_ADD_ID","_classname","_hitpoints","_names","_damage","_arr_with_names_and_damage","_foreachindex","_arr_for_IDS","_ID","_damage_perc"];
+private ["_vehicle","_ADD_ID","_classname","_hitpoints","_names","_damage","_arr_with_names_and_damage","_foreachindex","_arr_for_IDS","_hull","_damage_perc","_ID"];
 
 
 _vehicle = param[0,objNull,[objNull]];
@@ -21,6 +21,7 @@ _arr_with_names_and_damage = [];
 } foreach _names;
 
 _arr_for_IDS = [];
+_hull = false;
 
 _damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 
@@ -109,10 +110,45 @@ _damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 
 		};
 
-		case ((_x select 0)isEqualTo "hitbody"):
+		case ((_x select 0)isEqualTo "hitbody" && !_hull):
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitbody"") > 0",20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
+			_hull = true;
+			_arr_for_IDS pushback _ID;
+
+		};
+
+
+		case ((_x select 0)isEqualTo "hithull" && !_hull):
+		{
+
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
+			_hull = true;
+			_arr_for_IDS pushback _ID;
+
+		};
+
+		case ((_x select 0) isEqualTo "hitturret"):
+		{
+
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","turret"]),valor_fnc_repairVehicle,["Turret",["hitturret"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitturret"") > 0",20];
+			_arr_for_IDS pushback _ID;
+
+		};
+
+		case ((_x select 0) isEqualTo "hitgun"):
+		{
+
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","gun"]),valor_fnc_repairVehicle,["Gun",["hitgun"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitgun"") > 0",20];
+			_arr_for_IDS pushback _ID;
+
+		};
+
+		case ((_x select 0) isEqualTo "hitwinch"):
+		{
+
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","winch"]),valor_fnc_repairVehicle,["Winch",["hitwinch"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitwinch"") > 0",20];
 			_arr_for_IDS pushback _ID;
 
 		};

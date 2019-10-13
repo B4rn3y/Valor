@@ -1,8 +1,8 @@
 
 
-private ["_db_id","_chance_store","_rnd","_query","_thread"];
+private ["_db_id","_cop","_chance_store","_rnd","_query","_thread"];
 _db_id = param [0,-1,[1337]];
-
+_cop = param[1,false,[false]];
 
 
 
@@ -14,7 +14,7 @@ _rnd = random 100;
 
 _query = format["UPDATE persistent_vehicles SET alive='0' WHERE id = '%1'",_db_id];
 
-if(_rnd <= _chance_store) then {
+if(_rnd <= _chance_store && !_cop) then {
 	_query = format["UPDATE persistent_vehicles SET shop='1' WHERE id = '%1'",_db_id];
 };
 

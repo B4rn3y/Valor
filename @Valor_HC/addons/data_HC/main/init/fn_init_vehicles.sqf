@@ -111,7 +111,7 @@ _vehicle = objNull;
 		_vehicle setvariable ["DBID",_id,true];
 		_vehicle disableTIEquipment true;
 		//_vehicle disableNVGEquipment true;
-		Valor_vehicles_monitoring pushBackUnique [_vehicle,_id];
+		Valor_vehicles_monitoring pushBackUnique [_vehicle,_id,if(_cop isEqualTo 1) then {true} else {false}];
 
 
 		[_vehicle,random [12,18,25]] spawn {sleep (_this select 1);(_this select 0) allowDamage true;};

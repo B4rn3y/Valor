@@ -1,4 +1,62 @@
+
+
+
+
+
+/*
+cam über die karte:
+Welcome to the Valor Mod on Chernarus Redux, a Survival and Roleplay Mod combined.
+A nuclear crisis has haunted the Land and Zombies and other creatures are roaming the land.
+Survivors of this tragedy fight each other for food, water and shelter, some of them though have created a last resistance against this threat.
+
+cam switch to SC
+This is the so called Survivor City, it is guarded by a milita to enforce the law and keep it free of zombies.
+Vehicle and Item Traders have established themselves in this place, these sell and buy items.
+Visitors of the city have to follow the RDM and VDM Rules.
+
+cam show bases
+Survivors can build themselves Bases
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 VALOR_INTRO = true;
+
+
+
+
+
+
+
 
 
 valor_intro_cam = "camera" camCreate [0, 0, 0];
