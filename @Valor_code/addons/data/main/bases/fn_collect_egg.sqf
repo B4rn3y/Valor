@@ -53,6 +53,8 @@ if!(_rnd <=_percentage_find ) then {
 } else {
 	["Valor :: YOU FOUND AN EGG!!"] spawn valor_Fnc_exp_hint;
 	[_item_name,_item_amount] call valor_fnc_additem;
+	[[format["%1(%2) found a Raptor EGG",profileName,getPlayerUID player]],"valor_fnc_log",2] spawn valor_fnC_remoteexec;
+
 };
 
 valor_is_processing = nil;

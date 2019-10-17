@@ -437,6 +437,7 @@ class Valor_settings {
 
 		Loot_Cyklus_time[] = {40,50,60}; // Time between every Lootspawn Cyklus - min 40s - max 60s
 
+		Loot_log_items[] = {"CUP_srifle_M107_Base","CUP_srifle_AS50"}; // Items which spawn gets logged into the DB
 	};
 
 	class Spawn_Points {

@@ -1,4 +1,4 @@
-private ["_markertext","_bandit_gear","_conf","_outpost_conf","_crate_classname","_crate_conf","_unit_conf","_marker","_pos","_dir","_watch_pos","_soldier","_item_amount","_loottable_compiled","_conter","_min","_max","_diff","_mult","_loottable","_counter","_crate","_d","_rnd","_classname","_type","_spawn_with"];
+private ["_markertext","_bandit_gear","_conf","_outpost_conf","_crate_classname","_crate_conf","_unit_conf","_marker","_pos","_dir","_watch_pos","_soldier","_item_amount","_loottable_compiled","_conter","_min","_max","_diff","_mult","_loottable","_counter","_crate","_log_items","_d","_rnd","_classname","_type","_spawn_with"];
 
 
 
@@ -99,6 +99,7 @@ _crate setdir (_crate_conf select 1);
 _crate setVectorUp (_crate_conf select 2);
 [_crate] call valor_fnc_clear_vehicle;
 
+_log_items = getarray(missionConfigFile >> "Valor_settings" >> "loot_settings" >> "Loot_log_items");
 
 // add loot to crate
 
@@ -111,6 +112,10 @@ for "_d" from 1 to _item_amount do {
 			_classname = _x select 2;
 			_type = _x select 3;
 			_spawn_with = _x select 4;
+			if(_classname in _log_items) then {
+				_conf = [_classname] call valor_fnc_getconfig;
+				[[format["%1(%2) was spawned @ a Rebel Outpost",gettext(configFile >> _conf >> _classname >> "displayname"),_classname]],"valor_fnc_log",2] spawn valor_fnC_remoteexec;
+			};
 			switch(_type) do {
 				case "weapon":
 				{

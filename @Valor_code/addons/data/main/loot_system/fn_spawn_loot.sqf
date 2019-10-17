@@ -1,5 +1,5 @@
+private ["_pos","_house","_house_classname","_rnd","_near_weaponholder","_loot","_log_items","_conf","_holder","_classname","_count","_typ"];
 
-private ["_pos","_house_classname","_rnd","_loot","_near_weaponholder","_holder","_debug","_txt","_classname","_count","_typ"];
 _pos = param[0,[],[[]]];
 _house = param[1,objNull,["",objNull]];
 if(isnull _house) exitWith {};
@@ -19,6 +19,13 @@ _loot = [_rnd,([_house_classname,_house] call valor_fnc_find_loottable)] call va
 if(_loot isEqualTo []) exitWith {if!(isnil "valor_debug") then {systemchat "ERROR: LOOT NIL"};0};
 
 _house setVariable["Valor_lootspawn_time",servertime];
+
+_log_items = getarray(missionConfigFile >> "Valor_settings" >> "loot_settings" >> "Loot_log_items");
+if((_loot select 0) in _log_items) then {
+	_conf = [(_loot select 0)] call valor_fnc_getconfig;
+	[[format["%1(%2) found a %3(%4) @ Pos %5",profileName,getPlayerUID player,gettext(configFile >> _conf >> (_loot select 0) >> "displayname"),(_loot select 0),getPosATL player]],"valor_fnc_log",2] spawn valor_fnC_remoteexec;
+};
+
 
 _holder =  createVehicle ["groundweaponholder",_pos, [], 0, "can_Collide"];
 
