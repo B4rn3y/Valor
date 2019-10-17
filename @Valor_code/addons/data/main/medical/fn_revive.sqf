@@ -20,7 +20,7 @@ _time_until_dead = getNumber(missionConfigFile >> "Valor_settings" >> "settings"
 if((time - _time) >= _time_until_dead) exitWith {systemchat "Valor :: You are too late, he cant be revived anymore"};
 
 _person_reviving setvariable["reviving",true,true];
-
+player action ["SwitchWeapon", player, player, 100];
 valor_is_processing = true;
 [_unit,format["Reviving %1",name _person_reviving]] spawn valor_fnc_processevh;
 _time = 0.6;

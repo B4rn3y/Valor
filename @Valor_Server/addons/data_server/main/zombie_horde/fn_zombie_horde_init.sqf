@@ -21,6 +21,9 @@ _outpost_name = _outpost_config select 5;
 _pos = (_outpost_config select 3) select 0;
 _distance = (_outpost_config select 3) select 1;
 _zombie_spawn_pos = _outpost_config select 4;
-_gate = nearestObject[_pos,"Land_Net_Fence_Gate_F"];
+_gate = ObjNull;
+ {
+ 	if((typeof _x) isEqualTo "Land_Net_Fence_Gate_F") exitWith {_gate = _x;};
+ } foreach (nearestObjects[_pos,["Land_Net_Fence_Gate_F"],_distance]);
 _start_time = servertime + _waittime;
 [_waittime,_zombie_amount,_gate_health,_gate,_zombie_spawn_pos,_event_time,_cop_amount_needed,_zombie_event_time_begin,_outpost_name,_zed_damage,_outpost] spawn valor_fnc_zombie_monitoring_event_main;

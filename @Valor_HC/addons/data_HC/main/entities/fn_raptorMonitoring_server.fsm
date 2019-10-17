@@ -22,7 +22,7 @@ item17[] = {"visisble",4,218,-543.541748,-464.413879,-453.541748,-414.413879,0.0
 item18[] = {"Attack",2,250,-650.652100,-530.722168,-560.652039,-480.722168,0.000000,"Attack"};
 item19[] = {"w8",4,218,-641.496765,-466.047241,-551.496765,-416.047119,0.000000,"w8"};
 item20[] = {"Roam",2,250,-25.231201,-663.443848,64.768814,-613.443848,0.000000,"Roam"};
-item21[] = {"w8_and_search_for",4,218,-118.769814,-662.308167,-28.769806,-612.308167,0.000000,"w8 and" \n "search for targets"};
+item21[] = {"w8_and_search_for",4,4314,-118.769814,-662.308167,-28.769806,-612.308167,0.000000,"w8 and" \n "search for targets"};
 item22[] = {"__1",2,250,-217.493988,-375.325500,-127.493958,-325.325500,0.000000,""};
 item23[] = {"true",4,218,-214.480911,-464.716736,-124.480904,-414.716705,0.000000,"true"};
 item24[] = {"Zombie_Tod",4,218,-401.976074,-626.108643,-311.976074,-576.108704,1.000000,"Zombie Tod"};
@@ -32,7 +32,7 @@ item27[] = {"__unconscious_",4,218,-500.741516,-664.281372,-410.741333,-614.2814
 item28[] = {"kill_raptor_",2,250,-540.535278,-726.838928,-450.535034,-676.838928,0.000000,"kill raptor" \n ""};
 item29[] = {"true",4,218,-596.412598,-665.407043,-506.412598,-615.407043,0.000000,"true"};
 item30[] = {"hear_Target",4,218,-40.037598,-491.092102,49.962402,-441.092407,0.000000,"hear Target"};
-item31[] = {"move_to_pos",2,4346,104.626953,-517.738770,194.626953,-467.738770,0.000000,"move to pos"};
+item31[] = {"move_to_pos",2,250,104.626953,-517.738770,194.626953,-467.738770,0.000000,"move to pos"};
 item32[] = {"_",4,218,-32.169708,-554.632324,57.830292,-504.632263,0.000000,""};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -74,8 +74,8 @@ link36[] = {29,12};
 link37[] = {30,31};
 link38[] = {31,32};
 link39[] = {32,9};
-globals[] = {0.000000,0,0,0,0,640,480,1,225,6316128,1,-488.965485,287.223175,-228.602295,-787.648010,815,587,1};
-window[] = {0,-1,-1,-1,-1,889,130,1570,130,1,833};
+globals[] = {0.000000,0,0,0,0,640,480,1,225,6316128,1,-621.696960,289.596130,-273.274902,-929.629272,815,587,1};
+window[] = {0,-1,-1,-1,-1,785,26,1466,26,1,833};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -136,7 +136,7 @@ class FSM
                          "_zombie setdir random 360;" \n
                          "" \n
                          "" \n
-                         "" \n
+                         "_zombie setanimspeedcoef 1.3;" \n
                          "" \n
                          "{_zombie disableAI _x} foreach [""FSM"",""AIMINGERROR"",""SUPPRESSION"",""AUTOTARGET"",""TARGET"",""COVER"",""SUPPRESSION"",""AUTOCOMBAT"",""CHECKVISIBLE""];" \n
                          "" \n
@@ -434,7 +434,7 @@ class FSM
                                         priority = 0.000000;
                                         to="target_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(!([_zombie] call valor_fnc_raptor_checkforTarget isequalto [])) || (diag_ticktime > _wait_time)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!([_zombie] call valor_fnc_raptor_checkforTarget isequalto [])) || (diag_ticktime > _wait_time) || !((_zombie getvariable[""VALOR_Hear_Pos"",[]]) isequalto [])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

@@ -48,7 +48,15 @@ valor_deathCamera camCommit 0;
 {
 	private["_unit"];
 	_unit = _this select 0;
-	waitUntil {if(speed _unit == 0) exitWith {true}; valor_deathCamera camSetTarget _unit; valor_deathCamera camSetRelPos [0,3.5,4.5]; valor_deathCamera camCommit 0;};
+	_unit spawn {
+		while {speed _this != 0} do
+		{
+			valor_deathCamera camSetTarget _this;
+			valor_deathCamera camSetRelPos [0,3.5,4.5];
+			valor_deathCamera camCommit 0;
+		};
+	};
+	waitUntil {(speed _unit isEqualTo 0)};
 };
 
 _players = playableUnits - [player];
@@ -80,7 +88,7 @@ if(player getvariable["revived",false]) exitWith {[_unit] spawn valor_fnc_revive
 
 _person_add_stat = if(isnull _instigator) then {if(isnull _killer) then {ObjNull} else {if(_killer isEqualTo player|| getplayeruid _killer isEqualTo getPlayerUID player) then {ObjNull} else {_killer}};} else {if(_instigator isEqualTo player || getplayeruid _instigator isEqualTo getPlayerUID player) then {ObjNull} else {_instigator};};
 if!(isnull _person_add_stat) then {
-	["Player",Valor_humanity] remoteExec["valor_fnc_onEntityKilled",[_person_add_stat]];
+	["Player",Valor_humanity,getplayeruid player] remoteExec["valor_fnc_onEntityKilled",[_person_add_stat]];
 };
 Valor_stats_entities set[3,((Valor_stats_entities select 3)+1)];
 [13] call valor_fnc_step_update;

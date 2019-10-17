@@ -1,7 +1,9 @@
-private ["_type_killed","_humanity","_xp_add","_humanity_change","_text","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role"];
+private ["_type_killed","_humanity","_pid","_xp_add","_humanity_change","_text","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role"];
+
 
 _type_killed = param[0,"",[""]];
 _humanity = param[1,2500,[0]];
+_pid = param[2,"",[""]];
 
 if(_type_killed isEqualTo "") exitWith {};
 _xp_add = 0;
@@ -21,6 +23,7 @@ switch (_type_killed) do
 
 	case "Player":
 	{
+		if(_pid isEqualTo (getplayeruid player)) exitWith {};
 		_humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
 
 		_humanity_border_B3 = _humanity_config select 0;

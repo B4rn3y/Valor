@@ -15,32 +15,18 @@ _XP = round _XP;
 
 if(_XP >= Valor_xp_next_level) then {
 	Valor_XP = Valor_XP + _XP;
-	_XP spawn {
-		for "_d" from 1 to _this do {
-			Valor_level_xp = Valor_level_xp + 1;
-			if(Valor_level_xp isEqualTo Valor_xp_needed_level) then {
-				_xp_info = [Valor_XP] call valor_fnc_init_level;
-				Valor_level = _xp_info select 0;
-				//Valor_level_xp = _xp_info select 1;
-				Valor_level_xp = 0;
-				Valor_xp_next_level = _xp_info select 2;
-				Valor_xp_needed_level = _xp_info select 3;
-				playSound "achievement";
-				[11] call valor_fnc_step_update;
-				0 spawn valor_fnc_init_skills;  // update the skills
-			};
-			sleep 0.01;
-		};
-	};
+	_xp_info = [Valor_XP] call valor_fnc_init_level;
+	Valor_level = _xp_info select 0;
+	Valor_level_xp = _xp_info select 1;
+	Valor_xp_next_level = _xp_info select 2;
+	Valor_xp_needed_level = _xp_info select 3;
+	playSound "achievement";
+	[11] call valor_fnc_step_update;
+	0 spawn valor_fnc_init_skills;  // update the skills
 } else {
 	Valor_XP = Valor_XP + _XP;
 	Valor_xp_next_level = Valor_xp_next_level - _XP;
-	_XP spawn {
-		for "_d" from 1 to _this do {
-			Valor_level_xp = Valor_level_xp + 1;
-			sleep 0.01;
-		};
-	};
+	Valor_level_xp = Valor_level_xp + _XP;
 
 	if(isnil "Valor_xp_save") then {
 		Valor_xp_save = _XP

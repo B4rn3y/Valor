@@ -114,4 +114,4 @@ _role_name = switch (_role) do
 };
 
 
-_str_text_hero_bandit ctrlSetStructuredText parseText format[" <t size='1.1' align='center'>%1</t> ",_role_name];
+_str_text_hero_bandit ctrlSetStructuredText parseText format[" <t size='1.1' color='#000000' align='center'>You are a %1</t> ",_role_name];

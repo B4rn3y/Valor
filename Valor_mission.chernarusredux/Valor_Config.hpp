@@ -386,7 +386,7 @@ class Valor_settings {
 		Thirst_multiplier = 1;
 
 		Fuelcan_amount = 20; // The amount of litres in a fuelcan
-		Objects_refueling[] = {"Land_Ind_TankSmall2","Land_Fuel_tank_stairs","Land_Ind_TankSmall","Land_Fuel_tank_big"}; // The objects you can refill fuelcans from
+		Objects_refueling[] = {"Land_Ind_TankSmall2","Land_Fuel_tank_stairs","Land_Ind_TankSmall","Land_Fuel_tank_big","Land_Fuel_tank_stairs_ep1"}; // The objects you can refill fuelcans from
 
 		Time_until_dead = 60; // the time a player is revivable after being shot dead(in seconds)
 
@@ -431,8 +431,8 @@ class Valor_settings {
 	};
 
 	class loot_settings {
-		LootPile_Spawn_Range = 80; // Range to spawn Lootpiles in Building around Player
-		Lootpile_Delete_Range = 120; // If every player is more than 120m from a lootpile away it will get deleted
+		LootPile_Spawn_Range = 160; // Range to spawn Lootpiles in Building around Player
+		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
 		LootPile_house_spawn_cooldown = 600; // cooldown for a house to spawn new loot in
 
 		Loot_Cyklus_time[] = {40,50,60}; // Time between every Lootspawn Cyklus - min 40s - max 60s

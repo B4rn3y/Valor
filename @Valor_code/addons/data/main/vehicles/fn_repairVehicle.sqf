@@ -17,6 +17,15 @@ _improvisation = missionNamespace getvariable["Valor_skill_Improvisation",false]
 
 if(_item isEqualTo "") exitWith {systemchat "Valor :: This cant be repaired"};
 
+if!(isnil "Valor_test_repair") exitWith {
+	playsound "repair";
+	player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+	[_vehicle,_config_names,0] remoteexec["valor_fnc_setHitpointDamage",0];
+
+	if!(_vehicle getvariable["Update_this",false]) then {
+		_vehicle setvariable["Update_this",true,true];
+	};
+};
 
 if(_valor_config_name isEqualTo "Glass" && _improvisation) exitWith {
 	playsound "repair";

@@ -26,9 +26,16 @@ switch (true) do
 		[] spawn valor_fnc_restrainAction;
 	};
 
-	case (_code isEqualTo 41): //^
+	case (_code isEqualTo 21): // Z Menu
 	{
 		[] call valor_fnc_opengroupmenu;
+	};
+	case 2:
+	{
+		if(currentWeapon player != "" && ((vehicle player) isEqualTo player)) then {
+			player action ["SwitchWeapon", player, player, 100];
+			player switchcamera cameraView;
+		};
 	};
 
 	case (_code isEqualTo 219): // WINDOWS LEFT

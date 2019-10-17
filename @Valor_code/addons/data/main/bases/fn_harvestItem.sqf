@@ -13,7 +13,7 @@ _item_amount = _item_info select 1;
 _item_text = _item_info select 2;
 
 _item_amount = _item_amount + (missionNamespace getvariable["Valor_skill_Miner",0]);
-
+player action ["SwitchWeapon", player, player, 100];
 
 valor_is_processing = true;
 [_assigned,_item_text] spawn valor_fnc_processevh;

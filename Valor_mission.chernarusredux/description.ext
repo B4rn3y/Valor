@@ -32,7 +32,8 @@ class Header
 // ----RESPAWN SETTINGS----
 respawn = BASE;
 respawndelay = 5;
-
+respawnDialog = 0;
+respawnOnStart = -1;
 
 disabledAI = 1;
 joinUnassigned = 1;
@@ -46,8 +47,7 @@ corpseLimit = 30;
 corpseRemovalMinTime = 600;
 corpseRemovalMaxTime = 1200;
 
-respawnDialog = 0;
-respawnOnStart = -1;
+
 Briefing = 0;
 allowFunctionsRecompile = 0;
 

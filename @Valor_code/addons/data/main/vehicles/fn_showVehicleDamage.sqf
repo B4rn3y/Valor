@@ -102,10 +102,10 @@ _damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 		case ((_x select 0)isEqualTo "hitengine"):
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["Engine",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage ""hitengine"") > %1",_damage_perc],20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_repairVehicle,["Engine",[_x select 0,"hitengine3","hitengine2","hitengine1"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player && (_target getHitPointDamage ""hitengine"") > %1",_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
-			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Engine",[_x select 0]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitengine"") <= %1",_damage_perc],20];
+			_ID = _vehicle addaction[( format["<t color='#00ff00'>Remove %1</t>",if(((_x select 0) select[0,3]) isEqualTo "hit") then {(_x select 0) select[3,(count(_x select 0))-1]} else {_x select 0}]),valor_fnc_removeVehiclePart,["Engine",[_x select 0,"hitengine3","hitengine2","hitengine1"]],1.5,false,false,"",format["((_target distance player) <= 9) && vehicle player isEqualTo player  && (_target getHitPointDamage ""hitengine"") <= %1",_damage_perc],20];
 			_arr_for_IDS pushback _ID;
 
 		};
@@ -113,7 +113,7 @@ _damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 		case ((_x select 0)isEqualTo "hitbody" && !_hull):
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull","hitmissiles","hitstarter3","hitstarter2","hitstarter1","hittransmission","hitlight","hithydraulics","hitgear","hithstabilizerl1","hithstabilizerr1","hitvstabilizer1","hittail","hitpitottube","hitstaticport"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
 			_hull = true;
 			_arr_for_IDS pushback _ID;
 
@@ -123,7 +123,7 @@ _damage_perc = missionNamespace getvariable["Valor_skill_Carglass",0.15];
 		case ((_x select 0)isEqualTo "hithull" && !_hull):
 		{
 
-			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
+			_ID = _vehicle addaction[( format["<t color='#ff0000'>Repair %1</t>","hull"]),valor_fnc_repairVehicle,["Hull",["hitbody","hithull","hitmissiles","hitstarter3","hitstarter2","hitstarter1","hittransmission","hitlight","hithydraulics","hitgear","hithstabilizerl1","hithstabilizerr1","hitvstabilizer1","hittail","hitpitottube","hitstaticport"]],1.5,false,false,"","((_target distance player) <= 9) && vehicle player isEqualTo player  && ((_target getHitPointDamage ""hitbody"") > 0 || (_target getHitPointDamage ""hithull"") > 0)",20];
 			_hull = true;
 			_arr_for_IDS pushback _ID;
 
