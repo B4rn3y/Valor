@@ -1,9 +1,9 @@
 if(isServer) exitWith{};
 
-Valor_debug = true;
+//Valor_debug = true;
 waitUntil {!isnil "valor_adminlevel"};
 [] spawn valor_fnC_teleesp;
-player setvariable["valor_zmbienoaggro",true,true];
+//player setvariable["valor_zmbienoaggro",true,true];
 
 
 

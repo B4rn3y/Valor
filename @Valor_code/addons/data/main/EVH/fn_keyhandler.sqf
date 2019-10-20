@@ -30,13 +30,14 @@ switch (true) do
 	{
 		[] call valor_fnc_opengroupmenu;
 	};
-	case 2:
+	case (_code isequalto 35):
 	{
-		if(currentWeapon player != "" && ((vehicle player) isEqualTo player)) then {
+		if(_shift && currentWeapon player != "") then {
 			player action ["SwitchWeapon", player, player, 100];
 			player switchcamera cameraView;
 		};
 	};
+
 
 	case (_code isEqualTo 219): // WINDOWS LEFT
 	{

@@ -33,8 +33,8 @@ link12[] = {12,13};
 link13[] = {13,14};
 link14[] = {14,15};
 link15[] = {15,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,93,6316128,1,-799.245789,271.676636,944.103394,-6.437561,685,608,1};
-window[] = {0,-1,-1,-1,-1,962,182,1428,182,1,703};
+globals[] = {0.000000,0,0,0,0,640,480,1,93,6316128,1,-625.785522,6.583435,748.549011,187.263794,685,608,1};
+window[] = {0,-1,-1,-1,-1,988,208,1454,208,1,703};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -324,7 +324,7 @@ class FSM
                          "		_h = (getposatl _crt) select 2;" \n
                          "		if(_h <= 2) exitwith {" \n
                          "			detach _crt;" \n
-                         "			[format[""The UN has dropped a supply crate at %1/%2"",(mapGridPosition _crt select [0,3]),(mapGridPosition _crt select [3,6])],true,20] remoteexec[""valor_fnc_exp_hint"",-2];" \n
+                         "			[format[""A supply crate was dropped at %1/%2"",(mapGridPosition _crt select [0,3]),(mapGridPosition _crt select [3,6])],true,20] remoteexec[""valor_fnc_exp_hint"",-2];" \n
                          "	      sleep 3;" \n
                          "         deletevehicle _par;" \n
                          "		};" \n

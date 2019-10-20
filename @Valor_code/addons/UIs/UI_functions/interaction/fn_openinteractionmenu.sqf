@@ -91,7 +91,7 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 
 	_btn_2 ctrlshow true;
 	_btn_2 ctrlsettext "Unflip";
-	_btn_2 buttonSetAction "closeDialog 0;_pos = getposatl OBJ_focused; OBJ_focused setposatl[_pos select 0, _pos select 1, (_pos select 2) + 1]; [OBJ_focused,[0,0,1]] remoteExecCall [""setVectorUp"",0];";
+	_btn_2 buttonSetAction "if(!isnil ""Valor_unflip_cooldown"") exitwith {[""You cant do that yet""] spawn valor_fnC_exp_hint};closeDialog 0;_pos = getposatl OBJ_focused; OBJ_focused setposatl[_pos select 0, _pos select 1, (_pos select 2) + 1]; [OBJ_focused,[0,0,1]] remoteExecCall [""setVectorUp"",0];0 spawn {Valor_unflip_cooldown = true; sleep 3; Valor_unflip_cooldown = nil;};";
 
 	_can_pull_out = if(count (crew OBJ_focused) > 0) then {{if(_x getVariable["valor_restrained",false]) exitWith {true}} foreach (crew OBJ_focused);} else {false};
 	if(_can_pull_out) then {

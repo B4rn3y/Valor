@@ -435,7 +435,9 @@ class Valor_settings {
 		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
 		LootPile_house_spawn_cooldown = 600; // cooldown for a house to spawn new loot in
 
-		Loot_Cyklus_time[] = {40,50,60}; // Time between every Lootspawn Cyklus - min 40s - max 60s
+		Loot_spawn_perc[] = {40,45,70}; //
+		Min_loot_slots = 4;             //
+		Loot_Cyklus_time[] = {30,35,40}; // Time between every Lootspawn Cyklus - min 40s - max 60s
 
 		Loot_log_items[] = {"CUP_srifle_M107_Base","CUP_srifle_AS50"}; // Items which spawn gets logged into the DB
 	};
@@ -1073,7 +1075,7 @@ class Houses_spawn_config
 	{
 		pos[]=
 			{
-				{-0.0693359,0.17627,-0.665107}
+				{-0.0693359,0.17627,-0.165107}
 			};
 	};
 
@@ -4943,8 +4945,8 @@ class Houses_spawn_config
 	{
 		pos[]=
 			{
-				{-0.065918,0.87793,-1.56067},
-				{1.5957,-1.73633,-1.56067}
+				{-0.065918,0.87793,-0.16067},
+				{1.5957,-1.73633,-0.16067}
 			};
 	};
 

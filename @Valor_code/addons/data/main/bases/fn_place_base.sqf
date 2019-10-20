@@ -1,4 +1,5 @@
-private ["_config_id","_item_used","_place","_exit","_needed_level","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role","_can_build","_str_text","_max_lvl","_objects","_d","_cur_objects","_all_objects_unique","_find_entry","_entry","_ret","_ix","_foreachindex","_objects_with_Data","_obj","_other_entries","_show_objects","_hide_objects","_stage","_classname","_pos_dependent","_dir_dependent","_vector_dependent","_object","_player_pos","_spawnpos","_place_id","_cancel_id","_build_objects","_cities","_can_be_placed","_min_distance_other_base","_min_distance_town","_nearestLocations","_cur_object","_other_obj","_var","_pos","_confirm_id","_replace_id","_arr_with_object_data"];
+private ["_config_id","_item_used","_place","_exit","_needed_level","_base_box_classname","_humanity_config","_humanity_border_B3","_humanity_border_B2","_humanity_border_B1","_humanity_border_SU","_humanity_border_H1","_humanity_border_H2","_humanity_border_H3","_role","_can_build","_str_text","_max_lvl","_objects","_d","_cur_objects","_all_objects_unique","_find_entry","_entry","_ret","_ix","_foreachindex","_objects_with_Data","_obj","_other_entries","_show_objects","_hide_objects","_stage","_classname","_pos_dependent","_dir_dependent","_vector_dependent","_object","_player_pos","_spawnpos","_vehicles_close","_vehicle","_place_id","_cancel_id","_build_objects","_cities","_can_be_placed","_min_distance_other_base","_min_distance_town","_nearestLocations","_cur_object","_other_obj","_var","_pos","_confirm_id","_replace_id","_arr_with_object_data"];
+
 
 
 _config_id = param[0,-1,[0]];
@@ -197,11 +198,11 @@ valor_all_base_objects append valor_objectarray_placed_hidden;
 _vehicles_close = nearestobjects[player,["Landvehicle","Air","Ship"],500];
 if!(_vehicles_close isEqualTo []) then {
 	{
-		_object = _x select 0;
+		_vehicle = _x;
 		{
-			_x disableCollisionWith _object;
-		} foreach _vehicles_close;
-	} foreach valor_all_base_objects;
+			(_x select 0) disableCollisionWith _vehicle;
+		} foreach valor_all_base_objects;
+	} foreach _vehicles_close;
 };
 
 

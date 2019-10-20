@@ -6,8 +6,8 @@ item1[] = {"alive_player",4,218,-210.157471,-857.060181,-120.157471,-807.060181,
 item2[] = {"_",2,250,-213.290955,-690.339539,-123.290947,-640.339539,0.000000,""};
 item3[] = {"time_for_thirst",4,218,-325.900879,-690.867737,-235.900879,-640.867737,0.000000,"time for" \n "thirst"};
 item4[] = {"time_for_hunger",4,218,-70.644775,-682.396362,19.355225,-632.396362,1.000000,"time for" \n "hunger"};
-item5[] = {"handle_hunger",2,4346,-72.553467,-859.068237,17.446548,-809.068237,0.000000,"handle hunger"};
-item6[] = {"handle_thirst",2,250,-326.631287,-853.342224,-236.631287,-803.342224,0.000000,"handle thirst"};
+item5[] = {"handle_hunger",2,250,-72.553467,-859.068237,17.446548,-809.068237,0.000000,"handle hunger"};
+item6[] = {"handle_thirst",2,4346,-326.631287,-853.342224,-236.631287,-803.342224,0.000000,"handle thirst"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
@@ -16,8 +16,8 @@ link4[] = {3,6};
 link5[] = {4,5};
 link6[] = {5,1};
 link7[] = {6,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,206,6316128,1,-592.403564,194.644958,-455.033569,-1022.530273,668,587,1};
-window[] = {0,-1,-1,-1,-1,811,52,1492,52,1,686};
+globals[] = {0.000000,0,0,0,0,640,480,1,206,6316128,1,-444.269104,112.447937,-582.941162,-1072.152100,668,587,1};
+window[] = {0,-1,-1,-1,-1,837,78,1518,78,1,686};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -96,7 +96,12 @@ class FSM
                 {
                         name = "handle_hunger";
                         itemno = 5;
-                        init = /*%FSM<STATEINIT""">*/"Valor_hunger = Valor_hunger - 1;" \n
+                        init = /*%FSM<STATEINIT""">*/"if(Valor_hunger > 0) then {" \n
+                         "	Valor_hunger = Valor_hunger - 1;" \n
+                         "	if(Valor_hunger isequalto 0) then {" \n
+                         "		[false] spawn valor_fnc_flash_survival_icons;" \n
+                         "	};" \n
+                         "};" \n
                          "_ticktime_hunger = diag_ticktime + (_waitTime_hunger * (missionnamespace getvariable[""Valor_skill_Ascetic"",1])) + floor(random(11));"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -120,7 +125,12 @@ class FSM
                 {
                         name = "handle_thirst";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"Valor_thirst = Valor_thirst - 1;" \n
+                        init = /*%FSM<STATEINIT""">*/"if(Valor_thirst > 0) then {" \n
+                         "	Valor_thirst = Valor_thirst - 1;" \n
+                         "	if(Valor_thirst isequalto 0) then {" \n
+                         "		[true] spawn valor_fnc_flash_survival_icons;" \n
+                         "	};" \n
+                         "};" \n
                          "_ticktime_thirst = diag_ticktime + (_waitTime_thirst * (missionnamespace getvariable[""Valor_skill_Ascetic"",1])) + floor(random(11));" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
