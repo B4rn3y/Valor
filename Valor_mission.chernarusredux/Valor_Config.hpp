@@ -455,16 +455,64 @@ class Valor_settings {
 		message[] =
 		{
 			{
-				"Test1",
-				"HERE GOES THE DESCRIPTION FOR Test1"
-			},
-			{
-				"PLACEHOLDER",
+				"---Info",
 				0
 			},
 			{
-				"TEST2",
-				"SOMETHING WITH TEST 2"
+				"Humanity",
+				{"format[""Players are able to gain humanity in order to build different kinds of bases and to unlock the bandit and hero trader.<br/>Humanity borders:<br/>Hero 3: %1<br/>Hero 2: %2<br/>Hero 1: %3<br/>Survivor: %4<br/>Bandit 1: %5<br/>Bandit 2: %6<br/>Bandit 3: %7<br/>Player get humanity for killing Zombies, Bandits, Rebells and other Monsters. You lose humanity by killing Heros and Survivors."",(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 6,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 5,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 4,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 3,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 2,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 1,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 0]"}
+			},
+			{
+				"Bases",
+				"Bases can be build by finding a blueprint and double clicking it. You must be either a hero or bandit to build a base though. There are 3 different basetypes for bandits and heroes, the level 1 hero base can only be build by a hero level 1 or higher, the level 2 hero base only by a hero 2 and so on...<br/>Bases need materials in order to be built, these materials can be collected by visiting the various outpost and sawmills/quarries(some outposts need to be build first). Use left Windowskey while watching at the base crate to open the settings of the base and manage the entry list of it. Bases can be opened and closed by using the U key near a door.<br/><br/>The Stronghold can only be build once per group, its blueprint can only be found at rebel camps and air drops."
+			},
+			{
+				"Outposts",
+				"Outposts need to be build in order to gather their resources. From the start outposts are just crates which need specific items in it to be build, when build the resource is for all people on the server availbe and can be collected at the outpost.<br/>Outposts can get attacked from zombie hordes from time to time, these horde attacks need to be defended in order to keep the outpost alive. If a outpost falls to the zombies it will be resetted after the next restart und needs to be build again."
+			},
+			{
+				"Survivor City",
+				"The Survivor City is the last outpost of humans against the zombies, no zombies nor loot spawns in the city. Vehicles can be locked in the city and survivors can visit and use the service of the traders to either buy or sell items/weapons/vehicles and so on...(The City is a RP zone, read rules below for more)"
+			},
+			{
+				"Vehicles",
+				"Vehicles can be found all over the map, they are damaged and need to be repaired with parts found in buildings. Vehicles in general are unlocked, in the Survivor City though the owner(the drive of the vehicle when entering the city) is able to lock the vehicle.<br/>The amount of vehicles is fix on the server, they are persistent and are constantly synced with the database. <br/>You can interact with vehicles using the left windowskey while watching at them."
+			},
+			{
+				"Classes",
+				{"format[""Classes can be unlocked in the Survivor city, you need to be a specific level before unlocking one of the 3 available slots:<br/>-Slot 1: %1<br/>-Slot 2: %2<br/>-Slot 3: %3<br/><br/>When you unlock a class, the new skills are automaticly added to your player."",(getArray(missionConfigFile >> ""Valor_settings"" >> ""classes"" >> ""classes_unlock_level"")) select 0,(getArray(missionConfigFile >> ""Valor_settings"" >> ""classes"" >> ""classes_unlock_level"")) select 1,(getArray(missionConfigFile >> ""Valor_settings"" >> ""classes"" >> ""classes_unlock_level"")) select 2]"}
+			},
+			{
+				"Skills",
+				"Skills unlock themselves when leveling and when selecting a class."
+			},
+			{
+				"Radiation Zones",
+				"The best loot can be found in these zones, while in the zone your radiation level will slowly increase and a new icon in the HUD gets displayed. When the icon is full the player will instantly die. When leaving the zones the radiation level slowly decreases."
+			},
+			{
+				"---Rules",
+				0
+			},
+			{
+				"General rules",
+				"We do not tolerate:<br/><br/>- any racial slurs or any kind of insults<br/>- advertising<br/>- trolling or any behaviour that spoils the gaming experience of others by using unwanted game-mechanics (e.g. bug-using)<br/>- bug-using / hacking / scripting / duping / or the like<br/><br/>Disregading the above will inevitably result in a ban."
+			},
+			{
+				"Survivor City",
+				"In general, there is no such thing as RDM (Random Deathmatch) or VDM (Vehicle Deathmatch) on this server, except for the survivor-zones (marked by wall and marker on map).<br/>The specific rules for that certain area are:<br/><br/>- Killing a player without any roleplay-background in a survivor area is not tolerated and will be punished at the supporters discretion.<br/>- Running over other players without any roleplay-background in a survivor area is not tolerated and will be punished at the supporters discretion.<br/>- Stealing other players in-game items or vehicles without any roleplay-background in a survivor area is not tolerated and will be punished at the supporters discretion."
+			},
+			{
+				"Roleplay",
+				"As roleplay is required in survivor areas to be an essential part of certain interactions with other players, we want to briefly define what these server rules understand of said roleplay. Roleplaying on the Valor-Servers forces the player to make sure that all of his interactions with other players have a reasonable and sophisticated background so that the specific character traits of each individual player are revealed in every roleplay situation. Therefor, it is mandatory to have a proper kind of communication between all parties involved in that situation to an extend where every party at least has the chance of reacting to the interactions of the opposing party verbally. Roleplay is not required outside of the survivor-areas since the main focus outside of these areas lies on survial-elements, however we recommend roleplaying your character anyway at any time so that you and your character can experience a proper character development much easier.<br/><br/>We always recommend to put enough effort in roleplaying within survivor-areas since it is a fine line between basic roleplaying and breaking the server rules. It is always at the supporters discretion to decide whether or not a player violated the roleplay-rules."
+			},
+			{
+				"Support",
+				"Feel free to talk to our supporters at any times. However, if you are looking for compensation of somehow lost in-game items or the like, you will have to obey the follwing rules:<br/><br/>- We will refund every in-game item you lost because of unwanted server/game-related reasons (bugs, lags, unexpected shutdowns, hackers, RDM, VDM, etc.)<br/>- Please note that we can only refund in-game items, if you have solid proof (e.g. video, convincing screenshot, etc.) of losing said items because of an above mentioned circumstance. We apologise for any inconvenience."
+			},
+			{
+				"General information",
+				"Please note that there are laws for the survivor zones. However, they are not considered to be server rules. Breaking these laws will therefor not result in a ban or something like that."
 			}
 		};
 	};
@@ -4945,8 +4993,8 @@ class Houses_spawn_config
 	{
 		pos[]=
 			{
-				{-0.065918,0.87793,-0.16067},
-				{1.5957,-1.73633,-0.16067}
+				{-0.065918,0.87793,-1.51067},
+				{1.5957,-1.73633,-1.51067}
 			};
 	};
 

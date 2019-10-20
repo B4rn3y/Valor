@@ -131,3 +131,6 @@ VALOR_INTRO = nil;
 
 
 
+player allowDamage true;
+
+
