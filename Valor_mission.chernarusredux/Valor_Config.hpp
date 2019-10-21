@@ -313,7 +313,7 @@ class Valor_settings {
 				"A Looter is better at gathering and harvesting ressources aswell as persuading the treaders.", // descritption of the class
 				{
 					{
-						{"Silver tongue","ST"}, // -
+						{"Silver tongue","ST"}, // +
 						{33,20,"Silver tongue Level 1","You get 2% better prices from the traders.",1.02},
 						{34,27,"Silver tongue Level 2","You get 4% better prices from the traders.",1.04},
 						{35,32,"Silver tongue Level 3","You get 6% better prices from the traders.",1.06},

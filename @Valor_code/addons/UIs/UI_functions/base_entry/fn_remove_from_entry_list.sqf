@@ -1,4 +1,5 @@
-private ["_display","_var","_entry_list","_listbox","_combo_players","_combo_group","_cur_sel","_data","_value","_number","_del_pos","_foreachindex"];
+private ["_display","_var","_entry_list","_owner","_listbox","_combo_players","_combo_group","_cur_sel","_data","_value","_number","_del_pos","_foreachindex"];
+
 
 
 
@@ -12,6 +13,7 @@ if(_var isEqualTo []) exitWith {};
 if!((count _var )>= 5) exitWith {};
 
 _entry_list = _var select 3;
+_owner = _var select 4;
 
 _listbox = _display displayCtrl 1500;
 _combo_players = _display displayCtrl 2100;
@@ -36,6 +38,7 @@ if(_data isEqualTo "") then {
 
 if(_number isEqualTo -1) exitWith {};
 if(_number isEqualTo (getplayeruid player)) exitWith {["You cant remove yourself"] spawn valor_fnc_exp_hint;};
+if(_number isEqualTo _owner) exitWith {["You cant remove the owner"] spawn valor_fnc_exp_hint;};
 
 _del_pos = -1;
 {

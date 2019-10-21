@@ -197,7 +197,7 @@ switch (_type) do
 };
 
 Valor_shop_sold_items append _items_sold;
-Valor_cash = Valor_cash  + _price;
+Valor_cash = Valor_cash  + round(_price * (missionNamespace getvariable["Valor_skill_ST",1]));
 [format["You sold items/an item for $%1",_price]] spawn valor_fnc_exp_hint;
 
 _tv tvDelete _selectionPath;
