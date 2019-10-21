@@ -118,6 +118,12 @@ class CfgFunctions
 			class changeOutpostStatus {};
 		};
 
+		class weather_system
+		{
+			file = "\data_server\main\weather";
+			class weather_module {ext = ".fsm";};
+		};
+
 		class HC
 		{
 			file = "\data_server\main\HC";

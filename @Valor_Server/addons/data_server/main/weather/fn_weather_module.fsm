@@ -1,0 +1,1621 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_time_module">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
+item1[] = {"its_not_ok",4,218,-561.166199,-1003.878174,-471.166199,-953.878174,0.000000,"its not ok"};
+item2[] = {"init_vars",2,250,-371.871765,-813.121704,-281.871765,-763.121643,0.000000,"init vars"};
+item3[] = {"array_ok",4,218,-376.871704,-926.983582,-286.871704,-876.983582,0.000000,"array ok"};
+item4[] = {"END",1,250,-714.813049,-1011.915771,-624.812927,-961.915833,0.000000,"END"};
+item5[] = {"wait",4,218,-369.460083,-725.097534,-279.460083,-675.097534,0.000000,"wait"};
+item6[] = {"select_weather",2,250,-369.459900,-599.766113,-279.459900,-549.766113,0.000000,"select weather"};
+item7[] = {"Heavy_Fog",4,218,-17.573029,-408.135590,72.426971,-358.135529,0.000000,"Heavy Fog"};
+item8[] = {"Light_Fog",4,218,-372.187927,-414.695221,-282.187927,-364.695251,0.000000,"Light" \n "Fog"};
+item9[] = {"Thunderstorm",4,218,1157.205200,-400.382385,1247.205200,-350.382324,0.000000,"Thunderstorm"};
+item10[] = {"Cloudy",4,218,417.281677,-406.764282,507.281677,-356.764313,0.000000,"Cloudy"};
+item11[] = {"Heavy_Rain",4,218,-1617.676270,-439.387024,-1527.676025,-389.386963,0.000000,"Heavy" \n "Rain"};
+item12[] = {"",7,210,-331.157135,-461.104248,-323.157196,-453.104248,0.000000,""};
+item13[] = {"Sunny",4,218,-756.007568,-407.216919,-666.007629,-357.216858,0.000000,"Sunny"};
+item14[] = {"Light_Rain",4,218,-1127.918213,-418.502930,-1037.918091,-368.502960,0.000000,"Light" \n "Rain"};
+item15[] = {"",7,210,1198.844482,-448.493469,1206.844604,-440.493469,0.000000,""};
+item16[] = {"",7,210,457.369873,-450.325043,465.369873,-442.325043,0.000000,""};
+item17[] = {"",7,210,23.027161,-455.953430,31.027161,-447.953430,0.000000,""};
+item18[] = {"",7,210,-1575.291748,-474.002502,-1567.291748,-466.002502,0.000000,""};
+item19[] = {"",7,210,-1088.864868,-465.519714,-1080.864868,-457.519714,0.000000,""};
+item20[] = {"",7,210,-717.935303,-462.727570,-709.935303,-454.727570,0.000000,""};
+item21[] = {"set_weather",2,250,-1615.758301,-343.557526,-1525.758301,-293.557556,0.000000,"set weather"};
+item22[] = {"w8",4,218,-1618.329102,-252.934998,-1528.328857,-202.934967,0.000000,"w8"};
+item23[] = {"set_rain",2,250,-1621.769287,-162.101257,-1531.769043,-112.101257,0.000000,"set rain"};
+item24[] = {"set_weather_1",2,250,-1125.731201,-304.485840,-1035.731323,-254.485870,0.000000,"set weather"};
+item25[] = {"w8",4,218,-1123.544922,-214.850281,-1033.545044,-164.850281,0.000000,"w8"};
+item26[] = {"set_rain_1",2,250,-1126.824219,-126.307953,-1036.824341,-76.307953,0.000000,"set rain"};
+item27[] = {"w8",4,218,-1618.329102,-77.200760,-1528.329102,-27.200745,0.000000,"w8"};
+item28[] = {"nil",2,250,-1616.413086,84.294029,-1526.412842,134.294037,0.000000,"nil"};
+item29[] = {"check_overcast",4,218,-1724.099365,219.111389,-1634.099365,269.111389,0.000000,"check" \n "overcast"};
+item30[] = {"set_overcast",2,250,-1848.797241,174.021057,-1758.797485,224.021057,0.000000,"set overcast"};
+item31[] = {"true",4,218,-1762.099365,112.396606,-1672.099365,162.396606,0.000000,"true"};
+item32[] = {"check_rain",4,218,-1764.588623,17.994381,-1674.588623,67.994385,0.000000,"check" \n "rain"};
+item33[] = {"set_rain_2",2,250,-1847.787598,65.150391,-1757.787598,115.150391,0.000000,"set rain"};
+item34[] = {"time_over",4,218,-1615.678711,298.863922,-1525.678467,348.863922,0.000000,"time over"};
+item35[] = {"w8",4,218,-1125.208252,-35.626801,-1035.208374,14.373230,0.000000,"w8"};
+item36[] = {"nil_1",2,250,-1123.292480,125.868011,-1033.292358,175.868011,0.000000,"nil"};
+item37[] = {"check_overcast",4,218,-1230.978760,260.685364,-1140.978638,310.685364,0.000000,"check" \n "overcast"};
+item38[] = {"set_overcast_1",2,250,-1316.428467,194.855042,-1226.428223,244.855042,0.000000,"set overcast"};
+item39[] = {"true",4,218,-1235.115479,127.401817,-1145.115601,177.401825,0.000000,"true"};
+item40[] = {"check_rain",4,218,-1233.981689,37.830444,-1143.981812,87.830444,0.000000,"check" \n "rain"};
+item41[] = {"set_rain_3",2,250,-1340.303955,70.493042,-1250.303711,120.493042,0.000000,"set rain"};
+item42[] = {"time_over",4,218,-1122.558105,340.437897,-1032.557983,390.437897,0.000000,"time over"};
+item43[] = {"set_weather_2",2,250,-756.653137,-329.844757,-666.653320,-279.844849,0.000000,"set weather"};
+item44[] = {"w8",4,218,-754.466980,-240.209229,-664.467102,-190.209229,0.000000,"w8"};
+item45[] = {"set_rain_4",2,250,-757.746277,-151.666901,-667.746460,-101.666901,0.000000,"set rain"};
+item46[] = {"w8",4,218,-756.130371,-60.985748,-666.130493,-10.985718,0.000000,"w8"};
+item47[] = {"nil_2",2,250,-754.214417,100.509064,-664.214417,150.509064,0.000000,"nil"};
+item48[] = {"check_overcast",4,218,-861.900635,235.326416,-771.900635,285.326416,0.000000,"check" \n "overcast"};
+item49[] = {"set_overcast_2",2,250,-947.350342,169.496094,-857.350342,219.496094,0.000000,"set overcast"};
+item50[] = {"true",4,218,-866.037354,102.042877,-776.037476,152.042877,0.000000,"true"};
+item51[] = {"check_rain",4,218,-864.903687,12.471497,-774.903625,62.471497,0.000000,"check" \n "rain"};
+item52[] = {"set_rain_5",2,250,-971.225830,45.134094,-881.225769,95.134094,0.000000,"set rain"};
+item53[] = {"time_over",4,218,-753.480103,315.078949,-663.480042,365.078949,0.000000,"time over"};
+item54[] = {"set_weather_3",2,250,-373.022705,-346.993958,-283.022888,-296.994080,0.000000,"set weather"};
+item55[] = {"w8",4,218,-370.836548,-257.358459,-280.836670,-207.358459,0.000000,"w8"};
+item56[] = {"set_fog",2,250,-374.115845,-168.816101,-284.116028,-118.816162,0.000000,"set fog"};
+item57[] = {"w8",4,218,-372.499939,-78.135010,-282.500061,-28.134949,0.000000,"w8"};
+item58[] = {"nil_3",2,250,-370.583984,83.359833,-280.583984,133.359833,0.000000,"nil"};
+item59[] = {"check_overcast",4,218,-478.270203,218.177185,-388.270203,268.177185,0.000000,"check" \n "overcast"};
+item60[] = {"set_overcast_3",2,250,-580.459351,168.026245,-490.459290,218.026245,0.000000,"set overcast"};
+item61[] = {"true",4,218,-482.406921,84.893646,-392.407043,134.893646,0.000000,"true"};
+item62[] = {"check_fog",4,218,-481.273254,-4.677734,-391.273193,45.322266,0.000000,"check" \n "fog"};
+item63[] = {"set_fog_1",2,250,-579.508911,39.744446,-489.509003,89.744446,0.000000,"set fog"};
+item64[] = {"time_over",4,218,-369.849670,297.929718,-279.849609,347.929718,0.000000,"time over"};
+item65[] = {"set_weather_4",2,250,-17.657410,-335.623108,72.342407,-285.623230,0.000000,"set weather"};
+item66[] = {"w8",4,218,-15.471252,-245.987610,74.528625,-195.987610,0.000000,"w8"};
+item67[] = {"set_fog_2",2,250,-18.750549,-157.445251,71.249268,-107.445313,0.000000,"set fog"};
+item68[] = {"w8",4,218,-17.134644,-66.764160,72.865234,-16.764099,0.000000,"w8"};
+item69[] = {"nil_4",2,250,-15.218689,94.730682,74.781311,144.730682,0.000000,"nil"};
+item70[] = {"check_overcast",4,218,-122.904907,229.548035,-32.904907,279.548035,0.000000,"check" \n "overcast"};
+item71[] = {"set_overcast_4",2,250,-225.094055,179.397095,-135.093994,229.397095,0.000000,"set overcast"};
+item72[] = {"true",4,218,-127.041634,96.264496,-37.041748,146.264496,0.000000,"true"};
+item73[] = {"check_fog",4,218,-125.907959,6.693115,-35.907898,56.693115,0.000000,"check" \n "fog"};
+item74[] = {"set_fog_3",2,250,-224.143616,51.115295,-134.143707,101.115303,0.000000,"set fog"};
+item75[] = {"",7,210,-1975.983887,-594.512390,-1967.984009,-586.512390,0.000000,""};
+item76[] = {"set_weather_5",2,250,409.099182,-335.624878,499.098999,-285.625000,0.000000,"set weather"};
+item77[] = {"w8",4,218,411.285339,-245.989380,501.285217,-195.989380,0.000000,"w8"};
+item78[] = {"set_fog_4",2,4346,408.006042,-157.447021,498.005859,-107.447083,0.000000,"set fog"};
+item79[] = {"w8",4,218,409.621948,-66.765930,499.621826,-16.765869,0.000000,"w8"};
+item80[] = {"nil_5",2,250,411.537903,94.728912,501.537903,144.728912,0.000000,"nil"};
+item81[] = {"check_overcast",4,218,303.851685,229.546265,393.851685,279.546265,0.000000,"check" \n "overcast"};
+item82[] = {"set_overcast_5",2,250,201.662537,179.395325,291.662598,229.395325,0.000000,"set overcast"};
+item83[] = {"true",4,218,299.714966,96.262726,389.714844,146.262726,0.000000,"true"};
+item84[] = {"check_fog",4,218,300.848633,6.691345,390.848694,56.691345,0.000000,"check" \n "fog"};
+item85[] = {"set_fog_5",2,250,202.612976,51.113525,292.612885,101.113533,0.000000,"set fog"};
+item86[] = {"time_over",4,218,412.272217,309.298798,502.272278,359.298798,0.000000,"time over"};
+item87[] = {"check_rain",4,218,522.879150,16.643616,612.879150,66.643616,0.000000,"check" \n "rain"};
+item88[] = {"set_rain_6",2,250,624.638428,78.939240,714.638428,128.939240,0.000000,"set rain"};
+item89[] = {"true",4,218,532.531189,136.245789,622.531189,186.245789,0.000000,"true"};
+item90[] = {"set_weather_6",2,250,1157.857178,-324.279480,1247.856934,-274.279602,0.000000,"set weather"};
+item91[] = {"w8",4,218,1160.043335,-234.643982,1250.043213,-184.643982,0.000000,"w8"};
+item92[] = {"set_fog_6",2,250,1156.764038,-146.101624,1246.763916,-96.101685,0.000000,"set fog"};
+item93[] = {"w8",4,218,1158.379883,-55.420532,1248.379883,-5.420471,0.000000,"w8"};
+item94[] = {"nil_6",2,250,1160.295898,106.074310,1250.295898,156.074310,0.000000,"nil"};
+item95[] = {"set_overcast_6",2,250,950.420532,190.740723,1040.420654,240.740723,0.000000,"set overcast"};
+item96[] = {"true",4,218,1048.472900,107.608124,1138.472900,157.608124,0.000000,"true"};
+item97[] = {"check_fog",4,218,1049.606689,18.036743,1139.606689,68.036743,0.000000,"check" \n "fog"};
+item98[] = {"set_fog_7",2,250,951.370972,62.458923,1041.370850,112.458923,0.000000,"set fog"};
+item99[] = {"time_over",4,218,1161.030273,320.644226,1251.030273,370.644226,0.000000,"time over"};
+item100[] = {"check_rain",4,218,1271.637207,27.989014,1361.637207,77.989014,0.000000,"check" \n "rain"};
+item101[] = {"set_rain_7",2,250,1373.396484,90.284637,1463.396484,140.284637,0.000000,"set rain"};
+item102[] = {"true",4,218,1272.996704,123.898621,1362.996704,173.898621,0.000000,"true"};
+item103[] = {"check_lightnigns",4,218,1274.870117,246.885742,1364.870117,296.885742,0.000000,"check" \n "lightnigns"};
+item104[] = {"set_lightnings",2,250,1393.333130,193.577454,1483.333130,243.577454,0.000000,"set lightnings"};
+item105[] = {"_",2,250,-369.131866,678.025330,-279.131836,728.025330,0.000000,""};
+item106[] = {"time_over",4,218,-11.104492,294.178131,78.895569,344.178131,0.000000,"time over"};
+item107[] = {"",7,210,-1970.994141,690.115601,-1962.994141,698.115540,0.000000,""};
+item108[] = {"true",4,218,-523.669434,-600.785950,-433.669373,-550.785950,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,4};
+link3[] = {2,5};
+link4[] = {3,2};
+link5[] = {5,6};
+link6[] = {6,12};
+link7[] = {7,65};
+link8[] = {8,54};
+link9[] = {9,90};
+link10[] = {10,76};
+link11[] = {11,21};
+link12[] = {12,8};
+link13[] = {12,17};
+link14[] = {12,20};
+link15[] = {13,43};
+link16[] = {14,24};
+link17[] = {15,9};
+link18[] = {16,10};
+link19[] = {16,15};
+link20[] = {17,7};
+link21[] = {17,16};
+link22[] = {18,11};
+link23[] = {19,14};
+link24[] = {19,18};
+link25[] = {20,13};
+link26[] = {20,19};
+link27[] = {21,22};
+link28[] = {22,23};
+link29[] = {23,27};
+link30[] = {24,25};
+link31[] = {25,26};
+link32[] = {26,35};
+link33[] = {27,28};
+link34[] = {28,29};
+link35[] = {28,32};
+link36[] = {28,34};
+link37[] = {29,30};
+link38[] = {30,31};
+link39[] = {31,28};
+link40[] = {32,33};
+link41[] = {33,31};
+link42[] = {34,105};
+link43[] = {35,36};
+link44[] = {36,37};
+link45[] = {36,40};
+link46[] = {36,42};
+link47[] = {37,38};
+link48[] = {38,39};
+link49[] = {39,36};
+link50[] = {40,41};
+link51[] = {41,39};
+link52[] = {42,105};
+link53[] = {43,44};
+link54[] = {44,45};
+link55[] = {45,46};
+link56[] = {46,47};
+link57[] = {47,48};
+link58[] = {47,51};
+link59[] = {47,53};
+link60[] = {48,49};
+link61[] = {49,50};
+link62[] = {50,47};
+link63[] = {51,52};
+link64[] = {52,50};
+link65[] = {53,105};
+link66[] = {54,55};
+link67[] = {55,56};
+link68[] = {56,57};
+link69[] = {57,58};
+link70[] = {58,59};
+link71[] = {58,62};
+link72[] = {58,64};
+link73[] = {59,60};
+link74[] = {60,61};
+link75[] = {61,58};
+link76[] = {62,63};
+link77[] = {63,61};
+link78[] = {64,105};
+link79[] = {65,66};
+link80[] = {66,67};
+link81[] = {67,68};
+link82[] = {68,69};
+link83[] = {69,70};
+link84[] = {69,73};
+link85[] = {69,106};
+link86[] = {70,71};
+link87[] = {71,72};
+link88[] = {72,69};
+link89[] = {73,74};
+link90[] = {74,72};
+link91[] = {75,108};
+link92[] = {76,77};
+link93[] = {77,78};
+link94[] = {78,79};
+link95[] = {79,80};
+link96[] = {80,81};
+link97[] = {80,84};
+link98[] = {80,86};
+link99[] = {80,87};
+link100[] = {81,82};
+link101[] = {82,83};
+link102[] = {83,80};
+link103[] = {84,85};
+link104[] = {85,83};
+link105[] = {86,105};
+link106[] = {87,88};
+link107[] = {88,89};
+link108[] = {89,80};
+link109[] = {90,91};
+link110[] = {91,92};
+link111[] = {92,93};
+link112[] = {93,94};
+link113[] = {94,97};
+link114[] = {94,99};
+link115[] = {94,100};
+link116[] = {94,103};
+link117[] = {95,96};
+link118[] = {96,94};
+link119[] = {97,98};
+link120[] = {98,96};
+link121[] = {99,105};
+link122[] = {100,101};
+link123[] = {101,102};
+link124[] = {102,94};
+link125[] = {103,104};
+link126[] = {104,102};
+link127[] = {105,107};
+link128[] = {106,105};
+link129[] = {107,75};
+link130[] = {108,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,348,6316128,1,-640.532837,761.126221,344.817932,-849.338684,689,587,1};
+window[] = {0,-1,-1,-32000,-32000,993,234,1674,234,1,707};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_time_module";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_weather_arr = param[0,[],[[]]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "array_ok">*/
+                                class array_ok
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="init_vars";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_weather_arr isequalto [])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "its_not_ok">*/
+                                class its_not_ok
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather_arr isequalto []"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "init_vars">*/
+                class init_vars
+                {
+                        name = "init_vars";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_max_weather_int = 0;" \n
+                         "_new_weather_arr = [];" \n
+                         "{" \n
+                         "	_new_weather_arr pushback [_x select 0,_max_weather_int,(_max_weather_int + (_x select 1)),_x select 2];" \n
+                         "	_max_weather_int = _max_weather_int + (_x select 1);" \n
+                         "} foreach _weather_arr;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait">*/
+                                class wait
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="select_weather";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"servertime > 10"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "select_weather">*/
+                class select_weather
+                {
+                        name = "select_weather";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_rnd = random _max_weather_int;" \n
+                         "_weather_sel = [];" \n
+                         "{" \n
+                         "	_min = _x select 1;" \n
+                         "	_max = _x select 2;" \n
+                         "	if(_rnd >= _min &&  _rnd < _max) exitWith {_weather_sel = _x;};" \n
+                         "} foreach _new_weather_arr;" \n
+                         "" \n
+                         "_weather = _weather_sel select 0;" \n
+                         "_duration = random(_weather_sel select 3);" \n
+                         "_end_time = diag_ticktime + _duration;" \n
+                         "" \n
+                         "diag_log format[""Valor Weather: %1"",_weather];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Heavy_Fog">*/
+                                class Heavy_Fog
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="set_weather_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Heavy_fog"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Cloudy">*/
+                                class Cloudy
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="set_weather_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Cloudy"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Thunderstorm">*/
+                                class Thunderstorm
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="set_weather_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Thunderstorm"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Sunny">*/
+                                class Sunny
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="set_weather_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Sunny"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Light_Rain">*/
+                                class Light_Rain
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="set_weather_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Light_Rain"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Heavy_Rain">*/
+                                class Heavy_Rain
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="set_weather";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Heavy_Rain"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Light_Fog">*/
+                                class Light_Fog
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="set_weather_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_weather isequalto ""Light_fog"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather">*/
+                class set_weather
+                {
+                        name = "set_weather";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 22;
+                                        priority = 0.000000;
+                                        to="set_rain";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain">*/
+                class set_rain
+                {
+                        name = "set_rain";
+                        itemno = 23;
+                        init = /*%FSM<STATEINIT""">*/"_rainvalue = random [0.7,0.8,1];" \n
+                         "60 setrain _rainvalue;" \n
+                         "60 setfog 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 27;
+                                        priority = 0.000000;
+                                        to="nil";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_1">*/
+                class set_weather_1
+                {
+                        name = "set_weather_1";
+                        itemno = 24;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 25;
+                                        priority = 0.000000;
+                                        to="set_rain_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_1">*/
+                class set_rain_1
+                {
+                        name = "set_rain_1";
+                        itemno = 26;
+                        init = /*%FSM<STATEINIT""">*/"_rainvalue = random [0.1,0.3,0.5];" \n
+                         "60 setrain _rainvalue;" \n
+                         "60 setfog 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 35;
+                                        priority = 0.000000;
+                                        to="nil_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil">*/
+                class nil
+                {
+                        name = "nil";
+                        itemno = 28;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_rain">*/
+                                class check_rain
+                                {
+                                        itemno = 32;
+                                        priority = 0.000000;
+                                        to="set_rain_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_rain) && (rain < (_rainvalue -0.1))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 34;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="set_overcast";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast < 0.7)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast">*/
+                class set_overcast
+                {
+                        name = "set_overcast";
+                        itemno = 30;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="nil";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_2">*/
+                class set_rain_2
+                {
+                        name = "set_rain_2";
+                        itemno = 33;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain _rainvalue;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="nil";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_1">*/
+                class nil_1
+                {
+                        name = "nil_1";
+                        itemno = 36;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_rain">*/
+                                class check_rain
+                                {
+                                        itemno = 40;
+                                        priority = 0.000000;
+                                        to="set_rain_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_rain) && (rain < (_rainvalue -0.1))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 42;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="set_overcast_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast < 0.7)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_1">*/
+                class set_overcast_1
+                {
+                        name = "set_overcast_1";
+                        itemno = 38;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 39;
+                                        priority = 0.000000;
+                                        to="nil_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_3">*/
+                class set_rain_3
+                {
+                        name = "set_rain_3";
+                        itemno = 41;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain _rainvalue;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 39;
+                                        priority = 0.000000;
+                                        to="nil_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_2">*/
+                class set_weather_2
+                {
+                        name = "set_weather_2";
+                        itemno = 43;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 44;
+                                        priority = 0.000000;
+                                        to="set_rain_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_4">*/
+                class set_rain_4
+                {
+                        name = "set_rain_4";
+                        itemno = 45;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "60 setfog 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 46;
+                                        priority = 0.000000;
+                                        to="nil_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_2">*/
+                class nil_2
+                {
+                        name = "nil_2";
+                        itemno = 47;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_rain">*/
+                                class check_rain
+                                {
+                                        itemno = 51;
+                                        priority = 0.000000;
+                                        to="set_rain_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_rain) && (rain > 0)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 53;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 48;
+                                        priority = 0.000000;
+                                        to="set_overcast_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast > 0)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_2">*/
+                class set_overcast_2
+                {
+                        name = "set_overcast_2";
+                        itemno = 49;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 50;
+                                        priority = 0.000000;
+                                        to="nil_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_5">*/
+                class set_rain_5
+                {
+                        name = "set_rain_5";
+                        itemno = 52;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "_checktime_rain = diag_ticktime + 80;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 50;
+                                        priority = 0.000000;
+                                        to="nil_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_3">*/
+                class set_weather_3
+                {
+                        name = "set_weather_3";
+                        itemno = 54;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.3;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="set_fog";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog">*/
+                class set_fog
+                {
+                        name = "set_fog";
+                        itemno = 56;
+                        init = /*%FSM<STATEINIT""">*/"_fogvalue = random [0.3,0.4,0.5];" \n
+                         "60 setfog _fogvalue;" \n
+                         "60 setrain 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 57;
+                                        priority = 0.000000;
+                                        to="nil_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_3">*/
+                class nil_3
+                {
+                        name = "nil_3";
+                        itemno = 58;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_fog">*/
+                                class check_fog
+                                {
+                                        itemno = 62;
+                                        priority = 0.000000;
+                                        to="set_fog_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_fog) && (fog < (_fogvalue -0.1))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 64;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 59;
+                                        priority = 0.000000;
+                                        to="set_overcast_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast < 0.25)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_3">*/
+                class set_overcast_3
+                {
+                        name = "set_overcast_3";
+                        itemno = 60;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.3;" \n
+                         "60 setrain 0;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 61;
+                                        priority = 0.000000;
+                                        to="nil_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_1">*/
+                class set_fog_1
+                {
+                        name = "set_fog_1";
+                        itemno = 63;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "60 setfog _fogvalue;" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 61;
+                                        priority = 0.000000;
+                                        to="nil_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_4">*/
+                class set_weather_4
+                {
+                        name = "set_weather_4";
+                        itemno = 65;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.5;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 66;
+                                        priority = 0.000000;
+                                        to="set_fog_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_2">*/
+                class set_fog_2
+                {
+                        name = "set_fog_2";
+                        itemno = 67;
+                        init = /*%FSM<STATEINIT""">*/"_fogvalue = random [0.6,0.7,1];" \n
+                         "60 setfog _fogvalue;" \n
+                         "60 setrain 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="nil_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_4">*/
+                class nil_4
+                {
+                        name = "nil_4";
+                        itemno = 69;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_fog">*/
+                                class check_fog
+                                {
+                                        itemno = 73;
+                                        priority = 0.000000;
+                                        to="set_fog_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_fog) && (fog < (_fogvalue -0.1))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 106;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 70;
+                                        priority = 0.000000;
+                                        to="set_overcast_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast < 0.4)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_4">*/
+                class set_overcast_4
+                {
+                        name = "set_overcast_4";
+                        itemno = 71;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.5;" \n
+                         "60 setrain 0;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 72;
+                                        priority = 0.000000;
+                                        to="nil_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_3">*/
+                class set_fog_3
+                {
+                        name = "set_fog_3";
+                        itemno = 74;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "60 setfog _fogvalue;" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 72;
+                                        priority = 0.000000;
+                                        to="nil_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_5">*/
+                class set_weather_5
+                {
+                        name = "set_weather_5";
+                        itemno = 76;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.5;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 77;
+                                        priority = 0.000000;
+                                        to="set_fog_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_4">*/
+                class set_fog_4
+                {
+                        name = "set_fog_4";
+                        itemno = 78;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "60 setfog 0;" \n
+                         "60 setrain 0;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;" \n
+                         "_checktime_rain = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 79;
+                                        priority = 0.000000;
+                                        to="nil_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_5">*/
+                class nil_5
+                {
+                        name = "nil_5";
+                        itemno = 80;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_fog">*/
+                                class check_fog
+                                {
+                                        itemno = 84;
+                                        priority = 0.000000;
+                                        to="set_fog_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_fog) && (fog > 0.1)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 86;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_rain">*/
+                                class check_rain
+                                {
+                                        itemno = 87;
+                                        priority = 0.000000;
+                                        to="set_rain_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_rain) && (rain > 0)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_overcast">*/
+                                class check_overcast
+                                {
+                                        itemno = 81;
+                                        priority = 0.000000;
+                                        to="set_overcast_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_overcast) && (overcast < 0.4)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_5">*/
+                class set_overcast_5
+                {
+                        name = "set_overcast_5";
+                        itemno = 82;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 0.5;" \n
+                         "60 setrain 0;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 83;
+                                        priority = 0.000000;
+                                        to="nil_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_5">*/
+                class set_fog_5
+                {
+                        name = "set_fog_5";
+                        itemno = 85;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "60 setfog 0;" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 83;
+                                        priority = 0.000000;
+                                        to="nil_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_6">*/
+                class set_rain_6
+                {
+                        name = "set_rain_6";
+                        itemno = 88;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 0;" \n
+                         "_checktime_rain = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 89;
+                                        priority = 0.000000;
+                                        to="nil_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_weather_6">*/
+                class set_weather_6
+                {
+                        name = "set_weather_6";
+                        itemno = 90;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "_time = diag_ticktime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 91;
+                                        priority = 0.000000;
+                                        to="set_fog_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_6">*/
+                class set_fog_6
+                {
+                        name = "set_fog_6";
+                        itemno = 92;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "60 setfog 0;" \n
+                         "60 setrain 1;" \n
+                         "60 setlightnings 1;" \n
+                         "_time = diag_ticktime;" \n
+                         "" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         "_checktime_overcast = diag_ticktime + 80;" \n
+                         "_checktime_rain = diag_ticktime + 80;" \n
+                         "_checktime_lightnings  = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 93;
+                                        priority = 0.000000;
+                                        to="nil_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > (_time + 60)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nil_6">*/
+                class nil_6
+                {
+                        name = "nil_6";
+                        itemno = 94;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "time_over">*/
+                                class time_over
+                                {
+                                        itemno = 99;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_rain">*/
+                                class check_rain
+                                {
+                                        itemno = 100;
+                                        priority = 0.000000;
+                                        to="set_rain_7";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_rain) && (rain < 0.9 )"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_lightnigns">*/
+                                class check_lightnigns
+                                {
+                                        itemno = 103;
+                                        priority = 0.000000;
+                                        to="set_lightnings";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_lightnings) && (Lightnings < 0.9 )"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "check_fog">*/
+                                class check_fog
+                                {
+                                        itemno = 97;
+                                        priority = 0.000000;
+                                        to="set_fog_7";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(diag_ticktime > _checktime_fog) && (fog > 0.1)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_overcast_6">*/
+                class set_overcast_6
+                {
+                        name = "set_overcast_6";
+                        itemno = 95;
+                        init = /*%FSM<STATEINIT""">*/"60 setovercast 1;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_checktime_overcast = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 96;
+                                        priority = 0.000000;
+                                        to="nil_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_fog_7">*/
+                class set_fog_7
+                {
+                        name = "set_fog_7";
+                        itemno = 98;
+                        init = /*%FSM<STATEINIT""">*/"60 setfog 0;" \n
+                         "" \n
+                         "_checktime_fog = diag_ticktime + 80;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 96;
+                                        priority = 0.000000;
+                                        to="nil_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_rain_7">*/
+                class set_rain_7
+                {
+                        name = "set_rain_7";
+                        itemno = 101;
+                        init = /*%FSM<STATEINIT""">*/"60 setrain 1;" \n
+                         "_checktime_rain = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 102;
+                                        priority = 0.000000;
+                                        to="nil_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_lightnings">*/
+                class set_lightnings
+                {
+                        name = "set_lightnings";
+                        itemno = 104;
+                        init = /*%FSM<STATEINIT""">*/"60 setlightnings 1;" \n
+                         "_checktime_lightnings = diag_ticktime + 80;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 102;
+                                        priority = 0.000000;
+                                        to="nil_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "_">*/
+                class _
+                {
+                        name = "_";
+                        itemno = 105;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 108;
+                                        priority = 0.000000;
+                                        to="select_weather";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "END",
+        };
+};
+/*%FSM</COMPILE>*/

@@ -32,7 +32,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 
 _this_layout = _layout_id + 1;
 
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
 _new_box = [];
 _box = objNull;
@@ -68,7 +68,7 @@ for "_d" from _this_layout to _max_lvl do {
 		_object setVectorUp _vec;
 		_object setvariable["valor_base_ids",[_base_id,_config_id,_this_layout],true];
 
-		if(_classname isEqualTo _base_box_classname) then {
+		if(_classname in _base_box_classname) then {
 			_new_box = _x;
 			[_object] call valor_fnc_clear_vehicle;
 			_box = _object;

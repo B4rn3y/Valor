@@ -209,6 +209,7 @@ class CfgFunctions
 			class zombie_horde_damage_display {};
 			class exp_hint {};
 			class flash_survival_icons {};
+			class fadeSound {};
 		};
 
 		class bases

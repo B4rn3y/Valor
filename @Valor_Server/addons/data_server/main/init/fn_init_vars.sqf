@@ -19,6 +19,13 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 			save_object setvariable["cop_bank",_varvalue,true];
 		};
 
+
+		case "weather":
+		{
+			[_varvalue] spawn valor_fnc_weather_module;
+		};
+
+
 		default
 		{
 			call compile format["%1=%2;",_varname,_varvalue];

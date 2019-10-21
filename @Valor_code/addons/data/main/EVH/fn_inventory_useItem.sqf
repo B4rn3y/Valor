@@ -42,7 +42,7 @@ switch (_place) do
 	};
 };
 
-systemChat _classname;
+//systemChat _classname;
 
 
 _food_item_info = getArray(missionConfigFile >> "Valor_settings" >> "food_items" >> _classname);
@@ -230,6 +230,16 @@ switch (_classname) do
 	case "valor_blueprint7": // Big Fortress
 	{
 		[7,_classname,_place] spawn valor_fnc_place_Base;
+	};
+
+	case "valor_blueprint8": // Wall entrance
+	{
+		[8] spawn valor_fnc_place_wall;
+	};
+
+	case "valor_blueprint9": // Wall
+	{
+		[9] spawn valor_fnc_place_wall;
 	};
 
 };

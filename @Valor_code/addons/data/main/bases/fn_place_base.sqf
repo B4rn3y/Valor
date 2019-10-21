@@ -22,7 +22,7 @@ Valor_base_place_Y = 0;
 
 _needed_level = ([_config_id,0] call valor_fnc_base_config) select 3;
 
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
 _humanity_config = getArray(missionConfigFile >> "Valor_settings" >> "humanity" >> "humanity_config");
 

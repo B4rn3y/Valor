@@ -24,6 +24,8 @@ showHud false;
 	0 call valor_fnc_openLoadingScreen;
 
 	[1] spawn valor_fnc_mainInit;
+
+	player addRating 9999999;
 };
 
 

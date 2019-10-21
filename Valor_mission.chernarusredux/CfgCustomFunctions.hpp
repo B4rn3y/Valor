@@ -7,6 +7,7 @@ class CfgFunctions
 		{
 			file = "Custom_functions";
 			class teleesp {};
+			class briefing {};
 		};
 	};
 };

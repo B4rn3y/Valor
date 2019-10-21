@@ -128,11 +128,11 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 };
 
 
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
-switch (_classname) do
+switch (true) do
 {
-	case _base_box_classname:
+	case (_classname in _base_box_classname):
 	{
 		switch (playerside) do
 		{

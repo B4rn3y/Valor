@@ -37,8 +37,8 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 
 };
 
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
-if!(typeof _container isEqualTo _base_box_classname) exitWith {};
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
+if!(typeof _container in _base_box_classname) exitWith {};
 
 // cop crate
 _var = nil;

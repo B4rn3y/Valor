@@ -1,5 +1,5 @@
+private ["_box","_update","_var","_entry_list","_owner","_display","_listbox","_combo_players","_combo_group","_entry_players","_entry_groups","_id_entry","_active_groups","_id_group"];
 
-private ["_box","_var","_entry_list","_display","_listbox","_combo_players","_combo_group","_entry_players","_entry_groups","_id_entry","_active_groups"];
 
 _box = param[0,objNull,[objNull]];
 _update = param[1,false,[false]];
@@ -10,6 +10,7 @@ if(_var isEqualTo []) exitWith {};
 if!((count _var )>= 5) exitWith {};
 
 _entry_list = _var select 3;
+_owner = _var select 4;
 
 if!(_update) then {
 	createDialog "base_entry";
@@ -62,7 +63,11 @@ _active_groups = 0 call valor_fnc_getActiveGroups;
 _id = _listbox lbadd "Players:";
 _listbox lbSetColor[_id,[0,0.663,0.329,1]];
 {
-	_id = _listbox lbadd (_x select 1);
+	if((_x select 0) isEqualTo _owner) then {
+		_id = _listbox lbadd format["%1 (Owner)",(_x select 1)];
+	} else {
+		_id = _listbox lbadd (_x select 1);
+	};
 	_listbox lbSetData[_id,(_x select 0)];
 } foreach _entry_players;
 

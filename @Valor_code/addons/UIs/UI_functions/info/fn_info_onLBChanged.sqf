@@ -17,6 +17,6 @@ if(_cur_sel isEqualTo -1) exitWith {};
 _entry = _array_with_info select _cur_sel;
 _text = _entry select 1;
 if(typeName _text isEqualTo "SCALAR") exitWith {_str_text ctrlSetStructuredText parsetext "";};
-if(typeName _text isEqualTo "ARRAY") exitWith {_str_text ctrlSetStructuredText call compile _text;};
+if(typeName _text isEqualTo "ARRAY") exitWith {_text = call compile (_text select 0); _str_text ctrlSetStructuredText parsetext _text;};
 
 _str_text ctrlSetStructuredText parsetext _text;

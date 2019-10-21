@@ -103,7 +103,7 @@ class Valor_settings {
 	};
 
 	class lift_config {
-		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F","valor_CargoNet_infinite"};
+		not_liftable[] = {"B_CargoNet_01_ammo_F","B_supplyCrate_F","valor_CargoNet_infinite","valor_CargoNet"};
 
 		min_distance_base_lift = 35;
 	};
@@ -133,7 +133,7 @@ class Valor_settings {
 		min_distance_town = 700;
 		max_distance_wall = 250;
 
-		base_box_classname = "valor_CargoNet_infinite";
+		base_box_classnames[] = {"valor_CargoNet_infinite","valor_CargoNet"};
 	};
 
 	class repair_system {
@@ -407,9 +407,9 @@ class Valor_settings {
 		zombie_damage = 50; // the damage a zombie makes to the gate in one hit
 		zombie_horde_start_time[] = {3600,4000,4400}; // The time after which the events starts
 		outpost_gate_health = 10000; // the amount of life the gate has
-		zombie_event_time = 300; // the duration of the event in seconds
+		zombie_event_time = 180; // the duration of the event in seconds
 		zombie_event_time_begin = 180; // Time time between event anouncement and actual begin
-		amount_cops_needed = 1; // The minimum amount of cops needed to start the event
+		amount_cops_needed = 5; // The minimum amount of cops needed to start the event
 
 		map_hidement_bottom_left[] = {500,500};   // start pos in map position in the bottim left
 		map_hidement_top_right[] = {16500,16500};  // end pos for map hidement in map pos @ the top right - function will hide all from the bottom left pos to the top right pos
@@ -435,8 +435,8 @@ class Valor_settings {
 		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
 		LootPile_house_spawn_cooldown = 600; // cooldown for a house to spawn new loot in
 
-		Loot_spawn_perc[] = {40,45,70}; //
-		Min_loot_slots = 4;             //
+		Loot_spawn_perc[] = {40,45,70}; // in 40 to 70 perc of a building lays loot
+		Min_loot_slots = 4;             // the var above will only be used when a house has more than 4 loot slots
 		Loot_Cyklus_time[] = {30,35,40}; // Time between every Lootspawn Cyklus - min 40s - max 60s
 
 		Loot_log_items[] = {"CUP_srifle_M107_Base","CUP_srifle_AS50"}; // Items which spawn gets logged into the DB
@@ -459,8 +459,12 @@ class Valor_settings {
 				0
 			},
 			{
+				"Controls",
+				"Controls:<br/><br/>Left Windows - Interactionkey<br/>U - Unlock/Lock vehicles/bases<br/>Z - Open Main Menu<br/>0 - Lower Sound<br/>Shift + H - Holster Weapon<br/>Shift + R - Restrain<br/>Shift + L - Siren on/off"
+			},
+			{
 				"Humanity",
-				{"format[""Players are able to gain humanity in order to build different kinds of bases and to unlock the bandit and hero trader.<br/>Humanity borders:<br/>Hero 3: %1<br/>Hero 2: %2<br/>Hero 1: %3<br/>Survivor: %4<br/>Bandit 1: %5<br/>Bandit 2: %6<br/>Bandit 3: %7<br/>Player get humanity for killing Zombies, Bandits, Rebells and other Monsters. You lose humanity by killing Heros and Survivors."",(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 6,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 5,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 4,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 3,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 2,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 1,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 0]"}
+				{"format[""Players are able to gain humanity in order to build different kinds of bases and to unlock the bandit and hero trader.<br/><br/>Humanity borders:<br/>Hero 3: %1<br/>Hero 2: %2<br/>Hero 1: %3<br/>Survivor: %4<br/>Bandit 1: %5<br/>Bandit 2: %6<br/>Bandit 3: %7<br/><br/>A player gets humanity for killing Zombies, Bandits, Rebells and other Monsters. You lose humanity by killing Heros and Survivors."",(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 6,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 5,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 4,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 3,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 2,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 1,(getArray(missionConfigFile >> ""Valor_settings"" >> ""humanity"" >> ""humanity_config"")) select 0]"}
 			},
 			{
 				"Bases",
@@ -504,7 +508,7 @@ class Valor_settings {
 			},
 			{
 				"Roleplay",
-				"As roleplay is required in survivor areas to be an essential part of certain interactions with other players, we want to briefly define what these server rules understand of said roleplay. Roleplaying on the Valor-Servers forces the player to make sure that all of his interactions with other players have a reasonable and sophisticated background so that the specific character traits of each individual player are revealed in every roleplay situation. Therefor, it is mandatory to have a proper kind of communication between all parties involved in that situation to an extend where every party at least has the chance of reacting to the interactions of the opposing party verbally. Roleplay is not required outside of the survivor-areas since the main focus outside of these areas lies on survial-elements, however we recommend roleplaying your character anyway at any time so that you and your character can experience a proper character development much easier.<br/><br/>We always recommend to put enough effort in roleplaying within survivor-areas since it is a fine line between basic roleplaying and breaking the server rules. It is always at the supporters discretion to decide whether or not a player violated the roleplay-rules."
+				"<t size='0.9'>As roleplay is required in survivor areas to be an essential part of certain interactions with other players, we want to briefly define what these server rules understand of said roleplay. Roleplaying on the Valor-Servers forces the player to make sure that all of his interactions with other players have a reasonable and sophisticated background so that the specific character traits of each individual player are revealed in every roleplay situation. Therefor, it is mandatory to have a proper kind of communication between all parties involved in that situation to an extend where every party at least has the chance of reacting to the interactions of the opposing party verbally. Roleplay is not required outside of the survivor-areas since the main focus outside of these areas lies on survial-elements, however we recommend roleplaying your character anyway at any time so that you and your character can experience a proper character development much easier.<br/><br/>We always recommend to put enough effort in roleplaying within survivor-areas since it is a fine line between basic roleplaying and breaking the server rules. It is always at the supporters discretion to decide whether or not a player violated the roleplay-rules.</t>"
 			},
 			{
 				"Support",

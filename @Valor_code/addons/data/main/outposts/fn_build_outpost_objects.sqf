@@ -13,7 +13,7 @@ _isserver = if(isServer && !HC_AVAILABLE) then {true} else {false};
 if(!hasInterface && !isDedicated && HC_AVAILABLE) then {
 	_isserver = true;
 };
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
 if(_build isEqualTo 1) then {
 
@@ -35,7 +35,7 @@ if(_build isEqualTo 1) then {
 			_object allowDamage false;
 			_object setVectorUp _vector;
 			_object setvariable["valor_outpost_ids",[_outpost_id,_config_id,_build],true];
-			if(_classname in [_base_box_classname]) then {
+			if(_classname in _base_box_classname) then {
 				_ret = [_object,_inventory] call valor_fnc_loadVehicleCargo;
 			};
 		};
@@ -77,7 +77,7 @@ if(_build isEqualTo 1) then {
 			_object allowDamage false;
 			_object setVectorUp _vector;
 			_object setvariable["valor_outpost_ids",[_outpost_id,_config_id,_build],true];
-			if(_classname in [_base_box_classname]) then {
+			if(_classname in _base_box_classname) then {
 				_ret = [_object,_inventory] call valor_fnc_loadVehicleCargo;
 			};
 		};

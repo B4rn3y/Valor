@@ -28,7 +28,7 @@ if(_group_name isEqualTo "") exitWith {diag_log "Valor Error :: _group_name unkn
 _objects_to_build = [];
 _ammobox_0 = [];
 
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
 {
 	_classname = _x select 0;
@@ -37,7 +37,7 @@ _base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >
 	_vec = _x select 3;
 	_level = _x select 4;
 	if(0 in _level) then {
-		if(_classname isEqualTo _base_box_classname) then {
+		if(_classname in _base_box_classname) then {
 			_ammobox_0 = _x;
 		} else {
 			_objects_to_build pushBack _x;

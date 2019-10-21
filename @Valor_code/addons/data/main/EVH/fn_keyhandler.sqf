@@ -26,11 +26,16 @@ switch (true) do
 		[] spawn valor_fnc_restrainAction;
 	};
 
+	case (_code isEqualTo 11): // 0 lower sound
+	{
+		call valor_fnc_fadeSound;
+	};
+
 	case (_code isEqualTo 21): // Z Menu
 	{
 		[] call valor_fnc_opengroupmenu;
 	};
-	case (_code isequalto 35):
+	case (_code isequalto 35): // shift + h
 	{
 		if(_shift && currentWeapon player != "") then {
 			player action ["SwitchWeapon", player, player, 100];

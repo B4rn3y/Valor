@@ -4,8 +4,8 @@ private ["_player","_container","_object","_var","_config_id","_build","_outpost
 _player = _this select 0;
 _container = _this select 1;
 _object = _this select 2;
-_base_box_classname = gettext(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classname");
-if!(typeof _container isEqualTo _base_box_classname) exitWith {};
+_base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
+if!(typeof _container in _base_box_classname) exitWith {};
 
 // outposts
 _var = _container getvariable "valor_outpost_ids";
