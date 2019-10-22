@@ -26,8 +26,8 @@ player createDiarySubject ["controls","> Controls"];
 
 
 player createDiaryRecord ["controls",
-	[		"Controls:<br/><br/>
-			Left Windows - Interactionkey<br/>
+	[		"Controls",
+			"Left Windows - Interactionkey<br/>
 			U - Unlock/Lock vehicles/bases<br/>
 			Z - Open Main Menu<br/>
 			0 - Lower Sound<br/>

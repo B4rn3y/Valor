@@ -126,7 +126,7 @@ _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove (_this select 1);}];
 _trader setvariable["Quest_Queue",0];
-_trader addaction["Talk to",valor_fnc_openQuestMenu,nil,1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
+//_trader addaction["Talk to",valor_fnc_openQuestMenu,nil,1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player",20];
 
 
 
