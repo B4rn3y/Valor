@@ -126,6 +126,8 @@ if!(HC_AVAILABLE) then {
     0 spawn {sleep 60;0 call valor_fnc_init_bases_client;};
 };
 
+[] spawn valor_fnc_init_weather;
+
 civilian setfriend[opfor,1];
 opfor setfriend[civilian,1];
 

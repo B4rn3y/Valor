@@ -28,7 +28,8 @@ if(_target iskindof "LandVehicle" || _target iskindof "Air") then {
 	_rdam = _agentdamage;
 
 
-	_sound = selectRandom ["rap_hit_car1", "rap_hit_car2", "rap_hit_car3"];
+	//_sound = selectRandom ["rap_hit_car1", "rap_hit_car2", "rap_hit_car3"];
+	_sound = "rap_" + (str (1 + (round random (18))));
 
 	[[_target, _sound],
 		{
@@ -140,7 +141,7 @@ if(_target iskindof "LandVehicle" || _target iskindof "Air") then {
 } else {
 
 	_zombie allowSprint false;
-	if (_zombie distance _target < 2 && alive _target) then
+	if (_zombie distance _target < 3 && alive _target) then
 	{
 
 		if (random 1 < _specialattackprob) then

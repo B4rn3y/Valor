@@ -20,12 +20,6 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 		};
 
 
-		case "weather":
-		{
-			[_varvalue] spawn valor_fnc_weather_module;
-		};
-
-
 		default
 		{
 			call compile format["%1=%2;",_varname,_varvalue];

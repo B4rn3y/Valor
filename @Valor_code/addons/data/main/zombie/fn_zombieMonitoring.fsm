@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_ZombieMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
+item0[] = {"init",0,250,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
 item1[] = {"h_user_leer_",4,218,-378.520935,-1042.524658,-288.520935,-992.524719,1.000000,"häuser leer?"};
 item2[] = {"h_user_array_nicht",4,218,-206.257385,-968.118774,-116.257393,-918.118774,0.000000,"häuser array" \n "nicht leer"};
 item3[] = {"find_SPAWN_POS_",2,250,-206.870605,-893.733765,-116.870613,-843.733765,0.000000,"find" \n "SPAWN" \n "POS" \n ""};
@@ -18,7 +18,7 @@ item13[] = {"no_Target",4,218,-21.899658,-604.908325,68.100342,-554.908447,0.000
 item14[] = {"Move_to_Him",2,250,-523.981934,-557.223083,-433.981934,-507.223083,0.000000,"Move to Him"};
 item15[] = {"can_Attack__him",4,218,-521.501953,-651.462769,-431.502014,-601.462769,0.000000,"can Attack " \n "him"};
 item16[] = {"can_not__attack",4,218,-455.782288,-467.943359,-365.782196,-417.943329,0.000000,"can not " \n "attack him"};
-item17[] = {"__1",2,250,-527.701904,-367.503784,-437.701904,-317.503784,0.000000,""};
+item17[] = {"__1",2,4346,-527.701904,-367.503784,-437.701904,-317.503784,0.000000,""};
 item18[] = {"not_visisble",4,218,-362.460205,-372.463745,-272.460144,-322.463745,0.000000,"not visisble"};
 item19[] = {"visisble",4,218,-592.181519,-462.983276,-502.181519,-412.983276,0.000000,"visisble"};
 item20[] = {"Attack",2,250,-649.221558,-655.182678,-559.221497,-605.182678,0.000000,"Attack"};
@@ -71,8 +71,8 @@ link34[] = {28,6};
 link35[] = {29,30};
 link36[] = {30,31};
 link37[] = {31,11};
-globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-802.930237,350.943787,-590.747314,-1238.903564,1045,587,1};
-window[] = {0,-1,-1,-1,-1,837,78,1739,78,1,1063};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-966.345032,296.340698,-244.989380,-954.268311,1045,587,1};
+window[] = {0,-1,-1,-1,-1,785,26,1687,26,1,1063};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -358,7 +358,16 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"" \n
                          "_time = diag_ticktime;" \n
                          "_wait_time = _time + random[2,2.5,3];" \n
-                         "_last_pos_seen = getposatl (_zombie getvariable[""VALOR_Target"",Objnull]);"/*%FSM</STATEINIT""">*/;
+                         "_last_pos_seen = getposatl (_zombie getvariable[""VALOR_Target"",Objnull]);" \n
+                         "" \n
+                         "" \n
+                         "if((floor random 10) isEqualTo 2) then {" \n
+                         "	_listener = [];" \n
+                         "	{if((_x distance _zombie) < 40) then {_listener pushBack _x;};} foreach playableUnits;" \n
+                         "	if!(_listener isEqualTo []) then {" \n
+                         "		[_zombie,(format[""chase_%1"",floor random 14])] remoteexeccall[""say3D"",_listener];" \n
+                         "	};" \n
+                         "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

@@ -331,18 +331,9 @@ class Valor_settings {
 					{
 						{"Paleontologist","Paleontologist"}, // +
 
-						{43,35,"Miner Level 1","You have a 1% higher chance to find a raptor egg.",1},
-						{44,45,"Miner Level 2","You have a 2% higher chance to find a raptor egg.",2},
-						{45,60,"Miner Level 3","You have a 3% higher chance to find a raptor egg.",3},
-
-						{43,35,"Miner Level 1","You have a 1% higher chance of finding a raptor egg.",1},
-						{44,45,"Miner Level 2","You have a 2% higher chance of finding a raptor egg.",2},
-						{45,60,"Miner Level 3","You have a 3% higher chance of finding a raptor egg.",3},
-
-
-						{43,35,"Miner Level 1","You have a 1% higher chance of finding a raptor egg.",1},
-						{44,45,"Miner Level 2","You have a 2% higher chance of finding a raptor egg.",2},
-						{45,60,"Miner Level 3","You have a 3% higher chance of finding a raptor egg.",3}
+						{43,20,"Paleontologist Level 1","You have a 1% higher chance to find a raptor egg.",1},
+						{44,45,"Paleontologist Level 2","You have a 2% higher chance to find a raptor egg.",2},
+						{45,75,"Paleontologist Level 3","You have a 3% higher chance to find a raptor egg.",3}
 
 					}
 				}
@@ -419,7 +410,7 @@ class Valor_settings {
 		map_hidement_MARKER_BRUSH = "SolidFull";   // marker brush for hidement markers
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
 
-		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500}};
+		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500},{"marker_12",100},{"marker_13",100}};
 		no_loot_spawn_Zones[] = {{"Survivor_city_1",500}};
 
 		cities[] = {{"Survivor_city_1",700}};

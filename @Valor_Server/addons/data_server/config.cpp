@@ -142,6 +142,7 @@ class CfgFunctions
 			class init_outposts {};
 			class init_fuelstations {};
 			class init_loottable {};
+			class init_weather {};
 		};
 
 		class groups

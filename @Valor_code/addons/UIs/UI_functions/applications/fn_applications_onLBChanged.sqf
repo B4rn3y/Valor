@@ -23,9 +23,13 @@ _value = _listbox lbValue _cur_sel;
 
 if(_value isEqualTo 1) then {
 	_btn_decline ctrlSetFade 0;
+	_btn_decline ctrlEnable true;
 	_btn_accept ctrlSetFade 0;
+	_btn_accept ctrlEnable true;
 	_btn_set ctrlSetFade 1;
+	_btn_set ctrlEnable false;
 	_edit ctrlSetFade 1;
+	_edit ctrlEnable false;
 
 	_btn_decline ctrlCommit 0;
 	_btn_accept ctrlCommit 0;
@@ -42,9 +46,13 @@ if(_value isEqualTo 1) then {
 	_str_text ctrlSetStructuredText parsetext format["<t size='1.5'>%1</t><br/><br/><t size='1.0'>Playtime:</t><br/><t color='#01DF01' size='1.8'>%2 hours</t><br/><t size='1.0'>Bank:</t><br/><t color='#01DF01' size='1.8'>%3</t><br/><t size='1.0'>Group Name:</t><br/><t color='#01DF01' size='1.8'>%4</t> ",_name,([_playtime * 60,"HH:MM"] call BIS_fnc_secondsToString),_bank,_grp_name];
 } else {
 	_btn_decline ctrlSetFade 1;
+	_btn_decline ctrlEnable false;
 	_btn_accept ctrlSetFade 1;
+	_btn_accept ctrlEnable false;
 	_btn_set ctrlSetFade 0;
+	_btn_set ctrlenable true;
 	_edit ctrlSetFade 0;
+	_edit ctrlEnable true;
 
 	_btn_decline ctrlCommit 0;
 	_btn_accept ctrlCommit 0;

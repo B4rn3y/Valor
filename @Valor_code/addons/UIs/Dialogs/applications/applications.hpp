@@ -81,20 +81,20 @@ class applications {
 		{
 			idc = 1400;
 			text = "";
-			x = 0.741;
-			y = 0.8384;
+			x = 0.526354;
+			y = 0.841767;
 			w = 0.154293;
-			h = 0.0494948;
+			h = 0.0393938;
 		};
 		class BTN_SET: valor_RscButtonMenu
 		{
 			idc = 2402;
 			text = "Set"; //--- ToDo: Localize;
 			onbuttonClick = "[] spawn valor_fnc_cop_level_update;";
-			x = 0.897727;
+			x = 0.685606;
 			y = 0.838384;
 			w = 0.102525;
-			h = 0.0478115;
+			h = 0.042761;
 		};
 	};
 };

@@ -77,6 +77,18 @@ CREATE TABLE IF NOT EXISTS `applications` (
   KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
 
+
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `weather`;
+CREATE TABLE IF NOT EXISTS `weather (
+ `uid` int(6) NOT NULL AUTO_INCREMENT,
+  `type` varchar(32) NOT NULL,
+  `probability` varchar(32) NOT NULL,
+  `time` varchar(17) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
+
 -- --------------------------------------------------------
 
 --
@@ -430,7 +442,15 @@ INSERT INTO `item_shop` (`id`,`classname`,`price`,`stock`,`infinite`,`type`,`sel
 -- Query: SELECT * FROM valor.persistent_vehicles
 -- Date: 2019-07-04 22:57
 */
+-- weather
 
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (12,'Heavy_Rain','3','[900,1050,1200]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (13,'Light_Rain','7','[1200,1500,1800]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (14,'Sunny','20','[3000,3600,4200]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (15,'Light_fog','8','[1800,2100,2400]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (16,'Heavy_fog','3','[600,720,900]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (17,'Cloudy','15','[2700,3120,3600]');
+INSERT INTO `weather` (`uid`,`type`,`probability`,`time`) VALUES (18,'Thunderstorm','1','[900,1050,1200]');
 
 
 
