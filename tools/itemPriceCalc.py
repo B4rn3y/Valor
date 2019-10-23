@@ -108,12 +108,6 @@ try:
         for x in row[2]:
             prob += x[1]
         
-        max_price = 200
-        min_price = 10
-        first_modifier = 6
-        second_modifier = 0.2
-        envelop_point = 25
-        
         sell_price = min_price
         
         itemMultiplier = 1
