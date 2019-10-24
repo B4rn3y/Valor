@@ -74,6 +74,15 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 		_btn_4 ctrlshow true;
 		_btn_4 ctrlsettext "Ticket";
 		_btn_4 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
+
+		_btn_5 ctrlShow true;
+		_btn_5 ctrlSetText "Jail";
+		_btn_5 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_arrestaction;";
+
+
+		if((player distance (getmarkerpos "cop_jail")) > 20) then {
+			_btn_5 ctrlEnable false;
+		};
 	} else {
 
 	};

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=1901;
+		nextID=1903;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3757.0249,539.42297,8651.0537};
-		dir[]={0.097312972,-0.85335553,0.51234025};
-		up[]={0.15923092,0.52136451,0.83833152};
-		aside[]={0.9825145,4.0990562e-007,-0.18661763};
+		pos[]={10318.288,413.24414,12048.894};
+		dir[]={0.28842387,-0.52443314,0.80111319};
+		up[]={0.1776486,0.85145128,0.49342859};
+		aside[]={0.94087857,9.3132257e-009,-0.33874384};
 	};
 };
 binarizationWanted=0;
@@ -24040,7 +24040,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7348.9878,382.99799,9270.3057};
-			name="marker_12";
+			name="hero_trader";
 			text="Hero Trader";
 			type="mil_triangle";
 			id=1895;
@@ -24050,7 +24050,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10324.342,361.22299,12087.945};
-			name="marker_13";
+			name="bandit_trader";
 			text="Bandit Trader";
 			type="mil_triangle";
 			id=1896;

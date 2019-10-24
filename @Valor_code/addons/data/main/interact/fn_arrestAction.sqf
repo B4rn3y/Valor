@@ -4,7 +4,7 @@ _unit = OBJ_focused;
 if(isNil "_unit" OR isNull _unit OR !isPlayer _unit OR !(_unit getvariable["valor_restrained",false])) exitWith {};
 
 _marker_pos = getmarkerpos "cop_jail";
-if(player distance _marker_pos > 20) exitWith {systemChat "Valor :: You are not close enough to the jail"};
+if((player distance _marker_pos) > 20) exitWith { ["Valor :: You are not close enough to the jail"] spawn valor_fnc_exp_hint;};
 
 
 _jailtime = 15;

@@ -13,51 +13,53 @@ from mysql.connector import Error
 
 # Login @ MySQL
 connection = mysql.connector.connect(
-                                    host='INSERT HOSTIP HERE',
-                                    database='valor',
-                                    user='INSERT USER HERE',
-                                    password='INSERT PW HERE')
+    host='INSERT HOSTIP HERE',
+    database='valor',
+    user='INSERT USER HERE',
+    password='INSERT PW HERE')
 
 # TypeMultiplier
 # Multiplier for each Item Type
 itemTypeMultiplier = [
-['uniform', 0.15], 
-['headgear', 0.3], 
-['item', 1.0], 
-['pweapon', 2],
-['magazine', 0.3], 
-['hweapon', 1.5],
-['vest', 0.4], 
-['goggles', 0.4], 
-['backpack', 1.5]]
+    ['uniform', 0.15],
+    ['headgear', 0.3],
+    ['item', 1.0],
+    ['pweapon', 2],
+    ['magazine', 0.3],
+    ['hweapon', 1.5],
+    ['vest', 0.4],
+    ['goggles', 0.4],
+    ['backpack', 1.5]]
 
 # Multiplier for each Loottable
 tableTypeMultiplier = [
-['firestation', 2.0], 
-['medical', 4.0], 
-['farming', 1.0], 
-['industrial', 1.0], 
-['general', 1.0], 
-['food', 1.0], 
-['l_military', 2.0], 
-['m_military', 3.0], 
-['h_military', 4.0], 
-['radiation_zone', 4.0], 
-['loot_drop', 4.0]]
+    ['firestation', 2.0],
+    ['medical', 4.0],
+    ['farming', 1.0],
+    ['industrial', 1.0],
+    ['general', 1.0],
+    ['food', 1.0],
+    ['l_military', 2.0],
+    ['m_military', 3.0],
+    ['h_military', 4.0],
+    ['radiation_zone', 4.0],
+    ['loot_drop', 4.0]]
 
 # Parameter for both linear functions
-max_price = 200 # start value = max_price
-min_price = 10 # price cant drop under min_price
-first_modifier = 6 # first_modifier until envelop_point
-second_modifier = 0.2 # second_modifier after envelop_point
+max_price = 200  # start value = max_price
+min_price = 10  # price cant drop under min_price
+first_modifier = 6  # first_modifier until envelop_point
+second_modifier = 0.2  # second_modifier after envelop_point
 envelop_point = 25
+
 
 ###########################################
 ################FUNCTIONS##################
 ###########################################
 
 def refinePrice(x, base=5):
-    return base * round(x/base)
+    return base * round(x / base)
+
 
 def sqlExec(sql):
     cursor = connection.cursor()
@@ -66,72 +68,72 @@ def sqlExec(sql):
     cursor.close()
     return result
 
+
 ###########################################
 ###################MAIN####################
 ###########################################
 
-itemProb = [] # [["classname", "itemType", [["tableType", prob]["tableType", prob]] ]]
+itemProb = []  # [["classname", "itemType", [["tableType", prob]["tableType", prob]] ]]
 
 try:
-    
+
     loottable_classnames = sqlExec("Select classname, max_prob, table_type from loottable_classnames")
     item_sell_prices = sqlExec("Select classname, type from item_sell_prices")
-    
+
     for row in loottable_classnames:
         classname = row[0]
         itemType = "item"
         prob = (float(row[1]) - 1)
         tableType = row[2]
         redundant = False
-        
+
         for x in item_sell_prices:
             if (x[0] == classname):
                 itemType = x[1]
                 break
-        
+
         for x in itemProb:
             if (x[0] == classname):
                 redundant = True
                 itemProb[itemProb.index(x)][2].append([tableType, prob])
                 break
-        
+
         if (not redundant):
             itemProb.append([classname, itemType, [[tableType, prob]]])
 
-
     for row in itemProb:
-        
+
         classname = row[0]
         itemType = row[1]
-        
+
         prob = 0
         for x in row[2]:
             prob += x[1]
-        
+
         sell_price = min_price
-        
+
         itemMultiplier = 1
         tableMultiplier = 0
-        
+
         if (prob <= envelop_point):
             sell_price = max_price - (first_modifier * prob)
-        else: 
+        else:
             sell_price = (max_price - (first_modifier * envelop_point)) - (second_modifier * prob)
-        
+
         for x in row[2]:
             for y in tableTypeMultiplier:
                 if (x[0] == y[0]):
                     if (tableMultiplier < y[1]):
                         tableMultiplier = y[1]
-        
+
         for x in itemTypeMultiplier:
             if (x[0] == itemType):
                 itemMultiplier = x[1]
-        
+
         sell_price = sell_price * itemMultiplier * tableMultiplier
-        
+
         ########Special Items#########
-        
+
         # High lootzone Clothes (Ghillies...)
         if (itemType == itemTypeMultiplier[0][0] and tableMultiplier >= 3):
             sell_price = sell_price * 5
@@ -144,23 +146,24 @@ try:
         # Castle Blueprint
         if ("valor_blueprint7" in classname):
             sell_price = sell_price * 5
-        
+
         ########Apply Price########
-        
-        if (sell_price < min_price): 
+
+        if (sell_price < min_price):
             sell_price = min_price
-        
+
         sell_price = refinePrice(sell_price)
-        
+
         ########UPDATE########
-        
+
         print (" --- UPDATED    " + classname + " ---")
-        sql_modify_Query = "UPDATE item_sell_prices SET price = " + format(sell_price, '.6f') + " WHERE classname = '" + classname + "'"
+        sql_modify_Query = "UPDATE item_sell_prices SET price = " + format(sell_price,
+                                                                           '.6f') + " WHERE classname = '" + classname + "'"
         cursor = connection.cursor()
         cursor.execute(sql_modify_Query)
         connection.commit()
-    
-    
+
+
 except Error as e:
     print("Error reading data from MySQL table", e)
 finally:

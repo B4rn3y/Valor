@@ -156,7 +156,7 @@ class Valor_settings {
 	};
 
 	class humanity {		// b3    b2  b1 s    h1   h2    h3
-		humanity_config[] = {-5000,-2500,0,2500,5000,7500,10000};  // dont change the amount of entries in this array
+		humanity_config[] = {-5000,-2500,2000,2500,3000,7500,10000};  // dont change the amount of entries in this array
 
 		kill_bandit_3 = 250;
 		kill_bandit_2 = 150;
@@ -410,8 +410,10 @@ class Valor_settings {
 		map_hidement_MARKER_BRUSH = "SolidFull";   // marker brush for hidement markers
 		map_hidement_MARKER_SIZE[] = {500,500};   // marker size for hidement markers, should stay 500/500, so dont know why i added this O.o
 
-		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500},{"marker_12",100},{"marker_13",100}};
+		no_ZED_spawn_Zones[] = {{"Survivor_city_1",500},{"hero_trader",100},{"bandit_trader",100}};
 		no_loot_spawn_Zones[] = {{"Survivor_city_1",500}};
+
+		can_jail_marker[] = {{"put_jail_marker",40}};
 
 		cities[] = {{"Survivor_city_1",700}};
 

@@ -13,12 +13,12 @@ if(_pos isEqualTo []) exitWith {};
 if(_range isEqualTo [10,50] && (_zombie distance _pos)>100) then {_zombie forceSpeed 10} else {_zombie forceSpeed 2;};
 
 if((floor random 4) isEqualTo 2) then {
-	0 spawn {
+	_zombie spawn {
 		sleep random [10,12,15];
 		_listener = [];
-		{if((_x distance _zombie) < 40) then {_listener pushBack _x;};} foreach playableUnits;
+		{if((_x distance _this) < 40) then {_listener pushBack _x;};} foreach playableUnits;
 		if!(_listener isEqualTo []) then {
-			[_zombie,(selectrandom["rap_1","rap_10","rap_11","rap_12","rap_13","rap_14","rap_15","rap_16","rap_17","rap_18","rap_19"])] remoteexeccall["say3D",_listener];
+			[_this,(selectrandom["rap_1","rap_10","rap_11","rap_12","rap_13","rap_14","rap_15","rap_16","rap_17","rap_18","rap_19"])] remoteexeccall["say3D",_listener];
 		};
 	};
 };

@@ -1,19 +1,23 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_time_module">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-375.990051,-1008.315308,-285.990021,-958.314636,0.000000,"init"};
+item0[] = {"init",0,250,-368.079224,-1129.238159,-278.079193,-1079.237305,0.000000,"init"};
 item1[] = {"its_night",4,218,-472.622314,-774.209106,-382.622314,-724.209106,0.000000,"its night"};
 item2[] = {"its_day",2,250,-385.603149,-857.052979,-295.603149,-807.052917,0.000000,"its day"};
 item3[] = {"true",4,218,-382.125977,-933.551392,-292.125977,-883.551392,0.000000,"true"};
 item4[] = {"set_night",2,250,-382.534851,-663.943237,-292.534851,-613.943237,0.000000,"set night"};
 item5[] = {"its_day",4,218,-284.171722,-775.841309,-194.171722,-725.841309,0.000000,"its day"};
-link0[] = {0,3};
+item6[] = {"w8",4,218,-369.801880,-1070.350220,-279.801880,-1020.350098,0.000000,"w8"};
+item7[] = {"set_date",2,250,-375.452423,-998.021973,-285.452423,-948.021912,0.000000,"set date"};
+link0[] = {0,6};
 link1[] = {1,4};
 link2[] = {2,1};
 link3[] = {3,2};
 link4[] = {4,5};
 link5[] = {5,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,215,6316128,1,-686.438232,92.213623,-413.612976,-1076.992676,689,587,1};
+link6[] = {6,7};
+link7[] = {7,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,217,6316128,1,-801.710876,-23.058990,-574.090942,-1237.470703,689,587,1};
 window[] = {0,-1,-1,-1,-1,915,156,1596,156,1,707};
 *//*%FSM</HEAD>*/
 class FSM
@@ -26,18 +30,18 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"setdate[2018,6,1,4,30];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "true">*/
-                                class true
+                                /*%FSM<LINK "w8">*/
+                                class w8
                                 {
-                                        itemno = 3;
+                                        itemno = 6;
                                         priority = 0.000000;
-                                        to="its_day";
+                                        to="set_date";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > 10"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -84,6 +88,29 @@ class FSM
                                         to="its_day";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(date select 3) isequalto 4 && (date select 4) isequalto 30 "/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_date">*/
+                class set_date
+                {
+                        name = "set_date";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"setdate[2018,6,1,4,30];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="its_day";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

@@ -140,8 +140,8 @@ link68[] = {64,65};
 link69[] = {65,40};
 link70[] = {65,41};
 link71[] = {66,48};
-globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-2492.476807,-34.016479,-120.103394,-2208.550781,691,587,1};
-window[] = {0,-1,-1,-1,-1,863,104,1544,104,1,709};
+globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-2010.249878,-1261.673218,-648.702637,-1284.612183,691,587,1};
+window[] = {0,-1,-1,-1,-1,785,26,1466,26,1,709};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -727,6 +727,7 @@ class FSM
                          "if!(isnil ""Valor_application"") then {" \n
                          "	[Valor_application] spawn valor_fnc_show_application_response;" \n
                          "};" \n
+                         "" \n
                          "" \n
                          "player allowDamage true;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
