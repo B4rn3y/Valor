@@ -3,7 +3,7 @@ private ["_action","_group_name"];
 if(playerSide isEqualTo opfor) exitWith {};
 
 _action = [
-	format["Do you really want to apply for the 'Insert name here'? "],
+	format["Do you really want to apply for the Russian Military? "],
 	"Valor",
 	"YES",
 	"NO"
@@ -21,4 +21,4 @@ if!(Valor_group isEqualTo []) then {
 [[profilename, getplayeruid player,valor_playtime,Valor_bankacc,_group_name],"valor_fnc_insert_application",2] call valor_fnc_remoteexec;
 VALOR_APPLY = true;
 
-systemchat "Valor :: Your application has been received, you will be noticed about the outcome.";
+["Valor :: Your application has been received, you will be noticed about the outcome."] spawn valor_fnc_exp_hint;

@@ -78,7 +78,7 @@ hintSilent "";
 valor_arrested = 0;
 [7] call valor_fnc_step_update;
 if!(alive player) exitWith {};
-if(player distance _markerpos > _distance) exitWith { ["You escaped the jail"] spawn valor_fnc_exp_hint;(format["Valor :: %1 escaped the jail."]) remoteExec["systemChat",opfor]};
+if(player distance _markerpos > _distance) exitWith { ["You escaped the jail"] spawn valor_fnc_exp_hint;(format["Valor :: %1 escaped the jail.",profileName]) remoteExec["systemChat",opfor]};
 ["You are free now"] spawn valor_fnc_exp_hint;
 player setposatl (getMarkerPos "cop_respawn");
 
