@@ -65,6 +65,8 @@ valor_intro_cam camSetFocus [-1, -1];
 showCinemaBorder false;
 valor_intro_cam camCommit 0;
 
+playSound "intro";
+
 valor_intro_cam camsetpos [8439.47,2614.23,1.0018158];
 valor_intro_cam camSetTarget [6529.3,2211.45,7.001683];
 valor_intro_cam camCommit 0;

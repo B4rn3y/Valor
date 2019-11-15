@@ -107,7 +107,7 @@ _master_index = 0;
 } foreach [
 	[_p_weapons,"Primary Weapons"],
 	[_sweapon,"Secondary Weapons"],
-	[_hgun_weapons,"Hamdgun Weapons"],
+	[_hgun_weapons,"Handgun Weapons"],
 	[_magazines,"Magazines"],
 	[_uniforms,"Uniforms"],
 	[_vests,"Vests"],

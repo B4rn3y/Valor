@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `applications` (
 -- --------------------------------------------------------
 
 DROP TABLE IF EXISTS `weather`;
-CREATE TABLE IF NOT EXISTS `weather (
+CREATE TABLE IF NOT EXISTS `weather` (
  `uid` int(6) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `probability` varchar(32) NOT NULL,

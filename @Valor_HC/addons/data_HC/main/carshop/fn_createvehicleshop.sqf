@@ -33,6 +33,8 @@ if([_vehicle_ID,0] call valor_fnc_setvehicleinshop) then {
 	_vehicle setposatl [_pos select 0, _pos select 1,(_pos select 2)+1];
 	_vehicle setvariable ["DBID",_vehicle_ID,true];
 	_vehicle setvariable["last_pos",[0,0,0]];
+	_vehicle setVariable["owners",[getPlayerUID _requester],true];
+	[_vehicle,2] remoteExec["lock",0];
 	Valor_vehicles_monitoring pushBackUnique [_vehicle,_vehicle_ID];
 
 
