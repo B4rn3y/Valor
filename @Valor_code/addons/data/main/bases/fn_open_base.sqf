@@ -63,10 +63,10 @@ if(_var) exitWith {
 		{
 			if((typeOf _object) isEqualTo "valor_drawBridge") exitWith {
 				_st = _object animationPhase "draw";
-				if(_st isEqualTo 0) then {
-					_object animate["draw",1];
-				} else {
+				if(_st isEqualTo 1) then {
 					_object animate["draw",0];
+				} else {
+					_object animate["draw",1];
 				};
 			};
 

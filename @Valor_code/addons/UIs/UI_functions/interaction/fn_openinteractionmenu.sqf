@@ -113,7 +113,7 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 		_btn_3 ctrlEnable false;
 	};
 
-	if(playerside isEqualTo opfor && (typeof OBJ_focused) iskindof "Landvehicle") then {
+	if(playerside isEqualTo opfor) then {
 		if(!isnil "VALOR_IN_TRADER" && (attachedObjects OBJ_focused isEqualTo [])) then {
 			_btn_4 ctrlshow true;
 			_btn_4 ctrlsettext "Attach Siren";
