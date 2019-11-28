@@ -224,10 +224,14 @@ iF!(_access) exitWith {};
 
 if((typeOf _object) isEqualTo "valor_drawBridge") exitWith {
 	_st = _object animationPhase "draw";
-	if(_st isEqualTo 0) then {
+	if(_st < 1) then {
 		_object animate["draw",1];
+		[[_object,["draw",1]],"animate",2] spawn valor_fnc_remoteexec;
+		systemChat "Closing Bridge";
 	} else {
 		_object animate["draw",0];
+		[[_object,["draw",0]],"animate",2] spawn valor_fnc_remoteexec;
+		systemChat "Opening Bridge";
 	};
 };
 
