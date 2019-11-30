@@ -75,7 +75,7 @@ class Valor_settings {
 		uniforms[] = {"U_BG_Guerilla2_1"};// just arrays with stuff to add
 		goggles[] = {"G_Bandanna_blk"};
 		headgear[] = {"H_Bandanna_gry"};
-		backpack[] = {};
+		backpack[] = {""};
 
 		uniforms_cop[] = {"rhs_uniform_emr_patchless"};// just arrays with stuff to add
 		goggles_cop[] = {"G_Bandanna_khk"};
@@ -426,7 +426,7 @@ class Valor_settings {
 	class loot_settings {
 		LootPile_Spawn_Range = 160; // Range to spawn Lootpiles in Building around Player
 		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
-		LootPile_house_spawn_cooldown = 600; // cooldown for a house to spawn new loot in
+		LootPile_house_spawn_cooldown = 120; // cooldown for a house to spawn new loot in
 
 		Loot_spawn_perc[] = {40,45,70}; // in 40 to 70 perc of a building lays loot
 		Min_loot_slots = 4;             // the var above will only be used when a house has more than 4 loot slots
@@ -5275,6 +5275,16 @@ class Houses_spawn_config
 				{5.64404,12.3535,-6.59146},
 				{10.564,14.6064,-3.09146},
 				{11.082,14.3652,0.408539}
+			};
+	};
+
+
+	class Land_House_1W03_F
+	{
+		pos[]=
+			{
+				{-2.26514,3.27344,-2.32678},
+				{-1.99414,-0.228516,-2.32678}
 			};
 	};
 
