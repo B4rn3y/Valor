@@ -75,7 +75,7 @@ class Valor_settings {
 		uniforms[] = {"U_BG_Guerilla2_1"};// just arrays with stuff to add
 		goggles[] = {"G_Bandanna_blk"};
 		headgear[] = {"H_Bandanna_gry"};
-		backpack[] = {"B_Carryall_khk"};
+		backpack[] = {};
 
 		uniforms_cop[] = {"rhs_uniform_emr_patchless"};// just arrays with stuff to add
 		goggles_cop[] = {"G_Bandanna_khk"};

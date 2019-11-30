@@ -39,6 +39,8 @@ respawnOnStart = -1;
 disabledAI = 1;
 joinUnassigned = 1;
 //enableDebugConsole = 2;
+disableChannels[]={{0,1,1},{1,0,1},{2,1,1}};    // Disabled text and voice for global, side, and command channels. disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>}};
+
 
 wreckLimit = 5;
 wreckRemovalMinTime = 60;

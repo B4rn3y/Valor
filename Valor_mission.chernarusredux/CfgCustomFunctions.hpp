@@ -8,6 +8,7 @@ class CfgFunctions
 			file = "Custom_functions";
 			class teleesp {};
 			class briefing {};
+			class keyhandler {};
 		};
 	};
 };

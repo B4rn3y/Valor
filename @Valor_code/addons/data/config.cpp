@@ -251,7 +251,7 @@ class CfgFunctions
 			file = "\data\main\EVH";
 			class inventory_closed {};
 			class inventory_opened {};
-			class keyhandler {};
+			//class keyhandler {};
 			class keyUp {};
 			class on_put {};
 			class on_take {};
