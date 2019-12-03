@@ -10,7 +10,7 @@ _units = _units - [player];
 
 
 {
-	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && isPlayer _x) then {
+	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && isPlayer _x && ((vehicle _x) isEqualTo _x)) then {
 
 		_pos = switch(typeOf _x) do {
 			case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
