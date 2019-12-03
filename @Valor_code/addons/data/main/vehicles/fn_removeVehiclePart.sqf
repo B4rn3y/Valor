@@ -5,11 +5,14 @@ private ["_vehicle","_ADD_ID","_part","_valor_config_name","_config_names","_con
 _vehicle = param[0,objNull,[objNull]];
 _ADD_ID = param[2,-1,[-1]];
 _part = param[3,[],[[]]];
+if(isEngineOn _vehicle) exitWith {["You cant remove parts from a vehicle with running engine."] spawn valor_fnc_exp_hint};
 if(_part isEqualTo []) exitWith {};
 if(isnull _vehicle) exitWith {};
 _valor_config_name = _part select 0;
 _config_names = _part select 1;
 _config_name = _config_names select 0;
+
+
 
 _item = gettext(missionConfigFile >> "Valor_settings" >> "repair_system" >> format["%1_remove",_valor_config_name]);
 

@@ -26,6 +26,11 @@ if(_max_lvl isEqualTo (_layout_id +1)) then {
 	_max = true;
 };
 
+if(_max) then {
+	_query = format["Update bases set classname = '%2' where base_id = '%1'",_base_id, str(getnumber(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_max_level"))];
+	[_query,1] call valor_fnc_db_sync;
+};
+
 
 _query = format["Select classname, pos, dir, vector, inventory, id, layout_id from base_objects where base_id = '%1'",_base_id];
 _res = [_query,2,true] call valor_fnc_db_sync;

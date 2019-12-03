@@ -12,6 +12,22 @@ waituntil {!(isnull (finddisplay 602))};
 ((findDisplay 602) displayCtrl 619 ) ctrlSetEventHandler ["LBDblClick", "[_this,""b""] call valor_fnc_inventory_useItem"]; // backpack
 
 
+if((objectParent _container) iskindof "Man" && !isnil "VALOR_IN_TRADER") exitWith {
+	0 spawn {
+			waitUntil {!isNull (findDisplay 602)};
+			closeDialog 0;
+			for "_i" from 1 to 6 do {
+		        closeDialog 0;
+		        sleep 0.2;
+		    };
+		    //waitUntil {(!isNull (findDisplay 602))};
+		    closeDialog 0;
+		    closeDialog 0;
+		};
+};
+
+
+
 // vehicles inventory handling
 if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container iskindof "SHIP" || _container2 iskindof "Landvehicle" || _container2 iskindof "AIR" || _container2 iskindof "SHIP") exitWith {
 
@@ -29,7 +45,7 @@ if(_container iskindof "Landvehicle" || _container iskindof "AIR" || _container 
 		        closeDialog 0;
 		        sleep 0.2;
 		    };
-		    waitUntil {(!isNull (findDisplay 602))};
+		    //waitUntil {(!isNull (findDisplay 602))};
 		    closeDialog 0;
 		    closeDialog 0;
 		};

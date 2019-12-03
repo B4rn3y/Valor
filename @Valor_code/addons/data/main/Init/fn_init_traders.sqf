@@ -258,7 +258,7 @@ _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
 _trader addaction["You are not a Hero!",{},"",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity < 5000",20];
-_trader addaction["Hero Shop LVL 1",valor_fnc_openItemShop,"hero_shop_LVL_1",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity >= 5000 && Valor_humanity < 7500",20];
+_trader addaction["Hero Shop LVL 1",valor_fnc_openItemShop,"hero_shop_LVL_1",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity >= 3000 && Valor_humanity < 7500",20];
 _trader addaction["Hero Shop LVL 2",valor_fnc_openItemShop,"hero_shop_LVL_2",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity >= 7500 && Valor_humanity < 10000",20];
 _trader addaction["Hero Shop LVL 3",valor_fnc_openItemShop,"hero_shop_LVL_3",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity >= 10000",20];
 
@@ -308,7 +308,7 @@ _trader allowdamage false;
 _trader removeAllEventHandlers "HandleDamage";
 _trader addEventHandler["AnimDone", {(_this select 0) switchmove selectrandom["AidlPercMstpSrasWrflDnon_G01","AidlPercMstpSrasWrflDnon_G02","AidlPercMstpSrasWrflDnon_G03","AidlPercMstpSrasWrflDnon_G04"];}];
 _trader addaction["You are not a Bandit!",{},"",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity > 0",20];
-_trader addaction["Bandit Shop LVL 1",valor_fnc_openItemShop,"bandit_shop_LVL_1",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity <= 0 && Valor_humanity > -2500",20];
+_trader addaction["Bandit Shop LVL 1",valor_fnc_openItemShop,"bandit_shop_LVL_1",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity <= 2000 && Valor_humanity > -2500",20];
 _trader addaction["Bandit Shop LVL 2",valor_fnc_openItemShop,"bandit_shop_LVL_2",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity <= -2500 && Valor_humanity > -5000",20];
 _trader addaction["Bandit Shop LVL 3",valor_fnc_openItemShop,"bandit_shop_LVL_3",1.5,false,false,"","((_target distance player) <= 5) && vehicle player isEqualTo player && Valor_humanity <= -5000",20];
 

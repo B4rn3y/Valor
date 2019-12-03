@@ -244,6 +244,7 @@ class CfgFunctions
 			class refuelVehicle {};
 			class refuelFuelcan {};
 			class setHitPointDamage {};
+			class unflip_vehicle {};
 		};
 
 		class EVH

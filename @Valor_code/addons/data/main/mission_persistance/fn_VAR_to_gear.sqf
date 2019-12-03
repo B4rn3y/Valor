@@ -147,11 +147,15 @@ _handgun = "";
 
 		case 16:
 		{
+			_arr = _x;
 			{
 				if!(_x isEqualTo "") then {
 					//player addItem _x;
 					//player assignItem _x;
 					player linkItem _x;
+					if(_foreachindex isEqualTo (count _arr)-1) then {
+						player addWeaponGlobal _x;
+					};
 				};
 			} foreach _x;
 		};

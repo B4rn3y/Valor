@@ -99,7 +99,7 @@ class Valor_settings {
 			{{6895.31,11442.8,0},100,100,false},
 			{{9163.58,7674.52,0},500,750,true}
 		};
-		bloodsucker_appearance_probability = 10;
+		bloodsucker_appearance_probability = 1;
 	};
 
 	class lift_config {
@@ -134,6 +134,7 @@ class Valor_settings {
 		max_distance_wall = 250;
 
 		base_box_classnames[] = {"valor_CargoNet_infinite","valor_CargoNet"};
+		base_box_max_level = "valor_CargoNet";
 	};
 
 	class repair_system {
@@ -379,7 +380,7 @@ class Valor_settings {
 		Fuelcan_amount = 20; // The amount of litres in a fuelcan
 		Objects_refueling[] = {"Land_Ind_TankSmall2","Land_Fuel_tank_stairs","Land_Ind_TankSmall","Land_Fuel_tank_big","Land_Fuel_tank_stairs_ep1"}; // The objects you can refill fuelcans from
 
-		Time_until_dead = 60; // the time a player is revivable after being shot dead(in seconds)
+		Time_until_dead = 240; // the time a player is revivable after being shot dead(in seconds)
 
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
@@ -426,7 +427,7 @@ class Valor_settings {
 	class loot_settings {
 		LootPile_Spawn_Range = 160; // Range to spawn Lootpiles in Building around Player
 		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
-		LootPile_house_spawn_cooldown = 120; // cooldown for a house to spawn new loot in
+		LootPile_house_spawn_cooldown = 240; // cooldown for a house to spawn new loot in
 
 		Loot_spawn_perc[] = {40,45,70}; // in 40 to 70 perc of a building lays loot
 		Min_loot_slots = 4;             // the var above will only be used when a house has more than 4 loot slots
