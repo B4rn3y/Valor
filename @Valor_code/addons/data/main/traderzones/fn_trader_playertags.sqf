@@ -21,6 +21,6 @@ _units = _units - [player];
 			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.4]};
 		};
 
-		drawIcon3D ["", [1,1,1,1], _pos, 0, 0, 0, "Loot-Box", 1, 0.05, "PuristaMedium"];
+		drawIcon3D ["", [1,1,1,1], _pos, 0, 0, 0, name _x, 1, 0.05, "PuristaMedium"];
 	};
 } foreach _units;
