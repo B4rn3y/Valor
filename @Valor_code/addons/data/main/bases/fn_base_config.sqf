@@ -368,6 +368,48 @@ _base = switch (_id) do
 
 	};
 
+
+	case 10: // Lookout Tower
+	{
+		switch (_state) do
+		{
+			case 0:
+			{
+				[
+					[["Land_Hlaska",[-0.0986328,3.97241,-0.00143909],-1.67186,[0,0,1]]],
+					[
+						["valor_torquewrench_01",5]
+					],
+					[15,30],
+					["bandit_3"]
+				]
+			};
+		};
+
+	};
+
+
+	case 11: // Stairs
+	{
+		switch (_state) do
+		{
+			case 0:
+			{
+				[
+					[["Land_GH_Stairs_F",[0.0717773,5.27856,1.00162],269.569,[0,0,1]]],
+					[
+						["valor_cinder_blocks",3],
+						["valor_ducttape",1],
+						["valor_torquewrench_01",1]
+					],
+					[15,30],
+					["bandit_3"]
+				]
+			};
+		};
+
+	};
+
 	default
 	{
 		[]

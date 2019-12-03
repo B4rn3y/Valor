@@ -16,7 +16,7 @@ class CfgSounds
 	class intro_sound
 	{
 		name = "intro";
-		sound[] = {"\sounds\Intro_sound\intro.ogg", db-30, 1,500};
+		sound[] = {"\sounds\Intro_sound\intro.ogg", db-40, 1,500};
 		titles[] = {};
 	};
 
@@ -65,7 +65,7 @@ class CfgSounds
 	class achievement
 	{
 		name = "achievement";
-		sound[] = {"\sounds\others\achievement.ogg", db-30, 1,50};
+		sound[] = {"\sounds\others\achievement.ogg", db-40, 1,50};
 		titles[] = {};
 	};
 

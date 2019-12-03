@@ -253,7 +253,7 @@ if((typeName _can_be_placed) isEqualTo "STRING") then {
 
 
 _max_distance_wall = getnumber(missionConfigFile >> "Valor_settings" >> "bases" >> "max_distance_wall");
-_can_be_placed = format["You can only build walls near a base you have access to (range: %1)",_max_distance_wall];
+_can_be_placed = format["You can only build near a base you have access to (range: %1)",_max_distance_wall];
 {
 	_var = _x getVariable["valor_base_ids",[-1,-1,-1]];
 	if!(isnil "_var") then {

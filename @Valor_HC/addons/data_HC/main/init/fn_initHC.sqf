@@ -49,6 +49,7 @@ systemchat "Valor :: setting Variables";
 [] call valor_fnc_init_vars;
 if(isnil "VALOR_SERVER_STARTING") then {
     systemchat "Valor :: HC is starting everything";
+    ["Update persistent_vehicles set locked = '0'  where time_locked <= (Select DATE_ADD(CURRENT_TIMESTAMP , INTERVAL -7 HOUR)) and locked = '1' and cop = '0';",1] call valor_fnc_db_sync;
     [] call valor_fnc_init_loottable;
     systemchat "Valor :: Variables set";
     systemchat "Valor :: Starting sold items init";

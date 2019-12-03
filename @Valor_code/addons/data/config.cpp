@@ -69,6 +69,7 @@ class CfgFunctions
 			file = "\data\main\traderzones";
 			class setupVariablesTrader {};
 			class pay {};
+			class trader_playertags {};
 		};
 
 		class HC

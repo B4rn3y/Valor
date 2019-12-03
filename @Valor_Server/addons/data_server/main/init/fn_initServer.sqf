@@ -63,6 +63,7 @@ if!(HC_AVAILABLE) then {
     diag_log "Valor :: STARTING WITHOUT HC ONLINE";
     VALOR_SERVER_STARTING = true;
     publicVariable "VALOR_SERVER_STARTING";
+    ["Update persistent_vehicles set locked = '0'  where time_locked <= (Select DATE_ADD(CURRENT_TIMESTAMP , INTERVAL -7 HOUR)) and locked = '1' and cop = '0';",1] call valor_fnc_db_sync;
     [] call valor_fnc_init_loottable;
     diag_log "Valor :: Variables set";
     systemchat "Valor :: Starting sold items init";
