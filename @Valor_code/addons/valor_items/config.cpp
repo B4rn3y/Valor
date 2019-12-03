@@ -1037,7 +1037,7 @@ class CfgWeapons
 
     class valor_blueprint10: valor_item_base
     {
-        displayName = "Blueprint 10";
+        displayName = "Tower Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
@@ -1047,7 +1047,7 @@ class CfgWeapons
     };
     class valor_blueprint11: valor_item_base
     {
-        displayName = "Blueprint 11";
+        displayName = "Stairway Blueprint";
         model = "a3\structures_f\items\documents\file1_f.p3d";
         picture = "\valor_items\ui\file1_icon.paa";
         class ItemInfo
