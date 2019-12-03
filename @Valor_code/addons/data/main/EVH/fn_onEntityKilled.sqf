@@ -106,6 +106,10 @@ switch (_type_killed) do
 
 };
 
+if(rating player < 5000) then {
+	player addRating 10000;
+};
+
 
 if!(_xp_add isEqualTo 0) then {
 	[_xp_add,_text] spawn valor_fnc_addexp;

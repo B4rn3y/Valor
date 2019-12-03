@@ -46,9 +46,9 @@ wreckLimit = 5;
 wreckRemovalMinTime = 60;
 wreckRemovalMaxTime = 240;
 
-corpseLimit = 30;
-corpseRemovalMinTime = 600;
-corpseRemovalMaxTime = 1200;
+corpseLimit = 60;
+corpseRemovalMinTime = 14400;
+corpseRemovalMaxTime = 16000;
 
 
 Briefing = 0;

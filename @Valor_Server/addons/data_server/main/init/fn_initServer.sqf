@@ -11,7 +11,7 @@ waitUntil {sleep 1;time > 10};
 
 diag_log "Valor :: Waiting for Mission to start";
 
-_databaseName = "valor";
+_databaseName = "valor_test_server";
 Valor_Server_loaded = true;
 _timeStamp = diag_tickTime;
 _extDBNotLoaded = 1;
