@@ -22,7 +22,7 @@ author = "Valor Team";
 onLoadName = "Valor Mod";
 onLoadMission = "RPG/Survival Server";
 onLoadIntro = "Welcome to Valor!";
-loadScreen = "UIs\textures\loadscreen.jpg";
+loadScreen = "UIs\textures\1920p.jpg";
 class Header
 {
 	gameType = Survive;

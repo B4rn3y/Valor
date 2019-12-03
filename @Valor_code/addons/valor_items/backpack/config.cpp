@@ -1,7 +1,7 @@
 class CfgPatches {
 	class valor_backpacks {
 		requiredVersion=0.1;
-		requiredAddons[]={};
+		requiredAddons[]={"A3_Characters_F","CACharacters","rhs_weapons"};
 		units[]={};
 		weapons[]={};
 		magazines[]={};
