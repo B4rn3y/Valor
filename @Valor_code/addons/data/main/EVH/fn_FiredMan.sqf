@@ -30,3 +30,12 @@ if(((_unit distance _pos) > _distance_change) || (serverTime > (_time + _time_pa
 		player setVariable["valor_shot_pos",[getposatl player,_distance_hear,serverTime],true];
 	};
 };
+
+if (_ammo isKindOf "Melee")then{
+	_meleeCfg = (configFile >> "CfgAmmo" >> _ammo >> "Melee");
+    _anim = getText (_meleeCfg >> "anim");
+    _unit playActionNow _anim;
+    _sounds = getArray (_meleeCfg >> "sounds");
+    _sound = selectRandom _sounds;
+    playSound3D [(_sound select 0),_unit, false, getPosASL _unit, (_sound select 1), (_sound select 2), (_sound select 3)];
+};

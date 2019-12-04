@@ -92,6 +92,7 @@ addMissionEventHandler ["Ended",{}];
 
 0 spawn{(findDisplay 46) displayAddEventHandler ["KeyDown",valor_fnc_keyhandler];};
 0 spawn{(findDisplay 46) displayAddEventHandler ["KeyUp",valor_fnc_keyUp];};
+0 spawn{(findDisplay 46) displayAddEventHandler ["MouseButtonDown",valor_fnc_mouseButtonDown];};
 
 [player] joinSilent (createGroup opfor);
 

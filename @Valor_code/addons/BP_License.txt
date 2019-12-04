@@ -1,0 +1,3 @@
+Breaking Point Mod is a total conversion mod for Arma 3. Source is provided for the community to improve the mod and host their own servers. Released under the Arma Public Share Like Licence (APL-SA).
+
+https://www.bohemia.net/community/licenses/arma-public-license-share-alike

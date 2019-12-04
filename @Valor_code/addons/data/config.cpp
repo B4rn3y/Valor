@@ -265,6 +265,7 @@ class CfgFunctions
 			class processEVH {};
 			class inventory_useItem {};
 			class FiredMan {};
+			class mouseButtonDown{};
 		};
 
 		class zombie
