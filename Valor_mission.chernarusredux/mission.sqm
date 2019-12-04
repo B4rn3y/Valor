@@ -15548,7 +15548,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this addaction[""Mine"", valor_fnc_harvestitem,[""valor_cliff_stone_medium"",2,""Mining Stone..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
+				//init="call{this addaction[""Mine"", valor_fnc_harvestitem,[""valor_cliff_stone_medium"",2,""Mining Stone..""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
 				disableSimulation=1;
 			};
 			id=1262;
