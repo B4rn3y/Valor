@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_mainInit">*/
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_mainInit">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-208.573318,-931.393494,-118.573318,-881.393433,0.000000,"init"};
@@ -44,8 +44,8 @@ item39[] = {"loading_Gear",2,250,-748.903625,-927.437622,-658.903625,-877.437561
 item40[] = {"position_known",4,218,-1326.025391,-940.332825,-1236.025269,-890.332825,0.000000,"position known"};
 item41[] = {"No_Position_know",4,218,-1218.846436,-1006.083801,-1128.846436,-956.083862,1.000000,"No Position" \n "known"};
 item42[] = {"END_2",1,250,-1220.651855,-1091.078613,-1130.651855,-1041.078369,0.000000,"END"};
-item43[] = {"set_player__to_p",2,250,-1456.196045,-937.151917,-1366.195801,-887.151855,0.000000,"set player" \n " to position"};
-item44[] = {"END_3",1,4346,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
+item43[] = {"set_player__to_p",2,4346,-1456.196045,-937.151917,-1366.195801,-887.151855,0.000000,"set player" \n " to position"};
+item44[] = {"END_3",1,250,-1742.861938,-939.480774,-1652.861938,-889.480530,0.000000,"END"};
 item45[] = {"Setup_Login_Data_1",2,250,-207.653168,-1213.553467,-117.653168,-1163.553467,0.000000,"Setup" \n "Login" \n "Data"};
 item46[] = {"",7,210,191.237366,-909.436523,199.237366,-901.436523,0.000000,""};
 item47[] = {"Vars_set",4,218,-503.820923,-1023.126099,-413.820923,-973.126465,0.000000,"Vars set"};
@@ -140,8 +140,8 @@ link68[] = {64,65};
 link69[] = {65,40};
 link70[] = {65,41};
 link71[] = {66,48};
-globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-2010.249878,-1261.673218,-648.702637,-1284.612183,691,587,1};
-window[] = {0,-1,-1,-1,-1,785,26,1466,26,1,709};
+globals[] = {0.000000,0,0,0,0,640,480,1,177,6316128,1,-1711.106323,-1289.550659,-703.412292,-1099.012451,942,884,1};
+window[] = {2,-1,-1,-1,-1,993,234,1674,234,3,960};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -692,6 +692,13 @@ class FSM
                         itemno = 43;
                         init = /*%FSM<STATEINIT""">*/"_pos = Valor_position select 0;" \n
                          "_dir = Valor_position select 1;" \n
+                         "0 spawn{" \n
+                         "	player allowdamage false;" \n
+                         "	sleep 10;" \n
+                         "	player allowdamage true;" \n
+                         "	player allowdamage true;" \n
+                         "	player allowdamage true;" \n
+                         "};" \n
                          "player setposatl _pos;" \n
                          "player setdir _dir;" \n
                          "" \n

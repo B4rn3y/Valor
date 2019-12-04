@@ -9,7 +9,7 @@ class CfgPatches {
 	};
 };
 
-#define e(className, load) class className; class valor_##className : className {maximumLoad = load};
+#define e(className, load) class className; class valor_##className : className {maximumLoad = load;};
 
 class cfgVehicles {
     e(B_LegStrapBag_black_F, 100)
