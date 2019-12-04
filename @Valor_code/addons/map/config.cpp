@@ -4,25 +4,22 @@ class CfgPatches
 	{
 		units[]=
 		{
-			"ChernarusRedux"
+			"ChernarusReduxValor"
 		};
 		weapons[]={};
 		requiredVersion=0.1;
-		requiredAddons[]=
-		{
-			"A3_Map_Altis"
-		};
+		requiredAddons[]={"ChernarusRedux_C"};
 	};
 };
 class CfgWorlds
 {
-	class CAWorld;
-	class ChernarusRedux: CAWorld
+	class ChernarusRedux;
+	class ChernarusReduxValor: ChernarusRedux
 	{
 		description="ChernarusReduxValor";
 		class Sea
 		{
-			MaxTide=8;
+			MaxTide=7;
 		};
 	};
 };

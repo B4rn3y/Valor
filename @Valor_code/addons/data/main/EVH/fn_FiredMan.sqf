@@ -97,5 +97,4 @@ if (_ammo isKindOf "Melee")then{
 		};
 	};
 };
-}];
 
