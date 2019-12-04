@@ -38,4 +38,25 @@ if (_ammo isKindOf "Melee")then{
     _sounds = getArray (_meleeCfg >> "sounds");
     _sound = selectRandom _sounds;
     playSound3D [(_sound select 0),_unit, false, getPosASL _unit, (_sound select 1), (_sound select 2), (_sound select 3)];
+    if(_weapon isEqualTo "MeleeHatchet" || (configname(inheritsFrom (configFile >> "CfgWeapons" >> _weapon))) isEqualTo "MeleeHatchet")then{
+    	_trees = (nearestTerrainObjects [player, ["Tree"], 20] select {_x isEqualto cursorObject});
+    	if !(_trees isEqualTo  [])then{
+    		_oldDamage = damage cursorObject;
+    		_treeHeight = (boundingBoxReal cursorObject)#1#2;
+    		_newDamage = _oldDamage + _treeHeight / 100 * .5;
+    		if(_newDamage >= 1)then{
+    			_item = "valor_woodenlog";
+				_item_amount = round (_treeHeight * getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "tree_wood_spawn_mult"));
+				_near_holder = nearestObjects[player,["groundweaponholder"],1];
+				if!(_near_holder isEqualTo []) then {
+				    _holder = _near_holder select 0;
+				    _holder addItemCargoGlobal [_item, _item_amount];
+				} else {
+				    _holder =  createVehicle ["groundweaponholder",(getposatl player), [], 0, "can_Collide"];
+				    _holder addItemCargoGlobal [_item, _item_amount];
+				};
+    		};
+    		cursorObject setdamage _newDamage;
+    	};
+    };
 };

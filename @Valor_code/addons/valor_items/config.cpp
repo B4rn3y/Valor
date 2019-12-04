@@ -308,6 +308,17 @@ class CfgWeapons
  		};
  	};
 
+    class valor_woodenboard: valor_item_base
+    {
+        displayName = "Wooden Board";
+        model = "valor_basebuild\models\board.p3d";
+        //picture = "\valor_items\ui\woodenlog_icon.paa";
+        class ItemInfo
+        {
+            mass=45;
+        };
+    };
+
  	class valor_battery: valor_item_base
  	{
  		displayName = "Battery";
