@@ -384,6 +384,9 @@ class Valor_settings {
 
 		fatigue_enabled = 0; // 0 = fatigue of players disabled // 1 = the opposite
 
+		tree_damage_mult = 0.5;
+		tree_wood_spawn_mult = 0.25;
+
 		max_ticket = 1000; // THe max amount for a ticket the cops can make
 		jailtime = 15; // The time in minutes somebody is in jail
 		classname_siren = "valor_lightbar";
