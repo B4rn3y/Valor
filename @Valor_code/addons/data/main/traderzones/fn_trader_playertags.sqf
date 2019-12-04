@@ -3,7 +3,7 @@
 
 private ["_pos"];
 
-_units = nearestObjects[(visiblePosition player),["Man"],20];
+_units = nearestObjects[(visiblePosition player),["Man"],10];
 
 _units = _units - [player];
 
@@ -18,9 +18,9 @@ _units = _units - [player];
 			case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
 			case "Land_InfoStand_V1_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
 			case "Land_Noticeboard_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
-			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.4]};
+			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.6]};
 		};
 
-		drawIcon3D ["", [1,1,1,1], _pos, 0, 0, 0, name _x, 1, 0.05, "PuristaMedium"];
+		drawIcon3D ["", [1,1,1,1], _pos, 0, 0, 0, name _x, 1, 0.035, "PuristaMedium"];
 	};
 } foreach _units;

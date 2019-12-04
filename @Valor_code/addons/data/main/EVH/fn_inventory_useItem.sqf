@@ -242,6 +242,16 @@ switch (_classname) do
 		[9] spawn valor_fnc_place_wall;
 	};
 
+	case "valor_blueprint10": // Tower
+	{
+		[10] spawn valor_fnc_place_wall;
+	};
+
+	case "valor_blueprint11": // stairway
+	{
+		[11] spawn valor_fnc_place_wall;
+	};
+
 };
 
 
