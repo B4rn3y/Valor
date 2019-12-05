@@ -13,10 +13,10 @@ from mysql.connector import Error
 
 # Login @ MySQL
 connection = mysql.connector.connect(
-    host='INSERT HOSTIP HERE',
+    host='213.202.230.152',
     database='valor',
-    user='INSERT USER HERE',
-    password='INSERT PW HERE')
+    user='admin',
+    password='sdD5heWTGLp9SQKSFXJFsBKQE')
 
 # TypeMultiplier
 # Multiplier for each Item Type
@@ -60,7 +60,6 @@ envelop_point = 25
 def refinePrice(x, base=5):
     return base * round(x / base)
 
-
 def sqlExec(sql):
     cursor = connection.cursor()
     cursor.execute(sql)
@@ -100,11 +99,16 @@ try:
 
         if (not redundant):
             itemProb.append([classname, itemType, [[tableType, prob]]])
-
+    
+    itemProb.append(["valor_cliff_stone_medium", "item", [["industrial", 10]]])
+    itemProb.append(["valor_cement_bag", "item", [["industrial", 10]]])
+    itemProb.append(["valor_cinder_blocks", "item", [["industrial", 10]]])
+    
     for row in itemProb:
 
         classname = row[0]
         itemType = row[1]
+        displayText = None
 
         prob = 0
         for x in row[2]:
@@ -145,7 +149,22 @@ try:
             sell_price = sell_price * 2
         # Castle Blueprint
         if ("valor_blueprint7" in classname):
-            sell_price = sell_price * 5
+            sell_price = sell_price * 3
+        if ("valor_woodenlog" in classname):
+            sell_price = 15
+        if ("valor_cliff_stone_medium" in classname):
+            sell_price = 25
+            displayText = "Stone"
+        if ("valor_cement_bag" in classname):
+            sell_price = 50
+            displayText = "Cementbag"
+        if ("valor_cinder_blocks" in classname):
+            sell_price = 50
+            displayText = "Cinderblocks"
+        
+        
+        if (displayText == None):
+            displayText = classname
 
         ########Apply Price########
 
@@ -155,19 +174,27 @@ try:
         sell_price = refinePrice(sell_price)
 
         ########UPDATE########
-
-        print (" --- UPDATED    " + classname + " ---")
-        sql_modify_Query = "UPDATE item_sell_prices SET price = " + format(sell_price,
-                                                                           '.6f') + " WHERE classname = '" + classname + "'"
+        
+        exists = sqlExec("SELECT id FROM item_sell_prices WHERE classname = '" + classname + "'")
+        if (exists == None or len(exists) < 1):
+            print(classname + " NEEDS TO BE INSERTED...")
+            sql_modify_Query = "INSERT INTO item_sell_prices (classname, displaytext, price, type) VALUES ('" + str(classname) + "', '" + displayText + "', " + format(sell_price, '.6f') + ", '" + itemType + "')"
+        else:
+            sql_modify_Query = "UPDATE item_sell_prices SET price = " + format(sell_price, '.6f') + " WHERE classname = '" + classname + "'"
+        
         cursor = connection.cursor()
         cursor.execute(sql_modify_Query)
         connection.commit()
+        
+        print (" --- UPDATED    " + classname + " ---")
 
 
 except Error as e:
     print("Error reading data from MySQL table", e)
 finally:
+    print("==========================")
+    print("PRICE CALCULATION FINISHED")
+    print("==========================")
     if (connection.is_connected()):
         connection.close()
-        cursor.close()
         print("MySQL connection is closed")
