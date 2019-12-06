@@ -24,7 +24,7 @@ switch (_index) do
 		_gang_id = _queryresult select 0;
 		_var = [_gang_id,[[_pid,3,name _requester]],_grp_name];
 
-		_query = format["Insert into group_members (group_id,name,pid,rank) VALUES ('%1','%2','%3','%4')",_gang_id,name _requester,getplayeruid _requester,3];
+		_query = format["Insert into group_members (group_id,name,pid,ranking) VALUES ('%1','%2','%3','%4')",_gang_id,name _requester,getplayeruid _requester,3];
 		[_query,1] call valor_fnc_db_sync;
 
 		[2,_gang_id,_var] remoteexec["valor_fnc_syncGroup",_requester];
@@ -49,7 +49,7 @@ switch (_index) do
 			_query = format["Delete from group_members where pid= '%1'",_pid];
 			[_query,1] call valor_fnc_db_sync;
 		} else {
-			_query = format["Update group_members set rank = '%2' where pid= '%1'",_pid,_rank];
+			_query = format["Update group_members set ranking = '%2' where pid= '%1'",_pid,_rank];
 			[_query,1] call valor_fnc_db_sync;
 		};
 	};
@@ -71,12 +71,12 @@ switch (_index) do
 		diag_log str _this;
 
 
-		_query = format["Update group_members set rank = '%2' where pid= '%1'",_pid_old_leader,2];
+		_query = format["Update group_members set ranking = '%2' where pid= '%1'",_pid_old_leader,2];
 		[_query,1] call valor_fnc_db_sync;
 
 		sleep 2;
 
-		_query = format["Update group_members set rank = '%2' where pid= '%1'",_pid_new_leader,3];
+		_query = format["Update group_members set ranking = '%2' where pid= '%1'",_pid_new_leader,3];
 		[_query,1] call valor_fnc_db_sync;
 	};
 
@@ -108,7 +108,7 @@ switch (_index) do
 		if(isnull _requester) exitWith {};
 		_group_id = param[2,-1,[0]];
 		if(_group_id isEqualTo -1) exitWith {};
-		_query = format["Insert into group_members (group_id,name,pid,rank) VALUES ('%1','%2','%3','%4')",_group_id,name _requester,getplayeruid _requester,1];
+		_query = format["Insert into group_members (group_id,name,pid,ranking) VALUES ('%1','%2','%3','%4')",_group_id,name _requester,getplayeruid _requester,1];
 		[_query,1] call valor_fnc_db_sync;
 
 		_vehicles = nearestObjects[(getmarkerpos "Survivor_city_1"),["landvehicle","Air","ship"],600];
