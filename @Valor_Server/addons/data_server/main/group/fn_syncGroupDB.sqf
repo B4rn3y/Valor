@@ -16,10 +16,10 @@ switch (_index) do
 		_grp_name = param[3,"",[""]];
 		if(_grp_name isEqualTo "") exitWith {};
 
-		_query = format["Insert into groups (name,founder) VALUES ('%1','%2')",_grp_name,_pid];
+		_query = format["Insert into group_data (name,founder) VALUES ('%1','%2')",_grp_name,_pid];
 		[_query,1] call valor_fnc_db_sync;
 		sleep 3;
-		_query = format["Select id from groups where founder = '%1'",_pid];
+		_query = format["Select id from group_data where founder = '%1'",_pid];
 		_queryresult = [_query,2] call valor_fnc_db_sync;
 		_gang_id = _queryresult select 0;
 		_var = [_gang_id,[[_pid,3,name _requester]],_grp_name];

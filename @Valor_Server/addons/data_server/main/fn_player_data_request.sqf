@@ -69,7 +69,7 @@ if(typeName _queryResult isEqualTo "STRING" || count _queryResult isEqualTo 0) e
 
 _group_var = [];
 
-_query = format["Select name, id from valor.groups where id in (Select group_id from valor.group_members where pid = '%1')",_getplayeruid];
+_query = format["Select name, id from group_data where id in (Select group_id from group_members where pid = '%1')",_getplayeruid];
 _queryResult_group_info = [_query,2] call valor_fnc_db_sync;
 
 if!(_queryResult_group_info isEqualTo []) then {
