@@ -312,7 +312,7 @@ class CfgWeapons
     {
         displayName = "Wooden Board";
         model = "valor_basebuild\models\board.p3d";
-        //picture = "\valor_items\ui\woodenlog_icon.paa";
+        picture = "\valor_items\ui\board_icon.paa";
         class ItemInfo
         {
             mass=45;

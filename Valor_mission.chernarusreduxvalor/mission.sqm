@@ -15324,7 +15324,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this addaction[""Collect"", valor_fnc_harvestitem,[""valor_woodenlog"",2,""Converting logs.."",""valor_woodenboard""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
+				init="call{this addaction[""Process"", valor_fnc_harvestitem,[""valor_woodenboard"",1,""Converting logs.."",""valor_woodenlog""],1.5,true,true,"""",""(_originalTarget distance player) < 5 && alive player""]}";
 				disableSimulation=1;
 			};
 			id=1231;

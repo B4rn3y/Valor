@@ -18,7 +18,7 @@ if(isnil "_item_info") exitWith {};
 if(_item_info isEqualTo []) exitWith {};
 if!(isnil "valor_is_processing") exitWith {};
 
-if(_process_from != "" && !(_process_from in ((uniformitems player)+(vestItems player)+(backpackItems player)))) exitWith {["Missing "+(getText >> "CfgWeapons" >> _process_from >> "displayName")+"!"]call valor_fnc_exp_hint;};
+if(_process_from != "" && !(_process_from in ((uniformitems player)+(vestItems player)+(backpackItems player)))) exitWith {["Missing "+(getText (configFile>> "CfgWeapons" >> _process_from >> "displayName"))+"!"]call valor_fnc_exp_hint;};
 
 _item_amount = _item_amount + (missionNamespace getvariable["Valor_skill_Miner",0]);
 player action ["SwitchWeapon", player, player, 100];
