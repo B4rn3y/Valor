@@ -41,33 +41,35 @@ _classname = typeof OBJ_focused;
 
 
 // another player (restrained)
-if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["valor_restrained",false] && ((player distance OBJ_focused) < 3.1)) || !(_attached_player isEqualTo objNull)) exitWith {
+if((_classname isKindOf "MAN" && alive OBJ_focused && ((player distance OBJ_focused) < 3.1)) || !(_attached_player isEqualTo objNull)) exitWith {
 
 	call _create_display;
-	_btn_1 ctrlshow true;
-	_btn_1 ctrlsettext "Unrestrain";
-	_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_unrestrain;";
+	if(OBJ_focused getvariable["valor_restrained",false]) then {
+		_btn_1 ctrlshow true;
+		_btn_1 ctrlsettext "Unrestrain";
+		_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_unrestrain;";
 
-	if(isnull _attached_player) then {
-		_btn_2 ctrlshow true;
-		_btn_2 ctrlsettext "Escort";
-		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_escortAction;";
-	} else {
-		OBJ_focused = _attached_player;
-		_btn_2 ctrlshow true;
-		_btn_2 ctrlsettext "Stop Escorting";
-		_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_stopEscorting;";
-	};
+		if(isnull _attached_player) then {
+			_btn_2 ctrlshow true;
+			_btn_2 ctrlsettext "Escort";
+			_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_escortAction;";
+		} else {
+			OBJ_focused = _attached_player;
+			_btn_2 ctrlshow true;
+			_btn_2 ctrlsettext "Stop Escorting";
+			_btn_2 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_stopEscorting;";
+		};
 
-	_veh_close = (nearestObjects[player,["Landvehicle","Air","Ship"],10]) select {alive _x && ((locked _x) isEqualTo 0)};
-	if(_veh_close isEqualTo []) then {
-		_btn_3 ctrlshow true;
-		_btn_3 ctrlsettext "Put in Vehicle";
-		_btn_3 ctrlEnable false;
-	} else {
-		_btn_3 ctrlshow true;
-		_btn_3 ctrlsettext "Put in Vehicle";
-		_btn_3 buttonSetAction "closeDialog 0;_v_close = (nearestObjects[player,[""Landvehicle"",""Air"",""Ship""],10]) select {alive _x && ((locked _x) isEqualTo 0)}; if(_v_close isEqualTo []) exitWith {[""There is no suitable vehicle close""] spawn valor_fnc_exp_hint;};detach OBJ_focused;[OBJ_focused,(_v_close select 0)] remoteExecCall[""moveInCargo"",OBJ_focused];";
+		_veh_close = (nearestObjects[player,["Landvehicle","Air","Ship"],10]) select {alive _x && ((locked _x) isEqualTo 0)};
+		if(_veh_close isEqualTo []) then {
+			_btn_3 ctrlshow true;
+			_btn_3 ctrlsettext "Put in Vehicle";
+			_btn_3 ctrlEnable false;
+		} else {
+			_btn_3 ctrlshow true;
+			_btn_3 ctrlsettext "Put in Vehicle";
+			_btn_3 buttonSetAction "closeDialog 0;_v_close = (nearestObjects[player,[""Landvehicle"",""Air"",""Ship""],10]) select {alive _x && ((locked _x) isEqualTo 0)}; if(_v_close isEqualTo []) exitWith {[""There is no suitable vehicle close""] spawn valor_fnc_exp_hint;};detach OBJ_focused;[OBJ_focused,(_v_close select 0)] remoteExecCall[""moveInCargo"",OBJ_focused];";
+		};
 	};
 
 	if(playerSide isEqualTo opfor) then {
@@ -75,13 +77,15 @@ if((_classname isKindOf "MAN" && alive OBJ_focused && OBJ_focused getvariable["v
 		_btn_4 ctrlsettext "Ticket";
 		_btn_4 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_ticketDialog;";
 
-		_btn_5 ctrlShow true;
-		_btn_5 ctrlSetText "Jail";
-		_btn_5 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_arrestaction;";
+		if(OBJ_focused getvariable["valor_restrained",false]) then {
+			_btn_5 ctrlShow true;
+			_btn_5 ctrlSetText "Jail";
+			_btn_5 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_arrestaction;";
 
 
-		if((player distance (getmarkerpos "cop_jail")) > 20) then {
-			_btn_5 ctrlEnable false;
+			if((player distance (getmarkerpos "cop_jail")) > 20) then {
+				_btn_5 ctrlEnable false;
+			};
 		};
 	} else {
 
