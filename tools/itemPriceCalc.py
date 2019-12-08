@@ -45,6 +45,15 @@ tableTypeMultiplier = [
     ['radiation_zone', 4.0],
     ['loot_drop', 4.0]]
 
+# Special Items [classname, prob, price, lootable, itemType, tableType, displayText]
+specialItems = [
+    ["valor_woodenlog", 0, 10, True, "item", "industrial", "Wooden Log"],
+    ["valor_cliff_stone_medium", 0, 25, False, "item", "industrial", "Stone"],
+    ["valor_cement_bag", 0, 50, False, "item", "industrial", "Cementbag"],
+    ["valor_cinder_blocks", 0, 50, False, "item", "industrial", "Cinderblock"],
+    ["valor_woodenboard", 0, 25, False, "item", "industrial", "Woodenboard"]
+]
+
 # Parameter for both linear functions
 max_price = 200  # start value = max_price
 min_price = 10  # price cant drop under min_price
@@ -67,6 +76,11 @@ def sqlExec(sql):
     cursor.close()
     return result
 
+def sqlCast(sql):
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    connection.commit()
+    cursor.close()
 
 ###########################################
 ###################MAIN####################
@@ -76,9 +90,11 @@ itemProb = []  # [["classname", "itemType", [["tableType", prob]["tableType", pr
 
 try:
 
-    loottable_classnames = sqlExec("Select classname, max_prob, table_type from loottable_classnames")
-    item_sell_prices = sqlExec("Select classname, type from item_sell_prices")
-
+    loottable_classnames = sqlExec("Select `classname`, `max_prob`, `table_type` from `loottable_classnames`")
+    item_sell_prices = sqlExec("Select `classname`, `type` from `item_sell_prices_test`")
+    
+    
+    # Insert Elements from loottable into itemProb
     for row in loottable_classnames:
         classname = row[0]
         itemType = "item"
@@ -100,10 +116,18 @@ try:
         if (not redundant):
             itemProb.append([classname, itemType, [[tableType, prob]]])
     
-    itemProb.append(["valor_cliff_stone_medium", "item", [["industrial", 10]]])
-    itemProb.append(["valor_cement_bag", "item", [["industrial", 10]]])
-    itemProb.append(["valor_cinder_blocks", "item", [["industrial", 10]]])
+    #Add SpecialItems to itemProb
+    for i in specialItems:
+        if (i[3]):
+            itemProb.append([i[0], i[4], [[i[5], i[1]]]])
     
+    #Get existing sellprices
+    existsList = sqlExec("SELECT `classname` FROM `item_sell_prices_test`")
+    exists = []
+    for i in existsList:
+        exists.append(i[0])
+    
+    #Calculate Prices from itemProb & insert into sellprices table
     for row in itemProb:
 
         classname = row[0]
@@ -136,12 +160,9 @@ try:
 
         sell_price = sell_price * itemMultiplier * tableMultiplier
 
-        ########Special Items#########
+        ########Special Item Multiplier#########
 
         # High lootzone Clothes (Ghillies...)
-        if (itemType == itemTypeMultiplier[0][0] and tableMultiplier >= 3):
-            sell_price = sell_price * 5
-        # Blueprints
         if ("blueprint" in classname):
             sell_price = sell_price * 3
         # Level 3 Blueprints
@@ -150,18 +171,15 @@ try:
         # Castle Blueprint
         if ("valor_blueprint7" in classname):
             sell_price = sell_price * 3
-        if ("valor_woodenlog" in classname):
-            sell_price = 15
-        if ("valor_cliff_stone_medium" in classname):
-            sell_price = 25
-            displayText = "Stone"
-        if ("valor_cement_bag" in classname):
-            sell_price = 50
-            displayText = "Cementbag"
-        if ("valor_cinder_blocks" in classname):
-            sell_price = 50
-            displayText = "Cinderblocks"
         
+        ########Special Items#########
+        
+        #Set Fix price & Displayed Text if configured
+        for i in specialItems:
+            if i[0] == classname:
+                if (i[1] == 0):
+                    sell_price = i[2]
+                displayText = i[6]
         
         if (displayText == None):
             displayText = classname
@@ -174,17 +192,11 @@ try:
         sell_price = refinePrice(sell_price)
 
         ########UPDATE########
-        
-        exists = sqlExec("SELECT id FROM item_sell_prices WHERE classname = '" + classname + "'")
-        if (exists == None or len(exists) < 1):
+        if not (classname in exists): #Insert new Element
             print(classname + " NEEDS TO BE INSERTED...")
-            sql_modify_Query = "INSERT INTO item_sell_prices (classname, displaytext, price, type) VALUES ('" + str(classname) + "', '" + displayText + "', " + format(sell_price, '.6f') + ", '" + itemType + "')"
-        else:
-            sql_modify_Query = "UPDATE item_sell_prices SET price = " + format(sell_price, '.6f') + " WHERE classname = '" + classname + "'"
-        
-        cursor = connection.cursor()
-        cursor.execute(sql_modify_Query)
-        connection.commit()
+            sqlCast("INSERT INTO `item_sell_prices_test` (`classname`, `displaytext`, `price`, `type`) VALUES ('" + str(classname) + "', '" + displayText + "', " + format(sell_price, '.6f') + ", '" + itemType + "')")
+        else: #Update price value
+            sqlCast("UPDATE `item_sell_prices_test` SET `price` = " + format(sell_price, '.6f') + " WHERE `classname` = '" + classname + "'")
         
         print (" --- UPDATED    " + classname + " ---")
 
