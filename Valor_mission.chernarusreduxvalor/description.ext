@@ -13,7 +13,7 @@ showHUD[] = {
 enableDebugConsole[] = {
 	"76561198055205907", //Bloodwyn
 	"76561198018512569", //Barney
-	"76561198018512569" // Pfleger
+	"76561198000771544" // Pfleger
 	//
 };
 
