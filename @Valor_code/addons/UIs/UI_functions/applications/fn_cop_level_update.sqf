@@ -26,7 +26,7 @@ _txt = ctrlText _edit;
 if!([_txt] call valor_fnc_isNumber) exitWith {systemChat "Valor :: You havent entered a number"};
 _nmbr = parseNumber _txt;
 
-iF(_nmbr < 0 || _nmbr > 4) exitWith {systemchat "Valor :: You can only change the rank from 0 to 5" };
+iF(_nmbr < 0 || _nmbr > 6) exitWith {systemchat "Valor :: You can only change the rank from 0 to 6" };
 
 _action = [
 	format["Do you really want to set %1 on Level %2?",_name,_nmbr],

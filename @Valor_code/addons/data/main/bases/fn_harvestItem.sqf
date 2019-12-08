@@ -20,7 +20,6 @@ if!(isnil "valor_is_processing") exitWith {};
 
 if(_process_from != "" && !(_process_from in ((uniformitems player)+(vestItems player)+(backpackItems player)))) exitWith {["Missing "+(getText (configFile>> "CfgWeapons" >> _process_from >> "displayName"))+"!"]call valor_fnc_exp_hint;};
 
-_item_amount = _item_amount + (missionNamespace getvariable["Valor_skill_Miner",0]);
 player action ["SwitchWeapon", player, player, 100];
 
 valor_is_processing = true;
@@ -54,6 +53,13 @@ if!(alive player) exitWith {valor_is_processing=nil;};
 if(player distance _assigned > 10) exitWith { systemchat "Valor :: You moved too far away!";valor_is_processing=nil;};
 if((vehicle player) != player) exitWith {systemchat "Valor :: You cant do that in a vehicle!"; valor_is_processing = nil;};
 
-player removeItem _process_from;
-[_item_name,_item_amount] call valor_fnc_additem;
+
+if(_process_from isEqualTo "") then {
+	_item_amount = _item_amount + (missionNamespace getvariable["Valor_skill_Miner",0]);
+	[_item_name,_item_amount] call valor_fnc_additem;
+} else {
+	(uniformitems player) select {_x isEqualTo _process_from} apply {player removeItemFromUniform _process_from; player addItemToUniform _item_name;};
+	(vestItems player) select {_x isEqualTo _process_from} apply {player removeItemFromVest _process_from; player addItemToVest _item_name;};
+	(backpackitems player) select {_x isEqualTo _process_from} apply {player removeItemFromBackpack _process_from; player addItemToBackpack _item_name;};
+};
 valor_is_processing = nil;

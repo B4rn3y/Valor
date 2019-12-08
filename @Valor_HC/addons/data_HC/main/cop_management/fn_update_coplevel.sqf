@@ -36,7 +36,7 @@ switch (_accpeted) do
 
 
 if(_delete_application) then {
-	_query = format["Delete from applications where pid = '%1';",_pid];
+	_query = format["Delete from applications where pid = '%1' and uid > 0;",_pid];
 	[_query,1] call valor_fnc_db_sync;
 };
 

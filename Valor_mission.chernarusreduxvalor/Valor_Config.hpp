@@ -390,6 +390,8 @@ class Valor_settings {
 		rock_damage = .12;
 		rock_only_in_query =1;
 
+		item_shop_mult = 1.5;
+
 		max_ticket = 1000; // THe max amount for a ticket the cops can make
 		jailtime = 15; // The time in minutes somebody is in jail
 		classname_siren = "valor_lightbar";

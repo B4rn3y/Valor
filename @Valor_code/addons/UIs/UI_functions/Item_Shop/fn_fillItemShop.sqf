@@ -81,7 +81,7 @@ _goggles = [];
 
 //_items = _p_weapons + _hgun_weapons + _sweapon + _magazines + _uniforms + _vests + _headgear + _goggles + _backpacks + _items_sort;
 
-
+_price_mult = getnumber(missionConfigFile >> "Valor_settings" >> "settings" >> "item_shop_mult");
 _master_index = 0;
 {
 	_header = _x select 1;
@@ -90,7 +90,7 @@ _master_index = 0;
 		{
 			_DBid = _x select 0;
 			_classname = _x select 1;
-			_price = _x select 2;
+			_price = round((_x select 2) * _price_mult);
 			_stock = _x select 3;
 			_type = _x select 4;
 			_infinite = _x select 5;
