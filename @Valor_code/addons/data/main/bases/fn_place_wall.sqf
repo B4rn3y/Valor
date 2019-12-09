@@ -301,6 +301,8 @@ _confirm_id = player addaction["Confirm placement",{Valor_base_placed = true;}];
 _replace_id = player addaction["Replace",{Valor_base_placed = false;}];
 _cancel_id = player addaction["Cancel",{Valor_base_placed = "cancel";}];
 
+["INFO :: This object can be removed after the next restart."] spawn valor_fnC_exp_hint;
+
 waitUntil {!isnil "Valor_base_placed"};
 
 player removeAction _confirm_id;
@@ -519,7 +521,7 @@ _deleted_item_amount = [];
 
 
 
-[[player,_arr_with_object_data,(valor_group select 0)],"valor_fnc_insert_wall",2] call valor_fnc_remoteexec;
+[[player,_arr_with_object_data,(valor_group select 0),_config_id],"valor_fnc_insert_wall",2] call valor_fnc_remoteexec;
 
 
 

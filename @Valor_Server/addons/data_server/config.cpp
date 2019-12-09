@@ -110,6 +110,7 @@ class CfgFunctions
 			class update_entry_list {};
 			class insert_wall {};
 			class init_walls {};
+			class delete_wall {};
 		};
 
 		class outposts

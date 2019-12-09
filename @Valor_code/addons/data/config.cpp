@@ -232,6 +232,7 @@ class CfgFunctions
 			class has_base_access {};
 			class open_base {};
 			class place_wall {};
+			class remove_wall {};
 		};
 
 
