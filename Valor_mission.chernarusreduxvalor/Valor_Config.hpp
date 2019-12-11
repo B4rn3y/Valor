@@ -434,7 +434,7 @@ class Valor_settings {
 
 	class loot_settings {
 		LootPile_Spawn_Range = 160; // Range to spawn Lootpiles in Building around Player
-		Lootpile_Delete_Range = 200; // If every player is more than 120m from a lootpile away it will get deleted
+		Lootpile_Delete_Range = 400; // If every player is more than 120m from a lootpile away it will get deleted
 		LootPile_house_spawn_cooldown = 240; // cooldown for a house to spawn new loot in
 
 		Loot_spawn_perc[] = {40,45,70}; // in 40 to 70 perc of a building lays loot

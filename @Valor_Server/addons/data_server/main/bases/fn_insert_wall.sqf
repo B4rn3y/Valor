@@ -1,18 +1,19 @@
+private ["_requester","_objects","_group_id","_wall_type_id","_blueprint_itembox","_classname","_pos","_dir","_vec","_query","_h","_obj","_doors","_object"];
 
 
 
-private ["_requester","_objects","_group_id","_blueprint_itembox","_classname","_pos","_dir","_vec","_query","_obj","_h","_doors"];
+
 
 _requester = param[0,objNull,[objNull]];
 _objects = param[1,[],[[]]];
 _group_id = param[2,-1,[0]];
-
+_wall_type_id = param[3,-1,[0]];
 
 
 if(isnull _requester) exitWith {diag_log "Valor Error :: _requester unknown"};
 if(_group_id isEqualTo -1) exitWith {diag_log "Valor Error :: _group_id unknown"};
 if(_objects isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint_itembox unknown"};
-
+if(_wall_type_id isEqualTo -1) exitWith {diag_log "Valor Error :: _wall_type_id unknown"};
 
 
 
@@ -21,7 +22,7 @@ if(_objects isEqualTo []) exitWith {diag_log "Valor Error :: _blueprint_itembox 
 	_pos = _x select 1;
 	_dir = _x select 2;
 	_vec = _x select 3;
-	_query = format["INSERT INTO base_objects (classname, pos, dir, vector,inventory, group_id, wall, base_id,layout_id) VALUES('%1', '%2','%3','%4','[]','%5','1','-1','[]')",(str _classname),_pos,_dir,_vec,_group_id];
+	_query = format["INSERT INTO base_objects (classname, pos, dir, vector,inventory, group_id, wall, base_id,layout_id) VALUES('%1', '%2','%3','%4','[]','%5','%6','-1','[]')",(str _classname),_pos,_dir,_vec,_group_id,_wall_type_id];
 	[_query,1] call valor_fnc_db_sync;
 
 } foreach _objects;
@@ -62,7 +63,7 @@ _h = 23;
 	_obj setdir _dir;
 	_obj setVectorUp _vec;
 	_obj setposatl _pos;
-	_obj setvariable["valor_wall_ids",[-1,_group_id],true];
+	_obj setvariable["valor_wall_ids",[-1,_group_id,_wall_type_id],true];
 
 } foreach _objects;
 

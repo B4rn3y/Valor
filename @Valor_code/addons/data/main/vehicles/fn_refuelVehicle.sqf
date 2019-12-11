@@ -16,7 +16,7 @@ if(["valor_canisterfuel",1,true] call valor_fnc_itemInInventory) then {
 	_fuel_in_Jerrycan = getnumber(missionConfigFile >> "Valor_settings" >> "settings" >> "Fuelcan_amount");
 	_fuel_in_Jerrycan = _fuel_in_Jerrycan + (missionNamespace getvariable["Valor_skill_GK",0]);
 	_Actual_fuel = _Actual_fuel + _fuel_in_Jerrycan;
-	[_vehicle,(_Actual_fuel / _MaxfuelAmount)]  remoteexeccall ["setfuel", _vehicle]; // "valor_canisterfuel_empty"
+	[_vehicle,(_Actual_fuel / _MaxfuelAmount)]  remoteexeccall ["setfuel", 0]; // "valor_canisterfuel_empty"
 	playsound "refuel";
 
 	switch (true) do

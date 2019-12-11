@@ -39,6 +39,13 @@ _classname = typeof OBJ_focused;
 
 
 
+if((player distance OBJ_focused < 7) && playerSide isEqualTo civilian && !(OBJ_focused getvariable["valor_wall_ids",[]] isEqualTo [])) exitWith {
+	call _create_display;
+	_btn_1 ctrlshow true;
+	_btn_1 ctrlsettext "Remove";
+	_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] spawn valor_fnc_remove_wall;";
+};
+
 
 // another player (restrained)
 if((_classname isKindOf "MAN" && alive OBJ_focused && ((player distance OBJ_focused) < 3.1)) || !(_attached_player isEqualTo objNull)) exitWith {
