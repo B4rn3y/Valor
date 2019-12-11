@@ -109,16 +109,16 @@ class Valor_settings {
 	};
 
  	class food_items {
-		valor_bakedbeans[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""}; //what type of food, food to fill, array with sounds it can make, classname of item to add
-		valor_cerealsbox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},""};
-		valor_orange_01[] = {"food",40,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""};
-		valor_tacticalbacon[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},""};
-		valor_ricebox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},""};
+		valor_bakedbeans[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},"","BP_Act_Man_Eat_Erc_x3_Gesture"}; //what type of food, food to fill, array with sounds it can make, classname of item to add, action to play
+		valor_cerealsbox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
+		valor_orange_01[] = {"food",40,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
+		valor_tacticalbacon[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
+		valor_ricebox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
 
-		valor_can_v1[] = {"water",100,{"action_soda_0"},""};
-		valor_can_v2[] = {"water",100,{"action_soda_0"},""};
-		valor_can_v3[] = {"water",100,{"action_soda_0"},""};
-		valor_bottleplastic_v2[] = {"water",100,{"action_drink_0"},"valor_waterbottle_01_empty"};
+		valor_can_v1[] = {"water",100,{"action_soda_0"},"","BP_Act_Man_Drink_Erc_x3_Gesture"};
+		valor_can_v2[] = {"water",100,{"action_soda_0"},"","BP_Act_Man_Drink_Erc_x3_Gesture"};
+		valor_can_v3[] = {"water",100,{"action_soda_0"},"","BP_Act_Man_Drink_Erc_x3_Gesture"};
+		valor_bottleplastic_v2[] = {"water",100,{"action_drink_0"},"valor_waterbottle_01_empty","BP_Act_Man_Drink_Erc_x3_Gesture"};
 	};
 
 	class medic_items {

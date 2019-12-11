@@ -49,11 +49,14 @@ _food_item_info = getArray(missionConfigFile >> "Valor_settings" >> "food_items"
 //_food_item_info = ["food",60,["action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"],""];
 if!(_food_item_info isEqualTo []) exitWith {
 
-	_type = _food_item_info select 0;
-	_amount_fill = _food_item_info select 1;
-	_sounds = _food_item_info select 2;
-	_item_add = _food_item_info select 3;
-
+	_food_item_info params[
+		[variableName, defaultValue, expectedDataTypes, expectedArrayCount],
+		["_type", "", [""]],
+		["_amount_fill", 20, [0]],
+		["_sounds", [], [[]]],
+		["_item_add", "", [""]],
+		["_anim", "", [""]],
+	];
 
 
 	if(_type isEqualTo "food") then {
@@ -62,16 +65,16 @@ if!(_food_item_info isEqualTo []) exitWith {
 		} else {
 			Valor_hunger = Valor_hunger + _amount_fill;
 		};
-		playSound selectRandom _sounds;
+
 	} else {
 		if((Valor_thirst + _amount_fill) > 100) then {
 			Valor_thirst = 100;
 		} else {
 			Valor_thirst = Valor_thirst + _amount_fill;
 		};
-
-		playSound selectRandom _sounds;
 	};
+	playSound selectRandom _sounds;
+	player playActionNow _anim;
 
 	[_place,_classname,_item_add] spawn {
 		switch (_this select 0) do
