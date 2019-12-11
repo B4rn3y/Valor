@@ -70,6 +70,7 @@ if (_ammo isKindOf "Melee")then{
 				};
     		};
     		_obj setdamage _newDamage;
+    		_newDamage call valor_fnc_showProgressHUD;
     	};
     };
 
@@ -80,6 +81,7 @@ if (_ammo isKindOf "Melee")then{
 			_oldDamage = damage _obj;
 	    	_newDamage = _oldDamage + getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "rock_damage");
 	    	_obj setdamage _newDamage;
+	    	_newDamage call valor_fnc_showProgressHUD;
 	    	playSound3D ["breakingpoint_jsrs\sounds\Generic1.wav", player];
 	    	if(_newDamage >= 1)then{
 	    		_obj setDamage 0;

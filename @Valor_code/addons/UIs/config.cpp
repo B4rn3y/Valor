@@ -85,6 +85,7 @@ class CfgFunctions
 			class setupHUD {};
 			class updateHUD {};
 			class deleteHUD {};
+			class showProgressHUD {};
 		};
 
 		class ticket
