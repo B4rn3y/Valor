@@ -55,7 +55,7 @@ if!(_food_item_info isEqualTo []) exitWith {
 		["_amount_fill", 20, [0]],
 		["_sounds", [], [[]]],
 		["_item_add", "", [""]],
-		["_anim", "", [""]],
+		["_anim", "", [""]]
 	];
 
 
