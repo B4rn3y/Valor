@@ -118,6 +118,7 @@ class CfgFunctions
 			class insert_wall {};
 			class init_walls {};
 			class delete_wall {};
+			class syncTreeHC {};
 		};
 
 		class outposts

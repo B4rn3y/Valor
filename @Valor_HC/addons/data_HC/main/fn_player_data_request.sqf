@@ -85,3 +85,7 @@ if!(_queryResult_group_info isEqualTo []) then {
 _queryResult pushBack _group_var;
 
 [(if(_new_inserted) then {2} else {0}),_queryResult] remoteExecCall ["valor_fnc_mainInit",_requester];
+
+if(!isNil "valor_deadTrees")then{
+    valor_deadTrees remoteExecCall ["valor_fnc_syncTreeClient",_requester];
+};

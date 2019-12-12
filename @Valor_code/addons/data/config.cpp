@@ -233,6 +233,7 @@ class CfgFunctions
 			class open_base {};
 			class place_wall {};
 			class remove_wall {};
+			class syncTreeClient {};
 		};
 
 

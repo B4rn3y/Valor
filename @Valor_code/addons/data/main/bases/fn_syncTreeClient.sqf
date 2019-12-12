@@ -1,0 +1,1 @@
+{_x setDamage 1;} count (param [0, [], [[]]]);

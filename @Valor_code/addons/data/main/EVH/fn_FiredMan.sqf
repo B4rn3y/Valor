@@ -58,6 +58,7 @@ if (_ammo isKindOf "Melee")then{
     		_treeHeight = (boundingBoxReal _obj)#1#2;
     		_newDamage = _oldDamage + 1 / _treeHeight * getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "tree_damage_mult");
     		if(_newDamage >= 1)then{
+    			[_obj] remoteExecCall ["valor_fnc_syncTreeHC", HC1];
     			_item = "valor_woodenlog";
 				_item_amount = round (_treeHeight * getNumber(missionConfigFile >> "Valor_settings" >> "settings" >> "tree_wood_spawn_mult"));
 				_near_holder = nearestObjects[player,["groundweaponholder"],1];
