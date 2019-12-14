@@ -58,7 +58,7 @@ class cfgZombie_classes // arrays of different types of zeds sorted by their out
 
 class Valor_settings {
 	class animals {
-		availableAnimals[] = {"Sheep_random_F","Goat_random_F","Cock_white_F","Hen_random_F"};
+		availableAnimals[] = {"Sheep_random_F","Goat_random_F","Hen_random_F"};
 	};
 	class loot_drops {
 		//waittime[] = {3300,3600,3900};
@@ -116,7 +116,7 @@ class Valor_settings {
 		valor_orange_01[] = {"food",40,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
 		valor_tacticalbacon[] = {"food",100,{"action_eat_0","action_eat_1","action_eat_2","action_eat_3"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
 		valor_ricebox[] = {"food",60,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
-		
+
 		valor_carrot[] = {"food",30,{"action_eat_chips_0","action_eat_chips_1","action_eat_chips_2"},"","BP_Act_Man_Eat_Erc_x3_Gesture"};
 
 		valor_can_v1[] = {"water",100,{"action_soda_0"},"","BP_Act_Man_Drink_Erc_x3_Gesture"};

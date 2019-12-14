@@ -77,6 +77,8 @@ class CfgFunctions
 		{
 			file = "\UIs\UI_functions\interaction";
 			class openinteractionmenu {};
+			class putAnimalInVehicle {};
+			class pullAnimalsOutVehicle {};
 		};
 
 		class HUD

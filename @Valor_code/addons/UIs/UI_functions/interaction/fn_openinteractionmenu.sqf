@@ -145,8 +145,19 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 			_btn_5 ctrlEnable false;
 		};
 	};
+	_animals = (attachedObjects OBJ_focused) select {(typeOf _x) in (getArray(missionConfigFile >> "Valor_settings" >> "animals" >> "availableAnimals"))};
+	if !(_animals isEqualTo [])then{
+		_btn_5 ctrlshow true;
+		_btn_5 ctrlsettext "Pull out animals";
+		_btn_5 buttonSetAction "closeDialog 0;[OBJ_focused] call valor_fnc_pullAnimalsOutVehicle;";
+	};
 };
 
+if(_classname in (getArray(missionConfigFile >> "Valor_settings" >> "animals" >> "availableAnimals")) && alive OBJ_focused && ((player distance OBJ_focused) < 6)) exitWith {
+	_btn_1 ctrlshow true;
+	_btn_1 ctrlsettext "Put into vehicle";
+	_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] call valor_fnc_putAnimalInVehicle;";
+};
 
 _base_box_classname = getarray(missionConfigFile >> "Valor_settings" >> "bases" >> "base_box_classnames");
 
