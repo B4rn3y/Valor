@@ -1,10 +1,10 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_AnimalMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,250,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
+item0[] = {"init",0,4346,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
 item1[] = {"pos_unknown",4,218,-385.616272,-1034.029663,-295.616272,-984.029663,0.000000,"pos" \n "unknown"};
 item2[] = {"w8_a_bit",4,218,-206.257385,-968.118774,-116.257393,-918.118774,0.000000,"w8 a bit"};
-item3[] = {"spawn_animal_",2,4346,-206.870605,-893.733765,-116.870613,-843.733765,0.000000,"spawn" \n "animal" \n ""};
+item3[] = {"spawn_animal_",2,250,-206.870605,-893.733765,-116.870613,-843.733765,0.000000,"spawn" \n "animal" \n ""};
 item4[] = {"_",2,250,-202.616821,-724.897034,-112.616821,-674.897034,0.000000,""};
 item5[] = {"___in_base",4,218,-273.305420,-613.709167,-183.305420,-563.709167,0.000000,"! in base"};
 item6[] = {"END",1,250,-524.287842,-1036.135254,-434.287720,-986.135132,0.000000,"END"};
@@ -40,7 +40,7 @@ link17[] = {14,4};
 link18[] = {15,16};
 link19[] = {17,4};
 globals[] = {0.000000,0,0,0,0,640,480,1,231,6316128,1,-870.554504,341.558105,-386.245544,-1137.576172,947,587,1};
-window[] = {0,-1,-1,-32000,-32000,969,-10,1502,210,1,965};
+window[] = {0,-1,-1,-1,-1,889,130,1642,130,1,965};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -53,8 +53,7 @@ class FSM
                         name = "init";
                         itemno = 0;
                         init = /*%FSM<STATEINIT""">*/"_animal = param[0,Objnull,[Objnull]];" \n
-                         "_pos = param[1,[],[[]]];" \n
-                         "_dir = param[2,0,[0]];" \n
+                         "" \n
                          "" \n
                          "_ridden = [];" \n
                          "" \n
@@ -81,7 +80,7 @@ class FSM
                                         priority = 0.000000;
                                         to="END";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_pos isequalto [] || isnull _animal"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isnull _animal"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -185,7 +184,7 @@ class FSM
                 {
                         name = "END";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"diag_log ""Animal POS unknown"";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"diag_log ""Animal null"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
