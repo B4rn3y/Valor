@@ -154,6 +154,7 @@ if((_classname isKindOf "AIR" || _classname isKindOf "Landvehicle" || _classname
 };
 
 if(_classname in (getArray(missionConfigFile >> "Valor_settings" >> "animals" >> "availableAnimals")) && alive OBJ_focused && ((player distance OBJ_focused) < 6)) exitWith {
+	call _create_display;
 	_btn_1 ctrlshow true;
 	_btn_1 ctrlsettext "Put into vehicle";
 	_btn_1 buttonSetAction "closeDialog 0;[OBJ_focused] call valor_fnc_putAnimalInVehicle;";
