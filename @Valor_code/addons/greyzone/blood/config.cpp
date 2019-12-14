@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class valor_greyzone
+	class valor_blood
 	{
 		units[]={};
 		weapons[]={};

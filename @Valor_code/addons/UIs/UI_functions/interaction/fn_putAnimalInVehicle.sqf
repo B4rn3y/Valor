@@ -1,6 +1,8 @@
 _animal = param [0,objNull,[objNull]];
 if(isNull _animal)exitWith{systemChat "Valor Error :: Animal is null";};
 
+if(configName (inheritsFrom (configFile >> "cfgvehicles" >> (typeof _animal))) isEqualTo "dbo_horse_Base_F")exitWith{["Horses are too big!"] spawn valor_fnc_exp_hint;};
+
 _vehicles = (nearestObjects[player,["Landvehicle","Air","Ship"],16]) select {alive _x && ((locked _x) < 2)} apply {[_x distance player,_x]};	// [[4,car1],[10,car2],[30,car3]]
 if(_vehicles isEqualTo [])exitWith{["No vehicle available"] spawn valor_fnc_exp_hint;};
 _car = (selectMin _vehicles) # 1;

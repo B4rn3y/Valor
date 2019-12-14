@@ -58,7 +58,7 @@ class cfgZombie_classes // arrays of different types of zeds sorted by their out
 
 class Valor_settings {
 	class animals {
-		availableAnimals[] = {"Sheep_random_F","Goat_random_F","Hen_random_F"};
+		availableAnimals[] = {"valor_Sheep_random_F","valor_Goat_random_F","valor_Hen_random_F","dbo_horse_dark","dbo_horse_snow","dbo_horse_lp","dbo_horse"};
 	};
 	class loot_drops {
 		//waittime[] = {3300,3600,3900};
