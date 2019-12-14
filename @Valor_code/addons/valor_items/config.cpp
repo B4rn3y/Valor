@@ -3,8 +3,7 @@ class CfgPatches
 	class valor_items
 	{
 		requiredVersion=0.1;
-		requiredAddons[]={
-		};
+		requiredAddons[]={"A3_Data_F","ChernarusRedux_C"};
 		units[]={};
 		weapons[]={};
 		magazines[]={};
@@ -1096,5 +1095,16 @@ class CfgWeapons
             mass=15;
         };
     };
-
+    class CHR_FlashLight;
+    class valor_carrot : CHR_FlashLight{
+        displayName = "Carrot";
+        descriptionShort = "Used to lure animals or as food";
+        model = "valor_items\models\carrot.p3d";
+        picture = "\valor_items\ui\carrot_icon.paa";
+        class FlashLight{};
+        class ItemInfo
+        {
+            mass=20;
+        };
+    };
 };

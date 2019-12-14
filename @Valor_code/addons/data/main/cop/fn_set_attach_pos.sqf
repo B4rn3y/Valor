@@ -1,4 +1,4 @@
-private ["_veh","_classname_attach_object","_str_text","_place_id","_cancel_id","_replace_id","_attach_pos"];
+private ["_veh","_classname_attach_object","_str_text","_place_id","_cancel_id","_replace_id","_attach_pos","_id"];
 
 
 _veh = param[0,objNull,[objNull]];
