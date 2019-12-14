@@ -305,5 +305,16 @@ class CfgFunctions
 			class on_raptor_killed {};
 			class deal_damage_veh {};
 		};
+
+		class animals
+		{
+			file = "\data\main\animals";
+			class animal_Monitoring  {ext = ".fsm";};
+
+			class animal_move_to_object {};
+			class animal_roam {};
+			class carrot_close {};
+			class is_in_base {};
+		};
 	};
 };

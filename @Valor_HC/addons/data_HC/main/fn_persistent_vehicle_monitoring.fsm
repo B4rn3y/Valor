@@ -21,8 +21,8 @@ link6[] = {5,4};
 link7[] = {6,7};
 link8[] = {7,1};
 link9[] = {8,9};
-globals[] = {0.000000,0,0,0,0,640,480,1,200,6316128,1,-591.915405,203.887207,-330.395752,-1296.727539,728,884,1};
-window[] = {2,-1,-1,-1,-1,889,130,1570,130,3,746};
+globals[] = {0.000000,0,0,0,0,640,480,1,200,6316128,1,-640.013489,155.789124,-348.979126,-1315.310669,728,884,1};
+window[] = {2,-1,-1,-32000,-32000,811,52,1492,52,3,746};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -74,12 +74,12 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_delete = [];" \n
                          "{" \n
                          "	if(isnull (_x select 0) || !(alive (_x select 0))) then {" \n
-                         "		[(_x select 1),(_x select 2)] call valor_fnc_vehicleDelete;" \n
+                         "		[(_x select 1),(_x select 2),(_x select 3)] call valor_fnc_vehicleDelete;" \n
                          "		_delete pushback _foreachindex;" \n
                          "	} else {" \n
                          "		_last_pos = (_x select 0) getvariable[""last_pos"",[0,0,0]];" \n
                          "		if(!(_last_pos isequalto (getposatl (_x select 0))) || (_x select 0) getvariable[""Update_this"",false]) then {" \n
-                         "			[(_x select 0)] call valor_fnc_saveVehicleComplete;" \n
+                         "			[(_x select 0),(_x select 3)] call valor_fnc_saveVehicleComplete;" \n
                          "			if((_x select 0) getvariable[""update_this"",false]) then {" \n
                          "	         (_x select 0) setvariable[""update_this"",nil,true];" \n
                          "         };" \n
