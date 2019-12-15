@@ -47,7 +47,7 @@ switch (true) do
 	case (_code isEqualTo 219): // WINDOWS LEFT
 	{
 		if(player getVariable ["valor_restrained",false]) exitWith{["You cant do anything while being restrained"] spawn valor_fn_exp_hint;_handle};
-		_target = if (isnull cursorTarget) then {cursorObject} else {cursorTarget};
+		_target = if (isnull cursorObject) then {cursorTarget} else {cursorObject};
 		[_target] call valor_fnc_openinteractionmenu;
 	};
 
