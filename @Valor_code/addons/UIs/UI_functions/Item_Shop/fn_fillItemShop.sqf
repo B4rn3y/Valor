@@ -102,6 +102,7 @@ _master_index = 0;
 				_tree tvSetData[[_master_index,_index],str([_DBid,_classname,_price,_stock,_type,_config,_infinite])];
 			};
 		} foreach (_x select 0);
+		//_tree tvSort [[_master_index], false];
 	};
 
 } foreach [
@@ -118,7 +119,7 @@ _master_index = 0;
 ];
 
 
-tvExpandAll _tree;
+//tvExpandAll _tree;
 
 
 _tree ctrlRemoveAllEventHandlers "TreeSelChanged";
