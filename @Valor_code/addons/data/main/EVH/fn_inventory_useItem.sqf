@@ -50,7 +50,6 @@ _food_item_info = getArray(missionConfigFile >> "Valor_settings" >> "food_items"
 if!(_food_item_info isEqualTo []) exitWith {
 
 	_food_item_info params[
-		[variableName, defaultValue, expectedDataTypes, expectedArrayCount],
 		["_type", "", [""]],
 		["_amount_fill", 20, [0]],
 		["_sounds", [], [[]]],
