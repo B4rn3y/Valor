@@ -7,3 +7,4 @@ _animals apply {
 	detach _x; 
 	_x setPosASL (_car modelToWorldWorld [3,0,0])
 };
+(crew _car) select {!(isPlayer _x)} apply {deleteVehicle _x};

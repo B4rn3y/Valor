@@ -1,28 +1,18 @@
-_animal = param [0,objNull,[objNull]];
+_animal = param [0,a,[objNull]];
 if(isNull _animal)exitWith{systemChat "Valor Error :: Animal is null";};
 
 if(configName (inheritsFrom (configFile >> "cfgvehicles" >> (typeof _animal))) isEqualTo "dbo_horse_Base_F")exitWith{["Horses are too big!"] spawn valor_fnc_exp_hint;};
 
-_vehicles = (nearestObjects[player,["Landvehicle","Air","Ship"],16]) select {alive _x && ((locked _x) < 2)} apply {[_x distance player,_x]};	// [[4,car1],[10,car2],[30,car3]]
+_vehicles = (nearestObjects[player,["Landvehicle","Air","Ship"],16]) select {alive _x} apply {[_x distance player,_x]};	// [[4,car1],[10,car2],[30,car3]]
 if(_vehicles isEqualTo [])exitWith{["No vehicle available"] spawn valor_fnc_exp_hint;};
 _car = (selectMin _vehicles) # 1;
 
-_availableSeatIndexes = (fullCrew [_car, "cargo", true]) - (fullCrew [_car, "cargo", false]) apply {_x#2};
-
-_availableSeats = 
-((selectionNames cursorObject) select {
-	_x find "proxy" > -1 && _x find "cargo" > -1
-}) apply {
-	// convert "proxy:\ca\temp\proxies\truck\cargo01.013" to 12
-	_ar = _x splitString ".";
- 	_seatIndex = (parseNumber (_ar #(count _ar - 1))) - 1;
- 	[_seatIndex,_x]; 	
-} select {
-	(_x#0 in _availableSeatIndexes) && ! (_car lockedCargo (_x#0));
-};
-
-if(_availableSeats isEqualTo [])exitWith{["No free seat available"] spawn valor_fnc_exp_hint;};
-
-_car lockCargo [_availableSeats#0#0, true];
-_animal attachTo [_car,(_car selectionPosition (_availableSeats#0#1)) vectoradd [0,0.7,-0.2]];
-_availableSeats;
+_bot = (createGroup [civilian, true] ) createUnit ["C_man_w_worker_F", [0,0,0],[], 0, "CAN_COLLIDE"];
+[_bot, true] remoteExecCall ["hideObjectGlobal",2];
+[_bot, false] remoteExecCall ["enableSimulationGlobal",2];
+_bot allowDamage false;
+{_bot disableAI _x} foreach ["FSM","AIMINGERROR","SUPPRESSION","AUTOTARGET","TARGET","COVER","SUPPRESSION","AUTOCOMBAT","CHECKVISIBLE","MOVE","PATH"];
+_bot moveInCargo _car;
+if !(vehicle _bot isEqualTo _car)exitWith{deleteVehicle _bot; ["No free seat available"] spawn valor_fnc_exp_hint;};
+_animal attachTo [_car,(_car worldToModelVisual (getposatl _bot))];
+_bot;

@@ -1,6 +1,8 @@
 _gen = _this select 0;
 _caller = _this select 1;
 _id = _this select 2;
+
+if !(attachedObjects _gen isEqualTo []) exitWith {["Horse in use!"] spawn valor_fnc_exp_hint;};
 //remove the action once it is activated
 _gen removeAction _id;
 _gen setobjecttexture [1,"\dbo\dbo_horses\data\tack_co.paa"];
