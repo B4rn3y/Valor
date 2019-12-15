@@ -10,7 +10,7 @@ item5[] = {"___in_base",4,218,-273.305420,-613.709167,-183.305420,-563.709167,0.
 item6[] = {"END",1,250,-524.287842,-1036.135254,-434.287720,-986.135132,0.000000,"END"};
 item7[] = {"roam",2,250,-202.514404,-517.382751,-112.514389,-467.382751,0.000000,"roam"};
 item8[] = {"true",4,218,-142.119690,-609.431885,-52.119690,-559.431885,0.000000,"true"};
-item9[] = {"carrot_close",4,218,-61.756165,-659.354797,28.243835,-609.354858,0.000000,"carrot close"};
+item9[] = {"carrot_close",4,4314,-61.756165,-659.354797,28.243835,-609.354858,0.000000,"carrot close"};
 item10[] = {"move_to_carrot",2,250,73.400696,-714.148071,163.400711,-664.148071,0.000000,"move to carrot"};
 item11[] = {"_",4,218,-52.015144,-790.858765,37.984863,-740.858765,0.000000,""};
 item12[] = {"player_attached",4,218,-357.002869,-680.213440,-267.002869,-630.213440,0.000000,"player attached"};
@@ -22,7 +22,8 @@ item17[] = {"w8",4,218,-206.478638,-814.974060,-116.478653,-764.974121,0.000000,
 item18[] = {"w8_player_dosmou",4,218,-576.700317,-690.213928,-486.700317,-640.213928,0.000000,"w8 player" \n "dosmount"};
 item19[] = {"set_locality",2,250,-664.189026,-733.304565,-574.189148,-683.304504,0.000000,"set locality"};
 item20[] = {"local_animal",4,218,-570.659546,-778.730225,-480.659546,-728.730225,0.000000,"local animal"};
-item21[] = {"__2",2,4346,-467.579346,-779.760986,-377.579346,-729.760925,0.000000,""};
+item21[] = {"__2",2,250,-467.579346,-779.760986,-377.579346,-729.760925,0.000000,""};
+item22[] = {"repeat_if_error",4,218,-783.666382,-731.495667,-693.666382,-681.495667,0.000000,"repeat if error"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,6};
@@ -45,10 +46,12 @@ link18[] = {15,16};
 link19[] = {17,4};
 link20[] = {18,19};
 link21[] = {19,20};
-link22[] = {20,21};
-link23[] = {21,14};
-globals[] = {0.000000,0,0,0,0,640,480,1,235,6316128,1,-725.635376,89.729706,-364.086487,-969.168030,791,587,1};
-window[] = {0,-1,-1,-1,-1,941,182,1824,182,1,809};
+link22[] = {19,22};
+link23[] = {20,21};
+link24[] = {21,14};
+link25[] = {22,19};
+globals[] = {0.000000,0,0,0,0,640,480,1,236,6316128,1,-1003.658203,329.218506,-128.546326,-1062.193848,1262,884,1};
+window[] = {2,-1,-1,-1,-1,785,26,1668,26,3,1280};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -147,7 +150,7 @@ class FSM
                                         priority = 0.000000;
                                         to="move_to_carrot";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(([_animal] call valor_fnc_carrot_close) isequalto Objnull) && attachedobjects _animal isequalto [] && !([_animal] call valor_fnc_is_in_base) && alive _animal && isnull attachedTo _animal"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(([_animal] call valor_fnc_carrot_close) isequalto Objnull) && (attachedobjects _animal isequalto []) && !([_animal] call valor_fnc_is_in_base) && alive _animal && isnull attachedTo _animal && local _animal"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -180,7 +183,7 @@ class FSM
                                         priority = 0.000000;
                                         to="roam";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(([_animal] call valor_fnc_carrot_close) isequalto Objnull) && !([_animal] call valor_fnc_is_in_base) && attachedobjects _animal isequalto [] && alive _animal && isnull attachedTo _animal"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(([_animal] call valor_fnc_carrot_close) isequalto Objnull) && !([_animal] call valor_fnc_is_in_base) && attachedobjects _animal isequalto [] && alive _animal && isnull attachedTo _animal && local _animal"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -266,7 +269,7 @@ class FSM
                                         priority = 0.000000;
                                         to="set_locality";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(attachedobjects _animal isequalto []) || !alive _animal"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((attachedobjects _animal) isequalto []) || !alive _animal"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -298,10 +301,22 @@ class FSM
                          "" \n
                          "" \n
                          "" \n
+                         "_wait_time = diag_ticktime + random[1,2,3];" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "repeat_if_error">*/
+                                class repeat_if_error
+                                {
+                                        itemno = 22;
+                                        priority = 0.000000;
+                                        to="set_locality";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _wait_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "local_animal">*/
                                 class local_animal
                                 {
