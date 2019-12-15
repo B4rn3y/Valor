@@ -157,7 +157,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 	_alive = _x select 3;
 
 	if(_alive isEqualTo 0) then {
-		_pos = [[worldSize/2,worldSize/2,0], 0, 8000, 50, 0, 0.85, 0] call BIS_fnc_findSafePos;
+		_pos = [[worldSize/2,worldSize/2,0], 0, 8000, 30, 0, 0.85, 0] call BIS_fnc_findSafePos;
 		_dir = random 360;
 		_pos pushback 0;
 	};
