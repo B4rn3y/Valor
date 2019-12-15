@@ -16,6 +16,6 @@ _animal setDestination [getposATL _animal, "LEADER Direct", true];
 if(_ridden_pos isEqualTo []) then {
 	_animal setDestination [([_animal, 0, 40, 1, 0, 0.85, 0] call BIS_fnc_findSafePos), "LEADER PLANNED", true];
 } else {
-	_animal setDestination [([_ridden_pos, 0, 40, 1, 0, 0.85, 0] call BIS_fnc_findSafePos), "LEADER PLANNED", true];
+	_animal setDestination [([_ridden_pos, 0, 10, 1, 0, 0.85, 0] call BIS_fnc_findSafePos), "LEADER PLANNED", true];
 };
 

@@ -159,6 +159,7 @@ _res = [_query,2,true] call valor_fnc_db_sync;
 	if(_alive isEqualTo 0) then {
 		_pos = [[worldSize/2,worldSize/2,0], 0, 8000, 50, 0, 0.85, 0] call BIS_fnc_findSafePos;
 		_dir = random 360;
+		_pos pushback 0;
 	};
 	diag_log format["pos %1 - alive %2",_pos, _alive];
 	_animal = createAgent [_classname, _pos, [], 0, "FORM"];

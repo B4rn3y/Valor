@@ -35,6 +35,7 @@ class CfgFunctions
 			class insert_player {};
 			class time_module {ext = ".fsm";};
 			class log {};
+			class change_object_locality {};
 			// persistent Vehicles start
 			class getVehicleCargo {};
 			class getVehicleDamage {};

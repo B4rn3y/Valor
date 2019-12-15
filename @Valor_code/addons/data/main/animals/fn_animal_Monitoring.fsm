@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_AnimalMonitoring">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
+item0[] = {"init",0,250,-204.469864,-1040.817993,-114.469856,-990.817993,0.000000,"init"};
 item1[] = {"pos_unknown",4,218,-385.616272,-1034.029663,-295.616272,-984.029663,0.000000,"pos" \n "unknown"};
 item2[] = {"w8_a_bit",4,218,-206.257385,-968.118774,-116.257393,-918.118774,0.000000,"w8 a bit"};
 item3[] = {"spawn_animal_",2,250,-206.870605,-893.733765,-116.870613,-843.733765,0.000000,"spawn" \n "animal" \n ""};
@@ -14,11 +14,15 @@ item9[] = {"carrot_close",4,218,-61.756165,-659.354797,28.243835,-609.354858,0.0
 item10[] = {"move_to_carrot",2,250,73.400696,-714.148071,163.400711,-664.148071,0.000000,"move to carrot"};
 item11[] = {"_",4,218,-52.015144,-790.858765,37.984863,-740.858765,0.000000,""};
 item12[] = {"player_attached",4,218,-357.002869,-680.213440,-267.002869,-630.213440,0.000000,"player attached"};
-item13[] = {"__1",2,250,-474.555389,-730.777222,-384.555389,-680.777222,0.000000,""};
-item14[] = {"_",4,218,-357.661652,-797.431213,-267.661652,-747.431213,0.000000,""};
+item13[] = {"__1",2,250,-468.229126,-686.493408,-378.229126,-636.493408,0.000000,""};
+item14[] = {"w8",4,218,-350.446045,-774.753540,-260.446045,-724.753540,0.000000,"w8"};
 item15[] = {"animal_dead",4,218,-69.011047,-885.888428,20.988953,-835.888428,0.000000,"animal dead"};
 item16[] = {"END_1",1,250,110.701424,-914.377625,200.701538,-864.377502,0.000000,"END"};
 item17[] = {"w8",4,218,-206.478638,-814.974060,-116.478653,-764.974121,0.000000,"w8"};
+item18[] = {"w8_player_dosmou",4,218,-576.700317,-690.213928,-486.700317,-640.213928,0.000000,"w8 player" \n "dosmount"};
+item19[] = {"set_locality",2,250,-664.189026,-733.304565,-574.189148,-683.304504,0.000000,"set locality"};
+item20[] = {"local_animal",4,218,-570.659546,-778.730225,-480.659546,-728.730225,0.000000,"local animal"};
+item21[] = {"__2",2,4346,-467.579346,-779.760986,-377.579346,-729.760925,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,6};
@@ -35,12 +39,16 @@ link12[] = {9,10};
 link13[] = {10,11};
 link14[] = {11,4};
 link15[] = {12,13};
-link16[] = {13,14};
+link16[] = {13,18};
 link17[] = {14,4};
 link18[] = {15,16};
 link19[] = {17,4};
-globals[] = {0.000000,0,0,0,0,640,480,1,231,6316128,1,-870.554504,341.558105,-386.245544,-1137.576172,947,587,1};
-window[] = {0,-1,-1,-1,-1,889,130,1642,130,1,965};
+link20[] = {18,19};
+link21[] = {19,20};
+link22[] = {20,21};
+link23[] = {21,14};
+globals[] = {0.000000,0,0,0,0,640,480,1,235,6316128,1,-725.635376,89.729706,-364.086487,-969.168030,791,587,1};
+window[] = {0,-1,-1,-1,-1,941,182,1824,182,1,809};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -247,20 +255,18 @@ class FSM
                 {
                         name = "__1";
                         itemno = 13;
-                        init = /*%FSM<STATEINIT""">*/"_ridden = getposatl _animal;" \n
-                         "" \n
-                         "_wait_time = diag_ticktime + random[1,2,3];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "_">*/
-                                class _
+                                /*%FSM<LINK "w8_player_dosmou">*/
+                                class w8_player_dosmou
                                 {
-                                        itemno = 14;
+                                        itemno = 18;
                                         priority = 0.000000;
-                                        to="_";
+                                        to="set_locality";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _wait_time"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(attachedobjects _animal isequalto []) || !alive _animal"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -276,6 +282,66 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_locality">*/
+                class set_locality
+                {
+                        name = "set_locality";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/"if(HC_AVAILABLE) then {" \n
+                         "	[_animal,HC1] remoteexeccall [""valor_fnc_change_object_locality"",2];" \n
+                         "} else {" \n
+                         "	[_animal,2] remoteexeccall [""valor_fnc_change_object_locality"",2];" \n
+                         "};" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "local_animal">*/
+                                class local_animal
+                                {
+                                        itemno = 20;
+                                        priority = 0.000000;
+                                        to="__2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"local _animal"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__2">*/
+                class __2
+                {
+                        name = "__2";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"_animal setDestination [getposATL _animal, ""LEADER Direct"", true];" \n
+                         "" \n
+                         "_ridden = getposatl _animal;" \n
+                         "" \n
+                         "_wait_time = diag_ticktime + random[4,5,6];" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "w8">*/
+                                class w8
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"diag_ticktime > _wait_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                         };
                 };
                 /*%FSM</STATE>*/

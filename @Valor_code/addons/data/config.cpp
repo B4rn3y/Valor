@@ -156,6 +156,7 @@ class CfgFunctions
 			class init_radiation_zones {};
 			class init_bases_client {};
 			class init_bloodsucker_zones {};
+			class init_animals {};
 		};
 
 		class loot_system
@@ -315,6 +316,8 @@ class CfgFunctions
 			class animal_roam {};
 			class carrot_close {};
 			class is_in_base {};
+			class horse_mount {};
+			class horse_dismount {};
 		};
 	};
 };

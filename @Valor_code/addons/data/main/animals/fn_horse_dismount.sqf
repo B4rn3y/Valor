@@ -1,0 +1,21 @@
+private ["_gen","_callers","_caller","_id"];
+_gen = _this select 0;
+_callers =  nearestObjects [_gen, ["Man"], 2];
+_caller  = _callers select 1;
+//hint format ["%1,%2",_gen,_caller];
+_id = _this select 2;
+//remove the action once it is activated
+_gen removeAction _id;
+objNull remoteControl driver _gen;
+_gen switchCamera "internal";
+detach _caller ;
+_caller switchCamera "internal";
+//_cid = format["-%1",clientOwner];
+//old[player,""] remoteExec ["switchMove",(parseNumber _cid),true];
+[player,""] remoteExec ["switchMove",-2];
+_caller switchmove "";
+_caller setvelocity [-2,-1,0];
+sleep .01;
+_hossmount = _gen addaction ["GetOn",valor_fnc_horse_mount,nil,1.5,true,true,"","true",4,false,""];
+_gen setobjecttexture [0,"\dbo\dbo_horses\data\tack_co.paa"];
+_gen setobjecttexture [1,""];

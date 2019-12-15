@@ -49,6 +49,8 @@ waitUntil {!isnil "VALOR_MAP_HIDEMENT_DONE"};
 
 0 spawn valor_fnc_initVehicles; // setup the Vehicle Repair actions
 
+0 spawn valor_fnc_init_animals; // load actions for horses
+
 0 spawn valor_fnc_init_outposts_client; // setup the outposts
 
 0 spawn valor_fnc_init_bases_client;  // hide trees near bases
